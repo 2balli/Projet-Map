@@ -1,0 +1,2800 @@
+@import 'tailwindcss';
+
+/* motion-reduce: / motion-safe: suivent le réglage d'animation du compte
+   (data-mouvement sur <html>), et non le seul réglage du poste. */
+@custom-variant motion-reduce (&:where(:root[data-mouvement="reduit"], :root[data-mouvement="reduit"] *));
+@custom-variant motion-safe (&:where(:root:not([data-mouvement="reduit"]), :root:not([data-mouvement="reduit"]) *));
+/* Après Tailwind : les règles non « layered » de Leaflet gardent la priorité
+   sur le preflight (sinon les tuiles et les marqueurs se déforment). */
+@import 'leaflet/dist/leaflet.css';
+
+/* ------------------------------------------------------------------ */
+/* Jetons de thème — charte tactique unifiée                           */
+/* ------------------------------------------------------------------ */
+/*
+ * QUATRE PALETTES × DEUX MODES, UNE SEULE CHARTE. Portés par <html> :
+ * `data-mode` (light | dark) et `data-palette` (midnight | graphite | arctic |
+ * forest) — voir src/theme.js et public/theme-initial.js. Ce qui dépend du MODE
+ * (encres sur fond clair, tons d'état, voiles) est dans `[data-mode='light']` ;
+ * ce qui fait la PALETTE (surfaces, encres, interaction, sélection) est dans
+ * un petit bloc par palette et par mode, plus bas. Midnight sombre = `:root`.
+ * Les composants
+ * n'emploient que les jetons ci-dessous — directement, ou via les couleurs
+ * Tailwind déclarées dans `@theme inline`, qui y renvoient. Changer de thème
+ * ne re-rend donc aucun composant : seules les variables changent.
+ *
+ *   --bg-app      fond de l'application        --primary   interaction (liens, focus, actif)
+ *   --bg-surface  rail et barres               --accent    entité SÉLECTIONNÉE
+ *   --bg-panel    panneaux et cartes           --border-default  séparations
+ *   --bg-card     éléments posés sur un panneau
+ *   --bg-hover    survol
+ */
+:root {
+  --bg-app: #0B1220;
+  --bg-surface: #111827;
+  --bg-panel: #151E2E;
+  --bg-card: #1B263A;
+  --bg-hover: #223049;
+
+  --border-default: #263449;
+  --border-strong: #33435C;
+
+  --text-primary: #F1F5F9;
+  --text-secondary: #94A3B8;
+  /* ≥ 4,5:1 sur panneaux et cartes (petits textes) — #6B7A90 n'en donnait que 3,8. */
+  --text-muted: #8492A7;
+
+  --primary: #38BDF8;
+  --primary-hover: #7DD3FC;
+  --primary-soft: rgba(56, 189, 248, 0.12);
+  --primary-contrast: #0B1220;
+
+  /* « Or » historique de la carte : désormais la couleur de la SÉLECTION. */
+  --accent: #F5C451;
+  --accent-hover: #F8D47A;
+  --accent-soft: rgba(245, 196, 81, 0.12);
+  --accent-border: rgba(245, 196, 81, 0.45);
+
+  --ombre-panneau: 0 8px 24px -6px rgb(0 0 0 / 0.55), 0 1px 3px rgb(0 0 0 / 0.35);
+  --shadow-popup: 0 12px 32px -6px rgb(0 0 0 / 0.65);
+  --voile-modal: rgb(2 6 15 / 0.6);
+
+  /* Étiquettes posées sur la carte (agrégats, filigranes, libellés). */
+  --map-label-bg: color-mix(in srgb, var(--bg-panel) 90%, transparent);
+  --map-label-bg-hover: color-mix(in srgb, var(--bg-hover) 96%, transparent);
+  --map-label-border: rgba(148, 163, 184, 0.26);
+  --map-label-text: var(--text-primary);
+  --map-label-halo: color-mix(in srgb, var(--bg-app) 92%, transparent);
+  --map-filigrane: rgba(203, 213, 225, 0.5);
+  --map-rappel: rgba(148, 163, 184, 0.75);
+  --ombre-etiquette: rgb(0 0 0 / 0.5);
+
+  /* TONS D'ÉTAT — texte d'un statut posé sur un panneau ou une étiquette :
+     pastels sur fond nuit, nuances profondes sur fond clair (contraste ≥ 4,5). */
+  --tone-danger: #FCA5A5;
+  --tone-rouge: #EF4444;
+  --tone-ok: #4ADE80;
+  --tone-warn: #FCD34D;
+  --tone-amber: #F59E0B;
+  --tone-info: #7DD3FC;
+  --tone-or: #FFD875;
+  --tone-bleu: #90CAF9;
+  --tone-rose: #FF80AB;
+  --tone-sable: #E0C76A;
+  --tone-kaki: #C3D63A;
+  --rouge-action: #EF4A52;
+
+  /* Fond de l'écran de connexion. */
+  --login-a: color-mix(in srgb, var(--bg-app) 80%, #000);
+  --login-b: var(--bg-surface);
+  --login-c: var(--bg-app);
+
+  color-scheme: dark;
+}
+
+/* MODE CLAIR — commun aux quatre palettes (leurs surfaces sont plus bas). */
+:root[data-mode='light'] {
+  --bg-app: #F8FAFC;
+  --bg-surface: #FFFFFF;
+  --bg-panel: #FFFFFF;
+  --bg-card: #F1F5F9;
+  --bg-hover: #E2E8F0;
+
+  --border-default: #E2E8F0;
+  --border-strong: #CBD5E1;
+
+  --text-primary: #0F172A;
+  /* Nuance à peine plus soutenue que #64748B : 4,75:1 aussi sur les cartes. */
+  --text-secondary: #5E6E84;
+  --text-muted: #6B778A;
+
+  --primary: #2563EB;
+  --primary-hover: #1D4ED8;
+  --primary-soft: rgba(37, 99, 235, 0.1);
+  --primary-contrast: #FFFFFF;
+
+  /* Accent d'INTERFACE (souvent du texte) : ambre 700, 5:1 sur blanc. La
+     sélection sur la CARTE garde #D97706 (trait, voir HABILLAGE_THEME). */
+  --accent: #B45309;
+  --accent-hover: #92400E;
+  --accent-soft: rgba(217, 119, 6, 0.1);
+  --accent-border: rgba(217, 119, 6, 0.45);
+
+  --ombre-panneau: 0 6px 20px -6px rgb(15 23 42 / 0.16), 0 1px 3px rgb(15 23 42 / 0.08);
+  --shadow-popup: 0 12px 28px -8px rgb(15 23 42 / 0.22);
+  --voile-modal: rgb(15 23 42 / 0.35);
+
+  --map-label-bg: color-mix(in srgb, var(--bg-panel) 94%, transparent);
+  --map-label-bg-hover: var(--bg-panel);
+  --map-label-border: rgba(15, 23, 42, 0.16);
+  --map-label-text: var(--text-primary);
+  --map-label-halo: color-mix(in srgb, var(--bg-panel) 95%, transparent);
+  --map-filigrane: rgba(51, 65, 85, 0.5);
+  --map-rappel: rgba(71, 85, 105, 0.7);
+  --ombre-etiquette: rgb(15 23 42 / 0.18);
+
+  --tone-danger: #B91C1C;
+  --tone-rouge: #DC2626;
+  --tone-ok: #166534;
+  --tone-warn: #854D0E;
+  --tone-amber: #92400E;
+  --tone-info: #0369A1;
+  --tone-or: #92400E;
+  --tone-bleu: #1D4ED8;
+  --tone-rose: #BE185D;
+  --tone-sable: #854D0E;
+  --tone-kaki: #4D5B00;
+  --rouge-action: #DC2626;
+
+  --login-a: var(--bg-card);
+  --login-b: var(--bg-app);
+  --login-c: var(--bg-hover);
+
+  color-scheme: light;
+
+  /*
+   * L'INTERFACE A ÉTÉ ÉCRITE EN SOMBRE : deux mille emplois de `text-white`,
+   * `bg-white/5`, `border-white/10`, et de teintes pâles (`text-amber-300`)
+   * pensées pour un fond nuit. Plutôt que de réécrire chaque composant, le
+   * thème clair redéfinit ces couleurs à la source : « blanc » y devient
+   * l'encre du texte (un voile `white/5` devient un voile d'encre à 5 %, ce
+   * qui est exactement le bon effet sur fond clair), et les nuances pâles
+   * passent aux nuances foncées de la même teinte. Les nuances franches
+   * (500–600), celles des états et des boutons, ne bougent pas.
+   */
+  --color-white: #0F172A;
+  /* « Noir » des puits (champs, cases posées sur un panneau) : une ardoise
+     pâle — « black/40 » y devient un gris léger, et non un bloc gris moyen.
+     Les voiles plein écran ont leur propre règle, plus bas. */
+  --color-black: #CBD5E1;
+  --color-slate-100: oklch(27.9% 0.041 260.031); --color-slate-200: oklch(37.2% 0.044 257.287); --color-slate-300: oklch(44.6% 0.043 257.281);
+  --color-red-100: oklch(44.4% 0.177 26.899); --color-red-200: oklch(44.4% 0.177 26.899); --color-red-300: oklch(50.5% 0.213 27.518); --color-red-400: oklch(57.7% 0.245 27.325); --color-red-900: oklch(93.6% 0.032 17.717); --color-red-950: oklch(97.1% 0.013 17.38);
+  --color-rose-100: oklch(45.5% 0.188 13.697); --color-rose-200: oklch(45.5% 0.188 13.697); --color-rose-300: oklch(51.4% 0.222 16.935); --color-rose-400: oklch(58.6% 0.253 17.585); --color-rose-900: oklch(94.1% 0.03 12.58); --color-rose-950: oklch(96.9% 0.015 12.422);
+  --color-amber-100: oklch(47.3% 0.137 46.201); --color-amber-200: oklch(47.3% 0.137 46.201); --color-amber-300: oklch(55.5% 0.163 48.998); --color-amber-400: oklch(66.6% 0.179 58.318); --color-amber-900: oklch(96.2% 0.059 95.617); --color-amber-950: oklch(98.7% 0.022 95.277);
+  --color-yellow-100: oklch(47.6% 0.114 61.907); --color-yellow-200: oklch(47.6% 0.114 61.907); --color-yellow-300: oklch(55.4% 0.135 66.442); --color-yellow-400: oklch(68.1% 0.162 75.834); --color-yellow-900: oklch(97.3% 0.071 103.193); --color-yellow-950: oklch(98.7% 0.026 102.212);
+  --color-orange-100: oklch(47% 0.157 37.304); --color-orange-200: oklch(47% 0.157 37.304); --color-orange-300: oklch(55.3% 0.195 38.402); --color-orange-400: oklch(64.6% 0.222 41.116); --color-orange-900: oklch(95.4% 0.038 75.164); --color-orange-950: oklch(98% 0.016 73.684);
+  --color-emerald-100: oklch(43.2% 0.095 166.913); --color-emerald-200: oklch(43.2% 0.095 166.913); --color-emerald-300: oklch(50.8% 0.118 165.612); --color-emerald-400: oklch(59.6% 0.145 163.225); --color-emerald-900: oklch(95% 0.052 163.051); --color-emerald-950: oklch(97.9% 0.021 166.113);
+  --color-green-100: oklch(44.8% 0.119 151.328); --color-green-200: oklch(44.8% 0.119 151.328); --color-green-300: oklch(52.7% 0.154 150.069); --color-green-400: oklch(62.7% 0.194 149.214); --color-green-900: oklch(96.2% 0.044 156.743); --color-green-950: oklch(98.2% 0.018 155.826);
+  --color-sky-100: oklch(44.3% 0.11 240.79); --color-sky-200: oklch(44.3% 0.11 240.79); --color-sky-300: oklch(50% 0.134 242.749); --color-sky-400: oklch(58.8% 0.158 241.966); --color-sky-900: oklch(95.1% 0.026 236.824); --color-sky-950: oklch(97.7% 0.013 236.62);
+  --color-cyan-100: oklch(45% 0.085 224.283); --color-cyan-200: oklch(45% 0.085 224.283); --color-cyan-300: oklch(52% 0.105 223.128); --color-cyan-400: oklch(60.9% 0.126 221.723); --color-cyan-900: oklch(95.6% 0.045 203.388); --color-cyan-950: oklch(98.4% 0.019 200.873);
+  --color-blue-100: oklch(42.4% 0.199 265.638); --color-blue-200: oklch(42.4% 0.199 265.638); --color-blue-300: oklch(48.8% 0.243 264.376); --color-blue-400: oklch(54.6% 0.245 262.881); --color-blue-900: oklch(93.2% 0.032 255.585); --color-blue-950: oklch(97% 0.014 254.604);
+  --color-indigo-100: oklch(39.8% 0.195 277.366); --color-indigo-200: oklch(39.8% 0.195 277.366); --color-indigo-300: oklch(45.7% 0.24 277.023); --color-indigo-400: oklch(51.1% 0.262 276.966); --color-indigo-900: oklch(93% 0.034 272.788); --color-indigo-950: oklch(96.2% 0.018 272.314);
+  --color-violet-100: oklch(43.2% 0.232 292.759); --color-violet-200: oklch(43.2% 0.232 292.759); --color-violet-300: oklch(49.1% 0.27 292.581); --color-violet-400: oklch(54.1% 0.281 293.009); --color-violet-900: oklch(94.3% 0.029 294.588); --color-violet-950: oklch(96.9% 0.016 293.756);
+  --color-purple-100: oklch(43.8% 0.218 303.724); --color-purple-200: oklch(43.8% 0.218 303.724); --color-purple-300: oklch(49.6% 0.265 301.924); --color-purple-400: oklch(55.8% 0.288 302.321); --color-purple-900: oklch(94.6% 0.033 307.174); --color-purple-950: oklch(97.7% 0.014 308.299);
+  --color-teal-100: oklch(43.7% 0.078 188.216); --color-teal-200: oklch(43.7% 0.078 188.216); --color-teal-300: oklch(51.1% 0.096 186.391); --color-teal-400: oklch(60% 0.118 184.704); --color-teal-900: oklch(95.3% 0.051 180.801); --color-teal-950: oklch(98.4% 0.014 180.72);
+  --color-lime-100: oklch(45.3% 0.124 130.933); --color-lime-200: oklch(45.3% 0.124 130.933); --color-lime-300: oklch(53.2% 0.157 131.589); --color-lime-400: oklch(64.8% 0.2 131.684); --color-lime-900: oklch(96.7% 0.067 122.328); --color-lime-950: oklch(98.6% 0.031 120.757);
+  --color-pink-100: oklch(45.9% 0.187 3.815); --color-pink-200: oklch(45.9% 0.187 3.815); --color-pink-300: oklch(52.5% 0.223 3.958); --color-pink-400: oklch(59.2% 0.249 0.584); --color-pink-900: oklch(94.8% 0.028 342.258); --color-pink-950: oklch(97.1% 0.014 343.198);
+  --color-fuchsia-100: oklch(45.2% 0.211 324.591); --color-fuchsia-200: oklch(45.2% 0.211 324.591); --color-fuchsia-300: oklch(51.8% 0.253 323.949); --color-fuchsia-400: oklch(59.1% 0.293 322.896); --color-fuchsia-900: oklch(95.2% 0.037 318.852); --color-fuchsia-950: oklch(97.7% 0.017 320.058);
+}
+
+/*
+ * LES PALETTES. Chacune redéfinit surfaces, encres, bordures, interaction et
+ * sélection ; tout le reste (tons d'état, encres remappées du mode clair,
+ * étiquettes de carte, écran d'accès) découle de ces jetons ou du mode.
+ * Contrastes vérifiés par `npm run check:theme` (WCAG AA : texte, secondaire,
+ * atténué ≥ 4,5:1 sur panneau ET carte ; interaction et encre posée dessus).
+ */
+:root[data-palette='midnight'][data-mode='light'] {
+  --bg-app: #F4F7FB;
+  --bg-surface: #FFFFFF;
+  --bg-panel: #FFFFFF;
+  --bg-card: #EEF2F8;
+  --bg-hover: #E1E8F2;
+  --border-default: #DCE3EE;
+  --border-strong: #C5D0E0;
+  --text-primary: #0B1A33;
+  --text-secondary: #4F5F78;
+  --text-muted: #5F6E86;
+  --primary: #1D4ED8;
+  --primary-hover: #1E40AF;
+  --primary-soft: rgba(29, 78, 216, 0.1);
+  --primary-contrast: #FFFFFF;
+  --accent: #B45309;
+  --accent-hover: #92400E;
+  --accent-soft: rgba(217, 119, 6, 0.1);
+  --accent-border: rgba(217, 119, 6, 0.45);
+}
+
+:root[data-palette='graphite'][data-mode='dark'] {
+  --bg-app: #111113;
+  --bg-surface: #18181B;
+  --bg-panel: #1C1C20;
+  --bg-card: #26262B;
+  --bg-hover: #2F2F35;
+  --border-default: #34343B;
+  --border-strong: #45454E;
+  --text-primary: #F4F4F5;
+  --text-secondary: #A1A1AA;
+  --text-muted: #8E8E98;
+  --primary: #4F8CFF;
+  --primary-hover: #7AA8FF;
+  --primary-soft: rgba(79, 140, 255, 0.14);
+  --primary-contrast: #0B0B0D;
+  --accent: #FACC15;
+  --accent-hover: #FDE047;
+  --accent-soft: rgba(250, 204, 21, 0.13);
+  --accent-border: rgba(250, 204, 21, 0.48);
+}
+
+:root[data-palette='graphite'][data-mode='light'] {
+  --bg-app: #F6F6F7;
+  --bg-surface: #FFFFFF;
+  --bg-panel: #FFFFFF;
+  --bg-card: #F0F0F2;
+  --bg-hover: #E5E5E8;
+  --border-default: #E2E2E6;
+  --border-strong: #CDCDD3;
+  --text-primary: #18181B;
+  --text-secondary: #52525B;
+  --text-muted: #5F5F68;
+  --primary: #2563EB;
+  --primary-hover: #1D4ED8;
+  --primary-soft: rgba(37, 99, 235, 0.1);
+  --primary-contrast: #FFFFFF;
+  --accent: #A16207;
+  --accent-hover: #854D0E;
+  --accent-soft: rgba(202, 138, 4, 0.1);
+  --accent-border: rgba(202, 138, 4, 0.45);
+}
+
+:root[data-palette='arctic'][data-mode='dark'] {
+  --bg-app: #0E1A24;
+  --bg-surface: #13222E;
+  --bg-panel: #172937;
+  --bg-card: #1E3444;
+  --bg-hover: #264153;
+  --border-default: #284254;
+  --border-strong: #35546A;
+  --text-primary: #EAF4FB;
+  --text-secondary: #A3BCCE;
+  --text-muted: #8EA8BB;
+  --primary: #67C8F5;
+  --primary-hover: #9BDAF8;
+  --primary-soft: rgba(103, 200, 245, 0.14);
+  --primary-contrast: #0A1520;
+  --accent: #F2C14E;
+  --accent-hover: #F6D27F;
+  --accent-soft: rgba(242, 193, 78, 0.13);
+  --accent-border: rgba(242, 193, 78, 0.48);
+}
+
+:root[data-palette='arctic'][data-mode='light'] {
+  --bg-app: #F5F9FC;
+  --bg-surface: #FFFFFF;
+  --bg-panel: #FFFFFF;
+  --bg-card: #EDF4F9;
+  --bg-hover: #DFEAF3;
+  --border-default: #D8E4EE;
+  --border-strong: #BED0DF;
+  --text-primary: #0C2233;
+  --text-secondary: #4A6175;
+  --text-muted: #587087;
+  --primary: #0369A1;
+  --primary-hover: #075985;
+  --primary-soft: rgba(3, 105, 161, 0.1);
+  --primary-contrast: #FFFFFF;
+  --accent: #B45309;
+  --accent-hover: #92400E;
+  --accent-soft: rgba(217, 119, 6, 0.1);
+  --accent-border: rgba(217, 119, 6, 0.45);
+}
+
+:root[data-palette='forest'][data-mode='dark'] {
+  --bg-app: #0F1714;
+  --bg-surface: #141E1A;
+  --bg-panel: #18241F;
+  --bg-card: #1F2E28;
+  --bg-hover: #283A33;
+  --border-default: #2B3D35;
+  --border-strong: #3A5247;
+  --text-primary: #EEF4F0;
+  --text-secondary: #A3B5AB;
+  --text-muted: #8FA398;
+  --primary: #4ADE9B;
+  --primary-hover: #86EFBC;
+  --primary-soft: rgba(74, 222, 155, 0.13);
+  --primary-contrast: #06120D;
+  --accent: #F2C14E;
+  --accent-hover: #F6D27F;
+  --accent-soft: rgba(242, 193, 78, 0.13);
+  --accent-border: rgba(242, 193, 78, 0.48);
+}
+
+:root[data-palette='forest'][data-mode='light'] {
+  --bg-app: #F4F7F5;
+  --bg-surface: #FFFFFF;
+  --bg-panel: #FFFFFF;
+  --bg-card: #ECF2EE;
+  --bg-hover: #DEE8E2;
+  --border-default: #D7E2DB;
+  --border-strong: #BDCEC4;
+  --text-primary: #12211A;
+  --text-secondary: #4B6156;
+  --text-muted: #5A6F64;
+  --primary: #047857;
+  --primary-hover: #065F46;
+  --primary-soft: rgba(4, 120, 87, 0.1);
+  --primary-contrast: #FFFFFF;
+  --accent: #A16207;
+  --accent-hover: #854D0E;
+  --accent-soft: rgba(202, 138, 4, 0.1);
+  --accent-border: rgba(202, 138, 4, 0.45);
+}
+
+@theme inline {
+  --color-bg-app: var(--bg-app);
+  --color-bg-surface: var(--bg-surface);
+  --color-bg-panel: var(--bg-panel);
+  --color-bg-card: var(--bg-card);
+  --color-bg-hover: var(--bg-hover);
+
+  --color-gr-navy: var(--bg-panel);
+  --color-gr-deep: var(--bg-app);
+  --color-gr-surface: var(--bg-surface);
+  --color-gr-card: var(--bg-card);
+  --color-gr-hover: var(--bg-hover);
+
+  --color-gr-primary: var(--primary);
+  --color-gr-primary-hover: var(--primary-hover);
+  /* Encre posée SUR la couleur d'interaction : blanc en clair, nuit en sombre. */
+  --color-gr-primary-contrast: var(--primary-contrast);
+  --color-gr-gold: var(--accent);
+  --color-gr-gold-hover: var(--accent-hover);
+  --color-gr-red: var(--rouge-action);
+  --color-gr-green: #0f8a4f;
+  --color-gr-orange: #f59e0b;
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
+  --color-border-default: var(--border-default);
+  --color-border-strong: var(--border-strong);
+  --color-border-accent: var(--accent-border);
+
+  /* Le seul vrai blanc : pastilles et boutons pleins, quel que soit le thème. */
+  --color-blanc: #FFFFFF;
+
+  --shadow-panel: var(--ombre-panneau);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+}
+
+/* ------------------------------------------------------------------ */
+/* Menus déroulants natifs (select)                                   */
+/* ------------------------------------------------------------------ */
+
+select {
+  background-color: var(--bg-panel);
+  color-scheme: inherit;
+}
+
+/* Mode focus (voir GendarmerieMap) : l'habillage s'efface, la carte reste.
+   Masqué et non démonté — chaque panneau revient dans son état. */
+/* VOILES DE FENÊTRE MODALE en thème clair : un voile d'encre translucide,
+   et non l'ardoise pâle des puits (voir --color-black). */
+:root[data-mode='light'] :is(.fixed, .absolute).inset-0[class*='bg-black/'] {
+  background-color: var(--voile-modal);
+}
+
+[data-gr-focus] [data-gr-chrome] {
+  display: none !important;
+}
+
+/* Focus clavier : visible partout, dans la couleur d'interaction du thème. */
+:where(button, a, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Barres de défilement discrètes, accordées au thème. */
+* {
+  scrollbar-color: var(--border-strong) transparent;
+}
+
+select option,
+select optgroup {
+  background-color: var(--bg-panel);
+  color: var(--text-primary);
+}
+
+/* ------------------------------------------------------------------ */
+/* Leaflet — surcharges                                               */
+/* ------------------------------------------------------------------ */
+
+.leaflet-container {
+  background: var(--bg-app);
+  font-family: inherit;
+}
+
+/* Le panneau remplace le contrôle natif : on masque ce qu'il reste. */
+.leaflet-control-attribution {
+  background: color-mix(in srgb, var(--bg-surface) 82%, transparent) !important;
+  color: var(--text-muted) !important;
+  font-size: 10px;
+}
+
+.leaflet-control-attribution a {
+  color: var(--primary) !important;
+}
+
+.leaflet-control-scale-line {
+  border-color: var(--border-strong) !important;
+  background: color-mix(in srgb, var(--bg-surface) 82%, transparent) !important;
+  color: var(--text-secondary) !important;
+}
+
+/* Le dock de commandes occupe le coin inférieur droit. Les contrôles Leaflet
+   informatifs se rangent à sa gauche au lieu de passer dessous. */
+.leaflet-bottom.leaflet-right {
+  right: 58px;
+}
+
+@media (max-width: 1100px) {
+  .leaflet-bottom.leaflet-right {
+    right: 54px;
+  }
+}
+
+/* --- Marqueurs GPS (pins) --- */
+/* Le survol ne modifie que `filter` : aucun changement de boîte, donc aucun
+   décalage de mise en page ni tremblement du marqueur. */
+/* JAMAIS de transform sur un repère : Leaflet le positionne par transform sur
+   ce même élément, et le moindre décalage déplacerait la pointe hors de sa
+   coordonnée. Le retour de survol / sélection passe donc par `filter`. */
+.gr-pin {
+  transition: filter var(--duree) ease-out, opacity var(--duree) ease-out;
+}
+
+.gr-pin:hover {
+  filter: drop-shadow(0 0 1px var(--primary)) drop-shadow(0 0 1px var(--primary)) drop-shadow(0 3px 4px rgb(0 0 0 / 0.35));
+}
+
+.gr-pin-attenue {
+  opacity: 0.38 !important;
+  filter: saturate(0.85);
+}
+
+.gr-pin-attenue:hover {
+  opacity: 0.88 !important;
+  filter: saturate(1) brightness(1.1) drop-shadow(0 0 4px rgba(255, 255, 255, 0.45));
+}
+
+.gr-pin-mis-en-evidence {
+  opacity: 1 !important;
+  filter: drop-shadow(0 0 1.5px var(--accent)) drop-shadow(0 0 1.5px var(--accent)) drop-shadow(0 2px 4px rgb(0 0 0 / 0.3));
+}
+
+.gr-pin-mis-en-evidence:hover {
+  filter: drop-shadow(0 0 2px var(--accent)) drop-shadow(0 0 2px var(--accent)) drop-shadow(0 3px 5px rgb(0 0 0 / 0.35));
+}
+
+.leaflet-marker-icon:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Étiquettes territoriales (agrégats de barrages) — voir               */
+/* barrageClusterIcons.js et placementEtiquettes.js                     */
+/* ------------------------------------------------------------------ */
+/* Les tailles de police sont celles de `GABARIT_ETIQUETTES` : le calcul de
+   collision raisonne sur ces boîtes, elles ne doivent pas en différer. */
+.gr-cluster-divicon {
+  cursor: pointer;
+  transition: opacity 180ms ease-out;
+}
+
+.gr-cluster-tactique {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  box-sizing: border-box;
+  white-space: nowrap;
+  user-select: none;
+  border-radius: 5px;
+  background: var(--map-label-bg);
+  border: 1px solid var(--map-label-border);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.18);
+  color: var(--map-label-text);
+  animation: gr-etiquette-apparait 180ms ease-out;
+  transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.gr-cluster-pastille {
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+.gr-cluster-compagnie .gr-cluster-pastille {
+  width: 5px;
+  height: 5px;
+  background: var(--text-secondary);
+}
+
+.gr-cluster-nom {
+  font-weight: 650;
+  line-height: 1;
+  letter-spacing: -0.005em;
+}
+
+.gr-cluster-region .gr-cluster-nom { font-size: 11.5px; }
+.gr-cluster-compagnie .gr-cluster-nom { font-size: 10.5px; }
+.gr-cluster-brigade .gr-cluster-nom { font-size: 10px; }
+
+.gr-cluster-tactique.gr-cluster-selectionne {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent), 0 2px 6px rgb(0 0 0 / 0.25);
+}
+
+.gr-cluster-selectionne .gr-cluster-pastille {
+  background: var(--accent);
+}
+
+/* Les agrégats sont des portes d'entrée dans la hiérarchie : le survol le
+   dit, sans jamais déplacer l'ancrage géographique géré par Leaflet. */
+.gr-cluster-tactique:hover,
+.leaflet-marker-icon:focus-visible .gr-cluster-tactique {
+  background: var(--map-label-bg-hover);
+  border-color: var(--primary);
+}
+
+/* Faute de place, l'étiquette se replie en un point : l'agrégat reste visible
+   et cliquable, son nom revient au zoom suivant ou au survol (infobulle). */
+.gr-cluster-replie {
+  display: block;
+  width: 10px;
+  height: 10px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 2px solid var(--map-label-halo);
+  box-shadow: 0 0 0 1px var(--map-label-border);
+}
+
+.gr-cluster-replie.gr-cluster-selectionne {
+  background: var(--accent);
+}
+
+/* Point d'ancrage d'une étiquette renvoyée hors de son entité. */
+.gr-etiquette-ancre {
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--map-rappel);
+}
+
+/* Nom de région en filigrane (zooms 7–8) : lu, jamais cliqué. */
+.gr-filigrane {
+  pointer-events: none !important;
+  transition: opacity 180ms ease-out;
+}
+
+.gr-filigrane span {
+  display: block;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 14px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-align: center;
+  color: var(--map-filigrane);
+  text-shadow: 0 0 2px var(--map-label-halo), 0 0 4px var(--map-label-halo);
+  animation: gr-etiquette-apparait 220ms ease-out;
+}
+
+@keyframes gr-etiquette-apparait {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Animations réduites (réglage du compte ou du poste — data-mouvement). */
+:root[data-mouvement="reduit"] .gr-pin {
+  transition: none;
+}
+
+:root[data-mouvement="reduit"] .gr-cluster-tactique,
+:root[data-mouvement="reduit"] .gr-filigrane span {
+  transition: none !important;
+  animation: none !important;
+}
+
+/* --- Pose d'un marquage : le curseur annonce que le clic va créer --- */
+.gr-armed .leaflet-container,
+.gr-armed .leaflet-interactive {
+  cursor: crosshair;
+}
+
+/* Un repère déplaçable se signale au survol : la main précède le glissement. */
+.leaflet-marker-draggable {
+  cursor: grab;
+}
+
+.leaflet-marker-draggable:active {
+  cursor: grabbing;
+}
+
+/* --- Infobulles de libellé (le fond de carte n'a aucun nom) --- */
+.leaflet-tooltip.gr-label {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  color: var(--map-label-text);
+  font-size: 12px;
+  font-weight: 700;
+  text-shadow:
+    0 0 2px var(--map-label-halo),
+    0 0 3px var(--map-label-halo),
+    0 0 5px var(--map-label-halo);
+}
+
+.leaflet-tooltip.gr-label::before {
+  display: none; /* pas de flèche pour un libellé */
+}
+
+/* --- Infobulles standard --- */
+.leaflet-tooltip:not(.gr-label) {
+  border: 1px solid var(--border-default);
+  border-radius: 6px;
+  background: var(--bg-panel);
+  box-shadow: var(--shadow-popup);
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.leaflet-tooltip-top:not(.gr-label)::before {
+  border-top-color: var(--border-default);
+}
+
+/* --- Popups tactiques unifiés --- */
+.leaflet-popup-content-wrapper {
+  border-radius: 14px;
+  background: var(--bg-panel) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-default);
+  box-shadow: var(--shadow-popup);
+}
+
+.leaflet-popup-tip {
+  background: var(--bg-panel) !important;
+  border: 1px solid var(--border-default);
+  box-shadow: none;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+  top: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font: 18px/24px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  transition: all 150ms ease;
+  padding: 0;
+}
+
+.leaflet-container a.leaflet-popup-close-button:hover {
+  color: var(--text-primary);
+  background: var(--bg-hover);
+}
+
+.leaflet-popup-content {
+  margin: 14px 16px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+/* Contenu de popup : injecté en HTML dans Leaflet, hors arbre React. */
+.gr-popup h4 {
+  margin: 0 0 8px;
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.gr-popup .gr-ar {
+  direction: rtl;
+  text-align: right;
+}
+
+.gr-tbl {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.gr-tbl td {
+  padding: 3px 6px 3px 0;
+  vertical-align: top;
+}
+
+.gr-tbl td:first-child {
+  color: var(--text-secondary);
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.gr-tbl td:last-child {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/** Bouton « Vue aérienne » dans le popup d'un marquage — voir Modal3D.jsx. */
+.gr-popup-3d {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  margin-top: 10px;
+  padding: 7px 10px;
+  border: 1px solid rgba(200, 163, 73, 0.35);
+  border-radius: 8px;
+  background: rgba(200, 163, 73, 0.12);
+  color: var(--color-gr-gold, #c8a349);
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 150ms ease;
+}
+
+.gr-popup-3d:hover {
+  background: rgba(200, 163, 73, 0.22);
+  border-color: rgba(200, 163, 73, 0.6);
+  color: var(--tone-or);
+}
+
+/* Commandes « Modifier » / « Déplacer » / « Supprimer » dans la bulle d'un repère */
+.gr-popup-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.gr-popup-act {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 34px;
+  padding: 6px 10px;
+  border: 1px solid color-mix(in srgb, var(--text-primary) 12%, transparent);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--text-primary) 6%, transparent);
+  color: var(--text-primary);
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 150ms ease;
+}
+
+.gr-popup-act:hover {
+  background: color-mix(in srgb, var(--text-primary) 12%, transparent);
+  border-color: rgba(200, 163, 73, 0.45);
+  color: var(--text-primary);
+}
+
+/* « Traiter » : les trois gestes sur un barrage, en colonne sous les commandes. */
+.gr-popup-traiter-menu {
+  display: grid;
+  gap: 6px;
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid color-mix(in srgb, var(--text-primary) 10%, transparent);
+}
+
+.gr-popup-traiter-menu .gr-popup-act {
+  justify-content: flex-start;
+}
+
+.gr-popup-traiter-menu .gr-popup-act:disabled {
+  cursor: not-allowed;
+}
+
+/* Second clic : le bouton devient rouge et demande confirmation. */
+.gr-popup-act-danger,
+.gr-popup-act-danger:hover {
+  background: rgb(214 40 40 / 0.85);
+  border-color: rgb(214 40 40);
+  color: var(--text-primary);
+}
+
+.gr-popup-act:disabled,
+.gr-popup-act:disabled:hover {
+  opacity: 0.55;
+  cursor: progress;
+  background: color-mix(in srgb, var(--text-primary) 4%, transparent);
+  border-color: color-mix(in srgb, var(--text-primary) 8%, transparent);
+  color: color-mix(in srgb, var(--text-primary) 40%, transparent);
+}
+
+.gr-popup-act-danger:disabled,
+.gr-popup-act-danger:disabled:hover {
+  background: rgb(214 40 40 / 0.5);
+  border-color: rgb(214 40 40 / 0.5);
+  color: color-mix(in srgb, var(--text-primary) 50%, transparent);
+}
+
+/* ------------------------------------------------------------------ */
+/* Impression du panneau Analyse — rapport de synthèse pour le chef    */
+/* ------------------------------------------------------------------ */
+
+/*
+ * Le rapport imprimable (`RapportImpression` dans AnalysisPanel.jsx) est un
+ * document séparé de l'écran — fond clair, typographie de lecture, texte
+ * rédigé — pas le panneau sombre recopié tel quel : à l'écran il vaut la
+ * densité d'information, sur papier ou en PDF il faut du texte qu'on peut
+ * réellement lire et faire lire à un supérieur. Il reste dans le DOM en
+ * permanence (`hidden`, via Tailwind) et n'apparaît qu'à l'impression.
+ *
+ * Astuce classique pour n'imprimer QUE lui : tout masquer, puis rendre
+ * visible uniquement le rapport et ses descendants, sortis du flux fixe de
+ * l'appli pour occuper toute la page.
+ */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .gr-rapport-impression,
+  .gr-rapport-impression * {
+    visibility: visible;
+  }
+
+  /*
+   * `fixed`, pas `absolute` : le rapport est posé au fond d'un `<aside>`
+   * lui-même dans une pile de conteneurs flex/positionnés (les panneaux de
+   * la carte) — `absolute` s'alignerait sur le premier ancêtre positionné
+   * rencontré et resterait coincé dans sa largeur de panneau. `fixed`
+   * s'aligne toujours sur la page entière, quel que soit l'ancêtre.
+   */
+  .gr-rapport-impression {
+    display: block !important;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+    background: #fff;
+    color: #14181f;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}
+
+/*
+ * LA PLACE QUE PREND LE BANDEAU DE MODE, ET QUI LA CÈDE.
+ *
+ * Le bandeau « VERSION DE DÉMONSTRATION » est posé en portail, en haut au
+ * centre, au-dessus de tout (voir src/BandeauMode.jsx). La barre de recherche
+ * de la carte occupe EXACTEMENT le même endroit — `left-1/2 top-3` — et les
+ * colonnes de panneaux commencent à la même hauteur. En démonstration, le
+ * bandeau recouvrait donc la recherche : elle était là, utilisable au clavier,
+ * mais invisible.
+ *
+ * Deux corrections étaient possibles. Déplacer le bandeau ailleurs : refusé, un
+ * avertissement de mode se met en haut, c'est là qu'on le lit. Réserver la
+ * bande qu'il occupe : retenu.
+ *
+ * `--gr-bandeau` porte cette hauteur. Elle vaut zéro en production — où aucun
+ * bandeau n'existe et où rien ne doit bouger — et la hauteur réelle du bandeau
+ * en démonstration. `BandeauMode` marque la racine du document ; tout ce qui
+ * se pose en haut de la carte s'en décale, par `.gr-haut`.
+ *
+ * 32px : le bandeau mesure environ 33px (6px de marge, 6+6 de rembourrage,
+ * ~14 de texte, 1 de liseré bas). La recherche descend donc de 12px à 44px, ce
+ * qui laisse un jour visible sous le bandeau au lieu de l'y coller.
+ */
+:root {
+  --gr-bandeau: 0px;
+}
+
+:root[data-bandeau='demo'] {
+  --gr-bandeau: 32px;
+}
+
+/*
+ * Tout ce qui se range en haut de la carte : recherche, colonnes de boutons,
+ * colonnes de panneaux. Une seule règle, pour qu'aucun de ces éléments ne
+ * puisse se retrouver seul sous le bandeau.
+ */
+.gr-haut {
+  top: calc(0.75rem + var(--gr-bandeau));
+}
+
+/*
+ * MARQUEUR « ? » DES BARRAGES SIGNALÉS — panneau Optimisation.
+ *
+ * Il bat lentement, comme un voyant d'alerte. Le mouvement n'est pas
+ * décoratif : sur une carte qui porte plus de mille repères immobiles, un
+ * point qui bouge est le seul qui se remarque sans qu'on le cherche.
+ *
+ * Le rythme reste lent (1,6 s) et l'amplitude faible : un clignotement rapide
+ * fatigue et finit par être ignoré, ce qui produirait l'inverse du but.
+ */
+.gr-interro {
+  /*
+   * LA TAILLE VIENT DE LA CARTE, PAS D'ICI.
+   *
+   * Elle valait 30px en dur, et le marqueur ne rétrécissait donc jamais : sur
+   * une vue du pays, cinquante-huit disques de 30px se recouvraient alors que
+   * les postes, eux, sont bien distincts. La carte connaît le zoom (voir
+   * `echelleDecision` dans GendarmerieMap.jsx) ; elle pose la valeur, et tout
+   * ce qui est dessiné dedans en découle.
+   *
+   * `--gr-taille` porte donc le côté, et le glyphe se dimensionne en `em` :
+   * une seule valeur à régler, aucune proportion à maintenir à la main. Le
+   * repli à 30px garde le marqueur correct si la valeur n'est pas fournie.
+   */
+  --gr-taille: 30px;
+  display: grid;
+  place-items: center;
+  width: var(--gr-taille);
+  height: var(--gr-taille);
+  border-radius: 9999px;
+  border: 2px solid #fff;
+  background: #d62828;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  font-size: calc(var(--gr-taille) * 0.567);
+  font-weight: 800;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 rgb(214 40 40 / 0.55);
+  animation: gr-battement 1.6s ease-in-out infinite;
+}
+
+.gr-interro:hover {
+  background: #b81f1f;
+}
+
+@keyframes gr-battement {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgb(214 40 40 / 0.55);
+  }
+  50% {
+    transform: scale(1.22);
+    box-shadow: 0 0 0 10px rgb(214 40 40 / 0);
+  }
+}
+
+/*
+ * Respect du réglage « animations réduites » du système : le battement
+ * disparaît, le marqueur reste parfaitement visible et cliquable.
+ */
+/* Animations réduites (réglage du compte ou du poste — data-mouvement). */
+:root[data-mouvement="reduit"] .gr-interro {
+  animation: none;
+}
+
+/*
+ * MARQUEUR « CADENAS » DES BARRAGES EXCLUS DE L'OPTIMISATION.
+ *
+ * TOUT L'OPPOSÉ DU « ? », ET C'EST VOULU.
+ *
+ * Le « ? » est un disque ROUGE qui bat : il réclame une décision. Celui-ci est
+ * un CARRÉ BLEU immobile, au tracé de cadenas. Deux marqueurs qui appellent
+ * l'œil avec la même force sur la même carte, et le chef ne saurait plus
+ * lesquels sont ses vrais dossiers.
+ *
+ * Le bleu (#1565c0, celui des compagnies dans la palette) plutôt qu'un gris
+ * ardoise : sur ce fond presque noir, un gris se lisait comme un repère éteint,
+ * une donnée absente. Un bleu franc dit « autre catégorie », pas « défaillant ».
+ *
+ * QUATRE DIFFÉRENCES, PAS UNE. La couleur seule ne suffit jamais — écran mal
+ * calibré, daltonisme, impression en noir et blanc :
+ *   la FORME       carré à coins arrondis contre disque ;
+ *   le GLYPHE      un cadenas contre un point d'interrogation ;
+ *   le MOUVEMENT   immobile contre battement lent ;
+ *   l'ENTOURAGE    aucun cercle d'emprise autour de lui.
+ */
+.gr-exclu {
+  /* Même mécanique que `.gr-interro` : la carte pose la taille selon le zoom. */
+  --gr-taille: 30px;
+  display: grid;
+  place-items: center;
+  width: var(--gr-taille);
+  height: var(--gr-taille);
+  /* Carré à coins arrondis : la silhouette se distingue du disque rouge même
+     réduite à quelques pixels, une fois dézoomé. */
+  border-radius: 8px;
+  border: 2px solid rgb(255 255 255 / 0.9);
+  background: #1565c0;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.5);
+}
+
+.gr-exclu svg {
+  width: calc(var(--gr-taille) * 0.6);
+  height: calc(var(--gr-taille) * 0.6);
+}
+
+.gr-exclu:hover {
+  background: #0d47a1;
+}
+
+/*
+ * EXCLU POUR ACCIDENTS — l'étoile de choc, en rose.
+ *
+ * Ni un cadenas de plus, ni une couleur inventée : c'est le signe et la teinte
+ * du POINT NOIR (voir GLYPHS.accident et COULEURS_MARQUAGE.accident), déjà
+ * employés partout ailleurs dans l'application pour dire « accidents ». Rien de
+ * nouveau à apprendre — on reconnaît le motif de l'exclusion sans cliquer.
+ *
+ * Rose et non rouge : le rouge est pris par le « ? » qui réclame une décision,
+ * et ces deux marqueurs ne doivent jamais se confondre. La forme carrée et
+ * l'immobilité les séparent déjà ; la teinte le confirme.
+ */
+.gr-exclu-accident {
+  background: #ff4081;
+}
+
+.gr-exclu-accident:hover {
+  background: #f50057;
+}
+
+.gr-exclu-accident svg {
+  /* Proportion propre a ce trace (20px sur 30), exprimee sur la taille
+     posee par la carte — voir `.gr-interro`. */
+  width: calc(var(--gr-taille) * 0.667);
+  height: calc(var(--gr-taille) * 0.667);
+}
+
+/*
+ * EXCLU CAR POSTE DE MISSION — le viseur, en violet.
+ *
+ * Même violet que le badge « VIP » (.gr-badge-vip) et même tracé que la couche
+ * des missions : le marqueur d'exclusion et le badge qui l'accompagne parlent
+ * ainsi d'une seule voix.
+ */
+.gr-exclu-vip {
+  background: #7b2ff7;
+}
+
+.gr-exclu-vip:hover {
+  background: #6621d6;
+}
+
+.gr-exclu-vip svg {
+  /* Proportion propre a ce trace (19px sur 30), exprimee sur la taille
+     posee par la carte — voir `.gr-interro`. */
+  width: calc(var(--gr-taille) * 0.633);
+  height: calc(var(--gr-taille) * 0.633);
+}
+
+/*
+ * EXCLU CAR AXE NON ÉCLAIRÉ — le croissant, en jaune sourd.
+ *
+ * La teinte du badge de nuit (.gr-badge-nuit) : sourde, jamais l'or vif de la
+ * charte, qui appartient à l'interface et non aux données. Le croissant est
+ * PLEIN là où les autres glyphes sont au trait — une silhouette pleine reste
+ * lisible à 30 px, un fin croissant au trait disparaîtrait.
+ */
+.gr-exclu-nuit {
+  background: #8a6d1f;
+}
+
+.gr-exclu-nuit:hover {
+  background: #6d5518;
+}
+
+.gr-exclu-nuit svg {
+  /* Proportion propre a ce trace (17px sur 30), exprimee sur la taille
+     posee par la carte — voir `.gr-interro`. */
+  width: calc(var(--gr-taille) * 0.567);
+  height: calc(var(--gr-taille) * 0.567);
+}
+
+/**
+ * Bandeau « BARRAGE FIXE INTOUCHABLE » — kaki, comme son marqueur.
+ *
+ * Deux lignes : le titre en capitales, puis ce que la protection couvre. La
+ * seconde ligne est en petit et sans gras — c'est une précision qu'on lit si
+ * on la cherche, pas un avertissement qui doit crier.
+ */
+.gr-popup-intouchable {
+  margin: 0 0 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-left: 3px solid #607000;
+  border-radius: 4px;
+  background: rgb(96 112 0 / 0.18);
+  padding: 5px 8px;
+  color: var(--tone-kaki);
+}
+
+.gr-popup-intouchable b {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.gr-popup-intouchable span {
+  font-size: 10px;
+  line-height: 1.35;
+  color: rgb(255 255 255 / 0.62);
+}
+
+/* Bandeau de la bulle d'un poste exclu — même bleu que son marqueur. */
+.gr-popup-exclu {
+  margin: 0 0 6px;
+  border-radius: 6px;
+  background: rgb(21 101 192 / 0.22);
+  padding: 4px 7px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--tone-bleu);
+}
+
+/* Bandeaux de bulle : chacun suit la couleur du marqueur qui l'ouvre. */
+.gr-popup-exclu-accident {
+  background: rgb(255 64 129 / 0.18);
+  color: var(--tone-rose);
+}
+
+.gr-popup-exclu-vip {
+  background: rgb(123 47 247 / 0.2);
+  color: #c4a2ff;
+}
+
+.gr-popup-exclu-nuit {
+  background: rgb(138 109 31 / 0.24);
+  color: var(--tone-sable);
+}
+
+.gr-popup-note {
+  margin: 6px 0 0;
+  font-size: 10px;
+  line-height: 1.35;
+  color: var(--text-muted);
+}
+
+/*
+ * BADGES DE CARACTÉRISTIQUES — ce que le poste EST.
+ *
+ * Une rangée posée AU-DESSUS du point, jamais dessus : elle complète le repère
+ * de décision (« ? », « ✗ », « ✓ »), elle ne le recouvre pas. Le marqueur
+ * Leaflet est ancré au point exact ; c'est cette translation qui remonte la
+ * rangée et la centre, ce qui permet à sa largeur de varier librement selon le
+ * nombre de badges — un `iconSize` fixe l'aurait figée.
+ *
+ * `pointer-events: none` : ces badges informent, ils ne se cliquent pas. Sans
+ * cela ils voleraient le clic destiné au repère qu'ils surmontent.
+ */
+.gr-badges {
+  position: absolute;
+  display: flex;
+  gap: 3px;
+  /*
+   * −40 px, et le chiffre n'est pas décoratif. La rangée mesure 19 px de haut
+   * (15 de ligne + 2 de marge intérieure + 2 de bordure) : son bas se pose donc
+   * 21 px au-dessus du point. Un repère de décision fait 30 px centrés sur ce
+   * point, donc monte à 15 px — il reste 6 px d'air.
+   *
+   * À −32 px, le dégagement n'était que de 13 px : la rangée mordait sur le
+   * haut du « ? » qu'elle est censée compléter.
+   */
+  transform: translate(-50%, -40px);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.gr-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 1px 5px;
+  border-radius: 9999px;
+  border: 1px solid rgb(255 255 255 / 0.85);
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  font-size: 9.5px;
+  font-weight: 800;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 1px rgb(0 0 0 / 0.35);
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.45);
+}
+
+/* Le compteur d'accidents, collé au « A » : le badge dit qu'il y a un
+   problème, le nombre dit son ampleur. */
+.gr-badge i {
+  font-style: normal;
+  font-weight: 700;
+  opacity: 0.85;
+}
+
+.gr-badge-accident {
+  background: #d62828;
+}
+
+.gr-badge-vip {
+  background: #7b2ff7;
+}
+
+/* Jaune sourd : l'absence d'éclairage se lit la nuit, la teinte l'évoque —
+   sans virer au jaune vif, déjà pris par l'or de la charte. */
+.gr-badge-nuit {
+  background: #8a6d1f;
+}
+
+.gr-badge-ville {
+  background: #0b6e8a;
+}
+
+/*
+ * REPÈRES DE DÉCISION — « ✗ » retrait proposé, « ✓ » poste maintenu.
+ *
+ * Ils ne battent pas, contrairement au « ? » : ce qui pulse sur cette carte
+ * doit être exactement ce qui attend une décision de celui qui la regarde.
+ * Ici la décision est prise ; elle attend le commandant, dans sa notification,
+ * pas un clic de plus sur la carte.
+ *
+ * FORME ET COULEUR, JAMAIS LA COULEUR SEULE. Une croix et une coche se
+ * distinguent au premier coup d'œil même sur un écran mal réglé, même pour un
+ * œil qui confond le rouge et le vert — ce qui, dans une salle d'opérations,
+ * n'a rien d'une hypothèse d'école.
+ */
+.gr-decision {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 9999px;
+  border: 2px solid #fff;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 2px 7px rgb(0 0 0 / 0.45);
+}
+
+/* Ambre, et non rouge : le rouge dit « problème non traité », or celui-ci
+   l'est — il attend seulement une validation. */
+.gr-decision-retrait {
+  background: #b45309;
+}
+
+.gr-decision-retrait:hover {
+  background: #92400e;
+}
+
+.gr-decision-maintien {
+  background: var(--color-gr-green, #0f8a4f);
+}
+
+.gr-decision-maintien:hover {
+  background: #0c6f3f;
+}
+
+/*
+ * REPÈRE VISÉ depuis une notification — « c'est celui-ci ».
+ *
+ * Le panneau se referme derrière le clic et la carte reprend tout l'écran :
+ * sans ce halo, l'utilisateur se retrouverait devant une carte cadrée sur un
+ * point qu'il lui resterait à identifier au milieu des autres.
+ *
+ * Il bat un temps puis s'éteint (six secondes, gérées côté React) : un signal
+ * permanent finirait par se confondre avec le repère lui-même.
+ */
+.gr-decision-vise {
+  animation: gr-vise 1.1s ease-out infinite;
+}
+
+@keyframes gr-vise {
+  0% {
+    box-shadow:
+      0 2px 7px rgb(0 0 0 / 0.45),
+      0 0 0 0 rgb(255 255 255 / 0.85);
+  }
+  100% {
+    box-shadow:
+      0 2px 7px rgb(0 0 0 / 0.45),
+      0 0 0 16px rgb(255 255 255 / 0);
+  }
+}
+
+/* Animations réduites (réglage du compte ou du poste — data-mouvement). */
+:root[data-mouvement="reduit"] .gr-decision-vise {
+  animation: none;
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+/*
+ * NOUVEAU BARRAGE POSÉ SUR LE TERRAIN — le seul repère qui bat avec le « ? ».
+ *
+ * Un poste vient d'apparaître dans le dispositif et le commandement ne l'a pas
+ * encore regardé : c'est une information neuve, et elle doit se voir sans
+ * qu'on la cherche. Le battement cesse dès que la notification est traitée.
+ */
+.gr-nouveau {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 9999px;
+  border: 2px solid #fff;
+  background: var(--color-gr-gold, #c8a349);
+  color: #0b1220;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 rgb(200 163 73 / 0.6);
+  animation: gr-battement-doux 2.2s ease-in-out infinite;
+}
+
+/* Déplacement demandé, pas encore validé : même repère, bord en tirets. */
+.gr-nouveau-attente {
+  border-style: dashed;
+}
+
+@keyframes gr-battement-doux {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgb(200 163 73 / 0.6);
+  }
+  50% {
+    transform: scale(1.14);
+    box-shadow: 0 0 0 9px rgb(200 163 73 / 0);
+  }
+}
+
+/* Animations réduites (réglage du compte ou du poste — data-mouvement). */
+:root[data-mouvement="reduit"] .gr-nouveau {
+  animation: none;
+}
+
+/* ------------------------------------------------------------------ */
+/* Effectif d'un poste, dans la popup du barrage — voir EffectifDuPoste */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Fond légèrement teinté et filet supérieur : le bloc se détache du tableau
+ * de la fiche sans introduire de couleur nouvelle. Ce n'est pas une autre
+ * fiche, c'est la suite de la même.
+ */
+.gr-popup-eff {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid color-mix(in srgb, var(--text-primary) 10%, transparent);
+}
+
+.gr-popup-eff-titre {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0 0 5px;
+  color: color-mix(in srgb, var(--text-primary) 65%, transparent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Présents sur attendus : le manque doit se voir sans compter les lignes. */
+.gr-popup-eff-compte {
+  flex: none;
+  border-radius: 4px;
+  padding: 1px 6px;
+  background: rgba(200, 163, 73, 0.18);
+  border: 1px solid rgba(200, 163, 73, 0.35);
+  color: var(--tone-or);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+  font-weight: 700;
+}
+
+.gr-popup-eff-compte.est-complet {
+  background: rgba(31, 190, 110, 0.2);
+  border-color: rgba(31, 190, 110, 0.45);
+  color: #4ade80;
+}
+
+.gr-popup-eff-liste {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-height: 168px;
+  overflow-y: auto;
+}
+
+.gr-popup-eff-liste li {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 3px 0;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.gr-popup-eff-liste li + li {
+  border-top: 1px solid color-mix(in srgb, var(--text-primary) 6%, transparent);
+}
+
+.gr-popup-eff-liste b {
+  flex: none;
+  width: 38px;
+  color: var(--tone-or);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.gr-popup-eff-liste span {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--text-primary);
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gr-popup-eff-liste em {
+  flex: none;
+  color: color-mix(in srgb, var(--text-primary) 45%, transparent);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  font-style: normal;
+  font-variant-numeric: tabular-nums;
+}
+
+.gr-popup-eff-etat {
+  margin: 0;
+  color: color-mix(in srgb, var(--text-primary) 55%, transparent);
+  font-size: 11px;
+}
+
+/* ------------------------------------------------------------------ */
+/* « JE SUIS ICI » — le poste que l'on vient de désigner               */
+/* Voir CibleLayer dans GendarmerieMap.jsx                             */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Posé à la position exacte du repère, SANS repère : c'est une décoration,
+ * pas un second marqueur. Le conteneur a une taille nulle et tout est centré
+ * sur son point d'ancrage — les cercles restent donc alignés sur l'épingle
+ * quel que soit le zoom, sans calcul de décalage.
+ */
+.gr-ici {
+  position: relative;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.gr-ici > span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 9999px;
+}
+
+/**
+ * L'ANNEAU CALME — l'état « sélectionné », tant qu'on travaille sur ce poste.
+ *
+ * Deux traits, clair sur sombre : sur un fond de carte satellite comme sur le
+ * fond neutre des tuiles manquantes, l'un des deux ressort toujours. Un seul
+ * anneau doré disparaîtrait sur un désert, un seul anneau blanc sur une ville.
+ */
+.gr-ici-anneau {
+  width: 34px;
+  height: 34px;
+  border: 2px solid var(--color-gr-gold, #bf953f);
+  box-shadow:
+    0 0 0 1.5px rgb(0 0 0 / 0.55),
+    0 0 12px rgb(191 149 63 / 0.55);
+}
+
+/**
+ * LES ONDES — deux cercles qui s'écartent, décalés d'une demi-période.
+ *
+ * Deux et non un : une onde isolée se lit comme un clignotement, deux se
+ * lisent comme un point d'origine. C'est le point d'origine qu'on veut
+ * montrer. Elles ne tournent que le temps de l'annonce (2,6 s, coupées côté
+ * React) ; au-delà, seul l'anneau reste.
+ */
+.gr-ici-onde {
+  width: 34px;
+  height: 34px;
+  border: 2px solid rgb(255 255 255 / 0.9);
+  opacity: 0;
+}
+
+.gr-ici-actif .gr-ici-onde {
+  animation: gr-ici-onde 1.3s cubic-bezier(0.2, 0.6, 0.35, 1) 2;
+}
+
+.gr-ici-actif .gr-ici-onde-b {
+  animation-delay: 0.65s;
+}
+
+@keyframes gr-ici-onde {
+  0% {
+    width: 26px;
+    height: 26px;
+    opacity: 0.85;
+  }
+  100% {
+    width: 120px;
+    height: 120px;
+    opacity: 0;
+  }
+}
+
+/* L'anneau se pose : il grandit une fois depuis le point, puis ne bouge plus. */
+.gr-ici-actif .gr-ici-anneau {
+  animation: gr-ici-pose 0.45s cubic-bezier(0.2, 1.2, 0.4, 1);
+}
+
+@keyframes gr-ici-pose {
+  0% {
+    width: 8px;
+    height: 8px;
+    opacity: 0;
+  }
+  100% {
+    width: 34px;
+    height: 34px;
+    opacity: 1;
+  }
+}
+
+/**
+ * L'ÉTIQUETTE — le nom du poste, le temps de l'annonce seulement.
+ *
+ * Sous le repère et non au-dessus : au-dessus, elle recouvrirait la bulle qui
+ * s'ouvre au clic, et c'est cette bulle qui porte l'information utile.
+ * `white-space: nowrap` avec une largeur maximale : un nom long se coupe
+ * plutôt que d'étaler une banderole en travers de la carte.
+ */
+.gr-ici-etiquette {
+  top: 26px;
+  max-width: 190px;
+  overflow: hidden;
+  border-radius: 7px;
+  border: 1px solid rgb(191 149 63 / 0.5);
+  background: var(--map-label-bg);
+  padding: 3px 8px;
+  color: var(--map-label-text);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  box-shadow: 0 3px 10px var(--ombre-etiquette);
+  animation: gr-ici-etiquette 0.35s ease-out;
+}
+
+@keyframes gr-ici-etiquette {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(0);
+  }
+}
+
+/**
+ * Sans animation, le signal doit rester ENTIER : c'est une aide à
+ * l'orientation, pas une décoration. L'anneau et l'étiquette restent, seul
+ * le mouvement disparaît.
+ */
+/* Animations réduites (réglage du compte ou du poste — data-mouvement). */
+:root[data-mouvement="reduit"] .gr-ici-actif .gr-ici-onde,
+:root[data-mouvement="reduit"] .gr-ici-actif .gr-ici-anneau,
+:root[data-mouvement="reduit"] .gr-ici-etiquette {
+  animation: none;
+}
+
+:root[data-mouvement="reduit"] .gr-ici-actif .gr-ici-onde {
+  width: 62px;
+  height: 62px;
+  opacity: 0.35;
+}
+
+/* La brigade qui tient le poste — voir EffectifDuPoste. */
+.gr-popup-eff-bt {
+  margin: -2px 0 6px;
+  color: color-mix(in srgb, var(--text-primary) 50%, transparent);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/**
+ * « Modifier l'effectif »
+ */
+.gr-popup-eff-modifier {
+  display: block;
+  width: 100%;
+  margin-top: 7px;
+  border: 1px solid color-mix(in srgb, var(--text-primary) 12%, transparent);
+  border-radius: 7px;
+  padding: 6px 8px;
+  background: color-mix(in srgb, var(--text-primary) 6%, transparent);
+  color: var(--text-primary);
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 150ms;
+}
+
+.gr-popup-eff-modifier:hover {
+  background: color-mix(in srgb, var(--text-primary) 12%, transparent);
+  border-color: rgba(200, 163, 73, 0.4);
+  color: var(--text-primary);
+}
+
+/* Animations réduites (réglage du compte ou du poste — data-mouvement). */
+:root[data-mouvement="reduit"] .gr-popup-eff-modifier {
+  transition: none;
+}
+
+/**
+ * Le bloc effectif EN TÊTE de la bulle d'un barrage.
+ */
+.gr-popup-eff-haut {
+  margin-top: 0;
+  margin-bottom: 8px;
+  padding-top: 0;
+  padding-bottom: 8px;
+  border-top: 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--text-primary) 10%, transparent);
+}
+
+/* Le décompte en toutes lettres */
+.gr-popup-eff-total {
+  margin: 6px 0 0;
+  color: color-mix(in srgb, var(--text-primary) 55%, transparent);
+  font-size: 11px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/**
+ * POURQUOI IL N'Y A PAS DE RÈGLE DE Z-INDEX ICI.
+ *
+ * On est tenté de remonter `.leaflet-popup-pane` au-dessus de la barre de
+ * recherche. Cela ne peut pas fonctionner, et l'avoir essayé mérite d'être
+ * écrit : Leaflet applique un `transform: translate3d(...)` sur
+ * `.leaflet-map-pane` pour déplacer la carte, et un transform crée un
+ * CONTEXTE D'EMPILEMENT. Tout ce qui vit à l'intérieur — les bulles comprises —
+ * est plafonné au niveau de ce calque et ne peut plus se comparer aux
+ * cartouches, qui sont dehors. Un z-index de mille n'y change rien.
+ *
+ * La barre de recherche s'efface donc pendant qu'une bulle est ouverte — voir
+ * `SuiviBulle` dans GendarmerieMap.jsx.
+ */
+
+/**
+ * BULLE RETOURNÉE — ouverte SOUS le repère, faute de place au-dessus.
+ *
+ * LA POINTE SUIT. Une bulle au-dessus pointe vers le bas ; passée en dessous,
+ * elle doit pointer vers le haut, sinon plus rien ne dit à quel barrage elle
+ * se rapporte — et c'est justement ce que la pointe sert à dire.
+ *
+ * Comment Leaflet la dessine : un conteneur de 40 × 20 px en `overflow:
+ * hidden`, contenant un carré de 17 px tourné à 45°, remonté de 10 px. Seule
+ * la moitié basse du losange dépasse dans la fenêtre du conteneur — d'où le
+ * triangle vers le bas.
+ *
+ * Retourner le CONTENEUR d'un demi-tour suffit donc à retourner le triangle,
+ * et il reste centré puisque la rotation se fait autour de son milieu. Il ne
+ * reste qu'à le remonter au-dessus du corps de la bulle : `top: -19px`, sa
+ * hauteur moins le pixel de chevauchement que Leaflet ménage.
+ *
+ * Une première version ajoutait `translateX(50%)` : la pointe partait sur le
+ * côté au lieu de se retourner sur place.
+ */
+.gr-popup-dessous .leaflet-popup-tip-container {
+  top: -19px;
+  bottom: auto;
+  margin-top: 0;
+  transform: rotate(180deg);
+}
+
+/**
+ * BULLE DÉCROCHÉE DE SON REPÈRE — poussée dans le cadre faute de place.
+ *
+ * Voir `placer` dans GendarmerieMap.jsx, étape 4. La pointe désignerait alors
+ * un point qui n'est plus celui du repère : mieux vaut pas de pointe qu'une
+ * pointe qui ment. Le repère reste visible sur la carte, à sa place.
+ */
+.gr-popup-libre .leaflet-popup-tip-container {
+  display: none;
+}
+
+/**
+ * APERÇU D'OPTIMISATION — le repère de la position PROPOSÉE.
+ *
+ * Plein et coloré par l'action (or pour un déplacement, bleu pour un
+ * changement de faction), il se distingue des repères ordinaires du
+ * dispositif, qui restent affichés dessous. La couleur vient de la couche,
+ * par `--gr-apercu` : deux actions, deux teintes, une seule règle CSS.
+ */
+.gr-apercu {
+  display: grid;
+  place-items: center;
+  border-radius: 9999px;
+  background: var(--gr-apercu, #d6a928);
+  color: #0b1b2d;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 1;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 0 2px var(--gr-apercu, #d6a928), 0 2px 8px rgba(0, 0, 0, 0.55);
+}
+
+/**
+ * ÉTIQUETTE D'UNE ROUTE EN CONFLIT — distance routière et durée.
+ *
+ * Posée au milieu du tracé, elle doit rester lisible sur n'importe quel fond :
+ * d'où le fond sombre opaque et le liseré coloré, qui reprend la couleur du
+ * trait (rouge en conflit, vert une fois dénoué) par `--gr-conflit`.
+ */
+.gr-conflit-etiquette {
+  display: inline-block;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  padding: 2px 7px;
+  border-radius: 9999px;
+  background: var(--map-label-bg);
+  border: 1.5px solid var(--gr-conflit, #e11d2e);
+  color: var(--gr-conflit, #e11d2e);
+  font-size: 10px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+  box-shadow: 0 2px 6px var(--ombre-etiquette);
+  pointer-events: none;
+}
+
+/**
+ * CONFLITS IDENTIFIÉS — voir src/components/map/ConflitsIdentifiesLayer.jsx.
+ *
+ * `.gr-conflit-id` : l'identifiant (C-01) en tête de l'étiquette.
+ * `.gr-conflit-bout` : « C-01 A » / « C-01 B », près de chaque extrémité.
+ * `.gr-conflit-badge` : les conflits d'un barrage, posés à côté de son repère.
+ * `.gr-conflit-retrait` : tout ce qui n'est pas le conflit désigné — atténué,
+ *   jamais masqué.
+ */
+.gr-conflit-etiquette.gr-conflit-id b {
+  color: var(--map-label-text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+.gr-conflit-paire {
+  display: block;
+  margin-top: 1px;
+  color: var(--map-label-text);
+  font-weight: 600;
+  font-size: 9.5px;
+  text-align: center;
+}
+.gr-conflit-bout {
+  display: inline-block;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: var(--gr-conflit, #e11d2e);
+  color: #fff;
+  font: 700 9.5px/1.3 ui-monospace, SFMono-Regular, Menlo, monospace;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.55);
+  cursor: pointer;
+}
+.gr-conflit-badge {
+  display: inline-block;
+  white-space: nowrap;
+  padding: 1px 6px;
+  border-radius: 9999px;
+  background: var(--map-label-bg);
+  border: 1.5px solid #e11d2e;
+  color: var(--map-label-text);
+  font: 700 9.5px/1.35 ui-monospace, SFMono-Regular, Menlo, monospace;
+  box-shadow: 0 1px 4px var(--ombre-etiquette);
+  cursor: pointer;
+}
+.gr-conflit-retrait {
+  opacity: 0.38;
+}
+.gr-conflit-choisi {
+  box-shadow: 0 0 0 2px #fff, 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* LE CONFLIT DÉSIGNÉ, en bandeau au-dessus de la carte. */
+.gr-fiche-conflit {
+  pointer-events: auto;
+  min-width: 260px;
+  max-width: min(420px, calc(100vw - 2rem));
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1.5px solid #e11d2e;
+  background: var(--map-label-bg);
+  color: var(--map-label-text);
+  font-size: 11.5px;
+  box-shadow: 0 6px 18px var(--ombre-etiquette);
+}
+.gr-fiche-conflit-tete {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font: 700 13px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+.gr-fiche-conflit-nouveau {
+  padding: 0 4px;
+  border-radius: 4px;
+  background: rgba(225, 29, 46, 0.3);
+  color: var(--tone-danger);
+  font: 700 9px/1.6 system-ui, sans-serif;
+  letter-spacing: 0.04em;
+}
+.gr-fiche-conflit-fermer {
+  margin-left: auto;
+  padding: 0 6px;
+  border-radius: 6px;
+  color: var(--text-secondary);
+  font-size: 16px;
+  line-height: 1.2;
+}
+.gr-fiche-conflit-fermer:hover {
+  background: var(--bg-hover);
+  color: var(--map-label-text);
+}
+.gr-fiche-conflit-paire {
+  margin: 6px 0 4px;
+  line-height: 1.45;
+}
+.gr-fiche-conflit-paire > div {
+  display: inline;
+}
+.gr-fiche-conflit-paire > div[style] {
+  display: block;
+}
+.gr-fiche-conflit-lettre {
+  display: inline-block;
+  min-width: 16px;
+  margin-right: 4px;
+  border-radius: 4px;
+  background: #e11d2e;
+  font: 700 10px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+  text-align: center;
+}
+.gr-fiche-conflit-km {
+  font: 700 11.5px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/**
+ * MARQUEUR POSITION AVANT (APERÇU OPTIMISATION)
+ * Cercle pointillé rouge semi-transparent indiquant l'ancienne position d'un barrage déplacé.
+ */
+.gr-apercu-avant {
+  display: grid;
+  place-items: center;
+  border-radius: 9999px;
+  background: var(--map-label-bg);
+  color: var(--tone-rouge);
+  font-weight: 800;
+  font-size: 11px;
+  line-height: 1;
+  border: 2px dashed #ef4444;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.35), 0 2px 8px var(--ombre-etiquette);
+}
+
+/**
+ * ÉTIQUETTE DU DÉPLACEMENT PAR LA ROUTE
+ * Posée au milieu du tracé routier ancienne → nouvelle position : distance
+ * routière et routes empruntées. Même teinte que le tracé.
+ */
+.gr-mouvement-etiquette {
+  display: inline-block;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  padding: 2px 7px;
+  border-radius: 9999px;
+  background: var(--map-label-bg);
+  border: 1.5px solid #38bdf8;
+  color: var(--tone-info);
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  box-shadow: 0 2px 6px var(--ombre-etiquette);
+  pointer-events: none;
+}
+
+
+/**
+ * MARQUEUR POSITION NOUVELLE (APERÇU OPTIMISATION)
+ * Animation d'impulsion pour attirer l'œil immédiatement sur la nouvelle position proposée.
+ */
+.gr-apercu-nouveau {
+  animation: grPulseApercu 2.2s infinite ease-in-out;
+}
+
+@keyframes grPulseApercu {
+  0% {
+    box-shadow: 0 0 0 2px var(--gr-apercu, #10b981), 0 0 0 0 rgba(16, 185, 129, 0.65);
+  }
+  60% {
+    box-shadow: 0 0 0 2px var(--gr-apercu, #10b981), 0 0 0 9px rgba(16, 185, 129, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 2px var(--gr-apercu, #10b981), 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+/**
+ * MARQUEUR CONFLIT NON RÉSOLU (APERÇU OPTIMISATION)
+ */
+.gr-apercu-warning {
+  display: grid;
+  place-items: center;
+  border-radius: 9999px;
+  background: var(--map-label-bg);
+  color: var(--tone-amber);
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 1;
+  border: 2px solid #f59e0b;
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.45), 0 2px 8px var(--ombre-etiquette);
+}
+
+/**
+ * MARQUEUR BARRAGE INTOUCHABLE (SANCTUARISÉ) DANS L'APERÇU
+ */
+.gr-apercu-intouchable {
+  display: grid;
+  place-items: center;
+  border-radius: 9999px;
+  background: var(--map-label-bg);
+  color: var(--tone-amber);
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 1;
+  border: 2px solid #f59e0b;
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.45), 0 2px 8px var(--ombre-etiquette);
+}
+
+
+/**
+ * ÉPINGLES DE L'APERÇU D'OPTIMISATION — ancienne (rouge, ✕) et nouvelle (verte, ✓).
+ *
+ * Une épingle, un pictogramme, une légende de deux mots : la forme se lit
+ * avant le texte. La pointe (coin bas après rotation) désigne la position —
+ * voir `iconeApercu` dans src/GendarmerieMap.jsx. Aucun halo, aucun cercle.
+ */
+.gr-apercu-pin {
+  position: relative;
+  width: var(--gr-apercu-pin);
+  height: var(--gr-apercu-pin);
+  pointer-events: auto;
+}
+.gr-apercu-pin-tete {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg) translate(-12%, -12%);
+  border: 2px solid #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+.gr-apercu-pin-glyphe {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  transform: rotate(45deg);
+}
+.gr-apercu-pin-ancien .gr-apercu-pin-tete {
+  background: #dc2626;
+  opacity: 0.92;
+}
+.gr-apercu-pin-nouveau .gr-apercu-pin-tete {
+  background: #059669;
+}
+.gr-apercu-pin-legende {
+  display: none !important;
+}
+
+/**
+ * BARRAGE EN CONFLIT (OPTIMISATION MANUELLE) — l'épingle réelle du poste, en
+ * rouge, et une pastille « ? » : la décision reste à prendre. Voir
+ * `iconeConflitBarrage` dans src/GendarmerieMap.jsx.
+ */
+.gr-conflit-barrage {
+  position: relative;
+  cursor: pointer;
+}
+/* L'étiquette de distance d'un barrage en conflit : « 5.41 km ❌ ». */
+.gr-conflit-km {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  margin-top: 1px;
+  padding: 0 4px;
+  border-radius: 4px;
+  background: rgba(127, 29, 29, 0.92);
+  border: 1px solid rgba(248, 113, 113, 0.8);
+  color: #fee2e2;
+  font: 700 9.5px/1.45 "Segoe UI", Tahoma, sans-serif;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.gr-conflit-protege img {
+  filter: drop-shadow(0 0 3px rgba(225, 29, 46, 0.95)) drop-shadow(0 0 1px #fff);
+}
+.gr-conflit-contexte img {
+  opacity: 0.85;
+}
+.gr-conflit-barrage img {
+  display: block;
+  filter: drop-shadow(0 0 3px rgba(225, 29, 46, 0.85));
+}
+.gr-conflit-badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  display: grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 9999px;
+  background: var(--map-label-bg);
+  border: 1.5px solid var(--tone-danger);
+  color: var(--tone-danger);
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/** POSTE DE CONTEXTE (optimisation manuelle) — hors zone, montré pour un conflit. */
+.gr-contexte-barrage {
+  position: relative;
+  opacity: 0.85;
+}
+.gr-contexte-barrage img {
+  display: block;
+}
+.gr-contexte-legende {
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  transform: translateX(-50%);
+  margin-bottom: 2px;
+  padding: 0 4px;
+  border-radius: 4px;
+  background: var(--map-label-bg);
+  color: var(--text-secondary);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+/** DÉCISIONS SIMULÉES (optimisation manuelle) — conservé / suppression proposée. */
+.gr-decision-simulee {
+  position: relative;
+  cursor: pointer;
+}
+.gr-decision-simulee img {
+  display: block;
+}
+.gr-decision-simulee-supprime img {
+  opacity: 0.55;
+  filter: grayscale(1);
+}
+.gr-decision-simulee-badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  display: grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 9999px;
+  background: var(--map-label-bg);
+  border: 1.5px solid var(--text-secondary);
+  color: var(--map-label-text);
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1;
+}
+.gr-decision-simulee-supprime .gr-decision-simulee-badge {
+  border-color: var(--tone-danger);
+  color: var(--tone-danger);
+}
+.gr-decision-simulee-legende {
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  transform: translateX(-50%);
+  margin-bottom: 2px;
+  padding: 0 4px;
+  border-radius: 4px;
+  background: var(--map-label-bg);
+  color: var(--map-label-text);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 12px;
+  white-space: nowrap;
+}
+.gr-popup-act-actif {
+  outline: 2px solid #d6a928;
+  outline-offset: 1px;
+}
+
+/**
+ * ÉTIQUETTES TACTIQUES DES CIRCONSCRIPTIONS (SURVOL FLOTTANT)
+ * Apparaît au survol du curseur sans encombrer ni recouvrir la carte.
+ * Pilule compacte aux couleurs du thème ; l'échelon se lit au sigle coloré.
+ */
+.leaflet-tooltip.gr-circo-label-tooltip {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  pointer-events: none !important;
+}
+
+.leaflet-tooltip.gr-circo-label-tooltip::before,
+.leaflet-tooltip.gr-circo-label-tooltip::after {
+  display: none !important;
+}
+
+.gr-circo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 9px 3px 6px;
+  border-radius: 9999px;
+  background: var(--map-label-bg);
+  color: var(--map-label-text);
+  white-space: nowrap;
+  pointer-events: none !important;
+  user-select: none;
+  animation: grCircoFadeIn 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--shadow-popup);
+}
+
+@keyframes grCircoFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(2px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Badge Région (Ambre / Or Gendarmerie Royale) */
+.gr-circo-badge-reg {
+  border: 1px solid var(--accent-border);
+}
+
+.gr-circo-badge-reg .gr-circo-badge-tag {
+  background: rgba(214, 169, 40, 0.22);
+  color: var(--accent);
+  border: 1px solid rgba(214, 169, 40, 0.45);
+}
+
+.gr-circo-badge-reg .gr-circo-badge-name {
+  color: var(--map-label-text);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* Badge Compagnie (Bleu Ciel Tactique) */
+.gr-circo-badge-cie {
+  border: 1px solid rgba(56, 189, 248, 0.8);
+}
+
+.gr-circo-badge-cie .gr-circo-badge-tag {
+  background: rgba(56, 189, 248, 0.2);
+  color: var(--primary);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+}
+
+.gr-circo-badge-cie .gr-circo-badge-name {
+  color: var(--map-label-text);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* Badge Brigade Territoriale (Émeraude) */
+.gr-circo-badge-bt {
+  border: 1px solid rgba(16, 185, 129, 0.8);
+}
+
+.gr-circo-badge-bt .gr-circo-badge-tag {
+  background: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+.gr-circo-badge-bt .gr-circo-badge-name {
+  color: var(--map-label-text);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.gr-circo-badge-tag {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 8px;
+  font-weight: 800;
+  padding: 1px 5px;
+  border-radius: 9999px;
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.gr-circo-badge-name {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+
+
+/* ================================================================== */
+/* MOUVEMENT — sobre, court, et coupé pour qui le demande              */
+/* ================================================================== */
+/*
+ * Règles de la maison : CSS (transitions, transform, opacity) plutôt que
+ * JavaScript ; jamais d'animation continue des repères de la carte ; aucune
+ * animation ne retarde une écriture (elles suivent les réponses du serveur,
+ * elles ne les précèdent pas). Animations réduites (`data-mouvement="reduit"`,
+ * voir src/apparence.js — le réglage du compte, ou à défaut celui du poste) :
+ * toutes les durées à zéro, chaque effet a alors son état final immédiat.
+ */
+:root {
+  --duree-rapide: 120ms;
+  --duree: 200ms;
+  --duree-lente: 280ms;
+  --courbe-sortie: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --courbe-entree: cubic-bezier(0.4, 0, 1, 1);
+}
+
+/* Animations réduites (réglage du compte ou du poste — data-mouvement). */
+:root[data-mouvement="reduit"] {
+  --duree-rapide: 0ms;
+  --duree: 0ms;
+  --duree-lente: 0ms;
+}
+
+/* CHANGEMENT DE THÈME : fondu des couleurs de l'habillage, 240 ms, le temps
+   que <html> porte la classe (posée par theme.js). La carte et ses centaines
+   de repères en sont exclus : ils changent d'un coup, sans recalcul animé. */
+html.gr-transition-theme,
+html.gr-transition-theme body,
+html.gr-transition-theme :where(*:not(.leaflet-pane, .leaflet-pane *, .leaflet-marker-icon, .leaflet-marker-icon *)) {
+  transition-property: background-color, border-color, color, fill, stroke, outline-color, box-shadow, text-decoration-color !important;
+  transition-duration: 240ms !important;
+  transition-timing-function: ease-out !important;
+}
+/* Animations réduites (réglage du compte ou du poste — data-mouvement). */
+:root[data-mouvement="reduit"].gr-transition-theme :where(*) {
+  transition: none !important;
+}
+
+/* LES UTILITAIRES D'ENTRÉE déjà employés dans le code (animate-in, fade-in,
+   zoom-in-95, slide-in-from-*) — ceux de « tailwindcss-animate », qui n'est
+   pas installé : ils ne faisaient rien. Définis ici, sans dépendance, et
+   utilisables avec les variantes (motion-safe:…). */
+@utility animate-in {
+  animation: gr-entree var(--duree) var(--courbe-sortie) both;
+}
+@utility fade-in {
+  --gr-entree-opacite: 0;
+}
+@utility fade-in-0 {
+  --gr-entree-opacite: 0;
+}
+@utility zoom-in-95 {
+  --gr-entree-echelle: 0.95;
+}
+@utility slide-in-from-right {
+  --gr-entree-x: 24px;
+}
+@utility slide-in-from-top {
+  --gr-entree-y: -8px;
+}
+@utility slide-in-from-top-2 {
+  --gr-entree-y: -8px;
+}
+
+@keyframes gr-entree {
+  from {
+    opacity: var(--gr-entree-opacite, 1);
+    transform: translate3d(var(--gr-entree-x, 0), var(--gr-entree-y, 0), 0) scale(var(--gr-entree-echelle, 1));
+  }
+}
+
+/* PANNEAUX, MENUS, FENÊTRES : entrée et SORTIE (voir src/usePresence.js, qui
+   garde l'élément monté le temps de sa sortie). Le sens suit l'origine. */
+[data-presence] {
+  --gr-dx: 0px;
+  --gr-dy: 0px;
+  --gr-echelle: 1;
+}
+[data-presence][data-depuis='gauche'] { --gr-dx: -14px; }
+[data-presence][data-depuis='droite'] { --gr-dx: 18px; }
+[data-presence][data-depuis='haut'] { --gr-dy: -6px; --gr-echelle: 0.985; }
+[data-presence][data-depuis='centre'] { --gr-echelle: 0.97; }
+
+[data-presence='entree'] {
+  animation: gr-presence-entree var(--duree-lente) var(--courbe-sortie) both;
+}
+[data-presence='sortie'] {
+  animation: gr-presence-sortie var(--duree) var(--courbe-entree) both;
+  pointer-events: none;
+}
+@keyframes gr-presence-entree {
+  from {
+    opacity: 0;
+    transform: translate3d(var(--gr-dx), var(--gr-dy), 0) scale(var(--gr-echelle));
+  }
+}
+@keyframes gr-presence-sortie {
+  to {
+    opacity: 0;
+    transform: translate3d(var(--gr-dx), var(--gr-dy), 0) scale(var(--gr-echelle));
+  }
+}
+
+/* Voile d'une fenêtre modale : fondu seul. */
+[data-voile-presence='entree'] { animation: gr-fondu-entree var(--duree) ease-out both; }
+[data-voile-presence='sortie'] { animation: gr-fondu-sortie var(--duree) ease-in both; }
+@keyframes gr-fondu-entree { from { opacity: 0; } }
+@keyframes gr-fondu-sortie { to { opacity: 0; } }
+
+/* SECTIONS REPLIABLES sans saut de mise en page : la ligne de grille passe de
+   0fr à 1fr — aucune hauteur à mesurer, rien ne pousse brutalement le reste. */
+.gr-repliable {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--duree-lente) var(--courbe-sortie), opacity var(--duree) ease-out;
+  opacity: 0;
+}
+.gr-repliable[data-ouvert='true'] {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+.gr-repliable > * {
+  min-height: 0;
+}
+/* Rogné seulement replié (ou en train de se replier) : ouvert, rien n'est
+   coupé — ni l'anneau d'une carte sélectionnée, ni son ombre. */
+.gr-repliable:not([data-ouvert='true']) > * {
+  overflow: hidden;
+}
+
+/* BOUTONS : retour d'appui commun — un léger enfoncement, jamais de rebond. */
+.gr-bouton {
+  transition: background-color var(--duree-rapide) ease-out, border-color var(--duree-rapide) ease-out,
+    color var(--duree-rapide) ease-out, box-shadow var(--duree-rapide) ease-out, transform var(--duree-rapide) ease-out;
+}
+.gr-bouton:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+/* Indicateur glissant (segments, rail) : se déplace par transform. */
+.gr-segments-indicateur,
+.gr-rail-indicateur {
+  transition: transform var(--duree-lente) var(--courbe-sortie), height var(--duree-lente) var(--courbe-sortie), opacity var(--duree) ease-out;
+}
+
+/* Coche qui apparaît dans un choix. */
+.gr-coche-apparait {
+  animation: gr-entree var(--duree) var(--courbe-sortie) both;
+  --gr-entree-opacite: 0;
+  --gr-entree-echelle: 0.6;
+}
+
+/* SQUELETTES DE CHARGEMENT : une lueur lente qui traverse — pas de clignotement. */
+.gr-squelette {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-card);
+  border-radius: 8px;
+}
+.gr-squelette::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--text-primary) 7%, transparent), transparent);
+  animation: gr-squelette 1.4s ease-in-out infinite;
+}
+@keyframes gr-squelette {
+  to { transform: translateX(100%); }
+}
+/* Animations réduites (réglage du compte ou du poste — data-mouvement). */
+:root[data-mouvement="reduit"] .gr-squelette::after { animation: none; }
+
+/* COMPTEUR QUI CHANGE : un bref rebond d'échelle, une seule fois (clé React). */
+.gr-compteur-change {
+  display: inline-block;
+  animation: gr-compteur var(--duree-lente) var(--courbe-sortie);
+}
+@keyframes gr-compteur {
+  40% { transform: scale(1.22); }
+}
+
+/* BADGE D'ÉTAT QUI CHANGE : fondu croisé court. */
+.gr-badge-change {
+  animation: gr-entree var(--duree-lente) var(--courbe-sortie) both;
+  --gr-entree-opacite: 0;
+  --gr-entree-y: 3px;
+}
+
+/* CARTE DE CONFLIT QUI QUITTE UNE FILE : elle s'efface et se replie, puis
+   disparaît du DOM ; les suivantes remontent sans saut. */
+.gr-carte-sortie {
+  animation: gr-carte-sortie var(--duree-lente) var(--courbe-entree) both;
+  pointer-events: none;
+}
+@keyframes gr-carte-sortie {
+  to {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* IMPULSION RADAR — nouveau conflit détecté (voir RadarConflits.jsx)  */
+/* ------------------------------------------------------------------ */
+/* Tout se joue sur les éléments INTÉRIEURS de l'icône : la racine porte le
+   transform de positionnement de Leaflet, qu'on ne touche jamais. */
+.gr-radar-divicon {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.gr-radar {
+  position: relative;
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+.gr-radar-coeur {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--gr-radar-couleur);
+  color: #fff;
+  border: 2px solid var(--map-label-halo);
+  box-shadow: 0 0 0 1px var(--gr-radar-couleur), 0 2px 6px var(--ombre-etiquette);
+}
+.leaflet-marker-icon:focus-visible .gr-radar-coeur,
+.gr-radar-divicon:hover .gr-radar-coeur {
+  box-shadow: 0 0 0 2px var(--primary), 0 2px 6px var(--ombre-etiquette);
+}
+
+/* Trois ondes décalées, une seule fois : elles s'élargissent et s'effacent. */
+.gr-radar-onde {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid var(--gr-radar-couleur);
+  opacity: 0;
+  /* forwards : avant son délai (route en cours de dessin), l'onde reste invisible. */
+  animation: gr-radar-onde 1.8s cubic-bezier(0.2, 0.6, 0.35, 1) var(--gr-delai, 0s) forwards;
+}
+.gr-radar-onde:nth-child(2) { animation-delay: calc(var(--gr-delai, 0s) + 0.45s); }
+.gr-radar-onde:nth-child(3) { animation-delay: calc(var(--gr-delai, 0s) + 0.9s); }
+@keyframes gr-radar-onde {
+  0% { transform: scale(0.6); opacity: 0.6; }
+  100% { transform: scale(3.4); opacity: 0; }
+}
+
+/* Le repère apparaît en grandissant QUAND SA ROUTE EST DESSINÉE (--gr-delai),
+   puis brève lueur, puis repère net. */
+.gr-radar-actif .gr-radar-coeur {
+  animation:
+    gr-radar-entree 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) var(--gr-delai, 0s) both,
+    gr-radar-lueur 1.6s ease-out calc(var(--gr-delai, 0s) + 0.2s) 2 both;
+}
+@keyframes gr-radar-entree {
+  0% { transform: scale(0.2); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes gr-radar-lueur {
+  0% { box-shadow: 0 0 0 1px var(--gr-radar-couleur), 0 0 0 0 color-mix(in srgb, var(--gr-radar-couleur) 45%, transparent); }
+  60% { box-shadow: 0 0 0 1px var(--gr-radar-couleur), 0 0 0 9px color-mix(in srgb, var(--gr-radar-couleur) 0%, transparent); }
+  100% { box-shadow: 0 0 0 1px var(--gr-radar-couleur), 0 2px 6px var(--ombre-etiquette); }
+}
+
+/* La zone du conflit : apparaît, puis s'efface sans masquer la carte. */
+.gr-radar-zone {
+  animation: gr-radar-zone 3.2s ease-out var(--gr-delai, 0s) both;
+}
+@keyframes gr-radar-zone {
+  0% { opacity: 0; }
+  15% { opacity: 1; }
+  70% { opacity: 0.85; }
+  100% { opacity: 0; }
+}
+
+/* LA ROUTE RÉELLE DU CONFLIT se dessine, du premier poste au second
+   (pathLength = 100 : stroke-dashoffset 100 → 0 suit la géométrie exacte,
+   virages compris). Délai et durée propres à chaque route (séquence). */
+.gr-radar-route {
+  stroke: var(--gr-conflit);
+}
+/* DESSIN PROGRESSIF (animationTrace.js) — radar des conflits et « Voir sur la
+   carte ». Lent (durée selon la longueur réelle, ~4–6 s), une seule fois ; la
+   route reste entière à la fin. Lueur douce : couleur du trait + accent du thème. */
+.gr-trace-anime {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  filter:
+    drop-shadow(0 0 3px color-mix(in srgb, var(--gr-trace-couleur, var(--gr-conflit)) 55%, transparent))
+    drop-shadow(0 0 6px color-mix(in srgb, var(--primary) 22%, transparent));
+  animation: gr-radar-trace var(--gr-duree-trace, 4.5s) var(--gr-courbe, ease-in-out) var(--gr-delai, 0s) forwards;
+}
+/* Le point lumineux qui suit la route pendant le dessin. */
+.gr-trace-point {
+  fill: #fff;
+  pointer-events: none;
+  filter: drop-shadow(0 0 3px var(--primary)) drop-shadow(0 0 7px color-mix(in srgb, var(--primary) 70%, transparent));
+}
+/* Routes de « Voir sur la carte » : couleurs du thème selon leur rôle. */
+.gr-route-conflit { stroke: var(--gr-conflit); --gr-trace-couleur: var(--gr-conflit); }
+.gr-route-resolue { stroke: var(--tone-ok); --gr-trace-couleur: var(--tone-ok); }
+.gr-route-deplacement { stroke: var(--primary); --gr-trace-couleur: var(--primary); }
+.gr-route-directe { stroke: var(--text-muted, #94A3B8); }
+/* Étiquette de distance : lisible, à côté de la route, n'apparaît qu'une fois
+   la route dessinée. */
+.gr-route-etiquette {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border-default);
+  background: color-mix(in srgb, var(--bg-panel) 94%, transparent);
+  color: var(--text-primary);
+  font-size: 11px;
+  font-weight: 700;
+  box-shadow: 0 2px 8px var(--ombre-etiquette, rgb(0 0 0 / 0.25));
+  cursor: pointer;
+  animation: gr-fondu-entree 0.4s ease-out var(--gr-delai, 0s) both;
+}
+.gr-route-etiquette i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gr-trace-couleur, var(--gr-conflit));
+}
+.gr-route-etiquette small {
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+.gr-route-etiquette:hover { border-color: var(--primary); }
+.gr-route-etiquette-ancre {
+  width: 0 !important;
+  height: 0 !important;
+  background: none;
+  border: none;
+  overflow: visible;
+}
+@keyframes gr-radar-trace {
+  to { stroke-dashoffset: 0; }
+}
+
+/* 4. Veille : une onde lente et discrète tant que le conflit n'est pas pris en compte. */
+.gr-radar-veille {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid var(--gr-radar-couleur);
+  opacity: 0;
+  animation: gr-radar-veille 2.6s ease-out infinite;
+}
+@keyframes gr-radar-veille {
+  0% { transform: scale(1); opacity: 0.45; }
+  100% { transform: scale(2.1); opacity: 0; }
+}
+
+/* États du workflow. En attente : halo ambre fixe. En traitement : arc bleu
+   qui tourne. Traité : neutre, sans animation. */
+.gr-radar--en_attente .gr-radar-coeur {
+  box-shadow: 0 0 0 1px var(--gr-radar-couleur), 0 0 0 4px color-mix(in srgb, var(--gr-radar-couleur) 22%, transparent);
+}
+.gr-radar-arc {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: var(--gr-radar-couleur);
+  border-right-color: color-mix(in srgb, var(--gr-radar-couleur) 45%, transparent);
+  animation: gr-radar-arc 1.4s linear infinite;
+}
+@keyframes gr-radar-arc {
+  to { transform: rotate(360deg); }
+}
+.gr-radar--traite .gr-radar-coeur {
+  box-shadow: 0 0 0 1px var(--gr-radar-couleur);
+  opacity: 0.9;
+}
+
+/* Animations réduites (réglage du compte ou du poste — data-mouvement). */
+:root[data-mouvement="reduit"] .gr-radar-onde,
+:root[data-mouvement="reduit"] .gr-radar-veille { display: none; }
+:root[data-mouvement="reduit"] .gr-radar-actif .gr-radar-coeur,
+:root[data-mouvement="reduit"] .gr-radar-zone,
+:root[data-mouvement="reduit"] .gr-radar-arc { animation: none; }
+:root[data-mouvement="reduit"] .gr-trace-anime { animation: none; stroke-dashoffset: 0; }
+:root[data-mouvement="reduit"] .gr-route-etiquette { animation: none; }
+
+/* Analyse en cours : balayage radar de l'indicateur (IndicateurDetection.jsx). */
+.gr-balayage {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1.5px solid color-mix(in srgb, #7C3AED 70%, transparent);
+  overflow: hidden;
+}
+.gr-balayage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: conic-gradient(from 0deg, rgb(124 58 237 / 0.85), transparent 30%);
+  animation: gr-radar-arc 1.1s linear infinite;
+}
+/* Animations réduites (réglage du compte ou du poste — data-mouvement). */
+:root[data-mouvement="reduit"] .gr-balayage::after { animation: none; }
+
+/* La notification « Conflit détecté ». */
+.gr-carte-alerte-liseré {
+  border-left: 3px solid #EF4444;
+}
+
+/* ------------------------------------------------------------------ */
+/* RADAR DES CALCULS (RadarAnalyse.jsx) — simple, et aux couleurs du thème */
+/* ------------------------------------------------------------------ */
+/* Couleur des conflits (route, zone) : un jeton, ajusté au mode clair. */
+:root { --gr-conflit: #EF4444; }
+:root[data-mode='light'] { --gr-conflit: #DC2626; }
+
+/* Toutes les couleurs viennent du thème actif (--primary, --bg-panel,
+   --border-default…) : changer de thème recolore le radar en direct. */
+.gr-radar-analyse {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.gr-radar-analyse-disque {
+  position: relative;
+  width: 132px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--primary) 10%, transparent), color-mix(in srgb, var(--bg-panel) 55%, transparent) 72%);
+  box-shadow: 0 0 28px color-mix(in srgb, var(--primary) 28%, transparent), inset 0 0 18px color-mix(in srgb, var(--primary) 16%, transparent);
+  overflow: hidden;
+}
+.gr-radar-analyse-cercle {
+  position: absolute;
+  inset: calc((1 - var(--k)) * 50%);
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--primary) 45%, transparent);
+}
+/* Le faisceau : bord d'attaque net, traîne qui s'estompe. */
+.gr-radar-analyse-secteur {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, transparent 0deg, color-mix(in srgb, var(--primary) 8%, transparent) 40deg, color-mix(in srgb, var(--primary) 45%, transparent) 86deg, var(--primary) 90deg, transparent 90.8deg);
+  animation: gr-radar-arc 2.2s linear infinite;
+}
+.gr-radar-analyse-centre {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 8px var(--primary);
+}
+.gr-radar-analyse-barre {
+  background: var(--primary);
+}
+/* Version compacte (fenêtres de parcours) : mêmes éléments, sans halo extérieur. */
+.gr-radar-compact {
+  box-shadow: 0 0 6px color-mix(in srgb, var(--primary) 30%, transparent);
+}
+.gr-radar-compact .gr-radar-analyse-centre {
+  width: 3px;
+  height: 3px;
+  box-shadow: none;
+}
+/* Aucun conflit : coche qui se trace, une seule fois (couleur « succès » du thème). */
+.gr-succes-analyse {
+  background: var(--tone-ok);
+  animation: gr-succes-halo 1.4s ease-out both;
+}
+.gr-succes-coche {
+  stroke-dasharray: 24;
+  stroke-dashoffset: 24;
+  animation: gr-succes-trace 0.5s ease-out 0.15s forwards;
+}
+@keyframes gr-succes-trace { to { stroke-dashoffset: 0; } }
+@keyframes gr-succes-halo {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--tone-ok) 50%, transparent); transform: scale(0.6); }
+  35% { transform: scale(1); }
+  100% { box-shadow: 0 0 0 12px color-mix(in srgb, var(--tone-ok) 0%, transparent); transform: scale(1); }
+}
+/* Animations réduites (réglage du compte ou du poste — data-mouvement). */
+:root[data-mouvement="reduit"] .gr-radar-analyse-secteur,
+:root[data-mouvement="reduit"] .gr-succes-analyse { animation: none; }
+:root[data-mouvement="reduit"] .gr-succes-coche { animation: none; stroke-dashoffset: 0; }

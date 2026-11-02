@@ -1,0 +1,3142 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "not_mvmgykjd_4c0e2864",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Inezgane a été assigné au CMND Région Fès.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-231",
+      "barrage": {
+        "id": "BF-BT-231",
+        "nom": "Poste fixe Inezgane",
+        "type": "barrage_fixe",
+        "route": "RN10",
+        "lng": -9.55651,
+        "lat": 30.37524,
+        "bt": "Inezgane",
+        "cie": "Inezgane",
+        "reg": "Agadir",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Fès"
+      },
+      "perimetres": [
+        {
+          "bt": "Inezgane",
+          "cie": "Inezgane",
+          "reg": "Agadir"
+        }
+      ],
+      "cree": "2026-10-24T14:03:25.107Z",
+      "maj": "2026-10-24T14:03:25.107Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvmgyruu_caac7ad8",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Lqliaa a été assigné au CMND Région Fès.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-278",
+      "barrage": {
+        "id": "BF-BT-278",
+        "nom": "Poste fixe Lqliaa",
+        "type": "barrage_fixe",
+        "route": "RR105",
+        "lng": -9.46503,
+        "lat": 30.3023,
+        "bt": "Lqliaa",
+        "cie": "Inezgane",
+        "reg": "Agadir",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Fès"
+      },
+      "perimetres": [
+        {
+          "bt": "Lqliaa",
+          "cie": "Inezgane",
+          "reg": "Agadir"
+        }
+      ],
+      "cree": "2026-10-24T14:03:34.568Z",
+      "maj": "2026-10-24T14:03:34.568Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvmiaw6c_faf93d37",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "BFI Laayoune a été assigné au CMND Région Laayoune.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BFI-CIE-044",
+      "barrage": {
+        "id": "BFI-CIE-044",
+        "nom": "BFI Laayoune",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -13.23296,
+        "lat": 27.15235,
+        "bt": "Laayoune",
+        "cie": "Laayoune",
+        "reg": "Laayoune",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Laayoune"
+      },
+      "perimetres": [
+        {
+          "bt": "Laayoune",
+          "cie": "Laayoune",
+          "reg": "Laayoune"
+        }
+      ],
+      "cree": "2026-10-24T14:40:59.685Z",
+      "maj": "2026-10-24T14:40:59.685Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvmibmow_5984a08c",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "BFI Skhirate a été assigné au CMND Région Settat.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BFI-CIE-071",
+      "barrage": {
+        "id": "BFI-CIE-071",
+        "nom": "BFI Skhirate",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -7.05783,
+        "lat": 33.83761,
+        "bt": "Skhirate-El Fath",
+        "cie": "Skhirate",
+        "reg": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Settat"
+      },
+      "perimetres": [
+        {
+          "bt": "Skhirate-El Fath",
+          "cie": "Skhirate",
+          "reg": "Rabat"
+        }
+      ],
+      "cree": "2026-10-24T14:41:34.042Z",
+      "maj": "2026-10-24T14:41:34.042Z",
+      "lues": {
+        "CIE-SKHIRATE": "2026-10-25T15:12:19.477Z"
+      }
+    },
+    {
+      "id": "not_mvmibr93_5d5a5063",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "BFI Skhirate a été assigné au CMND Région Rabat.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BFI-CIE-071",
+      "barrage": {
+        "id": "BFI-CIE-071",
+        "nom": "BFI Skhirate",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -7.05783,
+        "lat": 33.83761,
+        "bt": "Skhirate-El Fath",
+        "cie": "Skhirate",
+        "reg": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat"
+      },
+      "perimetres": [
+        {
+          "bt": "Skhirate-El Fath",
+          "cie": "Skhirate",
+          "reg": "Rabat"
+        }
+      ],
+      "cree": "2026-10-24T14:41:39.965Z",
+      "maj": "2026-10-24T14:41:39.965Z",
+      "lues": {
+        "CIE-SKHIRATE": "2026-10-25T15:12:10.265Z"
+      }
+    },
+    {
+      "id": "not_mvmicyu2_157158e8",
+      "type": "demande",
+      "titre": "Demande de validation",
+      "description": "Une modification de Poste fixe Foum El Oued attend validation.",
+      "actions": [
+        "demander-modification"
+      ],
+      "barrageId": "BF-BT-188",
+      "barrage": {
+        "id": "BF-BT-188",
+        "nom": "Poste fixe Foum El Oued",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -13.16766,
+        "lat": 27.20397,
+        "bt": "Boukraa",
+        "cie": "Laayoune",
+        "reg": "Laayoune",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-LAAYOUNE",
+        "nom": "Chef de région Laayoune",
+        "rang": "reg",
+        "unite": "Laayoune"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Boukraa",
+          "cie": "Laayoune",
+          "reg": "Laayoune"
+        }
+      ],
+      "cree": "2026-10-24T14:42:36.504Z",
+      "maj": "2026-10-24T14:42:36.504Z",
+      "lues": {
+        "SUPERADMIN": "2026-10-24T14:43:11.655Z"
+      }
+    },
+    {
+      "id": "not_mvmj4ani_25411ed7",
+      "type": "validation",
+      "titre": "Opération validée",
+      "description": "Poste fixe Foum El Oued a changé de position. Acceptée par l’administration.",
+      "actions": [
+        "modifier",
+        "decision-demande"
+      ],
+      "barrageId": "BF-BT-188",
+      "barrage": {
+        "id": "BF-BT-188",
+        "nom": "Poste fixe Foum El Oued",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -13.15879,
+        "lat": 27.21723,
+        "bt": "Boukraa",
+        "cie": "Laayoune",
+        "reg": "Laayoune",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Boukraa",
+          "cie": "Laayoune",
+          "reg": "Laayoune"
+        }
+      ],
+      "cree": "2026-10-24T15:03:51.532Z",
+      "maj": "2026-10-24T15:03:51.638Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvnvosws_a2650ee7",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Bouknadel a été assigné au CMND Région Kénitra.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-125",
+      "barrage": {
+        "id": "BF-BT-125",
+        "nom": "Poste fixe Bouknadel",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -6.73501,
+        "lat": 34.12797,
+        "bt": "Bouknadel",
+        "cie": "Salé",
+        "reg": "Rabat",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Kénitra"
+      },
+      "perimetres": [
+        {
+          "bt": "Bouknadel",
+          "cie": "Salé",
+          "reg": "Rabat"
+        }
+      ],
+      "cree": "2026-10-25T13:43:29.824Z",
+      "maj": "2026-10-25T13:43:29.824Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvnvpsyf_48a375ed",
+      "type": "faction",
+      "titre": "Faction modifiée",
+      "description": "Poste fixe Bouknadel : aucune → aucune.",
+      "actions": [
+        "changement_faction"
+      ],
+      "barrageId": "BF-BT-125",
+      "barrage": {
+        "id": "BF-BT-125",
+        "nom": "Poste fixe Bouknadel",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -6.73501,
+        "lat": 34.12797,
+        "bt": "Bouknadel",
+        "cie": "Salé",
+        "reg": "Rabat",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-KÉNITRA",
+        "nom": "Chef de région Kénitra",
+        "rang": "reg",
+        "unite": "Kénitra"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Bouknadel",
+          "cie": "Salé",
+          "reg": "Rabat"
+        }
+      ],
+      "cree": "2026-10-25T13:44:16.597Z",
+      "maj": "2026-10-25T13:44:16.597Z",
+      "lues": {
+        "SUPERADMIN": "2026-10-26T08:09:38.872Z"
+      }
+    },
+    {
+      "id": "not_mvnvsf7t_8aceb59d",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Inezgane a été assigné au CMND Région Bouarfa.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-231",
+      "barrage": {
+        "id": "BF-BT-231",
+        "nom": "Poste fixe Inezgane",
+        "type": "barrage_fixe",
+        "route": "RN10",
+        "lng": -9.55651,
+        "lat": 30.37524,
+        "bt": "Inezgane",
+        "cie": "Inezgane",
+        "reg": "Agadir",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Bouarfa"
+      },
+      "perimetres": [
+        {
+          "bt": "Inezgane",
+          "cie": "Inezgane",
+          "reg": "Agadir"
+        }
+      ],
+      "cree": "2026-10-25T13:46:18.735Z",
+      "maj": "2026-10-25T13:46:18.735Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvoyzr30_3a067643",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "BFI Laayoune a été assigné au CMND Région Laayoune.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BFI-CIE-044",
+      "barrage": {
+        "id": "BFI-CIE-044",
+        "nom": "BFI Laayoune",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -13.23296,
+        "lat": 27.15235,
+        "bt": "Laayoune",
+        "cie": "Laayoune",
+        "reg": "Laayoune",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Laayoune"
+      },
+      "perimetres": [
+        {
+          "bt": "Laayoune",
+          "cie": "Laayoune",
+          "reg": "Laayoune"
+        }
+      ],
+      "cree": "2026-10-26T08:03:45.638Z",
+      "maj": "2026-10-26T08:03:45.638Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvoz064j_e75f1fbe",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "BFI Skhirate a été assigné au CMND Région Settat.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BFI-CIE-071",
+      "barrage": {
+        "id": "BFI-CIE-071",
+        "nom": "BFI Skhirate",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -7.05783,
+        "lat": 33.83761,
+        "bt": "Skhirate-El Fath",
+        "cie": "Skhirate",
+        "reg": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Settat"
+      },
+      "perimetres": [
+        {
+          "bt": "Skhirate-El Fath",
+          "cie": "Skhirate",
+          "reg": "Rabat"
+        }
+      ],
+      "cree": "2026-10-26T08:04:05.205Z",
+      "maj": "2026-10-26T08:04:05.205Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvoz0bkr_820826fe",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "BFI Skhirate a été assigné au CMND Région Rabat.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BFI-CIE-071",
+      "barrage": {
+        "id": "BFI-CIE-071",
+        "nom": "BFI Skhirate",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -7.05783,
+        "lat": 33.83761,
+        "bt": "Skhirate-El Fath",
+        "cie": "Skhirate",
+        "reg": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat"
+      },
+      "perimetres": [
+        {
+          "bt": "Skhirate-El Fath",
+          "cie": "Skhirate",
+          "reg": "Rabat"
+        }
+      ],
+      "cree": "2026-10-26T08:04:12.248Z",
+      "maj": "2026-10-26T08:04:12.248Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvoz0hsp_58e41ea3",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Bouknadel a été assigné au CMND Région Kénitra. Poste fixe Bouknadel a été assigné au CMND Région Rabat.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-125",
+      "barrage": {
+        "id": "BF-BT-125",
+        "nom": "Poste fixe Bouknadel",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -6.73501,
+        "lat": 34.12797,
+        "bt": "Bouknadel",
+        "cie": "Salé",
+        "reg": "Rabat",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Kénitra"
+      },
+      "perimetres": [
+        {
+          "bt": "Bouknadel",
+          "cie": "Salé",
+          "reg": "Rabat"
+        }
+      ],
+      "cree": "2026-10-26T08:04:20.310Z",
+      "maj": "2026-10-26T08:04:20.310Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvoz1gmc_d8d3184a",
+      "type": "demande",
+      "titre": "Demande de validation",
+      "description": "Une modification de Poste fixe Foum El Oued attend validation.",
+      "actions": [
+        "demander-modification"
+      ],
+      "barrageId": "BF-BT-188",
+      "barrage": {
+        "id": "BF-BT-188",
+        "nom": "Poste fixe Foum El Oued",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -13.15879,
+        "lat": 27.21723,
+        "bt": "Boukraa",
+        "cie": "Laayoune",
+        "reg": "Laayoune",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-LAAYOUNE",
+        "nom": "Chef de région Laayoune",
+        "rang": "reg",
+        "unite": "Laayoune"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Boukraa",
+          "cie": "Laayoune",
+          "reg": "Laayoune"
+        }
+      ],
+      "cree": "2026-10-26T08:05:05.504Z",
+      "maj": "2026-10-26T08:05:05.504Z",
+      "lues": {
+        "SUPERADMIN": "2026-10-26T08:06:14.692Z"
+      }
+    },
+    {
+      "id": "not_mvoz6o05_0d421373",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "BFI Bouznika a été assigné au CMND Région Rabat. BFI Bouznika a été assigné au CMND Région Settat.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BFI-CIE-020",
+      "barrage": {
+        "id": "BFI-CIE-020",
+        "nom": "BFI Bouznika",
+        "type": "barrage_fixe",
+        "route": "A1",
+        "lng": -7.29018,
+        "lat": 33.74752,
+        "bt": "El Mansouria",
+        "cie": "Bouznika",
+        "reg": "Settat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat"
+      },
+      "perimetres": [
+        {
+          "bt": "El Mansouria",
+          "cie": "Bouznika",
+          "reg": "Settat"
+        }
+      ],
+      "cree": "2026-10-26T08:09:08.261Z",
+      "maj": "2026-10-26T08:09:08.261Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvp7iphz_73c2c10b",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "BFI Marrakech a été assigné au CMND Région Marrakech.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BFI-CIE-046",
+      "barrage": {
+        "id": "BFI-CIE-046",
+        "nom": "BFI Marrakech",
+        "type": "barrage_fixe",
+        "route": "A3",
+        "lng": -8.16378,
+        "lat": 31.7754,
+        "bt": "Tamansourte",
+        "cie": "Marrakech",
+        "reg": "Marrakech",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Marrakech"
+      },
+      "perimetres": [
+        {
+          "bt": "Tamansourte",
+          "cie": "Marrakech",
+          "reg": "Marrakech"
+        }
+      ],
+      "cree": "2026-10-26T12:02:26.676Z",
+      "maj": "2026-10-26T12:02:26.676Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvp7jv2p_56a6a1c1",
+      "type": "demande",
+      "titre": "Demande de validation",
+      "description": "Une modification de Poste fixe Tamansourte attend validation.",
+      "actions": [
+        "demander-modification"
+      ],
+      "barrageId": "BF-BT-436",
+      "barrage": {
+        "id": "BF-BT-436",
+        "nom": "Poste fixe Tamansourte",
+        "type": "barrage_fixe",
+        "route": "RN7",
+        "lng": -8.06312,
+        "lat": 31.70484,
+        "bt": "Tamansourte",
+        "cie": "Tamansourte",
+        "reg": "Marrakech",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-MARRAKECH",
+        "nom": "Chef de région Marrakech",
+        "rang": "reg",
+        "unite": "Marrakech"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Tamansourte",
+          "cie": "Tamansourte",
+          "reg": "Marrakech"
+        }
+      ],
+      "cree": "2026-10-26T12:03:20.976Z",
+      "maj": "2026-10-26T12:03:20.976Z",
+      "lues": {
+        "SUPERADMIN": "2026-10-28T10:39:52.467Z"
+      }
+    },
+    {
+      "id": "not_mvqnym5y_b075d743",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "BFI Dakhla a été assigné au CMND Région Dakhla.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BFI-CIE-024",
+      "barrage": {
+        "id": "BFI-CIE-024",
+        "nom": "BFI Dakhla",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -15.67267,
+        "lat": 23.89229,
+        "bt": "El Aargoub",
+        "cie": "Dakhla",
+        "reg": "Dakhla",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Dakhla"
+      },
+      "perimetres": [
+        {
+          "bt": "El Aargoub",
+          "cie": "Dakhla",
+          "reg": "Dakhla"
+        }
+      ],
+      "cree": "2026-10-27T12:30:28.750Z",
+      "maj": "2026-10-27T12:30:28.750Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvqnz64o_d06ce618",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "BFI Skhirate a été assigné au CMND Région Settat.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BFI-CIE-071",
+      "barrage": {
+        "id": "BFI-CIE-071",
+        "nom": "BFI Skhirate",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -7.05783,
+        "lat": 33.83761,
+        "bt": "Skhirate-El Fath",
+        "cie": "Skhirate",
+        "reg": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Settat"
+      },
+      "perimetres": [
+        {
+          "bt": "Skhirate-El Fath",
+          "cie": "Skhirate",
+          "reg": "Rabat"
+        }
+      ],
+      "cree": "2026-10-27T12:30:55.100Z",
+      "maj": "2026-10-27T12:30:55.100Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvqnzg3w_21a9d084",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "BFI Skhirate a été assigné au CMND Région Rabat. BFI Skhirate a été assigné au CMND Région Settat.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BFI-CIE-071",
+      "barrage": {
+        "id": "BFI-CIE-071",
+        "nom": "BFI Skhirate",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -7.05783,
+        "lat": 33.83761,
+        "bt": "Skhirate-El Fath",
+        "cie": "Skhirate",
+        "reg": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat"
+      },
+      "perimetres": [
+        {
+          "bt": "Skhirate-El Fath",
+          "cie": "Skhirate",
+          "reg": "Rabat"
+        }
+      ],
+      "cree": "2026-10-27T12:31:08.009Z",
+      "maj": "2026-10-27T12:31:08.009Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvqnzpgr_6bf6eede",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "BFI Tarfaya a été assigné au CMND Région Laayoune.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BFI-CIE-079",
+      "barrage": {
+        "id": "BFI-CIE-079",
+        "nom": "BFI Tarfaya",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -12.82853,
+        "lat": 27.95973,
+        "bt": "Tarfaya",
+        "cie": "Tarfaya",
+        "reg": "Laayoune",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Laayoune"
+      },
+      "perimetres": [
+        {
+          "bt": "Tarfaya",
+          "cie": "Tarfaya",
+          "reg": "Laayoune"
+        }
+      ],
+      "cree": "2026-10-27T12:31:20.180Z",
+      "maj": "2026-10-27T12:31:20.180Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvqo028c_36f5842e",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Bouknadel a été assigné au CMND Région Rabat.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-125",
+      "barrage": {
+        "id": "BF-BT-125",
+        "nom": "Poste fixe Bouknadel",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -6.73501,
+        "lat": 34.12797,
+        "bt": "Bouknadel",
+        "cie": "Salé",
+        "reg": "Rabat",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat"
+      },
+      "perimetres": [
+        {
+          "bt": "Bouknadel",
+          "cie": "Salé",
+          "reg": "Rabat"
+        }
+      ],
+      "cree": "2026-10-27T12:31:36.690Z",
+      "maj": "2026-10-27T12:31:36.690Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvqo07dp_28a735ec",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Bouknadel a été assigné au CMND Région Rabat — Assignation automatique pour traitement : conflit sur RN1 (16.2 km).. Poste fixe Bouknadel a été assigné au CMND Région Kénitra — Assignation automatique pour traitement : conflit sur RN1 (16.2 km).. Poste fixe Bouknadel a été assigné au CMND Région Rabat — Assignation automatique pour traitement : conflit sur RN1 (8.9 km).. Poste fixe Bouknadel a été assigné au CMND Région Rabat — Assignation automatique pour traitement : conflit sur RN1 (19.4 km).. Poste fixe Bouknadel a été assigné au CMND Région Kénitra — Assignation automatique pour traitement : conflit sur RN1 (19.4 km)..",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-125",
+      "barrage": {
+        "id": "BF-BT-125",
+        "nom": "Poste fixe Bouknadel",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -6.73501,
+        "lat": 34.12797,
+        "bt": "Bouknadel",
+        "cie": "Salé",
+        "reg": "Rabat",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat"
+      },
+      "perimetres": [
+        {
+          "bt": "Bouknadel",
+          "cie": "Salé",
+          "reg": "Rabat"
+        }
+      ],
+      "cree": "2026-10-27T12:31:43.432Z",
+      "maj": "2026-10-27T12:31:43.510Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvqo07hp_d83d0a50",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Boukraa a été assigné au CMND Région Laayoune — Assignation automatique pour traitement : conflit sur RN1 (18.3 km)..",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-126",
+      "barrage": {
+        "id": "BF-BT-126",
+        "nom": "Poste fixe Boukraa",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -13.08748,
+        "lat": 27.30145,
+        "bt": "Boukraa",
+        "cie": "Laayoune",
+        "reg": "Laayoune",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Laayoune"
+      },
+      "perimetres": [
+        {
+          "bt": "Boukraa",
+          "cie": "Laayoune",
+          "reg": "Laayoune"
+        }
+      ],
+      "cree": "2026-10-27T12:31:43.564Z",
+      "maj": "2026-10-27T12:31:43.564Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvqo07iq_4e7fd7dc",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Kénitra a été assigné au CMND Région Kénitra — Assignation automatique pour traitement : conflit sur RN1 (2.7 km).. Poste fixe Kénitra a été assigné au CMND Région Kénitra — Assignation automatique pour traitement : conflit sur RN1 (3.2 km)..",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-248",
+      "barrage": {
+        "id": "BF-BT-248",
+        "nom": "Poste fixe Kénitra",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -6.62804,
+        "lat": 34.23857,
+        "bt": "Kénitra",
+        "cie": "Kénitra",
+        "reg": "Kénitra",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Kénitra"
+      },
+      "perimetres": [
+        {
+          "bt": "Kénitra",
+          "cie": "Kénitra",
+          "reg": "Kénitra"
+        }
+      ],
+      "cree": "2026-10-27T12:31:43.613Z",
+      "maj": "2026-10-27T12:31:43.652Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvqo07l0_3d19513b",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Rabat a été assigné au CMND Région Rabat — Assignation automatique pour traitement : conflit sur RN1 (17.5 km).. Poste fixe Rabat a été assigné au CMND Région Rabat — Assignation automatique pour traitement : conflit sur RN1 (7.3 km)..",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-350",
+      "barrage": {
+        "id": "BF-BT-350",
+        "nom": "Poste fixe Rabat",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -6.83679,
+        "lat": 34.02235,
+        "bt": "Rabat",
+        "cie": "Rabat",
+        "reg": "Rabat",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat"
+      },
+      "perimetres": [
+        {
+          "bt": "Rabat",
+          "cie": "Rabat",
+          "reg": "Rabat"
+        }
+      ],
+      "cree": "2026-10-27T12:31:43.689Z",
+      "maj": "2026-10-27T12:31:43.733Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvqo07nb_c6fe31e1",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Sidi Taibi a été assigné au CMND Région Kénitra — Assignation automatique pour traitement : conflit sur RN1 (7.2 km)..",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-401",
+      "barrage": {
+        "id": "BF-BT-401",
+        "nom": "Poste fixe Sidi Taibi",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -6.65254,
+        "lat": 34.22633,
+        "bt": "Sidi Taibi",
+        "cie": "Kénitra",
+        "reg": "Kénitra",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Kénitra"
+      },
+      "perimetres": [
+        {
+          "bt": "Sidi Taibi",
+          "cie": "Kénitra",
+          "reg": "Kénitra"
+        }
+      ],
+      "cree": "2026-10-27T12:31:43.772Z",
+      "maj": "2026-10-27T12:31:43.772Z",
+      "lues": {
+        "REG-KÉNITRA": "2026-10-27T12:33:28.297Z"
+      }
+    },
+    {
+      "id": "not_mvqo5aa4_3655f403",
+      "type": "faction",
+      "titre": "Faction modifiée",
+      "description": "Poste fixe Bouknadel : aucune → aucune.",
+      "actions": [
+        "changement_faction"
+      ],
+      "barrageId": "BF-BT-125",
+      "barrage": {
+        "id": "BF-BT-125",
+        "nom": "Poste fixe Bouknadel",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -6.73501,
+        "lat": 34.12797,
+        "bt": "Bouknadel",
+        "cie": "Salé",
+        "reg": "Rabat",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "CIE-KÉNITRA",
+        "nom": "Chef de compagnie Kénitra",
+        "rang": "cie",
+        "unite": "Kénitra"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Bouknadel",
+          "cie": "Salé",
+          "reg": "Rabat"
+        }
+      ],
+      "cree": "2026-10-27T12:35:40.490Z",
+      "maj": "2026-10-27T12:35:40.490Z",
+      "lues": {
+        "SUPERADMIN": "2026-10-28T10:39:49.309Z"
+      }
+    },
+    {
+      "id": "not_mvqo6b4x_300d2ce9",
+      "type": "demande",
+      "titre": "Demande de validation",
+      "description": "Le retrait de Poste fixe Kénitra attend validation.",
+      "actions": [
+        "demander-suppression"
+      ],
+      "barrageId": "BF-BT-248",
+      "barrage": {
+        "id": "BF-BT-248",
+        "nom": "Poste fixe Kénitra",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -6.62804,
+        "lat": 34.23857,
+        "bt": "Kénitra",
+        "cie": "Kénitra",
+        "reg": "Kénitra",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "CIE-KÉNITRA",
+        "nom": "Chef de compagnie Kénitra",
+        "rang": "cie",
+        "unite": "Kénitra"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Kénitra",
+          "cie": "Kénitra",
+          "reg": "Kénitra"
+        }
+      ],
+      "cree": "2026-10-27T12:36:28.256Z",
+      "maj": "2026-10-27T12:36:28.256Z",
+      "lues": {
+        "SUPERADMIN": "2026-10-28T10:39:46.356Z"
+      }
+    },
+    {
+      "id": "not_mvqo6jeu_f69fda1a",
+      "type": "faction",
+      "titre": "Faction modifiée",
+      "description": "Poste fixe Sidi Taibi : aucune → aucune.",
+      "actions": [
+        "changement_faction"
+      ],
+      "barrageId": "BF-BT-401",
+      "barrage": {
+        "id": "BF-BT-401",
+        "nom": "Poste fixe Sidi Taibi",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -6.65254,
+        "lat": 34.22633,
+        "bt": "Sidi Taibi",
+        "cie": "Kénitra",
+        "reg": "Kénitra",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "CIE-KÉNITRA",
+        "nom": "Chef de compagnie Kénitra",
+        "rang": "cie",
+        "unite": "Kénitra"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Sidi Taibi",
+          "cie": "Kénitra",
+          "reg": "Kénitra"
+        }
+      ],
+      "cree": "2026-10-27T12:36:38.980Z",
+      "maj": "2026-10-27T12:36:38.980Z",
+      "lues": {
+        "SUPERADMIN": "2026-10-28T10:39:39.267Z"
+      }
+    },
+    {
+      "id": "not_mvqpavwb_6209a91a",
+      "type": "faction",
+      "titre": "Faction modifiée",
+      "description": "Poste fixe Boukraa : aucune → aucune.",
+      "actions": [
+        "changement_faction"
+      ],
+      "barrageId": "BF-BT-126",
+      "barrage": {
+        "id": "BF-BT-126",
+        "nom": "Poste fixe Boukraa",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -13.08748,
+        "lat": 27.30145,
+        "bt": "Boukraa",
+        "cie": "Laayoune",
+        "reg": "Laayoune",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-LAAYOUNE",
+        "nom": "Chef de région Laayoune",
+        "rang": "reg",
+        "unite": "Laayoune"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Boukraa",
+          "cie": "Laayoune",
+          "reg": "Laayoune"
+        }
+      ],
+      "cree": "2026-10-27T13:08:01.401Z",
+      "maj": "2026-10-27T13:08:01.401Z",
+      "lues": {
+        "SUPERADMIN": "2026-10-28T10:39:32.499Z"
+      }
+    },
+    {
+      "id": "not_mvv38a77_c804ee3d",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "BFI Laayoune a été assigné au CMND Région Laayoune.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BFI-CIE-044",
+      "barrage": {
+        "id": "BFI-CIE-044",
+        "nom": "BFI Laayoune",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -13.23296,
+        "lat": 27.15235,
+        "bt": "Laayoune",
+        "cie": "Laayoune",
+        "reg": "Laayoune",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Laayoune"
+      },
+      "perimetres": [
+        {
+          "bt": "Laayoune",
+          "cie": "Laayoune",
+          "reg": "Laayoune"
+        }
+      ],
+      "cree": "2026-10-30T14:48:59.287Z",
+      "maj": "2026-10-30T14:48:59.287Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvv39gir_bb9fb06f",
+      "type": "demande",
+      "titre": "Demande de validation",
+      "description": "Une modification de Poste fixe Laayoune attend validation.",
+      "actions": [
+        "demander-modification"
+      ],
+      "barrageId": "BF-BT-267",
+      "barrage": {
+        "id": "BF-BT-267",
+        "nom": "Poste fixe Laayoune",
+        "type": "barrage_fixe",
+        "route": "RN5",
+        "lng": -13.19311,
+        "lat": 27.1458,
+        "bt": "Laayoune",
+        "cie": "Laayoune",
+        "reg": "Laayoune",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-LAAYOUNE",
+        "nom": "Chef de région Laayoune",
+        "rang": "reg",
+        "unite": "Laayoune"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Laayoune",
+          "cie": "Laayoune",
+          "reg": "Laayoune"
+        }
+      ],
+      "cree": "2026-10-30T14:49:54.146Z",
+      "maj": "2026-10-30T14:49:54.146Z",
+      "lues": {
+        "SUPERADMIN": "2026-10-30T14:52:08.340Z"
+      }
+    },
+    {
+      "id": "not_mvv39iho_f89c2891",
+      "type": "demande",
+      "titre": "Validation finale attendue",
+      "description": "Le CMD Région Laayoune a traité le conflit C-01 (Déplacement du barrage (Réajustement position)). Il attend votre validation finale.",
+      "actions": [
+        "conflit-workflow"
+      ],
+      "barrageId": null,
+      "barrage": {
+        "id": "BFI-CIE-044",
+        "nom": "BFI Laayoune",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -13.23296,
+        "lat": 27.15235,
+        "bt": "Laayoune",
+        "cie": "Laayoune",
+        "reg": "Laayoune",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "conflitId": "C-01",
+      "details": {
+        "conflitId": "C-01",
+        "conflitNumero": "C-01"
+      },
+      "acteur": {
+        "matricule": "REG-LAAYOUNE",
+        "nom": "Chef de région Laayoune",
+        "rang": "reg",
+        "unite": "Laayoune"
+      },
+      "destinataire": {
+        "rang": "admin",
+        "unite": null,
+        "matricule": null
+      },
+      "destinataires": [
+        {
+          "rang": "admin",
+          "unite": null,
+          "matricule": null
+        }
+      ],
+      "perimetres": [],
+      "cree": "2026-10-30T14:49:56.695Z",
+      "maj": "2026-10-30T14:49:56.695Z",
+      "lues": {
+        "SUPERADMIN": "2026-10-30T14:52:03.688Z"
+      }
+    },
+    {
+      "id": "not_mvv3bffk_f580d769",
+      "type": "validation",
+      "titre": "Conflit clôturé",
+      "description": "Le traitement du conflit C-01 a été approuvé définitivement par le Superadmin. Il est consultable dans l’historique.",
+      "actions": [
+        "conflit-workflow"
+      ],
+      "barrageId": null,
+      "barrage": {
+        "id": "BFI-CIE-044",
+        "nom": "BFI Laayoune",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -13.23296,
+        "lat": 27.15235,
+        "bt": "Laayoune",
+        "cie": "Laayoune",
+        "reg": "Laayoune",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "conflitId": "C-01",
+      "details": {
+        "conflitId": "C-01",
+        "conflitNumero": "C-01"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Laayoune",
+        "matricule": null
+      },
+      "destinataires": [
+        {
+          "rang": "reg",
+          "unite": "Laayoune",
+          "matricule": null
+        },
+        {
+          "rang": "cie",
+          "unite": "Laayoune",
+          "matricule": null
+        }
+      ],
+      "perimetres": [],
+      "cree": "2026-10-30T14:51:26.044Z",
+      "maj": "2026-10-30T14:51:26.044Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvz1mvjt_bcf8175f",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "BFI Laayoune a été assigné au CMND Région Laayoune.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BFI-CIE-044",
+      "barrage": {
+        "id": "BFI-CIE-044",
+        "nom": "BFI Laayoune",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -13.23296,
+        "lat": 27.15235,
+        "bt": "Laayoune",
+        "cie": "Laayoune",
+        "reg": "Laayoune",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Laayoune"
+      },
+      "perimetres": [
+        {
+          "bt": "Laayoune",
+          "cie": "Laayoune",
+          "reg": "Laayoune"
+        }
+      ],
+      "cree": "2026-11-02T09:15:25.592Z",
+      "maj": "2026-11-02T09:15:25.592Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvz1nao2_a5f159c1",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "BFI Skhirate a été assigné au CMND Région Settat.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BFI-CIE-071",
+      "barrage": {
+        "id": "BFI-CIE-071",
+        "nom": "BFI Skhirate",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -7.05783,
+        "lat": 33.83761,
+        "bt": "Skhirate-El Fath",
+        "cie": "Skhirate",
+        "reg": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Settat"
+      },
+      "perimetres": [
+        {
+          "bt": "Skhirate-El Fath",
+          "cie": "Skhirate",
+          "reg": "Rabat"
+        }
+      ],
+      "cree": "2026-11-02T09:15:45.189Z",
+      "maj": "2026-11-02T09:15:45.189Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvz1nnso_79839735",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "BFI Tarfaya a été assigné au CMND Région Laayoune.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BFI-CIE-079",
+      "barrage": {
+        "id": "BFI-CIE-079",
+        "nom": "BFI Tarfaya",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -12.82853,
+        "lat": 27.95973,
+        "bt": "Tarfaya",
+        "cie": "Tarfaya",
+        "reg": "Laayoune",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Laayoune"
+      },
+      "perimetres": [
+        {
+          "bt": "Tarfaya",
+          "cie": "Tarfaya",
+          "reg": "Laayoune"
+        }
+      ],
+      "cree": "2026-11-02T09:16:02.223Z",
+      "maj": "2026-11-02T09:16:02.223Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvz1nujk_4d92df76",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Bni Yakhlef a été assigné au CMND Région Casablanca. Poste fixe Bni Yakhlef a été assigné au CMND Région Settat.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-112",
+      "barrage": {
+        "id": "BF-BT-112",
+        "nom": "Poste fixe Bni Yakhlef",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -7.34544,
+        "lat": 33.68123,
+        "bt": "Bni Yakhlef",
+        "cie": "Mohammedia",
+        "reg": "Casablanca",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Casablanca"
+      },
+      "perimetres": [
+        {
+          "bt": "Bni Yakhlef",
+          "cie": "Mohammedia",
+          "reg": "Casablanca"
+        }
+      ],
+      "cree": "2026-11-02T09:16:10.964Z",
+      "maj": "2026-11-02T09:16:10.964Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvz1o861_95561e0e",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Boukraa a été assigné au CMND Région Laayoune.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-126",
+      "barrage": {
+        "id": "BF-BT-126",
+        "nom": "Poste fixe Boukraa",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -13.08748,
+        "lat": 27.30145,
+        "bt": "Boukraa",
+        "cie": "Laayoune",
+        "reg": "Laayoune",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Laayoune"
+      },
+      "perimetres": [
+        {
+          "bt": "Boukraa",
+          "cie": "Laayoune",
+          "reg": "Laayoune"
+        }
+      ],
+      "cree": "2026-11-02T09:16:28.622Z",
+      "maj": "2026-11-02T09:16:28.622Z",
+      "lues": {
+        "REG-LAAYOUNE": "2026-11-02T09:49:12.438Z"
+      }
+    },
+    {
+      "id": "not_mvz1ogzb_f360cca3",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Bouznika a été assigné au CMND Région Settat.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-132",
+      "barrage": {
+        "id": "BF-BT-132",
+        "nom": "Poste fixe Bouznika",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -7.20861,
+        "lat": 33.76384,
+        "bt": "Bouznika",
+        "cie": "Bouznika",
+        "reg": "Settat",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Settat"
+      },
+      "perimetres": [
+        {
+          "bt": "Bouznika",
+          "cie": "Bouznika",
+          "reg": "Settat"
+        }
+      ],
+      "cree": "2026-11-02T09:16:40.046Z",
+      "maj": "2026-11-02T09:16:40.046Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvz1q86g_fd0026d5",
+      "type": "faction",
+      "titre": "Faction modifiée",
+      "description": "Poste fixe Boukraa : aucune → aucune.",
+      "actions": [
+        "changement_faction"
+      ],
+      "barrageId": "BF-BT-126",
+      "barrage": {
+        "id": "BF-BT-126",
+        "nom": "Poste fixe Boukraa",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -13.08748,
+        "lat": 27.30145,
+        "bt": "Boukraa",
+        "cie": "Laayoune",
+        "reg": "Laayoune",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-LAAYOUNE",
+        "nom": "Chef de région Laayoune",
+        "rang": "reg",
+        "unite": "Laayoune"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Boukraa",
+          "cie": "Laayoune",
+          "reg": "Laayoune"
+        }
+      ],
+      "cree": "2026-11-02T09:18:01.959Z",
+      "maj": "2026-11-02T09:18:01.959Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvz1q86n_c47a8a00",
+      "type": "demande",
+      "titre": "Validation finale attendue",
+      "description": "Le CMD Région Laayoune a traité le conflit C-R13 (Changement de faction du barrage Poste fixe Boukraa (Faction 2)). Il attend votre validation finale.",
+      "actions": [
+        "conflit-workflow"
+      ],
+      "barrageId": null,
+      "barrage": {
+        "id": "BF-BT-126",
+        "nom": "Poste fixe Boukraa",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -13.08748,
+        "lat": 27.30145,
+        "bt": "Boukraa",
+        "cie": "Laayoune",
+        "reg": "Laayoune",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "conflitId": "conf_calc_BF-BT-126|BF-BT-188",
+      "details": {
+        "conflitId": "conf_calc_BF-BT-126|BF-BT-188",
+        "conflitNumero": "C-R13"
+      },
+      "acteur": {
+        "matricule": "REG-LAAYOUNE",
+        "nom": "Chef de région Laayoune",
+        "rang": "reg",
+        "unite": "Laayoune"
+      },
+      "destinataire": {
+        "rang": "admin",
+        "unite": null,
+        "matricule": null
+      },
+      "destinataires": [
+        {
+          "rang": "admin",
+          "unite": null,
+          "matricule": null
+        }
+      ],
+      "perimetres": [],
+      "cree": "2026-11-02T09:18:01.962Z",
+      "maj": "2026-11-02T09:18:01.962Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvz3ht70_3962ab81",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Lqliaa a été assigné au CMND Région Agadir.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-278",
+      "barrage": {
+        "id": "BF-BT-278",
+        "nom": "Poste fixe Lqliaa",
+        "type": "barrage_fixe",
+        "route": "RR105",
+        "lng": -9.46503,
+        "lat": 30.3023,
+        "bt": "Lqliaa",
+        "cie": "Inezgane",
+        "reg": "Agadir",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Agadir"
+      },
+      "perimetres": [
+        {
+          "bt": "Lqliaa",
+          "cie": "Inezgane",
+          "reg": "Agadir"
+        }
+      ],
+      "cree": "2026-11-02T10:07:28.515Z",
+      "maj": "2026-11-02T10:07:28.515Z",
+      "lues": {}
+    },
+    {
+      "cle": "conf_calc_BF-BT-125|BF-BT-401:h_mvz3w8yd_2fd7f:cie:Kénitra:",
+      "id": "not_mvz3w8yi_46b4b677",
+      "type": "validation",
+      "titre": "Traitement validé",
+      "description": "Le Super Admin a validé le traitement du conflit C-R4. Le conflit passe en suivi.",
+      "actions": [
+        "conflit-workflow"
+      ],
+      "barrageId": null,
+      "barrage": {
+        "id": "BF-BT-125",
+        "nom": "Poste fixe Bouknadel",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -6.73501,
+        "lat": 34.12797,
+        "bt": "Bouknadel",
+        "cie": "Salé",
+        "reg": "Rabat",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "conflitId": "conf_calc_BF-BT-125|BF-BT-401",
+      "details": {
+        "conflitId": "conf_calc_BF-BT-125|BF-BT-401",
+        "conflitNumero": "C-R4"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "cie",
+        "unite": "Kénitra",
+        "reg": null,
+        "matricule": null
+      },
+      "destinataires": [
+        {
+          "rang": "cie",
+          "unite": "Kénitra",
+          "reg": null,
+          "matricule": null
+        }
+      ],
+      "perimetres": [],
+      "cree": "2026-11-02T10:18:42.133Z",
+      "maj": "2026-11-02T10:18:42.133Z",
+      "lues": {}
+    },
+    {
+      "cle": "conf_calc_BF-BT-125|BF-BT-401:h_mvz3w8yd_2fd7f:reg:Kénitra:",
+      "id": "not_mvz3w8yk_a81cb3b0",
+      "type": "validation",
+      "titre": "Traitement validé",
+      "description": "Le Super Admin a validé le traitement du conflit C-R4. Le conflit passe en suivi.",
+      "actions": [
+        "conflit-workflow"
+      ],
+      "barrageId": null,
+      "barrage": {
+        "id": "BF-BT-125",
+        "nom": "Poste fixe Bouknadel",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -6.73501,
+        "lat": 34.12797,
+        "bt": "Bouknadel",
+        "cie": "Salé",
+        "reg": "Rabat",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "conflitId": "conf_calc_BF-BT-125|BF-BT-401",
+      "details": {
+        "conflitId": "conf_calc_BF-BT-125|BF-BT-401",
+        "conflitNumero": "C-R4"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Kénitra",
+        "matricule": null
+      },
+      "destinataires": [
+        {
+          "rang": "reg",
+          "unite": "Kénitra",
+          "matricule": null
+        }
+      ],
+      "perimetres": [],
+      "cree": "2026-11-02T10:18:42.133Z",
+      "maj": "2026-11-02T10:18:42.133Z",
+      "lues": {}
+    },
+    {
+      "cle": "conf_calc_BF-BT-125|BF-BT-401:h_mvz3w8yd_2fd7f:reg:Rabat:",
+      "id": "not_mvz3w8ym_54f0ae8f",
+      "type": "validation",
+      "titre": "Traitement validé",
+      "description": "Le Super Admin a validé le traitement du conflit C-R4. Le conflit passe en suivi.",
+      "actions": [
+        "conflit-workflow"
+      ],
+      "barrageId": null,
+      "barrage": {
+        "id": "BF-BT-125",
+        "nom": "Poste fixe Bouknadel",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -6.73501,
+        "lat": 34.12797,
+        "bt": "Bouknadel",
+        "cie": "Salé",
+        "reg": "Rabat",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "conflitId": "conf_calc_BF-BT-125|BF-BT-401",
+      "details": {
+        "conflitId": "conf_calc_BF-BT-125|BF-BT-401",
+        "conflitNumero": "C-R4"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat",
+        "matricule": null
+      },
+      "destinataires": [
+        {
+          "rang": "reg",
+          "unite": "Rabat",
+          "matricule": null
+        }
+      ],
+      "perimetres": [],
+      "cree": "2026-11-02T10:18:42.133Z",
+      "maj": "2026-11-02T10:18:42.133Z",
+      "lues": {}
+    },
+    {
+      "cle": "conf_calc_BF-BT-125|BF-BT-248:h_mvz3wgbk_4b999:cie:Kénitra:",
+      "id": "not_mvz3wgbo_21453b22",
+      "type": "validation",
+      "titre": "Traitement validé",
+      "description": "Le Super Admin a validé le traitement du conflit C-R8. Le conflit passe en suivi.",
+      "actions": [
+        "conflit-workflow"
+      ],
+      "barrageId": null,
+      "barrage": {
+        "id": "BF-BT-125",
+        "nom": "Poste fixe Bouknadel",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -6.73501,
+        "lat": 34.12797,
+        "bt": "Bouknadel",
+        "cie": "Salé",
+        "reg": "Rabat",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "conflitId": "conf_calc_BF-BT-125|BF-BT-248",
+      "details": {
+        "conflitId": "conf_calc_BF-BT-125|BF-BT-248",
+        "conflitNumero": "C-R8"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "cie",
+        "unite": "Kénitra",
+        "reg": null,
+        "matricule": null
+      },
+      "destinataires": [
+        {
+          "rang": "cie",
+          "unite": "Kénitra",
+          "reg": null,
+          "matricule": null
+        }
+      ],
+      "perimetres": [],
+      "cree": "2026-11-02T10:18:51.680Z",
+      "maj": "2026-11-02T10:18:51.680Z",
+      "lues": {}
+    },
+    {
+      "cle": "conf_calc_BF-BT-125|BF-BT-248:h_mvz3wgbk_4b999:reg:Rabat:",
+      "id": "not_mvz3wgbq_5447c815",
+      "type": "validation",
+      "titre": "Traitement validé",
+      "description": "Le Super Admin a validé le traitement du conflit C-R8. Le conflit passe en suivi.",
+      "actions": [
+        "conflit-workflow"
+      ],
+      "barrageId": null,
+      "barrage": {
+        "id": "BF-BT-125",
+        "nom": "Poste fixe Bouknadel",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -6.73501,
+        "lat": 34.12797,
+        "bt": "Bouknadel",
+        "cie": "Salé",
+        "reg": "Rabat",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "conflitId": "conf_calc_BF-BT-125|BF-BT-248",
+      "details": {
+        "conflitId": "conf_calc_BF-BT-125|BF-BT-248",
+        "conflitNumero": "C-R8"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat",
+        "matricule": null
+      },
+      "destinataires": [
+        {
+          "rang": "reg",
+          "unite": "Rabat",
+          "matricule": null
+        }
+      ],
+      "perimetres": [],
+      "cree": "2026-11-02T10:18:51.680Z",
+      "maj": "2026-11-02T10:18:51.680Z",
+      "lues": {}
+    },
+    {
+      "cle": "conf_calc_BF-BT-125|BF-BT-248:h_mvz3wgbk_4b999:reg:Kénitra:",
+      "id": "not_mvz3wgbs_2af7fd14",
+      "type": "validation",
+      "titre": "Traitement validé",
+      "description": "Le Super Admin a validé le traitement du conflit C-R8. Le conflit passe en suivi.",
+      "actions": [
+        "conflit-workflow"
+      ],
+      "barrageId": null,
+      "barrage": {
+        "id": "BF-BT-125",
+        "nom": "Poste fixe Bouknadel",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -6.73501,
+        "lat": 34.12797,
+        "bt": "Bouknadel",
+        "cie": "Salé",
+        "reg": "Rabat",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "conflitId": "conf_calc_BF-BT-125|BF-BT-248",
+      "details": {
+        "conflitId": "conf_calc_BF-BT-125|BF-BT-248",
+        "conflitNumero": "C-R8"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Kénitra",
+        "matricule": null
+      },
+      "destinataires": [
+        {
+          "rang": "reg",
+          "unite": "Kénitra",
+          "matricule": null
+        }
+      ],
+      "perimetres": [],
+      "cree": "2026-11-02T10:18:51.680Z",
+      "maj": "2026-11-02T10:18:51.680Z",
+      "lues": {}
+    },
+    {
+      "cle": "conf_calc_BF-BT-125|syn_bf_057_58gum.:h_mvz3wo0d_6f661:cie:Kénitra:",
+      "id": "not_mvz3wo0k_1343b727",
+      "type": "validation",
+      "titre": "Traitement validé",
+      "description": "Le Super Admin a validé le traitement du conflit C-R12. Le conflit passe en suivi.",
+      "actions": [
+        "conflit-workflow"
+      ],
+      "barrageId": null,
+      "barrage": {
+        "id": "BF-BT-125",
+        "nom": "Poste fixe Bouknadel",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -6.73501,
+        "lat": 34.12797,
+        "bt": "Bouknadel",
+        "cie": "Salé",
+        "reg": "Rabat",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "conflitId": "conf_calc_BF-BT-125|syn_bf_057_58gum.",
+      "details": {
+        "conflitId": "conf_calc_BF-BT-125|syn_bf_057_58gum.",
+        "conflitNumero": "C-R12"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "cie",
+        "unite": "Kénitra",
+        "reg": null,
+        "matricule": null
+      },
+      "destinataires": [
+        {
+          "rang": "cie",
+          "unite": "Kénitra",
+          "reg": null,
+          "matricule": null
+        }
+      ],
+      "perimetres": [],
+      "cree": "2026-11-02T10:19:01.645Z",
+      "maj": "2026-11-02T10:19:01.645Z",
+      "lues": {}
+    },
+    {
+      "cle": "conf_calc_BF-BT-125|syn_bf_057_58gum.:h_mvz3wo0d_6f661:reg:Rabat:",
+      "id": "not_mvz3wo0n_6dbdb7d5",
+      "type": "validation",
+      "titre": "Traitement validé",
+      "description": "Le Super Admin a validé le traitement du conflit C-R12. Le conflit passe en suivi.",
+      "actions": [
+        "conflit-workflow"
+      ],
+      "barrageId": null,
+      "barrage": {
+        "id": "BF-BT-125",
+        "nom": "Poste fixe Bouknadel",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -6.73501,
+        "lat": 34.12797,
+        "bt": "Bouknadel",
+        "cie": "Salé",
+        "reg": "Rabat",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "conflitId": "conf_calc_BF-BT-125|syn_bf_057_58gum.",
+      "details": {
+        "conflitId": "conf_calc_BF-BT-125|syn_bf_057_58gum.",
+        "conflitNumero": "C-R12"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat",
+        "matricule": null
+      },
+      "destinataires": [
+        {
+          "rang": "reg",
+          "unite": "Rabat",
+          "matricule": null
+        }
+      ],
+      "perimetres": [],
+      "cree": "2026-11-02T10:19:01.645Z",
+      "maj": "2026-11-02T10:19:01.645Z",
+      "lues": {}
+    },
+    {
+      "cle": "conf_calc_BF-BT-125|syn_bf_057_58gum.:h_mvz3wo0d_6f661:reg:Kénitra:",
+      "id": "not_mvz3wo0o_add9282a",
+      "type": "validation",
+      "titre": "Traitement validé",
+      "description": "Le Super Admin a validé le traitement du conflit C-R12. Le conflit passe en suivi.",
+      "actions": [
+        "conflit-workflow"
+      ],
+      "barrageId": null,
+      "barrage": {
+        "id": "BF-BT-125",
+        "nom": "Poste fixe Bouknadel",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -6.73501,
+        "lat": 34.12797,
+        "bt": "Bouknadel",
+        "cie": "Salé",
+        "reg": "Rabat",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "conflitId": "conf_calc_BF-BT-125|syn_bf_057_58gum.",
+      "details": {
+        "conflitId": "conf_calc_BF-BT-125|syn_bf_057_58gum.",
+        "conflitNumero": "C-R12"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Kénitra",
+        "matricule": null
+      },
+      "destinataires": [
+        {
+          "rang": "reg",
+          "unite": "Kénitra",
+          "matricule": null
+        }
+      ],
+      "perimetres": [],
+      "cree": "2026-11-02T10:19:01.645Z",
+      "maj": "2026-11-02T10:19:01.645Z",
+      "lues": {}
+    },
+    {
+      "cle": "conf_calc_BF-BT-126|BF-BT-188:h_mvz3wtul_827df:reg:Laayoune:",
+      "id": "not_mvz3wtup_0f97821e",
+      "type": "validation",
+      "titre": "Traitement validé",
+      "description": "Le Super Admin a validé le traitement du conflit C-R13. Le conflit passe en suivi.",
+      "actions": [
+        "conflit-workflow"
+      ],
+      "barrageId": null,
+      "barrage": {
+        "id": "BF-BT-126",
+        "nom": "Poste fixe Boukraa",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -13.08748,
+        "lat": 27.30145,
+        "bt": "Boukraa",
+        "cie": "Laayoune",
+        "reg": "Laayoune",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "conflitId": "conf_calc_BF-BT-126|BF-BT-188",
+      "details": {
+        "conflitId": "conf_calc_BF-BT-126|BF-BT-188",
+        "conflitNumero": "C-R13"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Laayoune",
+        "reg": null,
+        "matricule": null
+      },
+      "destinataires": [
+        {
+          "rang": "reg",
+          "unite": "Laayoune",
+          "reg": null,
+          "matricule": null
+        }
+      ],
+      "perimetres": [],
+      "cree": "2026-11-02T10:19:09.213Z",
+      "maj": "2026-11-02T10:19:09.213Z",
+      "lues": {}
+    },
+    {
+      "cle": "conf_calc_BF-BT-248|BF-BT-401:h_mvz3wz3k_ac5df:cie:Kénitra:",
+      "id": "not_mvz3wz3o_df9f5932",
+      "type": "validation",
+      "titre": "Traitement validé",
+      "description": "Le Super Admin a validé le traitement du conflit C-R15. Le conflit passe en suivi.",
+      "actions": [
+        "conflit-workflow"
+      ],
+      "barrageId": null,
+      "barrage": {
+        "id": "BF-BT-248",
+        "nom": "Poste fixe Kénitra",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -6.62804,
+        "lat": 34.23857,
+        "bt": "Kénitra",
+        "cie": "Kénitra",
+        "reg": "Kénitra",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "conflitId": "conf_calc_BF-BT-248|BF-BT-401",
+      "details": {
+        "conflitId": "conf_calc_BF-BT-248|BF-BT-401",
+        "conflitNumero": "C-R15"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "cie",
+        "unite": "Kénitra",
+        "reg": null,
+        "matricule": null
+      },
+      "destinataires": [
+        {
+          "rang": "cie",
+          "unite": "Kénitra",
+          "reg": null,
+          "matricule": null
+        }
+      ],
+      "perimetres": [],
+      "cree": "2026-11-02T10:19:16.016Z",
+      "maj": "2026-11-02T10:19:16.016Z",
+      "lues": {}
+    },
+    {
+      "cle": "conf_calc_BF-BT-248|BF-BT-401:h_mvz3wz3k_ac5df:reg:Kénitra:",
+      "id": "not_mvz3wz3q_8d0b559d",
+      "type": "validation",
+      "titre": "Traitement validé",
+      "description": "Le Super Admin a validé le traitement du conflit C-R15. Le conflit passe en suivi.",
+      "actions": [
+        "conflit-workflow"
+      ],
+      "barrageId": null,
+      "barrage": {
+        "id": "BF-BT-248",
+        "nom": "Poste fixe Kénitra",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -6.62804,
+        "lat": 34.23857,
+        "bt": "Kénitra",
+        "cie": "Kénitra",
+        "reg": "Kénitra",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "conflitId": "conf_calc_BF-BT-248|BF-BT-401",
+      "details": {
+        "conflitId": "conf_calc_BF-BT-248|BF-BT-401",
+        "conflitNumero": "C-R15"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Kénitra",
+        "matricule": null
+      },
+      "destinataires": [
+        {
+          "rang": "reg",
+          "unite": "Kénitra",
+          "matricule": null
+        }
+      ],
+      "perimetres": [],
+      "cree": "2026-11-02T10:19:16.016Z",
+      "maj": "2026-11-02T10:19:16.016Z",
+      "lues": {}
+    },
+    {
+      "cle": "conf_calc_BF-BT-248|syn_bf_057_58gum.:h_mvz3x3tz_c302e:cie:Kénitra:",
+      "id": "not_mvz3x3u3_e2ef6a89",
+      "type": "validation",
+      "titre": "Traitement validé",
+      "description": "Le Super Admin a validé le traitement du conflit C-R16. Le conflit passe en suivi.",
+      "actions": [
+        "conflit-workflow"
+      ],
+      "barrageId": null,
+      "barrage": {
+        "id": "BF-BT-248",
+        "nom": "Poste fixe Kénitra",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -6.62804,
+        "lat": 34.23857,
+        "bt": "Kénitra",
+        "cie": "Kénitra",
+        "reg": "Kénitra",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "conflitId": "conf_calc_BF-BT-248|syn_bf_057_58gum.",
+      "details": {
+        "conflitId": "conf_calc_BF-BT-248|syn_bf_057_58gum.",
+        "conflitNumero": "C-R16"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "cie",
+        "unite": "Kénitra",
+        "reg": null,
+        "matricule": null
+      },
+      "destinataires": [
+        {
+          "rang": "cie",
+          "unite": "Kénitra",
+          "reg": null,
+          "matricule": null
+        }
+      ],
+      "perimetres": [],
+      "cree": "2026-11-02T10:19:22.151Z",
+      "maj": "2026-11-02T10:19:22.151Z",
+      "lues": {}
+    },
+    {
+      "cle": "conf_calc_BF-BT-248|syn_bf_057_58gum.:h_mvz3x3tz_c302e:reg:Kénitra:",
+      "id": "not_mvz3x3u6_fc4262b0",
+      "type": "validation",
+      "titre": "Traitement validé",
+      "description": "Le Super Admin a validé le traitement du conflit C-R16. Le conflit passe en suivi.",
+      "actions": [
+        "conflit-workflow"
+      ],
+      "barrageId": null,
+      "barrage": {
+        "id": "BF-BT-248",
+        "nom": "Poste fixe Kénitra",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -6.62804,
+        "lat": 34.23857,
+        "bt": "Kénitra",
+        "cie": "Kénitra",
+        "reg": "Kénitra",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "conflitId": "conf_calc_BF-BT-248|syn_bf_057_58gum.",
+      "details": {
+        "conflitId": "conf_calc_BF-BT-248|syn_bf_057_58gum.",
+        "conflitNumero": "C-R16"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Kénitra",
+        "matricule": null
+      },
+      "destinataires": [
+        {
+          "rang": "reg",
+          "unite": "Kénitra",
+          "matricule": null
+        }
+      ],
+      "perimetres": [],
+      "cree": "2026-11-02T10:19:22.151Z",
+      "maj": "2026-11-02T10:19:22.151Z",
+      "lues": {}
+    },
+    {
+      "cle": "conf_calc_BF-BT-401|syn_bf_057_58gum.:h_mvz3x6pb_e2951:cie:Kénitra:",
+      "id": "not_mvz3x6pg_51e33d47",
+      "type": "validation",
+      "titre": "Traitement validé",
+      "description": "Le Super Admin a validé le traitement du conflit C-R19. Le conflit passe en suivi.",
+      "actions": [
+        "conflit-workflow"
+      ],
+      "barrageId": null,
+      "barrage": {
+        "id": "BF-BT-401",
+        "nom": "Poste fixe Sidi Taibi",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -6.65254,
+        "lat": 34.22633,
+        "bt": "Sidi Taibi",
+        "cie": "Kénitra",
+        "reg": "Kénitra",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "conflitId": "conf_calc_BF-BT-401|syn_bf_057_58gum.",
+      "details": {
+        "conflitId": "conf_calc_BF-BT-401|syn_bf_057_58gum.",
+        "conflitNumero": "C-R19"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "cie",
+        "unite": "Kénitra",
+        "reg": null,
+        "matricule": null
+      },
+      "destinataires": [
+        {
+          "rang": "cie",
+          "unite": "Kénitra",
+          "reg": null,
+          "matricule": null
+        }
+      ],
+      "perimetres": [],
+      "cree": "2026-11-02T10:19:25.871Z",
+      "maj": "2026-11-02T10:19:25.871Z",
+      "lues": {}
+    },
+    {
+      "cle": "conf_calc_BF-BT-401|syn_bf_057_58gum.:h_mvz3x6pb_e2951:reg:Kénitra:",
+      "id": "not_mvz3x6pj_d915fafe",
+      "type": "validation",
+      "titre": "Traitement validé",
+      "description": "Le Super Admin a validé le traitement du conflit C-R19. Le conflit passe en suivi.",
+      "actions": [
+        "conflit-workflow"
+      ],
+      "barrageId": null,
+      "barrage": {
+        "id": "BF-BT-401",
+        "nom": "Poste fixe Sidi Taibi",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -6.65254,
+        "lat": 34.22633,
+        "bt": "Sidi Taibi",
+        "cie": "Kénitra",
+        "reg": "Kénitra",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "conflitId": "conf_calc_BF-BT-401|syn_bf_057_58gum.",
+      "details": {
+        "conflitId": "conf_calc_BF-BT-401|syn_bf_057_58gum.",
+        "conflitNumero": "C-R19"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Kénitra",
+        "matricule": null
+      },
+      "destinataires": [
+        {
+          "rang": "reg",
+          "unite": "Kénitra",
+          "matricule": null
+        }
+      ],
+      "perimetres": [],
+      "cree": "2026-11-02T10:19:25.871Z",
+      "maj": "2026-11-02T10:19:25.871Z",
+      "lues": {}
+    },
+    {
+      "cle": "conf_calc_BFI-CIE-041|BFI-CIE-064:h_mvz3plzi_262ee:reg:Khémisset:",
+      "id": "not_mvz3pm19_b84cf73e",
+      "type": "assignation",
+      "titre": "Nouveau conflit à traiter",
+      "description": "Le Super Admin vous a assigné le conflit C-R1 : BFI Khémisset ↔ BFI Salé (48.4 km).",
+      "actions": [
+        "conflit-workflow"
+      ],
+      "barrageId": null,
+      "barrage": {
+        "id": "BFI-CIE-041",
+        "nom": "BFI Khémisset",
+        "type": "barrage_fixe",
+        "route": "A2",
+        "lng": -6.22277,
+        "lat": 33.82595,
+        "bt": "Tiflet",
+        "cie": "Khémisset",
+        "reg": "Khémisset",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "conflitId": "conf_calc_BFI-CIE-041|BFI-CIE-064",
+      "details": {
+        "conflitId": "conf_calc_BFI-CIE-041|BFI-CIE-064",
+        "conflitNumero": "C-R1"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Khémisset",
+        "matricule": null
+      },
+      "destinataires": [
+        {
+          "rang": "reg",
+          "unite": "Khémisset",
+          "matricule": null
+        }
+      ],
+      "perimetres": [],
+      "cree": "2026-11-02T10:13:32.430Z",
+      "maj": "2026-11-02T10:13:32.430Z",
+      "lues": {}
+    },
+    {
+      "cle": "conf_calc_BFI-CIE-041|BFI-CIE-064:h_mvz3plzi_262ee:reg:Rabat:",
+      "id": "not_mvz3pm25_b21406a7",
+      "type": "assignation",
+      "titre": "Nouveau conflit à traiter",
+      "description": "Le Super Admin vous a assigné le conflit C-R1 : BFI Khémisset ↔ BFI Salé (48.4 km).",
+      "actions": [
+        "conflit-workflow"
+      ],
+      "barrageId": null,
+      "barrage": {
+        "id": "BFI-CIE-041",
+        "nom": "BFI Khémisset",
+        "type": "barrage_fixe",
+        "route": "A2",
+        "lng": -6.22277,
+        "lat": 33.82595,
+        "bt": "Tiflet",
+        "cie": "Khémisset",
+        "reg": "Khémisset",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "conflitId": "conf_calc_BFI-CIE-041|BFI-CIE-064",
+      "details": {
+        "conflitId": "conf_calc_BFI-CIE-041|BFI-CIE-064",
+        "conflitNumero": "C-R1"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat",
+        "matricule": null
+      },
+      "destinataires": [
+        {
+          "rang": "reg",
+          "unite": "Rabat",
+          "matricule": null
+        }
+      ],
+      "perimetres": [],
+      "cree": "2026-11-02T10:13:32.430Z",
+      "maj": "2026-11-02T10:13:32.430Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvz4lm8y_6ca6a17b",
+      "type": "demande",
+      "titre": "Demande de validation",
+      "description": "Le retrait de Poste fixe Skhirate Centre attend validation.",
+      "actions": [
+        "demander-suppression"
+      ],
+      "barrageId": "BF-BT-405",
+      "barrage": {
+        "id": "BF-BT-405",
+        "nom": "Poste fixe Skhirate Centre",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -6.94349,
+        "lat": 33.90084,
+        "bt": "Témara",
+        "cie": "Témara",
+        "reg": "Rabat",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "rang": "reg",
+        "unite": "Rabat"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Témara",
+          "cie": "Témara",
+          "reg": "Rabat"
+        }
+      ],
+      "cree": "2026-11-02T10:38:25.756Z",
+      "maj": "2026-11-02T10:38:25.756Z",
+      "lues": {}
+    },
+    {
+      "cle": "conf_calc_BF-BT-405|BFI-CIE-071:h_mvz4lo20_4c445:admin::",
+      "id": "not_mvz4lohz_af6eebd0",
+      "type": "demande",
+      "titre": "Validation requise",
+      "description": "Le CMD Région Rabat a soumis le traitement du conflit C-R3 (Suppression du barrage Poste fixe Skhirate Centre). Il attend votre validation.",
+      "actions": [
+        "conflit-workflow"
+      ],
+      "barrageId": null,
+      "barrage": {
+        "id": "BFI-CIE-071",
+        "nom": "BFI Skhirate",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -7.05783,
+        "lat": 33.83761,
+        "bt": "Skhirate-El Fath",
+        "cie": "Skhirate",
+        "reg": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "conflitId": "conf_calc_BF-BT-405|BFI-CIE-071",
+      "details": {
+        "conflitId": "conf_calc_BF-BT-405|BFI-CIE-071",
+        "conflitNumero": "C-R3"
+      },
+      "acteur": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "rang": "reg",
+        "unite": "Rabat"
+      },
+      "destinataire": {
+        "rang": "admin",
+        "unite": null,
+        "matricule": null
+      },
+      "destinataires": [
+        {
+          "rang": "admin",
+          "unite": null,
+          "matricule": null
+        }
+      ],
+      "perimetres": [],
+      "cree": "2026-11-02T10:38:28.104Z",
+      "maj": "2026-11-02T10:38:28.104Z",
+      "lues": {}
+    },
+    {
+      "cle": "conf_calc_BF-BT-405|BFI-CIE-071:h_mvz5jwo8_658e1:reg:Rabat:",
+      "id": "not_mvz5jwqh_5090b1dc",
+      "type": "validation",
+      "titre": "Traitement validé",
+      "description": "Le Super Admin a validé le traitement du conflit C-R3. Le conflit passe en suivi.",
+      "actions": [
+        "conflit-workflow"
+      ],
+      "barrageId": null,
+      "barrage": {
+        "id": "BFI-CIE-071",
+        "nom": "BFI Skhirate",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -7.05783,
+        "lat": 33.83761,
+        "bt": "Skhirate-El Fath",
+        "cie": "Skhirate",
+        "reg": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "conflitId": "conf_calc_BF-BT-405|BFI-CIE-071",
+      "details": {
+        "conflitId": "conf_calc_BF-BT-405|BFI-CIE-071",
+        "conflitNumero": "C-R3"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat",
+        "reg": "Rabat",
+        "matricule": null
+      },
+      "destinataires": [
+        {
+          "rang": "reg",
+          "unite": "Rabat",
+          "reg": "Rabat",
+          "matricule": null
+        }
+      ],
+      "perimetres": [],
+      "cree": "2026-11-02T11:05:05.574Z",
+      "maj": "2026-11-02T11:05:05.574Z",
+      "lues": {}
+    },
+    {
+      "cle": "conf_calc_BF-BT-125|BF-BT-350:h_mvz7vmbg_98210:admin::",
+      "id": "not_mvz7vmcr_ef547adb",
+      "type": "demande",
+      "titre": "Validation requise",
+      "description": "Le CMD Région Rabat a soumis le traitement du conflit C-R9 (Changement de faction du barrage Poste fixe Bouknadel (Faction 1)). Il attend votre validation.",
+      "actions": [
+        "conflit-workflow"
+      ],
+      "barrageId": null,
+      "barrage": {
+        "id": "BF-BT-125",
+        "nom": "Poste fixe Bouknadel",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -6.73501,
+        "lat": 34.12797,
+        "bt": "Bouknadel",
+        "cie": "Salé",
+        "reg": "Rabat",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "conflitId": "conf_calc_BF-BT-125|BF-BT-350",
+      "details": {
+        "conflitId": "conf_calc_BF-BT-125|BF-BT-350",
+        "conflitNumero": "C-R9"
+      },
+      "acteur": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "rang": "reg",
+        "unite": "Rabat"
+      },
+      "destinataire": {
+        "rang": "admin",
+        "unite": null,
+        "matricule": null
+      },
+      "destinataires": [
+        {
+          "rang": "admin",
+          "unite": null,
+          "matricule": null
+        }
+      ],
+      "perimetres": [],
+      "cree": "2026-11-02T12:10:11.259Z",
+      "maj": "2026-11-02T12:10:11.259Z",
+      "lues": {}
+    },
+    {
+      "cle": "conf_calc_BF-BT-125|BF-BT-350:h_mvz9yrmp_b5fe0:reg:Rabat:",
+      "id": "not_mvz9yrnt_6582e149",
+      "type": "validation",
+      "titre": "Traitement validé",
+      "description": "Le Super Admin a validé le traitement du conflit C-R9. Le conflit passe en suivi.",
+      "actions": [
+        "conflit-workflow"
+      ],
+      "barrageId": null,
+      "barrage": {
+        "id": "BF-BT-125",
+        "nom": "Poste fixe Bouknadel",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -6.73501,
+        "lat": 34.12797,
+        "bt": "Bouknadel",
+        "cie": "Salé",
+        "reg": "Rabat",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "conflitId": "conf_calc_BF-BT-125|BF-BT-350",
+      "details": {
+        "conflitId": "conf_calc_BF-BT-125|BF-BT-350",
+        "conflitNumero": "C-R9"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat",
+        "reg": "Rabat",
+        "matricule": null
+      },
+      "destinataires": [
+        {
+          "rang": "reg",
+          "unite": "Rabat",
+          "reg": "Rabat",
+          "matricule": null
+        }
+      ],
+      "perimetres": [],
+      "cree": "2026-11-02T13:08:37.322Z",
+      "maj": "2026-11-02T13:08:37.322Z",
+      "lues": {}
+    }
+  ]
+}

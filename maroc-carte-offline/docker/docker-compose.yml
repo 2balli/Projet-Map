@@ -1,0 +1,22 @@
+# Carte opérationnelle hors ligne de la Gendarmerie Royale.
+# Démarrer : docker compose up -d     Arrêter : docker compose down
+# Accès : http://<adresse-de-ce-serveur>:5555
+services:
+  carte:
+    image: __IMAGE__
+    container_name: carte-gendarmerie
+    ports:
+      - "5555:5555"
+    restart: unless-stopped
+    # Système de fichiers en lecture seule, aucun privilège ; seuls les comptes, conflits et le
+    # journal d'audit s'écrivent, dans le volume carte-etat (jamais servi aux navigateurs).
+    read_only: true
+    volumes:
+      - carte-etat:/app/etat
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+
+volumes:
+  carte-etat:

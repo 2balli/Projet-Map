@@ -1,0 +1,84 @@
+{
+  "layers": {
+    "pts_bt": {
+      "entites": 501,
+      "taille": "0.08 Mo",
+      "source": "dataPoint/bt.json",
+      "sourceEntites": 529,
+      "ecartes": 28
+    },
+    "pts_cie": {
+      "entites": 86,
+      "taille": "0.01 Mo",
+      "source": "dataPoint/cie.json",
+      "sourceEntites": 86,
+      "ecartes": 0
+    },
+    "pts_reg": {
+      "entites": 28,
+      "taille": "0.00 Mo",
+      "source": "dataPoint/reg.json",
+      "sourceEntites": 28,
+      "ecartes": 0
+    },
+    "pointages": {
+      "entites": 395,
+      "taille": "0.14 Mo",
+      "source": "Flottes.pointages.json",
+      "sourceEntites": 1500,
+      "rejetesHorsTerritoire": 1105
+    },
+    "circo_bt": {
+      "entites": 504,
+      "taille": "1.55 Mo",
+      "source": "Circonscription/Circonscription_Bt.json",
+      "simplification": "4%",
+      "attributs": "gr_bde,gr_cie,gr_region,population,superficie"
+    },
+    "circo_cie": {
+      "entites": 90,
+      "taille": "0.81 Mo",
+      "source": "Circonscription/Circonscription_Compagnies.json",
+      "simplification": "6%",
+      "attributs": "nom,nbBt,nbCie,population,superficie,confiance,reg",
+      "nommesParVote": 90
+    },
+    "circo_reg": {
+      "entites": 28,
+      "taille": "0.68 Mo",
+      "source": "Circonscription/Circonscription_Region.json",
+      "simplification": "6%",
+      "attributs": "nom,nbBt,nbCie,population,superficie,confiance",
+      "nommesParVote": 28
+    }
+  },
+  "issues": [
+    {
+      "level": "critical",
+      "message": "28 des 529 unités de dataPoint/bt.json ont des coordonnées nulles : absentes de la carte",
+      "count": 28
+    },
+    {
+      "level": "critical",
+      "message": "1105 pointages sur 1500 (74 %) tombent hors de toute circonscription : données de test générées aléatoirement",
+      "count": 1105
+    },
+    {
+      "level": "serious",
+      "message": "6 champs des pointages n'ont qu'une seule valeur sur tout le fichier (pk, mission, sousMission, diametre, debut, fin) : aucune information exploitable",
+      "count": 6
+    },
+    {
+      "level": "warning",
+      "message": "5 contours de Circonscription/Circonscription_Compagnies.json nommés sur des votes partagés (Tanger 44 %, Bouskoura 50 %, Marrakech 64 %) : les limites des deux jeux de données divergent",
+      "count": 5
+    },
+    {
+      "level": "warning",
+      "message": "3 valeurs de gr_cie n'ont aucun contour correspondant (Nouaceur, Fahs Anjra, Tamansourte) : contours plus anciens que le découpage des BT",
+      "count": 3
+    }
+  ],
+  "couches": 7,
+  "couchesAttendues": 7
+}

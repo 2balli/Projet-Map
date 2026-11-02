@@ -1,0 +1,560 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "id": 0,
+            "properties": {
+                "nom": "Base aérienne Ben Guerir ⴰⵍⵓⴳⵏ ⴰⴳⵏⵡⴰⵏ ⵏ ⴱⵏⴳⵔⵉⵔ قاعدة بن جرير الجوية",
+                "iata": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.8895879,
+                    32.1248884
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1,
+            "properties": {
+                "nom": "Sidi Slimane Airport",
+                "iata": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.0491314,
+                    34.232525
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 2,
+            "properties": {
+                "nom": "Aéroport",
+                "iata": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -9.0730878,
+                    27.4096937
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 3,
+            "properties": {
+                "nom": "Oum Dreyga Airfield مهبط أم ادريكة",
+                "iata": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -13.3117083,
+                    24.0934492
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 4,
+            "properties": {
+                "nom": "Aéroport Militaire de Khouribga المطار العسكري بخريبكة",
+                "iata": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.9498009,
+                    32.864342
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 5,
+            "properties": {
+                "nom": "Héliport d'El Jadida",
+                "iata": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.4398659,
+                    33.2491691
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 6,
+            "properties": {
+                "nom": "Aeroport Agadir Al Massira مطار أكادير المسيرة",
+                "iata": "AGA"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -9.413855,
+                    30.3268911
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 7,
+            "properties": {
+                "nom": "Aéroport Marrakech Ménara ⴰⵣⴰⴳⵯⵣ ⵏ ⵎⵕⵕⴰⴽⵛ ⵎⵏⴰⵕⴰ مطار مراكش المنارة",
+                "iata": "RAK"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.0359329,
+                    31.6056989
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 8,
+            "properties": {
+                "nom": "Aéroport Mohammed V مطار محمد الخامس",
+                "iata": "CMN"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.5821439,
+                    33.3692601
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 9,
+            "properties": {
+                "nom": "Aéroport de Benslimane ⴰⵣⴰⴳⵯⵣ ⵏ ⴱⵏ ⵙⵍⵉⵎⴰⵏ مطار بنسليمان",
+                "iata": "GMD"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.2175778,
+                    33.653673
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 10,
+            "properties": {
+                "nom": "Aéroport Errachidia Moulay Ali Cherif ⴰⵣⴰⴳⵯⵣ ⵕⵕⴰⵛⵉⴷⵉⴰ ⵎⵓⵍⴰⵢ ⵄⵍⵉ ⵛⵛⵔⵉⴼ مطار الرشيدية مولاي علي الشريف",
+                "iata": "ERH"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.3990272,
+                    31.9469966
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 11,
+            "properties": {
+                "nom": "Aéroport de Zagora مطار زاكورة",
+                "iata": "OZG"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.861391,
+                    30.2660914
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 12,
+            "properties": {
+                "nom": "Aeroport Tanger Ibn Battouta مطار طنجة ابن بطوطة",
+                "iata": "TNG"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.9203803,
+                    35.7292173
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 13,
+            "properties": {
+                "nom": "Aéroport de Tata ⴰⵏⴰⴼⴰⴳ ⵏ ⵟⴰⵟⴰ مطار طاطا",
+                "iata": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.0091207,
+                    29.5551607
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 14,
+            "properties": {
+                "nom": "Aéroport",
+                "iata": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -16.9568411,
+                    21.391034
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 15,
+            "properties": {
+                "nom": "Aéroport de Casablanca Tit Mellil مطار الدار البيضاء تيط مليل",
+                "iata": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.4615156,
+                    33.5936513
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 16,
+            "properties": {
+                "nom": "Aéroport d'Agadir-Inezgane",
+                "iata": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -9.5465207,
+                    30.3818331
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 17,
+            "properties": {
+                "nom": "Ben Guerir Air Base ⴰⵍⵓⴳⵏ ⴰⴳⵏⵡⴰⵏ ⵏ ⴱⵏⴳⵔⵉⵔ قاعدة ابن جرير الجوية",
+                "iata": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.9120247,
+                    32.1336979
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 18,
+            "properties": {
+                "nom": "Aéroport d'Esmara مطار السمارة",
+                "iata": "SMW"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -11.6856712,
+                    26.7325833
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 19,
+            "properties": {
+                "nom": "Minurso Ahl Mahbass Airfield",
+                "iata": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -9.1717031,
+                    27.4181821
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 20,
+            "properties": {
+                "nom": "Aéroport de Taza مطار تازة",
+                "iata": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.9467707,
+                    34.2319101
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 21,
+            "properties": {
+                "nom": "Aéroport Militaire de Bassatine",
+                "iata": "MEK"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.5054112,
+                    33.8683923
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 22,
+            "properties": {
+                "nom": "Aéroport de Taroudant",
+                "iata": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.81997,
+                    30.5020825
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 23,
+            "properties": {
+                "nom": "Aéroport",
+                "iata": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.8395924,
+                    29.0141596
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 24,
+            "properties": {
+                "nom": "Alnif",
+                "iata": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.1923972,
+                    31.0987047
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 25,
+            "properties": {
+                "nom": "Bleida ابليدة",
+                "iata": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.396133,
+                    30.3763075
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 26,
+            "properties": {
+                "nom": "Kelaat M'Gouna",
+                "iata": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.141167,
+                    31.2193685
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 27,
+            "properties": {
+                "nom": "Aéroport d'Ouezzane مطار وزان",
+                "iata": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.6346706,
+                    34.7937222
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 28,
+            "properties": {
+                "nom": "Aéroport Al Hoceima - Cherif-Al-Idrissi ⴰⵣⴰⴳⵯⵣ ⵍⵛⵔⵉⴼ ⵍⵉⴷⵔⵉⵙⵉ مطار الحسيمة الشريف الإدريسي",
+                "iata": "AHU"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.8410855,
+                    35.1770627
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 29,
+            "properties": {
+                "nom": "Aéroport de Guelmim مطار كلميم",
+                "iata": "GLN"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -10.0466457,
+                    29.0248464
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 30,
+            "properties": {
+                "nom": "Aéroport Militaire de Guelmim",
+                "iata": "GLN"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -10.0522542,
+                    29.025694
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 31,
+            "properties": {
+                "nom": "Aéroport international d'Oujda-Angad",
+                "iata": "OUD"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.9324575,
+                    34.7963078
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 32,
+            "properties": {
+                "nom": "Aéroport Nador Al Aroui ⴰⵣⴰⴳⵯⵣ ⵏ ⵏⴰⴹⵓⵔ-ⵄⴰⵔⵡⵉ مطار الناظور العروي",
+                "iata": "NDR"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.0291548,
+                    34.988333
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 33,
+            "properties": {
+                "nom": "Aéroport Beni Mellal ⴰⵣⴰⴳⵯⵣ ⵏ ⴰⵢⵜ ⵎⵍⵍⴰⵍ مطار بني ملال",
+                "iata": "BEM"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.3173977,
+                    32.4016438
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 34,
+            "properties": {
+                "nom": "Aéroport d'Ifrane ⴰⵣⴰⴳⵯⵣ ⵏ ⵉⴼⵔⴰⵏ مطار إفران",
+                "iata": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.1534308,
+                    33.5058411
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 35,
+            "properties": {
+                "nom": "Lakhmiss N'Arazane Airport",
+                "iata": null
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.6365032,
+                    30.4967706
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 36,
+            "properties": {
+                "nom": "Aéroport Tétouan Saniat R'mel مطار تطوان سانية الرمل",
+                "iata": "TTU"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.3126019,
+                    35.5942356
+                ]
+            }
+        }
+    ]
+}

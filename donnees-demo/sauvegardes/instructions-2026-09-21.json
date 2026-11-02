@@ -1,0 +1,391 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "ins_msye2ttl_e78838e5",
+      "barrageId": "mq_msjkxs7m_d3bb4b97",
+      "barrage": {
+        "nom": "Barrage RN1 (remplacement 3)",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -6.9172,
+        "lat": 33.92585,
+        "bt": "Témara",
+        "cie": "Témara",
+        "reg": "Rabat"
+      },
+      "action": "suppression",
+      "criteres": {
+        "distanceKm": 2.8,
+        "seuilKm": 5,
+        "voisinNom": "",
+        "accidents": 0,
+        "vip": null,
+        "nonEclaire": null
+      },
+      "source": "optimisation",
+      "texte": "Le retrait de ce poste est proposé : il est trop proche de son voisin.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "traiteePar": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Rabat",
+        "reg": "Rabat",
+        "cie": null
+      },
+      "decision": "refusee",
+      "reponse": "",
+      "cree": "2026-08-18T08:16:52.089Z",
+      "traiteeLe": "2026-08-19T07:44:05.797Z",
+      "demo": true
+    },
+    {
+      "id": "ins_msyh4p5v_94bfe6a9",
+      "barrageId": "mq_msjo0hcz_04359bec",
+      "barrage": {
+        "nom": "",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -7.0995,
+        "lat": 33.81987,
+        "bt": "Skhirate-El Fath",
+        "cie": "Skhirate",
+        "reg": "Rabat"
+      },
+      "action": "suppression",
+      "criteres": {
+        "distanceKm": 2.37,
+        "seuilKm": 5,
+        "voisinNom": "",
+        "accidents": 0,
+        "vip": null,
+        "nonEclaire": null
+      },
+      "source": "optimisation",
+      "texte": "Le retrait de ce poste est proposé : il est trop proche de son voisin.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "traiteePar": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Rabat",
+        "reg": "Rabat",
+        "cie": null
+      },
+      "decision": "refusee",
+      "reponse": "",
+      "cree": "2026-08-18T09:42:18.211Z",
+      "traiteeLe": "2026-08-19T07:44:00.130Z",
+      "demo": true
+    },
+    {
+      "id": "ins_mt71mwue_26383fd1",
+      "barrageId": "mq_mt71mu9b_62e3776d",
+      "barrage": {
+        "nom": "",
+        "route": "",
+        "type": "barrage_fixe",
+        "lng": -6.89392,
+        "lat": 33.66721,
+        "bt": "Sidi Yahya des Zaers",
+        "cie": "Ain Aouda",
+        "reg": "Rabat"
+      },
+      "action": "nouveau_barrage",
+      "criteres": null,
+      "source": "saisie_terrain",
+      "texte": "Nouveau barrage fixe posé sur le terrain.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Rabat",
+        "reg": "Rabat",
+        "cie": null
+      },
+      "traiteePar": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "decision": "acceptee",
+      "reponse": "",
+      "cree": "2026-08-24T09:38:29.702Z",
+      "traiteeLe": "2026-08-25T12:16:28.246Z",
+      "demo": true
+    },
+    {
+      "id": "ins_mtk5kd6i_1d3b55c9",
+      "barrageId": "mq_mtk5kbnu_0488cdba",
+      "barrage": {
+        "nom": "",
+        "route": "",
+        "type": "barrage_fixe",
+        "lng": -14.75464,
+        "lat": 24.39713,
+        "bt": "Aarich",
+        "cie": "Dakhla",
+        "reg": "Dakhla"
+      },
+      "action": "nouveau_barrage",
+      "criteres": null,
+      "source": "saisie_terrain",
+      "texte": "Nouveau barrage fixe posé sur le terrain.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "REG-DAKHLA",
+        "nom": "Chef de région Dakhla",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Dakhla",
+        "reg": "Dakhla",
+        "cie": null
+      },
+      "traiteePar": {
+        "matricule": "REG-DAKHLA",
+        "nom": "Chef de région Dakhla",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Dakhla",
+        "reg": "Dakhla",
+        "cie": null
+      },
+      "decision": "acceptee",
+      "reponse": "",
+      "cree": "2026-09-02T13:49:29.658Z",
+      "traiteeLe": "2026-09-02T13:49:43.372Z",
+      "demo": true
+    },
+    {
+      "id": "ins_mtk64etf_148b110c",
+      "barrageId": "mq_mtk64c25_ae0c4a8c",
+      "barrage": {
+        "nom": "",
+        "route": "",
+        "type": "barrage_fixe",
+        "lng": -14.72168,
+        "lat": 24.21331,
+        "bt": "Aarich",
+        "cie": "Dakhla",
+        "reg": "Dakhla"
+      },
+      "action": "nouveau_barrage",
+      "criteres": null,
+      "source": "saisie_terrain",
+      "texte": "Nouveau barrage fixe posé sur le terrain.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "REG-DAKHLA",
+        "nom": "Chef de région Dakhla",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Dakhla",
+        "reg": "Dakhla",
+        "cie": null
+      },
+      "traiteePar": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "decision": null,
+      "reponse": "Poste absent de la carte : signalement classé automatiquement.",
+      "cree": "2026-09-02T14:05:04.899Z",
+      "traiteeLe": "2026-09-02T14:23:51.509Z",
+      "demo": true
+    },
+    {
+      "id": "ins_mtk6bfbf_5e93dff0",
+      "barrageId": "mq_mtk6bcm2_1bb7339f",
+      "barrage": {
+        "nom": "",
+        "route": "",
+        "type": "barrage_fixe",
+        "lng": -14.6228,
+        "lat": 23.98625,
+        "bt": "Aarich",
+        "cie": "Dakhla",
+        "reg": "Dakhla"
+      },
+      "action": "nouveau_barrage",
+      "criteres": null,
+      "source": "saisie_terrain",
+      "texte": "Nouveau barrage fixe posé sur le terrain.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "REG-DAKHLA",
+        "nom": "Chef de région Dakhla",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Dakhla",
+        "reg": "Dakhla",
+        "cie": null
+      },
+      "traiteePar": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "decision": null,
+      "reponse": "Poste retiré par son auteur avant validation.",
+      "cree": "2026-09-02T14:10:32.139Z",
+      "traiteeLe": "2026-09-02T14:18:51.560Z",
+      "demo": true
+    },
+    {
+      "id": "ins_mtk6t9q5_ba76a526",
+      "barrageId": "mq_mtk6t6qn_bc8df04f",
+      "barrage": {
+        "nom": "",
+        "route": "",
+        "type": "barrage_fixe",
+        "lng": -14.767,
+        "lat": 24.40214,
+        "bt": "Aarich",
+        "cie": "Dakhla",
+        "reg": "Dakhla"
+      },
+      "action": "nouveau_barrage",
+      "criteres": null,
+      "source": "saisie_terrain",
+      "aDecider": "unite",
+      "texte": "Nouveau barrage fixe posé par le commandement, déjà approuvé.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "traiteePar": {
+        "matricule": "REG-DAKHLA",
+        "nom": "Chef de région Dakhla",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Dakhla",
+        "reg": "Dakhla",
+        "cie": null
+      },
+      "decision": "acceptee",
+      "reponse": "",
+      "cree": "2026-09-02T14:24:24.702Z",
+      "traiteeLe": "2026-09-03T11:53:05.279Z",
+      "demo": true
+    },
+    {
+      "id": "ins_mtll5m17_e1f05185",
+      "barrageId": "mq_mtll5ket_d45f78ed",
+      "barrage": {
+        "nom": "",
+        "route": "",
+        "type": "barrage_fixe",
+        "lng": -14.77661,
+        "lat": 21.79521,
+        "bt": "Aousserd",
+        "cie": "Aousserd",
+        "reg": "Dakhla"
+      },
+      "action": "nouveau_barrage",
+      "criteres": null,
+      "source": "saisie_terrain",
+      "aDecider": "admin",
+      "texte": "Nouveau barrage fixe posé sur le terrain — à approuver.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "REG-DAKHLA",
+        "nom": "Chef de région Dakhla",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Dakhla",
+        "reg": "Dakhla",
+        "cie": null
+      },
+      "traiteePar": {
+        "matricule": "REG-DAKHLA",
+        "nom": "Chef de région Dakhla",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Dakhla",
+        "reg": "Dakhla",
+        "cie": null
+      },
+      "decision": null,
+      "reponse": "Poste retiré par son auteur avant validation.",
+      "cree": "2026-09-03T13:53:41.323Z",
+      "traiteeLe": "2026-09-03T13:54:00.991Z",
+      "demo": true
+    },
+    {
+      "id": "ins_mu5lmwtf_03741c54",
+      "barrageId": "mq_mu5lmw28_2edc9ad0",
+      "barrage": {
+        "nom": "",
+        "route": "",
+        "type": "barrage_fixe",
+        "lng": -8.30751,
+        "lat": 29.27925,
+        "bt": "Akka",
+        "cie": "Tata",
+        "reg": "Agadir"
+      },
+      "action": "nouveau_barrage",
+      "criteres": null,
+      "source": "saisie_terrain",
+      "aDecider": "unite",
+      "texte": "Nouveau barrage fixe posé par le commandement, déjà approuvé.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-09-17T14:02:31.971Z",
+      "traiteeLe": null
+    }
+  ]
+}

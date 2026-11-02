@@ -1,0 +1,33 @@
+{
+  "name": "maroc-carte-offline",
+  "version": "1.0.0",
+  "description": "Carte opérationnelle hors ligne de la Gendarmerie Royale (OpenStreetMap, MapLibre, PMTiles)",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "start": "node serveur.mjs",
+    "data": "node scripts/telecharger-donnees.mjs",
+    "gendarmerie": "node scripts/importer-gendarmerie.mjs",
+    "barages": "node scripts/generer-barages.mjs",
+    "test": "node --test",
+    "transfert": "node scripts/preparer-transfert.mjs",
+    "comptes": "node scripts/comptes.mjs"
+  },
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "@mapbox/vector-tile": "^3.0.0",
+    "@protomaps/basemaps": "^5.7.2",
+    "maplibre-gl": "^6.11.2",
+    "pbf": "^5.1.2",
+    "pmtiles": "^4.5.0",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@maplibre/maplibre-gl-style-spec": "^26.4.4",
+    "vite": "^8.3.2"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

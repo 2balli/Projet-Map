@@ -1,0 +1,1469 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "ins_msye2ttl_e78838e5",
+      "barrageId": "mq_msjkxs7m_d3bb4b97",
+      "barrage": {
+        "nom": "Barrage RN1 (remplacement 3)",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -6.9172,
+        "lat": 33.92585,
+        "bt": "Témara",
+        "cie": "Témara",
+        "reg": "Rabat"
+      },
+      "action": "suppression",
+      "criteres": {
+        "distanceKm": 2.8,
+        "seuilKm": 5,
+        "voisinNom": "",
+        "accidents": 0,
+        "vip": null,
+        "nonEclaire": null
+      },
+      "source": "optimisation",
+      "texte": "Le retrait de ce poste est proposé : il est trop proche de son voisin.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "traiteePar": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Rabat",
+        "reg": "Rabat",
+        "cie": null
+      },
+      "decision": "refusee",
+      "reponse": "",
+      "cree": "2026-08-18T08:16:52.089Z",
+      "traiteeLe": "2026-08-19T07:44:05.797Z",
+      "demo": true
+    },
+    {
+      "id": "ins_msyh4p5v_94bfe6a9",
+      "barrageId": "mq_msjo0hcz_04359bec",
+      "barrage": {
+        "nom": "",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -7.0995,
+        "lat": 33.81987,
+        "bt": "Skhirate-El Fath",
+        "cie": "Skhirate",
+        "reg": "Rabat"
+      },
+      "action": "suppression",
+      "criteres": {
+        "distanceKm": 2.37,
+        "seuilKm": 5,
+        "voisinNom": "",
+        "accidents": 0,
+        "vip": null,
+        "nonEclaire": null
+      },
+      "source": "optimisation",
+      "texte": "Le retrait de ce poste est proposé : il est trop proche de son voisin.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "traiteePar": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Rabat",
+        "reg": "Rabat",
+        "cie": null
+      },
+      "decision": "refusee",
+      "reponse": "",
+      "cree": "2026-08-18T09:42:18.211Z",
+      "traiteeLe": "2026-08-19T07:44:00.130Z",
+      "demo": true
+    },
+    {
+      "id": "ins_mt71mwue_26383fd1",
+      "barrageId": "mq_mt71mu9b_62e3776d",
+      "barrage": {
+        "nom": "",
+        "route": "",
+        "type": "barrage_fixe",
+        "lng": -6.89392,
+        "lat": 33.66721,
+        "bt": "Sidi Yahya des Zaers",
+        "cie": "Ain Aouda",
+        "reg": "Rabat"
+      },
+      "action": "nouveau_barrage",
+      "criteres": null,
+      "source": "saisie_terrain",
+      "texte": "Nouveau barrage fixe posé sur le terrain.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Rabat",
+        "reg": "Rabat",
+        "cie": null
+      },
+      "traiteePar": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "decision": "acceptee",
+      "reponse": "",
+      "cree": "2026-08-24T09:38:29.702Z",
+      "traiteeLe": "2026-08-25T12:16:28.246Z",
+      "demo": true
+    },
+    {
+      "id": "ins_mtk5kd6i_1d3b55c9",
+      "barrageId": "mq_mtk5kbnu_0488cdba",
+      "barrage": {
+        "nom": "",
+        "route": "",
+        "type": "barrage_fixe",
+        "lng": -14.75464,
+        "lat": 24.39713,
+        "bt": "Aarich",
+        "cie": "Dakhla",
+        "reg": "Dakhla"
+      },
+      "action": "nouveau_barrage",
+      "criteres": null,
+      "source": "saisie_terrain",
+      "texte": "Nouveau barrage fixe posé sur le terrain.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "REG-DAKHLA",
+        "nom": "Chef de région Dakhla",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Dakhla",
+        "reg": "Dakhla",
+        "cie": null
+      },
+      "traiteePar": {
+        "matricule": "REG-DAKHLA",
+        "nom": "Chef de région Dakhla",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Dakhla",
+        "reg": "Dakhla",
+        "cie": null
+      },
+      "decision": "acceptee",
+      "reponse": "",
+      "cree": "2026-09-02T13:49:29.658Z",
+      "traiteeLe": "2026-09-02T13:49:43.372Z",
+      "demo": true
+    },
+    {
+      "id": "ins_mtk64etf_148b110c",
+      "barrageId": "mq_mtk64c25_ae0c4a8c",
+      "barrage": {
+        "nom": "",
+        "route": "",
+        "type": "barrage_fixe",
+        "lng": -14.72168,
+        "lat": 24.21331,
+        "bt": "Aarich",
+        "cie": "Dakhla",
+        "reg": "Dakhla"
+      },
+      "action": "nouveau_barrage",
+      "criteres": null,
+      "source": "saisie_terrain",
+      "texte": "Nouveau barrage fixe posé sur le terrain.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "REG-DAKHLA",
+        "nom": "Chef de région Dakhla",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Dakhla",
+        "reg": "Dakhla",
+        "cie": null
+      },
+      "traiteePar": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "decision": null,
+      "reponse": "Poste absent de la carte : signalement classé automatiquement.",
+      "cree": "2026-09-02T14:05:04.899Z",
+      "traiteeLe": "2026-09-02T14:23:51.509Z",
+      "demo": true
+    },
+    {
+      "id": "ins_mtk6bfbf_5e93dff0",
+      "barrageId": "mq_mtk6bcm2_1bb7339f",
+      "barrage": {
+        "nom": "",
+        "route": "",
+        "type": "barrage_fixe",
+        "lng": -14.6228,
+        "lat": 23.98625,
+        "bt": "Aarich",
+        "cie": "Dakhla",
+        "reg": "Dakhla"
+      },
+      "action": "nouveau_barrage",
+      "criteres": null,
+      "source": "saisie_terrain",
+      "texte": "Nouveau barrage fixe posé sur le terrain.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "REG-DAKHLA",
+        "nom": "Chef de région Dakhla",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Dakhla",
+        "reg": "Dakhla",
+        "cie": null
+      },
+      "traiteePar": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "decision": null,
+      "reponse": "Poste retiré par son auteur avant validation.",
+      "cree": "2026-09-02T14:10:32.139Z",
+      "traiteeLe": "2026-09-02T14:18:51.560Z",
+      "demo": true
+    },
+    {
+      "id": "ins_mtk6t9q5_ba76a526",
+      "barrageId": "mq_mtk6t6qn_bc8df04f",
+      "barrage": {
+        "nom": "",
+        "route": "",
+        "type": "barrage_fixe",
+        "lng": -14.767,
+        "lat": 24.40214,
+        "bt": "Aarich",
+        "cie": "Dakhla",
+        "reg": "Dakhla"
+      },
+      "action": "nouveau_barrage",
+      "criteres": null,
+      "source": "saisie_terrain",
+      "aDecider": "unite",
+      "texte": "Nouveau barrage fixe posé par le commandement, déjà approuvé.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "traiteePar": {
+        "matricule": "REG-DAKHLA",
+        "nom": "Chef de région Dakhla",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Dakhla",
+        "reg": "Dakhla",
+        "cie": null
+      },
+      "decision": "acceptee",
+      "reponse": "",
+      "cree": "2026-09-02T14:24:24.702Z",
+      "traiteeLe": "2026-09-03T11:53:05.279Z",
+      "demo": true
+    },
+    {
+      "id": "ins_mtll5m17_e1f05185",
+      "barrageId": "mq_mtll5ket_d45f78ed",
+      "barrage": {
+        "nom": "",
+        "route": "",
+        "type": "barrage_fixe",
+        "lng": -14.77661,
+        "lat": 21.79521,
+        "bt": "Aousserd",
+        "cie": "Aousserd",
+        "reg": "Dakhla"
+      },
+      "action": "nouveau_barrage",
+      "criteres": null,
+      "source": "saisie_terrain",
+      "aDecider": "admin",
+      "texte": "Nouveau barrage fixe posé sur le terrain — à approuver.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "REG-DAKHLA",
+        "nom": "Chef de région Dakhla",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Dakhla",
+        "reg": "Dakhla",
+        "cie": null
+      },
+      "traiteePar": {
+        "matricule": "REG-DAKHLA",
+        "nom": "Chef de région Dakhla",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Dakhla",
+        "reg": "Dakhla",
+        "cie": null
+      },
+      "decision": null,
+      "reponse": "Poste retiré par son auteur avant validation.",
+      "cree": "2026-09-03T13:53:41.323Z",
+      "traiteeLe": "2026-09-03T13:54:00.991Z",
+      "demo": true
+    },
+    {
+      "id": "ins_mu5lmwtf_03741c54",
+      "barrageId": "mq_mu5lmw28_2edc9ad0",
+      "barrage": {
+        "nom": "",
+        "route": "",
+        "type": "barrage_fixe",
+        "lng": -8.30751,
+        "lat": 29.27925,
+        "bt": "Akka",
+        "cie": "Tata",
+        "reg": "Agadir"
+      },
+      "action": "nouveau_barrage",
+      "criteres": null,
+      "source": "saisie_terrain",
+      "aDecider": "unite",
+      "texte": "Nouveau barrage fixe posé par le commandement, déjà approuvé.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-09-17T14:02:31.971Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mub2jb2y_09dcad40",
+      "barrageId": "mq_msknd0lt_4ff3bb0a",
+      "barrage": {
+        "nom": "RR322 — Temara Plage",
+        "route": "RR322",
+        "type": "barrage_fixe",
+        "lng": -6.94408,
+        "lat": 33.93461,
+        "bt": "Témara Plage",
+        "cie": "Témara",
+        "reg": "Rabat"
+      },
+      "action": "conservation",
+      "criteres": {
+        "distanceKm": 2.25,
+        "seuilKm": 5,
+        "voisinNom": "Poste fixe Harhoura (DEMO)",
+        "accidents": 0,
+        "vip": null,
+        "nonEclaire": null
+      },
+      "source": "optimisation",
+      "aDecider": null,
+      "texte": "Le poste est maintenu malgré le rapprochement constaté.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "traiteePar": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Rabat",
+        "reg": "Rabat",
+        "cie": null
+      },
+      "decision": "acceptee",
+      "reponse": "",
+      "cree": "2026-09-21T09:54:28.186Z",
+      "traiteeLe": "2026-09-21T10:10:27.996Z"
+    },
+    {
+      "id": "ins_mub2u2t6_b3da0505",
+      "barrageId": "mq_msjnz6lr_65b4f789",
+      "barrage": {
+        "nom": "RN1 — Sale",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -6.81065,
+        "lat": 34.05347,
+        "bt": "Salé",
+        "cie": "Salé",
+        "reg": "Rabat"
+      },
+      "action": "conservation",
+      "criteres": {
+        "distanceKm": 4.4,
+        "seuilKm": 5,
+        "voisinNom": "RN25 — Rabat",
+        "accidents": 0,
+        "vip": null,
+        "nonEclaire": null
+      },
+      "source": "optimisation",
+      "aDecider": null,
+      "texte": "Le poste est maintenu malgré le rapprochement constaté.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "traiteePar": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Rabat",
+        "reg": "Rabat",
+        "cie": null
+      },
+      "decision": "acceptee",
+      "reponse": "",
+      "cree": "2026-09-21T10:02:50.683Z",
+      "traiteeLe": "2026-09-21T10:10:24.149Z"
+    },
+    {
+      "id": "ins_mub2u5xa_1c94df1b",
+      "barrageId": "mq_mskf7c8u_979629ec",
+      "barrage": {
+        "nom": "Shoul 2 km E",
+        "route": "",
+        "type": "barrage_fixe",
+        "lng": -6.62819,
+        "lat": 34.02762,
+        "bt": "Bouknadel",
+        "cie": "Salé",
+        "reg": "Rabat"
+      },
+      "action": "suppression",
+      "criteres": {
+        "distanceKm": 3.66,
+        "seuilKm": 5,
+        "voisinNom": "Poste fixe Shoul (DEMO)",
+        "accidents": 0,
+        "vip": null,
+        "nonEclaire": null
+      },
+      "source": "optimisation",
+      "aDecider": null,
+      "texte": "Le retrait de ce poste est proposé : il est trop proche de son voisin.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "traiteePar": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Rabat",
+        "reg": "Rabat",
+        "cie": null
+      },
+      "decision": "acceptee",
+      "reponse": "",
+      "cree": "2026-09-21T10:02:54.718Z",
+      "traiteeLe": "2026-09-21T10:09:18.544Z"
+    },
+    {
+      "id": "ins_mub3j8zc_f4230bf5",
+      "barrageId": "mq_msjo0hbu_5da2ab49",
+      "barrage": {
+        "nom": "RN1 — Temara",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -6.95666,
+        "lat": 33.89532,
+        "bt": "Témara",
+        "cie": "Témara",
+        "reg": "Rabat"
+      },
+      "action": "conservation",
+      "criteres": {
+        "distanceKm": 3.45,
+        "seuilKm": 5,
+        "voisinNom": "RN1 — Skhirate Plage",
+        "accidents": 0,
+        "vip": null,
+        "nonEclaire": null
+      },
+      "source": "optimisation",
+      "aDecider": null,
+      "texte": "Le poste est maintenu malgré le rapprochement constaté.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "traiteePar": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Rabat",
+        "reg": "Rabat",
+        "cie": null
+      },
+      "decision": "refusee",
+      "reponse": "",
+      "cree": "2026-09-21T10:22:25.080Z",
+      "traiteeLe": "2026-09-21T10:23:39.727Z"
+    },
+    {
+      "id": "ins_mub3yq0t_31d2afef",
+      "barrageId": "mq_msra8pov_9f66a7d3",
+      "barrage": {
+        "nom": "RN1 — Tan Tan Plage 28 km SO",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -11.50733,
+        "lat": 28.30562,
+        "bt": "Chbika",
+        "cie": "Tan Tan",
+        "reg": "Guelmim"
+      },
+      "action": "conservation",
+      "criteres": {
+        "distanceKm": 2.59,
+        "seuilKm": 5,
+        "voisinNom": "RN1 — Tan Tan Plage 30 km SO",
+        "accidents": 0,
+        "vip": null,
+        "nonEclaire": null
+      },
+      "source": "optimisation",
+      "aDecider": null,
+      "texte": "Le poste est maintenu malgré le rapprochement constaté.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "traiteePar": {
+        "matricule": "REG-GUELMIM",
+        "nom": "Chef de région Guelmim",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Guelmim",
+        "reg": "Guelmim",
+        "cie": null
+      },
+      "decision": "acceptee",
+      "reponse": "",
+      "cree": "2026-09-21T10:34:27.005Z",
+      "traiteeLe": "2026-09-21T10:35:07.585Z"
+    },
+    {
+      "id": "ins_mub53lhb_7079a27d",
+      "barrageId": "mq_msra8pov_9f66a7d3",
+      "barrage": {
+        "nom": "RN1 — Tan Tan Plage 28 km SO",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -11.50733,
+        "lat": 28.30562,
+        "bt": "Chbika",
+        "cie": "Tan Tan",
+        "reg": "Guelmim"
+      },
+      "action": "conservation",
+      "criteres": {
+        "distanceKm": 2.59,
+        "seuilKm": 5,
+        "voisinNom": "RN1 — Tan Tan Plage 30 km SO",
+        "accidents": 0,
+        "vip": null,
+        "nonEclaire": null
+      },
+      "source": "optimisation",
+      "aDecider": null,
+      "texte": "Le poste est maintenu malgré le rapprochement constaté.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-09-21T11:06:14.015Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mub5smeh_d5994ab8",
+      "barrageId": "mq_semis_e836479e",
+      "barrage": {
+        "nom": "Poste fixe El Aouamra (DEMO)",
+        "route": "",
+        "type": "barrage_fixe",
+        "lng": -6.17105,
+        "lat": 35.09354,
+        "bt": "El Aouamra",
+        "cie": "Larache",
+        "reg": "Tanger"
+      },
+      "action": "conservation",
+      "criteres": {
+        "distanceKm": 3.38,
+        "seuilKm": 5,
+        "voisinNom": "Entrée A5 — Laaouamra",
+        "accidents": 0,
+        "vip": null,
+        "nonEclaire": null
+      },
+      "source": "optimisation",
+      "aDecider": null,
+      "texte": "Le poste est maintenu malgré le rapprochement constaté.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-09-21T11:25:41.609Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mub5ssdx_d41e123b",
+      "barrageId": "mq_mskzll6a_0f39c9af",
+      "barrage": {
+        "nom": "Larache",
+        "route": "",
+        "type": "barrage_fixe",
+        "lng": -6.14312,
+        "lat": 35.13983,
+        "bt": "Larache",
+        "cie": "Larache",
+        "reg": "Tanger"
+      },
+      "action": "conservation",
+      "criteres": {
+        "distanceKm": 3.59,
+        "seuilKm": 5,
+        "voisinNom": "Entrée A5 — Laaouamra",
+        "accidents": 0,
+        "vip": null,
+        "nonEclaire": null
+      },
+      "source": "optimisation",
+      "aDecider": null,
+      "texte": "Le poste est maintenu malgré le rapprochement constaté.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-09-21T11:25:49.365Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mub5ti1k_9b313b93",
+      "barrageId": "mq_msjo0hbu_5da2ab49",
+      "barrage": {
+        "nom": "RN1 — Temara",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -6.95666,
+        "lat": 33.89532,
+        "bt": "Témara",
+        "cie": "Témara",
+        "reg": "Rabat"
+      },
+      "action": "conservation",
+      "criteres": {
+        "distanceKm": 3.45,
+        "seuilKm": 5,
+        "voisinNom": "RN1 — Skhirate Plage",
+        "accidents": 0,
+        "vip": null,
+        "nonEclaire": null
+      },
+      "source": "optimisation",
+      "aDecider": null,
+      "texte": "Le poste est maintenu malgré le rapprochement constaté.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "traiteePar": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Rabat",
+        "reg": "Rabat",
+        "cie": null
+      },
+      "decision": "acceptee",
+      "reponse": "",
+      "cree": "2026-09-21T11:26:22.617Z",
+      "traiteeLe": "2026-09-21T11:26:58.690Z"
+    },
+    {
+      "id": "ins_mub5tpic_7ac08d4a",
+      "barrageId": "mq_msjkxs7m_d3bb4b97",
+      "barrage": {
+        "nom": "RN1 — Harhoura",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -6.9172,
+        "lat": 33.92585,
+        "bt": "Témara",
+        "cie": "Témara",
+        "reg": "Rabat"
+      },
+      "action": "suppression",
+      "criteres": {
+        "distanceKm": 2.8,
+        "seuilKm": 5,
+        "voisinNom": "RR322 — Temara Plage",
+        "accidents": 0,
+        "vip": null,
+        "nonEclaire": null
+      },
+      "source": "optimisation",
+      "aDecider": null,
+      "texte": "Le retrait de ce poste est proposé : il est trop proche de son voisin.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "traiteePar": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Rabat",
+        "reg": "Rabat",
+        "cie": null
+      },
+      "decision": "refusee",
+      "reponse": "",
+      "cree": "2026-09-21T11:26:32.292Z",
+      "traiteeLe": "2026-09-21T11:27:06.928Z"
+    },
+    {
+      "id": "ins_mub78b6x_2cc90e40",
+      "barrageId": "mq_msjo0hbu_5da2ab49",
+      "barrage": {
+        "nom": "RN1 — Temara",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -6.95666,
+        "lat": 33.89532,
+        "bt": "Témara",
+        "cie": "Témara",
+        "reg": "Rabat"
+      },
+      "action": "conservation",
+      "criteres": {
+        "distanceKm": 3.45,
+        "seuilKm": 5,
+        "voisinNom": "RN1 — Skhirate Plage",
+        "accidents": 4,
+        "vip": false,
+        "nonEclaire": false
+      },
+      "source": "optimisation",
+      "aDecider": null,
+      "texte": "Le poste est maintenu malgré le rapprochement constaté.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-09-21T12:05:53.193Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mub78jf1_b3e7ef79",
+      "barrageId": "mq_semis_492df786",
+      "barrage": {
+        "nom": "Poste fixe Mers El Kheir (DEMO)",
+        "route": "",
+        "type": "barrage_fixe",
+        "lng": -6.92872,
+        "lat": 33.8739,
+        "bt": "Mers El Kheir",
+        "cie": "Témara",
+        "reg": "Rabat"
+      },
+      "action": "conservation",
+      "criteres": {
+        "distanceKm": 4.95,
+        "seuilKm": 5,
+        "voisinNom": "RN1 — Temara",
+        "accidents": 0,
+        "vip": false,
+        "nonEclaire": false
+      },
+      "source": "optimisation",
+      "aDecider": null,
+      "texte": "Le poste est maintenu malgré le rapprochement constaté.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-09-21T12:06:03.853Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mubc1rl5_78e1ef73",
+      "barrageId": "mq_msjdq5em_ee5ebf08",
+      "barrage": {
+        "nom": "RN1 — Rabat",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -6.8545,
+        "lat": 34.00838,
+        "bt": "Rabat",
+        "cie": "Rabat",
+        "reg": "Rabat"
+      },
+      "action": "conservation",
+      "criteres": {
+        "distanceKm": 4.6,
+        "seuilKm": 5,
+        "voisinNom": "RN25 — Rabat",
+        "accidents": 0,
+        "vip": null,
+        "nonEclaire": null
+      },
+      "source": "optimisation",
+      "aDecider": null,
+      "texte": "Le poste est maintenu malgré le rapprochement constaté.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-09-21T14:20:45.930Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mubcoqho_b3712bf6",
+      "barrageId": "mq_msjf5xz0_65d12801",
+      "barrage": {
+        "nom": "RN25 — Rabat",
+        "route": "RN25",
+        "type": "barrage_fixe",
+        "lng": -6.81906,
+        "lat": 34.02008,
+        "bt": "Rabat",
+        "cie": "Rabat",
+        "reg": "Rabat"
+      },
+      "action": "conservation",
+      "criteres": {
+        "distanceKm": 4.19,
+        "seuilKm": 5,
+        "voisinNom": "RN1 — Sale",
+        "accidents": 0,
+        "vip": null,
+        "nonEclaire": null
+      },
+      "source": "optimisation",
+      "aDecider": null,
+      "texte": "Le poste est maintenu malgré le rapprochement constaté.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Rabat",
+        "reg": "Rabat",
+        "cie": null
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-09-21T14:38:37.596Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mubcoxt6_766cbd74",
+      "barrageId": "mq_mskf7bd5_e5a59043",
+      "barrage": {
+        "nom": "Shoul 5 km O",
+        "route": "",
+        "type": "barrage_fixe",
+        "lng": -6.70715,
+        "lat": 34.02079,
+        "bt": "Salé",
+        "cie": "Salé",
+        "reg": "Rabat"
+      },
+      "action": "suppression",
+      "criteres": {
+        "distanceKm": 4.78,
+        "seuilKm": 5,
+        "voisinNom": "Sale",
+        "accidents": 0,
+        "vip": null,
+        "nonEclaire": null
+      },
+      "source": "optimisation",
+      "aDecider": null,
+      "texte": "Le retrait de ce poste est proposé : il est trop proche de son voisin.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Rabat",
+        "reg": "Rabat",
+        "cie": null
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-09-21T14:38:47.082Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mubd4o7s_99bb7622",
+      "barrageId": "mq_msjdq5f8_45676217",
+      "barrage": {
+        "nom": "RR320 — Casablanca",
+        "route": "RR320",
+        "type": "barrage_fixe",
+        "lng": -7.62069,
+        "lat": 33.59643,
+        "bt": "Casablanca",
+        "cie": "Casablanca",
+        "reg": "Casablanca"
+      },
+      "action": "suppression",
+      "criteres": {
+        "distanceKm": 3.23,
+        "seuilKm": 5,
+        "voisinNom": "RR320 — Oulad Azzouz",
+        "accidents": 0,
+        "vip": null,
+        "nonEclaire": null
+      },
+      "source": "optimisation",
+      "aDecider": null,
+      "texte": "Le retrait de ce poste est proposé : il est trop proche de son voisin.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "traiteePar": {
+        "matricule": "REG-CASABLANCA",
+        "nom": "Chef de région Casablanca",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Casablanca",
+        "reg": "Casablanca",
+        "cie": null
+      },
+      "decision": "acceptee",
+      "reponse": "",
+      "cree": "2026-09-21T14:51:01.144Z",
+      "traiteeLe": "2026-09-21T15:05:41.179Z"
+    },
+    {
+      "id": "ins_mubdnsy6_5c8eeb4e",
+      "barrageId": "mq_msjnz6ou_5f949032",
+      "barrage": {
+        "nom": "RN9 — Ain Harrouda",
+        "route": "RN9",
+        "type": "barrage_fixe",
+        "lng": -7.44995,
+        "lat": 33.63546,
+        "bt": "Ain Harrouda",
+        "cie": "Mohammedia",
+        "reg": "Casablanca"
+      },
+      "action": "conservation",
+      "criteres": {
+        "distanceKm": 4.4,
+        "seuilKm": 5,
+        "voisinNom": "Entrée RN9 — Ain Harrouda",
+        "accidents": 0,
+        "vip": null,
+        "nonEclaire": null
+      },
+      "source": "optimisation",
+      "aDecider": null,
+      "texte": "Le poste est maintenu malgré le rapprochement constaté.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "REG-CASABLANCA",
+        "nom": "Chef de région Casablanca",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Casablanca",
+        "reg": "Casablanca",
+        "cie": null
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-09-21T15:05:53.742Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mubdnwmn_dfc653cd",
+      "barrageId": "mq_semis_5f1f3d89",
+      "barrage": {
+        "nom": "Poste fixe Ech-Chellalate (DEMO)",
+        "route": "",
+        "type": "barrage_fixe",
+        "lng": -7.43356,
+        "lat": 33.63659,
+        "bt": "Ech-Chellalate",
+        "cie": "Mohammedia",
+        "reg": "Casablanca"
+      },
+      "action": "suppression",
+      "criteres": {
+        "distanceKm": 1.77,
+        "seuilKm": 5,
+        "voisinNom": "RN9 — Ain Harrouda",
+        "accidents": 0,
+        "vip": null,
+        "nonEclaire": null
+      },
+      "source": "optimisation",
+      "aDecider": null,
+      "texte": "Le retrait de ce poste est proposé : il est trop proche de son voisin.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "REG-CASABLANCA",
+        "nom": "Chef de région Casablanca",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Casablanca",
+        "reg": "Casablanca",
+        "cie": null
+      },
+      "traiteePar": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "decision": "acceptee",
+      "reponse": "",
+      "cree": "2026-09-21T15:05:58.511Z",
+      "traiteeLe": "2026-09-21T15:06:33.140Z"
+    },
+    {
+      "id": "ins_mucs7ggj_caf68060",
+      "barrageId": "mq_msjdq5e6_e6cfc531",
+      "barrage": {
+        "nom": "Entrée A1 — Azemmour",
+        "route": "A1",
+        "type": "barrage_fixe",
+        "lng": -8.27165,
+        "lat": 33.28076,
+        "bt": "Chtouka",
+        "cie": "El Jadida",
+        "reg": "El Jadida"
+      },
+      "action": "modification",
+      "criteres": null,
+      "source": "modification",
+      "changements": [
+        {
+          "champ": "decisionOptimisation",
+          "ancienne": null,
+          "nouvelle": "aucune"
+        },
+        {
+          "champ": "lng",
+          "ancienne": -8.27165,
+          "nouvelle": -8.23151
+        },
+        {
+          "champ": "lat",
+          "ancienne": 33.28076,
+          "nouvelle": 33.29553
+        }
+      ],
+      "modificationId": null,
+      "motif": "",
+      "aDecider": "unite",
+      "texte": "Modification demandée sur Entrée A1 — Azemmour : decisionOptimisation, lng, lat.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-09-22T14:40:51.475Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mucscid8_d4c78ea4",
+      "barrageId": "mq_msjf5xz0_65d12801",
+      "barrage": {
+        "nom": "RN25 — Rabat",
+        "route": "RN25",
+        "type": "barrage_fixe",
+        "lng": -6.81906,
+        "lat": 34.02008,
+        "bt": "Rabat",
+        "cie": "Rabat",
+        "reg": "Rabat"
+      },
+      "action": "conservation",
+      "criteres": {
+        "distanceKm": 4.38,
+        "seuilKm": null,
+        "voisinNom": "",
+        "accidents": 2,
+        "vip": null,
+        "nonEclaire": null
+      },
+      "source": "optimisation",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "texte": "Le poste est maintenu malgré le rapprochement constaté.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-09-22T14:44:47.228Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_muctqasj_d73b456e",
+      "barrageId": "mq_semis_d2417400",
+      "barrage": {
+        "nom": "Poste fixe Al Hamd (DEMO)",
+        "route": "",
+        "type": "barrage_fixe",
+        "lng": -7.51885,
+        "lat": 33.47562,
+        "bt": "Al Hamd",
+        "cie": "Mediouna",
+        "reg": "Casablanca"
+      },
+      "action": "retrait_optimisation",
+      "criteres": {
+        "score": -29,
+        "redondance": 3,
+        "accidents": 0,
+        "eclairage": "oui",
+        "severite": "moderate",
+        "activite": "low",
+        "infraction": "low",
+        "distanceKm": 4.37,
+        "voisinNom": "A31 — Mediouna",
+        "voisinId": "mq_msj5b4jv_a308ff32",
+        "couvertureApres": 90.4,
+        "criteres": [
+          "accidents",
+          "eclairage",
+          "distance",
+          "redondance",
+          "couverture",
+          "protections"
+        ]
+      },
+      "source": "optimisation_auto",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": "unite",
+      "texte": "Retrait par optimisation automatique de Poste fixe Al Hamd (DEMO) — Redondance forte · A31 — Mediouna à 4.37 km tient le même rôle · priorité faible (score : -29) · 0 accident(s) · éclairage satisfaisant · couverture maintenue à 90.4 %.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-09-22T15:23:30.211Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_muctqb6z_2d6a5acb",
+      "barrageId": "mq_semis_04f49ac8",
+      "barrage": {
+        "nom": "Poste fixe Bouskoura (DEMO)",
+        "route": "",
+        "type": "barrage_fixe",
+        "lng": -7.64864,
+        "lat": 33.46051,
+        "bt": "Bouskoura",
+        "cie": "Bouskoura",
+        "reg": "Casablanca"
+      },
+      "action": "retrait_optimisation",
+      "criteres": {
+        "score": 10,
+        "redondance": 1,
+        "accidents": 0,
+        "eclairage": "inconnu",
+        "severite": "moderate",
+        "activite": "medium",
+        "infraction": "medium",
+        "distanceKm": 4.88,
+        "voisinNom": "Poste fixe Ennassr (DEMO)",
+        "voisinId": "mq_semis_c2c55f17",
+        "couvertureApres": 90.4,
+        "criteres": [
+          "accidents",
+          "eclairage",
+          "distance",
+          "redondance",
+          "couverture",
+          "protections"
+        ]
+      },
+      "source": "optimisation_auto",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": "unite",
+      "texte": "Retrait par optimisation automatique de Poste fixe Bouskoura (DEMO) — Redondance faible · Poste fixe Ennassr (DEMO) à 4.88 km tient le même rôle · priorité faible (score : 10) · 0 accident(s) · éclairage inconnu · couverture maintenue à 90.4 %.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-09-22T15:23:30.732Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_muctqbkg_99e14d61",
+      "barrageId": "mq_semis_4e1b1be8",
+      "barrage": {
+        "nom": "Poste fixe Tamaris (DEMO)",
+        "route": "",
+        "type": "barrage_fixe",
+        "lng": -7.79541,
+        "lat": 33.52582,
+        "bt": "Tamaris",
+        "cie": "Casablanca",
+        "reg": "Casablanca"
+      },
+      "action": "retrait_optimisation",
+      "criteres": {
+        "score": 28,
+        "redondance": 1,
+        "accidents": 0,
+        "eclairage": "inconnu",
+        "severite": "critical",
+        "activite": "high",
+        "infraction": "low",
+        "distanceKm": 4.53,
+        "voisinNom": "Errahma",
+        "voisinId": "mq_msjf5y02_7881dddf",
+        "couvertureApres": 90.4,
+        "criteres": [
+          "accidents",
+          "eclairage",
+          "distance",
+          "redondance",
+          "couverture",
+          "protections"
+        ]
+      },
+      "source": "optimisation_auto",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": "unite",
+      "texte": "Retrait par optimisation automatique de Poste fixe Tamaris (DEMO) — Redondance faible · Errahma à 4.53 km tient le même rôle · priorité faible (score : 28) · 0 accident(s) · éclairage inconnu · couverture maintenue à 90.4 %.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-09-22T15:23:31.216Z",
+      "traiteeLe": null
+    }
+  ]
+}

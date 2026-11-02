@@ -1,0 +1,369 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "id": 0,
+            "properties": {
+                "nom": "Tanger Ville"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.8033815749999995,
+                    35.789996375
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1,
+            "properties": {
+                "nom": "الحسيمة"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.9234251,
+                    35.2463576
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 2,
+            "properties": {
+                "nom": "Nador CF3"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.9265178,
+                    35.2713836
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 3,
+            "properties": {
+                "nom": "Nador"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.9188718,
+                    35.2710745
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 4,
+            "properties": {
+                "nom": "Nador CF2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.9259629,
+                    35.2707401
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 5,
+            "properties": {
+                "nom": "Nador CF1"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.9255861,
+                    35.2703341
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 6,
+            "properties": {
+                "nom": "Port"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.826302214285713,
+                    34.02841074285714
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 7,
+            "properties": {
+                "nom": "Nador CF4"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.9270758,
+                    35.2719586
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 8,
+            "properties": {
+                "nom": "Port"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.7850877,
+                    35.1514114
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 9,
+            "properties": {
+                "nom": "Port"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.9286877,
+                    35.2362165
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 10,
+            "properties": {
+                "nom": "Port"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.517126149999999,
+                    35.8784618125
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 11,
+            "properties": {
+                "nom": "Port"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.5044647,
+                    35.8906602
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 12,
+            "properties": {
+                "nom": "port de mohammedia"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.3989739,
+                    33.7158356
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 13,
+            "properties": {
+                "nom": "Port de pêche de Salé"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.8327504,
+                    34.039651
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 14,
+            "properties": {
+                "nom": "Medha"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.6455527,
+                    34.2727114
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 15,
+            "properties": {
+                "nom": "Tanja Marina Bay International"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.79783,
+                    35.7847546
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 16,
+            "properties": {
+                "nom": "Port"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.6478331,
+                    34.2714907
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 17,
+            "properties": {
+                "nom": "Port"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.3698759,
+                    35.1504993
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 18,
+            "properties": {
+                "nom": "Gare Maritime de Casablanca المحطة البحرية للدار البيضاء"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.6025012,
+                    33.6151589
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 19,
+            "properties": {
+                "nom": "Port"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -11.3516084,
+                    28.47397075
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 20,
+            "properties": {
+                "nom": "Port"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.2357004,
+                    35.2221271
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 21,
+            "properties": {
+                "nom": "Port"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -10.1940188,
+                    29.3575971
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 22,
+            "properties": {
+                "nom": "Port commercial de Safi الميناء التجاري أسفي"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -9.2487892,
+                    32.307183
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 23,
+            "properties": {
+                "nom": "Port"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.5001227,
+                    33.2561908
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 24,
+            "properties": {
+                "nom": "Port"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.8031758,
+                    35.7866059
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 25,
+            "properties": {
+                "nom": "Nador west med"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.1664764,
+                    35.2537394
+                ]
+            }
+        }
+    ]
+}

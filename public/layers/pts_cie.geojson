@@ -1,0 +1,1295 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Tamanar",
+                "unite": "Tamanar",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -9.68249,
+                    30.99857
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Figuig",
+                "unite": "Figuig",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.23116,
+                    32.11761
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Aoussred",
+                "unite": "Dakhla",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -15.91545,
+                    23.73317
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Tarfaya",
+                "unite": "Tarfaya",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -12.92763,
+                    27.9375
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Agadir",
+                "unite": "Agadir",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -9.60459,
+                    30.42438
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Al Hociema",
+                "unite": "Al Hoceima",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.84452,
+                    35.15016
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Arfoud",
+                "unite": "Arfoud",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.23571,
+                    31.43523
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Assa",
+                "unite": "Assa Zag",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -9.44689,
+                    28.61577
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Azib Midar",
+                "unite": "Azib Midar",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.53649,
+                    34.9378
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Azrou",
+                "unite": "Azrou",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.21239,
+                    33.43962
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Benguerir",
+                "unite": "Benguerir",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.96005,
+                    32.23538
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Azilal",
+                "unite": "Azilal",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.56455,
+                    31.96984
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Beni Mellal",
+                "unite": "Beni Mellal",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.37088,
+                    32.32837
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Berrchid",
+                "unite": "Nouaceur",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.57551,
+                    33.38667
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Nouaceur",
+                "unite": "Nouaceur",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.57827,
+                    33.36598
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Benslimane",
+                "unite": "Benslimane",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.1167,
+                    33.60948
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Berkane",
+                "unite": "Berkane",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.32854,
+                    34.93022
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Biougra",
+                "unite": "Biougra",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -9.37592,
+                    30.21502
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Bouarfa",
+                "unite": "Bouarfa",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.95696,
+                    32.53096
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Boujdour",
+                "unite": "Boujdour",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -14.48537,
+                    26.12555
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Bouznika",
+                "unite": "Bouznika",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.16079,
+                    33.78784
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Ain Sbaa",
+                "unite": "Casablanca",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.5362,
+                    33.60949
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Casablanca",
+                "unite": "Casablanca",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.61578,
+                    33.57263
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Chefchaouen",
+                "unite": "Chefchaouen",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.27112,
+                    35.16656
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Dakhla",
+                "unite": "Dakhla",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -15.92641,
+                    23.70647
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Taounate",
+                "unite": "Taounate",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.68819,
+                    34.46342
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Chichaoua",
+                "unite": "Chichaoua",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.76022,
+                    31.54636
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie El Hajeb",
+                "unite": "El Hajeb",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.37101,
+                    33.68497
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie El Jadida",
+                "unite": "El Jadida",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.49429,
+                    33.24326
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie El Kelaa des Sraghna",
+                "unite": "El Kela� Des Sraghn",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.40254,
+                    32.05326
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie T�touan",
+                "unite": "T�touan",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.33429,
+                    35.59338
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Errachidia",
+                "unite": "Errachidia",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.4407,
+                    31.91967
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Es-Smara",
+                "unite": "Es-Smara",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -11.67852,
+                    26.73817
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Essaouira",
+                "unite": "Essaouira",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -9.7646,
+                    31.50989
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie F�s",
+                "unite": "F�s",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.00089,
+                    34.0454
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Fkih Ben Salah",
+                "unite": "Fkih Ben Salah",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.68714,
+                    32.5045
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Guelmim",
+                "unite": "Guelmim",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -10.05191,
+                    28.99291
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Inzgane",
+                "unite": "Inezgane",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -9.54068,
+                    30.36425
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Jerada",
+                "unite": "Jerrada",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.16084,
+                    34.31813
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Kariat Ba Mohamed",
+                "unite": "Kariat Ba Mohamed",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.20662,
+                    34.36614
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie K�nitra",
+                "unite": "K�nitra",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.58579,
+                    34.25316
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Khemisset",
+                "unite": "Kh�misset",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.06995,
+                    33.81864
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Khenifra",
+                "unite": "Kh�nifra",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.66511,
+                    32.93743
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Khouribga",
+                "unite": "Khouribga",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.91091,
+                    32.87872
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Laayoune",
+                "unite": "Laayoune",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -13.20785,
+                    27.16395
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Larache",
+                "unite": "Larache",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.14582,
+                    35.1803
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Mekn�s",
+                "unite": "Mekn�s",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.53912,
+                    33.88709
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Mekn�s",
+                "unite": "Mekn�s",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.53476,
+                    33.90071
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Missour",
+                "unite": "Missour",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.99251,
+                    33.04635
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Mohammadia",
+                "unite": "Mohammedia",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.39107,
+                    33.70123
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Nador",
+                "unite": "Nador",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.93098,
+                    35.17605
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Ouazzane",
+                "unite": "Ouazzane",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.57102,
+                    34.79729
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Oued Zem",
+                "unite": "Oued Zem",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.56785,
+                    32.85761
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Oujda",
+                "unite": "Oujda",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.91556,
+                    34.67311
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Oulmes",
+                "unite": "Oulmes",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.00758,
+                    33.42264
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Rabat",
+                "unite": "Rabat",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.84549,
+                    34.01897
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Rommani",
+                "unite": "Rommani",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.60512,
+                    33.52904
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Safi",
+                "unite": "Safi",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -9.226,
+                    32.30059
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Sal�",
+                "unite": "Sal�",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.77528,
+                    34.04286
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Sefrou",
+                "unite": "Sefrou",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.83723,
+                    33.82395
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Settat",
+                "unite": "Settat",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.61851,
+                    33.00753
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Sidi Bennour",
+                "unite": "Sidi Bennour",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.42224,
+                    32.648
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Sidi Kacem",
+                "unite": "Sidi Kacem",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.71222,
+                    34.22598
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Sidi Slimane",
+                "unite": "Sidi Slimane",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.92127,
+                    34.2598
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Souk Larbaa du Gharb",
+                "unite": "Souk Larbaa du Gharb",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.00415,
+                    34.68555
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Tahanaout",
+                "unite": "Tahannaout",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.93401,
+                    31.36421
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Taourirt",
+                "unite": "Taourirt",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.89755,
+                    34.41408
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Targuiste",
+                "unite": "Targuiste",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.32065,
+                    34.93699
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Taroudannt",
+                "unite": "Taroudannt",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.86417,
+                    30.47701
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Taza",
+                "unite": "Taza",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.01309,
+                    34.21272
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Temara",
+                "unite": "T�mara",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.91159,
+                    33.93213
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Tiznit",
+                "unite": "Tiznit",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -9.73239,
+                    29.69751
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Youssoufia",
+                "unite": "Youssoufia",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.53435,
+                    32.24605
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Zagora",
+                "unite": "Zagora",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.84125,
+                    30.32311
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Tanger",
+                "unite": "Tanger",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.81136,
+                    35.76673
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Ain Aouda",
+                "unite": "Ain Aouda",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.79496,
+                    33.80584
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Ouarzazate",
+                "unite": "Ouarzazate",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.90966,
+                    30.92019
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Tinghir",
+                "unite": "Tinghir",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.5343,
+                    31.52016
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Tan Tan",
+                "unite": "Tan Tan",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -11.08713,
+                    28.43416
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Guercif",
+                "unite": "Guercif",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.35044,
+                    34.22552
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Tata",
+                "unite": "Tata",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.96077,
+                    29.74343
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Midelt",
+                "unite": "Midelt",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.7373,
+                    32.67991
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Sidi Ifni",
+                "unite": "Sidi Ifni",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -10.15602,
+                    29.394
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Ait Ishaq",
+                "unite": "Ait Ishaq",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.72509,
+                    32.75813
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Oued Amlil",
+                "unite": "Oued Amlil",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.27063,
+                    34.19229
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Cie Ifrane",
+                "unite": "Ifrane",
+                "categorie": "Compagnie Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.12336,
+                    33.51366
+                ]
+            }
+        }
+    ]
+}

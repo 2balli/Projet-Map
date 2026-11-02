@@ -1,0 +1,13 @@
+node_modules/
+dist/
+# Données téléchargées (≈ 540 Mo) : régénérées par « npm run data »
+donnees/
+# Outil pmtiles téléchargé
+tools/
+# Classeur des unités : données de service, comme donnees/gendarmerie/
+Classeur4.xlsx
+# Caches d'outils
+.ruff_cache/
+# Paquet de transfert hors ligne (image Docker, ≈ 0,6 Go) : régénéré par « npm run transfert »
+transfert/
+etat/

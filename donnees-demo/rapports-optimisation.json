@@ -1,0 +1,128 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "opt_mumonaf0_78e4cf",
+      "numero": 1,
+      "date": "2026-09-29T12:58:53.437Z",
+      "mode": "AUTOMATIQUE",
+      "auteur": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Rabat",
+        "reg": "Rabat",
+        "cie": null
+      },
+      "perimetre": {
+        "niveau": "region",
+        "unite": "Rabat"
+      },
+      "parametres": {
+        "seuilKm": 40,
+        "niveau": "region",
+        "unite": "Rabat"
+      },
+      "poids": null,
+      "criteres": [
+        "distance routière < 40 km",
+        "contraintes opérationnelles",
+        "RBAC territorial"
+      ],
+      "avant": 24,
+      "apres": 24,
+      "analyses": null,
+      "proposes": 1,
+      "retires": 0,
+      "proteges": null,
+      "couvertureAvant": null,
+      "couvertureApres": null,
+      "barrages": [
+        {
+          "id": "BF-BT-371",
+          "nom": "Poste fixe Shoul",
+          "action": "deplacer",
+          "routeAvant": "RP4010",
+          "routeApres": "RP4037",
+          "factionAvant": "F3",
+          "factionApres": "F3",
+          "positionAvant": {
+            "lng": -6.67452,
+            "lat": 33.96584
+          },
+          "positionApres": {
+            "lng": -6.71414,
+            "lat": 33.94605
+          },
+          "distanceAvantKm": 10.175073952234065,
+          "distanceApresKm": 40.593630905646414,
+          "raison": "Déplacement routier validé sans nouveau conflit"
+        }
+      ],
+      "refuses": []
+    },
+    {
+      "id": "opt_muzkuajq_3591ca",
+      "numero": 2,
+      "date": "2026-10-08T13:33:22.022Z",
+      "mode": "AUTOMATIQUE",
+      "auteur": {
+        "matricule": "REG-GUELMIM",
+        "nom": "Chef de région Guelmim",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Guelmim",
+        "reg": "Guelmim",
+        "cie": null
+      },
+      "perimetre": {
+        "niveau": "region",
+        "unite": "Guelmim"
+      },
+      "parametres": {
+        "seuilKm": 20,
+        "niveau": "region",
+        "unite": "Guelmim",
+        "factionId": "F3"
+      },
+      "poids": null,
+      "criteres": [
+        "distance routière < 20 km",
+        "contraintes opérationnelles",
+        "RBAC territorial"
+      ],
+      "avant": 9,
+      "apres": 9,
+      "analyses": null,
+      "proposes": 1,
+      "retires": 0,
+      "proteges": null,
+      "couvertureAvant": null,
+      "couvertureApres": null,
+      "barrages": [
+        {
+          "id": "BF-BT-135",
+          "nom": "Poste fixe Chbika",
+          "action": "deplacer",
+          "routeAvant": "RN1",
+          "routeApres": "RN1",
+          "factionAvant": "F3",
+          "factionApres": "F3",
+          "positionAvant": {
+            "lng": -11.1132,
+            "lat": 28.47127
+          },
+          "positionApres": {
+            "lng": -10.99742,
+            "lat": 28.48974
+          },
+          "distanceAvantKm": 5.246026004764172,
+          "distanceApresKm": 20.182642976378602,
+          "raison": "Déplacement routier validé sans nouveau conflit"
+        }
+      ],
+      "refuses": []
+    }
+  ]
+}

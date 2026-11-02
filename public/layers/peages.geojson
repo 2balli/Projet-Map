@@ -1,0 +1,1864 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "id": "peage_0",
+            "properties": {
+                "nom": "Péage de Sidi Allal A Bahraoui",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    20999142,
+                    415281569
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.5423572,
+                    34.000469100000004
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_1",
+            "properties": {
+                "nom": "Péage de Meknes",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    21050205,
+                    1020321158
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.51558535,
+                    33.833349850000005
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_2",
+            "properties": {
+                "nom": "Settat-Nord",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    25663386,
+                    993707165
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.605042,
+                    33.07254235
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_3",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    26324145,
+                    1546229361
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.0371959,
+                    33.9533893
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_4",
+            "properties": {
+                "nom": "Bouskoura",
+                "operateur": null,
+                "barrieresOsm": 1,
+                "osmIds": [
+                    28350551
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.6203868,
+                    33.3686493
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_5",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    60173665,
+                    993584629
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.01006605,
+                    35.329822899999996
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_6",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    311210048,
+                    993584577
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.1431211,
+                    35.13983105
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_7",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 1,
+                "osmIds": [
+                    332182274
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.3323052,
+                    33.7181076
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_8",
+            "properties": {
+                "nom": "Skhirat",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    411760587,
+                    1255546381
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.0462778,
+                    33.8556571
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_9",
+            "properties": {
+                "nom": "Aeroport Mohammed V",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    411802660,
+                    411802666
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.614774799999999,
+                    33.3895945
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_10",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    491548519,
+                    491583333
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.70654525,
+                    35.6786196
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_11",
+            "properties": {
+                "nom": "Péage de Tanger Ouest",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    492028691,
+                    1579591765
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.92756315,
+                    35.678137899999996
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_12",
+            "properties": {
+                "nom": "Péage de Melloussa",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    492042813,
+                    492042814
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.6252705,
+                    35.7365061
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_13",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 3,
+                "osmIds": [
+                    492061073,
+                    492064072,
+                    492065996
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.621971599999999,
+                    35.73328276666667
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_14",
+            "properties": {
+                "nom": "M'Diq",
+                "operateur": "ADM",
+                "barrieresOsm": 2,
+                "osmIds": [
+                    554417835,
+                    981672981
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.3476028,
+                    35.6918432
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_15",
+            "properties": {
+                "nom": "Péage",
+                "operateur": "ADM",
+                "barrieresOsm": 2,
+                "osmIds": [
+                    797136823,
+                    3240268109
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -9.33615105,
+                    30.4982431
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_16",
+            "properties": {
+                "nom": "Moulay Bousselham",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    993584549,
+                    993584628
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.22525395,
+                    34.8603247
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_17",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 3,
+                "osmIds": [
+                    1014727762,
+                    1014728146,
+                    12171683637
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.3538516,
+                    35.74416733333333
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_18",
+            "properties": {
+                "nom": "Péage Smir",
+                "operateur": null,
+                "barrieresOsm": 1,
+                "osmIds": [
+                    1014728123
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.3533108,
+                    35.7441551
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_19",
+            "properties": {
+                "nom": "Marina Smir",
+                "operateur": null,
+                "barrieresOsm": 1,
+                "osmIds": [
+                    1014753472
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.3487256,
+                    35.7481959
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_20",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    1045704571,
+                    1045704729
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.3500629,
+                    33.25916435
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_21",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    1045704933,
+                    1045705140
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.994745399999999,
+                    33.34878335
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_22",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    1045705108,
+                    1045705278
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.81250175,
+                    33.4184729
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_23",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    1045969361,
+                    1045970091
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.568096799999999,
+                    33.5272458
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_24",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    1045969427,
+                    1045970361
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.4983315,
+                    33.56216315
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_25",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    1045970000,
+                    1045970427
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.54201655,
+                    33.53742015
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_26",
+            "properties": {
+                "nom": "Bouznika",
+                "operateur": null,
+                "barrieresOsm": 4,
+                "osmIds": [
+                    1046091024,
+                    1046091045,
+                    1544912901,
+                    1544967384
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.1656535,
+                    33.799257825
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_27",
+            "properties": {
+                "nom": "Settat-Centre",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    1156295642,
+                    1241739653
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.6038785,
+                    32.96839975
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_28",
+            "properties": {
+                "nom": "Ben Guerir ابن جرير",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    1210855078,
+                    1210855254
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.9775579,
+                    32.223620600000004
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_29",
+            "properties": {
+                "nom": "Skhour Rhamma",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    1244706634,
+                    1244706646
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.9093861,
+                    32.5023786
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_30",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    1290502683,
+                    4615271943
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.41459155,
+                    34.62960815
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_31",
+            "properties": {
+                "nom": "Assilah",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    1355418323,
+                    1355418326
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.02711885,
+                    35.44792645
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_32",
+            "properties": {
+                "nom": "Péage d'oujda",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    1374290361,
+                    1374290371
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.03215655,
+                    34.6924298
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_33",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    1489443985,
+                    1489444080
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.322464,
+                    33.8813636
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_34",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    1493282158,
+                    1493282568
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.09110285,
+                    33.8010036
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_35",
+            "properties": {
+                "nom": "Péage d'El Jadida",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    1544250318,
+                    4108172627
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.42626735,
+                    33.23994735
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_36",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 1,
+                "osmIds": [
+                    1544692380
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.4698444,
+                    33.5673361
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_37",
+            "properties": {
+                "nom": "Péage de Kénitra Centre",
+                "operateur": null,
+                "barrieresOsm": 3,
+                "osmIds": [
+                    1545460622,
+                    1545472247,
+                    1872406106
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.5819663,
+                    34.229633766666666
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_38",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    1545537188,
+                    1545537229
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.5087351,
+                    34.3078326
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_39",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    1547445239,
+                    2923809935
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.6062244,
+                    33.8473243
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_40",
+            "properties": {
+                "nom": "Marrakech - Palmeraie",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    1554842472,
+                    2991731647
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.9830361,
+                    31.77680395
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_41",
+            "properties": {
+                "nom": "Berrechid-Est",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    1556946653,
+                    8090720298
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.56165445,
+                    33.246099400000006
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_42",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    1587561773,
+                    1587561816
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.98958245,
+                    34.46952025
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_43",
+            "properties": {
+                "nom": "Péage de Fés",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    1598316193,
+                    2229135276
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.98812255,
+                    33.8958721
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_44",
+            "properties": {
+                "nom": "Péage de Tit Mellil",
+                "operateur": null,
+                "barrieresOsm": 1,
+                "osmIds": [
+                    1653839566
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.4698931,
+                    33.5675024
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_45",
+            "properties": {
+                "nom": "Péage Casablanca Ennasim",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    1653852838,
+                    1653852869
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.68985765,
+                    33.492321450000006
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_46",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    1688029093,
+                    2184925009
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.9160901500000005,
+                    33.9346445
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_47",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    1784203720,
+                    1784203898
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.3069433,
+                    34.350181750000004
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_48",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    1785318190,
+                    1785318295
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.70238775,
+                    33.997681400000005
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_49",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    1785381941,
+                    3154225067
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.4760928,
+                    34.093133800000004
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_50",
+            "properties": {
+                "nom": "Chichaoua",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    1866539788,
+                    3208325125
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.690928549999999,
+                    31.4771319
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_51",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    1873937790,
+                    1873937842
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.270921899999999,
+                    34.20616415
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_52",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    1873942120,
+                    1873942162
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.7259037,
+                    34.31194385
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_53",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    1885499596,
+                    1885500041
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.2596951,
+                    31.68916945
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_54",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    1885499810,
+                    1885499939
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -9.12694665,
+                    30.82145745
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_55",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    1930722266,
+                    1930722319
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -9.345415849999998,
+                    30.4822059
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_56",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    2143790640,
+                    2143790789
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.900062350000001,
+                    32.93614545
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_57",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    2178953884,
+                    2178953945
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.52332705,
+                    32.8570677
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_58",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    2229601592,
+                    2692883856
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.860638250000001,
+                    31.2649319
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_59",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    2366349024,
+                    2366349029
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.34059505,
+                    32.4110283
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_60",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    2576500724,
+                    3139857585
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.9292477,
+                    34.5206717
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_61",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    2577757177,
+                    2577757249
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.22871025,
+                    33.13034
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_62",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    2613028426,
+                    2613028590
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -9.1107888,
+                    32.2877445
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_63",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    2693212327,
+                    2693212330
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.1531841,
+                    33.298559749999995
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_64",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    2850290442,
+                    2850290494
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.68604505,
+                    34.0945277
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_65",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    2852243390,
+                    2852244781
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.0760751,
+                    34.23016385
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_66",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    2901153850,
+                    2901154004
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.5924417,
+                    32.9003503
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_67",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    2901154025,
+                    4532361709
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.3916051,
+                    32.57431845
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_68",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 3,
+                "osmIds": [
+                    3036267157,
+                    4346663161,
+                    5417632134
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.842002099999999,
+                    33.8466361
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_69",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    3055639022,
+                    3055641733
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.48930965,
+                    33.191962399999994
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_70",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    3055683264,
+                    3055683268
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.9457349,
+                    32.64490355
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_71",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    3139597964,
+                    3139597980
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.4783117499999996,
+                    34.610664400000005
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_72",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    3142082491,
+                    3142082492
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.95457885,
+                    34.26796385
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_73",
+            "properties": {
+                "nom": "Marrakech-Tamansourt",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    3209493157,
+                    3209493158
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.129028,
+                    31.7754666
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_74",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    3228951851,
+                    3228951889
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.5616655,
+                    33.129551199999995
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_75",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 1,
+                "osmIds": [
+                    3313028605
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.9422525,
+                    34.7892701
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_76",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    3540015843,
+                    3540015846
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.5800354,
+                    32.86943355
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_77",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    4100855893,
+                    4100855914
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.82192765,
+                    35.670443649999996
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_78",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    4552794716,
+                    4552794717
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.7416459500000006,
+                    33.964918049999994
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_79",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 1,
+                "osmIds": [
+                    5294859470
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.3332319,
+                    33.7134435
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_80",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    5382163046,
+                    6262716576
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.2449954000000005,
+                    33.8749169
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_81",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    5560570425,
+                    5560570930
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.4684325000000005,
+                    32.69647425
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_82",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    5589002238,
+                    5589002260
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -9.070606699999999,
+                    32.38510205
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_83",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 1,
+                "osmIds": [
+                    5638660659
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.9096145,
+                    35.7272777
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_84",
+            "properties": {
+                "nom": "Péage",
+                "operateur": "ADM",
+                "barrieresOsm": 2,
+                "osmIds": [
+                    5910585856,
+                    5910586201
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.3602685999999995,
+                    33.6875787
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_85",
+            "properties": {
+                "nom": "Berrechid-Nord",
+                "operateur": null,
+                "barrieresOsm": 3,
+                "osmIds": [
+                    6010298473,
+                    6802334736,
+                    6949812422
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.6028525,
+                    33.319098933333336
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_86",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    6150712926,
+                    6150713494
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.77472635,
+                    33.9162878
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_87",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    6489508640,
+                    6489510445
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.0826499,
+                    35.19383095
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_88",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 24,
+                "osmIds": [
+                    6493363702,
+                    13974853019,
+                    13974853038,
+                    13974853039,
+                    13974853040,
+                    13974853043,
+                    13974853045,
+                    13974853047,
+                    13974853049,
+                    13974853069,
+                    13974853070,
+                    13974853071,
+                    13974853072,
+                    13974853073,
+                    13974853074,
+                    13974853075,
+                    13974853076,
+                    13974853077,
+                    13974853078,
+                    13974853079,
+                    13974853080,
+                    13974853081,
+                    13974853085,
+                    13974853093
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.516335845833333,
+                    35.873273958333336
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_89",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    9544984159,
+                    9544984160
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.99347385,
+                    33.8927721
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_90",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 2,
+                "osmIds": [
+                    13042243214,
+                    13042243215
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.50528055,
+                    33.3784362
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "peage_91",
+            "properties": {
+                "nom": "Péage",
+                "operateur": null,
+                "barrieresOsm": 1,
+                "osmIds": [
+                    13197912358
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.9241549,
+                    35.7897121
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "ms_msjkews3_ad0fafd1",
+      "type": "vip",
+      "description": "passage equipe far",
+      "plaque": "",
+      "depart": {
+        "lng": -6.53687,
+        "lat": 33.9703
+      },
+      "arrivee": {
+        "lng": -5.3064,
+        "lat": 33.85193
+      },
+      "dateHeure": "2026-08-14T00:17",
+      "statut": "planifiee",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "cree": "2026-08-07T23:17:40.851Z",
+      "maj": "2026-08-07T23:17:40.851Z",
+      "demo": true
+    }
+  ],
+  "demo": true,
+  "_lisezMoi": "DONNÉES DE DÉMONSTRATION. Chaque enregistrement porte demo:true. Ne jamais présenter comme réel, ne jamais verser en production."
+}

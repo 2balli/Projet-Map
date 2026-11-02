@@ -1,0 +1,49 @@
+{
+  "_lisezMoi": [
+    "COMPOSITION TYPE D'UN BARRAGE — ce que la préparation du roster essaie de placer",
+    "sur chaque poste, du plus gradé au moins gradé.",
+    "",
+    "Ce fichier se corrige à la main, sans toucher au code : ajoutez, retirez ou",
+    "changez les nombres, puis relancez la préparation depuis le panneau",
+    "Administration. Le serveur relit le fichier à chaque préparation.",
+    "",
+    "Grades acceptés, et EUX SEULS : MDLG, MDLC, ADJT, A/C (voir serveur/elements.mjs).",
+    "",
+    "Quand l'effectif d'une brigade ne suffit pas à honorer la composition, le poste",
+    "est laissé incomplet et le manque est signalé. AUCUNE personne n'est inventée.",
+    "",
+    "`parType` permet une composition différente selon la nature du poste. Un",
+    "barrage mobile est tenu par une équipe plus légère qu'un barrage fixe.",
+    "Une nature absente de `parType` utilise `defaut`.",
+    "RÈGLE DES TROIS : un barrage est tenu par exactement 3 hommes sur un créneau (ELEMENTS_PAR_BARRAGE, voir serveur/elements.mjs). Une composition plus nombreuse est écrêtée par le service, du moins gradé au plus gradé, et un avertissement est écrit dans le journal. Les nombres ci-dessous totalisent donc 3 par nature de poste."
+  ],
+  "version": 1,
+  "valideParLeCommandement": false,
+  "defaut": [
+    {
+      "grade": "ADJT",
+      "nombre": 1
+    },
+    {
+      "grade": "MDLC",
+      "nombre": 1
+    },
+    {
+      "grade": "MDLG",
+      "nombre": 1
+    }
+  ],
+  "parType": {
+    "barrage_mobile": [
+      {
+        "grade": "MDLC",
+        "nombre": 1
+      },
+      {
+        "grade": "MDLG",
+        "nombre": 2
+      }
+    ]
+  },
+  "_profilDemonstration": "Composition ramenée à 3 hommes par poste (règle des trois). Ne concerne QUE ce dossier de démonstration."
+}

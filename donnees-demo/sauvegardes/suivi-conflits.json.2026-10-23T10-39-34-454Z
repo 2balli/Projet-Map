@@ -1,0 +1,4280 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "conf_mvjkklky_5663621f",
+      "numero": "C-01",
+      "paireCle": "BF-BT-069|BF-BT-429",
+      "type": "distance_insuffisante",
+      "severite": "critique",
+      "barrageAId": "BF-BT-069",
+      "barrageBId": "BF-BT-429",
+      "barrageA": {
+        "id": "BF-BT-069",
+        "nom": "Poste fixe Asni",
+        "type": "barrage_fixe",
+        "route": "RN7",
+        "pk": null,
+        "lng": -7.98413,
+        "lat": 31.24733,
+        "reg": "Marrakech",
+        "cie": "Tahannaout",
+        "bt": "Asni",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-429",
+        "nom": "Poste fixe Tahannaout",
+        "type": "barrage_fixe",
+        "route": "RN7",
+        "pk": null,
+        "lng": -7.94996,
+        "lat": 31.35668,
+        "reg": "Marrakech",
+        "cie": "Tahannaout",
+        "bt": "Tahannaout",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN7",
+      "factionsCommunes": [
+        "F2"
+      ],
+      "distanceKm": 16.6,
+      "seuilKm": 40,
+      "statut": "a_traiter",
+      "cree": "2026-10-22T13:21:13.278Z",
+      "maj": "2026-10-23T09:09:42.633Z",
+      "resoluLe": null,
+      "historique": [
+        {
+          "date": "2026-10-22T13:21:13.278Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "statut": "nouveau",
+          "commentaire": "Conflit identifié C-01 sur le réseau routier."
+        },
+        {
+          "date": "2026-10-22T13:21:13.278Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assignation_region",
+          "statut": "a_traiter",
+          "commentaire": "Conflit C-01 assigné au CMND Région Agadir (Chef de région Agadir).",
+          "destinataire": {
+            "matricule": "REG-AGADIR",
+            "nom": "Chef de région Agadir",
+            "rang": "reg",
+            "unite": "Agadir"
+          }
+        },
+        {
+          "date": "2026-10-22T13:33:51.980Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assignation_region",
+          "statut": "a_traiter",
+          "commentaire": "Conflit C-01 assigné au CMND Région Marrakech (Chef de région Marrakech).",
+          "destinataire": {
+            "matricule": "REG-MARRAKECH",
+            "nom": "Chef de région Marrakech",
+            "rang": "reg",
+            "unite": "Marrakech"
+          }
+        },
+        {
+          "date": "2026-10-22T14:31:32.596Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assignation_region",
+          "statut": "a_traiter",
+          "commentaire": "Conflit C-01 assigné au CMND Région Marrakech (Chef de région Marrakech).",
+          "destinataire": {
+            "matricule": "REG-MARRAKECH",
+            "nom": "Chef de région Marrakech",
+            "rang": "reg",
+            "unite": "Marrakech",
+            "region": "Marrakech"
+          },
+          "destinataires": [
+            {
+              "matricule": "REG-MARRAKECH",
+              "nom": "Chef de région Marrakech",
+              "rang": "reg",
+              "unite": "Marrakech",
+              "region": "Marrakech"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-22T15:29:28.810Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assignation_region",
+          "statut": "a_traiter",
+          "commentaire": "Conflit C-01 assigné au CMND Région Marrakech (Chef de région Marrakech).",
+          "destinataire": {
+            "matricule": "REG-MARRAKECH",
+            "nom": "Chef de région Marrakech",
+            "rang": "reg",
+            "unite": "Marrakech",
+            "region": "Marrakech"
+          },
+          "destinataires": [
+            {
+              "matricule": "REG-MARRAKECH",
+              "nom": "Chef de région Marrakech",
+              "rang": "reg",
+              "unite": "Marrakech",
+              "region": "Marrakech"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-22T15:30:51.615Z",
+          "auteur": {
+            "matricule": "REG-MARRAKECH",
+            "nom": "Chef de région Marrakech",
+            "rang": "reg",
+            "unite": "Marrakech"
+          },
+          "action": "transmission_cie",
+          "statut": "en_cours",
+          "commentaire": "Conflit C-01 transmis par le CMND Région Marrakech (Chef de région Marrakech) au CMND Cie Tahannaout (Chef de compagnie Tahannaout).",
+          "destinataire": {
+            "matricule": "CIE-TAHANNAOUT",
+            "nom": "Chef de compagnie Tahannaout",
+            "rang": "cie",
+            "unite": "Tahannaout",
+            "transmisLe": "2026-10-22T15:30:51.615Z",
+            "transmisPar": {
+              "matricule": "REG-MARRAKECH",
+              "nom": "Chef de région Marrakech",
+              "rang": "reg",
+              "unite": "Marrakech"
+            }
+          }
+        },
+        {
+          "date": "2026-10-22T15:31:52.794Z",
+          "auteur": {
+            "matricule": "REG-MARRAKECH",
+            "nom": "Chef de région Marrakech",
+            "rang": "reg",
+            "unite": "Marrakech"
+          },
+          "action": "traitement",
+          "statut": "en_cours",
+          "commentaire": "Traitement du conflit C-01 : Déplacement du barrage soumis/effectué (Réajustement espacement).",
+          "details": {
+            "barrageId": "BF-BT-069",
+            "barrageNom": "Poste fixe Asni",
+            "nouvelleFactionId": "",
+            "nouvelleFactionNom": "",
+            "motif": "",
+            "commentaire": ""
+          }
+        },
+        {
+          "date": "2026-10-23T09:07:56.437Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assignation",
+          "statut": "a_traiter",
+          "commentaire": "Statut du conflit mis à jour : À traiter."
+        },
+        {
+          "date": "2026-10-23T09:08:55.778Z",
+          "auteur": {
+            "matricule": "REG-MARRAKECH",
+            "nom": "Chef de région Marrakech",
+            "rang": "reg",
+            "unite": "Marrakech"
+          },
+          "action": "resolution",
+          "statut": "resolu",
+          "commentaire": "Conflit résolu suite à l'opération « changement_faction » : distance réglementaire ou factions conformes."
+        },
+        {
+          "date": "2026-10-23T09:09:42.633Z",
+          "auteur": {
+            "matricule": "REG-MARRAKECH",
+            "nom": "Chef de région Marrakech",
+            "rang": "reg",
+            "unite": "Marrakech"
+          },
+          "action": "reouverture",
+          "statut": "a_traiter",
+          "commentaire": "Conflit réapparu suite à l'opération « changement_faction ». Distance mesurée : 16.6 km."
+        }
+      ],
+      "motif": "Même faction (Faction 4) — 17.9 km par la route, sous le seuil de 20 km",
+      "assigneA": {
+        "matricule": "REG-MARRAKECH",
+        "nom": "Chef de région Marrakech",
+        "rang": "reg",
+        "unite": "Marrakech",
+        "region": "Marrakech"
+      },
+      "assigneLe": "2026-10-22T15:29:28.810Z",
+      "assignesA": [
+        {
+          "matricule": "REG-MARRAKECH",
+          "nom": "Chef de région Marrakech",
+          "rang": "reg",
+          "unite": "Marrakech",
+          "region": "Marrakech"
+        }
+      ],
+      "assigneCie": {
+        "matricule": "CIE-TAHANNAOUT",
+        "nom": "Chef de compagnie Tahannaout",
+        "rang": "cie",
+        "unite": "Tahannaout",
+        "transmisLe": "2026-10-22T15:30:51.615Z",
+        "transmisPar": {
+          "matricule": "REG-MARRAKECH",
+          "nom": "Chef de région Marrakech",
+          "rang": "reg",
+          "unite": "Marrakech"
+        }
+      },
+      "distanceRouteKm": 16.6,
+      "estDistanceRoute": true
+    },
+    {
+      "id": "conf_mvjldbhq_e686a9c8",
+      "numero": "C-03",
+      "paireCle": "BF-BT-053|BFI-CIE-004",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-053",
+      "barrageBId": "BFI-CIE-004",
+      "barrageA": {
+        "id": "BF-BT-053",
+        "nom": "Poste fixe Al Hoceima",
+        "type": "barrage_fixe",
+        "route": "RN2",
+        "pk": null,
+        "lng": -3.91614,
+        "lat": 35.19322,
+        "reg": "Al Hoceima",
+        "cie": "Al Hoceima",
+        "bt": "Al Hoceima",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BFI-CIE-004",
+        "nom": "BFI Al Hoceima",
+        "type": "barrage_fixe",
+        "route": "RN2",
+        "pk": null,
+        "lng": -3.84079,
+        "lat": 35.10204,
+        "reg": "Al Hoceima",
+        "cie": "Al Hoceima",
+        "bt": "Oued Nekkour",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN2, RN2",
+      "factionsCommunes": [
+        "F1"
+      ],
+      "distanceKm": 15.43,
+      "seuilKm": 20,
+      "statut": "en_cours",
+      "cree": "2026-10-22T13:43:33.211Z",
+      "maj": "2026-10-23T10:14:08.066Z",
+      "resoluLe": null,
+      "historique": [
+        {
+          "date": "2026-10-22T13:43:33.211Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "statut": "nouveau",
+          "commentaire": "Conflit identifié C-03 sur le réseau routier."
+        },
+        {
+          "date": "2026-10-22T13:43:33.211Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assignation_region",
+          "statut": "a_traiter",
+          "commentaire": "Conflit C-03 assigné au CMND Région Al Hoceima (Chef de région Al Hoceima).",
+          "destinataire": {
+            "matricule": "REG-AL HOCEIMA",
+            "nom": "Chef de région Al Hoceima",
+            "rang": "reg",
+            "unite": "Al Hoceima"
+          }
+        },
+        {
+          "date": "2026-10-22T14:31:40.571Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assignation_region",
+          "statut": "a_traiter",
+          "commentaire": "Conflit C-03 assigné au CMND Région Al Hoceima (Chef de région Al Hoceima).",
+          "destinataire": {
+            "matricule": "REG-AL HOCEIMA",
+            "nom": "Chef de région Al Hoceima",
+            "rang": "reg",
+            "unite": "Al Hoceima",
+            "region": "Al Hoceima"
+          },
+          "destinataires": [
+            {
+              "matricule": "REG-AL HOCEIMA",
+              "nom": "Chef de région Al Hoceima",
+              "rang": "reg",
+              "unite": "Al Hoceima",
+              "region": "Al Hoceima"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-23T10:14:08.066Z",
+          "auteur": {
+            "matricule": "REG-AL HOCEIMA",
+            "nom": "Chef de région Al Hoceima",
+            "rang": "reg",
+            "unite": "Al Hoceima"
+          },
+          "action": "traitement",
+          "statut": "en_cours",
+          "commentaire": "Traitement du conflit C-03 : Déplacement du barrage soumis/effectué (Réajustement espacement).",
+          "details": {
+            "barrageId": "BF-BT-053",
+            "barrageNom": "Poste fixe Al Hoceima",
+            "nouvelleFactionId": "",
+            "nouvelleFactionNom": "",
+            "motif": "",
+            "commentaire": ""
+          }
+        }
+      ],
+      "motif": "Même faction (Faction 1) — 15.4 km par la route, sous le seuil de 20 km",
+      "assigneA": {
+        "matricule": "REG-AL HOCEIMA",
+        "nom": "Chef de région Al Hoceima",
+        "rang": "reg",
+        "unite": "Al Hoceima",
+        "region": "Al Hoceima"
+      },
+      "assigneLe": "2026-10-22T14:31:40.571Z",
+      "assignesA": [
+        {
+          "matricule": "REG-AL HOCEIMA",
+          "nom": "Chef de région Al Hoceima",
+          "rang": "reg",
+          "unite": "Al Hoceima",
+          "region": "Al Hoceima"
+        }
+      ]
+    },
+    {
+      "id": "conf_mvjmq923_07d2f7c2",
+      "paireCle": "BF-BT-463|BFI-CIE-061",
+      "type": "distance_insuffisante",
+      "severite": "critique",
+      "barrageAId": "BF-BT-463",
+      "barrageBId": "BFI-CIE-061",
+      "barrageA": {
+        "id": "BF-BT-463",
+        "nom": "Poste fixe Témara",
+        "type": "barrage_fixe",
+        "route": "RN25",
+        "pk": 8,
+        "lng": -6.82615,
+        "lat": 33.95987,
+        "reg": "Rabat",
+        "cie": "Rabat",
+        "bt": "Rabat",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BFI-CIE-061",
+        "nom": "BFI Rabat",
+        "type": "barrage_fixe",
+        "route": "A1",
+        "pk": null,
+        "lng": -6.88652,
+        "lat": 33.96705,
+        "reg": "Rabat",
+        "cie": "Rabat",
+        "bt": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "route": "A1",
+      "factionsCommunes": [
+        "F3"
+      ],
+      "distanceKm": 7.9,
+      "distanceRouteKm": 7.9,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "resolu",
+      "cree": "2026-10-22T14:21:36.140Z",
+      "maj": "2026-10-23T10:17:30.322Z",
+      "resoluLe": "2026-10-23T10:17:30.322Z",
+      "derniereNotificationTs": "2026-10-22T14:21:36.140Z",
+      "derniereNotificationStatut": "a_traiter",
+      "historique": [
+        {
+          "date": "2026-10-22T14:21:36.140Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "statut": "a_traiter",
+          "commentaire": "Conflit détecté le long de la route : espacement 7.9 km (seuil réglementaire 40 km)."
+        },
+        {
+          "date": "2026-10-22T14:31:45.128Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assignation_region",
+          "statut": "a_traiter",
+          "commentaire": "Conflit conf_mvjmq923_07d2f7c2 assigné au CMND Région Rabat (Chef de région Rabat).",
+          "destinataire": {
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat",
+            "rang": "reg",
+            "unite": "Rabat",
+            "region": "Rabat"
+          },
+          "destinataires": [
+            {
+              "matricule": "REG-RABAT",
+              "nom": "Chef de région Rabat",
+              "rang": "reg",
+              "unite": "Rabat",
+              "region": "Rabat"
+            }
+          ]
+        },
+        {
+          "date": "2026-10-22T14:33:24.085Z",
+          "auteur": {
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat",
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "action": "traitement",
+          "statut": "en_cours",
+          "commentaire": "Traitement du conflit conf_mvjmq923_07d2f7c2 : Déplacement du barrage soumis/effectué (Réajustement espacement).",
+          "details": {
+            "barrageId": "BF-BT-463",
+            "barrageNom": "Poste fixe Témara",
+            "nouvelleFactionId": "",
+            "nouvelleFactionNom": "",
+            "motif": "",
+            "commentaire": ""
+          }
+        },
+        {
+          "date": "2026-10-23T10:17:30.322Z",
+          "auteur": {
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat",
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "action": "resolution",
+          "statut": "resolu",
+          "commentaire": "Conflit résolu suite à l'opération « demande_approbation » : distance réglementaire ou factions conformes."
+        }
+      ],
+      "numero": "conf_mvjmq923_07d2f7c2",
+      "motif": "Distance routière de 7.9 km inférieure au seuil réglementaire.",
+      "assignesA": [
+        {
+          "matricule": "REG-RABAT",
+          "nom": "Chef de région Rabat",
+          "rang": "reg",
+          "unite": "Rabat",
+          "region": "Rabat"
+        }
+      ],
+      "assigneA": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "rang": "reg",
+        "unite": "Rabat",
+        "region": "Rabat"
+      },
+      "assigneLe": "2026-10-22T14:31:45.128Z"
+    },
+    {
+      "id": "conf_mvjmq925_e7fc2c53",
+      "paireCle": "BF-BT-463|BFI-CIE-084",
+      "type": "distance_insuffisante",
+      "severite": "critique",
+      "barrageAId": "BF-BT-463",
+      "barrageBId": "BFI-CIE-084",
+      "barrageA": {
+        "id": "BF-BT-463",
+        "nom": "Poste fixe Témara",
+        "type": "barrage_fixe",
+        "route": "RN25",
+        "pk": 8,
+        "lng": -6.82615,
+        "lat": 33.95987,
+        "reg": "Rabat",
+        "cie": "Rabat",
+        "bt": "Rabat",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BFI-CIE-084",
+        "nom": "BFI Témara",
+        "type": "barrage_fixe",
+        "route": "RR322",
+        "pk": null,
+        "lng": -7.00102,
+        "lat": 33.89339,
+        "reg": "Rabat",
+        "cie": "Témara",
+        "bt": "Témara Plage",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "route": "RR322",
+      "factionsCommunes": [
+        "F3"
+      ],
+      "distanceKm": 19.4,
+      "distanceRouteKm": 19.4,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "a_traiter",
+      "cree": "2026-10-22T14:21:36.140Z",
+      "maj": "2026-10-22T14:31:51.931Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-22T14:21:36.140Z",
+      "derniereNotificationStatut": "a_traiter",
+      "historique": [
+        {
+          "date": "2026-10-22T14:21:36.140Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "statut": "a_traiter",
+          "commentaire": "Conflit détecté le long de la route : espacement 19.4 km (seuil réglementaire 40 km)."
+        },
+        {
+          "date": "2026-10-22T14:31:51.931Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assignation_region",
+          "statut": "a_traiter",
+          "commentaire": "Conflit conf_mvjmq925_e7fc2c53 assigné au CMND Région Rabat (Chef de région Rabat).",
+          "destinataire": {
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat",
+            "rang": "reg",
+            "unite": "Rabat",
+            "region": "Rabat"
+          },
+          "destinataires": [
+            {
+              "matricule": "REG-RABAT",
+              "nom": "Chef de région Rabat",
+              "rang": "reg",
+              "unite": "Rabat",
+              "region": "Rabat"
+            }
+          ]
+        }
+      ],
+      "numero": "conf_mvjmq925_e7fc2c53",
+      "motif": "Distance routière de 19.4 km inférieure au seuil réglementaire.",
+      "assignesA": [
+        {
+          "matricule": "REG-RABAT",
+          "nom": "Chef de région Rabat",
+          "rang": "reg",
+          "unite": "Rabat",
+          "region": "Rabat"
+        }
+      ],
+      "assigneA": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "rang": "reg",
+        "unite": "Rabat",
+        "region": "Rabat"
+      },
+      "assigneLe": "2026-10-22T14:31:51.931Z"
+    },
+    {
+      "id": "conf_mvjmq926_932b54d7",
+      "paireCle": "BF-BT-463|BFI-CIE-002",
+      "type": "distance_insuffisante",
+      "severite": "critique",
+      "barrageAId": "BF-BT-463",
+      "barrageBId": "BFI-CIE-002",
+      "barrageA": {
+        "id": "BF-BT-463",
+        "nom": "Poste fixe Témara",
+        "type": "barrage_fixe",
+        "route": "RN25",
+        "pk": 8,
+        "lng": -6.82615,
+        "lat": 33.95987,
+        "reg": "Rabat",
+        "cie": "Rabat",
+        "bt": "Rabat",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BFI-CIE-002",
+        "nom": "BFI Ain Aouda",
+        "type": "barrage_fixe",
+        "route": "A5",
+        "pk": null,
+        "lng": -6.88284,
+        "lat": 33.83966,
+        "reg": "Rabat",
+        "cie": "Ain Aouda",
+        "bt": "Sidi Yahya des Zaers",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "route": "A5",
+      "factionsCommunes": [
+        "F3"
+      ],
+      "distanceKm": 19.8,
+      "distanceRouteKm": 19.8,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "en_cours",
+      "cree": "2026-10-22T14:21:36.140Z",
+      "maj": "2026-10-23T10:18:19.751Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-22T14:21:36.140Z",
+      "derniereNotificationStatut": "a_traiter",
+      "historique": [
+        {
+          "date": "2026-10-22T14:21:36.140Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "statut": "a_traiter",
+          "commentaire": "Conflit détecté le long de la route : espacement 19.8 km (seuil réglementaire 40 km)."
+        },
+        {
+          "date": "2026-10-23T10:18:19.751Z",
+          "auteur": {
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat",
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "action": "traitement",
+          "statut": "en_cours",
+          "commentaire": "Traitement du conflit conf_mvjmq926_932b54d7 : Déplacement du barrage soumis/effectué (Réajustement espacement).",
+          "details": {
+            "barrageId": "BF-BT-463",
+            "barrageNom": "Poste fixe Témara",
+            "nouvelleFactionId": "",
+            "nouvelleFactionNom": "",
+            "motif": "",
+            "commentaire": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "conf_mvjmq927_8f62b0b3",
+      "paireCle": "BF-BT-463|BFI-CIE-064",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-463",
+      "barrageBId": "BFI-CIE-064",
+      "barrageA": {
+        "id": "BF-BT-463",
+        "nom": "Poste fixe Témara",
+        "type": "barrage_fixe",
+        "route": "RN25",
+        "pk": 8,
+        "lng": -6.82615,
+        "lat": 33.95987,
+        "reg": "Rabat",
+        "cie": "Rabat",
+        "bt": "Rabat",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BFI-CIE-064",
+        "nom": "BFI Salé",
+        "type": "barrage_fixe",
+        "route": "A2",
+        "pk": null,
+        "lng": -6.64819,
+        "lat": 34.02873,
+        "reg": "Rabat",
+        "cie": "Salé",
+        "bt": "Shoul",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "route": "A2",
+      "factionsCommunes": [
+        "F3"
+      ],
+      "distanceKm": 21.7,
+      "distanceRouteKm": 21.7,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "a_traiter",
+      "cree": "2026-10-22T14:21:36.140Z",
+      "maj": "2026-10-22T14:32:03.746Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-22T14:21:36.140Z",
+      "derniereNotificationStatut": "a_traiter",
+      "historique": [
+        {
+          "date": "2026-10-22T14:21:36.140Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "statut": "a_traiter",
+          "commentaire": "Conflit détecté le long de la route : espacement 21.7 km (seuil réglementaire 40 km)."
+        },
+        {
+          "date": "2026-10-22T14:32:03.746Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assignation_region",
+          "statut": "a_traiter",
+          "commentaire": "Conflit conf_mvjmq927_8f62b0b3 assigné au CMND Région Rabat (Chef de région Rabat).",
+          "destinataire": {
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat",
+            "rang": "reg",
+            "unite": "Rabat",
+            "region": "Rabat"
+          },
+          "destinataires": [
+            {
+              "matricule": "REG-RABAT",
+              "nom": "Chef de région Rabat",
+              "rang": "reg",
+              "unite": "Rabat",
+              "region": "Rabat"
+            }
+          ]
+        }
+      ],
+      "numero": "conf_mvjmq927_8f62b0b3",
+      "motif": "Distance routière de 21.7 km inférieure au seuil réglementaire.",
+      "assignesA": [
+        {
+          "matricule": "REG-RABAT",
+          "nom": "Chef de région Rabat",
+          "rang": "reg",
+          "unite": "Rabat",
+          "region": "Rabat"
+        }
+      ],
+      "assigneA": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "rang": "reg",
+        "unite": "Rabat",
+        "region": "Rabat"
+      },
+      "assigneLe": "2026-10-22T14:32:03.746Z"
+    },
+    {
+      "id": "conf_mvjmq929_75a04ffa",
+      "paireCle": "BF-BT-463|BFI-CIE-071",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-463",
+      "barrageBId": "BFI-CIE-071",
+      "barrageA": {
+        "id": "BF-BT-463",
+        "nom": "Poste fixe Témara",
+        "type": "barrage_fixe",
+        "route": "RN25",
+        "pk": 8,
+        "lng": -6.82615,
+        "lat": 33.95987,
+        "reg": "Rabat",
+        "cie": "Rabat",
+        "bt": "Rabat",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BFI-CIE-071",
+        "nom": "BFI Skhirate",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": null,
+        "lng": -7.05783,
+        "lat": 33.83761,
+        "reg": "Rabat",
+        "cie": "Skhirate",
+        "bt": "Skhirate-El Fath",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN1",
+      "factionsCommunes": [
+        "F3"
+      ],
+      "distanceKm": 26.7,
+      "distanceRouteKm": 26.7,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "a_traiter",
+      "cree": "2026-10-22T14:21:36.140Z",
+      "maj": "2026-10-22T14:32:15.707Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-22T14:21:36.140Z",
+      "derniereNotificationStatut": "a_traiter",
+      "historique": [
+        {
+          "date": "2026-10-22T14:21:36.140Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "statut": "a_traiter",
+          "commentaire": "Conflit détecté le long de la route : espacement 26.7 km (seuil réglementaire 40 km)."
+        },
+        {
+          "date": "2026-10-22T14:32:15.707Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assignation_region",
+          "statut": "a_traiter",
+          "commentaire": "Conflit conf_mvjmq929_75a04ffa assigné au CMND Région Rabat (Chef de région Rabat).",
+          "destinataire": {
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat",
+            "rang": "reg",
+            "unite": "Rabat",
+            "region": "Rabat"
+          },
+          "destinataires": [
+            {
+              "matricule": "REG-RABAT",
+              "nom": "Chef de région Rabat",
+              "rang": "reg",
+              "unite": "Rabat",
+              "region": "Rabat"
+            }
+          ]
+        }
+      ],
+      "numero": "conf_mvjmq929_75a04ffa",
+      "motif": "Distance routière de 26.7 km inférieure au seuil réglementaire.",
+      "assignesA": [
+        {
+          "matricule": "REG-RABAT",
+          "nom": "Chef de région Rabat",
+          "rang": "reg",
+          "unite": "Rabat",
+          "region": "Rabat"
+        }
+      ],
+      "assigneA": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "rang": "reg",
+        "unite": "Rabat",
+        "region": "Rabat"
+      },
+      "assigneLe": "2026-10-22T14:32:15.707Z"
+    },
+    {
+      "id": "conf_mvjmq92a_8cf28594",
+      "paireCle": "BF-BT-407|BF-BT-463",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-463",
+      "barrageBId": "BF-BT-407",
+      "barrageA": {
+        "id": "BF-BT-463",
+        "nom": "Poste fixe Témara",
+        "type": "barrage_fixe",
+        "route": "RN25",
+        "pk": 8,
+        "lng": -6.82615,
+        "lat": 33.95987,
+        "reg": "Rabat",
+        "cie": "Rabat",
+        "bt": "Rabat",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-407",
+        "nom": "Poste fixe Skhirate-El Fath",
+        "type": "barrage_fixe",
+        "route": "RP4001",
+        "pk": 6.4,
+        "lng": -7.02445,
+        "lat": 33.79255,
+        "reg": "Rabat",
+        "cie": "Skhirate",
+        "bt": "Sebbah",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "route": "RP4001",
+      "factionsCommunes": [
+        "F3"
+      ],
+      "distanceKm": 29.7,
+      "distanceRouteKm": 29.7,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "a_traiter",
+      "cree": "2026-10-22T14:21:36.140Z",
+      "maj": "2026-10-22T14:32:13.863Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-22T14:21:36.140Z",
+      "derniereNotificationStatut": "en_cours",
+      "historique": [
+        {
+          "date": "2026-10-22T14:21:36.140Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "statut": "en_cours",
+          "commentaire": "Conflit détecté le long de la route : espacement 29.7 km (seuil réglementaire 40 km)."
+        },
+        {
+          "date": "2026-10-22T14:32:13.863Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assignation_region",
+          "statut": "a_traiter",
+          "commentaire": "Conflit conf_mvjmq92a_8cf28594 assigné au CMND Région Rabat (Chef de région Rabat).",
+          "destinataire": {
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat",
+            "rang": "reg",
+            "unite": "Rabat",
+            "region": "Rabat"
+          },
+          "destinataires": [
+            {
+              "matricule": "REG-RABAT",
+              "nom": "Chef de région Rabat",
+              "rang": "reg",
+              "unite": "Rabat",
+              "region": "Rabat"
+            }
+          ]
+        }
+      ],
+      "numero": "conf_mvjmq92a_8cf28594",
+      "motif": "Distance routière de 29.7 km inférieure au seuil réglementaire.",
+      "assignesA": [
+        {
+          "matricule": "REG-RABAT",
+          "nom": "Chef de région Rabat",
+          "rang": "reg",
+          "unite": "Rabat",
+          "region": "Rabat"
+        }
+      ],
+      "assigneA": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "rang": "reg",
+        "unite": "Rabat",
+        "region": "Rabat"
+      },
+      "assigneLe": "2026-10-22T14:32:13.863Z"
+    },
+    {
+      "id": "conf_mvkqxul3_aa8c67ee",
+      "paireCle": "BF-BT-436|BFI-CIE-046",
+      "type": "distance_insuffisante",
+      "severite": "critique",
+      "barrageAId": "BF-BT-436",
+      "barrageBId": "BFI-CIE-046",
+      "barrageA": {
+        "id": "BF-BT-436",
+        "nom": "Poste fixe Tamansourte",
+        "type": "barrage_fixe",
+        "route": "RN7",
+        "pk": null,
+        "lng": -8.06312,
+        "lat": 31.70484,
+        "reg": "Marrakech",
+        "cie": "Tamansourte",
+        "bt": "Tamansourte",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BFI-CIE-046",
+        "nom": "BFI Marrakech",
+        "type": "barrage_fixe",
+        "route": "A3",
+        "pk": null,
+        "lng": -8.16378,
+        "lat": 31.7754,
+        "reg": "Marrakech",
+        "cie": "Marrakech",
+        "bt": "Tamansourte",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "route": "A3",
+      "factionsCommunes": [
+        "F4"
+      ],
+      "distanceKm": 14.9,
+      "distanceRouteKm": 14.9,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "a_traiter",
+      "cree": "2026-10-23T09:07:15.326Z",
+      "maj": "2026-10-23T09:07:15.326Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T09:07:15.326Z",
+      "derniereNotificationStatut": "a_traiter",
+      "historique": [
+        {
+          "date": "2026-10-23T09:07:15.326Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "statut": "a_traiter",
+          "commentaire": "Conflit détecté le long de la route : espacement 14.9 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvkqxul5_5c9a369b",
+      "paireCle": "BF-BT-436|BF-BT-456",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-436",
+      "barrageBId": "BF-BT-456",
+      "barrageA": {
+        "id": "BF-BT-456",
+        "nom": "Poste fixe Tassoultante",
+        "type": "barrage_fixe",
+        "route": "RP2009",
+        "pk": null,
+        "lng": -8.01841,
+        "lat": 31.57345,
+        "reg": "Marrakech",
+        "cie": "Marrakech",
+        "bt": "Tassoultante",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-436",
+        "nom": "Poste fixe Tamansourte",
+        "type": "barrage_fixe",
+        "route": "RN7",
+        "pk": null,
+        "lng": -8.06312,
+        "lat": 31.70484,
+        "reg": "Marrakech",
+        "cie": "Tamansourte",
+        "bt": "Tamansourte",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN7",
+      "factionsCommunes": [
+        "F4"
+      ],
+      "distanceKm": 20.1,
+      "distanceRouteKm": 20.1,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "a_traiter",
+      "cree": "2026-10-23T09:07:15.326Z",
+      "maj": "2026-10-23T09:07:43.093Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T09:07:15.326Z",
+      "derniereNotificationStatut": "a_traiter",
+      "historique": [
+        {
+          "date": "2026-10-23T09:07:15.326Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "statut": "a_traiter",
+          "commentaire": "Conflit détecté le long de la route : espacement 20.1 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvkqxul6_6b26a46d",
+      "paireCle": "BF-BT-412|BF-BT-436",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-436",
+      "barrageBId": "BF-BT-412",
+      "barrageA": {
+        "id": "BF-BT-436",
+        "nom": "Poste fixe Tamansourte",
+        "type": "barrage_fixe",
+        "route": "RN7",
+        "pk": null,
+        "lng": -8.06312,
+        "lat": 31.70484,
+        "reg": "Marrakech",
+        "cie": "Tamansourte",
+        "bt": "Tamansourte",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-412",
+        "nom": "Poste fixe Souihla",
+        "type": "barrage_fixe",
+        "route": "RP2027",
+        "pk": null,
+        "lng": -8.19167,
+        "lat": 31.67448,
+        "reg": "Marrakech",
+        "cie": "Marrakech",
+        "bt": "Souihla",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "route": "RP2027",
+      "factionsCommunes": [
+        "F4"
+      ],
+      "distanceKm": 20.2,
+      "distanceRouteKm": 20.2,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "a_traiter",
+      "cree": "2026-10-23T09:07:15.326Z",
+      "maj": "2026-10-23T09:07:15.326Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T09:07:15.326Z",
+      "derniereNotificationStatut": "a_traiter",
+      "historique": [
+        {
+          "date": "2026-10-23T09:07:15.326Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "statut": "a_traiter",
+          "commentaire": "Conflit détecté le long de la route : espacement 20.2 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvkqxul8_cb2578ff",
+      "paireCle": "BF-BT-436|BF-BT-440",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-436",
+      "barrageBId": "BF-BT-440",
+      "barrageA": {
+        "id": "BF-BT-440",
+        "nom": "Poste fixe Tameslohte",
+        "type": "barrage_fixe",
+        "route": "RP2014",
+        "pk": null,
+        "lng": -8.09786,
+        "lat": 31.49652,
+        "reg": "Marrakech",
+        "cie": "Tahannaout",
+        "bt": "Tameslohte",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-436",
+        "nom": "Poste fixe Tamansourte",
+        "type": "barrage_fixe",
+        "route": "RN7",
+        "pk": null,
+        "lng": -8.06312,
+        "lat": 31.70484,
+        "reg": "Marrakech",
+        "cie": "Tamansourte",
+        "bt": "Tamansourte",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN7",
+      "factionsCommunes": [
+        "F4"
+      ],
+      "distanceKm": 29.7,
+      "distanceRouteKm": 29.7,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "a_traiter",
+      "cree": "2026-10-23T09:07:15.326Z",
+      "maj": "2026-10-23T09:07:39.309Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T09:07:15.326Z",
+      "derniereNotificationStatut": "a_traiter",
+      "historique": [
+        {
+          "date": "2026-10-23T09:07:15.326Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "statut": "a_traiter",
+          "commentaire": "Conflit détecté le long de la route : espacement 29.7 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvkqxul9_ba8b529c",
+      "paireCle": "BF-BT-404|BF-BT-436",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-436",
+      "barrageBId": "BF-BT-404",
+      "barrageA": {
+        "id": "BF-BT-436",
+        "nom": "Poste fixe Tamansourte",
+        "type": "barrage_fixe",
+        "route": "RN7",
+        "pk": null,
+        "lng": -8.06312,
+        "lat": 31.70484,
+        "reg": "Marrakech",
+        "cie": "Tamansourte",
+        "bt": "Tamansourte",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-404",
+        "nom": "Poste fixe Sidi Zouine",
+        "type": "barrage_fixe",
+        "route": "RN8",
+        "pk": null,
+        "lng": -8.32195,
+        "lat": 31.61618,
+        "reg": "Marrakech",
+        "cie": "Marrakech",
+        "bt": "Sidi Zouine",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN8",
+      "factionsCommunes": [
+        "F4"
+      ],
+      "distanceKm": 34,
+      "distanceRouteKm": 34,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "a_traiter",
+      "cree": "2026-10-23T09:07:15.326Z",
+      "maj": "2026-10-23T09:07:15.326Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T09:07:15.326Z",
+      "derniereNotificationStatut": "a_traiter",
+      "historique": [
+        {
+          "date": "2026-10-23T09:07:15.326Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "statut": "a_traiter",
+          "commentaire": "Conflit détecté le long de la route : espacement 34 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvkqxulb_45692ec8",
+      "paireCle": "BF-BT-140|BF-BT-436",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-436",
+      "barrageBId": "BF-BT-140",
+      "barrageA": {
+        "id": "BF-BT-436",
+        "nom": "Poste fixe Tamansourte",
+        "type": "barrage_fixe",
+        "route": "RN7",
+        "pk": null,
+        "lng": -8.06312,
+        "lat": 31.70484,
+        "reg": "Marrakech",
+        "cie": "Tamansourte",
+        "bt": "Tamansourte",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-140",
+        "nom": "Poste fixe Chouiter",
+        "type": "barrage_fixe",
+        "route": "RP2019",
+        "pk": null,
+        "lng": -7.81206,
+        "lat": 31.57245,
+        "reg": "Marrakech",
+        "cie": "Tahannaout",
+        "bt": "Chouiter",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "route": "RP2019",
+      "factionsCommunes": [
+        "F4"
+      ],
+      "distanceKm": 34.8,
+      "distanceRouteKm": 34.8,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "a_traiter",
+      "cree": "2026-10-23T09:07:15.326Z",
+      "maj": "2026-10-23T09:07:15.326Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T09:07:15.326Z",
+      "derniereNotificationStatut": "a_traiter",
+      "historique": [
+        {
+          "date": "2026-10-23T09:07:15.326Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "statut": "a_traiter",
+          "commentaire": "Conflit détecté le long de la route : espacement 34.8 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvkqxyhm_caf0b9fc",
+      "paireCle": "BF-BT-358|OPT-DEMO-MARRAKECH-001",
+      "type": "distance_insuffisante",
+      "severite": "critique",
+      "barrageAId": "BF-BT-358",
+      "barrageBId": "OPT-DEMO-MARRAKECH-001",
+      "barrageA": {
+        "id": "OPT-DEMO-MARRAKECH-001",
+        "nom": "TEST AUTO — Marrakech — Agafay",
+        "type": "barrage_fixe",
+        "route": "RR212",
+        "pk": null,
+        "lng": -8.11574,
+        "lat": 31.54889,
+        "reg": "Marrakech",
+        "cie": "Marrakech",
+        "bt": "Agafay",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-358",
+        "nom": "Poste fixe Saada",
+        "type": "barrage_fixe",
+        "route": "RN8",
+        "pk": null,
+        "lng": -8.10099,
+        "lat": 31.62858,
+        "reg": "Marrakech",
+        "cie": "Marrakech",
+        "bt": "Saada",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN8",
+      "factionsCommunes": [
+        "F2"
+      ],
+      "distanceKm": 14.7,
+      "distanceRouteKm": 14.7,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "a_traiter",
+      "cree": "2026-10-23T09:07:20.388Z",
+      "maj": "2026-10-23T09:07:26.025Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T09:07:20.388Z",
+      "derniereNotificationStatut": "a_traiter",
+      "historique": [
+        {
+          "date": "2026-10-23T09:07:20.388Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "statut": "a_traiter",
+          "commentaire": "Conflit détecté le long de la route : espacement 14.7 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvkqxyho_5ca6192c",
+      "paireCle": "BF-BT-006|BF-BT-358",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-358",
+      "barrageBId": "BF-BT-006",
+      "barrageA": {
+        "id": "BF-BT-006",
+        "nom": "Poste fixe Agafay",
+        "type": "barrage_fixe",
+        "route": "RR212",
+        "pk": null,
+        "lng": -8.17476,
+        "lat": 31.49781,
+        "reg": "Marrakech",
+        "cie": "Marrakech",
+        "bt": "Agafay",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-358",
+        "nom": "Poste fixe Saada",
+        "type": "barrage_fixe",
+        "route": "RN8",
+        "pk": null,
+        "lng": -8.10099,
+        "lat": 31.62858,
+        "reg": "Marrakech",
+        "cie": "Marrakech",
+        "bt": "Saada",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN8",
+      "factionsCommunes": [
+        "F2"
+      ],
+      "distanceKm": 22.8,
+      "distanceRouteKm": 22.8,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "a_traiter",
+      "cree": "2026-10-23T09:07:20.388Z",
+      "maj": "2026-10-23T09:07:35.671Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T09:07:20.388Z",
+      "derniereNotificationStatut": "a_traiter",
+      "historique": [
+        {
+          "date": "2026-10-23T09:07:20.388Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "statut": "a_traiter",
+          "commentaire": "Conflit détecté le long de la route : espacement 22.8 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvkqxyhp_1bd82282",
+      "paireCle": "BF-BT-358|BFI-CIE-046",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-358",
+      "barrageBId": "BFI-CIE-046",
+      "barrageA": {
+        "id": "BF-BT-358",
+        "nom": "Poste fixe Saada",
+        "type": "barrage_fixe",
+        "route": "RN8",
+        "pk": null,
+        "lng": -8.10099,
+        "lat": 31.62858,
+        "reg": "Marrakech",
+        "cie": "Marrakech",
+        "bt": "Saada",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BFI-CIE-046",
+        "nom": "BFI Marrakech",
+        "type": "barrage_fixe",
+        "route": "A3",
+        "pk": null,
+        "lng": -8.16378,
+        "lat": 31.7754,
+        "reg": "Marrakech",
+        "cie": "Marrakech",
+        "bt": "Tamansourte",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "route": "A3",
+      "factionsCommunes": [
+        "F2"
+      ],
+      "distanceKm": 27.4,
+      "distanceRouteKm": 27.4,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "a_traiter",
+      "cree": "2026-10-23T09:07:20.388Z",
+      "maj": "2026-10-23T09:07:20.388Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T09:07:20.388Z",
+      "derniereNotificationStatut": "a_traiter",
+      "historique": [
+        {
+          "date": "2026-10-23T09:07:20.388Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "statut": "a_traiter",
+          "commentaire": "Conflit détecté le long de la route : espacement 27.4 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvkqy2u2_6b77c487",
+      "paireCle": "BF-BT-006|OPT-DEMO-MARRAKECH-001",
+      "type": "distance_insuffisante",
+      "severite": "critique",
+      "barrageAId": "OPT-DEMO-MARRAKECH-001",
+      "barrageBId": "BF-BT-006",
+      "barrageA": {
+        "id": "BF-BT-006",
+        "nom": "Poste fixe Agafay",
+        "type": "barrage_fixe",
+        "route": "RR212",
+        "pk": null,
+        "lng": -8.17476,
+        "lat": 31.49781,
+        "reg": "Marrakech",
+        "cie": "Marrakech",
+        "bt": "Agafay",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "OPT-DEMO-MARRAKECH-001",
+        "nom": "TEST AUTO — Marrakech — Agafay",
+        "type": "barrage_fixe",
+        "route": "RR212",
+        "pk": null,
+        "lng": -8.11574,
+        "lat": 31.54889,
+        "reg": "Marrakech",
+        "cie": "Marrakech",
+        "bt": "Agafay",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "route": "RR212",
+      "factionsCommunes": [
+        "F2"
+      ],
+      "distanceKm": 8.1,
+      "distanceRouteKm": 8.1,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "a_traiter",
+      "cree": "2026-10-23T09:07:26.025Z",
+      "maj": "2026-10-23T09:07:35.671Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T09:07:26.025Z",
+      "derniereNotificationStatut": "a_traiter",
+      "historique": [
+        {
+          "date": "2026-10-23T09:07:26.025Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "statut": "a_traiter",
+          "commentaire": "Conflit détecté le long de la route : espacement 8.1 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvkqy2u4_c5b23bbf",
+      "paireCle": "BFI-CIE-046|OPT-DEMO-MARRAKECH-001",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "OPT-DEMO-MARRAKECH-001",
+      "barrageBId": "BFI-CIE-046",
+      "barrageA": {
+        "id": "OPT-DEMO-MARRAKECH-001",
+        "nom": "TEST AUTO — Marrakech — Agafay",
+        "type": "barrage_fixe",
+        "route": "RR212",
+        "pk": null,
+        "lng": -8.11574,
+        "lat": 31.54889,
+        "reg": "Marrakech",
+        "cie": "Marrakech",
+        "bt": "Agafay",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BFI-CIE-046",
+        "nom": "BFI Marrakech",
+        "type": "barrage_fixe",
+        "route": "A3",
+        "pk": null,
+        "lng": -8.16378,
+        "lat": 31.7754,
+        "reg": "Marrakech",
+        "cie": "Marrakech",
+        "bt": "Tamansourte",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "route": "A3",
+      "factionsCommunes": [
+        "F2"
+      ],
+      "distanceKm": 36.5,
+      "distanceRouteKm": 36.5,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "a_traiter",
+      "cree": "2026-10-23T09:07:26.025Z",
+      "maj": "2026-10-23T09:07:26.025Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T09:07:26.025Z",
+      "derniereNotificationStatut": "a_traiter",
+      "historique": [
+        {
+          "date": "2026-10-23T09:07:26.025Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "statut": "a_traiter",
+          "commentaire": "Conflit détecté le long de la route : espacement 36.5 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvkqyd31_446d8c63",
+      "paireCle": "BF-BT-440|BF-BT-456",
+      "type": "distance_insuffisante",
+      "severite": "critique",
+      "barrageAId": "BF-BT-440",
+      "barrageBId": "BF-BT-456",
+      "barrageA": {
+        "id": "BF-BT-456",
+        "nom": "Poste fixe Tassoultante",
+        "type": "barrage_fixe",
+        "route": "RP2009",
+        "pk": null,
+        "lng": -8.01841,
+        "lat": 31.57345,
+        "reg": "Marrakech",
+        "cie": "Marrakech",
+        "bt": "Tassoultante",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-440",
+        "nom": "Poste fixe Tameslohte",
+        "type": "barrage_fixe",
+        "route": "RP2014",
+        "pk": null,
+        "lng": -8.09786,
+        "lat": 31.49652,
+        "reg": "Marrakech",
+        "cie": "Tahannaout",
+        "bt": "Tameslohte",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "route": "RP2014",
+      "factionsCommunes": [
+        "F4"
+      ],
+      "distanceKm": 14.1,
+      "distanceRouteKm": 14.1,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "a_traiter",
+      "cree": "2026-10-23T09:07:39.309Z",
+      "maj": "2026-10-23T09:07:43.093Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T09:07:39.309Z",
+      "derniereNotificationStatut": "a_traiter",
+      "historique": [
+        {
+          "date": "2026-10-23T09:07:39.309Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "statut": "a_traiter",
+          "commentaire": "Conflit détecté le long de la route : espacement 14.1 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvkqyd33_a3a5b7e6",
+      "paireCle": "BF-BT-404|BF-BT-440",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-440",
+      "barrageBId": "BF-BT-404",
+      "barrageA": {
+        "id": "BF-BT-440",
+        "nom": "Poste fixe Tameslohte",
+        "type": "barrage_fixe",
+        "route": "RP2014",
+        "pk": null,
+        "lng": -8.09786,
+        "lat": 31.49652,
+        "reg": "Marrakech",
+        "cie": "Tahannaout",
+        "bt": "Tameslohte",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-404",
+        "nom": "Poste fixe Sidi Zouine",
+        "type": "barrage_fixe",
+        "route": "RN8",
+        "pk": null,
+        "lng": -8.32195,
+        "lat": 31.61618,
+        "reg": "Marrakech",
+        "cie": "Marrakech",
+        "bt": "Sidi Zouine",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN8",
+      "factionsCommunes": [
+        "F4"
+      ],
+      "distanceKm": 33.9,
+      "distanceRouteKm": 33.9,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "a_traiter",
+      "cree": "2026-10-23T09:07:39.309Z",
+      "maj": "2026-10-23T09:07:39.309Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T09:07:39.309Z",
+      "derniereNotificationStatut": "a_traiter",
+      "historique": [
+        {
+          "date": "2026-10-23T09:07:39.309Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "statut": "a_traiter",
+          "commentaire": "Conflit détecté le long de la route : espacement 33.9 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvkqyd34_1d67e83a",
+      "paireCle": "BF-BT-412|BF-BT-440",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-440",
+      "barrageBId": "BF-BT-412",
+      "barrageA": {
+        "id": "BF-BT-440",
+        "nom": "Poste fixe Tameslohte",
+        "type": "barrage_fixe",
+        "route": "RP2014",
+        "pk": null,
+        "lng": -8.09786,
+        "lat": 31.49652,
+        "reg": "Marrakech",
+        "cie": "Tahannaout",
+        "bt": "Tameslohte",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-412",
+        "nom": "Poste fixe Souihla",
+        "type": "barrage_fixe",
+        "route": "RP2027",
+        "pk": null,
+        "lng": -8.19167,
+        "lat": 31.67448,
+        "reg": "Marrakech",
+        "cie": "Marrakech",
+        "bt": "Souihla",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "route": "RP2027",
+      "factionsCommunes": [
+        "F4"
+      ],
+      "distanceKm": 34.3,
+      "distanceRouteKm": 34.3,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "a_traiter",
+      "cree": "2026-10-23T09:07:39.309Z",
+      "maj": "2026-10-23T09:07:39.309Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T09:07:39.309Z",
+      "derniereNotificationStatut": "a_traiter",
+      "historique": [
+        {
+          "date": "2026-10-23T09:07:39.309Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "statut": "a_traiter",
+          "commentaire": "Conflit détecté le long de la route : espacement 34.3 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvkqyg0d_aa9b84ba",
+      "paireCle": "BF-BT-412|BF-BT-456",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-456",
+      "barrageBId": "BF-BT-412",
+      "barrageA": {
+        "id": "BF-BT-456",
+        "nom": "Poste fixe Tassoultante",
+        "type": "barrage_fixe",
+        "route": "RP2009",
+        "pk": null,
+        "lng": -8.01841,
+        "lat": 31.57345,
+        "reg": "Marrakech",
+        "cie": "Marrakech",
+        "bt": "Tassoultante",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-412",
+        "nom": "Poste fixe Souihla",
+        "type": "barrage_fixe",
+        "route": "RP2027",
+        "pk": null,
+        "lng": -8.19167,
+        "lat": 31.67448,
+        "reg": "Marrakech",
+        "cie": "Marrakech",
+        "bt": "Souihla",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "route": "RP2027",
+      "factionsCommunes": [
+        "F4"
+      ],
+      "distanceKm": 26.4,
+      "distanceRouteKm": 26.4,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "a_traiter",
+      "cree": "2026-10-23T09:07:43.093Z",
+      "maj": "2026-10-23T09:07:43.093Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T09:07:43.093Z",
+      "derniereNotificationStatut": "a_traiter",
+      "historique": [
+        {
+          "date": "2026-10-23T09:07:43.093Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "statut": "a_traiter",
+          "commentaire": "Conflit détecté le long de la route : espacement 26.4 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvkqyg0e_eafe969a",
+      "paireCle": "BF-BT-140|BF-BT-456",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-456",
+      "barrageBId": "BF-BT-140",
+      "barrageA": {
+        "id": "BF-BT-456",
+        "nom": "Poste fixe Tassoultante",
+        "type": "barrage_fixe",
+        "route": "RP2009",
+        "pk": null,
+        "lng": -8.01841,
+        "lat": 31.57345,
+        "reg": "Marrakech",
+        "cie": "Marrakech",
+        "bt": "Tassoultante",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-140",
+        "nom": "Poste fixe Chouiter",
+        "type": "barrage_fixe",
+        "route": "RP2019",
+        "pk": null,
+        "lng": -7.81206,
+        "lat": 31.57245,
+        "reg": "Marrakech",
+        "cie": "Tahannaout",
+        "bt": "Chouiter",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "route": "RP2019",
+      "factionsCommunes": [
+        "F4"
+      ],
+      "distanceKm": 31.5,
+      "distanceRouteKm": 31.5,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "a_traiter",
+      "cree": "2026-10-23T09:07:43.093Z",
+      "maj": "2026-10-23T09:07:43.093Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T09:07:43.093Z",
+      "derniereNotificationStatut": "a_traiter",
+      "historique": [
+        {
+          "date": "2026-10-23T09:07:43.093Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "statut": "a_traiter",
+          "commentaire": "Conflit détecté le long de la route : espacement 31.5 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvkqyg0g_fbaca36d",
+      "paireCle": "BF-BT-456|BFI-CIE-046",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-456",
+      "barrageBId": "BFI-CIE-046",
+      "barrageA": {
+        "id": "BF-BT-456",
+        "nom": "Poste fixe Tassoultante",
+        "type": "barrage_fixe",
+        "route": "RP2009",
+        "pk": null,
+        "lng": -8.01841,
+        "lat": 31.57345,
+        "reg": "Marrakech",
+        "cie": "Marrakech",
+        "bt": "Tassoultante",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BFI-CIE-046",
+        "nom": "BFI Marrakech",
+        "type": "barrage_fixe",
+        "route": "A3",
+        "pk": null,
+        "lng": -8.16378,
+        "lat": 31.7754,
+        "reg": "Marrakech",
+        "cie": "Marrakech",
+        "bt": "Tamansourte",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "route": "A3",
+      "factionsCommunes": [
+        "F4"
+      ],
+      "distanceKm": 34.8,
+      "distanceRouteKm": 34.8,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "a_traiter",
+      "cree": "2026-10-23T09:07:43.093Z",
+      "maj": "2026-10-23T09:07:43.093Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T09:07:43.093Z",
+      "derniereNotificationStatut": "a_traiter",
+      "historique": [
+        {
+          "date": "2026-10-23T09:07:43.093Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "statut": "a_traiter",
+          "commentaire": "Conflit détecté le long de la route : espacement 34.8 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvkqyg0h_1e5f60dc",
+      "paireCle": "BF-BT-404|BF-BT-456",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-456",
+      "barrageBId": "BF-BT-404",
+      "barrageA": {
+        "id": "BF-BT-456",
+        "nom": "Poste fixe Tassoultante",
+        "type": "barrage_fixe",
+        "route": "RP2009",
+        "pk": null,
+        "lng": -8.01841,
+        "lat": 31.57345,
+        "reg": "Marrakech",
+        "cie": "Marrakech",
+        "bt": "Tassoultante",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-404",
+        "nom": "Poste fixe Sidi Zouine",
+        "type": "barrage_fixe",
+        "route": "RN8",
+        "pk": null,
+        "lng": -8.32195,
+        "lat": 31.61618,
+        "reg": "Marrakech",
+        "cie": "Marrakech",
+        "bt": "Sidi Zouine",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN8",
+      "factionsCommunes": [
+        "F4"
+      ],
+      "distanceKm": 36.7,
+      "distanceRouteKm": 36.7,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "a_traiter",
+      "cree": "2026-10-23T09:07:43.093Z",
+      "maj": "2026-10-23T09:07:43.093Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T09:07:43.093Z",
+      "derniereNotificationStatut": "a_traiter",
+      "historique": [
+        {
+          "date": "2026-10-23T09:07:43.093Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "statut": "a_traiter",
+          "commentaire": "Conflit détecté le long de la route : espacement 36.7 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvkqyjtt_208c387d",
+      "paireCle": "BF-BT-208|BF-BT-396",
+      "type": "distance_insuffisante",
+      "severite": "critique",
+      "barrageAId": "BF-BT-396",
+      "barrageBId": "BF-BT-208",
+      "barrageA": {
+        "id": "BF-BT-208",
+        "nom": "Poste fixe Had Ras El Ain",
+        "type": "barrage_fixe",
+        "route": "RR210",
+        "pk": null,
+        "lng": -7.59739,
+        "lat": 31.63814,
+        "reg": "Marrakech",
+        "cie": "Benguerir",
+        "bt": "Had Ras El Ain",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-396",
+        "nom": "Poste fixe Sidi Rahal",
+        "type": "barrage_fixe",
+        "route": "RR210",
+        "pk": null,
+        "lng": -7.47309,
+        "lat": 31.64612,
+        "reg": "Marrakech",
+        "cie": "El Kelaâ Des Sraghna",
+        "bt": "Sidi Rahal",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "route": "RR210",
+      "factionsCommunes": [
+        "F4"
+      ],
+      "distanceKm": 12.2,
+      "distanceRouteKm": 12.2,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "a_traiter",
+      "cree": "2026-10-23T09:07:48.056Z",
+      "maj": "2026-10-23T09:07:52.005Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T09:07:48.056Z",
+      "derniereNotificationStatut": "a_traiter",
+      "historique": [
+        {
+          "date": "2026-10-23T09:07:48.056Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "statut": "a_traiter",
+          "commentaire": "Conflit détecté le long de la route : espacement 12.2 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvkqyjtu_93f7b79a",
+      "paireCle": "BF-BT-140|BF-BT-396",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-396",
+      "barrageBId": "BF-BT-140",
+      "barrageA": {
+        "id": "BF-BT-396",
+        "nom": "Poste fixe Sidi Rahal",
+        "type": "barrage_fixe",
+        "route": "RR210",
+        "pk": null,
+        "lng": -7.47309,
+        "lat": 31.64612,
+        "reg": "Marrakech",
+        "cie": "El Kelaâ Des Sraghna",
+        "bt": "Sidi Rahal",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-140",
+        "nom": "Poste fixe Chouiter",
+        "type": "barrage_fixe",
+        "route": "RP2019",
+        "pk": null,
+        "lng": -7.81206,
+        "lat": 31.57245,
+        "reg": "Marrakech",
+        "cie": "Tahannaout",
+        "bt": "Chouiter",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "route": "RP2019",
+      "factionsCommunes": [
+        "F4"
+      ],
+      "distanceKm": 38.5,
+      "distanceRouteKm": 38.5,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "a_traiter",
+      "cree": "2026-10-23T09:07:48.056Z",
+      "maj": "2026-10-23T09:07:48.056Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T09:07:48.056Z",
+      "derniereNotificationStatut": "a_traiter",
+      "historique": [
+        {
+          "date": "2026-10-23T09:07:48.056Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "statut": "a_traiter",
+          "commentaire": "Conflit détecté le long de la route : espacement 38.5 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvkqymvm_b5675465",
+      "paireCle": "BF-BT-140|BF-BT-208",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-208",
+      "barrageBId": "BF-BT-140",
+      "barrageA": {
+        "id": "BF-BT-208",
+        "nom": "Poste fixe Had Ras El Ain",
+        "type": "barrage_fixe",
+        "route": "RR210",
+        "pk": null,
+        "lng": -7.59739,
+        "lat": 31.63814,
+        "reg": "Marrakech",
+        "cie": "Benguerir",
+        "bt": "Had Ras El Ain",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-140",
+        "nom": "Poste fixe Chouiter",
+        "type": "barrage_fixe",
+        "route": "RP2019",
+        "pk": null,
+        "lng": -7.81206,
+        "lat": 31.57245,
+        "reg": "Marrakech",
+        "cie": "Tahannaout",
+        "bt": "Chouiter",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "route": "RP2019",
+      "factionsCommunes": [
+        "F4"
+      ],
+      "distanceKm": 26.5,
+      "distanceRouteKm": 26.5,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "a_traiter",
+      "cree": "2026-10-23T09:07:52.005Z",
+      "maj": "2026-10-23T09:07:52.005Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T09:07:52.005Z",
+      "derniereNotificationStatut": "a_traiter",
+      "historique": [
+        {
+          "date": "2026-10-23T09:07:52.005Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "statut": "a_traiter",
+          "commentaire": "Conflit détecté le long de la route : espacement 26.5 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvkqyqax_99d7db2c",
+      "paireCle": "BF-BT-373|BF-BT-429",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-429",
+      "barrageBId": "BF-BT-373",
+      "barrageA": {
+        "id": "BF-BT-429",
+        "nom": "Poste fixe Tahannaout",
+        "type": "barrage_fixe",
+        "route": "RN7",
+        "pk": null,
+        "lng": -7.94996,
+        "lat": 31.35668,
+        "reg": "Marrakech",
+        "cie": "Tahannaout",
+        "bt": "Tahannaout",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-373",
+        "nom": "Poste fixe Sidi Abdellah Ghiat",
+        "type": "barrage_fixe",
+        "route": "RP2010",
+        "pk": null,
+        "lng": -7.76511,
+        "lat": 31.47582,
+        "reg": "Marrakech",
+        "cie": "Tahannaout",
+        "bt": "Sidi Abdellah Ghiat",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "route": "RP2010",
+      "factionsCommunes": [
+        "F1"
+      ],
+      "distanceKm": 31.4,
+      "distanceRouteKm": 31.4,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "resolu",
+      "cree": "2026-10-23T09:07:56.437Z",
+      "maj": "2026-10-23T09:08:55.778Z",
+      "resoluLe": "2026-10-23T09:08:55.778Z",
+      "derniereNotificationTs": "2026-10-23T09:07:56.437Z",
+      "derniereNotificationStatut": "a_traiter",
+      "historique": [
+        {
+          "date": "2026-10-23T09:07:56.437Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "statut": "a_traiter",
+          "commentaire": "Conflit détecté le long de la route : espacement 31.4 km (seuil réglementaire 40 km)."
+        },
+        {
+          "date": "2026-10-23T09:08:55.778Z",
+          "auteur": {
+            "matricule": "REG-MARRAKECH",
+            "nom": "Chef de région Marrakech",
+            "rang": "reg",
+            "unite": "Marrakech"
+          },
+          "action": "resolution",
+          "statut": "resolu",
+          "commentaire": "Conflit résolu suite à l'opération « changement_faction » : distance réglementaire ou factions conformes."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvkqyqaz_361b2f17",
+      "paireCle": "BF-BT-289|BF-BT-429",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-429",
+      "barrageBId": "BF-BT-289",
+      "barrageA": {
+        "id": "BF-BT-429",
+        "nom": "Poste fixe Tahannaout",
+        "type": "barrage_fixe",
+        "route": "RN7",
+        "pk": null,
+        "lng": -7.94996,
+        "lat": 31.35668,
+        "reg": "Marrakech",
+        "cie": "Tahannaout",
+        "bt": "Tahannaout",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-289",
+        "nom": "Poste fixe Marrakech",
+        "type": "barrage_fixe",
+        "route": "RN8",
+        "pk": null,
+        "lng": -8.0039,
+        "lat": 31.63338,
+        "reg": "Marrakech",
+        "cie": "Marrakech",
+        "bt": "Marrakech",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN8",
+      "factionsCommunes": [
+        "F1"
+      ],
+      "distanceKm": 33.6,
+      "distanceRouteKm": 33.6,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "resolu",
+      "cree": "2026-10-23T09:07:56.437Z",
+      "maj": "2026-10-23T09:09:14.544Z",
+      "resoluLe": "2026-10-23T09:09:14.544Z",
+      "derniereNotificationTs": "2026-10-23T09:07:56.437Z",
+      "derniereNotificationStatut": "a_traiter",
+      "historique": [
+        {
+          "date": "2026-10-23T09:07:56.437Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "statut": "a_traiter",
+          "commentaire": "Conflit détecté le long de la route : espacement 33.6 km (seuil réglementaire 40 km)."
+        },
+        {
+          "date": "2026-10-23T09:08:55.778Z",
+          "auteur": {
+            "matricule": "REG-MARRAKECH",
+            "nom": "Chef de région Marrakech",
+            "rang": "reg",
+            "unite": "Marrakech"
+          },
+          "action": "resolution",
+          "statut": "resolu",
+          "commentaire": "Conflit résolu suite à l'opération « changement_faction » : distance réglementaire ou factions conformes."
+        },
+        {
+          "date": "2026-10-23T09:09:14.544Z",
+          "auteur": {
+            "matricule": "REG-MARRAKECH",
+            "nom": "Chef de région Marrakech",
+            "rang": "reg",
+            "unite": "Marrakech"
+          },
+          "action": "resolution",
+          "statut": "resolu",
+          "commentaire": "Traitement du conflit conf_mvkqyqaz_361b2f17 : Faction du Poste fixe Tahannaout modifiée en Faction 2. Conflit résolu (factions séparées).",
+          "details": {
+            "barrageId": "BF-BT-429",
+            "barrageNom": "Poste fixe Tahannaout",
+            "nouvelleFactionId": "F2",
+            "nouvelleFactionNom": "Faction 2",
+            "motif": "",
+            "commentaire": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "conf_mvkr0035_2dd8284a",
+      "paireCle": "BF-BT-346|BF-BT-429",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-429",
+      "barrageBId": "BF-BT-346",
+      "barrageA": {
+        "id": "BF-BT-429",
+        "nom": "Poste fixe Tahannaout",
+        "type": "barrage_fixe",
+        "route": "RN7",
+        "pk": null,
+        "lng": -7.94996,
+        "lat": 31.35668,
+        "reg": "Marrakech",
+        "cie": "Tahannaout",
+        "bt": "Tahannaout",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-346",
+        "nom": "Poste fixe Ourika",
+        "type": "barrage_fixe",
+        "route": "RP2017",
+        "pk": null,
+        "lng": -7.71576,
+        "lat": 31.29474,
+        "reg": "Marrakech",
+        "cie": "Tahannaout",
+        "bt": "Ourika",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "route": "RP2017",
+      "factionsCommunes": [
+        "F2"
+      ],
+      "distanceKm": 33,
+      "distanceRouteKm": 33,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "a_traiter",
+      "cree": "2026-10-23T09:08:55.778Z",
+      "maj": "2026-10-23T09:08:55.778Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T09:08:55.778Z",
+      "derniereNotificationStatut": "a_traiter",
+      "historique": [
+        {
+          "date": "2026-10-23T09:08:55.778Z",
+          "auteur": {
+            "matricule": "REG-MARRAKECH",
+            "nom": "Chef de région Marrakech",
+            "rang": "reg",
+            "unite": "Marrakech"
+          },
+          "action": "detection",
+          "statut": "a_traiter",
+          "commentaire": "Conflit détecté le long de la route : espacement 33 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvkr0038_41daefda",
+      "paireCle": "BF-BT-006|BF-BT-429",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-429",
+      "barrageBId": "BF-BT-006",
+      "barrageA": {
+        "id": "BF-BT-429",
+        "nom": "Poste fixe Tahannaout",
+        "type": "barrage_fixe",
+        "route": "RN7",
+        "pk": null,
+        "lng": -7.94996,
+        "lat": 31.35668,
+        "reg": "Marrakech",
+        "cie": "Tahannaout",
+        "bt": "Tahannaout",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-006",
+        "nom": "Poste fixe Agafay",
+        "type": "barrage_fixe",
+        "route": "RR212",
+        "pk": null,
+        "lng": -8.17476,
+        "lat": 31.49781,
+        "reg": "Marrakech",
+        "cie": "Marrakech",
+        "bt": "Agafay",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "route": "RR212",
+      "factionsCommunes": [
+        "F2"
+      ],
+      "distanceKm": 36.5,
+      "distanceRouteKm": 36.5,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "a_traiter",
+      "cree": "2026-10-23T09:08:55.778Z",
+      "maj": "2026-10-23T09:08:55.778Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T09:08:55.778Z",
+      "derniereNotificationStatut": "a_traiter",
+      "historique": [
+        {
+          "date": "2026-10-23T09:08:55.778Z",
+          "auteur": {
+            "matricule": "REG-MARRAKECH",
+            "nom": "Chef de région Marrakech",
+            "rang": "reg",
+            "unite": "Marrakech"
+          },
+          "action": "detection",
+          "statut": "a_traiter",
+          "commentaire": "Conflit détecté le long de la route : espacement 36.5 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvkr0039_c45a1325",
+      "paireCle": "BF-BT-429|OPT-DEMO-MARRAKECH-001",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-429",
+      "barrageBId": "OPT-DEMO-MARRAKECH-001",
+      "barrageA": {
+        "id": "BF-BT-429",
+        "nom": "Poste fixe Tahannaout",
+        "type": "barrage_fixe",
+        "route": "RN7",
+        "pk": null,
+        "lng": -7.94996,
+        "lat": 31.35668,
+        "reg": "Marrakech",
+        "cie": "Tahannaout",
+        "bt": "Tahannaout",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "OPT-DEMO-MARRAKECH-001",
+        "nom": "TEST AUTO — Marrakech — Agafay",
+        "type": "barrage_fixe",
+        "route": "RR212",
+        "pk": null,
+        "lng": -8.11574,
+        "lat": 31.54889,
+        "reg": "Marrakech",
+        "cie": "Marrakech",
+        "bt": "Agafay",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "route": "RR212",
+      "factionsCommunes": [
+        "F2"
+      ],
+      "distanceKm": 36.6,
+      "distanceRouteKm": 36.6,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "a_traiter",
+      "cree": "2026-10-23T09:08:55.778Z",
+      "maj": "2026-10-23T09:08:55.778Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T09:08:55.778Z",
+      "derniereNotificationStatut": "a_traiter",
+      "historique": [
+        {
+          "date": "2026-10-23T09:08:55.778Z",
+          "auteur": {
+            "matricule": "REG-MARRAKECH",
+            "nom": "Chef de région Marrakech",
+            "rang": "reg",
+            "unite": "Marrakech"
+          },
+          "action": "detection",
+          "statut": "a_traiter",
+          "commentaire": "Conflit détecté le long de la route : espacement 36.6 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvktg6xi_9dc60101",
+      "paireCle": "BF-BT-350|BFI-CIE-061",
+      "type": "distance_insuffisante",
+      "severite": "critique",
+      "barrageAId": "BFI-CIE-061",
+      "barrageBId": "BF-BT-350",
+      "barrageA": {
+        "id": "BFI-CIE-061",
+        "nom": "BFI Rabat",
+        "type": "barrage_fixe",
+        "route": "A1",
+        "pk": null,
+        "lng": -6.88652,
+        "lat": 33.96705,
+        "reg": "Rabat",
+        "cie": "Rabat",
+        "bt": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-350",
+        "nom": "Poste fixe Rabat",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": null,
+        "lng": -6.83679,
+        "lat": 34.02235,
+        "reg": "Rabat",
+        "cie": "Rabat",
+        "bt": "Rabat",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN1",
+      "factionsCommunes": [
+        "F2"
+      ],
+      "distanceKm": 7.9,
+      "distanceRouteKm": 7.9,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "nouveau",
+      "cree": "2026-10-23T10:17:30.322Z",
+      "maj": "2026-10-23T10:17:30.322Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T10:17:30.322Z",
+      "derniereNotificationStatut": "nouveau",
+      "historique": [
+        {
+          "date": "2026-10-23T10:17:30.322Z",
+          "auteur": {
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat",
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "action": "detection",
+          "statut": "nouveau",
+          "commentaire": "Conflit détecté le long de la route : espacement 7.9 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvktg6xk_a19928e1",
+      "paireCle": "BF-BT-405|BFI-CIE-061",
+      "type": "distance_insuffisante",
+      "severite": "critique",
+      "barrageAId": "BFI-CIE-061",
+      "barrageBId": "BF-BT-405",
+      "barrageA": {
+        "id": "BFI-CIE-061",
+        "nom": "BFI Rabat",
+        "type": "barrage_fixe",
+        "route": "A1",
+        "pk": null,
+        "lng": -6.88652,
+        "lat": 33.96705,
+        "reg": "Rabat",
+        "cie": "Rabat",
+        "bt": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-405",
+        "nom": "Poste fixe Skhirate Centre",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": 271.1,
+        "lng": -6.94349,
+        "lat": 33.90084,
+        "reg": "Rabat",
+        "cie": "Témara",
+        "bt": "Témara",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN1",
+      "factionsCommunes": [
+        "F1"
+      ],
+      "distanceKm": 9.5,
+      "distanceRouteKm": 9.5,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "nouveau",
+      "cree": "2026-10-23T10:17:30.322Z",
+      "maj": "2026-10-23T10:17:30.322Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T10:17:30.322Z",
+      "derniereNotificationStatut": "nouveau",
+      "historique": [
+        {
+          "date": "2026-10-23T10:17:30.322Z",
+          "auteur": {
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat",
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "action": "detection",
+          "statut": "nouveau",
+          "commentaire": "Conflit détecté le long de la route : espacement 9.5 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvktg6xn_ccd0be28",
+      "paireCle": "BF-BT-464|BFI-CIE-061",
+      "type": "distance_insuffisante",
+      "severite": "critique",
+      "barrageAId": "BFI-CIE-061",
+      "barrageBId": "BF-BT-464",
+      "barrageA": {
+        "id": "BFI-CIE-061",
+        "nom": "BFI Rabat",
+        "type": "barrage_fixe",
+        "route": "A1",
+        "pk": null,
+        "lng": -6.88652,
+        "lat": 33.96705,
+        "reg": "Rabat",
+        "cie": "Rabat",
+        "bt": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-464",
+        "nom": "Poste fixe Témara Plage",
+        "type": "barrage_fixe",
+        "route": "RR322",
+        "pk": null,
+        "lng": -6.97693,
+        "lat": 33.91233,
+        "reg": "Rabat",
+        "cie": "Témara",
+        "bt": "Témara Plage",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "route": "RR322",
+      "factionsCommunes": [
+        "F4"
+      ],
+      "distanceKm": 11.1,
+      "distanceRouteKm": 11.1,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "nouveau",
+      "cree": "2026-10-23T10:17:30.322Z",
+      "maj": "2026-10-23T10:17:30.322Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T10:17:30.322Z",
+      "derniereNotificationStatut": "nouveau",
+      "historique": [
+        {
+          "date": "2026-10-23T10:17:30.322Z",
+          "auteur": {
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat",
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "action": "detection",
+          "statut": "nouveau",
+          "commentaire": "Conflit détecté le long de la route : espacement 11.1 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvktg6xp_ca28656e",
+      "paireCle": "BF-BT-362|BFI-CIE-061",
+      "type": "distance_insuffisante",
+      "severite": "critique",
+      "barrageAId": "BFI-CIE-061",
+      "barrageBId": "BF-BT-362",
+      "barrageA": {
+        "id": "BFI-CIE-061",
+        "nom": "BFI Rabat",
+        "type": "barrage_fixe",
+        "route": "A1",
+        "pk": null,
+        "lng": -6.88652,
+        "lat": 33.96705,
+        "reg": "Rabat",
+        "cie": "Rabat",
+        "bt": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-362",
+        "nom": "Poste fixe Salé",
+        "type": "barrage_fixe",
+        "route": "nationale",
+        "pk": null,
+        "lng": -6.79134,
+        "lat": 34.01666,
+        "reg": "Rabat",
+        "cie": "Salé",
+        "bt": "Salé",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "route": "nationale",
+      "factionsCommunes": [
+        "F2"
+      ],
+      "distanceKm": 12.2,
+      "distanceRouteKm": 12.2,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "nouveau",
+      "cree": "2026-10-23T10:17:30.322Z",
+      "maj": "2026-10-23T10:17:30.322Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T10:17:30.322Z",
+      "derniereNotificationStatut": "nouveau",
+      "historique": [
+        {
+          "date": "2026-10-23T10:17:30.322Z",
+          "auteur": {
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat",
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "action": "detection",
+          "statut": "nouveau",
+          "commentaire": "Conflit détecté le long de la route : espacement 12.2 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvktg6xr_caba8542",
+      "paireCle": "BF-BT-297|BFI-CIE-061",
+      "type": "distance_insuffisante",
+      "severite": "critique",
+      "barrageAId": "BFI-CIE-061",
+      "barrageBId": "BF-BT-297",
+      "barrageA": {
+        "id": "BFI-CIE-061",
+        "nom": "BFI Rabat",
+        "type": "barrage_fixe",
+        "route": "A1",
+        "pk": null,
+        "lng": -6.88652,
+        "lat": 33.96705,
+        "reg": "Rabat",
+        "cie": "Rabat",
+        "bt": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-297",
+        "nom": "Poste fixe Mers El Kheir",
+        "type": "barrage_fixe",
+        "route": "RR403",
+        "pk": null,
+        "lng": -6.91998,
+        "lat": 33.87345,
+        "reg": "Rabat",
+        "cie": "Témara",
+        "bt": "Mers El Kheir",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "route": "RR403",
+      "factionsCommunes": [
+        "F1"
+      ],
+      "distanceKm": 12.3,
+      "distanceRouteKm": 12.3,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "nouveau",
+      "cree": "2026-10-23T10:17:30.322Z",
+      "maj": "2026-10-23T10:17:30.322Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T10:17:30.322Z",
+      "derniereNotificationStatut": "nouveau",
+      "historique": [
+        {
+          "date": "2026-10-23T10:17:30.322Z",
+          "auteur": {
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat",
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "action": "detection",
+          "statut": "nouveau",
+          "commentaire": "Conflit détecté le long de la route : espacement 12.3 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvktg6xt_abec102c",
+      "paireCle": "BFI-CIE-061|BFI-CIE-084",
+      "type": "distance_insuffisante",
+      "severite": "critique",
+      "barrageAId": "BFI-CIE-061",
+      "barrageBId": "BFI-CIE-084",
+      "barrageA": {
+        "id": "BFI-CIE-061",
+        "nom": "BFI Rabat",
+        "type": "barrage_fixe",
+        "route": "A1",
+        "pk": null,
+        "lng": -6.88652,
+        "lat": 33.96705,
+        "reg": "Rabat",
+        "cie": "Rabat",
+        "bt": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BFI-CIE-084",
+        "nom": "BFI Témara",
+        "type": "barrage_fixe",
+        "route": "RR322",
+        "pk": null,
+        "lng": -7.00102,
+        "lat": 33.89339,
+        "reg": "Rabat",
+        "cie": "Témara",
+        "bt": "Témara Plage",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "route": "RR322",
+      "factionsCommunes": [
+        "F1",
+        "F2",
+        "F3",
+        "F4"
+      ],
+      "distanceKm": 14.3,
+      "distanceRouteKm": 14.3,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "nouveau",
+      "cree": "2026-10-23T10:17:30.322Z",
+      "maj": "2026-10-23T10:17:30.322Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T10:17:30.322Z",
+      "derniereNotificationStatut": "nouveau",
+      "historique": [
+        {
+          "date": "2026-10-23T10:17:30.322Z",
+          "auteur": {
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat",
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "action": "detection",
+          "statut": "nouveau",
+          "commentaire": "Conflit détecté le long de la route : espacement 14.3 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvktg6xu_416e00f9",
+      "paireCle": "BF-BT-441|BFI-CIE-061",
+      "type": "distance_insuffisante",
+      "severite": "critique",
+      "barrageAId": "BFI-CIE-061",
+      "barrageBId": "BF-BT-441",
+      "barrageA": {
+        "id": "BFI-CIE-061",
+        "nom": "BFI Rabat",
+        "type": "barrage_fixe",
+        "route": "A1",
+        "pk": null,
+        "lng": -6.88652,
+        "lat": 33.96705,
+        "reg": "Rabat",
+        "cie": "Rabat",
+        "bt": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-441",
+        "nom": "Poste fixe Tamesna",
+        "type": "barrage_fixe",
+        "route": "RP4032",
+        "pk": null,
+        "lng": -6.91354,
+        "lat": 33.85457,
+        "reg": "Rabat",
+        "cie": "Ain Aouda",
+        "bt": "Tamesna",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "route": "RP4032",
+      "factionsCommunes": [
+        "F1"
+      ],
+      "distanceKm": 14.5,
+      "distanceRouteKm": 14.5,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "nouveau",
+      "cree": "2026-10-23T10:17:30.322Z",
+      "maj": "2026-10-23T10:17:30.322Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T10:17:30.322Z",
+      "derniereNotificationStatut": "nouveau",
+      "historique": [
+        {
+          "date": "2026-10-23T10:17:30.322Z",
+          "auteur": {
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat",
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "action": "detection",
+          "statut": "nouveau",
+          "commentaire": "Conflit détecté le long de la route : espacement 14.5 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvktg6xv_b13d4d45",
+      "paireCle": "BF-BT-173|BFI-CIE-061",
+      "type": "distance_insuffisante",
+      "severite": "critique",
+      "barrageAId": "BFI-CIE-061",
+      "barrageBId": "BF-BT-173",
+      "barrageA": {
+        "id": "BFI-CIE-061",
+        "nom": "BFI Rabat",
+        "type": "barrage_fixe",
+        "route": "A1",
+        "pk": null,
+        "lng": -6.88652,
+        "lat": 33.96705,
+        "reg": "Rabat",
+        "cie": "Rabat",
+        "bt": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-173",
+        "nom": "Poste fixe El Manzeh",
+        "type": "barrage_fixe",
+        "route": "RP4020",
+        "pk": null,
+        "lng": -6.86461,
+        "lat": 33.86578,
+        "reg": "Rabat",
+        "cie": "Ain Aouda",
+        "bt": "El Manzeh",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "route": "RP4020",
+      "factionsCommunes": [
+        "F1"
+      ],
+      "distanceKm": 14.6,
+      "distanceRouteKm": 14.6,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "nouveau",
+      "cree": "2026-10-23T10:17:30.322Z",
+      "maj": "2026-10-23T10:17:30.322Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T10:17:30.322Z",
+      "derniereNotificationStatut": "nouveau",
+      "historique": [
+        {
+          "date": "2026-10-23T10:17:30.322Z",
+          "auteur": {
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat",
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "action": "detection",
+          "statut": "nouveau",
+          "commentaire": "Conflit détecté le long de la route : espacement 14.6 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvktg6xx_dc070962",
+      "paireCle": "BF-BT-406|BFI-CIE-061",
+      "type": "distance_insuffisante",
+      "severite": "critique",
+      "barrageAId": "BFI-CIE-061",
+      "barrageBId": "BF-BT-406",
+      "barrageA": {
+        "id": "BFI-CIE-061",
+        "nom": "BFI Rabat",
+        "type": "barrage_fixe",
+        "route": "A1",
+        "pk": null,
+        "lng": -6.88652,
+        "lat": 33.96705,
+        "reg": "Rabat",
+        "cie": "Rabat",
+        "bt": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-406",
+        "nom": "Poste fixe Skhirate Plage",
+        "type": "barrage_fixe",
+        "route": "A1",
+        "pk": 15.3,
+        "lng": -7.00734,
+        "lat": 33.88203,
+        "reg": "Rabat",
+        "cie": "Skhirate",
+        "bt": "Skhirate Plage",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "route": "A1",
+      "factionsCommunes": [
+        "F2"
+      ],
+      "distanceKm": 15.1,
+      "distanceRouteKm": 15.1,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "a_traiter",
+      "cree": "2026-10-23T10:17:30.322Z",
+      "maj": "2026-10-23T10:17:30.322Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T10:17:30.322Z",
+      "derniereNotificationStatut": "a_traiter",
+      "historique": [
+        {
+          "date": "2026-10-23T10:17:30.322Z",
+          "auteur": {
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat",
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "action": "detection",
+          "statut": "a_traiter",
+          "commentaire": "Conflit détecté le long de la route : espacement 15.1 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvktg6xy_eae3edf9",
+      "paireCle": "BF-BT-266|BFI-CIE-061",
+      "type": "distance_insuffisante",
+      "severite": "critique",
+      "barrageAId": "BFI-CIE-061",
+      "barrageBId": "BF-BT-266",
+      "barrageA": {
+        "id": "BFI-CIE-061",
+        "nom": "BFI Rabat",
+        "type": "barrage_fixe",
+        "route": "A1",
+        "pk": null,
+        "lng": -6.88652,
+        "lat": 33.96705,
+        "reg": "Rabat",
+        "cie": "Rabat",
+        "bt": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-266",
+        "nom": "Poste fixe Laayayda",
+        "type": "barrage_fixe",
+        "route": "RN6",
+        "pk": null,
+        "lng": -6.75387,
+        "lat": 34.03114,
+        "reg": "Rabat",
+        "cie": "Salé",
+        "bt": "Laayayda",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN6",
+      "factionsCommunes": [
+        "F2"
+      ],
+      "distanceKm": 16.2,
+      "distanceRouteKm": 16.2,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "nouveau",
+      "cree": "2026-10-23T10:17:30.322Z",
+      "maj": "2026-10-23T10:17:30.322Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T10:17:30.322Z",
+      "derniereNotificationStatut": "nouveau",
+      "historique": [
+        {
+          "date": "2026-10-23T10:17:30.322Z",
+          "auteur": {
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat",
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "action": "detection",
+          "statut": "nouveau",
+          "commentaire": "Conflit détecté le long de la route : espacement 16.2 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvktg6xz_ecadc095",
+      "paireCle": "BFI-CIE-002|BFI-CIE-061",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BFI-CIE-061",
+      "barrageBId": "BFI-CIE-002",
+      "barrageA": {
+        "id": "BFI-CIE-061",
+        "nom": "BFI Rabat",
+        "type": "barrage_fixe",
+        "route": "A1",
+        "pk": null,
+        "lng": -6.88652,
+        "lat": 33.96705,
+        "reg": "Rabat",
+        "cie": "Rabat",
+        "bt": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BFI-CIE-002",
+        "nom": "BFI Ain Aouda",
+        "type": "barrage_fixe",
+        "route": "A5",
+        "pk": null,
+        "lng": -6.88284,
+        "lat": 33.83966,
+        "reg": "Rabat",
+        "cie": "Ain Aouda",
+        "bt": "Sidi Yahya des Zaers",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "route": "A5",
+      "factionsCommunes": [
+        "F1",
+        "F2",
+        "F3",
+        "F4"
+      ],
+      "distanceKm": 20,
+      "distanceRouteKm": 20,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "nouveau",
+      "cree": "2026-10-23T10:17:30.322Z",
+      "maj": "2026-10-23T10:17:30.322Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T10:17:30.322Z",
+      "derniereNotificationStatut": "nouveau",
+      "historique": [
+        {
+          "date": "2026-10-23T10:17:30.322Z",
+          "auteur": {
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat",
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "action": "detection",
+          "statut": "nouveau",
+          "commentaire": "Conflit détecté le long de la route : espacement 20 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvktg6y0_070e97bb",
+      "paireCle": "BF-BT-269|BFI-CIE-061",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BFI-CIE-061",
+      "barrageBId": "BF-BT-269",
+      "barrageA": {
+        "id": "BFI-CIE-061",
+        "nom": "BFI Rabat",
+        "type": "barrage_fixe",
+        "route": "A1",
+        "pk": null,
+        "lng": -6.88652,
+        "lat": 33.96705,
+        "reg": "Rabat",
+        "cie": "Rabat",
+        "bt": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-269",
+        "nom": "Poste fixe Laghouazi",
+        "type": "barrage_fixe",
+        "route": "RR322",
+        "pk": null,
+        "lng": -7.06252,
+        "lat": 33.86166,
+        "reg": "Rabat",
+        "cie": "Skhirate",
+        "bt": "Laghouazi",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "route": "RR322",
+      "factionsCommunes": [
+        "F1"
+      ],
+      "distanceKm": 21.1,
+      "distanceRouteKm": 21.1,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "nouveau",
+      "cree": "2026-10-23T10:17:30.322Z",
+      "maj": "2026-10-23T10:17:30.322Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T10:17:30.322Z",
+      "derniereNotificationStatut": "nouveau",
+      "historique": [
+        {
+          "date": "2026-10-23T10:17:30.322Z",
+          "auteur": {
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat",
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "action": "detection",
+          "statut": "nouveau",
+          "commentaire": "Conflit détecté le long de la route : espacement 21.1 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvktg6y2_b733d0f7",
+      "paireCle": "BF-BT-402|BFI-CIE-061",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BFI-CIE-061",
+      "barrageBId": "BF-BT-402",
+      "barrageA": {
+        "id": "BFI-CIE-061",
+        "nom": "BFI Rabat",
+        "type": "barrage_fixe",
+        "route": "A1",
+        "pk": null,
+        "lng": -6.88652,
+        "lat": 33.96705,
+        "reg": "Rabat",
+        "cie": "Rabat",
+        "bt": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-402",
+        "nom": "Poste fixe Sidi Yahya des Zaers",
+        "type": "barrage_fixe",
+        "route": "RR416",
+        "pk": 7.8,
+        "lng": -6.87352,
+        "lat": 33.80402,
+        "reg": "Rabat",
+        "cie": "Ain Aouda",
+        "bt": "Sidi Yahya des Zaers",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "route": "RR416",
+      "factionsCommunes": [
+        "F2"
+      ],
+      "distanceKm": 21.9,
+      "distanceRouteKm": 21.9,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "nouveau",
+      "cree": "2026-10-23T10:17:30.322Z",
+      "maj": "2026-10-23T10:17:30.322Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T10:17:30.322Z",
+      "derniereNotificationStatut": "nouveau",
+      "historique": [
+        {
+          "date": "2026-10-23T10:17:30.322Z",
+          "auteur": {
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat",
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "action": "detection",
+          "statut": "nouveau",
+          "commentaire": "Conflit détecté le long de la route : espacement 21.9 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvktg6y3_f8908e22",
+      "paireCle": "BFI-CIE-061|BFI-CIE-071",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BFI-CIE-061",
+      "barrageBId": "BFI-CIE-071",
+      "barrageA": {
+        "id": "BFI-CIE-061",
+        "nom": "BFI Rabat",
+        "type": "barrage_fixe",
+        "route": "A1",
+        "pk": null,
+        "lng": -6.88652,
+        "lat": 33.96705,
+        "reg": "Rabat",
+        "cie": "Rabat",
+        "bt": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BFI-CIE-071",
+        "nom": "BFI Skhirate",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": null,
+        "lng": -7.05783,
+        "lat": 33.83761,
+        "reg": "Rabat",
+        "cie": "Skhirate",
+        "bt": "Skhirate-El Fath",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN1",
+      "factionsCommunes": [
+        "F1",
+        "F2",
+        "F3",
+        "F4"
+      ],
+      "distanceKm": 22.6,
+      "distanceRouteKm": 22.6,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "nouveau",
+      "cree": "2026-10-23T10:17:30.322Z",
+      "maj": "2026-10-23T10:17:30.322Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T10:17:30.322Z",
+      "derniereNotificationStatut": "nouveau",
+      "historique": [
+        {
+          "date": "2026-10-23T10:17:30.322Z",
+          "auteur": {
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat",
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "action": "detection",
+          "statut": "nouveau",
+          "commentaire": "Conflit détecté le long de la route : espacement 22.6 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvktg6y4_69d7df6f",
+      "paireCle": "BF-BT-125|BFI-CIE-061",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BFI-CIE-061",
+      "barrageBId": "BF-BT-125",
+      "barrageA": {
+        "id": "BFI-CIE-061",
+        "nom": "BFI Rabat",
+        "type": "barrage_fixe",
+        "route": "A1",
+        "pk": null,
+        "lng": -6.88652,
+        "lat": 33.96705,
+        "reg": "Rabat",
+        "cie": "Rabat",
+        "bt": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-125",
+        "nom": "Poste fixe Bouknadel",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": null,
+        "lng": -6.73501,
+        "lat": 34.12797,
+        "reg": "Rabat",
+        "cie": "Salé",
+        "bt": "Bouknadel",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN1",
+      "factionsCommunes": [
+        "F1"
+      ],
+      "distanceKm": 24.1,
+      "distanceRouteKm": 24.1,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "nouveau",
+      "cree": "2026-10-23T10:17:30.322Z",
+      "maj": "2026-10-23T10:17:30.322Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T10:17:30.322Z",
+      "derniereNotificationStatut": "nouveau",
+      "historique": [
+        {
+          "date": "2026-10-23T10:17:30.322Z",
+          "auteur": {
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat",
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "action": "detection",
+          "statut": "nouveau",
+          "commentaire": "Conflit détecté le long de la route : espacement 24.1 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvktg6y5_c9cc9dc1",
+      "paireCle": "BF-BT-016|BFI-CIE-061",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BFI-CIE-061",
+      "barrageBId": "BF-BT-016",
+      "barrageA": {
+        "id": "BFI-CIE-061",
+        "nom": "BFI Rabat",
+        "type": "barrage_fixe",
+        "route": "A1",
+        "pk": null,
+        "lng": -6.88652,
+        "lat": 33.96705,
+        "reg": "Rabat",
+        "cie": "Rabat",
+        "bt": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-016",
+        "nom": "Poste fixe Ain Aouda",
+        "type": "barrage_fixe",
+        "route": "RN25",
+        "pk": null,
+        "lng": -6.79533,
+        "lat": 33.81292,
+        "reg": "Rabat",
+        "cie": "Ain Aouda",
+        "bt": "Ain Aouda",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN25",
+      "factionsCommunes": [
+        "F4"
+      ],
+      "distanceKm": 24.4,
+      "distanceRouteKm": 24.4,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "nouveau",
+      "cree": "2026-10-23T10:17:30.322Z",
+      "maj": "2026-10-23T10:17:30.322Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T10:17:30.322Z",
+      "derniereNotificationStatut": "nouveau",
+      "historique": [
+        {
+          "date": "2026-10-23T10:17:30.322Z",
+          "auteur": {
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat",
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "action": "detection",
+          "statut": "nouveau",
+          "commentaire": "Conflit détecté le long de la route : espacement 24.4 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvktg6y7_4e655291",
+      "paireCle": "BFI-CIE-061|BFI-CIE-064",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BFI-CIE-061",
+      "barrageBId": "BFI-CIE-064",
+      "barrageA": {
+        "id": "BFI-CIE-061",
+        "nom": "BFI Rabat",
+        "type": "barrage_fixe",
+        "route": "A1",
+        "pk": null,
+        "lng": -6.88652,
+        "lat": 33.96705,
+        "reg": "Rabat",
+        "cie": "Rabat",
+        "bt": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BFI-CIE-064",
+        "nom": "BFI Salé",
+        "type": "barrage_fixe",
+        "route": "A2",
+        "pk": null,
+        "lng": -6.64819,
+        "lat": 34.02873,
+        "reg": "Rabat",
+        "cie": "Salé",
+        "bt": "Shoul",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "route": "A2",
+      "factionsCommunes": [
+        "F1",
+        "F2",
+        "F3",
+        "F4"
+      ],
+      "distanceKm": 26.3,
+      "distanceRouteKm": 26.3,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "nouveau",
+      "cree": "2026-10-23T10:17:30.322Z",
+      "maj": "2026-10-23T10:17:30.322Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T10:17:30.322Z",
+      "derniereNotificationStatut": "nouveau",
+      "historique": [
+        {
+          "date": "2026-10-23T10:17:30.322Z",
+          "auteur": {
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat",
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "action": "detection",
+          "statut": "nouveau",
+          "commentaire": "Conflit détecté le long de la route : espacement 26.3 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvktg6y8_8d5f16bf",
+      "paireCle": "BF-BT-364|BFI-CIE-061",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BFI-CIE-061",
+      "barrageBId": "BF-BT-364",
+      "barrageA": {
+        "id": "BFI-CIE-061",
+        "nom": "BFI Rabat",
+        "type": "barrage_fixe",
+        "route": "A1",
+        "pk": null,
+        "lng": -6.88652,
+        "lat": 33.96705,
+        "reg": "Rabat",
+        "cie": "Rabat",
+        "bt": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-364",
+        "nom": "Poste fixe Sebbah",
+        "type": "barrage_fixe",
+        "route": "RP4032",
+        "pk": null,
+        "lng": -7.04158,
+        "lat": 33.80261,
+        "reg": "Rabat",
+        "cie": "Skhirate",
+        "bt": "Sebbah",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "route": "RP4032",
+      "factionsCommunes": [
+        "F4"
+      ],
+      "distanceKm": 26.3,
+      "distanceRouteKm": 26.3,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "nouveau",
+      "cree": "2026-10-23T10:17:30.322Z",
+      "maj": "2026-10-23T10:17:30.322Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T10:17:30.322Z",
+      "derniereNotificationStatut": "nouveau",
+      "historique": [
+        {
+          "date": "2026-10-23T10:17:30.322Z",
+          "auteur": {
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat",
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "action": "detection",
+          "statut": "nouveau",
+          "commentaire": "Conflit détecté le long de la route : espacement 26.3 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvktg6y9_9645bf9f",
+      "paireCle": "BF-BT-407|BFI-CIE-061",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BFI-CIE-061",
+      "barrageBId": "BF-BT-407",
+      "barrageA": {
+        "id": "BFI-CIE-061",
+        "nom": "BFI Rabat",
+        "type": "barrage_fixe",
+        "route": "A1",
+        "pk": null,
+        "lng": -6.88652,
+        "lat": 33.96705,
+        "reg": "Rabat",
+        "cie": "Rabat",
+        "bt": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-407",
+        "nom": "Poste fixe Skhirate-El Fath",
+        "type": "barrage_fixe",
+        "route": "RP4001",
+        "pk": 6.4,
+        "lng": -7.02445,
+        "lat": 33.79255,
+        "reg": "Rabat",
+        "cie": "Skhirate",
+        "bt": "Sebbah",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "route": "RP4001",
+      "factionsCommunes": [
+        "F3"
+      ],
+      "distanceKm": 27.4,
+      "distanceRouteKm": 27.4,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "en_cours",
+      "cree": "2026-10-23T10:17:30.322Z",
+      "maj": "2026-10-23T10:17:30.322Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T10:17:30.322Z",
+      "derniereNotificationStatut": "en_cours",
+      "historique": [
+        {
+          "date": "2026-10-23T10:17:30.322Z",
+          "auteur": {
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat",
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "action": "detection",
+          "statut": "en_cours",
+          "commentaire": "Conflit détecté le long de la route : espacement 27.4 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvktg6ya_a694dfcd",
+      "paireCle": "BFI-CIE-061|OPT-DEMO-RABAT-001",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BFI-CIE-061",
+      "barrageBId": "OPT-DEMO-RABAT-001",
+      "barrageA": {
+        "id": "BFI-CIE-061",
+        "nom": "BFI Rabat",
+        "type": "barrage_fixe",
+        "route": "A1",
+        "pk": null,
+        "lng": -6.88652,
+        "lat": 33.96705,
+        "reg": "Rabat",
+        "cie": "Rabat",
+        "bt": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "OPT-DEMO-RABAT-001",
+        "nom": "TEST AUTO — Rabat — Ain Aouda",
+        "type": "barrage_fixe",
+        "route": "RN25",
+        "pk": null,
+        "lng": -6.72909,
+        "lat": 33.76663,
+        "reg": "Rabat",
+        "cie": "Ain Aouda",
+        "bt": "Ain Aouda",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN25",
+      "factionsCommunes": [
+        "F4"
+      ],
+      "distanceKm": 35,
+      "distanceRouteKm": 35,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "nouveau",
+      "cree": "2026-10-23T10:17:30.322Z",
+      "maj": "2026-10-23T10:17:30.322Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T10:17:30.322Z",
+      "derniereNotificationStatut": "nouveau",
+      "historique": [
+        {
+          "date": "2026-10-23T10:17:30.322Z",
+          "auteur": {
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat",
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "action": "detection",
+          "statut": "nouveau",
+          "commentaire": "Conflit détecté le long de la route : espacement 35 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvktg6yc_6dff6282",
+      "paireCle": "BF-BT-377|BFI-CIE-061",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BFI-CIE-061",
+      "barrageBId": "BF-BT-377",
+      "barrageA": {
+        "id": "BFI-CIE-061",
+        "nom": "BFI Rabat",
+        "type": "barrage_fixe",
+        "route": "A1",
+        "pk": null,
+        "lng": -6.88652,
+        "lat": 33.96705,
+        "reg": "Rabat",
+        "cie": "Rabat",
+        "bt": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-377",
+        "nom": "Poste fixe Sidi Allal El Bahraoui",
+        "type": "barrage_fixe",
+        "route": "RN6",
+        "pk": null,
+        "lng": -6.5342,
+        "lat": 34.01163,
+        "reg": "Khémisset",
+        "cie": "Khémisset",
+        "bt": "Sidi Allal El Bahraoui",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN6",
+      "factionsCommunes": [
+        "F1"
+      ],
+      "distanceKm": 37,
+      "distanceRouteKm": 37,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "nouveau",
+      "cree": "2026-10-23T10:17:30.322Z",
+      "maj": "2026-10-23T10:17:30.322Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T10:17:30.322Z",
+      "derniereNotificationStatut": "nouveau",
+      "historique": [
+        {
+          "date": "2026-10-23T10:17:30.322Z",
+          "auteur": {
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat",
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "action": "detection",
+          "statut": "nouveau",
+          "commentaire": "Conflit détecté le long de la route : espacement 37 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvktg6yd_c69d8410",
+      "paireCle": "BF-BT-401|BFI-CIE-061",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BFI-CIE-061",
+      "barrageBId": "BF-BT-401",
+      "barrageA": {
+        "id": "BFI-CIE-061",
+        "nom": "BFI Rabat",
+        "type": "barrage_fixe",
+        "route": "A1",
+        "pk": null,
+        "lng": -6.88652,
+        "lat": 33.96705,
+        "reg": "Rabat",
+        "cie": "Rabat",
+        "bt": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-401",
+        "nom": "Poste fixe Sidi Taibi",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": null,
+        "lng": -6.65254,
+        "lat": 34.22633,
+        "reg": "Kénitra",
+        "cie": "Kénitra",
+        "bt": "Sidi Taibi",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN1",
+      "factionsCommunes": [
+        "F1"
+      ],
+      "distanceKm": 37.6,
+      "distanceRouteKm": 37.6,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "nouveau",
+      "cree": "2026-10-23T10:17:30.322Z",
+      "maj": "2026-10-23T10:17:30.322Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T10:17:30.322Z",
+      "derniereNotificationStatut": "nouveau",
+      "historique": [
+        {
+          "date": "2026-10-23T10:17:30.322Z",
+          "auteur": {
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat",
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "action": "detection",
+          "statut": "nouveau",
+          "commentaire": "Conflit détecté le long de la route : espacement 37.6 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mvktg6ye_2567b514",
+      "paireCle": "BF-BT-132|BFI-CIE-061",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BFI-CIE-061",
+      "barrageBId": "BF-BT-132",
+      "barrageA": {
+        "id": "BFI-CIE-061",
+        "nom": "BFI Rabat",
+        "type": "barrage_fixe",
+        "route": "A1",
+        "pk": null,
+        "lng": -6.88652,
+        "lat": 33.96705,
+        "reg": "Rabat",
+        "cie": "Rabat",
+        "bt": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-132",
+        "nom": "Poste fixe Bouznika",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": 300.6,
+        "lng": -7.20861,
+        "lat": 33.76384,
+        "reg": "Settat",
+        "cie": "Bouznika",
+        "bt": "Bouznika",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN1",
+      "factionsCommunes": [
+        "F3"
+      ],
+      "distanceKm": 38.7,
+      "distanceRouteKm": 38.7,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "statut": "nouveau",
+      "cree": "2026-10-23T10:17:30.322Z",
+      "maj": "2026-10-23T10:17:30.322Z",
+      "resoluLe": null,
+      "derniereNotificationTs": "2026-10-23T10:17:30.322Z",
+      "derniereNotificationStatut": "nouveau",
+      "historique": [
+        {
+          "date": "2026-10-23T10:17:30.322Z",
+          "auteur": {
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat",
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "action": "detection",
+          "statut": "nouveau",
+          "commentaire": "Conflit détecté le long de la route : espacement 38.7 km (seuil réglementaire 40 km)."
+        }
+      ]
+    }
+  ]
+}

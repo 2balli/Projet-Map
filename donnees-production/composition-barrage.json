@@ -1,0 +1,33 @@
+{
+  "_lisezMoi": [
+    "COMPOSITION TYPE D'UN BARRAGE — ce que la préparation du roster essaie de placer",
+    "sur chaque poste, du plus gradé au moins gradé.",
+    "",
+    "Ce fichier se corrige à la main, sans toucher au code : ajoutez, retirez ou",
+    "changez les nombres, puis relancez la préparation depuis le panneau",
+    "Administration. Le serveur relit le fichier à chaque préparation.",
+    "",
+    "Grades acceptés, et EUX SEULS : MDLG, MDLC, ADJT, A/C (voir serveur/elements.mjs).",
+    "",
+    "Quand l'effectif d'une brigade ne suffit pas à honorer la composition, le poste",
+    "est laissé incomplet et le manque est signalé. AUCUNE personne n'est inventée.",
+    "",
+    "`parType` permet une composition différente selon la nature du poste. Un",
+    "barrage mobile est tenu par une équipe plus légère qu'un barrage fixe.",
+    "Une nature absente de `parType` utilise `defaut`."
+  ],
+  "version": 1,
+  "valideParLeCommandement": false,
+  "defaut": [
+    { "grade": "A/C", "nombre": 1 },
+    { "grade": "ADJT", "nombre": 1 },
+    { "grade": "MDLC", "nombre": 1 },
+    { "grade": "MDLG", "nombre": 3 }
+  ],
+  "parType": {
+    "barrage_mobile": [
+      { "grade": "MDLC", "nombre": 1 },
+      { "grade": "MDLG", "nombre": 2 }
+    ]
+  }
+}

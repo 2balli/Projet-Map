@@ -1,0 +1,18 @@
+# Seuls package*.json, index.html, connexion.html, vite.config.js, src/, serveur.mjs, serveur/, scripts/comptes.mjs et donnees/ entrent dans l'image.
+# Les comptes et conflits (etat/) restent hors de l'image : volume monté à l'exécution.
+node_modules/
+dist/
+transfert/
+tools/
+docker/
+scripts/
+!scripts/comptes.mjs
+etat/
+.ruff_cache/
+Classeur4.xlsx
+**/*.test.mjs
+README.md
+Lancer-la-carte.cmd
+Dockerfile
+.dockerignore
+.gitignore

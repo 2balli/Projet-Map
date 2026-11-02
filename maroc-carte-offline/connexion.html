@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Connexion — Gendarmerie Royale</title>
+  <link rel="icon" type="image/png" href="/src/assets/logo-gendarmerie-64.png" />
+</head>
+<body class="page-connexion">
+  <main class="cx-carte" aria-labelledby="cx-titre">
+    <header class="cx-entete">
+      <img id="cx-logo" alt="" width="72" height="72" />
+      <div>
+        <p class="cx-sur-titre">Gendarmerie Royale</p>
+        <h1 id="cx-titre">Carte hors ligne</h1>
+      </div>
+    </header>
+
+    <p id="cx-info" class="cx-message info" role="status" hidden></p>
+
+    <!-- Connexion -->
+    <form id="cx-connexion" novalidate>
+      <h2>Connexion</h2>
+      <label class="cx-champ">
+        <span>Identifiant</span>
+        <input id="cx-identifiant" name="username" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" required maxlength="40" aria-describedby="cx-identifiant-erreur" />
+        <small id="cx-identifiant-erreur" class="cx-erreur-champ" hidden></small>
+      </label>
+      <label class="cx-champ">
+        <span>Mot de passe</span>
+        <span class="cx-mot-de-passe">
+          <input id="cx-mot-de-passe" name="password" type="password" autocomplete="current-password" required maxlength="200" aria-describedby="cx-mot-de-passe-erreur" />
+          <button type="button" class="cx-voir" data-voir="cx-mot-de-passe" aria-controls="cx-mot-de-passe" aria-pressed="false">Afficher</button>
+        </span>
+        <small id="cx-mot-de-passe-erreur" class="cx-erreur-champ" hidden></small>
+      </label>
+      <p id="cx-connexion-erreur" class="cx-message erreur" role="alert" hidden></p>
+      <button type="submit" id="cx-connexion-valider" class="cx-principal">
+        <span class="cx-roue" aria-hidden="true"></span><span class="cx-libelle">Se connecter</span>
+      </button>
+    </form>
+
+    <!-- Changement de mot de passe (imposé après un mot de passe temporaire) -->
+    <form id="cx-changement" novalidate hidden>
+      <h2>Nouveau mot de passe</h2>
+      <p id="cx-changement-qui" class="cx-aide"></p>
+      <input type="text" name="username" id="cx-changement-identifiant" autocomplete="username" hidden />
+      <label class="cx-champ">
+        <span>Mot de passe actuel</span>
+        <span class="cx-mot-de-passe">
+          <input id="cx-actuel" type="password" autocomplete="current-password" required maxlength="200" />
+          <button type="button" class="cx-voir" data-voir="cx-actuel" aria-controls="cx-actuel" aria-pressed="false">Afficher</button>
+        </span>
+      </label>
+      <label class="cx-champ">
+        <span>Nouveau mot de passe <small>(10 caractères au moins)</small></span>
+        <span class="cx-mot-de-passe">
+          <input id="cx-nouveau" type="password" autocomplete="new-password" required minlength="10" maxlength="200" />
+          <button type="button" class="cx-voir" data-voir="cx-nouveau" aria-controls="cx-nouveau" aria-pressed="false">Afficher</button>
+        </span>
+      </label>
+      <label class="cx-champ">
+        <span>Confirmer le nouveau mot de passe</span>
+        <span class="cx-mot-de-passe">
+          <input id="cx-confirmation" type="password" autocomplete="new-password" required maxlength="200" />
+          <button type="button" class="cx-voir" data-voir="cx-confirmation" aria-controls="cx-confirmation" aria-pressed="false">Afficher</button>
+        </span>
+      </label>
+      <p id="cx-changement-erreur" class="cx-message erreur" role="alert" hidden></p>
+      <button type="submit" id="cx-changement-valider" class="cx-principal">
+        <span class="cx-roue" aria-hidden="true"></span><span class="cx-libelle">Enregistrer et ouvrir la carte</span>
+      </button>
+      <div class="cx-liens">
+        <a id="cx-retour-carte" href="/" hidden>Retour à la carte</a>
+        <button type="button" id="cx-changement-sortir" class="cx-lien">Se déconnecter</button>
+      </div>
+    </form>
+
+    <footer class="cx-pied">
+      <p>Accès réservé aux comptes autorisés. Session fermée après 2 h sans activité (12 h au plus).</p>
+    </footer>
+  </main>
+  <script type="module" src="/src/connexion.js"></script>
+</body>
+</html>

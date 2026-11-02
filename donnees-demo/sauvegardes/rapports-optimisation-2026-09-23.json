@@ -1,0 +1,126 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "opt_muctqbl1_c0268e",
+      "numero": 1,
+      "date": "2026-09-22T15:23:31.238Z",
+      "mode": "AUTOMATIQUE",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "perimetre": {
+        "niveau": "region",
+        "unite": "Casablanca"
+      },
+      "parametres": {
+        "distanceMinKm": 5,
+        "accidents": false,
+        "seuilAccidents": 4,
+        "vip": false,
+        "nonEclaire": false,
+        "exclusIds": [],
+        "maxRetraits": null,
+        "reductionMaxPct": null,
+        "couvertureMinPct": null,
+        "perteCouvertureMaxPct": 2,
+        "rayonCouvertureKm": null,
+        "niveau": "region",
+        "unite": "Casablanca"
+      },
+      "poids": {
+        "accidentParUnite": 10,
+        "severite": {
+          "critical": 30,
+          "high": 20,
+          "moderate": 10,
+          "none": 0
+        },
+        "activite": {
+          "high": 12,
+          "medium": 6,
+          "low": 0
+        },
+        "infraction": {
+          "high": 12,
+          "medium": 6,
+          "low": 0
+        },
+        "porteVille": 40,
+        "vip": 35,
+        "nonEclaire": 15,
+        "couvertureExclusive": 25,
+        "redondance": -12,
+        "proximite": -20
+      },
+      "criteres": [
+        "accidents",
+        "eclairage",
+        "distance",
+        "redondance",
+        "couverture",
+        "barrages sensibles"
+      ],
+      "avant": 21,
+      "apres": 18,
+      "retires": 3,
+      "proteges": 5,
+      "couvertureAvant": 90.4,
+      "couvertureApres": 90.4,
+      "barrages": [
+        {
+          "id": "mq_semis_d2417400",
+          "nom": "Poste fixe Al Hamd (DEMO)",
+          "route": "",
+          "bt": "Al Hamd",
+          "cie": "Mediouna",
+          "reg": "Casablanca",
+          "score": -29,
+          "redondance": 3,
+          "distanceKm": 4.37,
+          "voisin": "A31 — Mediouna",
+          "accidents": 0,
+          "eclairage": "oui",
+          "raison": "Redondance forte · A31 — Mediouna à 4.37 km tient le même rôle · priorité faible (score : -29) · 0 accident(s) · éclairage satisfaisant · couverture maintenue à 90.4 %"
+        },
+        {
+          "id": "mq_semis_04f49ac8",
+          "nom": "Poste fixe Bouskoura (DEMO)",
+          "route": "",
+          "bt": "Bouskoura",
+          "cie": "Bouskoura",
+          "reg": "Casablanca",
+          "score": 10,
+          "redondance": 1,
+          "distanceKm": 4.88,
+          "voisin": "Poste fixe Ennassr (DEMO)",
+          "accidents": 0,
+          "eclairage": "inconnu",
+          "raison": "Redondance faible · Poste fixe Ennassr (DEMO) à 4.88 km tient le même rôle · priorité faible (score : 10) · 0 accident(s) · éclairage inconnu · couverture maintenue à 90.4 %"
+        },
+        {
+          "id": "mq_semis_4e1b1be8",
+          "nom": "Poste fixe Tamaris (DEMO)",
+          "route": "",
+          "bt": "Tamaris",
+          "cie": "Casablanca",
+          "reg": "Casablanca",
+          "score": 28,
+          "redondance": 1,
+          "distanceKm": 4.53,
+          "voisin": "Errahma",
+          "accidents": 0,
+          "eclairage": "inconnu",
+          "raison": "Redondance faible · Errahma à 4.53 km tient le même rôle · priorité faible (score : 28) · 0 accident(s) · éclairage inconnu · couverture maintenue à 90.4 %"
+        }
+      ],
+      "refuses": []
+    }
+  ]
+}

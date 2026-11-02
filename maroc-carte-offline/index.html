@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gendarmerie Royale — Carte hors ligne</title>
+  <link rel="icon" type="image/png" href="/src/assets/logo-gendarmerie-64.png" />
+</head>
+<body>
+  <div id="carte" data-texte-aria="ariaCarte" aria-label="Carte du Maroc"></div>
+
+  <div id="haut">
+  <!-- Marque -->
+  <header id="marque" class="flottant">
+    <img src="/src/assets/logo-gendarmerie.png" alt="" width="34" height="53" />
+    <div>
+      <p class="marque-royaume" data-texte="royaumeDuMaroc">Royaume du Maroc</p>
+      <h1 data-texte="titre">Gendarmerie Royale</h1>
+      <p class="marque-sous" data-texte="sousTitre">Carte opérationnelle · hors ligne</p>
+    </div>
+  </header>
+
+  <!-- Recherche : barre flottante, indépendante du panneau -->
+  <div id="barre" class="flottant recherche" role="search">
+    <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
+    <input id="recherche" type="search" autocomplete="off" spellcheck="false" role="combobox"
+      aria-autocomplete="list" aria-expanded="false" aria-controls="resultats"
+      data-placeholder="placeholderRecherche" placeholder="Rechercher une brigade, un lieu, une rue…" />
+    <kbd aria-hidden="true">/</kbd>
+    <ul id="resultats" role="listbox" hidden></ul>
+    <p id="recherche-statut" class="aide" hidden></p>
+  </div>
+
+  <p id="bandeau-fictif" class="bandeau-fictif flottant" data-texte="donneesFictives" hidden>Données fictives</p>
+  <!-- Rendu sans carte graphique (diagnostic-rendu.js) : la carte sera lente -->
+  <p id="bandeau-rendu" class="bandeau-fictif bandeau-rendu flottant" role="status" data-texte="renduLogiciel" hidden></p>
+  </div>
+
+  <!-- Rail d'onglets + panneau (un onglet à la fois) -->
+  <nav id="rail" class="flottant" data-texte-aria="ariaPanneaux" aria-label="Panneaux">
+    <button type="button" data-onglet="couches" aria-controls="panneau" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5Z" /><path d="m3 13 9 5 9-5" /></svg>
+      <span data-texte="ongletCouches">Couches</span>
+    </button>
+    <button type="button" data-onglet="mesure" aria-controls="panneau" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17 17 3l4 4L7 21l-4-4Z" /><path d="m7 13 2 2m1-5 2 2m1-5 2 2" /></svg>
+      <span data-texte="ongletMesure">Mesure</span>
+    </button>
+    <button type="button" data-onglet="analyse" aria-controls="panneau" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="5" /><path d="M12 3v3m0 12v3M3 12h3m12 0h3" /></svg>
+      <span data-texte="ongletAnalyse">Analyse</span>
+    </button>
+    <button type="button" data-onglet="croquis" aria-controls="panneau" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4Z" /><path d="m13.5 6.5 4 4" /></svg>
+      <span data-texte="ongletCroquis">Croquis</span>
+    </button>
+    <button type="button" data-onglet="impression" aria-controls="panneau" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 9V3h10v6" /><rect x="3" y="9" width="18" height="8" rx="2" /><path d="M7 14h10v7H7Z" /></svg>
+      <span data-texte="ongletImpression">Imprimer</span>
+    </button>
+    <button type="button" data-onglet="affichage" aria-controls="panneau" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg>
+      <span data-texte="ongletAffichage">Affichage</span>
+    </button>
+    <button type="button" data-compte aria-controls="mc-connexion" title="Se connecter" aria-label="Compte" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4" /><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" /></svg>
+      <span>Connexion</span>
+    </button>
+    <button type="button" data-tableau="optimisation" aria-controls="optimisation" title="Optimisation des barrages" aria-label="Optimisation des barrages" hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10m6 10V4m6 16v-7m4 7H2" /><path d="m14 7 2-2 3 3" /></svg>
+      <span>Optimiser</span>
+    </button>
+  </nav>
+
+  <aside id="panneau" class="flottant" hidden>
+    <!-- Couches -->
+    <section data-volet="couches" hidden>
+      <h2 data-texte="ongletCouches">Couches</h2>
+
+      <label class="champ">
+        <span data-texte="allerA">Aller à</span>
+        <select id="villes"></select>
+      </label>
+
+      <div id="gr-reglages" class="groupe">
+        <h3 data-texte="grTitre">Gendarmerie Royale</h3>
+        <ul id="gr-compteurs" class="compteurs" data-texte-aria="ariaCompteurs" aria-label="Effectifs importés"></ul>
+
+        <label class="ligne-couche">
+          <span class="ligne-texte">
+            <strong data-texte="grDecoupage">Circonscriptions</strong>
+            <small id="gr-statut" aria-live="polite"></small>
+          </span>
+          <input type="checkbox" id="gr-circos" class="interrupteur" />
+        </label>
+        <div id="gr-echelons" class="segments" role="group" data-texte-aria="grDecoupage">
+          <button type="button" data-choix="echelon:auto" data-texte="grEchelon_auto">Auto</button>
+          <button type="button" data-choix="echelon:reg" data-texte="grEchelonCourt_reg">Régions</button>
+          <button type="button" data-choix="echelon:cie" data-texte="grEchelonCourt_cie">Cies</button>
+          <button type="button" data-choix="echelon:bt" data-texte="grEchelonCourt_bt">BT</button>
+        </div>
+
+        <label class="ligne-couche">
+          <span class="ligne-texte">
+            <strong data-texte="grUnites">Chefs-lieux d’unités</strong>
+            <small class="pastilles" aria-hidden="true">
+              <span class="paire"><i class="pastille reg"></i><span data-texte="grNiveauCourt_reg">Région</span></span>
+              <span class="paire"><i class="pastille cie"></i><span data-texte="grNiveauCourt_cie">Cie</span></span>
+              <span class="paire"><i class="pastille bt"></i><span data-texte="grNiveauCourt_bt">BT</span></span>
+            </small>
+          </span>
+          <input type="checkbox" id="gr-unites" class="interrupteur" />
+        </label>
+
+        <label class="ligne-couche">
+          <span class="ligne-texte"><strong data-texte="grExcel">Unités du classeur</strong></span>
+          <input type="checkbox" id="gr-excel" class="interrupteur" />
+        </label>
+
+        <label class="ligne-couche">
+          <span class="ligne-texte">
+            <strong data-texte="grInfra">Infrastructures</strong>
+            <small class="pastilles" aria-hidden="true">
+              <span class="paire"><i class="pastille peage"></i><span data-texte="grInfra_peage">Péage</span></span>
+              <span class="paire"><i class="pastille gare"></i><span data-texte="grInfraCourt_gare">Gare</span></span>
+              <span class="paire"><i class="pastille aeroport"></i><span data-texte="grInfra_aeroport">Aéroport</span></span>
+              <span class="paire"><i class="pastille port"></i><span data-texte="grInfra_port">Port</span></span>
+            </small>
+          </span>
+          <input type="checkbox" id="gr-infra" class="interrupteur" />
+        </label>
+      </div>
+      <p id="gr-absent" class="aide" data-texte="grAbsent" hidden>Données Gendarmerie absentes : lancez « npm run gendarmerie ».</p>
+
+      <!-- Barages (couche-barages.js) : jeu de données à part, simulé pour l'instant -->
+      <div id="barages-groupe" class="groupe" hidden>
+        <h3><span data-texte="brTitre">Barages</span> <span id="barages-simulation" class="badge-simulation" data-texte="brSimulation">Simulation</span></h3>
+        <label class="ligne-couche">
+          <span class="ligne-texte">
+            <strong data-texte="brCouche">Barages (points de contrôle)</strong>
+            <small id="barages-statut" aria-live="polite"></small>
+          </span>
+          <input type="checkbox" id="barages-actif" class="interrupteur" />
+        </label>
+        <ul id="barages-legende" class="legende-barages" data-texte-aria="brLegende" aria-label="Légende des barages"></ul>
+        <div id="barages-affichage" class="groupe-sous" hidden>
+          <label class="ligne-couche">
+            <span class="ligne-texte"><strong id="barages-libelle-actifs">Barages actifs</strong></span>
+            <input type="checkbox" id="barages-voir-actifs" class="interrupteur" checked />
+          </label>
+          <label class="ligne-couche">
+            <span class="ligne-texte"><strong id="barages-libelle-retires">Barages retirés (historique)</strong><small id="barages-nb-retires"></small></span>
+            <input type="checkbox" id="barages-voir-retires" class="interrupteur" checked />
+          </label>
+        </div>
+        <p id="barages-avertissement" class="aide" hidden></p>
+        <div id="barages-filtres" class="filtres-barages" hidden>
+          <label class="champ">
+            <span data-texte="brRegion">Région</span>
+            <select id="barages-reg"></select>
+          </label>
+          <label class="champ">
+            <span data-texte="brCompagnie">Compagnie</span>
+            <select id="barages-cie"></select>
+          </label>
+          <label class="champ">
+            <span data-texte="brBrigade">Brigade</span>
+            <select id="barages-bt"></select>
+          </label>
+          <div class="champ">
+            <span id="titre-barages-type" data-texte="brType">Type</span>
+            <div class="segments" role="group" aria-labelledby="titre-barages-type">
+              <button type="button" data-barage-type="tous" aria-pressed="true">Tous</button>
+              <button type="button" data-barage-type="fixe" aria-pressed="false">Fixes</button>
+              <button type="button" data-barage-type="intouchable" aria-pressed="false">Intouchables</button>
+            </div>
+          </div>
+          <label class="champ">
+            <span data-texte="brFaction">Faction</span>
+            <select id="barages-faction"></select>
+          </label>
+          <p id="barages-note-faction" class="aide"></p>
+          <div class="champ">
+            <span id="titre-barages-origine" data-texte="brOrigine">Origine</span>
+            <div class="segments" role="group" aria-labelledby="titre-barages-origine">
+              <button type="button" data-barage-origine="" aria-pressed="true">Toutes</button>
+              <button type="button" data-barage-origine="simulation" aria-pressed="false">Simulées</button>
+              <button type="button" data-barage-origine="reelle" aria-pressed="false">Réelles</button>
+            </div>
+          </div>
+          <button type="button" id="barages-reinit" class="lien" data-texte="brReinit">Réinitialiser les filtres</button>
+        </div>
+
+        <!-- Édition : surcouche locale, toujours sur une route (couche-barages.js) -->
+        <div id="barages-edition" class="edition-barages" hidden>
+          <h3 data-texte="brEdition">Édition</h3>
+          <button type="button" id="barages-ajouter" class="bouton-outil" aria-pressed="false">Ajouter sur une route</button>
+          <p id="barages-edition-aide" class="aide" aria-live="polite"></p>
+          <div id="barages-formulaire" class="sortie-analyse">
+            <strong id="barages-edition-titre" class="titre-edition"></strong>
+            <label id="barages-champ-nom" class="champ">
+              <span data-texte="brNom">Nom</span>
+              <input id="barages-nom" type="text" autocomplete="off" maxlength="80" />
+            </label>
+            <div class="champ">
+              <span id="titre-barages-edition-type" data-texte="brType">Type</span>
+              <div class="segments" role="group" aria-labelledby="titre-barages-edition-type">
+                <button type="button" data-barage-edition-type="fixe" aria-pressed="true">Fixes</button>
+                <button type="button" data-barage-edition-type="intouchable" aria-pressed="false">Intouchables</button>
+              </div>
+            </div>
+            <label class="champ">
+              <span data-texte="brFaction">Faction</span>
+              <select id="barages-edition-faction"></select>
+            </label>
+            <label class="ligne-couche">
+              <span class="ligne-texte"><strong data-texte="brDonneeSimulee">Donnée simulée</strong></span>
+              <input type="checkbox" id="barages-edition-simulation" class="interrupteur" />
+            </label>
+            <div id="barages-actions-edition" class="liens">
+              <button type="button" id="barages-deplacer" class="lien" aria-pressed="false" data-texte="brDeplacer">Déplacer</button>
+              <button type="button" id="barages-supprimer" class="lien" data-texte="supprimer">Supprimer</button>
+              <button type="button" id="barages-terminer" class="lien" data-texte="brTerminer">Terminé</button>
+            </div>
+          </div>
+          <p id="barages-editions" class="aide"></p>
+          <div class="liens">
+            <button type="button" id="barages-exporter" class="lien" data-texte="brExporter">Exporter barages.json</button>
+            <button type="button" id="barages-annuler-editions" class="lien" data-texte="brAnnulerEditions">Annuler les modifications locales</button>
+            <button type="button" id="barages-retirer-simules" class="lien" data-texte="brRetirerSimules">Retirer les barages simulés</button>
+          </div>
+        </div>
+        <button type="button" class="bouton-principal" data-tableau="optimisation" aria-controls="optimisation" hidden>Optimisation des barrages</button>
+        <p id="barages-mention-simulation" class="aide" data-texte="brAvertissementSimulation">Positions fictives générées pour les tests : ce ne sont pas des emplacements opérationnels.</p>
+      </div>
+
+      <div class="groupe">
+        <h3 data-texte="fondDeCarte">Fond de carte</h3>
+        <label class="ligne-couche">
+          <span class="ligne-texte"><strong data-texte="regions">Les 12 régions administratives</strong></span>
+          <input type="checkbox" id="regions" class="interrupteur" />
+        </label>
+      </div>
+    </section>
+
+    <!-- Mesure -->
+    <section data-volet="mesure" class="mesure" hidden>
+      <h2 data-texte="ongletMesure">Mesure</h2>
+      <div class="segments" role="group">
+        <button type="button" data-mesure="distance" data-texte="mesureDistance" aria-pressed="false">Distance</button>
+        <button type="button" data-mesure="ecart" data-texte="mesureEcart" aria-pressed="false">Entre 2 routes</button>
+      </div>
+      <div class="champ">
+        <span id="titre-itineraire" data-texte="itineraire">Itinéraire</span>
+        <div class="segments" role="group" aria-labelledby="titre-itineraire">
+          <button type="button" data-choix="priorite:autoroute" data-texte="autoroutes">Autoroutes</button>
+          <button type="button" data-choix="priorite:court" data-texte="plusCourt">Plus court</button>
+        </div>
+      </div>
+      <div id="mesure-sortie" hidden>
+        <output id="mesure-resultat" aria-live="polite"></output>
+        <ul id="mesure-details"></ul>
+        <p id="mesure-aide" class="aide"></p>
+        <button type="button" id="mesure-effacer" class="lien" data-texte="effacer">Effacer</button>
+      </div>
+      <p class="aide" data-texte="aideMesure">Cliquez sur la carte pour poser des points ; les tronçons suivent les routes.</p>
+    </section>
+
+    <!-- Analyse opérationnelle (analyse.js) -->
+    <section data-volet="analyse" class="analyse" hidden>
+      <h2 data-texte="ongletAnalyse">Analyse</h2>
+
+      <div class="groupe">
+        <h3 data-texte="anCouverture">Couverture des brigades</h3>
+        <label class="ligne-couche">
+          <span class="ligne-texte">
+            <strong data-texte="anCouvertureLibelle">Temps d’accès à la brigade la plus proche</strong>
+            <small id="couv-statut" aria-live="polite"></small>
+          </span>
+          <input type="checkbox" id="couv-active" class="interrupteur" />
+        </label>
+        <ul id="couv-legende" class="legende-temps" hidden></ul>
+      </div>
+
+      <div class="groupe">
+        <h3 data-texte="anZone">Zone d’intervention</h3>
+        <div class="segments" role="group" data-texte-aria="anZone">
+          <button type="button" data-zone-duree="15">15 min</button>
+          <button type="button" data-zone-duree="30">30 min</button>
+          <button type="button" data-zone-duree="60">60 min</button>
+          <button type="button" data-zone-duree="90">90 min</button>
+        </div>
+        <p id="zone-aide" class="aide" data-texte="anZoneAide">Ouvrez la fiche d’une unité ou faites un clic droit sur la carte : « Zone d’intervention ».</p>
+        <p id="zone-statut" class="resultat-analyse" aria-live="polite" hidden></p>
+        <ul id="zone-legende" class="legende-temps" hidden></ul>
+        <button type="button" id="zone-effacer" class="lien" data-texte="effacer" hidden>Effacer</button>
+      </div>
+      <p id="analyse-estimation" class="aide"></p>
+
+      <div class="groupe">
+        <h3 data-texte="anBouclage">Bouclage</h3>
+        <button type="button" id="bouclage-placer" class="bouton-outil" data-texte="anBouclagePlacer" aria-pressed="false">Placer le centre</button>
+        <div class="segments" role="group" data-texte-aria="anRayon">
+          <button type="button" data-rayon="1000">1 km</button>
+          <button type="button" data-rayon="3000">3 km</button>
+          <button type="button" data-rayon="5000">5 km</button>
+          <button type="button" data-rayon="10000">10 km</button>
+          <button type="button" data-rayon="20000">20 km</button>
+        </div>
+        <div class="segments" role="group">
+          <button type="button" data-filtre="principales" data-texte="anAxes">Axes principaux</button>
+          <button type="button" data-filtre="toutes" data-texte="anToutes">Toutes les voies</button>
+        </div>
+        <p id="bouclage-aide" class="aide" hidden></p>
+        <div id="bouclage-sortie" class="sortie-analyse" hidden>
+          <output id="bouclage-resultat" aria-live="polite"></output>
+          <p id="bouclage-note" class="aide"></p>
+          <ol id="bouclage-liste" class="liste-analyse"></ol>
+          <div class="liens">
+            <button type="button" id="bouclage-copier" class="lien" data-texte="anCopierListe">Copier la liste</button>
+            <button type="button" id="bouclage-effacer" class="lien" data-texte="effacer">Effacer</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="groupe">
+        <h3 data-texte="anTournee">Tournée de patrouille</h3>
+        <button type="button" id="tournee-placer" class="bouton-outil" data-texte="anTourneePlacer" aria-pressed="false">Ajouter des étapes</button>
+        <label class="ligne-couche">
+          <span class="ligne-texte"><strong data-texte="anRetour">Retour au point de départ</strong></span>
+          <input type="checkbox" id="tournee-boucle" class="interrupteur" />
+        </label>
+        <p id="tournee-aide" class="aide"></p>
+        <div id="tournee-sortie" class="sortie-analyse" hidden>
+          <ol id="tournee-liste" class="liste-analyse"></ol>
+          <button type="button" id="tournee-optimiser" class="bouton-principal" data-texte="anOptimiser">Optimiser l’ordre</button>
+          <output id="tournee-resultat" aria-live="polite"></output>
+          <p id="tournee-statut" class="aide" aria-live="polite"></p>
+          <button type="button" id="tournee-effacer" class="lien" data-texte="effacer">Effacer</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Croquis (croquis.js) -->
+    <section data-volet="croquis" class="croquis" hidden>
+      <h2 data-texte="ongletCroquis">Croquis</h2>
+      <div class="segments" role="group" data-texte-aria="ongletCroquis">
+        <button type="button" data-croquis-outil="point" aria-pressed="false">Point</button>
+        <button type="button" data-croquis-outil="ligne" aria-pressed="false">Ligne</button>
+        <button type="button" data-croquis-outil="zone" aria-pressed="false">Zone</button>
+        <button type="button" data-croquis-outil="texte" aria-pressed="false">Texte</button>
+      </div>
+      <div class="champ">
+        <span data-texte="croquisSymbole">Symbole</span>
+        <div id="croquis-symboles" class="symboles" role="group" data-texte-aria="croquisSymbole"></div>
+      </div>
+      <div class="champ">
+        <span data-texte="croquisCouleur">Couleur</span>
+        <div id="croquis-couleurs" class="couleurs" role="group" data-texte-aria="croquisCouleur"></div>
+      </div>
+      <p id="croquis-aide" class="aide" aria-live="polite"></p>
+      <div id="croquis-selection" class="sortie-analyse" hidden>
+        <label class="champ">
+          <span data-texte="croquisLibelle">Libellé</span>
+          <input id="croquis-libelle" type="text" autocomplete="off" maxlength="120" />
+        </label>
+        <button type="button" id="croquis-supprimer" class="lien" data-texte="supprimer">Supprimer</button>
+      </div>
+      <ol id="croquis-liste" class="liste-analyse"></ol>
+      <p id="croquis-vide" class="aide"></p>
+      <div class="liens liens-croquis">
+        <button type="button" id="croquis-export-geojson" class="lien" data-texte="croquisGeojson">Exporter GeoJSON</button>
+        <button type="button" id="croquis-export-kml" class="lien" data-texte="croquisKml">Exporter KML</button>
+        <button type="button" id="croquis-importer" class="lien" data-texte="croquisImporter">Importer…</button>
+        <button type="button" id="croquis-effacer" class="lien" data-texte="croquisEffacer">Tout effacer</button>
+      </div>
+      <input type="file" id="croquis-fichier" accept=".geojson,.json,.kml,application/geo+json,application/vnd.google-earth.kml+xml" hidden />
+      <p class="aide" data-texte="croquisStockage">Le croquis est enregistré dans ce navigateur.</p>
+    </section>
+
+    <!-- Impression (impression.js) -->
+    <section data-volet="impression" class="impression" hidden>
+      <h2 data-texte="ongletImpression">Imprimer</h2>
+      <label class="champ">
+        <span data-texte="impTitre">Titre</span>
+        <input id="imp-titre" type="text" autocomplete="off" maxlength="90" />
+      </label>
+      <div class="champ">
+        <span data-texte="impFormat">Format</span>
+        <div class="segments" role="group" data-texte-aria="impFormat">
+          <button type="button" data-impression="format:A4">A4</button>
+          <button type="button" data-impression="format:A3">A3</button>
+        </div>
+      </div>
+      <div class="champ">
+        <span data-texte="impOrientation">Orientation</span>
+        <div class="segments" role="group" data-texte-aria="impOrientation">
+          <button type="button" data-impression="orientation:paysage" data-texte="impPaysage">Paysage</button>
+          <button type="button" data-impression="orientation:portrait" data-texte="impPortrait">Portrait</button>
+        </div>
+      </div>
+      <label class="champ">
+        <span data-texte="impEchelle">Échelle</span>
+        <select id="imp-echelle"></select>
+      </label>
+      <div class="champ">
+        <span data-texte="impQuadrillage">Quadrillage</span>
+        <div class="segments" role="group" data-texte-aria="impQuadrillage">
+          <button type="button" data-impression="quadrillage:lambert" data-texte="impLambert">Lambert</button>
+          <button type="button" data-impression="quadrillage:geo" data-texte="impGeo">Géographique</button>
+          <button type="button" data-impression="quadrillage:aucun" data-texte="impAucun">Aucun</button>
+        </div>
+      </div>
+      <label class="champ">
+        <span data-texte="impMention">Mention (facultatif)</span>
+        <input id="imp-mention" type="text" autocomplete="off" maxlength="60" data-placeholder="impMentionAide" />
+      </label>
+      <label class="champ">
+        <span data-texte="impNotes">Notes</span>
+        <textarea id="imp-notes" rows="3" maxlength="800"></textarea>
+      </label>
+      <button type="button" id="imp-lancer" class="bouton-principal" data-texte="impLancer">Imprimer / PDF</button>
+      <p id="imp-statut" class="aide" aria-live="polite"></p>
+      <p class="aide" data-texte="impAide">Le cadre doré montre l’emprise imprimée.</p>
+    </section>
+
+    <!-- Affichage -->
+    <section data-volet="affichage" hidden>
+      <h2 data-texte="ongletAffichage">Affichage</h2>
+      <div class="champ">
+        <span data-texte="theme">Thème</span>
+        <div class="segments" role="group">
+          <button type="button" data-choix="theme:light" data-texte="clair">Clair</button>
+          <button type="button" data-choix="theme:dark" data-texte="sombre">Sombre</button>
+        </div>
+      </div>
+      <div class="champ">
+        <span data-texte="langue">Langue</span>
+        <div class="segments" role="group">
+          <button type="button" data-choix="langue:fr" lang="fr">Français</button>
+          <button type="button" data-choix="langue:ar" lang="ar">العربية</button>
+        </div>
+      </div>
+      <div class="champ">
+        <span data-texte="coordonnees">Coordonnées</span>
+        <div class="segments" role="group" data-texte-aria="coordonnees">
+          <button type="button" data-choix="coords:dms" data-texte="coordDms">Degrés</button>
+          <button type="button" data-choix="coords:lambert" data-texte="coordLambert">Lambert</button>
+        </div>
+      </div>
+      <p class="aide" data-texte="aide">Clic : fiche de l’unité ou de la circonscription · clic droit : coordonnées · / : rechercher</p>
+    </section>
+  </aside>
+
+  <!-- Fiche de l'unité ou de la circonscription sélectionnée -->
+  <aside id="inspecteur" class="flottant" aria-live="polite" hidden></aside>
+
+  <!-- Emprise imprimée (impression.js), visible quand le panneau d'impression est ouvert -->
+  <div id="cadre-impression" aria-hidden="true" hidden></div>
+
+  <!-- Feuille imprimée, composée à la demande -->
+  <div id="impression" hidden></div>
+
+  <!-- Connexion (comptes du serveur local : administrateur, commandements régionaux) -->
+  <dialog id="mc-connexion" class="opt-dialogue" aria-labelledby="mc-connexion-titre" lang="fr" dir="ltr">
+    <form id="mc-connexion-formulaire" method="dialog" novalidate>
+      <h2 id="mc-connexion-titre">Compte</h2>
+      <div id="mc-connexion-session" hidden>
+        <p><strong id="mc-connexion-qui"></strong></p>
+        <p id="mc-connexion-role" class="aide"></p>
+        <p class="aide">La session se ferme après 2 h sans activité, et au plus tard 12 h après la connexion.</p>
+        <div class="opt-dialogue-actions">
+          <button type="button" id="mc-changer-mot-de-passe" class="bouton-outil">Changer le mot de passe</button>
+          <button type="button" id="mc-deconnexion" class="bouton-principal">Se déconnecter</button>
+        </div>
+      </div>
+      <p id="mc-connexion-erreur" class="opt-message info" role="alert" hidden></p>
+      <div class="opt-dialogue-actions">
+        <button type="button" id="mc-connexion-annuler" class="bouton-outil">Fermer</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Optimisation : fenêtre minimale (une distance, Calculer / Annuler) -->
+  <dialog id="opt-dialogue" class="opt-dialogue" aria-labelledby="opt-dialogue-titre" lang="fr" dir="ltr">
+    <form id="opt-dialogue-formulaire" method="dialog" novalidate>
+      <h2 id="opt-dialogue-titre">Optimisation des barrages</h2>
+      <label class="champ">
+        <span>Distance minimale par la route (km)</span>
+        <input type="number" id="opt-dialogue-distance" min="0.01" max="100" step="0.1" inputmode="decimal" required />
+      </label>
+      <label class="champ">
+        <span>Région</span>
+        <select id="opt-dialogue-region"></select>
+        <small id="opt-dialogue-region-aide" class="aide"></small>
+      </label>
+      <p id="opt-dialogue-erreur" class="opt-message erreur" role="alert" hidden></p>
+      <div class="opt-dialogue-actions">
+        <button type="button" id="opt-dialogue-annuler" class="bouton-outil">Annuler</button>
+        <button type="submit" class="bouton-principal">Calculer</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Optimisation des barrages (optimisation-ui.js) : rendu en français -->
+  <aside id="optimisation" class="flottant optimisation" aria-labelledby="opt-titre" lang="fr" dir="ltr" hidden>
+    <header class="opt-tete">
+      <h2 id="opt-titre">Optimisation des barrages</h2>
+      <button type="button" id="opt-fermer" class="insp-fermer" aria-label="Fermer">×</button>
+    </header>
+    <nav id="opt-onglets" class="opt-onglets" role="tablist" aria-label="Sections"></nav>
+    <p id="opt-avis" class="aide opt-avis"></p>
+    <div id="opt-contenu" class="opt-contenu" aria-live="polite"></div>
+  </aside>
+
+  <!-- Faction des barages, directement sur la carte (couche-barages.js), visible avec la couche -->
+  <div id="barages-factions-carte" class="flottant factions-carte" role="group" data-texte-aria="brFaction" aria-label="Faction" hidden></div>
+
+  <!-- Barre d'état -->
+  <footer id="etat" class="flottant">
+    <output id="coordonnees" aria-live="off"></output>
+    <span id="etat-echelon"></span>
+    <span id="etat-analyse"></span>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+/* Page de connexion : mêmes couleurs que la carte (style.css), sans dépendance externe. */
+:root {
+  --fond: #eef1f5;
+  --surface: #ffffff;
+  --surface-2: #f3f5f8;
+  --texte: #16202c;
+  --texte-doux: #5b6672;
+  --bord: rgba(15, 30, 55, 0.16);
+  --accent: #0b2445;
+  --accent-texte: #ffffff;
+  --or: #c6a050;
+  --rouge: #c1272d;
+  --rouge-fond: #fdecec;
+  --info-fond: #eef3fb;
+  --focus: #c6a050;
+  --ombre: 0 1px 2px rgba(10, 20, 35, 0.08), 0 12px 40px rgba(10, 20, 35, 0.16);
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --fond: #0a111b;
+  --surface: #0e1622;
+  --surface-2: #172234;
+  --texte: #e8edf3;
+  --texte-doux: #93a1b2;
+  --bord: rgba(200, 215, 235, 0.16);
+  --accent: #c6a050;
+  --accent-texte: #0b2445;
+  --or: #e3c98a;
+  --rouge: #ff7b80;
+  --rouge-fond: rgba(224, 71, 77, 0.14);
+  --info-fond: rgba(92, 157, 237, 0.12);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+body.page-connexion {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 24px 16px;
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(198, 160, 80, 0.18), transparent 60%),
+    radial-gradient(900px 500px at 110% 110%, rgba(11, 36, 69, 0.22), transparent 60%),
+    var(--fond);
+  color: var(--texte);
+  font: 15px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Arabic", sans-serif;
+}
+
+.cx-carte {
+  width: 100%;
+  max-width: 420px;
+  background: var(--surface);
+  border: 1px solid var(--bord);
+  border-top: 4px solid var(--or);
+  border-radius: 16px;
+  box-shadow: var(--ombre);
+  padding: 28px 28px 20px;
+}
+
+.cx-entete { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+.cx-entete img { width: 64px; height: 64px; object-fit: contain; flex: none; }
+.cx-sur-titre { margin: 0; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--texte-doux); }
+.cx-entete h1 { margin: 2px 0 0; font-size: 22px; line-height: 1.2; }
+
+form h2 { margin: 0 0 14px; font-size: 17px; }
+form[hidden] { display: none; }
+
+.cx-champ { display: grid; gap: 6px; margin-bottom: 14px; }
+.cx-champ > span:first-child { font-weight: 600; font-size: 14px; }
+.cx-champ small { font-weight: 400; color: var(--texte-doux); }
+
+.cx-champ input {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--bord);
+  border-radius: 10px;
+  background: var(--surface-2);
+  color: var(--texte);
+  font: inherit;
+}
+.cx-champ input:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; background: var(--surface); }
+.cx-champ input[aria-invalid="true"] { border-color: var(--rouge); }
+.cx-champ input[readonly] { opacity: 0.7; }
+
+.cx-mot-de-passe { position: relative; display: block; }
+.cx-mot-de-passe input { padding-right: 88px; }
+.cx-voir {
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  transform: translateY(-50%);
+  min-height: 32px;
+  padding: 4px 10px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--accent);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+:root[data-theme="dark"] .cx-voir { color: var(--or); }
+.cx-voir:hover { background: var(--surface); }
+.cx-voir:focus-visible { outline: 2px solid var(--focus); }
+
+.cx-erreur-champ { color: var(--rouge) !important; font-size: 13px; }
+
+.cx-message { margin: 0 0 14px; padding: 10px 12px; border-radius: 10px; font-size: 14px; }
+.cx-message.erreur { background: var(--rouge-fond); color: var(--rouge); }
+.cx-message.info { background: var(--info-fond); color: var(--texte); }
+.cx-message[hidden], .cx-erreur-champ[hidden] { display: none; }
+
+.cx-aide { margin: -6px 0 14px; color: var(--texte-doux); font-size: 14px; }
+
+.cx-principal {
+  width: 100%;
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--accent);
+  color: var(--accent-texte);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+.cx-principal:hover { filter: brightness(1.08); }
+.cx-principal:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.cx-principal:disabled { cursor: progress; opacity: 0.85; }
+
+.cx-roue { display: none; width: 16px; height: 16px; border: 2px solid currentColor; border-right-color: transparent; border-radius: 50%; animation: cx-tour 0.8s linear infinite; }
+.cx-principal.en-cours .cx-roue { display: inline-block; }
+@keyframes cx-tour { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .cx-roue { animation-duration: 2.4s; } }
+
+.cx-liens { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 14px; flex-wrap: wrap; }
+.cx-liens a, .cx-lien { color: var(--texte-doux); font: inherit; font-size: 14px; background: none; border: 0; padding: 6px 0; cursor: pointer; text-decoration: underline; }
+.cx-liens a[hidden] { display: none; }
+.cx-lien { margin-left: auto; }
+
+.cx-pied { margin-top: 18px; padding-top: 12px; border-top: 1px solid var(--bord); color: var(--texte-doux); font-size: 12.5px; }
+.cx-pied p { margin: 0; }
+
+@media (max-width: 480px) {
+  body.page-connexion { place-items: start center; padding-top: 16px; }
+  .cx-carte { padding: 22px 18px 16px; border-radius: 14px; }
+  .cx-entete img { width: 52px; height: 52px; }
+  .cx-entete h1 { font-size: 20px; }
+}

@@ -1,0 +1,1567 @@
+barrage_id,nom,type,brigade,compagnie,region,A/C,ADJT,MDLC,MDLG,total_par_creneau
+mq_msol48ct_e71f7eaba7,"RN1 — Oued Craa 17 km SO",barrage_fixe,"Aarich","Dakhla","Dakhla",1,1,1,3,6
+mq_msol48ct_09899c1874,"RN1 — Oued Craa 34 km SO",barrage_fixe,"Aarich","Dakhla","Dakhla",1,1,1,3,6
+mq_msol48ct_21a2dfd0d2,"RN1 — Oued Craa 48 km SO",barrage_fixe,"Aarich","Dakhla","Dakhla",1,1,1,3,6
+mq_msol48ct_314213bf4d,"RN1 — Aarich 33 km NE",barrage_fixe,"Aarich","Dakhla","Dakhla",1,1,1,3,6
+mq_msol48ct_ad1c4036ba,"RN1 — Aarich 16 km NE",barrage_fixe,"Aarich","Dakhla","Dakhla",1,1,1,3,6
+mq_mspur06s_867608ff40,"RN1 — Aarich 4 km S",barrage_mobile,"Aarich","Dakhla","Dakhla",0,0,1,2,3
+mq_msra8pqy_0222d61c,"RN1 — Oued Craa 19 km SO",barrage_fixe,"Aarich","Dakhla","Dakhla",1,1,1,3,6
+mq_msol48ct_50776315fd,"RN14 — Abbettih 33 km NE",barrage_fixe,"Abteh","Tan Tan","Guelmim",1,1,1,3,6
+mq_msol48ct_fa428ecc76,"RN14 — Abbettih 16 km NE",barrage_fixe,"Abteh","Tan Tan","Guelmim",1,1,1,3,6
+mq_mspur06t_469da0a429,"RN14 — Abbettih 4 km SO",barrage_mobile,"Abteh","Tan Tan","Guelmim",0,0,1,2,3
+mq_msol48cy_be47f34ef7,"RR507 — Adrej",barrage_fixe,"Adrej","Sefrou","Fès",1,1,1,3,6
+mq_semis_4519eb77,"Poste mobile Adrej (DEMO)",barrage_mobile,"Adrej","Sefrou","Fès",0,0,1,2,3
+mq_semis_14d669b5,"Poste fixe Afourer (DEMO)",barrage_fixe,"Afourer","Azilal","Béni Mellal",1,1,1,3,6
+mq_semis_9187e3b5,"Poste mobile Afourer (DEMO)",barrage_mobile,"Afourer","Azilal","Béni Mellal",0,0,1,2,3
+mq_mspv1v43_63f0ae64,"Entrée RN11 — Drarga",barrage_fixe,"Agadir","Agadir","Agadir",1,1,1,3,6
+mq_semis_90cc7335,"Poste mobile Agadir (DEMO)",barrage_mobile,"Agadir","Agadir","Agadir",0,0,1,2,3
+mq_mspur06t_805bff2b47,"RR212 — Loudaya",barrage_mobile,"Agafay","Marrakech","Marrakech",0,0,1,2,3
+mq_semis_dd590e6a,"Poste fixe Agafay (DEMO)",barrage_fixe,"Agafay","Marrakech","Marrakech",1,1,1,3,6
+mq_mshbkuqf_3eaba75e,"Agdez",barrage_fixe,"Agdez","Zagora","Ouarzazate",1,1,1,3,6
+mq_msjdq5gi_afe6873c,"RN9 — Agdez 29.4 km ESE #2",barrage_fixe,"Agdez","Zagora","Ouarzazate",1,1,1,3,6
+mq_msjnz6pq_4e99ecbc,"RN9 — Agdez 29.4 km ESE #3",barrage_fixe,"Agdez","Zagora","Ouarzazate",1,1,1,3,6
+mq_msol48ct_e3e4bc8257,"RN9 — Ouarzazate",barrage_fixe,"Agdez","Zagora","Ouarzazate",1,1,1,3,6
+mq_msol48ct_a7f0de510e,"RN9 — Agdez 13 km E",barrage_fixe,"Agdez","Zagora","Ouarzazate",1,1,1,3,6
+mq_msol48cw_c3d3b53d74,"RR108 — Agdez 33 km SO",barrage_fixe,"Agdez","Zagora","Ouarzazate",1,1,1,3,6
+mq_msol48cw_989d37916a,"RR108 — Nkob 25 km SO",barrage_fixe,"Agdez","Zagora","Ouarzazate",1,1,1,3,6
+mq_mspur06t_83c3f4ff7d,"RR108 — Agdez 17 km SO",barrage_mobile,"Agdez","Zagora","Ouarzazate",0,0,1,2,3
+mq_msra8pkb_f64bf08a,"Entrée RN9 — Agdez",barrage_fixe,"Agdez","Zagora","Ouarzazate",1,1,1,3,6
+mq_msol48ct_3e05340059,"Entrée RN12 — Arhbala",barrage_fixe,"Aghbala","Béni Mellal","Béni Mellal",1,1,1,3,6
+mq_mspur06s_0dfd2509e8,"RN12 — Imilchil 12 km NO",barrage_mobile,"Aghbala","Béni Mellal","Béni Mellal",0,0,1,2,3
+mq_msol48cu_096d428918,"RR104 — Mirleft 6 km NE",barrage_fixe,"Aglou","Tiznit","Agadir",1,1,1,3,6
+mq_mspur06t_2c1d984881,"RN1 — Tiznit 7 km SO",barrage_mobile,"Aglou","Tiznit","Agadir",0,0,1,2,3
+mq_mspv1v43_38549938,"RR104 — Tiznit",barrage_fixe,"Aglou","Tiznit","Agadir",1,1,1,3,6
+mq_mspv1v43_73efbb17,"RN1 — Tiznit 6 km NO",barrage_fixe,"Aglou","Tiznit","Agadir",1,1,1,3,6
+mq_semis_c27a3875,"Poste fixe Agourai (DEMO)",barrage_fixe,"Agourai","El Hajeb","Meknès",1,1,1,3,6
+mq_semis_84642075,"Poste mobile Agourai (DEMO)",barrage_mobile,"Agourai","El Hajeb","Meknès",0,0,1,2,3
+mq_mspur06s_be5972d6f9,"RN8 — Tighassaline 7 km NE",barrage_mobile,"Aguelmam Azegza","Khénifra","Khénifra",0,0,1,2,3
+mq_mspur06t_518e2ab958,"RR319 — Aguelmam Azegza 6 km O",barrage_mobile,"Aguelmam Azegza","Khénifra","Khénifra",0,0,1,2,3
+mq_mspur06t_9bfab313d1,"RR319 — Aguelmam Azegza 11 km SE",barrage_mobile,"Aguelmam Azegza","Khénifra","Khénifra",0,0,1,2,3
+mq_semis_40570a46,"Poste fixe Aguelmam Azegza (DEMO)",barrage_fixe,"Aguelmam Azegza","Khénifra","Khénifra",1,1,1,3,6
+mq_msol48cs_5fd41efa65,"RN29 — Aguelmous 7 km SE",barrage_fixe,"Aguelmous","Khénifra","Khénifra",1,1,1,3,6
+mq_mspur06t_a3029b65b1,"RN29 — Aguelmous 8 km O",barrage_mobile,"Aguelmous","Khénifra","Khénifra",0,0,1,2,3
+mq_msra8pq5_93114803,"RN29 — Aguelmous 10 km SE",barrage_fixe,"Aguelmous","Khénifra","Khénifra",1,1,1,3,6
+mq_msol48ct_013583349c,"RN17 — Ahfir",barrage_fixe,"Ahfir","Berkane","Oujda",1,1,1,3,6
+mq_mspur06s_05f5f32145,"RN2 — Berkane",barrage_mobile,"Ahfir","Berkane","Oujda",0,0,1,2,3
+mq_semis_51a2d3af,"Poste fixe Ahl Angad (DEMO)",barrage_fixe,"Ahl Angad","Oujda","Oujda",1,1,1,3,6
+mq_semis_c85e0ebb,"Poste mobile Ahl Angad (DEMO)",barrage_mobile,"Ahl Angad","Oujda","Oujda",0,0,1,2,3
+mq_semis_90712459,"Poste fixe Ain Aicha (DEMO)",barrage_fixe,"Ain Aicha","Taounate","Fès",1,1,1,3,6
+mq_semis_7a067449,"Poste mobile Ain Aicha (DEMO)",barrage_mobile,"Ain Aicha","Taounate","Fès",0,0,1,2,3
+mq_semis_17e37455,"Poste fixe Ain Aouda (DEMO)",barrage_fixe,"Ain Aouda","Ain Aouda","Rabat",1,1,1,3,6
+mq_semis_58776555,"Poste mobile Ain Aouda (DEMO)",barrage_mobile,"Ain Aouda","Ain Aouda","Rabat",0,0,1,2,3
+mq_msol48cs_36b0ee8aa8,"RN17 — Ain Beni Mathar 15 km N",barrage_fixe,"Ain Beni Mathar","Jerrada","Oujda",1,1,1,3,6
+mq_msol48cs_59131d405b,"RN17 — Ain Beni Mathar 4 km S",barrage_fixe,"Ain Beni Mathar","Jerrada","Oujda",1,1,1,3,6
+mq_msol48cs_9d485e2dbf,"RN17 — Ain Beni Mathar 21 km S",barrage_fixe,"Ain Beni Mathar","Jerrada","Oujda",1,1,1,3,6
+mq_msol48cu_0c7e6472b1,"RR608 — Ain Beni Mathar 23 km E",barrage_fixe,"Ain Beni Mathar","Jerrada","Oujda",1,1,1,3,6
+mq_msol48cu_8c851476b2,"RR608 — Ain Beni Mathar 31 km O",barrage_fixe,"Ain Beni Mathar","Jerrada","Oujda",1,1,1,3,6
+mq_msol48cy_4fe6f36d56,"RR606 — Ain Beni Mathar",barrage_fixe,"Ain Beni Mathar","Jerrada","Oujda",1,1,1,3,6
+mq_msol48cy_8d9721ed2d,"RR606 — Debdou 39 km SE",barrage_fixe,"Ain Beni Mathar","Jerrada","Oujda",1,1,1,3,6
+mq_mspur06t_079051dfdb,"RR608 — Ain Beni Mathar 12 km O",barrage_mobile,"Ain Beni Mathar","Jerrada","Oujda",0,0,1,2,3
+mq_semis_7e22e913,"Poste fixe Ain Bou Ali (DEMO)",barrage_fixe,"Ain Bou Ali","Moulay Yacoub","Fès",1,1,1,3,6
+mq_semis_1e56f84f,"Poste mobile Ain Bou Ali (DEMO)",barrage_mobile,"Ain Bou Ali","Moulay Yacoub","Fès",0,0,1,2,3
+mq_msol48cu_530e0f019e,"Entrée RN17 — Ain Chair",barrage_fixe,"Ain Chair","Figuig","Bouarfa",1,1,1,3,6
+mq_msol48cu_c98371fccd,"RN17 — Ain Chair 9 km NE",barrage_fixe,"Ain Chair","Figuig","Bouarfa",1,1,1,3,6
+mq_semis_afeddf30,"Poste mobile Ain Chair (DEMO)",barrage_mobile,"Ain Chair","Figuig","Bouarfa",0,0,1,2,3
+mq_semis_75f000d1,"Poste fixe Ain Cheggag (DEMO)",barrage_fixe,"Ain Cheggag","Sefrou","Fès",1,1,1,3,6
+mq_semis_911b1461,"Poste mobile Ain Cheggag (DEMO)",barrage_mobile,"Ain Cheggag","Sefrou","Fès",0,0,1,2,3
+mq_semis_569cbf1a,"Poste fixe Ain Chouater (DEMO)",barrage_fixe,"Ain Chouater","Figuig","Bouarfa",1,1,1,3,6
+mq_semis_d7ab08aa,"Poste mobile Ain Chouater (DEMO)",barrage_mobile,"Ain Chouater","Figuig","Bouarfa",0,0,1,2,3
+mq_mspur06s_ec20cb31e1,"RN13 — Ain Dfali 4 km SE",barrage_mobile,"Ain Dfali","Sidi Kacem","Sidi Kacem",0,0,1,2,3
+mq_mspur06s_c75e954a40,"RN13 — Ain Dfali 11 km N",barrage_mobile,"Ain Dfali","Sidi Kacem","Sidi Kacem",0,0,1,2,3
+mq_semis_fadd8d3f,"Poste fixe Ain Dfali (DEMO)",barrage_fixe,"Ain Dfali","Sidi Kacem","Sidi Kacem",1,1,1,3,6
+mq_msol48cu_1c7988eb75,"Entrée RR408 — Ain Dorrij",barrage_fixe,"Ain Dorrij","Ouazzane","Tétouan",1,1,1,3,6
+mq_semis_687f7ef5,"Poste mobile Ain Dorrij (DEMO)",barrage_mobile,"Ain Dorrij","Ouazzane","Tétouan",0,0,1,2,3
+mq_mskrs747_7f7e45cb,"Meknes 9 km SO",barrage_fixe,"Ain El Orma","Meknès","Meknès",1,1,1,3,6
+mq_mspur06t_8accd16f5f,"RR705 — Ain El Orma",barrage_mobile,"Ain El Orma","Meknès","Meknès",0,0,1,2,3
+mq_msra8pns_8b57ab3a,"Entrée A2 — Meknes",barrage_fixe,"Ain El Orma","Meknès","Meknès",1,1,1,3,6
+mq_msjnz6ou_5f949032,"RN9 — Ain Harrouda",barrage_fixe,"Ain Harrouda","Mohammedia","Casablanca",1,1,1,3,6
+mq_semis_59e72733,"Poste mobile Ain Harrouda (DEMO)",barrage_mobile,"Ain Harrouda","Mohammedia","Casablanca",0,0,1,2,3
+mq_msol48cx_5c87253fb8,"RR705 — Ain Jemaa",barrage_fixe,"Ain Jemaa","Meknès","Meknès",1,1,1,3,6
+mq_mspur06s_37f93faf1c,"RN27 — Mrhassiyine",barrage_mobile,"Ain Jemaa","Meknès","Meknès",0,0,1,2,3
+mq_semis_ceb1939f,"Poste fixe Ain Louh (DEMO)",barrage_fixe,"Ain Louh","Azrou","Meknès",1,1,1,3,6
+mq_semis_b01c174b,"Poste mobile Ain Louh (DEMO)",barrage_mobile,"Ain Louh","Azrou","Meknès",0,0,1,2,3
+mq_semis_2f750d83,"Poste fixe Ain Sbit (DEMO)",barrage_fixe,"Ain Sbit","Rommani","Khémisset",1,1,1,3,6
+mq_semis_e515f35f,"Poste mobile Ain Sbit (DEMO)",barrage_mobile,"Ain Sbit","Rommani","Khémisset",0,0,1,2,3
+mq_semis_c588476a,"Poste fixe Ain Sebâa (DEMO)",barrage_fixe,"Ain Sebâa","Mediouna","Casablanca",1,1,1,3,6
+mq_semis_d684ec1a,"Poste mobile Ain Sebâa (DEMO)",barrage_mobile,"Ain Sebâa","Mediouna","Casablanca",0,0,1,2,3
+mq_semis_dd2ac6d9,"Poste fixe Ain Sfa (DEMO)",barrage_fixe,"Ain Sfa","Oujda","Oujda",1,1,1,3,6
+mq_semis_ae9b1ac9,"Poste mobile Ain Sfa (DEMO)",barrage_mobile,"Ain Sfa","Oujda","Oujda",0,0,1,2,3
+mq_msol48cs_c3b8f0e4ab,"A2 — Ain Taoujdat",barrage_fixe,"Ain Taoujtat","El Hajeb","Meknès",1,1,1,3,6
+mq_semis_a80ceb9b,"Poste mobile Ain Taoujtat (DEMO)",barrage_mobile,"Ain Taoujtat","El Hajeb","Meknès",0,0,1,2,3
+mq_msol48cv_547089f9e0,"RR511 — Azib Midar",barrage_fixe,"Ain Zohra","Azib Midar","Nador",1,1,1,3,6
+mq_mspur06t_f62138cd9b,"RR511 — Ain Zohra",barrage_mobile,"Ain Zohra","Azib Midar","Nador",0,0,1,2,3
+mq_mspur06t_c73170bfa9,"RR304 — Ait Aatab",barrage_mobile,"Ait Aatab","Azilal","Béni Mellal",0,0,1,2,3
+mq_semis_0a2ec116,"Poste fixe Ait Aatab (DEMO)",barrage_fixe,"Ait Aatab","Azilal","Béni Mellal",1,1,1,3,6
+mq_msol48cu_5e37a7ce52,"Entrée RR106 — Ait Abdellah",barrage_fixe,"Ait Abdallah","Taroudannt","Agadir",1,1,1,3,6
+mq_msol48cu_60f54e294a,"RR105 — Tafraoute",barrage_fixe,"Ait Abdallah","Taroudannt","Agadir",1,1,1,3,6
+mq_msol48cw_a61aa3a9a1,"RR106 — Ait Abdellah",barrage_fixe,"Ait Abdallah","Taroudannt","Agadir",1,1,1,3,6
+mq_semis_e2be863c,"Poste mobile Ait Abdallah (DEMO)",barrage_mobile,"Ait Abdallah","Taroudannt","Agadir",0,0,1,2,3
+mq_semis_4e514067,"Poste fixe Ait Amira (DEMO)",barrage_fixe,"Ait Amira","Biougra","Agadir",1,1,1,3,6
+mq_semis_862eeb33,"Poste mobile Ait Amira (DEMO)",barrage_mobile,"Ait Amira","Biougra","Agadir",0,0,1,2,3
+mq_msol48cu_a2d206bcd8,"RR105 — Ait Baha 14 km SE",barrage_fixe,"Ait Baha","Biougra","Agadir",1,1,1,3,6
+mq_msol48cx_97f92bede9,"RR105 — Ait Baha 3 km NO",barrage_fixe,"Ait Baha","Biougra","Agadir",1,1,1,3,6
+mq_semis_9a4cb9c7,"Poste mobile Ait Baha (DEMO)",barrage_mobile,"Ait Baha","Biougra","Agadir",0,0,1,2,3
+mq_msol48cu_875b3f8fda,"Entrée RN25 — Ait Chouarite",barrage_fixe,"Ait Chouarite","Azilal","Béni Mellal",1,1,1,3,6
+mq_semis_a4931257,"Poste mobile Ait Chouarite (DEMO)",barrage_mobile,"Ait Chouarite","Azilal","Béni Mellal",0,0,1,2,3
+mq_msol48cw_c08ba82741,"RR203 — Ait Daoud 4 km NO",barrage_fixe,"Ait Daoud","Tamanar","Essaouira",1,1,1,3,6
+mq_msol48cy_bc03ec9721,"RR203 — Ait Daoud 15 km SO",barrage_fixe,"Ait Daoud","Tamanar","Essaouira",1,1,1,3,6
+mq_semis_2edebbba,"Poste mobile Ait Daoud (DEMO)",barrage_mobile,"Ait Daoud","Tamanar","Essaouira",0,0,1,2,3
+mq_msojamr8_4442de71,"Sortie RR114 — Taroudant",barrage_fixe,"Ait Iaaza","Taroudannt","Agadir",1,1,1,3,6
+mq_mspv1v43_b6d4fb85,"Entrée RR114 — Ait Iaaza",barrage_fixe,"Ait Iaaza","Taroudannt","Agadir",1,1,1,3,6
+mq_semis_d1d0d427,"Poste mobile Ait Iaaza (DEMO)",barrage_mobile,"Ait Iaaza","Taroudannt","Agadir",0,0,1,2,3
+mq_msojamr8_2f6b1895,"RN8 — Ait Ishaq",barrage_fixe,"Ait Ishaq","Ait Ishaq","Khénifra",1,1,1,3,6
+mq_mspv1v44_b1475c14,"RN8 — Tighassaline 3 km SO",barrage_fixe,"Ait Ishaq","Ait Ishaq","Khénifra",1,1,1,3,6
+mq_semis_ff82170d,"Poste mobile Ait Ishaq (DEMO)",barrage_mobile,"Ait Ishaq","Ait Ishaq","Khénifra",0,0,1,2,3
+mq_msjnz6ma_b016518a,"Entrée A2 — Khemisset",barrage_fixe,"Ait Ouribel","Khémisset","Khémisset",1,1,1,3,6
+mq_msjo0hcs_6404e287,"A2 — Khemisset 11 km SE",barrage_fixe,"Ait Ouribel","Khémisset","Khémisset",1,1,1,3,6
+mq_mskhlm7m_3ed888b1,"A2 — Khemisset 3 km SO",barrage_fixe,"Ait Ouribel","Khémisset","Khémisset",1,1,1,3,6
+mq_mspv1v43_edc0657e,"RR404 — Ait Ouribel",barrage_fixe,"Ait Ouribel","Khémisset","Khémisset",1,1,1,3,6
+mq_semis_a78d1cb3,"Poste mobile Ait Ouribel (DEMO)",barrage_mobile,"Ait Ouribel","Khémisset","Khémisset",0,0,1,2,3
+mq_msol48ct_cc42890368,"RN9 — Ait Ourir",barrage_fixe,"Ait Ourir","Tahannaout","Marrakech",1,1,1,3,6
+mq_semis_739ddc6e,"Poste mobile Ait Ourir (DEMO)",barrage_mobile,"Ait Ourir","Tahannaout","Marrakech",0,0,1,2,3
+mq_msm4d6la_db3a0a0f,"Ait Siberne",barrage_mobile,"Ait Siberne","Khémisset","Khémisset",0,0,1,2,3
+mq_msol48cv_85e752d03b,"RR701 — Sebt Jahjouh",barrage_fixe,"Ait Siberne","Khémisset","Khémisset",1,1,1,3,6
+mq_mspur06t_ab4e0f7765,"RR409 — Ait Yadine 7 km S",barrage_mobile,"Ait Yadine","Khémisset","Khémisset",0,0,1,2,3
+mq_mspur06t_e7c328d39b,"RR409 — Ait Yadine 12 km NE",barrage_mobile,"Ait Yadine","Khémisset","Khémisset",0,0,1,2,3
+mq_semis_3dc97385,"Poste fixe Ait Yadine (DEMO)",barrage_fixe,"Ait Yadine","Khémisset","Khémisset",1,1,1,3,6
+mq_msol48cv_8417011bd8,"RR402 — Sebt Jahjouh",barrage_fixe,"Ait Yazem","El Hajeb","Meknès",1,1,1,3,6
+mq_semis_e6354f45,"Poste mobile Ait Yazem (DEMO)",barrage_mobile,"Ait Yazem","El Hajeb","Meknès",0,0,1,2,3
+mq_msol48cv_0e1d0d8e52,"RR510 — Ajdir",barrage_fixe,"Ajdir","Taza","Taza",1,1,1,3,6
+mq_semis_367d296f,"Poste mobile Ajdir (DEMO)",barrage_mobile,"Ajdir","Taza","Taza",0,0,1,2,3
+mq_msol48ct_a638c2beb2,"RN1 — Akhfenir 19 km SO",barrage_fixe,"Akhfenir","Tarfaya","Laayoune",1,1,1,3,6
+mq_msol48cu_be8d3d0560,"RN1 — Akhfenir 12 km NE",barrage_fixe,"Akhfenir","Tarfaya","Laayoune",1,1,1,3,6
+mq_mspur06s_63d5c78c98,"RN1 — Akhfenir 6 km O",barrage_mobile,"Akhfenir","Tarfaya","Laayoune",0,0,1,2,3
+mq_msol48ct_63c5abcef8,"RN17 — Akka 23 km SO",barrage_fixe,"Akka","Tata","Agadir",1,1,1,3,6
+mq_msol48ct_c0ef657ad7,"RN17 — Akka 4 km SO",barrage_fixe,"Akka","Tata","Agadir",1,1,1,3,6
+mq_msol48ct_8f55c2c21c,"RN17 — Foum El Hisn 19 km E",barrage_fixe,"Akka","Tata","Agadir",1,1,1,3,6
+mq_msol48cu_709c72de75,"RN17 — Foum El Hisn 35 km NE",barrage_fixe,"Akka","Tata","Agadir",1,1,1,3,6
+mq_semis_6421a2b7,"Poste mobile Akka (DEMO)",barrage_mobile,"Akka","Tata","Agadir",0,0,1,2,3
+mq_msol48cs_e08af886c4,"Entrée RN2 — Aklim",barrage_fixe,"Aklim","Berkane","Oujda",1,1,1,3,6
+mq_semis_009cf2d7,"Poste mobile Aklim (DEMO)",barrage_mobile,"Aklim","Berkane","Oujda",0,0,1,2,3
+mq_msol48cs_5b4ba2a666,"Entrée RN29 — Aknoul",barrage_fixe,"Aknoul","Taza","Taza",1,1,1,3,6
+mq_semis_ed68e631,"Poste mobile Aknoul (DEMO)",barrage_mobile,"Aknoul","Taza","Taza",0,0,1,2,3
+mq_msol48ct_0525aefa20,"Entrée RN15 — Al Aaroui",barrage_fixe,"Al Aaroui","Zaiou","Nador",1,1,1,3,6
+mq_msol48ct_18c224e00f,"RN19 — Zaiou",barrage_fixe,"Al Aaroui","Zaiou","Nador",1,1,1,3,6
+mq_mspur06s_a6af64b8dd,"RN19 — Selouane",barrage_mobile,"Al Aaroui","Zaiou","Nador",0,0,1,2,3
+mq_mspur06s_ee90094a83,"RN19 — Al Aaroui",barrage_mobile,"Al Aaroui","Zaiou","Nador",0,0,1,2,3
+mq_semis_d2417400,"Poste fixe Al Hamd (DEMO)",barrage_fixe,"Al Hamd","Mediouna","Casablanca",1,1,1,3,6
+mq_semis_a515b2dc,"Poste mobile Al Hamd (DEMO)",barrage_mobile,"Al Hamd","Mediouna","Casablanca",0,0,1,2,3
+mq_semis_4513aa8c,"Poste fixe Al Hoceima (DEMO)",barrage_fixe,"Al Hoceima","Al Hoceima","Al Hoceima",1,1,1,3,6
+mq_semis_9e2f2468,"Poste mobile Al Hoceima (DEMO)",barrage_mobile,"Al Hoceima","Al Hoceima","Al Hoceima",0,0,1,2,3
+mq_semis_6dc25c48,"Poste fixe Al Mokhtar (DEMO)",barrage_fixe,"Al Mokhtar","Sidi Kacem","Sidi Kacem",1,1,1,3,6
+mq_semis_49062704,"Poste mobile Al Mokhtar (DEMO)",barrage_mobile,"Al Mokhtar","Sidi Kacem","Sidi Kacem",0,0,1,2,3
+mq_msol48ct_5f98eca0ac,"RN17 — Alnif 17 km SO",barrage_fixe,"Alnif","Tinghir","Ouarzazate",1,1,1,3,6
+mq_msol48cu_5b3a744c4b,"RN17 — Alnif 8 km E",barrage_fixe,"Alnif","Tinghir","Ouarzazate",1,1,1,3,6
+mq_msol48cu_2f7dff750e,"RN17 — Alnif 26 km E",barrage_fixe,"Alnif","Tinghir","Ouarzazate",1,1,1,3,6
+mq_msol48cu_3466568288,"RN17 — Melaab",barrage_fixe,"Alnif","Tinghir","Ouarzazate",1,1,1,3,6
+mq_msol48cu_72f12aff2b,"RN17 — Rissani 26 km O",barrage_fixe,"Alnif","Tinghir","Ouarzazate",1,1,1,3,6
+mq_mspur06t_a14166640a,"RN17 — Tazarine 22 km NE",barrage_mobile,"Alnif","Tinghir","Ouarzazate",0,0,1,2,3
+mq_msol48cs_0879c5e083,"Entrée RN10 — Amerzgane",barrage_fixe,"Amerzgane","Ouarzazate","Ouarzazate",1,1,1,3,6
+mq_mspur06s_a15946f61e,"RN10 — Amerzgane",barrage_mobile,"Amerzgane","Ouarzazate","Ouarzazate",0,0,1,2,3
+mq_mspur06t_4f91fe8d87,"RR209 — Amizmiz",barrage_mobile,"Amezmiz","Tahannaout","Marrakech",0,0,1,2,3
+mq_mspur06t_e434f25aa3,"RR209 — Had Mejjat",barrage_mobile,"Amezmiz","Tahannaout","Marrakech",0,0,1,2,3
+mq_semis_0f3f2442,"Poste fixe Amezmiz (DEMO)",barrage_fixe,"Amezmiz","Tahannaout","Marrakech",1,1,1,3,6
+mq_msol48cv_c0ac031007,"RR704 — Tounfite 38 km SE",barrage_fixe,"Amouguer","Midelt","Errachidia",1,1,1,3,6
+mq_semis_4b3afd92,"Poste mobile Amouguer (DEMO)",barrage_mobile,"Amouguer","Midelt","Errachidia",0,0,1,2,3
+mq_msol48cs_f951d9d974,"Entrée A3 — Amskroud",barrage_fixe,"Amskroud","Agadir","Agadir",1,1,1,3,6
+mq_msra8ppm_6b7a1273,"A3 — Amskroud",barrage_fixe,"Amskroud","Agadir","Agadir",1,1,1,3,6
+mq_semis_da7ced31,"Poste mobile Amskroud (DEMO)",barrage_mobile,"Amskroud","Agadir","Agadir",0,0,1,2,3
+mq_semis_90f20b95,"Poste fixe Anzi (DEMO)",barrage_fixe,"Anzi","Tiznit","Agadir",1,1,1,3,6
+mq_semis_a6c1ed95,"Poste mobile Anzi (DEMO)",barrage_mobile,"Anzi","Tiznit","Agadir",0,0,1,2,3
+mq_msol48cs_2004f48c09,"RN17 — Aoufous 8 km N",barrage_fixe,"Aoufous","Errachidia","Errachidia",1,1,1,3,6
+mq_semis_921bb349,"Poste mobile Aoufous (DEMO)",barrage_mobile,"Aoufous","Errachidia","Errachidia",0,0,1,2,3
+mq_msol48ct_e42d86fe30,"Entrée RN10 — Aoulouz",barrage_fixe,"Aoulouz","Taroudannt","Agadir",1,1,1,3,6
+mq_msol48cv_a8942d1dac,"RR110 — Aoulouz 17 km E",barrage_fixe,"Aoulouz","Taroudannt","Agadir",1,1,1,3,6
+mq_mspur06s_c08b3d333f,"RN10 — Ouled Berrehil",barrage_mobile,"Aoulouz","Taroudannt","Agadir",0,0,1,2,3
+mq_msol48ct_09e0e615de,"RN3 — Aousserd 99 km NO",barrage_fixe,"Aousserd","Aousserd","Dakhla",1,1,1,3,6
+mq_msol48ct_5614a94704,"RN3 — Aousserd 82 km NO",barrage_fixe,"Aousserd","Aousserd","Dakhla",1,1,1,3,6
+mq_msol48ct_cd4061c3e5,"RN3 — Aousserd 64 km NO",barrage_fixe,"Aousserd","Aousserd","Dakhla",1,1,1,3,6
+mq_msol48ct_c0fe140942,"RN3 — Aousserd 46 km NO",barrage_fixe,"Aousserd","Aousserd","Dakhla",1,1,1,3,6
+mq_msol48ct_b7500142b4,"RN3 — Aousserd 28 km NO",barrage_fixe,"Aousserd","Aousserd","Dakhla",1,1,1,3,6
+mq_msol48cu_e54384f9f9,"RN3 — Aousserd 11 km NO",barrage_fixe,"Aousserd","Aousserd","Dakhla",1,1,1,3,6
+mq_msol48cu_62c8d0c9c4,"RN17 — Aousserd 124 km SO",barrage_fixe,"Aousserd","Aousserd","Dakhla",1,1,1,3,6
+mq_msol48cu_b0e5e3752d,"RN17 — Aousserd 131 km SO",barrage_fixe,"Aousserd","Aousserd","Dakhla",1,1,1,3,6
+mq_msol48cu_ae5f5665be,"RN17 — Aousserd 146 km SO",barrage_fixe,"Aousserd","Aousserd","Dakhla",1,1,1,3,6
+mq_msol48cu_b9404435dd,"RN17 — Bir Guendouz 148 km SE",barrage_fixe,"Aousserd","Aousserd","Dakhla",1,1,1,3,6
+mq_msol48cu_63f8ea94dd,"RN17 — Bir Guendouz 137 km SE",barrage_fixe,"Aousserd","Aousserd","Dakhla",1,1,1,3,6
+mq_msol48cu_69841bfe61,"RN17 — Bir Guendouz 121 km SE",barrage_fixe,"Aousserd","Aousserd","Dakhla",1,1,1,3,6
+mq_mtk6t6qn_bc8df04f,"(sans nom)",barrage_fixe,"Aousserd","Aousserd","Dakhla",1,1,1,3,6
+mq_semis_d8cd08a1,"Poste mobile Aousserd (DEMO)",barrage_mobile,"Aousserd","Aousserd","Dakhla",0,0,1,2,3
+mq_msol48cy_54497b883b,"Entrée RR301 — Talmeste",barrage_fixe,"Aquermoud","Essaouira","Essaouira",1,1,1,3,6
+mq_mspur06t_62a33a6da0,"RR301 — Aquermoud",barrage_mobile,"Aquermoud","Essaouira","Essaouira",0,0,1,2,3
+mq_msol48ct_4f83f086bd,"RN8 — Gazet",barrage_fixe,"Arbaa Gazet","El Kelaâ Des Sraghna","Marrakech",1,1,1,3,6
+mq_semis_9756a73f,"Poste mobile Arbaa Gazet (DEMO)",barrage_mobile,"Arbaa Gazet","El Kelaâ Des Sraghna","Marrakech",0,0,1,2,3
+mq_mspur06t_972c38d720,"RN1 — Sidi Ameur Al Hadi",barrage_mobile,"Arbaoua","Souk Larbaa du Gharb","Kénitra",0,0,1,2,3
+mq_semis_535451fc,"Poste fixe Arbaoua (DEMO)",barrage_fixe,"Arbaoua","Souk Larbaa du Gharb","Kénitra",1,1,1,3,6
+mq_msojamr6_2e2fca39,"Sortie RN17 — Erfoud",barrage_fixe,"Arfoud","Arfoud","Errachidia",1,1,1,3,6
+mq_mspur06s_32c270a44e,"RN17 — Aoufous 10 km S",barrage_mobile,"Arfoud","Arfoud","Errachidia",0,0,1,2,3
+mq_mspv1v43_2508ca2e,"Entrée RN17 — Erfoud",barrage_fixe,"Arfoud","Arfoud","Errachidia",1,1,1,3,6
+mq_semis_b8e9846b,"Poste fixe Asilah (DEMO)",barrage_fixe,"Asilah","Tanger","Tanger",1,1,1,3,6
+mq_semis_3688a547,"Poste mobile Asilah (DEMO)",barrage_mobile,"Asilah","Tanger","Tanger",0,0,1,2,3
+mq_msol48cs_1057ab50a8,"RN7 — Tafingoult 21 km NE",barrage_fixe,"Asni","Tahannaout","Marrakech",1,1,1,3,6
+mq_msol48cs_7c734bc71b,"Entrée RN7 — Amizmiz",barrage_fixe,"Asni","Tahannaout","Marrakech",1,1,1,3,6
+mq_msol48ct_4c9f9be73e,"RN7 — Asni 10 km SO",barrage_fixe,"Asni","Tahannaout","Marrakech",1,1,1,3,6
+mq_mspur06s_b2dc3b727e,"RN7 — Asni 3 km NE",barrage_mobile,"Asni","Tahannaout","Marrakech",0,0,1,2,3
+mq_msojamr6_222ec2c5,"RN21 — Assa 7 km N",barrage_fixe,"Assa","Assa Zag","Guelmim",1,1,1,3,6
+mq_msol48ct_5b94627d1d,"RN17 — Assa 27 km S",barrage_fixe,"Assa","Assa Zag","Guelmim",1,1,1,3,6
+mq_msol48ct_ddf8970417,"RN17 — Zag 24 km N",barrage_fixe,"Assa","Assa Zag","Guelmim",1,1,1,3,6
+mq_msol48ct_217e382db3,"RN17 — Assa 22 km NE",barrage_fixe,"Assa","Assa Zag","Guelmim",1,1,1,3,6
+mq_msol48cu_3ef559e9a3,"RN21 — Assa 24 km N",barrage_fixe,"Assa","Assa Zag","Guelmim",1,1,1,3,6
+mq_mspur06s_d652a65c2a,"RN17 — Assa 13 km S",barrage_mobile,"Assa","Assa Zag","Guelmim",0,0,1,2,3
+mq_mspur06t_9592d0a5ce,"RN17 — Zag 10 km N",barrage_mobile,"Assa","Assa Zag","Guelmim",0,0,1,2,3
+mq_mspv1v43_a8648193,"RN17 — Assa 5 km SE",barrage_fixe,"Assa","Assa Zag","Guelmim",1,1,1,3,6
+mq_mspv1v43_ed80619f,"RN17 — Assa 5 km E",barrage_fixe,"Assa","Assa Zag","Guelmim",1,1,1,3,6
+mq_semis_e4fbf504,"Poste fixe Assoul (DEMO)",barrage_fixe,"Assoul","Tinghir","Ouarzazate",1,1,1,3,6
+mq_semis_0aa2b7a0,"Poste mobile Assoul (DEMO)",barrage_mobile,"Assoul","Tinghir","Ouarzazate",0,0,1,2,3
+mq_semis_3a4f1615,"Poste fixe Azemmour (DEMO)",barrage_fixe,"Azemmour","El Jadida","El Jadida",1,1,1,3,6
+mq_semis_89ec3c15,"Poste mobile Azemmour (DEMO)",barrage_mobile,"Azemmour","El Jadida","El Jadida",0,0,1,2,3
+mq_mspv1v43_665b120c,"RN2 — Azib Midar 6 km SO",barrage_fixe,"Azib Midar","Azib Midar","Nador",1,1,1,3,6
+mq_semis_4e205382,"Poste mobile Azib Midar (DEMO)",barrage_mobile,"Azib Midar","Azib Midar","Nador",0,0,1,2,3
+mq_msol48cu_2e54c260ca,"RR317 — Tabant 17 km NO",barrage_fixe,"Azilal","Azilal","Béni Mellal",1,1,1,3,6
+mq_mspur06t_c0fab1fc2d,"RN25 — Azilal 6 km SO",barrage_mobile,"Azilal","Azilal","Béni Mellal",0,0,1,2,3
+mq_mspv1v43_137fc5a2,"RR317 — Azilal",barrage_fixe,"Azilal","Azilal","Béni Mellal",1,1,1,3,6
+mq_mspv1v43_de5d6a7c,"RN25 — Azilal 6 km N",barrage_fixe,"Azilal","Azilal","Béni Mellal",1,1,1,3,6
+mq_semis_dbe42183,"Poste fixe Azla-Zaitoune (DEMO)",barrage_fixe,"Azla-Zaitoune","Tétouan","Tétouan",1,1,1,3,6
+mq_semis_b62d275f,"Poste mobile Azla-Zaitoune (DEMO)",barrage_mobile,"Azla-Zaitoune","Tétouan","Tétouan",0,0,1,2,3
+mq_msol48cy_b809b76a9c,"RR712 — Agourai",barrage_fixe,"Azrou","Azrou","Meknès",1,1,1,3,6
+mq_mspur06s_69eaf5522a,"RN13 — Azrou",barrage_mobile,"Azrou","Azrou","Meknès",0,0,1,2,3
+mq_mspv1v43_493086ea,"RN8 — Azrou 5 km NE",barrage_fixe,"Azrou","Azrou","Meknès",1,1,1,3,6
+mq_mspv1v43_0cb7fe95,"Entrée RN13 — Azrou",barrage_fixe,"Azrou","Azrou","Meknès",1,1,1,3,6
+mq_mspv1v43_cc3fcf30,"RN8 — Azrou 6 km O",barrage_fixe,"Azrou","Azrou","Meknès",1,1,1,3,6
+mq_mspv1v44_e214c0ab,"RR707 — Ifrane 5 km O",barrage_fixe,"Azrou","Azrou","Meknès",1,1,1,3,6
+mq_msol48cs_b682abbef9,"Entrée RN2 — Bab Berred",barrage_fixe,"Bab Berred","Chefchaouen","Tétouan",1,1,1,3,6
+mq_semis_5a1511ac,"Poste mobile Bab Berred (DEMO)",barrage_mobile,"Bab Berred","Chefchaouen","Tétouan",0,0,1,2,3
+mq_msol48cs_2ee493f9e6,"A4 — Tlat Loulad 8 km N",barrage_fixe,"Ben Ahmed","Settat","Settat",1,1,1,3,6
+mq_msol48cs_6bf8d8544b,"Entrée A4 — Ben Ahmed",barrage_fixe,"Ben Ahmed","Settat","Settat",1,1,1,3,6
+mq_semis_499b9fa5,"Poste mobile Ben Ahmed (DEMO)",barrage_mobile,"Ben Ahmed","Settat","Settat",0,0,1,2,3
+mq_mskznkg6_d00daab0,"Ben Mansour",barrage_fixe,"Ben Mansour","Kénitra","Kénitra",1,1,1,3,6
+mq_semis_83a6d151,"Poste mobile Ben Mansour (DEMO)",barrage_mobile,"Ben Mansour","Kénitra","Kénitra",0,0,1,2,3
+mq_mskzlhu1_b5b27028,"Ouled Tayeb",barrage_fixe,"Ben Souda","Moulay Yacoub","Fès",1,1,1,3,6
+mq_msra8pnx_89ef7b69,"Entrée A2 — Ouled Tayeb",barrage_fixe,"Ben Souda","Moulay Yacoub","Fès",1,1,1,3,6
+mq_semis_5c65cad2,"Poste mobile Ben Souda (DEMO)",barrage_mobile,"Ben Souda","Moulay Yacoub","Fès",0,0,1,2,3
+mq_msojamr6_97a4c70b,"Sortie RN9 — Base Benguerir",barrage_fixe,"Benguerir","Benguerir","Marrakech",1,1,1,3,6
+mq_msojamr6_1a1cd5dc,"Entrée RN9 — Benguerir",barrage_fixe,"Benguerir","Benguerir","Marrakech",1,1,1,3,6
+mq_msojamr6_ebd1e45a,"RR206 — Benguerir 6 km E",barrage_fixe,"Benguerir","Benguerir","Marrakech",1,1,1,3,6
+mq_mspur06t_2707a24e8a,"RR206 — Tnine Bouchane",barrage_mobile,"Benguerir","Benguerir","Marrakech",0,0,1,2,3
+mq_mspv1v43_bfaa8312,"RR206 — Benguerir 5 km SO",barrage_fixe,"Benguerir","Benguerir","Marrakech",1,1,1,3,6
+mq_msol48cv_25fb849968,"Entrée RR419 — Beni Ahmed",barrage_fixe,"Beni Ahmed","Chefchaouen","Tétouan",1,1,1,3,6
+mq_semis_3af2c1be,"Poste mobile Beni Ahmed (DEMO)",barrage_mobile,"Beni Ahmed","Chefchaouen","Tétouan",0,0,1,2,3
+mq_msol48cw_dbab87801d,"Entrée RR710 — Beni Batao",barrage_fixe,"Beni Bataou","Oued Zem","Khouribga",1,1,1,3,6
+mq_mspur06t_2f6d5195d1,"RR710 — Beni Batao",barrage_mobile,"Beni Bataou","Oued Zem","Khouribga",0,0,1,2,3
+mq_semis_2bd040d0,"Poste fixe Beni Drar (DEMO)",barrage_fixe,"Beni Drar","Oujda","Oujda",1,1,1,3,6
+mq_semis_a2c0324c,"Poste mobile Beni Drar (DEMO)",barrage_mobile,"Beni Drar","Oujda","Oujda",0,0,1,2,3
+mq_msojamr8_18051a23,"RN2 — Targuiste 7 km NE",barrage_fixe,"Beni Hadifa","Targuiste","Al Hoceima",1,1,1,3,6
+mq_msol48cs_d6321617ac,"RN2 — Imrabten 8 km O",barrage_fixe,"Beni Hadifa","Targuiste","Al Hoceima",1,1,1,3,6
+mq_msra8ppx_45e20345,"RN2 — Imrabten 6 km O",barrage_fixe,"Beni Hadifa","Targuiste","Al Hoceima",1,1,1,3,6
+mq_semis_037390d0,"Poste mobile Beni Hadifa (DEMO)",barrage_mobile,"Beni Hadifa","Targuiste","Al Hoceima",0,0,1,2,3
+mq_mspur06s_f9b687beed,"RN8 — Taghzirt",barrage_mobile,"Béni Mellal","Béni Mellal","Béni Mellal",0,0,1,2,3
+mq_semis_08180696,"Poste fixe Béni Mellal (DEMO)",barrage_fixe,"Béni Mellal","Béni Mellal","Béni Mellal",1,1,1,3,6
+mq_msol48cu_17a3d02fd8,"RR708 — Beni Tadjit 27 km NO",barrage_fixe,"Beni Tadjit","Bouarfa","Bouarfa",1,1,1,3,6
+mq_msol48cv_5e1d27b208,"RR708 — Beni Tadjit 10 km NO",barrage_fixe,"Beni Tadjit","Bouarfa","Bouarfa",1,1,1,3,6
+mq_msol48cw_fe3f0ace5f,"RR708 — Beni Tadjit 26 km E",barrage_fixe,"Beni Tadjit","Bouarfa","Bouarfa",1,1,1,3,6
+mq_msol48cx_1fd3d22f9e,"RR601 — Beni Tadjit",barrage_fixe,"Beni Tadjit","Bouarfa","Bouarfa",1,1,1,3,6
+mq_msol48cy_8b41d14b0d,"RR601 — Talsint",barrage_fixe,"Beni Tadjit","Bouarfa","Bouarfa",1,1,1,3,6
+mq_msol48cy_181a9833b9,"RR708 — Beni Tadjit 8 km E",barrage_fixe,"Beni Tadjit","Bouarfa","Bouarfa",1,1,1,3,6
+mq_semis_96f88fb1,"Poste mobile Beni Tadjit (DEMO)",barrage_mobile,"Beni Tadjit","Bouarfa","Bouarfa",0,0,1,2,3
+mq_msojamr6_fdd4d8e2,"Sortie RR404 — Benslimane",barrage_fixe,"Benslimane","Benslimane","Settat",1,1,1,3,6
+mq_mspv1v43_ba194610,"RR416 — Benslimane",barrage_fixe,"Benslimane","Benslimane","Settat",1,1,1,3,6
+mq_mspv1v43_b813df2b,"RR404 — Benslimane",barrage_fixe,"Benslimane","Benslimane","Settat",1,1,1,3,6
+mq_semis_0328ff1d,"Poste mobile Benslimane (DEMO)",barrage_mobile,"Benslimane","Benslimane","Settat",0,0,1,2,3
+mq_mspur06s_696a9b3b8e,"RN2 — Tafoghalt",barrage_mobile,"Berkane","Berkane","Oujda",0,0,1,2,3
+mq_mspv1v43_faad4a74,"Entrée RN2 — Berkane",barrage_fixe,"Berkane","Berkane","Oujda",1,1,1,3,6
+mq_msol48cv_58bf254e73,"RR504 — Lamrija 27 km O",barrage_fixe,"Berkine","Guercif","Oujda",1,1,1,3,6
+mq_msol48cv_2e1c50a255,"Entrée RR504 — Berkine",barrage_fixe,"Berkine","Guercif","Oujda",1,1,1,3,6
+mq_msol48cv_940fc66478,"RR504 — Berkine",barrage_fixe,"Berkine","Guercif","Oujda",1,1,1,3,6
+mq_mspur06t_6b70aed044,"RR504 — Lamrija 15 km NO",barrage_mobile,"Berkine","Guercif","Oujda",0,0,1,2,3
+mq_mspur06s_d1eafb23e3,"A3 — Berrechid",barrage_mobile,"Berrechid","Berrechid","Settat",0,0,1,2,3
+mq_semis_5b9696f7,"Poste fixe Berrechid (DEMO)",barrage_fixe,"Berrechid","Berrechid","Settat",1,1,1,3,6
+mq_mspur06s_2e95fb7e55,"RN4 — Sefrou 9 km S",barrage_mobile,"Bhalil","Sefrou","Fès",0,0,1,2,3
+mq_mspv1v43_d73c0a85,"RN4 — Sefrou 5 km S",barrage_fixe,"Bhalil","Sefrou","Fès",1,1,1,3,6
+mq_mspv1v43_a5ac3856,"Sortie RR402 — Bhalil",barrage_fixe,"Bhalil","Sefrou","Fès",1,1,1,3,6
+mq_mspv1v43_a8892517,"Entrée RR402 — Sefrou",barrage_fixe,"Bhalil","Sefrou","Fès",1,1,1,3,6
+mq_msojamr6_ef4eda73,"Entrée RR105 — Biougra",barrage_fixe,"Biougra","Biougra","Agadir",1,1,1,3,6
+mq_mspur06t_cd30e5301b,"RR115 — Ait Baha",barrage_mobile,"Biougra","Biougra","Agadir",0,0,1,2,3
+mq_mspv1v43_5c300e73,"RR105 — Biougra",barrage_fixe,"Biougra","Biougra","Agadir",1,1,1,3,6
+mq_msol48ct_5ea767e909,"RN1 — Bir Guendouz 20 km SO",barrage_fixe,"Bir Guendouz","Aousserd","Dakhla",1,1,1,3,6
+mq_msol48ct_c8e4a7dda2,"RN1 — Bir Guendouz 36 km SO",barrage_fixe,"Bir Guendouz","Aousserd","Dakhla",1,1,1,3,6
+mq_msol48ct_3eed7dc2a2,"RN1 — Bir Guendouz 53 km S",barrage_fixe,"Bir Guendouz","Aousserd","Dakhla",1,1,1,3,6
+mq_msol48ct_30b3b73d8d,"RN1 — Bir Guendouz 66 km NE",barrage_fixe,"Bir Guendouz","Aousserd","Dakhla",1,1,1,3,6
+mq_msol48ct_b455d85e35,"RN1 — Bir Guendouz 49 km NE",barrage_fixe,"Bir Guendouz","Aousserd","Dakhla",1,1,1,3,6
+mq_msol48cu_39d3e3f83e,"RN1 — Bir Guendouz 33 km NE",barrage_fixe,"Bir Guendouz","Aousserd","Dakhla",1,1,1,3,6
+mq_msol48cu_7429d634eb,"RN1 — Bir Guendouz 17 km E",barrage_fixe,"Bir Guendouz","Aousserd","Dakhla",1,1,1,3,6
+mq_msol48cu_00d691a48d,"RN17 — Bir Guendouz 106 km SE",barrage_fixe,"Bir Guendouz","Aousserd","Dakhla",1,1,1,3,6
+mq_msol48cu_30da55ca7e,"RN17 — Bir Guendouz 90 km SE",barrage_fixe,"Bir Guendouz","Aousserd","Dakhla",1,1,1,3,6
+mq_msol48cu_ff86cb5ad0,"RN17 — Bir Guendouz 78 km SE",barrage_fixe,"Bir Guendouz","Aousserd","Dakhla",1,1,1,3,6
+mq_msol48cu_14cd4f45d1,"RN17 — Bir Guendouz 70 km SE",barrage_fixe,"Bir Guendouz","Aousserd","Dakhla",1,1,1,3,6
+mq_mspur06s_47c4ef9130,"RN1 — Bir Guendouz 4 km SO",barrage_mobile,"Bir Guendouz","Aousserd","Dakhla",0,0,1,2,3
+mq_mspur06s_4e3f4be663,"RN1 — Bir Guendouz 66 km S",barrage_mobile,"Bir Guendouz","Aousserd","Dakhla",0,0,1,2,3
+mq_mspur06t_3dcfab9593,"RN17 — Bir Guendouz 57 km SE",barrage_mobile,"Bir Guendouz","Aousserd","Dakhla",0,0,1,2,3
+mq_msol48cs_e93597af49,"Entrée A1 — Chtouka",barrage_fixe,"Bir Jdid","El Jadida","El Jadida",1,1,1,3,6
+mq_mspur06t_8a6e334d1c,"RR320 — Bir Jdid",barrage_mobile,"Bir Jdid","El Jadida","El Jadida",0,0,1,2,3
+mq_msol48cs_b74a317ac2,"A2 — Matmata",barrage_fixe,"Bir Tamtam","Sefrou","Fès",1,1,1,3,6
+mq_msol48cs_1f04a08a78,"Entrée A2 — Bir Tamtam",barrage_fixe,"Bir Tamtam","Sefrou","Fès",1,1,1,3,6
+mq_msra8pqa_0927a35d,"Entrée A2 — Matmata",barrage_fixe,"Bir Tamtam","Sefrou","Fès",1,1,1,3,6
+mq_semis_c719e200,"Poste mobile Bir Tamtam (DEMO)",barrage_mobile,"Bir Tamtam","Sefrou","Fès",0,0,1,2,3
+mq_mspur06t_eae5afb14f,"RR214 — Bizdad",barrage_mobile,"Bizdad","Tamanar","Essaouira",0,0,1,2,3
+mq_semis_a3a9c39d,"Poste fixe Bizdad (DEMO)",barrage_fixe,"Bizdad","Tamanar","Essaouira",1,1,1,3,6
+mq_semis_cadbd6a8,"Poste fixe Bni Aarouss (DEMO)",barrage_fixe,"Bni Aarouss","Larache","Tanger",1,1,1,3,6
+mq_semis_7ceeb064,"Poste mobile Bni Aarouss (DEMO)",barrage_mobile,"Bni Aarouss","Larache","Tanger",0,0,1,2,3
+mq_mspur06t_86cd87ac64,"RR413 — Bni Ammart",barrage_mobile,"Bni Ammart","Targuiste","Al Hoceima",0,0,1,2,3
+mq_semis_d8d418c0,"Poste fixe Bni Ammart (DEMO)",barrage_fixe,"Bni Ammart","Targuiste","Al Hoceima",1,1,1,3,6
+mq_semis_c97c3261,"Poste fixe Bni Ayat (DEMO)",barrage_fixe,"Bni Ayat","Azilal","Béni Mellal",1,1,1,3,6
+mq_semis_bd2b7111,"Poste mobile Bni Ayat (DEMO)",barrage_mobile,"Bni Ayat","Azilal","Béni Mellal",0,0,1,2,3
+mq_msojamr8_c941d6c6,"RN8 — Targuiste 8 km N",barrage_fixe,"Bni Boufrah","Targuiste","Al Hoceima",1,1,1,3,6
+mq_mspur06s_19809140d7,"RN16 — Bni Boufrah",barrage_mobile,"Bni Boufrah","Targuiste","Al Hoceima",0,0,1,2,3
+mq_semis_d106a216,"Poste fixe Bni Chiker (DEMO)",barrage_fixe,"Bni Chiker","Nador","Nador",1,1,1,3,6
+mq_semis_bb1903e6,"Poste mobile Bni Chiker (DEMO)",barrage_mobile,"Bni Chiker","Nador","Nador",0,0,1,2,3
+mq_mspur06t_41a878f6cc,"RR503 — Bni Frassen 7 km S",barrage_mobile,"Bni Frassen","Oued Amlil","Taza",0,0,1,2,3
+mq_semis_2a062774,"Poste fixe Bni Frassen (DEMO)",barrage_fixe,"Bni Frassen","Oued Amlil","Taza",1,1,1,3,6
+mq_semis_93a493a9,"Poste fixe Bni Garfett (DEMO)",barrage_fixe,"Bni Garfett","Larache","Tanger",1,1,1,3,6
+mq_semis_efa4c839,"Poste mobile Bni Garfett (DEMO)",barrage_mobile,"Bni Garfett","Larache","Tanger",0,0,1,2,3
+mq_mspur06s_eb892f8e79,"RN16 — Bni Gmil",barrage_mobile,"Bni Gmil","Targuiste","Al Hoceima",0,0,1,2,3
+mq_semis_9aea4cdf,"Poste fixe Bni Gmil (DEMO)",barrage_fixe,"Bni Gmil","Targuiste","Al Hoceima",1,1,1,3,6
+mq_msol48cu_20bc02f972,"Entrée RN2 — Beni Hassan",barrage_fixe,"Bni Hassan","Tétouan","Tétouan",1,1,1,3,6
+mq_semis_b43d217c,"Poste mobile Bni Hassan (DEMO)",barrage_mobile,"Bni Hassan","Tétouan","Tétouan",0,0,1,2,3
+mq_msojamr8_fc07b2a7,"RN7 — Sidi Bennour 6 km NO",barrage_fixe,"Bni Hlal","Sidi Bennour","El Jadida",1,1,1,3,6
+mq_mspur06s_6d8094637d,"RN11 — El Aounate 7 km O",barrage_mobile,"Bni Hlal","Sidi Bennour","El Jadida",0,0,1,2,3
+mq_mspv1v43_e16b1a84,"RR303 — Sidi Bennour",barrage_fixe,"Bni Hlal","Sidi Bennour","El Jadida",1,1,1,3,6
+mq_mspur06s_8f5db2608b,"RN2 — Bni Karrich",barrage_mobile,"Bni Karrich","Tétouan","Tétouan",0,0,1,2,3
+mq_semis_edb63d26,"Poste fixe Bni Karrich (DEMO)",barrage_fixe,"Bni Karrich","Tétouan","Tétouan",1,1,1,3,6
+mq_semis_6465c93a,"Poste fixe Bni Oulichek (DEMO)",barrage_fixe,"Bni Oulichek","Azib Midar","Nador",1,1,1,3,6
+mq_semis_9b98cd4a,"Poste mobile Bni Oulichek (DEMO)",barrage_mobile,"Bni Oulichek","Azib Midar","Nador",0,0,1,2,3
+mq_mspur06t_b368930ab5,"RR503 — Bni Oulid",barrage_mobile,"Bni Oulid","Taounate","Fès",0,0,1,2,3
+mq_semis_7c862463,"Poste fixe Bni Oulid (DEMO)",barrage_fixe,"Bni Oulid","Taounate","Fès",1,1,1,3,6
+mq_msol48cs_b5460d930d,"RN16 — Beni Said",barrage_fixe,"Bni Said","Azib Midar","Nador",1,1,1,3,6
+mq_msol48cs_aac2c7555f,"RN16 — Boudinar 15 km E",barrage_fixe,"Bni Said","Azib Midar","Nador",1,1,1,3,6
+mq_mspur06t_31211f6463,"RR610 — Beni Said",barrage_mobile,"Bni Said","Azib Midar","Nador",0,0,1,2,3
+mq_semis_164db8c6,"Poste fixe Bni Yakhlef (DEMO)",barrage_fixe,"Bni Yakhlef","Mohammedia","Casablanca",1,1,1,3,6
+mq_semis_23ac6a36,"Poste mobile Bni Yakhlef (DEMO)",barrage_mobile,"Bni Yakhlef","Mohammedia","Casablanca",0,0,1,2,3
+mq_msol48cs_209311840d,"RN17 — Bouanane 12 km NE",barrage_fixe,"Bouanane","Figuig","Bouarfa",1,1,1,3,6
+mq_msol48cu_268745d69c,"RN17 — Bouanane 11 km O",barrage_fixe,"Bouanane","Figuig","Bouarfa",1,1,1,3,6
+mq_msol48cy_995aef30f1,"RN4 — Ain Chair 45 km N",barrage_fixe,"Bouanane","Figuig","Bouarfa",1,1,1,3,6
+mq_mspur06s_b6adda47a5,"RN17 — Bouanane 26 km NE",barrage_mobile,"Bouanane","Figuig","Bouarfa",0,0,1,2,3
+mq_mspur06t_1743ee0bc2,"RR708 — Bouanane",barrage_mobile,"Bouanane","Figuig","Bouarfa",0,0,1,2,3
+mq_msol48cu_38eaa80f9e,"RN17 — Ain Chair 26 km NE",barrage_fixe,"Bouarfa","Bouarfa","Bouarfa",1,1,1,3,6
+mq_msol48cu_185d1baa3c,"RN17 — Bouarfa 19 km NO",barrage_fixe,"Bouarfa","Bouarfa","Bouarfa",1,1,1,3,6
+mq_msol48cu_a81373bc3f,"RN4 — Bouarfa 33 km O",barrage_fixe,"Bouarfa","Bouarfa","Bouarfa",1,1,1,3,6
+mq_msol48cu_1a3eb586be,"RN4 — Bouarfa 32 km SE",barrage_fixe,"Bouarfa","Bouarfa","Bouarfa",1,1,1,3,6
+mq_mspur06t_dacd54fd55,"RN17 — Bouarfa 24 km SO",barrage_mobile,"Bouarfa","Bouarfa","Bouarfa",0,0,1,2,3
+mq_mspur06t_b6926c5427,"RN4 — Bouarfa 17 km O",barrage_mobile,"Bouarfa","Bouarfa","Bouarfa",0,0,1,2,3
+mq_mspur06t_e9151e3f66,"RN4 — Bouarfa 25 km E",barrage_mobile,"Bouarfa","Bouarfa","Bouarfa",0,0,1,2,3
+mq_mspv1v43_47c2c5e1,"RN4 — Bouarfa 6 km O",barrage_fixe,"Bouarfa","Bouarfa","Bouarfa",1,1,1,3,6
+mq_mspv1v43_a0c6349e,"RN17 — Bouarfa 5 km NE",barrage_fixe,"Bouarfa","Bouarfa","Bouarfa",1,1,1,3,6
+mq_mspv1v43_64ecb8dd,"Entrée RN4 — Bouarfa",barrage_fixe,"Bouarfa","Bouarfa","Bouarfa",1,1,1,3,6
+mq_mspv1v43_80f70e77,"RN8 — Ain Aicha",barrage_fixe,"Bouarous","Taounate","Fès",1,1,1,3,6
+mq_semis_4f21f2e9,"Poste mobile Bouarous (DEMO)",barrage_mobile,"Bouarous","Taounate","Fès",0,0,1,2,3
+mq_mspur06s_bf97437fd7,"A2 — Sabaa Ayoune",barrage_mobile,"Bouderbala","El Hajeb","Meknès",0,0,1,2,3
+mq_mspur06t_60c4b9c887,"RR402 — Bouderbala",barrage_mobile,"Bouderbala","El Hajeb","Meknès",0,0,1,2,3
+mq_semis_b29c4478,"Poste fixe Bouderbala (DEMO)",barrage_fixe,"Bouderbala","El Hajeb","Meknès",1,1,1,3,6
+mq_msol48ct_ff10936b41,"RN16 — Boudinar 16 km N",barrage_fixe,"Boudinar","Azib Midar","Nador",1,1,1,3,6
+mq_mspur06t_4b2874a76f,"RR610 — Oued Nekkour",barrage_mobile,"Boudinar","Azib Midar","Nador",0,0,1,2,3
+mq_mspv1v43_886be02a,"RR610 — Imzouren",barrage_fixe,"Boudinar","Azib Midar","Nador",1,1,1,3,6
+mq_msol48cs_e5ba14816b,"RN17 — Boudnib 16 km NO",barrage_fixe,"Boudnib","Errachidia","Errachidia",1,1,1,3,6
+mq_msol48cu_b0a1dfd737,"RN17 — Boudnib 21 km E",barrage_fixe,"Boudnib","Errachidia","Errachidia",1,1,1,3,6
+mq_mspur06s_2341990e76,"RN17 — Boudnib 3 km O",barrage_mobile,"Boudnib","Errachidia","Errachidia",0,0,1,2,3
+mq_mskrsbp4_875ac05f,"Meknes 8 km S",barrage_fixe,"Boufekrane","Meknès","Meknès",1,1,1,3,6
+mq_semis_538933ab,"Poste mobile Boufekrane (DEMO)",barrage_mobile,"Boufekrane","Meknès","Meknès",0,0,1,2,3
+mq_msol48ct_06a6f75c43,"RN7 — Bouhmame",barrage_fixe,"Bouhmame","Sidi Bennour","El Jadida",1,1,1,3,6
+mq_semis_75aa70d9,"Poste mobile Bouhmame (DEMO)",barrage_mobile,"Bouhmame","Sidi Bennour","El Jadida",0,0,1,2,3
+mq_mspur06t_9f94668a4a,"RR102 — Bouizakarne",barrage_mobile,"Bouizakarne","Guelmim","Guelmim",0,0,1,2,3
+mq_semis_82ce0faa,"Poste fixe Bouizakarne (DEMO)",barrage_fixe,"Bouizakarne","Guelmim","Guelmim",1,1,1,3,6
+mq_msol48cs_27569827aa,"A4 — Boujaad",barrage_fixe,"Boujaad","Oued Zem","Khouribga",1,1,1,3,6
+mq_mspur06s_f30f7d7dd2,"A4 — Oued Zem 7 km SE",barrage_mobile,"Boujaad","Oued Zem","Khouribga",0,0,1,2,3
+mq_msra8ppr_032f83a0,"Entrée A4 — Boujaad",barrage_fixe,"Boujaad","Oued Zem","Khouribga",1,1,1,3,6
+mq_msojamr6_ee994f0a,"RN1 — Boujdour 6 km NE",barrage_fixe,"Boujdour","Boujdour","Laayoune",1,1,1,3,6
+mq_msol48ct_ee1bddd2cf,"RN5 — Boukraa 90 km S",barrage_fixe,"Boujdour","Boujdour","Laayoune",1,1,1,3,6
+mq_msol48ct_5372592092,"RN5 — Boukraa 108 km S",barrage_fixe,"Boujdour","Boujdour","Laayoune",1,1,1,3,6
+mq_msol48ct_c1d9a30c99,"RN5 — Boukraa 125 km S",barrage_fixe,"Boujdour","Boujdour","Laayoune",1,1,1,3,6
+mq_msol48ct_6b13d8a21e,"RN5 — Boukraa 142 km S",barrage_fixe,"Boujdour","Boujdour","Laayoune",1,1,1,3,6
+mq_mspur06s_5698507b96,"RN1 — Boujdour 19 km NE",barrage_mobile,"Boujdour","Boujdour","Laayoune",0,0,1,2,3
+mq_semis_3f80d40b,"Poste fixe Boujniba (DEMO)",barrage_fixe,"Boujniba","Khouribga","Khouribga",1,1,1,3,6
+mq_semis_830c5067,"Poste mobile Boujniba (DEMO)",barrage_mobile,"Boujniba","Khouribga","Khouribga",0,0,1,2,3
+mq_msjo0hbk_d892aa4e,"Entrée RN1 — Bouknadel",barrage_fixe,"Bouknadel","Salé","Rabat",1,1,1,3,6
+mq_mskf7c8u_979629ec,"Shoul 2 km E",barrage_fixe,"Bouknadel","Salé","Rabat",1,1,1,3,6
+mq_mskhlm8j_9061ec2a,"RN1 — Bouknadel",barrage_fixe,"Bouknadel","Salé","Rabat",1,1,1,3,6
+mq_msktk0hk_7920369a,"Bouknadel",barrage_fixe,"Bouknadel","Salé","Rabat",1,1,1,3,6
+mq_semis_9169515e,"Poste mobile Bouknadel (DEMO)",barrage_mobile,"Bouknadel","Salé","Rabat",0,0,1,2,3
+mq_msol48cs_d3c65722fb,"RN5 — Boukraa 4 km SE",barrage_fixe,"Boukraa","Laayoune","Laayoune",1,1,1,3,6
+mq_msol48ct_7f4d8cdf0c,"Entrée RN5 — Boukraa",barrage_fixe,"Boukraa","Laayoune","Laayoune",1,1,1,3,6
+mq_msol48ct_2de84e455d,"RN5 — Boukraa 21 km SE",barrage_fixe,"Boukraa","Laayoune","Laayoune",1,1,1,3,6
+mq_msol48ct_9e6619332e,"RN5 — Boukraa 48 km NO",barrage_fixe,"Boukraa","Laayoune","Laayoune",1,1,1,3,6
+mq_msol48ct_cd0b3d9c52,"RN5 — Laayoune 23 km SE",barrage_fixe,"Boukraa","Laayoune","Laayoune",1,1,1,3,6
+mq_msol48cu_1632700a7d,"RN14 — Boukraa 32 km NE",barrage_fixe,"Boukraa","Laayoune","Laayoune",1,1,1,3,6
+mq_mspur06s_8be4197254,"RN5 — Laayoune 34 km S",barrage_mobile,"Boukraa","Laayoune","Laayoune",0,0,1,2,3
+mq_mspur06t_6348975b46,"RN14 — Boukraa 26 km N",barrage_mobile,"Boukraa","Laayoune","Laayoune",0,0,1,2,3
+mq_mspur06t_4aed265540,"RN5 — Boukraa 13 km N",barrage_mobile,"Boukraa","Laayoune","Laayoune",0,0,1,2,3
+mq_mspur06t_a45424fe88,"RR101 — Laayoune",barrage_mobile,"Boukraa","Laayoune","Laayoune",0,0,1,2,3
+mq_msra8poj_3e1b23f0,"RN5 — Boukraa 7 km SE",barrage_fixe,"Boukraa","Laayoune","Laayoune",1,1,1,3,6
+mq_mspv1v43_2ff31379,"Entrée RR312 — Boulanouare",barrage_fixe,"Boulanouare","Khouribga","Khouribga",1,1,1,3,6
+mq_semis_95709fc8,"Poste mobile Boulanouare (DEMO)",barrage_mobile,"Boulanouare","Khouribga","Khouribga",0,0,1,2,3
+mq_msol48cs_b763e824c1,"Entrée RN4 — Boulmane",barrage_fixe,"Boulmane","Missour","Fès",1,1,1,3,6
+mq_msol48ct_97ab07ea41,"RN4 — Missour 32 km O",barrage_fixe,"Boulmane","Missour","Fès",1,1,1,3,6
+mq_msol48cu_7dcf852f75,"RN29 — Immouzer Marmoucha 19 km SO",barrage_fixe,"Boulmane","Missour","Fès",1,1,1,3,6
+mq_mspur06s_00fdecedd7,"RN29 — Boulmane 28 km S",barrage_mobile,"Boulmane","Missour","Fès",0,0,1,2,3
+mq_msol48cu_93ac4a56ab,"Entrée RR704 — Msemrir",barrage_fixe,"Boumalne Dades","Tinghir","Ouarzazate",1,1,1,3,6
+mq_msol48cu_e39ddb89ca,"RR704 — Boumalne Dades",barrage_fixe,"Boumalne Dades","Tinghir","Ouarzazate",1,1,1,3,6
+mq_mspur06t_4747bb4f23,"RN10 — Boumalne Dades",barrage_mobile,"Boumalne Dades","Tinghir","Ouarzazate",0,0,1,2,3
+mq_msol48ct_7f753d1b12,"Entrée RN29 — Boumia",barrage_fixe,"Boumia","Midelt","Errachidia",1,1,1,3,6
+mq_msol48cx_b322989ae9,"RR319 — Itzer",barrage_fixe,"Boumia","Midelt","Errachidia",1,1,1,3,6
+mq_semis_b523cd7c,"Poste mobile Boumia (DEMO)",barrage_mobile,"Boumia","Midelt","Errachidia",0,0,1,2,3
+mq_semis_04f49ac8,"Poste fixe Bouskoura (DEMO)",barrage_fixe,"Bouskoura","Bouskoura","Casablanca",1,1,1,3,6
+mq_semis_bb6ac984,"Poste mobile Bouskoura (DEMO)",barrage_mobile,"Bouskoura","Bouskoura","Casablanca",0,0,1,2,3
+mq_msjnz6ns_06774c2f,"RN1 — Bouznika 2 km SO",barrage_fixe,"Bouznika","Bouznika","Settat",1,1,1,3,6
+mq_msjpu5yn_d75d54d6,"RN1 — Bouznika 4 km SO",barrage_fixe,"Bouznika","Bouznika","Settat",1,1,1,3,6
+mq_msjpumww_36c0ef17,"RN1 — El Mansouria",barrage_mobile,"Bouznika","Bouznika","Settat",0,0,1,2,3
+mq_msn2djx6_d8c44004,"barage alfa1",barrage_fixe,"Bouznika","Bouznika","Settat",1,1,1,3,6
+mq_msojamr6_bcc0986d,"Sortie RN23 — Bouznika",barrage_fixe,"Bouznika","Bouznika","Settat",1,1,1,3,6
+mq_mspv1v43_b10993ea,"Entrée A1 — Bouznika",barrage_fixe,"Bouznika","Bouznika","Settat",1,1,1,3,6
+mq_mspv1v43_f54f76a7,"A1 — Bouznika",barrage_fixe,"Bouznika","Bouznika","Settat",1,1,1,3,6
+mq_mspv1v43_8138ac3a,"RN13 — Ouezzane",barrage_fixe,"Brikcha","Ouazzane","Tétouan",1,1,1,3,6
+mq_semis_f9ee50ab,"Poste mobile Brikcha (DEMO)",barrage_mobile,"Brikcha","Ouazzane","Tétouan",0,0,1,2,3
+mq_msjdq5f8_45676217,"RR320 — Casablanca",barrage_fixe,"Casablanca","Casablanca","Casablanca",1,1,1,3,6
+mq_msra8ple_04cf1f65,"RR320 — Oulad Azzouz",barrage_fixe,"Casablanca","Casablanca","Casablanca",1,1,1,3,6
+mq_semis_46626b6a,"Poste mobile Casablanca (DEMO)",barrage_mobile,"Casablanca","Casablanca","Casablanca",0,0,1,2,3
+mq_msol48ct_4b927083f8,"RN1 — Tan Tan Plage 30 km SO",barrage_fixe,"Chbika","Tan Tan","Guelmim",1,1,1,3,6
+mq_msol48ct_a604c8b26f,"RN14 — Tan Tan 18 km SO",barrage_fixe,"Chbika","Tan Tan","Guelmim",1,1,1,3,6
+mq_msol48cu_516b6e0341,"RN1 — Tan Tan Plage 10 km SO",barrage_fixe,"Chbika","Tan Tan","Guelmim",1,1,1,3,6
+mq_msol48cu_5dce00d0f5,"RN1 — Akhfenir 29 km NE",barrage_fixe,"Chbika","Tan Tan","Guelmim",1,1,1,3,6
+mq_mspur06s_8d93215dd6,"RN14 — Tan Tan 8 km NO",barrage_mobile,"Chbika","Tan Tan","Guelmim",0,0,1,2,3
+mq_mspur06t_7cae6925ba,"RN1 — Tan Tan Plage 42 km SO",barrage_mobile,"Chbika","Tan Tan","Guelmim",0,0,1,2,3
+mq_mspv1v44_2914faae,"Entrée RN1 — Tan Tan",barrage_fixe,"Chbika","Tan Tan","Guelmim",1,1,1,3,6
+mq_msra8pov_9f66a7d3,"RN1 — Tan Tan Plage 28 km SO",barrage_fixe,"Chbika","Tan Tan","Guelmim",1,1,1,3,6
+mq_msol48cs_8ffd6533c8,"Entrée RN2 — Chefchaouen 19 km SE",barrage_fixe,"Chefchaouen","Chefchaouen","Tétouan",1,1,1,3,6
+mq_semis_6ec695a8,"Poste mobile Chefchaouen (DEMO)",barrage_mobile,"Chefchaouen","Chefchaouen","Tétouan",0,0,1,2,3
+mq_msol48cs_0276a6aba5,"RN11 — Chemaia",barrage_fixe,"Chemaia","Youssoufia","Safi",1,1,1,3,6
+mq_msol48cv_fe3a054035,"RR204 — Tlet Sidi Bouguedra",barrage_fixe,"Chemaia","Youssoufia","Safi",1,1,1,3,6
+mq_mspur06t_ee428bbd47,"RR204 — Chemaia",barrage_mobile,"Chemaia","Youssoufia","Safi",0,0,1,2,3
+mq_msol48cr_ce4387f1f8,"A3 — Imintanout 11 km N",barrage_fixe,"Chichaoua","Chichaoua","Marrakech",1,1,1,3,6
+mq_mspur06s_e442f7b626,"A3 — Chichaoua 16 km S",barrage_mobile,"Chichaoua","Chichaoua","Marrakech",0,0,1,2,3
+mq_mspur06s_c78aa37e0a,"RN11 — Chichaoua 11 km N",barrage_mobile,"Chichaoua","Chichaoua","Marrakech",0,0,1,2,3
+mq_mspv1v43_334f8d30,"RN11 — Chichaoua 6 km S",barrage_fixe,"Chichaoua","Chichaoua","Marrakech",1,1,1,3,6
+mq_mspv1v43_c8bc7346,"RN11 — Chichaoua 1 km S",barrage_fixe,"Chichaoua","Chichaoua","Marrakech",1,1,1,3,6
+mq_mspv1v43_1feacc1f,"Entrée RN8 — Chichaoua",barrage_fixe,"Chichaoua","Chichaoua","Marrakech",1,1,1,3,6
+mq_semis_5820bfa1,"Poste fixe Chougrane (DEMO)",barrage_fixe,"Chougrane","Oued Zem","Khouribga",1,1,1,3,6
+mq_semis_0372da51,"Poste mobile Chougrane (DEMO)",barrage_mobile,"Chougrane","Oued Zem","Khouribga",0,0,1,2,3
+mq_semis_791a1a7e,"Poste fixe Chouiter (DEMO)",barrage_fixe,"Chouiter","Tahannaout","Marrakech",1,1,1,3,6
+mq_semis_1fae51ee,"Poste mobile Chouiter (DEMO)",barrage_mobile,"Chouiter","Tahannaout","Marrakech",0,0,1,2,3
+mq_msjdq5e6_e6cfc531,"Entrée A1 — Azemmour",barrage_fixe,"Chtouka","El Jadida","El Jadida",1,1,1,3,6
+mq_msra8pl1_74c39d7b,"A1 — Azemmour",barrage_fixe,"Chtouka","El Jadida","El Jadida",1,1,1,3,6
+mq_semis_0cc59738,"Poste mobile Chtouka (DEMO)",barrage_mobile,"Chtouka","El Jadida","El Jadida",0,0,1,2,3
+mq_mspur06s_dfd414a535,"RN3 — El Argoub 16 km NE",barrage_mobile,"Dakhla","Dakhla","Dakhla",0,0,1,2,3
+mq_mspur06s_f5125853f4,"RN3 — El Argoub 3 km NE",barrage_mobile,"Dakhla","Dakhla","Dakhla",0,0,1,2,3
+mq_semis_483d2264,"Poste fixe Dakhla (DEMO)",barrage_fixe,"Dakhla","Dakhla","Dakhla",1,1,1,3,6
+mq_mskoia19_686c2e67,"Kceibia",barrage_mobile,"Dar Bel Amri","Sidi Slimane","Sidi Kacem",0,0,1,2,3
+mq_mspv1v43_a110089e,"Entrée RR409 — Dar Bel Amri",barrage_fixe,"Dar Bel Amri","Sidi Slimane","Sidi Kacem",1,1,1,3,6
+mq_msjf5y02_7881dddf,"Errahma",barrage_fixe,"Dar Bouazza","Casablanca","Casablanca",1,1,1,3,6
+mq_semis_2a0498a6,"Poste mobile Dar Bouazza (DEMO)",barrage_mobile,"Dar Bouazza","Casablanca","Casablanca",0,0,1,2,3
+mq_msol48cu_8aabf4eb05,"RR314 — El Brouj",barrage_fixe,"Dar Chaffai","Settat","Settat",1,1,1,3,6
+mq_msol48cu_1af1eb31c3,"Entrée RR314 — Dar Chaffai",barrage_fixe,"Dar Chaffai","Settat","Settat",1,1,1,3,6
+mq_semis_35c89b66,"Poste mobile Dar Chaffai (DEMO)",barrage_mobile,"Dar Chaffai","Settat","Settat",0,0,1,2,3
+mq_semis_fe037827,"Poste fixe Dar Chaoui (DEMO)",barrage_fixe,"Dar Chaoui","Tanger","Tanger",1,1,1,3,6
+mq_semis_def1daf3,"Poste mobile Dar Chaoui (DEMO)",barrage_mobile,"Dar Chaoui","Tanger","Tanger",0,0,1,2,3
+mq_msol48cv_7526beaec3,"Entrée RR418 — Sidi Allal Tazi",barrage_fixe,"Dar El Gueddari","Sidi Kacem","Sidi Kacem",1,1,1,3,6
+mq_semis_05718d96,"Poste mobile Dar El Gueddari (DEMO)",barrage_mobile,"Dar El Gueddari","Sidi Kacem","Sidi Kacem",0,0,1,2,3
+mq_mspur06t_8176acf9f7,"RR304 — Dar Ouled Zidouh",barrage_mobile,"Dar Ouled Zidouh","Fkih Ben Salah","Béni Mellal",0,0,1,2,3
+mq_semis_759c12b4,"Poste fixe Dar Ouled Zidouh (DEMO)",barrage_fixe,"Dar Ouled Zidouh","Fkih Ben Salah","Béni Mellal",1,1,1,3,6
+mq_msol48cs_7389395fa8,"RN1 — Dawra 18 km SO",barrage_fixe,"Dawra","Tarfaya","Laayoune",1,1,1,3,6
+mq_msol48cs_35ecf2f30f,"RN1 — Dawra 4 km N",barrage_fixe,"Dawra","Tarfaya","Laayoune",1,1,1,3,6
+mq_msol48cv_f3070b8ed4,"RR101 — Dawra 33 km SE",barrage_fixe,"Dawra","Tarfaya","Laayoune",1,1,1,3,6
+mq_msol48cv_d87e9a2f5d,"RR101 — Dawra 45 km SE",barrage_fixe,"Dawra","Tarfaya","Laayoune",1,1,1,3,6
+mq_msol48cx_bfc184f0b4,"RR101 — Dawra 54 km E",barrage_fixe,"Dawra","Tarfaya","Laayoune",1,1,1,3,6
+mq_msol48cx_5ce231efae,"RR109 — Dawra 27 km O",barrage_fixe,"Dawra","Tarfaya","Laayoune",1,1,1,3,6
+mq_msol48cx_806086b877,"RR109 — Dawra 24 km NO",barrage_fixe,"Dawra","Tarfaya","Laayoune",1,1,1,3,6
+mq_msol48cy_f50f22d376,"RR101 — Dawra 68 km E",barrage_fixe,"Dawra","Tarfaya","Laayoune",1,1,1,3,6
+mq_msol48cy_7a28615ae8,"RR101 — Akhfenir",barrage_fixe,"Dawra","Tarfaya","Laayoune",1,1,1,3,6
+mq_semis_651cc7d0,"Poste mobile Dawra (DEMO)",barrage_mobile,"Dawra","Tarfaya","Laayoune",0,0,1,2,3
+mq_mspur06t_38487d6048,"RR707 — Ifrane 13 km SE",barrage_mobile,"Dayet Aoua","Ifrane","Meknès",0,0,1,2,3
+mq_semis_7f9ab7d0,"Poste fixe Dayet Aoua (DEMO)",barrage_fixe,"Dayet Aoua","Ifrane","Meknès",1,1,1,3,6
+mq_msol48ct_5179bacc9f,"RN19 — Debdou 4 km NE",barrage_fixe,"Debdou","Taourirt","Oujda",1,1,1,3,6
+mq_msol48ct_5d8685bd07,"RN19 — Debdou 38 km S",barrage_fixe,"Debdou","Taourirt","Oujda",1,1,1,3,6
+mq_msol48ct_e37410a21c,"RN19 — Debdou 21 km S",barrage_fixe,"Debdou","Taourirt","Oujda",1,1,1,3,6
+mq_msol48cx_61e9378d43,"RR608 — Debdou 26 km NE",barrage_fixe,"Debdou","Taourirt","Oujda",1,1,1,3,6
+mq_msol48cx_40842c56bf,"RR606 — Tendite 42 km E",barrage_fixe,"Debdou","Taourirt","Oujda",1,1,1,3,6
+mq_msol48cy_4df5081526,"RR606 — Debdou 31 km SE",barrage_fixe,"Debdou","Taourirt","Oujda",1,1,1,3,6
+mq_msol48cy_e9d2671ae4,"RR608 — Debdou 39 km E",barrage_fixe,"Debdou","Taourirt","Oujda",1,1,1,3,6
+mq_semis_c834546e,"Poste mobile Debdou (DEMO)",barrage_mobile,"Debdou","Taourirt","Oujda",0,0,1,2,3
+mq_msol48cs_cd3bb88658,"RN23 — Moughrane 34 km NO",barrage_fixe,"Demnate","Azilal","Béni Mellal",1,1,1,3,6
+mq_msol48ct_8d263297de,"Entrée RN23 — Demnate",barrage_fixe,"Demnate","Azilal","Béni Mellal",1,1,1,3,6
+mq_mspur06s_9f41c4cd4b,"RN23 — Demnate 10 km SE",barrage_mobile,"Demnate","Azilal","Béni Mellal",0,0,1,2,3
+mq_msol48cs_09530f512a,"Entrée A4 — Berrechid",barrage_fixe,"Deroua","Berrechid","Settat",1,1,1,3,6
+mq_semis_653fff49,"Poste mobile Deroua (DEMO)",barrage_mobile,"Deroua","Berrechid","Settat",0,0,1,2,3
+mq_mspur06r_0b4f5b9a01,"RN11 — Temsia",barrage_mobile,"Drargua","Agadir","Agadir",0,0,1,2,3
+mq_semis_8039c025,"Poste fixe Drargua (DEMO)",barrage_fixe,"Drargua","Agadir","Agadir",1,1,1,3,6
+mq_msojamr6_3d8e1872,"RN2 — Azib Midar 7 km NE",barrage_fixe,"Driouch","Azib Midar","Nador",1,1,1,3,6
+mq_mspur06s_b368b73ff3,"Driouch",barrage_mobile,"Driouch","Azib Midar","Nador",0,0,1,2,3
+mq_semis_5f1f3d89,"Poste fixe Ech-Chellalate (DEMO)",barrage_fixe,"Ech-Chellalate","Mohammedia","Casablanca",1,1,1,3,6
+mq_semis_2557f599,"Poste mobile Ech-Chellalate (DEMO)",barrage_mobile,"Ech-Chellalate","Mohammedia","Casablanca",0,0,1,2,3
+mq_msol48ct_412eb1b69f,"RN1 — Aarich 19 km SO",barrage_fixe,"El Aargoub","Dakhla","Dakhla",1,1,1,3,6
+mq_msol48ct_8a4636d07c,"RN1 — Dakhla",barrage_fixe,"El Aargoub","Dakhla","Dakhla",1,1,1,3,6
+mq_msol48ct_6c2b46dd85,"RN3 — El Argoub 19 km E",barrage_fixe,"El Aargoub","Dakhla","Dakhla",1,1,1,3,6
+mq_msol48ct_e2bdc9fdc3,"RN3 — Dakhla 23 km SE",barrage_fixe,"El Aargoub","Dakhla","Dakhla",1,1,1,3,6
+mq_msol48ct_6814ecd30f,"RN3 — Dakhla 40 km SE",barrage_fixe,"El Aargoub","Dakhla","Dakhla",1,1,1,3,6
+mq_msol48ct_4ee045eeed,"RN3 — Dakhla 58 km SE",barrage_fixe,"El Aargoub","Dakhla","Dakhla",1,1,1,3,6
+mq_msol48ct_1d5242d542,"RN3 — Dakhla 76 km SE",barrage_fixe,"El Aargoub","Dakhla","Dakhla",1,1,1,3,6
+mq_semis_5f45796f,"Poste mobile El Aargoub (DEMO)",barrage_mobile,"El Aargoub","Dakhla","Dakhla",0,0,1,2,3
+mq_msol48cs_fb5cc54408,"A2 — El Aioune 22 km O",barrage_fixe,"El Aioun","Taourirt","Oujda",1,1,1,3,6
+mq_msol48cv_1d79f1cb2f,"RR603 — Taourirt 24 km E",barrage_fixe,"El Aioun","Taourirt","Oujda",1,1,1,3,6
+mq_msol48cv_02667bb07a,"RR607 — El Aioune",barrage_fixe,"El Aioun","Taourirt","Oujda",1,1,1,3,6
+mq_mspur06t_a2fa206009,"RR603 — El Aioune",barrage_mobile,"El Aioun","Taourirt","Oujda",0,0,1,2,3
+mq_mspur06t_31ae4445e2,"RR603 — Zaiou",barrage_mobile,"El Aioun","Taourirt","Oujda",0,0,1,2,3
+mq_semis_e836479e,"Poste fixe El Aouamra (DEMO)",barrage_fixe,"El Aouamra","Larache","Tanger",1,1,1,3,6
+mq_semis_d3920d0e,"Poste mobile El Aouamra (DEMO)",barrage_mobile,"El Aouamra","Larache","Tanger",0,0,1,2,3
+mq_msol48cv_5f90645b37,"Entrée RR207 — El Aounate",barrage_fixe,"El Aounate","Sidi Bennour","El Jadida",1,1,1,3,6
+mq_mspur06s_4d08da6941,"RN11 — El Aounate 7 km NE",barrage_mobile,"El Aounate","Sidi Bennour","El Jadida",0,0,1,2,3
+mq_semis_32bb828e,"Poste fixe El Attaouia (DEMO)",barrage_fixe,"El Attaouia","El Kelaâ Des Sraghna","Marrakech",1,1,1,3,6
+mq_semis_e526f55e,"Poste mobile El Attaouia (DEMO)",barrage_mobile,"El Attaouia","El Kelaâ Des Sraghna","Marrakech",0,0,1,2,3
+mq_msol48cv_20c4c468ac,"RR301 — El Beddouza",barrage_fixe,"El Beddouza","Safi","Safi",1,1,1,3,6
+mq_msol48cw_cd925e9e60,"Entrée RR301 — El Beddouza",barrage_fixe,"El Beddouza","Safi","Safi",1,1,1,3,6
+mq_mspur06t_23fad517eb,"RR301 — El Oualidia",barrage_mobile,"El Beddouza","Safi","Safi",0,0,1,2,3
+mq_msol48cs_348802baad,"RN23 — El Brouj",barrage_fixe,"El Brouj","Settat","Settat",1,1,1,3,6
+mq_msol48cs_358a80890e,"Entrée RN23 — El Brouj",barrage_fixe,"El Brouj","Settat","Settat",1,1,1,3,6
+mq_msol48cv_7011c01865,"Entrée RR308 — Guisser",barrage_fixe,"El Brouj","Settat","Settat",1,1,1,3,6
+mq_semis_267bd0b8,"Poste mobile El Brouj (DEMO)",barrage_mobile,"El Brouj","Settat","Settat",0,0,1,2,3
+mq_mspur06t_4939e38661,"RR315 — Mediouna",barrage_mobile,"El Gara","Berrechid","Settat",0,0,1,2,3
+mq_semis_f44bb3bf,"Poste fixe El Gara (DEMO)",barrage_fixe,"El Gara","Berrechid","Settat",1,1,1,3,6
+mq_msol48ct_20bca07183,"RN1 — Bir Guendouz 80 km S",barrage_fixe,"El Guergarate","Aousserd","Dakhla",1,1,1,3,6
+mq_semis_59178b7b,"Poste mobile El Guergarate (DEMO)",barrage_mobile,"El Guergarate","Aousserd","Dakhla",0,0,1,2,3
+mq_msojamr7_1237a848,"Entrée RN13 — El Hajeb",barrage_fixe,"El Hajeb","El Hajeb","Meknès",1,1,1,3,6
+mq_mspv1v43_956ade11,"Sortie RR402 — El Hajeb",barrage_fixe,"El Hajeb","El Hajeb","Meknès",1,1,1,3,6
+mq_mspv1v43_df792aec,"RR402 — El Hajeb",barrage_fixe,"El Hajeb","El Hajeb","Meknès",1,1,1,3,6
+mq_semis_bdecc186,"Poste mobile El Hajeb (DEMO)",barrage_mobile,"El Hajeb","El Hajeb","Meknès",0,0,1,2,3
+mq_msol48ct_470776a6ff,"Entrée RN8 — Mrirt",barrage_fixe,"El Hammam","Khénifra","Khénifra",1,1,1,3,6
+mq_msol48cx_70f08fd4e5,"RR712 — El Hammam",barrage_fixe,"El Hammam","Khénifra","Khénifra",1,1,1,3,6
+mq_semis_7fec2c1d,"Poste mobile El Hammam (DEMO)",barrage_mobile,"El Hammam","Khénifra","Khénifra",0,0,1,2,3
+mq_msol48cs_3ac7cd5acb,"Entrée A1 — Sidi Bouzid",barrage_fixe,"El Jadida","El Jadida","El Jadida",1,1,1,3,6
+mq_mspur06s_572674e882,"RN1 — El Jadida",barrage_mobile,"El Jadida","El Jadida","El Jadida",0,0,1,2,3
+mq_msol48ct_7047d6043b,"Entrée RN29 — El Kbab",barrage_fixe,"El Kbab","Ait Ishaq","Khénifra",1,1,1,3,6
+mq_semis_00855a04,"Poste mobile El Kbab (DEMO)",barrage_mobile,"El Kbab","Ait Ishaq","Khénifra",0,0,1,2,3
+mq_msojamr7_e5062d9b,"RR206 — Kelaa Sraghna",barrage_fixe,"El Kelaâ Des Sraghna","El Kelaâ Des Sraghna","Marrakech",1,1,1,3,6
+mq_mspur06t_4957b55909,"RN8 — Kelaa Sraghna",barrage_mobile,"El Kelaâ Des Sraghna","El Kelaâ Des Sraghna","Marrakech",0,0,1,2,3
+mq_mspv1v43_555183cf,"Entrée RN8 — Kelaa Sraghna",barrage_fixe,"El Kelaâ Des Sraghna","El Kelaâ Des Sraghna","Marrakech",1,1,1,3,6
+mq_msol48ct_edd775726e,"RN8 — El Ksiba",barrage_fixe,"El Ksiba","Béni Mellal","Béni Mellal",1,1,1,3,6
+mq_msol48ct_8248acf2f1,"RN12 — El Ksiba",barrage_fixe,"El Ksiba","Béni Mellal","Béni Mellal",1,1,1,3,6
+mq_semis_a532b4c2,"Poste mobile El Ksiba (DEMO)",barrage_mobile,"El Ksiba","Béni Mellal","Béni Mellal",0,0,1,2,3
+mq_mskhlm92_eb53e876,"Entrée RN1 — Beni Yakhlef",barrage_fixe,"El Mansouria","Bouznika","Settat",1,1,1,3,6
+mq_mspv1v43_770cfd2d,"RR322 — El Mansouria",barrage_fixe,"El Mansouria","Bouznika","Settat",1,1,1,3,6
+mq_semis_969d35e5,"Poste mobile El Mansouria (DEMO)",barrage_mobile,"El Mansouria","Bouznika","Settat",0,0,1,2,3
+mq_mskf77h5_700a534b,"El Menzeh",barrage_fixe,"El Manzeh","Ain Aouda","Rabat",1,1,1,3,6
+mq_semis_50520281,"Poste mobile El Manzeh (DEMO)",barrage_mobile,"El Manzeh","Ain Aouda","Rabat",0,0,1,2,3
+mq_msol48cu_120d2eaa9f,"Entrée RR402 — El Menzel",barrage_fixe,"El Menzel","Sefrou","Fès",1,1,1,3,6
+mq_semis_b28e3741,"Poste mobile El Menzel (DEMO)",barrage_mobile,"El Menzel","Sefrou","Fès",0,0,1,2,3
+mq_msol48cs_4e24d480e1,"Entrée A1 — Moul El Bergui 8 km N",barrage_fixe,"El Oualidia","Sidi Bennour","El Jadida",1,1,1,3,6
+mq_semis_b29e1834,"Poste mobile El Oualidia (DEMO)",barrage_mobile,"El Oualidia","Sidi Bennour","El Jadida",0,0,1,2,3
+mq_semis_c2c55f17,"Poste fixe Ennassr (DEMO)",barrage_fixe,"Ennassr","Bouskoura","Casablanca",1,1,1,3,6
+mq_semis_73c10983,"Poste mobile Ennassr (DEMO)",barrage_mobile,"Ennassr","Bouskoura","Casablanca",0,0,1,2,3
+mq_msol48cs_d9ae52de13,"RN13 — Rich 16 km SE",barrage_fixe,"Er-Rich","Midelt","Errachidia",1,1,1,3,6
+mq_msol48cs_431bdc9bff,"Entrée RN13 — Rich",barrage_fixe,"Er-Rich","Midelt","Errachidia",1,1,1,3,6
+mq_msol48cs_78393ec236,"RN13 — Rich 28 km N",barrage_fixe,"Er-Rich","Midelt","Errachidia",1,1,1,3,6
+mq_msol48cv_dd2ea4808e,"RR706 — Rich",barrage_fixe,"Er-Rich","Midelt","Errachidia",1,1,1,3,6
+mq_mspv1v44_d12e6d92,"RN13 — Midelt 4 km E",barrage_fixe,"Er-Rich","Midelt","Errachidia",1,1,1,3,6
+mq_semis_afddda91,"Poste mobile Er-Rich (DEMO)",barrage_mobile,"Er-Rich","Midelt","Errachidia",0,0,1,2,3
+mq_msol48cs_f9d7e303ac,"RN17 — Errachidia 21 km SE",barrage_fixe,"Errachidia","Errachidia","Errachidia",1,1,1,3,6
+mq_msol48cu_88bcea2f00,"RN17 — Errachidia 38 km E",barrage_fixe,"Errachidia","Errachidia","Errachidia",1,1,1,3,6
+mq_mspur06s_8a23c5c057,"RN10 — Errachidia 16 km SO",barrage_mobile,"Errachidia","Errachidia","Errachidia",0,0,1,2,3
+mq_mspur06s_58b2a10fd5,"RN13 — Errachidia",barrage_mobile,"Errachidia","Errachidia","Errachidia",0,0,1,2,3
+mq_mspv1v43_fec6756f,"Entrée RN13 — Errachidia",barrage_fixe,"Errachidia","Errachidia","Errachidia",1,1,1,3,6
+mq_mspv1v43_c0b68f85,"RN10 — Errachidia 6 km O",barrage_fixe,"Errachidia","Errachidia","Errachidia",1,1,1,3,6
+mq_msojamr7_206d3f38,"RN17 — Es Smara 7 km NO",barrage_fixe,"Es-Smara","Es-Smara","Laayoune",1,1,1,3,6
+mq_msol48cu_28b302213c,"RN17 — Es Smara 22 km NO",barrage_fixe,"Es-Smara","Es-Smara","Laayoune",1,1,1,3,6
+mq_msol48cu_22e7d46887,"RN17 — Es Smara 87 km NE",barrage_fixe,"Es-Smara","Es-Smara","Laayoune",1,1,1,3,6
+mq_msol48cu_ecca2ded7a,"RN17 — Es Smara 70 km NE",barrage_fixe,"Es-Smara","Es-Smara","Laayoune",1,1,1,3,6
+mq_msol48cu_d307901ffd,"RN17 — Es Smara 54 km NE",barrage_fixe,"Es-Smara","Es-Smara","Laayoune",1,1,1,3,6
+mq_msol48cu_49fa30a11c,"RN17 — Tilimzoune",barrage_fixe,"Es-Smara","Es-Smara","Laayoune",1,1,1,3,6
+mq_msol48cu_fa90454896,"RN17 — Zag 124 km SO",barrage_fixe,"Es-Smara","Es-Smara","Laayoune",1,1,1,3,6
+mq_msol48cu_8122c64678,"RN17 — Zag 110 km SO",barrage_fixe,"Es-Smara","Es-Smara","Laayoune",1,1,1,3,6
+mq_msol48cu_b1e17d3b94,"RN17 — Es Smara 130 km E",barrage_fixe,"Es-Smara","Es-Smara","Laayoune",1,1,1,3,6
+mq_msol48cu_da8303175e,"RN17 — Es Smara 114 km E",barrage_fixe,"Es-Smara","Es-Smara","Laayoune",1,1,1,3,6
+mq_msol48cu_cd83265328,"RN17 — Es Smara 26 km S",barrage_fixe,"Es-Smara","Es-Smara","Laayoune",1,1,1,3,6
+mq_msol48cu_def226ad78,"RN17 — Es Smara 44 km S",barrage_fixe,"Es-Smara","Es-Smara","Laayoune",1,1,1,3,6
+mq_msol48cu_1c048d4ada,"RN14 — Es Smara 50 km SO",barrage_fixe,"Es-Smara","Es-Smara","Laayoune",1,1,1,3,6
+mq_msol48cu_d1b2b5e0fe,"RN14 — Boukraa 58 km E",barrage_fixe,"Es-Smara","Es-Smara","Laayoune",1,1,1,3,6
+mq_msol48cu_eb166cb5f7,"RN14 — Boukraa 43 km NE",barrage_fixe,"Es-Smara","Es-Smara","Laayoune",1,1,1,3,6
+mq_msol48cu_ab5e76d90a,"RN14 — Es Smara 23 km O",barrage_fixe,"Es-Smara","Es-Smara","Laayoune",1,1,1,3,6
+mq_msol48cu_adc86e243e,"RN14 — Abbettih 21 km SO",barrage_fixe,"Es-Smara","Es-Smara","Laayoune",1,1,1,3,6
+mq_msol48cu_3c08f7290c,"RN14 — Abbettih 38 km SO",barrage_fixe,"Es-Smara","Es-Smara","Laayoune",1,1,1,3,6
+mq_msol48cu_713e33be77,"RN14 — Abbettih 55 km SO",barrage_fixe,"Es-Smara","Es-Smara","Laayoune",1,1,1,3,6
+mq_msol48cu_553038dd9d,"RN14 — Es Smara 62 km N",barrage_fixe,"Es-Smara","Es-Smara","Laayoune",1,1,1,3,6
+mq_msol48cu_68535e3111,"RN14 — Es Smara 45 km N",barrage_fixe,"Es-Smara","Es-Smara","Laayoune",1,1,1,3,6
+mq_msol48cu_a6d37b11fd,"RN17 — Zag 69 km S",barrage_fixe,"Es-Smara","Es-Smara","Laayoune",1,1,1,3,6
+mq_msol48cu_3db3a9591d,"RN17 — Zag 101 km SO",barrage_fixe,"Es-Smara","Es-Smara","Laayoune",1,1,1,3,6
+mq_msol48cu_1b88f4ef85,"RN17 — Zag 99 km SO",barrage_fixe,"Es-Smara","Es-Smara","Laayoune",1,1,1,3,6
+mq_msol48cu_1ec92ef03f,"RN17 — Zag 93 km S",barrage_fixe,"Es-Smara","Es-Smara","Laayoune",1,1,1,3,6
+mq_msol48cu_e3b9ab07dd,"RN17 — Zag 84 km S",barrage_fixe,"Es-Smara","Es-Smara","Laayoune",1,1,1,3,6
+mq_msol48cu_683e6059ce,"RN17 — Es Smara 37 km N",barrage_fixe,"Es-Smara","Es-Smara","Laayoune",1,1,1,3,6
+mq_msol48cy_d21cfa42e1,"RR101 — Abbettih 71 km SO",barrage_fixe,"Es-Smara","Es-Smara","Laayoune",1,1,1,3,6
+mq_mspur06t_8b8b01c38c,"RN17 — Es Smara 103 km NE",barrage_mobile,"Es-Smara","Es-Smara","Laayoune",0,0,1,2,3
+mq_mspur06t_f810d65f55,"RN17 — Es Smara 9 km S",barrage_mobile,"Es-Smara","Es-Smara","Laayoune",0,0,1,2,3
+mq_mspur06t_c77ea48487,"RN14 — Es Smara 36 km O",barrage_mobile,"Es-Smara","Es-Smara","Laayoune",0,0,1,2,3
+mq_mspur06t_9e852a1b78,"RN17 — Es Smara 26 km N",barrage_mobile,"Es-Smara","Es-Smara","Laayoune",0,0,1,2,3
+mq_mspur06t_fe4b9be66c,"RN17 — Es Smara 44 km NE",barrage_mobile,"Es-Smara","Es-Smara","Laayoune",0,0,1,2,3
+mq_mspur06t_00f8113fa0,"RR101 — Abbettih 59 km SO",barrage_mobile,"Es-Smara","Es-Smara","Laayoune",0,0,1,2,3
+mq_mspv1v43_1c71abd7,"RN14 — Es Smara 6 km SO",barrage_fixe,"Es-Smara","Es-Smara","Laayoune",1,1,1,3,6
+mq_mspv1v43_190d8019,"RN17 — Es Smara 5 km S",barrage_fixe,"Es-Smara","Es-Smara","Laayoune",1,1,1,3,6
+mq_msol48cy_bc628bdfb5,"RR301 — Ounagha",barrage_fixe,"Essaouira","Essaouira","Essaouira",1,1,1,3,6
+mq_mspv1v43_5460030c,"Entrée RR211 — Essaouira",barrage_fixe,"Essaouira","Essaouira","Essaouira",1,1,1,3,6
+mq_semis_0e03548b,"Poste mobile Essaouira (DEMO)",barrage_mobile,"Essaouira","Essaouira","Essaouira",0,0,1,2,3
+mq_mspur06s_1cb7c1b1af,"RN23 — Mellila 11 km NO",barrage_mobile,"Fedalat","Benslimane","Settat",0,0,1,2,3
+mq_mspv1v43_60e15203,"Entrée RN23 — Benslimane",barrage_fixe,"Fedalat","Benslimane","Settat",1,1,1,3,6
+mq_semis_6b7f767a,"Poste fixe Fès (DEMO)",barrage_fixe,"Fès","Fès","Fès",1,1,1,3,6
+mq_semis_bbf8d78a,"Poste mobile Fès (DEMO)",barrage_mobile,"Fès","Fès","Fès",0,0,1,2,3
+mq_msol48cx_f61b6c327e,"RR210 — Fetouaka",barrage_fixe,"Fetouaka","Azilal","Béni Mellal",1,1,1,3,6
+mq_semis_4ab6b291,"Poste mobile Fetouaka (DEMO)",barrage_mobile,"Fetouaka","Azilal","Béni Mellal",0,0,1,2,3
+mq_msol48cs_ef474e9cfc,"RN4 — Figuig 40 km O",barrage_fixe,"Figuig","Figuig","Bouarfa",1,1,1,3,6
+mq_msol48cu_3577a31cee,"RN4 — Figuig 22 km O",barrage_fixe,"Figuig","Figuig","Bouarfa",1,1,1,3,6
+mq_mspur06t_7898cfec0c,"RN4 — Figuig 9 km NO",barrage_mobile,"Figuig","Figuig","Bouarfa",0,0,1,2,3
+mq_mspv1v43_73b7dda5,"RN4 — Figuig 6 km NO",barrage_fixe,"Figuig","Figuig","Bouarfa",1,1,1,3,6
+mq_mspv1v43_a21c1f09,"RN4 — Figuig 3 km S",barrage_fixe,"Figuig","Figuig","Bouarfa",1,1,1,3,6
+mq_msra8pqk_eb12207d,"RN4 — Figuig 43 km O",barrage_fixe,"Figuig","Figuig","Bouarfa",1,1,1,3,6
+mq_msojamr7_3db00423,"Entrée RR308 — Fkih Ben Saleh",barrage_fixe,"Fkih Ben Saleh","Fkih Ben Salah","Béni Mellal",1,1,1,3,6
+mq_msol48cu_e3b33cc3a2,"RR308 — Dar Ouled Zidouh",barrage_fixe,"Fkih Ben Saleh","Fkih Ben Salah","Béni Mellal",1,1,1,3,6
+mq_mspur06t_5ca92091af,"RR304 — Fkih Ben Saleh",barrage_mobile,"Fkih Ben Saleh","Fkih Ben Salah","Béni Mellal",0,0,1,2,3
+mq_mspur06t_cf8360f667,"RR312 — Had Bradia",barrage_mobile,"Fkih Ben Saleh","Fkih Ben Salah","Béni Mellal",0,0,1,2,3
+mq_mspv1v43_81edff52,"RN25 — Fkih Ben Saleh 6 km NE",barrage_fixe,"Fkih Ben Saleh","Fkih Ben Salah","Béni Mellal",1,1,1,3,6
+mq_mspv1v43_0c641a3d,"RR312 — Fkih Ben Saleh",barrage_fixe,"Fkih Ben Saleh","Fkih Ben Salah","Béni Mellal",1,1,1,3,6
+mq_mspv1v43_ae229d49,"Entrée RN25 — Fkih Ben Saleh",barrage_fixe,"Fkih Ben Saleh","Fkih Ben Salah","Béni Mellal",1,1,1,3,6
+mq_mskzmvso_234096e0,"Tetouan",barrage_fixe,"Fnideq","Tétouan","Tétouan",1,1,1,3,6
+mq_msl13m0s_71677a3f,"Fnideq",barrage_fixe,"Fnideq","Tétouan","Tétouan",1,1,1,3,6
+mq_msra8pod_ba8bd456,"Entrée A7 — Tetouan",barrage_fixe,"Fnideq","Tétouan","Tétouan",1,1,1,3,6
+mq_semis_f8e98c54,"Poste mobile Fnideq (DEMO)",barrage_mobile,"Fnideq","Tétouan","Tétouan",0,0,1,2,3
+mq_msol48ct_0691085f2c,"Entrée RN17 — Foum El Hisn",barrage_fixe,"Foum El Hisn","Tata","Agadir",1,1,1,3,6
+mq_msol48cu_3a0b5733a0,"RN17 — Foum El Hisn 30 km SO",barrage_fixe,"Foum El Hisn","Tata","Agadir",1,1,1,3,6
+mq_msol48cu_2178d98ac8,"RR107 — Foum El Hisn 8 km N",barrage_fixe,"Foum El Hisn","Tata","Agadir",1,1,1,3,6
+mq_msol48cv_0127ae8e80,"RR107 — Foum El Hisn 26 km N",barrage_fixe,"Foum El Hisn","Tata","Agadir",1,1,1,3,6
+mq_msol48cw_ae847627da,"RR102 — Foum El Hisn",barrage_fixe,"Foum El Hisn","Tata","Agadir",1,1,1,3,6
+mq_mspur06t_cb1a454990,"RR107 — Ida Ouagougmar 29 km SE",barrage_mobile,"Foum El Hisn","Tata","Agadir",0,0,1,2,3
+mq_msol48ct_26044ca8c9,"RN1 — Port Laayoune 20 km S",barrage_fixe,"Foum El Oued","Laayoune","Laayoune",1,1,1,3,6
+mq_msol48ct_32766a5c12,"RN1 — Port Laayoune 38 km S",barrage_fixe,"Foum El Oued","Laayoune","Laayoune",1,1,1,3,6
+mq_msol48ct_b47b7aab03,"RN1 — Port Laayoune 54 km SO",barrage_fixe,"Foum El Oued","Laayoune","Laayoune",1,1,1,3,6
+mq_msol48cx_67859f83f1,"RR109 — Foum El Oued",barrage_fixe,"Foum El Oued","Laayoune","Laayoune",1,1,1,3,6
+mq_mspur06s_0797d00e5a,"RN1 — Port Laayoune 3 km NE",barrage_mobile,"Foum El Oued","Laayoune","Laayoune",0,0,1,2,3
+mq_msol48ct_d9352d0324,"RN17 — Foum Zguid 8 km SO",barrage_fixe,"Foum Zguid","Tata","Agadir",1,1,1,3,6
+mq_msol48cu_ecdbc0d79c,"RN17 — Foum Zguid 12 km NE",barrage_fixe,"Foum Zguid","Tata","Agadir",1,1,1,3,6
+mq_msol48cu_1ed39a7e72,"RN17 — Foum Zguid 25 km SO",barrage_fixe,"Foum Zguid","Tata","Agadir",1,1,1,3,6
+mq_msol48cu_53537c5d28,"RN17 — Foum Zguid 35 km E",barrage_fixe,"Foum Zguid","Tata","Agadir",1,1,1,3,6
+mq_msol48cw_b7917612f1,"RR111 — Foum Zguid",barrage_fixe,"Foum Zguid","Tata","Agadir",1,1,1,3,6
+mq_mspur06t_d6b1993a4f,"RN17 — Foum Zguid 22 km E",barrage_mobile,"Foum Zguid","Tata","Agadir",0,0,1,2,3
+mq_msol48cw_bb818a8a86,"Entrée RR419 — Ghafsai",barrage_fixe,"Ghafsai","Kariat Ba Mohamed","Fès",1,1,1,3,6
+mq_semis_05261b9a,"Poste mobile Ghafsai (DEMO)",barrage_mobile,"Ghafsai","Kariat Ba Mohamed","Fès",0,0,1,2,3
+mq_msol48cs_797a4a85c2,"Entrée A5 — Asilah",barrage_fixe,"Gharbia","Tanger","Tanger",1,1,1,3,6
+mq_semis_f4e692b9,"Poste mobile Gharbia (DEMO)",barrage_mobile,"Gharbia","Tanger","Tanger",0,0,1,2,3
+mq_msol48ct_3d4956bc06,"RN10 — Goulmima 3 km NE",barrage_fixe,"Goulmima","Arfoud","Errachidia",1,1,1,3,6
+mq_msol48ct_a657cddf82,"RN10 — Goulmima 20 km NE",barrage_fixe,"Goulmima","Arfoud","Errachidia",1,1,1,3,6
+mq_msol48cu_634946caf4,"RR706 — Goulmima 27 km N",barrage_fixe,"Goulmima","Arfoud","Errachidia",1,1,1,3,6
+mq_msol48cx_e39ad7a8f7,"RR702 — Assoul",barrage_fixe,"Goulmima","Arfoud","Errachidia",1,1,1,3,6
+mq_msol48cx_e0de796087,"RR706 — Goulmima 43 km N",barrage_fixe,"Goulmima","Arfoud","Errachidia",1,1,1,3,6
+mq_semis_6f1be040,"Poste mobile Goulmima (DEMO)",barrage_mobile,"Goulmima","Arfoud","Errachidia",0,0,1,2,3
+mq_msol48cu_3b7aac6ca9,"RR708 — Gourrama 7 km SO",barrage_fixe,"Gourrama","Midelt","Errachidia",1,1,1,3,6
+mq_msol48cx_7d9a948a32,"RR708 — Gourrama 11 km E",barrage_fixe,"Gourrama","Midelt","Errachidia",1,1,1,3,6
+mq_semis_47472d41,"Poste mobile Gourrama (DEMO)",barrage_mobile,"Gourrama","Midelt","Errachidia",0,0,1,2,3
+mq_msol48ct_8e4d87c734,"RN21 — Bouizakarne",barrage_fixe,"Guelmim","Guelmim","Guelmim",1,1,1,3,6
+mq_msol48cu_3d2f2cecf7,"RN1 — Laqsabi 22 km SO",barrage_fixe,"Guelmim","Guelmim","Guelmim",1,1,1,3,6
+mq_mspur06s_14c1bb793d,"RN1 — Laqsabi 8 km S",barrage_mobile,"Guelmim","Guelmim","Guelmim",0,0,1,2,3
+mq_mspur06t_139f6586cc,"RN21 — Guelmim",barrage_mobile,"Guelmim","Guelmim","Guelmim",0,0,1,2,3
+mq_mspur06s_8f33fc9766,"A2 — Guercif 12 km NO",barrage_mobile,"Guercif","Guercif","Oujda",0,0,1,2,3
+mq_mspur06s_f074145474,"RN6 — Guercif 10 km E",barrage_mobile,"Guercif","Guercif","Oujda",0,0,1,2,3
+mq_mspur06t_6c78abc0bc,"RR504 — Guercif",barrage_mobile,"Guercif","Guercif","Oujda",0,0,1,2,3
+mq_mspv1v44_3ca8b846,"RN6 — Guercif 6 km O",barrage_fixe,"Guercif","Guercif","Oujda",1,1,1,3,6
+mq_mspv1v44_262cc43b,"Entrée RN15 — Guercif",barrage_fixe,"Guercif","Guercif","Oujda",1,1,1,3,6
+mq_msol48cs_69f359408d,"RN29 — Boulmane 5 km SE",barrage_fixe,"Guigou","Missour","Fès",1,1,1,3,6
+mq_msol48cu_7dfbd03b9d,"Entrée RN4 — Guigou",barrage_fixe,"Guigou","Missour","Fès",1,1,1,3,6
+mq_semis_af634517,"Poste mobile Guigou (DEMO)",barrage_mobile,"Guigou","Missour","Fès",0,0,1,2,3
+mq_semis_21305173,"Poste fixe Guisser (DEMO)",barrage_fixe,"Guisser","Settat","Settat",1,1,1,3,6
+mq_semis_01115eaf,"Poste mobile Guisser (DEMO)",barrage_mobile,"Guisser","Settat","Settat",0,0,1,2,3
+mq_msol48ct_3e06d77761,"RN1 — Had Belfaa",barrage_fixe,"Had Belfaa","Biougra","Agadir",1,1,1,3,6
+mq_msol48cx_195899e6be,"RR115 — Had Belfaa",barrage_fixe,"Had Belfaa","Biougra","Agadir",1,1,1,3,6
+mq_mspur06t_4df15cfe1d,"RR115 — Massa",barrage_mobile,"Had Belfaa","Biougra","Agadir",0,0,1,2,3
+mq_semis_2a3f742a,"Poste fixe Had Boumoussa (DEMO)",barrage_fixe,"Had Boumoussa","Fkih Ben Salah","Béni Mellal",1,1,1,3,6
+mq_semis_35509eda,"Poste mobile Had Boumoussa (DEMO)",barrage_mobile,"Had Boumoussa","Fkih Ben Salah","Béni Mellal",0,0,1,2,3
+mq_msol48cu_61806c2913,"RR407 — Had Brachoua",barrage_fixe,"Had Brachoua","Rommani","Khémisset",1,1,1,3,6
+mq_msol48cv_5f1cf362f1,"RR404 — Ain Sbit",barrage_fixe,"Had Brachoua","Rommani","Khémisset",1,1,1,3,6
+mq_mspur06s_00ab05bead,"RN25 — Ain El Aouda",barrage_mobile,"Had Brachoua","Rommani","Khémisset",0,0,1,2,3
+mq_mspv1v44_d748faf9,"Entrée RN25 — Ain El Aouda",barrage_fixe,"Had Brachoua","Rommani","Khémisset",1,1,1,3,6
+mq_semis_4400e5c3,"Poste fixe Had Bradia (DEMO)",barrage_fixe,"Had Bradia","Fkih Ben Salah","Béni Mellal",1,1,1,3,6
+mq_semis_a735da9f,"Poste mobile Had Bradia (DEMO)",barrage_mobile,"Had Bradia","Fkih Ben Salah","Béni Mellal",0,0,1,2,3
+mq_msol48cs_abed2c98b5,"Entrée RN2 — Chefchaouen 6 km S",barrage_fixe,"Had Ghdir Lakrouch","Chefchaouen","Tétouan",1,1,1,3,6
+mq_semis_5f034d73,"Poste mobile Had Ghdir Lakrouch (DEMO)",barrage_mobile,"Had Ghdir Lakrouch","Chefchaouen","Tétouan",0,0,1,2,3
+mq_msol48cu_6bb0b7a5e3,"RR414 — Had Kourt",barrage_fixe,"Had Kourt","Sidi Kacem","Sidi Kacem",1,1,1,3,6
+mq_msra8pr3_b2132d52,"Entrée RR414 — Had Kourt",barrage_fixe,"Had Kourt","Sidi Kacem","Sidi Kacem",1,1,1,3,6
+mq_semis_5b501e17,"Poste mobile Had Kourt (DEMO)",barrage_mobile,"Had Kourt","Sidi Kacem","Sidi Kacem",0,0,1,2,3
+mq_semis_43148dcf,"Poste fixe Had Laghoualem (DEMO)",barrage_fixe,"Had Laghoualem","Rommani","Khémisset",1,1,1,3,6
+mq_semis_25d38cdb,"Poste mobile Had Laghoualem (DEMO)",barrage_mobile,"Had Laghoualem","Rommani","Khémisset",0,0,1,2,3
+mq_msol48cr_530a870350,"A3 — Had Mejjat",barrage_fixe,"Had Mejjat","Chichaoua","Marrakech",1,1,1,3,6
+mq_msol48cu_fffb8cca3e,"Entrée RR209 — Had Mejjat",barrage_fixe,"Had Mejjat","Chichaoua","Marrakech",1,1,1,3,6
+mq_msol48cy_464ef9d7e6,"RR212 — Imintanout",barrage_fixe,"Had Mejjat","Chichaoua","Marrakech",1,1,1,3,6
+mq_mspur06s_7c9a2e23ed,"A3 — Chichaoua 15 km E",barrage_mobile,"Had Mejjat","Chichaoua","Marrakech",0,0,1,2,3
+mq_mspur06t_bdeff32d8d,"RR212 — Had Mejjat",barrage_mobile,"Had Mejjat","Chichaoua","Marrakech",0,0,1,2,3
+mq_msol48cs_6ebbcf875a,"RN8 — Had Oued Ifrane",barrage_fixe,"Had Oued Ifrane","Azrou","Meknès",1,1,1,3,6
+mq_semis_06425268,"Poste mobile Had Oued Ifrane (DEMO)",barrage_mobile,"Had Oued Ifrane","Azrou","Meknès",0,0,1,2,3
+mq_msol48cu_26ff125c11,"RR314 — Had Ouled Frej",barrage_fixe,"Had Ouled Frej","El Jadida","El Jadida",1,1,1,3,6
+mq_msol48cu_47f899c849,"RR303 — Had Ouled Frej 17 km N",barrage_fixe,"Had Ouled Frej","El Jadida","El Jadida",1,1,1,3,6
+mq_mspur06t_b012faa69e,"RR303 — Had Ouled Frej 3 km NE",barrage_mobile,"Had Ouled Frej","El Jadida","El Jadida",0,0,1,2,3
+mq_msol48cu_80aeeafbe2,"RN8 — Had Ras El Ain",barrage_fixe,"Had Ras El Ain","Benguerir","Marrakech",1,1,1,3,6
+mq_mspur06t_bd93ea3d77,"RR201 — Had Ras El Ain 6 km N",barrage_mobile,"Had Ras El Ain","Benguerir","Marrakech",0,0,1,2,3
+mq_msol48cr_f3b5839501,"Entrée A1 — Bir Jdid",barrage_fixe,"Had Soualem","Berrechid","Settat",1,1,1,3,6
+mq_msol48cu_324c637968,"RR318 — Ouled Salah",barrage_fixe,"Had Soualem","Berrechid","Settat",1,1,1,3,6
+mq_semis_c6902082,"Poste mobile Had Soualem (DEMO)",barrage_mobile,"Had Soualem","Berrechid","Settat",0,0,1,2,3
+mq_semis_26da7dbf,"Poste fixe Harhoura (DEMO)",barrage_fixe,"Harhoura","Témara","Rabat",1,1,1,3,6
+mq_semis_83b170eb,"Poste mobile Harhoura (DEMO)",barrage_mobile,"Harhoura","Témara","Rabat",0,0,1,2,3
+mq_msol48cy_f828d5965e,"Entrée RR312 — Hattane",barrage_fixe,"Hattane","Khouribga","Khouribga",1,1,1,3,6
+mq_semis_ba34a6ea,"Poste mobile Hattane (DEMO)",barrage_mobile,"Hattane","Khouribga","Khouribga",0,0,1,2,3
+mq_msol48ct_ae38c90af5,"Entrée RN27 — Haouafate",barrage_fixe,"Houafate","Sidi Kacem","Sidi Kacem",1,1,1,3,6
+mq_mspur06t_3c9bb14fbd,"RR418 — Kceibia",barrage_mobile,"Houafate","Sidi Kacem","Sidi Kacem",0,0,1,2,3
+mq_msol48cu_3d53c774df,"Entrée RR117 — Ida Ouagougmar",barrage_fixe,"Ida Ou Gougmar","Tiznit","Agadir",1,1,1,3,6
+mq_msol48cx_b5ab894027,"RR104 — Ida Ouagougmar",barrage_fixe,"Ida Ou Gougmar","Tiznit","Agadir",1,1,1,3,6
+mq_semis_6e824499,"Poste mobile Ida Ou Gougmar (DEMO)",barrage_mobile,"Ida Ou Gougmar","Tiznit","Agadir",0,0,1,2,3
+mq_mspur06s_0d42801a58,"RN8 — Ifrane 5 km N",barrage_mobile,"Ifrane","Ifrane","Meknès",0,0,1,2,3
+mq_mspv1v44_449fc1f8,"RR707 — Ifrane 4 km SE",barrage_fixe,"Ifrane","Ifrane","Meknès",1,1,1,3,6
+mq_mspv1v44_3fd903b1,"RN8 — Ifrane 3 km NE",barrage_fixe,"Ifrane","Ifrane","Meknès",1,1,1,3,6
+mq_msol48cu_7016ec8d5f,"RR117 — Ifrane Atlas Saghir",barrage_fixe,"Ifrane Atlas Saghir","Guelmim","Guelmim",1,1,1,3,6
+mq_semis_34dd8d51,"Poste mobile Ifrane Atlas Saghir (DEMO)",barrage_mobile,"Ifrane Atlas Saghir","Guelmim","Guelmim",0,0,1,2,3
+mq_msol48ct_251c298e6e,"RN9 — Ighram Nougdal 6 km SO",barrage_fixe,"Ighram Nougdal","Ouarzazate","Ouarzazate",1,1,1,3,6
+mq_msol48ct_a1044995db,"RN9 — Ighram Nougdal 18 km SE",barrage_fixe,"Ighram Nougdal","Ouarzazate","Ouarzazate",1,1,1,3,6
+mq_msol48cv_d0804ee684,"RR112 — Ighram Nougdal",barrage_fixe,"Ighram Nougdal","Ouarzazate","Ouarzazate",1,1,1,3,6
+mq_semis_9712a067,"Poste mobile Ighram Nougdal (DEMO)",barrage_mobile,"Ighram Nougdal","Ouarzazate","Ouarzazate",0,0,1,2,3
+mq_msol48ct_73f43fdf60,"RN7 — Ighrem 13 km S",barrage_fixe,"Ighrem","Taroudannt","Agadir",1,1,1,3,6
+mq_msol48cu_8675130ce9,"RN7 — Ighrem 25 km N",barrage_fixe,"Ighrem","Taroudannt","Agadir",1,1,1,3,6
+mq_msol48cu_7507f077ea,"Entrée RN7 — Ighrem",barrage_fixe,"Ighrem","Taroudannt","Agadir",1,1,1,3,6
+mq_msol48cv_1859eb61c4,"RR106 — Ighrem",barrage_fixe,"Ighrem","Taroudannt","Agadir",1,1,1,3,6
+mq_msol48cw_540c315645,"RR106 — Taliouine 34 km SO",barrage_fixe,"Ighrem","Taroudannt","Agadir",1,1,1,3,6
+mq_msol48cx_446bec3194,"RR116 — Ighrem",barrage_fixe,"Ighrem","Taroudannt","Agadir",1,1,1,3,6
+mq_semis_3d22c8e3,"Poste mobile Ighrem (DEMO)",barrage_mobile,"Ighrem","Taroudannt","Agadir",0,0,1,2,3
+mq_msol48cs_46c049dae1,"RN8 — Ikaouen 16 km E",barrage_fixe,"Ikaouene","Targuiste","Al Hoceima",1,1,1,3,6
+mq_msol48cv_09c102bcc9,"Entrée RR509 — Ikaouen",barrage_fixe,"Ikaouene","Targuiste","Al Hoceima",1,1,1,3,6
+mq_semis_240a9788,"Poste mobile Ikaouene (DEMO)",barrage_mobile,"Ikaouene","Targuiste","Al Hoceima",0,0,1,2,3
+mq_msol48cs_dfbfc670dd,"Entrée — Iksane",barrage_fixe,"Iksane","Nador","Nador",1,1,1,3,6
+mq_mspur06t_6c3bc1a4b7,"RN16 — Iksane",barrage_mobile,"Iksane","Nador","Nador",0,0,1,2,3
+mq_msra8pp1_cc4d42fb,"RR610 — Iksane",barrage_fixe,"Iksane","Nador","Nador",1,1,1,3,6
+mq_msol48cu_aedaeb6305,"Entrée RN8 — Had Boumoussa",barrage_fixe,"Imaddahen","Azilal","Béni Mellal",1,1,1,3,6
+mq_semis_0e9a049a,"Poste mobile Imaddahen (DEMO)",barrage_mobile,"Imaddahen","Azilal","Béni Mellal",0,0,1,2,3
+mq_msol48ct_7380d825c5,"RN10 — Imider 5 km NO",barrage_fixe,"Imider","Tinghir","Ouarzazate",1,1,1,3,6
+mq_semis_b9d26457,"Poste mobile Imider (DEMO)",barrage_mobile,"Imider","Tinghir","Ouarzazate",0,0,1,2,3
+mq_msol48cs_c7fd00d563,"RN12 — Imilchil 5 km E",barrage_fixe,"Imilchil","Midelt","Errachidia",1,1,1,3,6
+mq_msol48cs_676004d417,"RN12 — Imilchil 21 km SE",barrage_fixe,"Imilchil","Midelt","Errachidia",1,1,1,3,6
+mq_msol48cx_f71b71e200,"RR704 — Imilchil",barrage_fixe,"Imilchil","Midelt","Errachidia",1,1,1,3,6
+mq_msol48cx_7981341c6a,"RR704 — Tounfite 32 km S",barrage_fixe,"Imilchil","Midelt","Errachidia",1,1,1,3,6
+mq_msra8por_d03ba628,"Entrée RN12 — Imilchil",barrage_fixe,"Imilchil","Midelt","Errachidia",1,1,1,3,6
+mq_semis_d26ae18a,"Poste mobile Imilchil (DEMO)",barrage_mobile,"Imilchil","Midelt","Errachidia",0,0,1,2,3
+mq_mspur06s_2fd42e8a26,"A3 — Imintanout 10 km O",barrage_mobile,"Imintanout","Chichaoua","Marrakech",0,0,1,2,3
+mq_semis_1af2b02f,"Poste fixe Imintanout (DEMO)",barrage_fixe,"Imintanout","Chichaoua","Marrakech",1,1,1,3,6
+mq_semis_6afae6b2,"Poste fixe Imlil (DEMO)",barrage_fixe,"Imlil","Tahannaout","Marrakech",1,1,1,3,6
+mq_semis_c9d04742,"Poste mobile Imlil (DEMO)",barrage_mobile,"Imlil","Tahannaout","Marrakech",0,0,1,2,3
+mq_msol48ct_797b52366a,"RN1 — Imlili 25 km NE",barrage_fixe,"Imlili","Dakhla","Dakhla",1,1,1,3,6
+mq_msol48ct_99b7ff1fa1,"RN1 — Imlili 7 km NE",barrage_fixe,"Imlili","Dakhla","Dakhla",1,1,1,3,6
+mq_msol48ct_f022c0c53f,"RN1 — Imlili 13 km S",barrage_fixe,"Imlili","Dakhla","Dakhla",1,1,1,3,6
+mq_msol48ct_4c1edc5a33,"RN1 — Imlili 29 km S",barrage_fixe,"Imlili","Dakhla","Dakhla",1,1,1,3,6
+mq_msol48ct_0d56b57bf0,"RN3 — Dakhla 92 km SE",barrage_fixe,"Imlili","Dakhla","Dakhla",1,1,1,3,6
+mq_msol48ct_1f0789fd97,"RN1 — Imlili 45 km S",barrage_fixe,"Imlili","Dakhla","Dakhla",1,1,1,3,6
+mq_msol48ct_dfdf090b59,"RN1 — Imlili 62 km S",barrage_fixe,"Imlili","Dakhla","Dakhla",1,1,1,3,6
+mq_semis_50d31c71,"Poste mobile Imlili (DEMO)",barrage_mobile,"Imlili","Dakhla","Dakhla",0,0,1,2,3
+mq_msol48cs_089d0ec4f2,"Entrée RN8 — Immouzer Kandar",barrage_fixe,"Immouzer Kandar","Sefrou","Fès",1,1,1,3,6
+mq_semis_a0feb7b2,"Poste mobile Immouzer Kandar (DEMO)",barrage_mobile,"Immouzer Kandar","Sefrou","Fès",0,0,1,2,3
+mq_msol48cs_1f3ec59515,"RN29 — Immouzer Marmoucha 23 km NE",barrage_fixe,"Immouzer Marmoucha","Missour","Fès",1,1,1,3,6
+mq_msol48ct_190ae9b319,"RN29 — Immouzer Marmoucha 6 km NE",barrage_fixe,"Immouzer Marmoucha","Missour","Fès",1,1,1,3,6
+mq_msol48cv_b66ca74c70,"RR606 — Immouzer Marmoucha 21 km SE",barrage_fixe,"Immouzer Marmoucha","Missour","Fès",1,1,1,3,6
+mq_mspur06t_82d9d4fce4,"RR606 — Immouzer Marmoucha 10 km S",barrage_mobile,"Immouzer Marmoucha","Missour","Fès",0,0,1,2,3
+mq_msol48cu_91ecf82c7b,"RR113 — Imouzer Ida Outanane 14 km NO",barrage_fixe,"Imouzer Ida Outanane","Agadir","Agadir",1,1,1,3,6
+mq_msol48cv_9e54aedae6,"RR203 — Imouzer Ida Outanane",barrage_fixe,"Imouzer Ida Outanane","Agadir","Agadir",1,1,1,3,6
+mq_mspur06t_458e780ecf,"RR113 — Imouzer Ida Outanane 3 km NE",barrage_mobile,"Imouzer Ida Outanane","Agadir","Agadir",0,0,1,2,3
+mq_semis_d6a1a251,"Poste fixe Imrabten (DEMO)",barrage_fixe,"Imrabten","Al Hoceima","Al Hoceima",1,1,1,3,6
+mq_semis_23ed51e1,"Poste mobile Imrabten (DEMO)",barrage_mobile,"Imrabten","Al Hoceima","Al Hoceima",0,0,1,2,3
+mq_mspur06t_43fa4069bf,"RR610 — Imrabten",barrage_mobile,"Imzouren","Al Hoceima","Al Hoceima",0,0,1,2,3
+mq_mspv1v43_5e968e63,"Entrée RN2 — Imzouren",barrage_fixe,"Imzouren","Al Hoceima","Al Hoceima",1,1,1,3,6
+mq_mspv1v43_f2ef2af5,"RR105 — Inezgane",barrage_fixe,"Inezgane","Inezgane","Agadir",1,1,1,3,6
+mq_semis_c8201e7a,"Poste mobile Inezgane (DEMO)",barrage_mobile,"Inezgane","Inezgane","Agadir",0,0,1,2,3
+mq_msol48cu_375a2e8d93,"RN13 — Itzer",barrage_fixe,"Itzer","Midelt","Errachidia",1,1,1,3,6
+mq_msol48cu_6f94370c7a,"RN29 — Itzer 24 km NE",barrage_fixe,"Itzer","Midelt","Errachidia",1,1,1,3,6
+mq_semis_fc33409f,"Poste mobile Itzer (DEMO)",barrage_mobile,"Itzer","Midelt","Errachidia",0,0,1,2,3
+mq_semis_d2be89da,"Poste fixe Izemmouren (DEMO)",barrage_fixe,"Izemmouren","Al Hoceima","Al Hoceima",1,1,1,3,6
+mq_semis_bb31ef6a,"Poste mobile Izemmouren (DEMO)",barrage_mobile,"Izemmouren","Al Hoceima","Al Hoceima",0,0,1,2,3
+mq_msol48cv_a2f475b93b,"Entrée RR417 — Dar Chaoui",barrage_fixe,"Jbel Lahbib","Tétouan","Tétouan",1,1,1,3,6
+mq_semis_c788c3b8,"Poste mobile Jbel Lahbib (DEMO)",barrage_mobile,"Jbel Lahbib","Tétouan","Tétouan",0,0,1,2,3
+mq_msol48cs_c69cf515ec,"RN16 — Jebha",barrage_fixe,"Jebha","Chefchaouen","Tétouan",1,1,1,3,6
+mq_msol48cs_0c3fbf77af,"RN2 — Ketama",barrage_fixe,"Jebha","Chefchaouen","Tétouan",1,1,1,3,6
+mq_msol48ct_a05a14a291,"Entrée RN16 — Jebha",barrage_fixe,"Jebha","Chefchaouen","Tétouan",1,1,1,3,6
+mq_semis_853e296f,"Poste mobile Jebha (DEMO)",barrage_mobile,"Jebha","Chefchaouen","Tétouan",0,0,1,2,3
+mq_msol48cs_7fd6ad47a3,"A1 — El Oualidia",barrage_fixe,"Jemaa Ouled Ghanem","El Jadida","El Jadida",1,1,1,3,6
+mq_msol48cs_080c60a051,"Entrée A1 — Souk Jemaa Ouled Ghanem",barrage_fixe,"Jemaa Ouled Ghanem","El Jadida","El Jadida",1,1,1,3,6
+mq_msol48cx_0497afeceb,"RR301 — Souk Jemaa Ouled Ghanem",barrage_fixe,"Jemaa Ouled Ghanem","El Jadida","El Jadida",1,1,1,3,6
+mq_semis_4ebb6240,"Poste mobile Jemaa Ouled Ghanem (DEMO)",barrage_mobile,"Jemaa Ouled Ghanem","El Jadida","El Jadida",0,0,1,2,3
+mq_msol48ct_cd87ed58a3,"RN1 — Jemaa Shaim",barrage_fixe,"Jemaa S'Haim","Safi","Safi",1,1,1,3,6
+mq_mspur06t_405799e89b,"RR206 — Jemaa Shaim",barrage_mobile,"Jemaa S'Haim","Safi","Safi",0,0,1,2,3
+mq_msol48cs_fee4d65aa8,"RN17 — Naima",barrage_fixe,"Jerrada","Jerrada","Oujda",1,1,1,3,6
+mq_mspur06s_76d68afde3,"RN17 — Jerrada",barrage_mobile,"Jerrada","Jerrada","Oujda",0,0,1,2,3
+mq_mspur06t_36769a6e36,"RR607 — Jerrada",barrage_mobile,"Jerrada","Jerrada","Oujda",0,0,1,2,3
+mq_mspv1v43_b6894e5b,"Entrée RR607 — Jerrada",barrage_fixe,"Jerrada","Jerrada","Oujda",1,1,1,3,6
+mq_msol48cv_21e50416d8,"Entrée RR702 — Jorf",barrage_fixe,"Jorf","Arfoud","Errachidia",1,1,1,3,6
+mq_semis_5187c988,"Poste mobile Jorf (DEMO)",barrage_mobile,"Jorf","Arfoud","Errachidia",0,0,1,2,3
+mq_mspur06t_394f08071b,"RR418 — Jorf El Melha",barrage_mobile,"Jorf El Melha","Sidi Kacem","Sidi Kacem",0,0,1,2,3
+mq_semis_a91ad710,"Poste fixe Jorf El Melha (DEMO)",barrage_fixe,"Jorf El Melha","Sidi Kacem","Sidi Kacem",1,1,1,3,6
+mq_msol48cs_63bc80d81a,"Entrée RN16 — Ras Kabdana 14 km SO",barrage_fixe,"Kabdana","Zaiou","Nador",1,1,1,3,6
+mq_mspur06s_9da5301473,"RN16 — Kabdana",barrage_mobile,"Kabdana","Zaiou","Nador",0,0,1,2,3
+mq_semis_9ef0bee8,"Poste fixe Kaf El Ghar (DEMO)",barrage_fixe,"Kaf El Ghar","Taza","Taza",1,1,1,3,6
+mq_semis_3e0a52a4,"Poste mobile Kaf El Ghar (DEMO)",barrage_mobile,"Kaf El Ghar","Taza","Taza",0,0,1,2,3
+mq_msol48cw_ef9f9af946,"RR710 — Kahf Nsour",barrage_fixe,"Kaf Nsour","Khénifra","Khénifra",1,1,1,3,6
+mq_mspur06t_e5c44b827e,"RR710 — Khenifra",barrage_mobile,"Kaf Nsour","Khénifra","Khénifra",0,0,1,2,3
+mq_msol48cs_5add16d86d,"RN13 — Zagota",barrage_fixe,"Karia Ba Mohamed","Kariat Ba Mohamed","Fès",1,1,1,3,6
+mq_mspur06t_aac0a6ab39,"RR408 — Mjaara",barrage_mobile,"Karia Ba Mohamed","Kariat Ba Mohamed","Fès",0,0,1,2,3
+mq_mspv1v43_97ee4db7,"RR506 — Karia Ba Mohamed 5 km SO",barrage_fixe,"Karia Ba Mohamed","Kariat Ba Mohamed","Fès",1,1,1,3,6
+mq_mspv1v43_fd609efb,"RR501 — Karia Ba Mohamed 6 km NO",barrage_fixe,"Karia Ba Mohamed","Kariat Ba Mohamed","Fès",1,1,1,3,6
+mq_mspv1v43_a1c7a651,"RR506 — Karia Ba Mohamed 6 km E",barrage_fixe,"Karia Ba Mohamed","Kariat Ba Mohamed","Fès",1,1,1,3,6
+mq_msol48cs_c2f8c00f54,"Entrée A4 — Kasba Tadla",barrage_fixe,"Kasba Tadla","Béni Mellal","Béni Mellal",1,1,1,3,6
+mq_mspur06s_9ccc579677,"RN25 — Fkih Ben Saleh 17 km NE",barrage_mobile,"Kasba Tadla","Béni Mellal","Béni Mellal",0,0,1,2,3
+mq_mspur06s_1d62778016,"RN12 — Kasba Tadla",barrage_mobile,"Kasba Tadla","Béni Mellal","Béni Mellal",0,0,1,2,3
+mq_mspur06t_c7c15ab075,"RN8 — Kasba Tadla",barrage_mobile,"Kasba Tadla","Béni Mellal","Béni Mellal",0,0,1,2,3
+mq_semis_02e1fce9,"Poste fixe Kceibia (DEMO)",barrage_fixe,"Kceibia","Sidi Slimane","Sidi Kacem",1,1,1,3,6
+mq_semis_72185479,"Poste mobile Kceibia (DEMO)",barrage_mobile,"Kceibia","Sidi Slimane","Sidi Kacem",0,0,1,2,3
+mq_msol48cw_ac88da0096,"RR317 — Kelaat Maggouna",barrage_fixe,"Kelaat M'Gouna","Tinghir","Ouarzazate",1,1,1,3,6
+mq_msol48cx_63c8e41228,"RR317 — Tabant 17 km SE",barrage_fixe,"Kelaat M'Gouna","Tinghir","Ouarzazate",1,1,1,3,6
+mq_mspur06s_f9a857c6cb,"RN10 — Kelaat Maggouna 12 km SO",barrage_mobile,"Kelaat M'Gouna","Tinghir","Ouarzazate",0,0,1,2,3
+mq_mspur06s_8ecced6d5d,"RN10 — Kelaat Maggouna 4 km NE",barrage_mobile,"Kelaat M'Gouna","Tinghir","Ouarzazate",0,0,1,2,3
+mq_msjkslrg_5184151e,"RN1 — Kenitra 13 km NE",barrage_mobile,"Kénitra","Kénitra","Kénitra",0,0,1,2,3
+mq_msjkxs8x_809be0f0,"RN1 — Mehdia",barrage_mobile,"Kénitra","Kénitra","Kénitra",0,0,1,2,3
+mq_msjnz6ju_96c71a24,"RN1 — Kenitra 1 km O",barrage_fixe,"Kénitra","Kénitra","Kénitra",1,1,1,3,6
+mq_msjo0hd7_d2b323b1,"RN1 — Kenitra 7 km NE",barrage_fixe,"Kénitra","Kénitra","Kénitra",1,1,1,3,6
+mq_msra8plx_ff020c09,"RN1 — Kenitra 2 km NE",barrage_fixe,"Kénitra","Kénitra","Kénitra",1,1,1,3,6
+mq_semis_70bdcfeb,"Poste fixe Kerrouchen (DEMO)",barrage_fixe,"Kerrouchen","Ait Ishaq","Khénifra",1,1,1,3,6
+mq_semis_5f969cc7,"Poste mobile Kerrouchen (DEMO)",barrage_mobile,"Kerrouchen","Ait Ishaq","Khénifra",0,0,1,2,3
+mq_mspur06s_8633ce7225,"RN2 — Targuiste 12 km O",barrage_mobile,"Ketama","Targuiste","Al Hoceima",0,0,1,2,3
+mq_semis_c168f3d2,"Poste fixe Ketama (DEMO)",barrage_fixe,"Ketama","Targuiste","Al Hoceima",1,1,1,3,6
+mq_msol48cu_39ec3c67b5,"Entrée RN7 — Kettara",barrage_fixe,"Kettara","Tamansourte","Marrakech",1,1,1,3,6
+mq_semis_6f61d64f,"Poste mobile Kettara (DEMO)",barrage_mobile,"Kettara","Tamansourte","Marrakech",0,0,1,2,3
+mq_semis_fee6a754,"Poste fixe Khemis Anjra (DEMO)",barrage_fixe,"Khemis Anjra","Fahs Anjra","Tanger",1,1,1,3,6
+mq_semis_63d14110,"Poste mobile Khemis Anjra (DEMO)",barrage_mobile,"Khemis Anjra","Fahs Anjra","Tanger",0,0,1,2,3
+mq_mskzm177_1523ce42,"Khemis Sahel",barrage_fixe,"Khémiss Sahel","Larache","Tanger",1,1,1,3,6
+mq_mspur06t_2985e62db1,"RR417 — Jbel Lahbib",barrage_mobile,"Khémiss Sahel","Larache","Tanger",0,0,1,2,3
+mq_msol48ct_fe2972d9ec,"Entrée RN1 — Khemiss Zemamra",barrage_fixe,"Khemiss Zemamra","Sidi Bennour","El Jadida",1,1,1,3,6
+mq_mspur06s_0b2274801f,"RN1 — Sidi Smail",barrage_mobile,"Khemiss Zemamra","Sidi Bennour","El Jadida",0,0,1,2,3
+mq_mspur06t_45ff9fa2ee,"RR202 — Khemiss Zemamra 13 km O",barrage_mobile,"Khemiss Zemamra","Sidi Bennour","El Jadida",0,0,1,2,3
+mq_semis_bd7720f2,"Poste fixe Khémisset (DEMO)",barrage_fixe,"Khémisset","Khémisset","Khémisset",1,1,1,3,6
+mq_semis_c97ed082,"Poste mobile Khémisset (DEMO)",barrage_mobile,"Khémisset","Khémisset","Khémisset",0,0,1,2,3
+mq_mspv1v43_329cf029,"RR319 — Khenifra",barrage_fixe,"Khénifra","Khénifra","Khénifra",1,1,1,3,6
+mq_mspv1v43_7a8b9175,"RN8 — Khenifra",barrage_fixe,"Khénifra","Khénifra","Khénifra",1,1,1,3,6
+mq_semis_b72fbaa1,"Poste mobile Khénifra (DEMO)",barrage_mobile,"Khénifra","Khénifra","Khénifra",0,0,1,2,3
+mq_semis_49614eb3,"Poste fixe Khmis Metouh (DEMO)",barrage_fixe,"Khmis Metouh","El Jadida","El Jadida",1,1,1,3,6
+mq_semis_4b757eef,"Poste mobile Khmis Metouh (DEMO)",barrage_mobile,"Khmis Metouh","El Jadida","El Jadida",0,0,1,2,3
+mq_msol48cv_dbc54e716f,"Entrée RR418 — Khnichet",barrage_fixe,"Khnichet","Sidi Kacem","Sidi Kacem",1,1,1,3,6
+mq_semis_9556525f,"Poste mobile Khnichet (DEMO)",barrage_mobile,"Khnichet","Sidi Kacem","Sidi Kacem",0,0,1,2,3
+mq_semis_111241d5,"Poste fixe Khouribga (DEMO)",barrage_fixe,"Khouribga","Khouribga","Khouribga",1,1,1,3,6
+mq_semis_7598aed5,"Poste mobile Khouribga (DEMO)",barrage_mobile,"Khouribga","Khouribga","Khouribga",0,0,1,2,3
+mq_msol48cs_dd0fb32ccf,"RN15 — Ksabi 16 km E",barrage_fixe,"Ksabi","Missour","Fès",1,1,1,3,6
+mq_mspur06s_bbe3fec1d7,"RN15 — Ksabi 4 km SE",barrage_mobile,"Ksabi","Missour","Fès",0,0,1,2,3
+mq_msol48ct_6bb13aaa01,"Entrée RN1 — Ksar Lakbir",barrage_fixe,"Ksar El Kebir","Larache","Tanger",1,1,1,3,6
+mq_msol48ct_28c77b367a,"Entrée RN1 — Arbaoua",barrage_fixe,"Ksar El Kebir","Larache","Tanger",1,1,1,3,6
+mq_semis_515e2416,"Poste mobile Ksar El Kebir (DEMO)",barrage_mobile,"Ksar El Kebir","Larache","Tanger",0,0,1,2,3
+mq_msol48cs_4ccc894137,"RN16 — Ksar Sghir",barrage_fixe,"Ksar El Majaz","Fahs Anjra","Tanger",1,1,1,3,6
+mq_semis_fd6f8a44,"Poste mobile Ksar El Majaz (DEMO)",barrage_mobile,"Ksar El Majaz","Fahs Anjra","Tanger",0,0,1,2,3
+mq_semis_e2b7d5a3,"Poste fixe Ksar Sghir (DEMO)",barrage_fixe,"Ksar Sghir","Fahs Anjra","Tanger",1,1,1,3,6
+mq_semis_de1af17f,"Poste mobile Ksar Sghir (DEMO)",barrage_mobile,"Ksar Sghir","Fahs Anjra","Tanger",0,0,1,2,3
+mq_msol48cy_8229743361,"Entrée RR501 — Laajajra",barrage_fixe,"Laajajra","Moulay Yacoub","Fès",1,1,1,3,6
+mq_mspur06t_ff8c28dacc,"RR501 — Karia Ba Mohamed 7 km S",barrage_mobile,"Laajajra","Moulay Yacoub","Fès",0,0,1,2,3
+mq_msol48cw_4218d3d36f,"RR206 — Laararcha",barrage_fixe,"Laararcha","El Kelaâ Des Sraghna","Marrakech",1,1,1,3,6
+mq_semis_0bd20dda,"Poste mobile Laararcha (DEMO)",barrage_mobile,"Laararcha","El Kelaâ Des Sraghna","Marrakech",0,0,1,2,3
+mq_semis_c670d62b,"Poste fixe Laayayda (DEMO)",barrage_fixe,"Laayayda","Salé","Rabat",1,1,1,3,6
+mq_semis_da8b2b07,"Poste mobile Laayayda (DEMO)",barrage_mobile,"Laayayda","Salé","Rabat",0,0,1,2,3
+mq_msol48cv_1457c69837,"RR101 — Dawra 28 km S",barrage_fixe,"Laayoune","Laayoune","Laayoune",1,1,1,3,6
+mq_semis_d17f5ed7,"Poste mobile Laayoune (DEMO)",barrage_mobile,"Laayoune","Laayoune","Laayoune",0,0,1,2,3
+mq_mspur06s_c96ac7d3ba,"A4 — Boujniba",barrage_mobile,"Lagfaf-Bni Ykhlef","Khouribga","Khouribga",0,0,1,2,3
+mq_semis_5e38dc1f,"Poste fixe Lagfaf-Bni Ykhlef (DEMO)",barrage_fixe,"Lagfaf-Bni Ykhlef","Khouribga","Khouribga",1,1,1,3,6
+mq_semis_ddc61c7b,"Poste fixe Laghouazi (DEMO)",barrage_fixe,"Laghouazi","Skhirate","Rabat",1,1,1,3,6
+mq_semis_11b7b937,"Poste mobile Laghouazi (DEMO)",barrage_mobile,"Laghouazi","Skhirate","Rabat",0,0,1,2,3
+mq_semis_ac8e166b,"Poste fixe Lahraouiyine (DEMO)",barrage_fixe,"Lahraouiyine","Mediouna","Casablanca",1,1,1,3,6
+mq_semis_b69c8747,"Poste mobile Lahraouiyine (DEMO)",barrage_mobile,"Lahraouiyine","Mediouna","Casablanca",0,0,1,2,3
+mq_semis_8de761eb,"Poste fixe Lalla Mimouna (DEMO)",barrage_fixe,"Lalla Mimouna","Souk Larbaa du Gharb","Kénitra",1,1,1,3,6
+mq_semis_49377ec7,"Poste mobile Lalla Mimouna (DEMO)",barrage_mobile,"Lalla Mimouna","Souk Larbaa du Gharb","Kénitra",0,0,1,2,3
+mq_semis_4fdb843c,"Poste fixe Lamjaara (DEMO)",barrage_fixe,"Lamjaara","Ouazzane","Tétouan",1,1,1,3,6
+mq_semis_b84f2f78,"Poste mobile Lamjaara (DEMO)",barrage_mobile,"Lamjaara","Ouazzane","Tétouan",0,0,1,2,3
+mq_semis_0eefb4e8,"Poste fixe Lamkanssa (DEMO)",barrage_fixe,"Lamkanssa","Nouaceur","Casablanca",1,1,1,3,6
+mq_semis_9ad938a4,"Poste mobile Lamkanssa (DEMO)",barrage_mobile,"Lamkanssa","Nouaceur","Casablanca",0,0,1,2,3
+mq_msol48cs_0ba477a6c0,"RN15 — Lamrija 12 km SO",barrage_fixe,"Lamrija","Guercif","Oujda",1,1,1,3,6
+mq_msol48cu_2ce4b2fd17,"RN15 — Lamrija 6 km NE",barrage_fixe,"Lamrija","Guercif","Oujda",1,1,1,3,6
+mq_semis_61734a5b,"Poste mobile Lamrija (DEMO)",barrage_mobile,"Lamrija","Guercif","Oujda",0,0,1,2,3
+mq_msol48cu_3ae18408d1,"RN1 — Laqsabi 37 km SO",barrage_fixe,"Laqsabi","Guelmim","Guelmim",1,1,1,3,6
+mq_msol48cu_1cf8195ed7,"RN1 — Tilimzoune",barrage_fixe,"Laqsabi","Guelmim","Guelmim",1,1,1,3,6
+mq_msol48cu_4757d0ceef,"RN1 — Tan Tan 23 km NE",barrage_fixe,"Laqsabi","Guelmim","Guelmim",1,1,1,3,6
+mq_msol48cy_0f20b1f879,"RR118 — Laqsabi 35 km O",barrage_fixe,"Laqsabi","Guelmim","Guelmim",1,1,1,3,6
+mq_msol48cy_182de160f6,"RR118 — Tan Tan",barrage_fixe,"Laqsabi","Guelmim","Guelmim",1,1,1,3,6
+mq_mspur06t_c15cbe9980,"RN1 — Guelmim",barrage_mobile,"Laqsabi","Guelmim","Guelmim",0,0,1,2,3
+mq_mspur06t_c0c72cfc25,"RN1 — Tan Tan 37 km NE",barrage_mobile,"Laqsabi","Guelmim","Guelmim",0,0,1,2,3
+mq_mspur06t_1995597a92,"RR118 — Laqsabi 53 km O",barrage_mobile,"Laqsabi","Guelmim","Guelmim",0,0,1,2,3
+mq_mskzll6a_0f39c9af,"Larache",barrage_fixe,"Larache","Larache","Tanger",1,1,1,3,6
+mq_msra8po2_13867627,"Entrée A5 — Laaouamra",barrage_fixe,"Larache","Larache","Tanger",1,1,1,3,6
+mq_semis_b240bad1,"Poste mobile Larache (DEMO)",barrage_mobile,"Larache","Larache","Tanger",0,0,1,2,3
+mq_msol48cr_c5d0018ab9,"A3 — Loudaya",barrage_fixe,"Loudaya","Marrakech","Marrakech",1,1,1,3,6
+mq_semis_ffd2cd7c,"Poste mobile Loudaya (DEMO)",barrage_mobile,"Loudaya","Marrakech","Marrakech",0,0,1,2,3
+mq_mspur06s_aecc2e40f4,"RN1 — El Kolea",barrage_mobile,"Lqliaa","Inezgane","Agadir",0,0,1,2,3
+mq_semis_49b54a4d,"Poste fixe Lqliaa (DEMO)",barrage_fixe,"Lqliaa","Inezgane","Agadir",1,1,1,3,6
+mq_msjdq5gv_45ac46fb,"RN9 — Mhamid El Ghizlane #2",barrage_fixe,"M'hamid El Ghizlane","Zagora","Ouarzazate",1,1,1,3,6
+mq_msjf5xzq_0c586310,"RN9 — Mhamid El Ghizlane #3",barrage_fixe,"M'hamid El Ghizlane","Zagora","Ouarzazate",1,1,1,3,6
+mq_msjnz6q7_d5d0b860,"RN9 — Mhamid El Ghizlane #4",barrage_fixe,"M'hamid El Ghizlane","Zagora","Ouarzazate",1,1,1,3,6
+mq_semis_c92e51c3,"Poste mobile M'hamid El Ghizlane (DEMO)",barrage_mobile,"M'hamid El Ghizlane","Zagora","Ouarzazate",0,0,1,2,3
+mq_msol48cs_cea857a279,"RN4 — Mhaya",barrage_fixe,"M'Haya","Meknès","Meknès",1,1,1,3,6
+mq_semis_b819dab2,"Poste mobile M'Haya (DEMO)",barrage_mobile,"M'Haya","Meknès","Meknès",0,0,1,2,3
+mq_semis_8f715a68,"Poste fixe M'Rirt (DEMO)",barrage_fixe,"M'Rirt","Khénifra","Khénifra",1,1,1,3,6
+mq_semis_63e51a24,"Poste mobile M'Rirt (DEMO)",barrage_mobile,"M'Rirt","Khénifra","Khénifra",0,0,1,2,3
+mq_mspur06s_f8ed3ccda2,"RN27 — Msaada",barrage_mobile,"M'Saada","Sidi Slimane","Sidi Kacem",0,0,1,2,3
+mq_semis_eba8d365,"Poste fixe M'Saada (DEMO)",barrage_fixe,"M'Saada","Sidi Slimane","Sidi Kacem",1,1,1,3,6
+mq_msol48cu_2f050d5547,"RR704 — Msemrir",barrage_fixe,"M'Semrir","Tinghir","Ouarzazate",1,1,1,3,6
+mq_msol48cy_40e14fee2c,"RR704 — Assoul",barrage_fixe,"M'Semrir","Tinghir","Ouarzazate",1,1,1,3,6
+mq_semis_f9a012c3,"Poste mobile M'Semrir (DEMO)",barrage_mobile,"M'Semrir","Tinghir","Ouarzazate",0,0,1,2,3
+mq_mspur06t_db449b1d2d,"RR404 — Maaziz",barrage_mobile,"Maaziz","Oulmes","Khémisset",0,0,1,2,3
+mq_semis_bae91ded,"Poste fixe Maaziz (DEMO)",barrage_fixe,"Maaziz","Oulmes","Khémisset",1,1,1,3,6
+mq_mspur06t_59fc8cba49,"RN27 — Machraa Belkssiri",barrage_mobile,"Machraa Bel kssiri","Sidi Kacem","Sidi Kacem",0,0,1,2,3
+mq_mspv1v43_5583bece,"Entrée RN27 — Souk Larbaa El Gharb",barrage_fixe,"Machraa Bel kssiri","Sidi Kacem","Sidi Kacem",1,1,1,3,6
+mq_msol48cs_b54558aac7,"Entrée A3 — Machraa Ben Abbou",barrage_fixe,"Machraa Ben Abbou","Settat","Settat",1,1,1,3,6
+mq_msol48cv_a9808d7660,"RR314 — Machraa Ben Abbou",barrage_fixe,"Machraa Ben Abbou","Settat","Settat",1,1,1,3,6
+mq_semis_928fcfa8,"Poste mobile Machraa Ben Abbou (DEMO)",barrage_mobile,"Machraa Ben Abbou","Settat","Settat",0,0,1,2,3
+mq_msol48cs_9fd68ea429,"RN29 — Maghraoua 3 km SE",barrage_fixe,"Maghraoua","Taza","Taza",1,1,1,3,6
+mq_mspur06s_04fd281467,"RN29 — Taza 13 km S",barrage_mobile,"Maghraoua","Taza","Taza",0,0,1,2,3
+mq_mspur06t_3bc8c53a17,"RN29 — Maghraoua 15 km S",barrage_mobile,"Maghraoua","Taza","Taza",0,0,1,2,3
+mq_mskzm4l9_e834a8fa,"Gharbia 9 km SO",barrage_fixe,"Malloussa","Fahs Anjra","Tanger",1,1,1,3,6
+mq_mskzn0mv_7d2fe66b,"Gharbia 1 km NE",barrage_fixe,"Malloussa","Fahs Anjra","Tanger",1,1,1,3,6
+mq_semis_18b6763a,"Poste mobile Malloussa (DEMO)",barrage_mobile,"Malloussa","Fahs Anjra","Tanger",0,0,1,2,3
+mq_semis_8801a4f7,"Poste fixe Marrakech (DEMO)",barrage_fixe,"Marrakech","Marrakech","Marrakech",1,1,1,3,6
+mq_semis_f0bc7563,"Poste mobile Marrakech (DEMO)",barrage_mobile,"Marrakech","Marrakech","Marrakech",0,0,1,2,3
+mq_semis_d4ccea1a,"Poste fixe Massa (DEMO)",barrage_fixe,"Massa","Biougra","Agadir",1,1,1,3,6
+mq_semis_e3eaabaa,"Poste mobile Massa (DEMO)",barrage_mobile,"Massa","Biougra","Agadir",0,0,1,2,3
+mq_semis_9b60c6a6,"Poste fixe Matmata (DEMO)",barrage_fixe,"Matmata","Oued Amlil","Taza",1,1,1,3,6
+mq_semis_f0304996,"Poste mobile Matmata (DEMO)",barrage_mobile,"Matmata","Oued Amlil","Taza",0,0,1,2,3
+mq_msol48cv_39038db8c0,"Entrée RR502 — Mazguitam",barrage_fixe,"Mazguitam","Guercif","Oujda",1,1,1,3,6
+mq_mspur06t_8cffcfc840,"RR511 — Mazguitam",barrage_mobile,"Mazguitam","Guercif","Oujda",0,0,1,2,3
+mq_msj5b4jv_a308ff32,"A31 — Mediouna",barrage_fixe,"Mediouna","Mediouna","Casablanca",1,1,1,3,6
+mq_semis_a80edc9f,"Poste mobile Mediouna (DEMO)",barrage_mobile,"Mediouna","Mediouna","Casablanca",0,0,1,2,3
+mq_semis_24ffa8e1,"Poste fixe Meknès (DEMO)",barrage_fixe,"Meknès","Meknès","Meknès",1,1,1,3,6
+mq_semis_d9900b91,"Poste mobile Meknès (DEMO)",barrage_mobile,"Meknès","Meknès","Meknès",0,0,1,2,3
+mq_msol48cv_546c8fa31e,"RR702 — Melaab 3 km O",barrage_fixe,"Melaab","Arfoud","Errachidia",1,1,1,3,6
+mq_msol48cv_cfe495f567,"RR702 — Melaab 16 km E",barrage_fixe,"Melaab","Arfoud","Errachidia",1,1,1,3,6
+mq_semis_c7c17a81,"Poste mobile Melaab (DEMO)",barrage_mobile,"Melaab","Arfoud","Errachidia",0,0,1,2,3
+mq_msol48cs_e062cee86b,"RN23 — Mellila 7 km SO",barrage_fixe,"Mellila","Benslimane","Settat",1,1,1,3,6
+mq_semis_c929029f,"Poste mobile Mellila (DEMO)",barrage_mobile,"Mellila","Benslimane","Settat",0,0,1,2,3
+mq_semis_492df786,"Poste fixe Mers El Kheir (DEMO)",barrage_fixe,"Mers El Kheir","Témara","Rabat",1,1,1,3,6
+mq_semis_882139f6,"Poste mobile Mers El Kheir (DEMO)",barrage_mobile,"Mers El Kheir","Témara","Rabat",0,0,1,2,3
+mq_semis_c6ca7e47,"Poste fixe Metrane (DEMO)",barrage_fixe,"Metrane","Sidi Bennour","El Jadida",1,1,1,3,6
+mq_semis_9592d293,"Poste mobile Metrane (DEMO)",barrage_mobile,"Metrane","Sidi Bennour","El Jadida",0,0,1,2,3
+mq_msol48cu_f8e9b60b24,"RN15 — Ksabi 17 km SO",barrage_fixe,"Midelt","Midelt","Errachidia",1,1,1,3,6
+mq_mspur06s_501430090f,"RN13 — Midelt 13 km O",barrage_mobile,"Midelt","Midelt","Errachidia",0,0,1,2,3
+mq_mspur06s_d5a2471239,"RN13 — Midelt 7 km E",barrage_mobile,"Midelt","Midelt","Errachidia",0,0,1,2,3
+mq_mspv1v44_5fbe0f99,"Entrée RN13 — Midelt",barrage_fixe,"Midelt","Midelt","Errachidia",1,1,1,3,6
+mq_mspur06t_3cde4320a8,"RR104 — Mirleft 11 km S",barrage_mobile,"Mirleft","Sidi Ifni","Guelmim",0,0,1,2,3
+mq_mspv1v44_3ac9d175,"RR104 — Sidi Ifni",barrage_fixe,"Mirleft","Sidi Ifni","Guelmim",1,1,1,3,6
+mq_msol48cs_1584501f62,"RN4 — Gourrama",barrage_fixe,"Missour","Missour","Fès",1,1,1,3,6
+mq_msol48ct_dc0b299e09,"RN4 — Missour 26 km S",barrage_fixe,"Missour","Missour","Fès",1,1,1,3,6
+mq_mspur06s_42af6d1ff1,"RN4 — Missour 8 km O",barrage_mobile,"Missour","Missour","Fès",0,0,1,2,3
+mq_mspur06t_d59854466d,"RN15 — Missour 8 km NE",barrage_mobile,"Missour","Missour","Fès",0,0,1,2,3
+mq_mspv1v43_f0002e2a,"RN15 — Missour 5 km NE",barrage_fixe,"Missour","Missour","Fès",1,1,1,3,6
+mq_mspv1v43_9ef90727,"RN15 — Missour 6 km O",barrage_fixe,"Missour","Missour","Fès",1,1,1,3,6
+mq_semis_e71e3d6c,"Poste fixe Moghrane (DEMO)",barrage_fixe,"Moghrane","Ouarzazate","Ouarzazate",1,1,1,3,6
+mq_semis_5a2f7348,"Poste mobile Moghrane (DEMO)",barrage_mobile,"Moghrane","Ouarzazate","Ouarzazate",0,0,1,2,3
+mq_mspv1v43_fbba2e94,"Entrée RN9 — Ain Harrouda",barrage_fixe,"Mohammedia","Mohammedia","Casablanca",1,1,1,3,6
+mq_semis_66a849b9,"Poste mobile Mohammedia (DEMO)",barrage_mobile,"Mohammedia","Mohammedia","Casablanca",0,0,1,2,3
+mq_msol48cs_c72f2bf5c9,"RN13 — Had Ghdir Lakrouch",barrage_fixe,"Moqrissat","Ouazzane","Tétouan",1,1,1,3,6
+mq_mspur06s_0cc9b5f000,"RN13 — Brikcha",barrage_mobile,"Moqrissat","Ouazzane","Tétouan",0,0,1,2,3
+mq_semis_f9840b4d,"Poste fixe Moul El Bergui (DEMO)",barrage_fixe,"Moul El Bergui","Safi","Safi",1,1,1,3,6
+mq_semis_9a99a70d,"Poste mobile Moul El Bergui (DEMO)",barrage_mobile,"Moul El Bergui","Safi","Safi",0,0,1,2,3
+mq_msol48cs_d8d6b5a58c,"Entrée RN29 — My Bouazza",barrage_fixe,"Moulay Bouazza","Khénifra","Khénifra",1,1,1,3,6
+mq_msol48cu_d3aafc8ba0,"RN29 — My Bouazza",barrage_fixe,"Moulay Bouazza","Khénifra","Khénifra",1,1,1,3,6
+mq_mspur06t_7536925663,"RR701 — My Bouazza",barrage_mobile,"Moulay Bouazza","Khénifra","Khénifra",0,0,1,2,3
+mq_mskznhq4_ea4fdb6c,"My Bouselham",barrage_fixe,"Moulay Bouselham","Souk Larbaa du Gharb","Kénitra",1,1,1,3,6
+mq_mspur06s_06f200a56f,"A5 — My Bouselham",barrage_mobile,"Moulay Bouselham","Souk Larbaa du Gharb","Kénitra",0,0,1,2,3
+mq_semis_ca6d0344,"Poste fixe Moulay Driss Zerhoun (DEMO)",barrage_fixe,"Moulay Driss Zerhoun","Meknès","Meknès",1,1,1,3,6
+mq_semis_0de4a1e0,"Poste mobile Moulay Driss Zerhoun (DEMO)",barrage_mobile,"Moulay Driss Zerhoun","Meknès","Meknès",0,0,1,2,3
+mq_mspur06s_42f8035673,"RN4 — My Yacoub",barrage_mobile,"Moulay Yacoub","Moulay Yacoub","Fès",0,0,1,2,3
+mq_mspur06t_a308b99a72,"RR506 — Karia Ba Mohamed 17 km SO",barrage_mobile,"Moulay Yacoub","Moulay Yacoub","Fès",0,0,1,2,3
+mq_semis_7a4c95b3,"Poste fixe Moulay Yacoub (DEMO)",barrage_fixe,"Moulay Yacoub","Moulay Yacoub","Fès",1,1,1,3,6
+mq_semis_74e197d7,"Poste fixe Mrhassiyine (DEMO)",barrage_fixe,"Mrhassiyine","Meknès","Meknès",1,1,1,3,6
+mq_semis_178b7b43,"Poste mobile Mrhassiyine (DEMO)",barrage_mobile,"Mrhassiyine","Meknès","Meknès",0,0,1,2,3
+mq_msol48cv_a471aed753,"RR508 — Tainaste",barrage_fixe,"Msila","Taza","Taza",1,1,1,3,6
+mq_msol48cv_08cb354050,"RR503 — Bni Frassen 8 km NO",barrage_fixe,"Msila","Taza","Taza",1,1,1,3,6
+mq_semis_13840905,"Poste mobile Msila (DEMO)",barrage_mobile,"Msila","Taza","Taza",0,0,1,2,3
+mq_mspur06t_083f340b22,"RR301 — Sidi Bouzid",barrage_mobile,"My Abdellah","El Jadida","El Jadida",0,0,1,2,3
+mq_semis_54bf22f2,"Poste fixe My Abdellah (DEMO)",barrage_fixe,"My Abdellah","El Jadida","El Jadida",1,1,1,3,6
+mq_msol48cw_6c5139cab0,"RR108 — Nkob 20 km N",barrage_fixe,"N'Kob","Zagora","Ouarzazate",1,1,1,3,6
+mq_msol48cx_7441307585,"RR108 — Nkob 4 km SO",barrage_fixe,"N'Kob","Zagora","Ouarzazate",1,1,1,3,6
+mq_semis_22809c24,"Poste mobile N'Kob (DEMO)",barrage_mobile,"N'Kob","Zagora","Ouarzazate",0,0,1,2,3
+mq_semis_a0e2df6f,"Poste fixe N'Zalt Bni Amar (DEMO)",barrage_fixe,"N'Zalt Bni Amar","Meknès","Meknès",1,1,1,3,6
+mq_semis_3db6d97b,"Poste mobile N'Zalt Bni Amar (DEMO)",barrage_mobile,"N'Zalt Bni Amar","Meknès","Meknès",0,0,1,2,3
+mq_msol48ct_c8c3877a45,"Entrée RN9 — Nzalat Laadam",barrage_fixe,"N'Zalt Laadem","Benguerir","Marrakech",1,1,1,3,6
+mq_msol48cu_42687b17ac,"RN7 — Tnine Bouchane",barrage_fixe,"N'Zalt Laadem","Benguerir","Marrakech",1,1,1,3,6
+mq_semis_092a82ff,"Poste mobile N'Zalt Laadem (DEMO)",barrage_mobile,"N'Zalt Laadem","Benguerir","Marrakech",0,0,1,2,3
+mq_semis_4691feab,"Poste fixe Nador (DEMO)",barrage_fixe,"Nador","Nador","Nador",1,1,1,3,6
+mq_semis_8671c787,"Poste mobile Nador (DEMO)",barrage_mobile,"Nador","Nador","Nador",0,0,1,2,3
+mq_semis_602985f3,"Poste fixe Naima (DEMO)",barrage_fixe,"Naima","Oujda","Oujda",1,1,1,3,6
+mq_semis_014ce72f,"Poste mobile Naima (DEMO)",barrage_mobile,"Naima","Oujda","Oujda",0,0,1,2,3
+mq_mskrs1vz_58beea14,"Entrée — Nouaceur",barrage_fixe,"Nouaceur","Nouaceur","Casablanca",1,1,1,3,6
+mq_mspv1v43_45e75abe,"Sortie — Nouaceur",barrage_fixe,"Nouaceur","Nouaceur","Casablanca",1,1,1,3,6
+mq_semis_8dee7485,"Poste mobile Nouaceur (DEMO)",barrage_mobile,"Nouaceur","Nouaceur","Casablanca",0,0,1,2,3
+mq_mspur06s_9ce9365973,"RN9 — Ouahat Sidi Brahim",barrage_mobile,"Ouahat Sidi Brahim","Tamansourte","Marrakech",0,0,1,2,3
+mq_semis_d24c5169,"Poste fixe Ouahat Sidi Brahim (DEMO)",barrage_fixe,"Ouahat Sidi Brahim","Tamansourte","Marrakech",1,1,1,3,6
+mq_msol48cv_144dcadb4e,"Entrée RR306 — Ouaouizeght",barrage_fixe,"Ouaouizaghte","Azilal","Béni Mellal",1,1,1,3,6
+mq_mspur06s_ad052d8879,"RN25 — Azilal 11 km N",barrage_mobile,"Ouaouizaghte","Azilal","Béni Mellal",0,0,1,2,3
+mq_mspur06t_1cdf24755f,"RR306 — Tagleft 12 km O",barrage_mobile,"Ouaouizaghte","Azilal","Béni Mellal",0,0,1,2,3
+mq_msol48cu_a16c66402e,"RN23 — Moughrane 25 km O",barrage_fixe,"Ouarzazate","Ouarzazate","Ouarzazate",1,1,1,3,6
+mq_msol48cu_0be6e0894e,"RN23 — Ouarzazate",barrage_fixe,"Ouarzazate","Ouarzazate","Ouarzazate",1,1,1,3,6
+mq_mspur06s_e08c0ec2dc,"RN10 — Ouarzazate",barrage_mobile,"Ouarzazate","Ouarzazate","Ouarzazate",0,0,1,2,3
+mq_mspv1v44_15624274,"Entrée RN10 — Ouarzazate",barrage_fixe,"Ouarzazate","Ouarzazate","Ouarzazate",1,1,1,3,6
+mq_msojamr8_19eae17c,"Entrée RN6 — Oued Amlil",barrage_fixe,"Oued Amlil","Oued Amlil","Taza",1,1,1,3,6
+mq_msol48cw_7cf1950ae4,"RR508 — Msila",barrage_fixe,"Oued Amlil","Oued Amlil","Taza",1,1,1,3,6
+mq_mspur06s_9d74b585ce,"A2 — Tahala",barrage_mobile,"Oued Amlil","Oued Amlil","Taza",0,0,1,2,3
+mq_mspv1v44_019718ec,"RR503 — Oued Amlil",barrage_fixe,"Oued Amlil","Oued Amlil","Taza",1,1,1,3,6
+mq_mspv1v44_ca7d44fb,"Sortie RN6 — Oued Amlil",barrage_fixe,"Oued Amlil","Oued Amlil","Taza",1,1,1,3,6
+mq_msol48ct_63962d10f8,"RN1 — Boujdour 25 km S",barrage_fixe,"Oued Craa","Boujdour","Laayoune",1,1,1,3,6
+mq_msol48ct_7a7e8475e1,"RN1 — Boujdour 42 km S",barrage_fixe,"Oued Craa","Boujdour","Laayoune",1,1,1,3,6
+mq_msol48ct_23ca47f790,"RN1 — Boujdour 59 km S",barrage_fixe,"Oued Craa","Boujdour","Laayoune",1,1,1,3,6
+mq_msol48ct_9ea0e70cc2,"RN1 — Boujdour 77 km S",barrage_fixe,"Oued Craa","Boujdour","Laayoune",1,1,1,3,6
+mq_msol48ct_9955642506,"RN1 — Oued Craa 69 km N",barrage_fixe,"Oued Craa","Boujdour","Laayoune",1,1,1,3,6
+mq_msol48ct_45bf146655,"RN1 — Oued Craa 52 km N",barrage_fixe,"Oued Craa","Boujdour","Laayoune",1,1,1,3,6
+mq_msol48ct_f319301978,"RN1 — Oued Craa 35 km N",barrage_fixe,"Oued Craa","Boujdour","Laayoune",1,1,1,3,6
+mq_msol48ct_09a4c54779,"RN1 — Oued Craa 18 km N",barrage_fixe,"Oued Craa","Boujdour","Laayoune",1,1,1,3,6
+mq_mspur06s_7e2faccf78,"RN1 — Oued Craa 4 km N",barrage_mobile,"Oued Craa","Boujdour","Laayoune",0,0,1,2,3
+mq_mspur06s_7ca1c878bc,"RN1 — Boujdour 10 km S",barrage_mobile,"Oued Craa","Boujdour","Laayoune",0,0,1,2,3
+mq_mspv1v43_b830e426,"RN1 — Boujdour 6 km S",barrage_fixe,"Oued Craa","Boujdour","Laayoune",1,1,1,3,6
+mq_mspur06s_79b7cf88f0,"RN16 — Azla-Zaitoune",barrage_mobile,"Oued Laou","Tétouan","Tétouan",0,0,1,2,3
+mq_semis_d12f4585,"Poste fixe Oued Laou (DEMO)",barrage_fixe,"Oued Laou","Tétouan","Tétouan",1,1,1,3,6
+mq_mspv1v43_66864568,"Sortie RN2 — Oued Nekkour",barrage_fixe,"Oued Nekkour","Al Hoceima","Al Hoceima",1,1,1,3,6
+mq_semis_1022df01,"Poste mobile Oued Nekkour (DEMO)",barrage_mobile,"Oued Nekkour","Al Hoceima","Al Hoceima",0,0,1,2,3
+mq_msol48cx_35cdc5dbf1,"RR311 — Chougrane",barrage_fixe,"Oued Zem","Oued Zem","Khouribga",1,1,1,3,6
+mq_mspur06s_e708460e2d,"A4 — Oued Zem 7 km NO",barrage_mobile,"Oued Zem","Oued Zem","Khouribga",0,0,1,2,3
+mq_mspv1v43_259ed180,"RN12 — Oued Zem 6 km NO",barrage_fixe,"Oued Zem","Oued Zem","Khouribga",1,1,1,3,6
+mq_mspv1v43_cc01b5b4,"RN12 — Oued Zem 6 km E",barrage_fixe,"Oued Zem","Oued Zem","Khouribga",1,1,1,3,6
+mq_mspv1v43_c9604986,"Entrée RR311 — Oued Zem",barrage_fixe,"Oued Zem","Oued Zem","Khouribga",1,1,1,3,6
+mq_mspv1v43_d32da83e,"RN25 — Oued Zem",barrage_fixe,"Oued Zem","Oued Zem","Khouribga",1,1,1,3,6
+mq_mspur06t_b414d79258,"RR408 — Ouezzane",barrage_mobile,"Ouezzane","Ouazzane","Tétouan",0,0,1,2,3
+mq_mspv1v43_4bcf6bc2,"Entrée RR408 — Ouezzane 5 km O",barrage_fixe,"Ouezzane","Ouazzane","Tétouan",1,1,1,3,6
+mq_semis_4455dd71,"Poste fixe Ouislane (DEMO)",barrage_fixe,"Ouislane","Meknès","Meknès",1,1,1,3,6
+mq_semis_77761081,"Poste mobile Ouislane (DEMO)",barrage_mobile,"Ouislane","Meknès","Meknès",0,0,1,2,3
+mq_mspur06s_b63e79ae3f,"A2 — Ain Sfa",barrage_mobile,"Oujda","Oujda","Oujda",0,0,1,2,3
+mq_mspur06s_a4f084e064,"RN17 — Beni Drar",barrage_mobile,"Oujda","Oujda","Oujda",0,0,1,2,3
+mq_semis_ae8b9dd8,"Poste fixe Oujda (DEMO)",barrage_fixe,"Oujda","Oujda","Oujda",1,1,1,3,6
+mq_semis_33ab17ab,"Poste fixe Oulad Azzouz (DEMO)",barrage_fixe,"Oulad Azzouz","Casablanca","Casablanca",1,1,1,3,6
+mq_semis_eda70887,"Poste mobile Oulad Azzouz (DEMO)",barrage_mobile,"Oulad Azzouz","Casablanca","Casablanca",0,0,1,2,3
+mq_msol48ct_584c5b07a2,"Entrée RN9 — Chouiter",barrage_fixe,"Oulad Hassoune","Tamansourte","Marrakech",1,1,1,3,6
+mq_semis_cc0d83ac,"Poste mobile Oulad Hassoune (DEMO)",barrage_mobile,"Oulad Hassoune","Tamansourte","Marrakech",0,0,1,2,3
+mq_msol48cv_c3e7811b2a,"RR508 — Oulad Riyab",barrage_fixe,"Oulad Riyab","Taounate","Fès",1,1,1,3,6
+mq_semis_441b2747,"Poste mobile Oulad Riyab (DEMO)",barrage_mobile,"Oulad Riyab","Taounate","Fès",0,0,1,2,3
+mq_msol48ct_25591bdc30,"RN11 — Khmis Metouh",barrage_fixe,"Oulad Said","Settat","Settat",1,1,1,3,6
+mq_msol48cu_d6f0e28f68,"RN9 — Oulad Said",barrage_fixe,"Oulad Said","Settat","Settat",1,1,1,3,6
+mq_mspur06t_f8a91481cd,"RN11 — Oulad Said 9 km SO",barrage_mobile,"Oulad Said","Settat","Settat",0,0,1,2,3
+mq_mspur06t_47f339a5f3,"RN11 — Oulad Said 7 km NE",barrage_mobile,"Oulad Said","Settat","Settat",0,0,1,2,3
+mq_mspur06t_d185a292fe,"RN11 — Ouled Amrane",barrage_mobile,"Ouled Amrane","Sidi Bennour","El Jadida",0,0,1,2,3
+mq_semis_62065262,"Poste fixe Ouled Amrane (DEMO)",barrage_fixe,"Ouled Amrane","Sidi Bennour","El Jadida",1,1,1,3,6
+mq_mspur06s_2b80335dbb,"RN8 — Ouled Ayad",barrage_mobile,"Ouled Ayad","Fkih Ben Salah","Béni Mellal",0,0,1,2,3
+mq_semis_940dfcdf,"Poste fixe Ouled Ayad (DEMO)",barrage_fixe,"Ouled Ayad","Fkih Ben Salah","Béni Mellal",1,1,1,3,6
+mq_msol48cs_406ea8fa0e,"RN7 — Tafingoult 5 km SO",barrage_fixe,"Ouled Berrehil","Taroudannt","Agadir",1,1,1,3,6
+mq_msol48cs_7498142199,"Entrée RN7 — Ouled Berrehil",barrage_fixe,"Ouled Berrehil","Taroudannt","Agadir",1,1,1,3,6
+mq_mspur06s_39d058d62c,"RN7 — Ait Iaaza 14 km E",barrage_mobile,"Ouled Berrehil","Taroudannt","Agadir",0,0,1,2,3
+mq_msol48ct_1636e2d72c,"RN25 — Zhiliga 13 km SO",barrage_fixe,"Ouled Boughadi","Oued Zem","Khouribga",1,1,1,3,6
+mq_msol48ct_6480aca919,"RN25 — Ouled Boughadi",barrage_fixe,"Ouled Boughadi","Oued Zem","Khouribga",1,1,1,3,6
+mq_mspur06t_6fa1735920,"RR403 — Ouled Boughadi",barrage_mobile,"Ouled Boughadi","Oued Zem","Khouribga",0,0,1,2,3
+mq_msra8pqu_eb88260b,"Entrée RN25 — Ouled Boughadi",barrage_fixe,"Ouled Boughadi","Oued Zem","Khouribga",1,1,1,3,6
+mq_semis_803f3a65,"Poste fixe Ouled M'Barek (DEMO)",barrage_fixe,"Ouled M'Barek","Béni Mellal","Béni Mellal",1,1,1,3,6
+mq_semis_349a2045,"Poste mobile Ouled M'Barek (DEMO)",barrage_mobile,"Ouled M'Barek","Béni Mellal","Béni Mellal",0,0,1,2,3
+mq_mspur06s_5d6976deed,"RN8 — Ouled Mimoune",barrage_mobile,"Ouled Mimoun","Moulay Yacoub","Fès",0,0,1,2,3
+mq_semis_21f297f5,"Poste fixe Ouled Mimoun (DEMO)",barrage_fixe,"Ouled Mimoun","Moulay Yacoub","Fès",1,1,1,3,6
+mq_semis_340f80ad,"Poste fixe Ouled Salah (DEMO)",barrage_fixe,"Ouled Salah","Bouskoura","Casablanca",1,1,1,3,6
+mq_semis_b7731c6d,"Poste mobile Ouled Salah (DEMO)",barrage_mobile,"Ouled Salah","Bouskoura","Casablanca",0,0,1,2,3
+mq_mspur06t_7f9a713c5e,"RR122 — Ouled Taima",barrage_mobile,"Ouled Taima","Taroudannt","Agadir",0,0,1,2,3
+mq_semis_83f29950,"Poste fixe Ouled Taima (DEMO)",barrage_fixe,"Ouled Taima","Taroudannt","Agadir",1,1,1,3,6
+mq_semis_21c103c5,"Poste fixe Ouled Tayeb (DEMO)",barrage_fixe,"Ouled Tayeb","Fès","Fès",1,1,1,3,6
+mq_semis_6fb56725,"Poste mobile Ouled Tayeb (DEMO)",barrage_mobile,"Ouled Tayeb","Fès","Fès",0,0,1,2,3
+mq_mspur06t_f919548e33,"RR408 — Ourtzagh 9 km SO",barrage_mobile,"Oulja","Kariat Ba Mohamed","Fès",0,0,1,2,3
+mq_mspur06t_83628afa26,"RR506 — Oulja 4 km SE",barrage_mobile,"Oulja","Kariat Ba Mohamed","Fès",0,0,1,2,3
+mq_mspur06t_767baabf83,"RR506 — Oulja 10 km O",barrage_mobile,"Oulja","Kariat Ba Mohamed","Fès",0,0,1,2,3
+mq_semis_83bb6b50,"Poste fixe Oulja (DEMO)",barrage_fixe,"Oulja","Kariat Ba Mohamed","Fès",1,1,1,3,6
+mq_msojamr8_1da7431b,"RR407 — Oulmes 6 km NO",barrage_fixe,"Oulmes","Oulmes","Khémisset",1,1,1,3,6
+mq_mspur06t_14702bc4df,"RR407 — Oulmes 10 km S",barrage_mobile,"Oulmes","Oulmes","Khémisset",0,0,1,2,3
+mq_mspur06t_ac7a1fd93f,"RR701 — Oulmes 10 km NE",barrage_mobile,"Oulmes","Oulmes","Khémisset",0,0,1,2,3
+mq_mspv1v43_9a7d62a2,"Entrée RR407 — Oulmes",barrage_fixe,"Oulmes","Oulmes","Khémisset",1,1,1,3,6
+mq_mspv1v43_7414627b,"RR701 — Oulmes 4 km NE",barrage_fixe,"Oulmes","Oulmes","Khémisset",1,1,1,3,6
+mq_msol48ct_05d1fe97a1,"RN1 — Aquermoud",barrage_fixe,"Ounagha","Essaouira","Essaouira",1,1,1,3,6
+mq_mspur06s_9939020cf6,"RN8 — Ounagha",barrage_mobile,"Ounagha","Essaouira","Essaouira",0,0,1,2,3
+mq_semis_b2796d2a,"Poste fixe Ourika (DEMO)",barrage_fixe,"Ourika","Tahannaout","Marrakech",1,1,1,3,6
+mq_semis_a7c1bfda,"Poste mobile Ourika (DEMO)",barrage_mobile,"Ourika","Tahannaout","Marrakech",0,0,1,2,3
+mq_msol48cv_30c4162b22,"RR419 — Beni Ahmed",barrage_fixe,"Ourtzagh","Kariat Ba Mohamed","Fès",1,1,1,3,6
+mq_msol48cv_63340318dc,"RR408 — Ourtzagh 8 km SE",barrage_fixe,"Ourtzagh","Kariat Ba Mohamed","Fès",1,1,1,3,6
+mq_semis_0d2183fb,"Poste mobile Ourtzagh (DEMO)",barrage_mobile,"Ourtzagh","Kariat Ba Mohamed","Fès",0,0,1,2,3
+mq_msol48ct_e6f4d23252,"Entrée RN15 — Outat Lhaj",barrage_fixe,"Outat El Haj","Missour","Fès",1,1,1,3,6
+mq_msol48ct_f0bc6c4d31,"RN15 — Outat Lhaj 20 km SO",barrage_fixe,"Outat El Haj","Missour","Fès",1,1,1,3,6
+mq_msol48cx_f0934ac6ef,"RR606 — Outat Lhaj",barrage_fixe,"Outat El Haj","Missour","Fès",1,1,1,3,6
+mq_msol48cx_d8849db598,"RR606 — Tendite 26 km SE",barrage_fixe,"Outat El Haj","Missour","Fès",1,1,1,3,6
+mq_mspur06t_e762726bbf,"RN15 — Outat Lhaj 8 km SO",barrage_mobile,"Outat El Haj","Missour","Fès",0,0,1,2,3
+mq_semis_1a7f753c,"Poste fixe Port Laayoune (DEMO)",barrage_fixe,"Port Laayoune","Laayoune","Laayoune",1,1,1,3,6
+mq_semis_d8670878,"Poste mobile Port Laayoune (DEMO)",barrage_mobile,"Port Laayoune","Laayoune","Laayoune",0,0,1,2,3
+mq_msjdq5em_ee5ebf08,"RN1 — Rabat",barrage_fixe,"Rabat","Rabat","Rabat",1,1,1,3,6
+mq_msjf5xz0_65d12801,"RN25 — Rabat",barrage_fixe,"Rabat","Rabat","Rabat",1,1,1,3,6
+mq_semis_a54d37ad,"Poste mobile Rabat (DEMO)",barrage_mobile,"Rabat","Rabat","Rabat",0,0,1,2,3
+mq_msol48cx_eda15b4901,"Entrée RR204 — Ras El Ain",barrage_fixe,"Ras El Ain","Youssoufia","Safi",1,1,1,3,6
+mq_mspur06t_529ebe7195,"RR204 — Ras El Ain",barrage_mobile,"Ras El Ain","Youssoufia","Safi",0,0,1,2,3
+mq_semis_2d6e8540,"Poste fixe Ras El Ain Chaouia (DEMO)",barrage_fixe,"Ras El Ain Chaouia","Settat","Settat",1,1,1,3,6
+mq_semis_4921e51c,"Poste mobile Ras El Ain Chaouia (DEMO)",barrage_mobile,"Ras El Ain Chaouia","Settat","Settat",0,0,1,2,3
+mq_semis_e8d4c506,"Poste fixe Ras El Ma (DEMO)",barrage_fixe,"Ras El Ma","Moulay Yacoub","Fès",1,1,1,3,6
+mq_semis_1c7a8376,"Poste mobile Ras El Ma (DEMO)",barrage_mobile,"Ras El Ma","Moulay Yacoub","Fès",0,0,1,2,3
+mq_msol48cs_f8527ab245,"Entrée RN16 — Ras Kabdana 5 km SE",barrage_fixe,"Ras Kebdana","Zaiou","Nador",1,1,1,3,6
+mq_semis_a2f9dd2b,"Poste mobile Ras Kebdana (DEMO)",barrage_mobile,"Ras Kebdana","Zaiou","Nador",0,0,1,2,3
+mq_msol48cu_42f2362073,"RR504 — Ribat El Kheir",barrage_fixe,"Ribat El Kheir","Sefrou","Fès",1,1,1,3,6
+mq_semis_43a033b3,"Poste mobile Ribat El Kheir (DEMO)",barrage_mobile,"Ribat El Kheir","Sefrou","Fès",0,0,1,2,3
+mq_msol48cv_9492b063bb,"Entrée RR702 — Rissani",barrage_fixe,"Rissani","Marzouga","Errachidia",1,1,1,3,6
+mq_mspur06t_5add389cb6,"RN17 — Rissani 12 km O",barrage_mobile,"Rissani","Marzouga","Errachidia",0,0,1,2,3
+mq_msojamr8_3becb6a6,"RR404 — Rommani",barrage_fixe,"Rommani","Rommani","Khémisset",1,1,1,3,6
+mq_mspv1v43_2083e1ca,"RN25 — Rommani 5 km S",barrage_fixe,"Rommani","Rommani","Khémisset",1,1,1,3,6
+mq_mspv1v43_7ee6bf18,"Entrée RN25 — Rommani",barrage_fixe,"Rommani","Rommani","Khémisset",1,1,1,3,6
+mq_semis_31f1d1c0,"Poste mobile Rommani (DEMO)",barrage_mobile,"Rommani","Rommani","Khémisset",0,0,1,2,3
+mq_msol48cu_9e09c562b7,"Entrée RR212 — Tamasloht",barrage_fixe,"Saada","Marrakech","Marrakech",1,1,1,3,6
+mq_semis_44a778dd,"Poste mobile Saada (DEMO)",barrage_mobile,"Saada","Marrakech","Marrakech",0,0,1,2,3
+mq_msol48cs_e26b5f3ff3,"A1 — Moul El Bergui",barrage_fixe,"Safi","Safi","Safi",1,1,1,3,6
+mq_mspur06s_051a983f1d,"A1 — Safi",barrage_mobile,"Safi","Safi","Safi",0,0,1,2,3
+mq_msra8pq1_c980a4af,"Entrée A1 — Moul El Bergui 12 km SO",barrage_fixe,"Safi","Safi","Safi",1,1,1,3,6
+mq_mspur06s_56785036ea,"RN17 — Saidia",barrage_mobile,"Saidia","Berkane","Oujda",0,0,1,2,3
+mq_semis_aa3858a8,"Poste fixe Saidia (DEMO)",barrage_fixe,"Saidia","Berkane","Oujda",1,1,1,3,6
+mq_msol48cs_fbb830b87d,"A2 — Guercif 23 km NE",barrage_fixe,"Sakka","Guercif","Oujda",1,1,1,3,6
+mq_msol48ct_bea1b44127,"RN15 — Sakka 11 km SE",barrage_fixe,"Sakka","Guercif","Oujda",1,1,1,3,6
+mq_msol48ct_5ca9cb7e41,"RN15 — Sakka 19 km NE",barrage_fixe,"Sakka","Guercif","Oujda",1,1,1,3,6
+mq_mspur06t_fd917b4eee,"RR502 — Sakka",barrage_mobile,"Sakka","Guercif","Oujda",0,0,1,2,3
+mq_msjnz6lr_65b4f789,"RN1 — Sale",barrage_fixe,"Salé","Salé","Rabat",1,1,1,3,6
+mq_mskf7bd5_e5a59043,"Shoul 5 km O",barrage_fixe,"Salé","Salé","Rabat",1,1,1,3,6
+mq_mskf7em5_014afc77,"Sale",barrage_fixe,"Salé","Salé","Rabat",1,1,1,3,6
+mq_semis_29d853fc,"Poste mobile Salé (DEMO)",barrage_mobile,"Salé","Salé","Rabat",0,0,1,2,3
+mq_semis_a8d92ee0,"Poste fixe Sebaa Ayoune (DEMO)",barrage_fixe,"Sebaa Ayoune","El Hajeb","Meknès",1,1,1,3,6
+mq_semis_41dc123c,"Poste mobile Sebaa Ayoune (DEMO)",barrage_mobile,"Sebaa Ayoune","El Hajeb","Meknès",0,0,1,2,3
+mq_semis_935de4b6,"Poste fixe Sebbah (DEMO)",barrage_fixe,"Sebbah","Skhirate","Rabat",1,1,1,3,6
+mq_semis_95997506,"Poste mobile Sebbah (DEMO)",barrage_mobile,"Sebbah","Skhirate","Rabat",0,0,1,2,3
+mq_msol48cs_f6501f0d72,"Entrée RN10 — Ouled Taima",barrage_fixe,"Sebt El Guerdane","Taroudannt","Agadir",1,1,1,3,6
+mq_mspur06s_04a836c5c6,"RN10 — Sebt El Guerdane",barrage_mobile,"Sebt El Guerdane","Taroudannt","Agadir",0,0,1,2,3
+mq_msol48ct_9cb712b570,"RN1 — Sebt Gzoula",barrage_fixe,"Sebt Gzoula","Safi","Safi",1,1,1,3,6
+mq_msol48cu_34e890649b,"RN1 — Souiria Laqdima",barrage_fixe,"Sebt Gzoula","Safi","Safi",1,1,1,3,6
+mq_mspur06t_de506d3101,"RR301 — Safi",barrage_mobile,"Sebt Gzoula","Safi","Safi",0,0,1,2,3
+mq_semis_b87ede7c,"Poste fixe Sebt Jahjouh (DEMO)",barrage_fixe,"Sebt Jahjouh","El Hajeb","Meknès",1,1,1,3,6
+mq_semis_474823b8,"Poste mobile Sebt Jahjouh (DEMO)",barrage_mobile,"Sebt Jahjouh","El Hajeb","Meknès",0,0,1,2,3
+mq_msol48cu_37734389cb,"RN4 — Dayet Aoua",barrage_fixe,"Sefrou","Sefrou","Fès",1,1,1,3,6
+mq_msol48cu_ac90ff5b44,"RR507 — Skoura Mdaz",barrage_fixe,"Sefrou","Sefrou","Fès",1,1,1,3,6
+mq_mspur06s_b8b1f46ccf,"RN8 — Ain Cheggag",barrage_mobile,"Sefrou","Sefrou","Fès",0,0,1,2,3
+mq_semis_66c9dddd,"Poste fixe Selouane (DEMO)",barrage_fixe,"Selouane","Nador","Nador",1,1,1,3,6
+mq_semis_ac2e8f3d,"Poste mobile Selouane (DEMO)",barrage_mobile,"Selouane","Nador","Nador",0,0,1,2,3
+mq_mskrryct_1ddd62b9,"Settat",barrage_fixe,"Settat","Settat","Settat",1,1,1,3,6
+mq_mspur06t_643742c328,"RR308 — Guisser",barrage_mobile,"Settat","Settat","Settat",0,0,1,2,3
+mq_mspv1v43_8c8972c4,"Entrée RN9 — Settat",barrage_fixe,"Settat","Settat","Settat",1,1,1,3,6
+mq_msra8pml_eb4f0e25,"RR321 — Settat",barrage_fixe,"Settat","Settat","Settat",1,1,1,3,6
+mq_mspur06t_acb6e3b9ec,"RR407 — Sidi Allal Bahraoui",barrage_mobile,"Shoul","Salé","Rabat",0,0,1,2,3
+mq_semis_f43aa7e8,"Poste fixe Shoul (DEMO)",barrage_fixe,"Shoul","Salé","Rabat",1,1,1,3,6
+mq_msojamr7_2183de9f,"RN8 — Chichaoua",barrage_fixe,"Sid L'Mokhtar","Chichaoua","Marrakech",1,1,1,3,6
+mq_mspur06s_bbdd1ccedc,"RN8 — Sidi Mokhtar",barrage_mobile,"Sid L'Mokhtar","Chichaoua","Marrakech",0,0,1,2,3
+mq_semis_8d37433a,"Poste fixe Sidi Abdellah Ghiat (DEMO)",barrage_fixe,"Sidi Abdellah Ghiat","Tahannaout","Marrakech",1,1,1,3,6
+mq_semis_21a7d74a,"Poste mobile Sidi Abdellah Ghiat (DEMO)",barrage_mobile,"Sidi Abdellah Ghiat","Tahannaout","Marrakech",0,0,1,2,3
+mq_msol48cv_c020f5dd3a,"Entrée RR411 — Sidi Abderrazak",barrage_fixe,"Sidi Abderrazak","Khémisset","Khémisset",1,1,1,3,6
+mq_mspur06t_b97603be88,"RR411 — Sidi Abderrazak",barrage_mobile,"Sidi Abderrazak","Khémisset","Khémisset",0,0,1,2,3
+mq_semis_56ee8ede,"Poste fixe Sidi Addi (DEMO)",barrage_fixe,"Sidi Addi","Azrou","Meknès",1,1,1,3,6
+mq_semis_85302e4e,"Poste mobile Sidi Addi (DEMO)",barrage_mobile,"Sidi Addi","Azrou","Meknès",0,0,1,2,3
+mq_mspur06s_98925456a1,"RN25 — Sidi Aissa",barrage_mobile,"Sidi Aissa","Fkih Ben Salah","Béni Mellal",0,0,1,2,3
+mq_semis_8affa773,"Poste fixe Sidi Aissa (DEMO)",barrage_fixe,"Sidi Aissa","Fkih Ben Salah","Béni Mellal",1,1,1,3,6
+mq_msjnz6ks_49807739,"A2 — Sidi Allal Bahraoui 11 km SE",barrage_fixe,"Sidi Allal El Bahraoui","Khémisset","Khémisset",1,1,1,3,6
+mq_msjo0hc8_337a6c21,"A2 — Sidi Allal Bahraoui 10 km SE",barrage_fixe,"Sidi Allal El Bahraoui","Khémisset","Khémisset",1,1,1,3,6
+mq_mskrrv3k_b54c3cbb,"Sidi Allal Bahraoui",barrage_fixe,"Sidi Allal El Bahraoui","Khémisset","Khémisset",1,1,1,3,6
+mq_msol48cw_e9b5838fe9,"RR415 — Sidi Allal Bahraoui",barrage_fixe,"Sidi Allal El Bahraoui","Khémisset","Khémisset",1,1,1,3,6
+mq_semis_0e77a938,"Poste mobile Sidi Allal El Bahraoui (DEMO)",barrage_mobile,"Sidi Allal El Bahraoui","Khémisset","Khémisset",0,0,1,2,3
+mq_msjnz6nb_fffce938,"RN1 — Ben Mansour",barrage_fixe,"Sidi Allal Tazi","Kénitra","Kénitra",1,1,1,3,6
+mq_semis_5df49834,"Poste mobile Sidi Allal Tazi (DEMO)",barrage_mobile,"Sidi Allal Tazi","Kénitra","Kénitra",0,0,1,2,3
+mq_msol48cy_7f0cf4ad04,"Entrée RR408 — Sidi Ameur Al Hadi",barrage_fixe,"Sidi Ameur Lhadi","Sidi Kacem","Sidi Kacem",1,1,1,3,6
+mq_semis_6370e9de,"Poste mobile Sidi Ameur Lhadi (DEMO)",barrage_mobile,"Sidi Ameur Lhadi","Sidi Kacem","Sidi Kacem",0,0,1,2,3
+mq_mspur06s_b5b48aac2b,"RN7 — Sidi Bennour 9 km S",barrage_mobile,"Sidi Bennour","Sidi Bennour","El Jadida",0,0,1,2,3
+mq_mspur06t_72f97852f5,"RR202 — Khemiss Zemamra 14 km SE",barrage_mobile,"Sidi Bennour","Sidi Bennour","El Jadida",0,0,1,2,3
+mq_mspv1v43_3ead4db4,"Entrée RN7 — Sidi Bennour",barrage_fixe,"Sidi Bennour","Sidi Bennour","El Jadida",1,1,1,3,6
+mq_mspv1v43_9fc890a9,"Sortie RR202 — Sidi Bennour",barrage_fixe,"Sidi Bennour","Sidi Bennour","El Jadida",1,1,1,3,6
+mq_mspv1v43_c7bb4d8e,"RR207 — Sidi Bennour",barrage_fixe,"Sidi Bennour","Sidi Bennour","El Jadida",1,1,1,3,6
+mq_msol48cu_7d96bcd03d,"RR403 — Had Laghoualem 16 km SO",barrage_fixe,"Sidi Bettache","Benslimane","Settat",1,1,1,3,6
+mq_msol48cv_3485d20397,"RR403 — Sidi Bettache",barrage_fixe,"Sidi Bettache","Benslimane","Settat",1,1,1,3,6
+mq_mspur06t_1fe6d6d647,"RR403 — Had Laghoualem 16 km NO",barrage_mobile,"Sidi Bettache","Benslimane","Settat",0,0,1,2,3
+mq_semis_d8012c58,"Poste fixe Sidi Bibi (DEMO)",barrage_fixe,"Sidi Bibi","Biougra","Agadir",1,1,1,3,6
+mq_semis_e827c934,"Poste mobile Sidi Bibi (DEMO)",barrage_mobile,"Sidi Bibi","Biougra","Agadir",0,0,1,2,3
+mq_msol48cr_f074bd62af,"A3 — Sidi Bou Othman",barrage_fixe,"Sidi Bou Othman","Benguerir","Marrakech",1,1,1,3,6
+mq_msol48cv_da9c6c0472,"RR201 — Had Ras El Ain 16 km NO",barrage_fixe,"Sidi Bou Othman","Benguerir","Marrakech",1,1,1,3,6
+mq_mspur06t_e511aed63a,"RR201 — Sidi Bou Othman",barrage_mobile,"Sidi Bou Othman","Benguerir","Marrakech",0,0,1,2,3
+mq_semis_d99839d5,"Poste fixe Sidi Bouzid (DEMO)",barrage_fixe,"Sidi Bouzid","El Jadida","El Jadida",1,1,1,3,6
+mq_semis_7cbb66d5,"Poste mobile Sidi Bouzid (DEMO)",barrage_mobile,"Sidi Bouzid","El Jadida","El Jadida",0,0,1,2,3
+mq_msol48cs_3a185770f6,"Entrée RN11 — Sidi Chiker",barrage_fixe,"Sidi chiker","Youssoufia","Safi",1,1,1,3,6
+mq_msol48cv_c106fcd79b,"RR205 — Sidi Chiker",barrage_fixe,"Sidi chiker","Youssoufia","Safi",1,1,1,3,6
+mq_semis_c276b198,"Poste mobile Sidi chiker (DEMO)",barrage_mobile,"Sidi chiker","Youssoufia","Safi",0,0,1,2,3
+mq_msol48cs_e79c68f2a2,"RN23 — Demnate 4 km NO",barrage_fixe,"Sidi Driss","El Kelaâ Des Sraghna","Marrakech",1,1,1,3,6
+mq_msol48ct_0034e76d30,"RN23 — Imaddahan",barrage_fixe,"Sidi Driss","El Kelaâ Des Sraghna","Marrakech",1,1,1,3,6
+mq_mspur06t_d655a0a928,"RR201 — Sidi Driss",barrage_mobile,"Sidi Driss","El Kelaâ Des Sraghna","Marrakech",0,0,1,2,3
+mq_msol48ct_143c25c721,"RN1 — Sidi El Ghazi 45 km NE",barrage_fixe,"Sidi El Ghazi","Boujdour","Laayoune",1,1,1,3,6
+mq_msol48ct_eb67fc81cb,"RN1 — Sidi El Ghazi 28 km E",barrage_fixe,"Sidi El Ghazi","Boujdour","Laayoune",1,1,1,3,6
+mq_msol48ct_c823cf89a5,"RN1 — Sidi El Ghazi 11 km E",barrage_fixe,"Sidi El Ghazi","Boujdour","Laayoune",1,1,1,3,6
+mq_msol48ct_ef62323285,"RN1 — Sidi El Ghazi 10 km S",barrage_fixe,"Sidi El Ghazi","Boujdour","Laayoune",1,1,1,3,6
+mq_msol48ct_dbbba8e36e,"RN5 — Boukraa 38 km SE",barrage_fixe,"Sidi El Ghazi","Boujdour","Laayoune",1,1,1,3,6
+mq_msol48ct_bc2c104078,"RN5 — Boukraa 56 km SE",barrage_fixe,"Sidi El Ghazi","Boujdour","Laayoune",1,1,1,3,6
+mq_msol48ct_614cc01c32,"RN5 — Boukraa 73 km S",barrage_fixe,"Sidi El Ghazi","Boujdour","Laayoune",1,1,1,3,6
+mq_semis_c96cd4ca,"Poste mobile Sidi El Ghazi (DEMO)",barrage_mobile,"Sidi El Ghazi","Boujdour","Laayoune",0,0,1,2,3
+mq_msol48cs_0301c1a852,"Entrée RN23 — Sidi Hajjaj",barrage_fixe,"Sidi Hajjaj","Settat","Settat",1,1,1,3,6
+mq_msol48cs_6146bb1112,"RN23 — Sidi Hajjaj",barrage_fixe,"Sidi Hajjaj","Settat","Settat",1,1,1,3,6
+mq_semis_d4528068,"Poste mobile Sidi Hajjaj (DEMO)",barrage_mobile,"Sidi Hajjaj","Settat","Settat",0,0,1,2,3
+mq_mspur06t_7138e5c764,"RR310 — Sidi Hajjaj Oued Hassar",barrage_mobile,"Sidi Hajjaj Oued Hassar","Mediouna","Casablanca",0,0,1,2,3
+mq_semis_869d4359,"Poste fixe Sidi Hajjaj Oued Hassar (DEMO)",barrage_fixe,"Sidi Hajjaj Oued Hassar","Mediouna","Casablanca",1,1,1,3,6
+mq_mspur06s_0316f67731,"A2 — Sidi Harazem",barrage_mobile,"Sidi Harazem","Fès","Fès",0,0,1,2,3
+mq_semis_e704dc26,"Poste fixe Sidi Harazem (DEMO)",barrage_fixe,"Sidi Harazem","Fès","Fès",1,1,1,3,6
+mq_msojamr8_253f701b,"RR118 — Sidi Ifni 6 km SO",barrage_fixe,"Sidi Ifni","Sidi Ifni","Guelmim",1,1,1,3,6
+mq_msol48cu_a60b25ebf5,"Entrée RN21 — Sidi Ifni",barrage_fixe,"Sidi Ifni","Sidi Ifni","Guelmim",1,1,1,3,6
+mq_msol48cu_12bf38ef9c,"RR118 — Laqsabi 27 km NO",barrage_fixe,"Sidi Ifni","Sidi Ifni","Guelmim",1,1,1,3,6
+mq_mspur06t_1df3b64566,"RR118 — Sidi Ifni 24 km SO",barrage_mobile,"Sidi Ifni","Sidi Ifni","Guelmim",0,0,1,2,3
+mq_mspur06t_bc4251d2e8,"RR312 — Sidi Jaber",barrage_mobile,"Sidi Jaber","Béni Mellal","Béni Mellal",0,0,1,2,3
+mq_semis_4646d096,"Poste fixe Sidi Jaber (DEMO)",barrage_fixe,"Sidi Jaber","Béni Mellal","Béni Mellal",1,1,1,3,6
+mq_mspv1v43_5cb8d07d,"RN4 — Sidi Kacem",barrage_fixe,"Sidi Kacem","Sidi Kacem","Sidi Kacem",1,1,1,3,6
+mq_mspv1v43_25c7a880,"RN27 — Sidi Kacem",barrage_fixe,"Sidi Kacem","Sidi Kacem","Sidi Kacem",1,1,1,3,6
+mq_semis_862494c3,"Poste mobile Sidi Kacem (DEMO)",barrage_mobile,"Sidi Kacem","Sidi Kacem","Sidi Kacem",0,0,1,2,3
+mq_mspur06s_1f9ededaf3,"A5 — Sidi Mohamed Lahmer",barrage_mobile,"Sidi Mohamed Lahmar","Souk Larbaa du Gharb","Kénitra",0,0,1,2,3
+mq_semis_7df8ff46,"Poste fixe Sidi Mohamed Lahmar (DEMO)",barrage_fixe,"Sidi Mohamed Lahmar","Souk Larbaa du Gharb","Kénitra",1,1,1,3,6
+mq_semis_00578e85,"Poste fixe Sidi Moussa Ben Ali (DEMO)",barrage_fixe,"Sidi Moussa Ben Ali","Mohammedia","Casablanca",1,1,1,3,6
+mq_semis_8c6dafe5,"Poste mobile Sidi Moussa Ben Ali (DEMO)",barrage_mobile,"Sidi Moussa Ben Ali","Mohammedia","Casablanca",0,0,1,2,3
+mq_mspur06t_34a4da84ae,"RR210 — Sidi Rahal",barrage_mobile,"Sidi Rahal","El Kelaâ Des Sraghna","Marrakech",0,0,1,2,3
+mq_semis_97242352,"Poste fixe Sidi Rahal (DEMO)",barrage_fixe,"Sidi Rahal","El Kelaâ Des Sraghna","Marrakech",1,1,1,3,6
+mq_semis_dc907c66,"Poste fixe Sidi Rahal Chatai (DEMO)",barrage_fixe,"Sidi Rahal Chatai","Berrechid","Settat",1,1,1,3,6
+mq_semis_abb7e256,"Poste mobile Sidi Rahal Chatai (DEMO)",barrage_mobile,"Sidi Rahal Chatai","Berrechid","Settat",0,0,1,2,3
+mq_mspur06t_78fec53684,"RR408 — Sidi Redouane",barrage_mobile,"Sidi Redouane","Ouazzane","Tétouan",0,0,1,2,3
+mq_mspv1v43_7e02c94f,"Entrée RR408 — Ouezzane 5 km SE",barrage_fixe,"Sidi Redouane","Ouazzane","Tétouan",1,1,1,3,6
+mq_mspur06t_ce021c87d3,"RR705 — Sidi Slimane",barrage_mobile,"Sidi Slimane","Sidi Slimane","Sidi Kacem",0,0,1,2,3
+mq_mspv1v43_b760e301,"Entrée RN4 — Sidi Slimane",barrage_fixe,"Sidi Slimane","Sidi Slimane","Sidi Kacem",1,1,1,3,6
+mq_mspv1v43_e8c7535f,"Sortie RN4 — Sidi Slimane",barrage_fixe,"Sidi Slimane","Sidi Slimane","Sidi Kacem",1,1,1,3,6
+mq_msol48cs_cfeef5740f,"Entrée A1 — Sidi Smail",barrage_fixe,"Sidi Smail","El Jadida","El Jadida",1,1,1,3,6
+mq_msol48cy_4cdaefedd0,"RR303 — Beni Hlal",barrage_fixe,"Sidi Smail","El Jadida","El Jadida",1,1,1,3,6
+mq_semis_c442aa12,"Poste mobile Sidi Smail (DEMO)",barrage_mobile,"Sidi Smail","El Jadida","El Jadida",0,0,1,2,3
+mq_msjkslq7_638ebd68,"Entrée RN1 — Sidi Taibi",barrage_fixe,"Sidi Taibi","Kénitra","Kénitra",1,1,1,3,6
+mq_semis_37364ec7,"Poste mobile Sidi Taibi (DEMO)",barrage_mobile,"Sidi Taibi","Kénitra","Kénitra",0,0,1,2,3
+mq_msojamr8_469874aa,"Entrée RR416 — Sidi Yahya Zaer",barrage_fixe,"Sidi Yahya des Zaers","Ain Aouda","Rabat",1,1,1,3,6
+mq_mspur06t_5934c67720,"RR416 — Sabbah",barrage_mobile,"Sidi Yahya des Zaers","Ain Aouda","Rabat",0,0,1,2,3
+mq_mt71mu9b_62e3776d,"Sidi Bettache",barrage_fixe,"Sidi Yahya des Zaers","Ain Aouda","Rabat",1,1,1,3,6
+mq_mspur06t_3f5dbbcf47,"RN4 — Sidi Yahya El Gharb",barrage_mobile,"Sidi Yahya du Gharb","Sidi Slimane","Sidi Kacem",0,0,1,2,3
+mq_mspur06t_fbf086c338,"RR411 — Dar El Gueddari",barrage_mobile,"Sidi Yahya du Gharb","Sidi Slimane","Sidi Kacem",0,0,1,2,3
+mq_semis_2786a22d,"Poste fixe Sidi Yahya du Gharb (DEMO)",barrage_fixe,"Sidi Yahya du Gharb","Sidi Slimane","Sidi Kacem",1,1,1,3,6
+mq_semis_78b1c6c0,"Poste fixe Sidi Zouine (DEMO)",barrage_fixe,"Sidi Zouine","Marrakech","Marrakech",1,1,1,3,6
+mq_semis_b7eec29c,"Poste mobile Sidi Zouine (DEMO)",barrage_mobile,"Sidi Zouine","Marrakech","Marrakech",0,0,1,2,3
+mq_msjkslnb_82a904cd,"RN1 — Ain El Hayate",barrage_fixe,"Skhirate Centre","Skhirate","Rabat",1,1,1,3,6
+mq_semis_19bf1da3,"Poste mobile Skhirate Centre (DEMO)",barrage_mobile,"Skhirate Centre","Skhirate","Rabat",0,0,1,2,3
+mq_semis_caa3fe8f,"Poste fixe Skhirate Plage (DEMO)",barrage_fixe,"Skhirate Plage","Skhirate","Rabat",1,1,1,3,6
+mq_semis_21ee0f9b,"Poste mobile Skhirate Plage (DEMO)",barrage_mobile,"Skhirate Plage","Skhirate","Rabat",0,0,1,2,3
+mq_msjo0hcz_04359bec,"RN1 — Sabbah",barrage_fixe,"Skhirate-El Fath","Skhirate","Rabat",1,1,1,3,6
+mq_msjoh1uo_275403e5,"Entrée RN1 — Skhirate Centre",barrage_fixe,"Skhirate-El Fath","Skhirate","Rabat",1,1,1,3,6
+mq_semis_e98d0e07,"Poste mobile Skhirate-El Fath (DEMO)",barrage_mobile,"Skhirate-El Fath","Skhirate","Rabat",0,0,1,2,3
+mq_msol48cs_b938bf5bf7,"Entrée A3 — Skhour Rhamna",barrage_fixe,"Skhour Rhamna","Benguerir","Marrakech",1,1,1,3,6
+mq_mspur06s_ec74edc781,"A3 — Skhour Rhamna",barrage_mobile,"Skhour Rhamna","Benguerir","Marrakech",0,0,1,2,3
+mq_mspur06t_9c5e4015f7,"RR207 — Skhour Rhamna",barrage_mobile,"Skhour Rhamna","Benguerir","Marrakech",0,0,1,2,3
+mq_msol48ct_3702a86351,"RN10 — Skoura 13 km SO",barrage_fixe,"Skoura","Ouarzazate","Ouarzazate",1,1,1,3,6
+mq_msol48ct_9c1ab474aa,"RN10 — Skoura 21 km E",barrage_fixe,"Skoura","Ouarzazate","Ouarzazate",1,1,1,3,6
+mq_msol48cu_03e791d666,"Entrée RN10 — Skoura",barrage_fixe,"Skoura","Ouarzazate","Ouarzazate",1,1,1,3,6
+mq_semis_95ede068,"Poste mobile Skoura (DEMO)",barrage_mobile,"Skoura","Ouarzazate","Ouarzazate",0,0,1,2,3
+mq_semis_68c63907,"Poste fixe Skoura M'Daz (DEMO)",barrage_fixe,"Skoura M'Daz","Missour","Fès",1,1,1,3,6
+mq_semis_a40a2653,"Poste mobile Skoura M'Daz (DEMO)",barrage_mobile,"Skoura M'Daz","Missour","Fès",0,0,1,2,3
+mq_msol48ct_edc748682f,"Entrée RN1 — Smimou",barrage_fixe,"Smimou","Tamanar","Essaouira",1,1,1,3,6
+mq_msol48cv_bd57a84a2c,"RR214 — Smimou",barrage_fixe,"Smimou","Tamanar","Essaouira",1,1,1,3,6
+mq_mspur06s_609cc5ceb1,"RN1 — Essaouira",barrage_mobile,"Smimou","Tamanar","Essaouira",0,0,1,2,3
+mq_mspur06t_02ae7ef84d,"RR211 — Smimou",barrage_mobile,"Smimou","Tamanar","Essaouira",0,0,1,2,3
+mq_semis_5d5dec02,"Poste fixe Souihla (DEMO)",barrage_fixe,"Souihla","Marrakech","Marrakech",1,1,1,3,6
+mq_semis_3546d632,"Poste mobile Souihla (DEMO)",barrage_mobile,"Souihla","Marrakech","Marrakech",0,0,1,2,3
+mq_mspur06t_f13df1c426,"RR301 — Souiria Laqdima",barrage_mobile,"Souiria Laqdima","Safi","Safi",0,0,1,2,3
+mq_semis_5541416a,"Poste fixe Souiria Laqdima (DEMO)",barrage_fixe,"Souiria Laqdima","Safi","Safi",1,1,1,3,6
+mq_msol48cu_d4fd74b1f1,"Entrée RR318 — Souk Jemaa Ouled Abbou",barrage_fixe,"Souk Jemaa Ouled Abbou","Berrechid","Settat",1,1,1,3,6
+mq_mspur06t_ceacd1c11a,"RR303 — Chtouka",barrage_mobile,"Souk Jemaa Ouled Abbou","Berrechid","Settat",0,0,1,2,3
+mq_msjnz6mt_bf793c49,"RN1 — Al Mokhtar",barrage_fixe,"Souk Larbaa Du Gharb","Souk Larbaa du Gharb","Kénitra",1,1,1,3,6
+mq_mspur06t_1728fcc6a9,"RN27 — Lalla Mimouna",barrage_mobile,"Souk Larbaa Du Gharb","Souk Larbaa du Gharb","Kénitra",0,0,1,2,3
+mq_mspv1v43_5c12e6ea,"Entrée RN1 — Souk Larbaa El Gharb",barrage_fixe,"Souk Larbaa Du Gharb","Souk Larbaa du Gharb","Kénitra",1,1,1,3,6
+mq_mspv1v43_4d0af3ae,"Sortie RN1 — Souk Larbaa El Gharb",barrage_fixe,"Souk Larbaa Du Gharb","Souk Larbaa du Gharb","Kénitra",1,1,1,3,6
+mq_msol48cs_7be41dc11c,"Entrée RN25 — Bni Ayat",barrage_fixe,"Souk Sebt Ouled Nemma","Fkih Ben Salah","Béni Mellal",1,1,1,3,6
+mq_semis_74ca3b0a,"Poste mobile Souk Sebt Ouled Nemma (DEMO)",barrage_mobile,"Souk Sebt Ouled Nemma","Fkih Ben Salah","Béni Mellal",0,0,1,2,3
+mq_msol48cs_647911910d,"RN16 — Steha",barrage_fixe,"Steha","Chefchaouen","Tétouan",1,1,1,3,6
+mq_mspur06s_b7b01a2adf,"RN16 — Oued Laou",barrage_mobile,"Steha","Chefchaouen","Tétouan",0,0,1,2,3
+mq_mspur06t_a37b3106d8,"RR406 — Beni Hassan",barrage_mobile,"Steha","Chefchaouen","Tétouan",0,0,1,2,3
+mq_msol48cx_8c6791e110,"RR317 — Tabant 10 km O",barrage_fixe,"Tabant","Azilal","Béni Mellal",1,1,1,3,6
+mq_mspur06t_6017155ce8,"RR317 — Tabant 5 km E",barrage_mobile,"Tabant","Azilal","Béni Mellal",0,0,1,2,3
+mq_msol48cs_2f4d07f290,"A2 — Taddart 20 km NO",barrage_fixe,"Taddart","Guercif","Oujda",1,1,1,3,6
+mq_msol48cs_ac3d95df72,"A2 — Taddart 12 km N",barrage_fixe,"Taddart","Guercif","Oujda",1,1,1,3,6
+mq_mspur06s_c0f30dcb12,"RN6 — Taddart",barrage_mobile,"Taddart","Guercif","Oujda",0,0,1,2,3
+mq_mspur06t_aa5149f365,"RR110 — Aoulouz 12 km O",barrage_mobile,"Tafingoult","Taroudannt","Agadir",0,0,1,2,3
+mq_semis_2564002a,"Poste fixe Tafingoult (DEMO)",barrage_fixe,"Tafingoult","Taroudannt","Agadir",1,1,1,3,6
+mq_msol48cs_c5ca78ed50,"A2 — El Aioune 5 km NE",barrage_fixe,"Tafoughalt","Berkane","Oujda",1,1,1,3,6
+mq_msol48cs_e1b1eafd4f,"A2 — Naima",barrage_fixe,"Tafoughalt","Berkane","Oujda",1,1,1,3,6
+mq_mspur06s_d9b846df24,"RR607 — Tafoghalt",barrage_mobile,"Tafoughalt","Berkane","Oujda",0,0,1,2,3
+mq_msra8pqh_e3771dbe,"Entrée A2 — El Aioune",barrage_fixe,"Tafoughalt","Berkane","Oujda",1,1,1,3,6
+mq_msol48cu_3717b8bda6,"RR107 — Ida Ouagougmar 23 km E",barrage_fixe,"Tafraoute","Tiznit","Agadir",1,1,1,3,6
+mq_msol48cu_7f57c04768,"RR104 — Tafraoute",barrage_fixe,"Tafraoute","Tiznit","Agadir",1,1,1,3,6
+mq_mspur06t_8333e914e0,"RR107 — Tafraoute",barrage_mobile,"Tafraoute","Tiznit","Agadir",0,0,1,2,3
+mq_msol48ct_6c5fcea569,"RN8 — Tafettachte",barrage_fixe,"Taftacht","Essaouira","Essaouira",1,1,1,3,6
+mq_semis_57074672,"Poste mobile Taftacht (DEMO)",barrage_mobile,"Taftacht","Essaouira","Essaouira",0,0,1,2,3
+mq_msol48ct_db466d4727,"RN1 — Taghazoute",barrage_fixe,"Taghazoute","Agadir","Agadir",1,1,1,3,6
+mq_semis_27a9b05b,"Poste mobile Taghazoute (DEMO)",barrage_mobile,"Taghazoute","Agadir","Agadir",0,0,1,2,3
+mq_semis_9634632c,"Poste fixe Taghzirt (DEMO)",barrage_fixe,"Taghzirt","Béni Mellal","Béni Mellal",1,1,1,3,6
+mq_semis_d13d6108,"Poste mobile Taghzirt (DEMO)",barrage_mobile,"Taghzirt","Béni Mellal","Béni Mellal",0,0,1,2,3
+mq_msol48ct_010be1ff77,"Entrée RN10 — Taghzoute",barrage_fixe,"Taghzoute","Tinghir","Ouarzazate",1,1,1,3,6
+mq_mspur06s_7f7aaf8c2b,"RN10 — Taghzoute",barrage_mobile,"Taghzoute","Tinghir","Ouarzazate",0,0,1,2,3
+mq_msol48cw_9952c9c2d7,"RR306 — Tagleft 3 km NE",barrage_fixe,"Tagleft","Azilal","Béni Mellal",1,1,1,3,6
+mq_mspur06t_8a6442c253,"RR306 — Tagleft 16 km NE",barrage_mobile,"Tagleft","Azilal","Béni Mellal",0,0,1,2,3
+mq_msol48cu_f9d5bde424,"Entrée RN9 — Tagonite",barrage_fixe,"Tagounit","Zagora","Ouarzazate",1,1,1,3,6
+mq_mspur06t_0a798b2055,"RN9 — Tagonite",barrage_mobile,"Tagounit","Zagora","Ouarzazate",0,0,1,2,3
+mq_mspur06s_c2cd6fe678,"RN7 — Tahanaout",barrage_mobile,"Tahannaout","Tahannaout","Marrakech",0,0,1,2,3
+mq_mspv1v43_dd32a5f3,"Entrée RN7 — Tahanaout",barrage_fixe,"Tahannaout","Tahannaout","Marrakech",1,1,1,3,6
+mq_msol48cu_efc43f93ba,"Entrée RR505 — Tahala",barrage_fixe,"Tahla","Oued Amlil","Taza",1,1,1,3,6
+mq_semis_55258bff,"Poste mobile Tahla (DEMO)",barrage_mobile,"Tahla","Oued Amlil","Taza",0,0,1,2,3
+mq_semis_20f7d990,"Poste fixe Taineste (DEMO)",barrage_fixe,"Taineste","Taza","Taza",1,1,1,3,6
+mq_semis_60de280c,"Poste mobile Taineste (DEMO)",barrage_mobile,"Taineste","Taza","Taza",0,0,1,2,3
+mq_msol48cs_72056370f5,"RN10 — Taliouine 11 km O",barrage_fixe,"Taliouine","Taroudannt","Agadir",1,1,1,3,6
+mq_msol48ct_31cf6a9fda,"RN10 — Taliouine 12 km SE",barrage_fixe,"Taliouine","Taroudannt","Agadir",1,1,1,3,6
+mq_msol48cv_dddf454843,"RR112 — Taliouine 27 km NE",barrage_fixe,"Taliouine","Taroudannt","Agadir",1,1,1,3,6
+mq_msol48cw_fad2b50ae8,"RR119 — Taliouine",barrage_fixe,"Taliouine","Taroudannt","Agadir",1,1,1,3,6
+mq_msol48cw_4b860c98b2,"RR112 — Asni",barrage_fixe,"Taliouine","Taroudannt","Agadir",1,1,1,3,6
+mq_mspur06t_9b91efeec2,"RR112 — Taliouine 39 km N",barrage_mobile,"Taliouine","Taroudannt","Agadir",0,0,1,2,3
+mq_mspur06t_ec9d6c5c44,"RR106 — Taliouine 17 km SO",barrage_mobile,"Taliouine","Taroudannt","Agadir",0,0,1,2,3
+mq_mspur06t_557ebc4b44,"RR112 — Taliouine 14 km NE",barrage_mobile,"Taliouine","Taroudannt","Agadir",0,0,1,2,3
+mq_msol48cs_b4f9b259f8,"Entrée RN1 — Talmeste",barrage_fixe,"Talmeste","Essaouira","Essaouira",1,1,1,3,6
+mq_semis_3bb0c1ec,"Poste mobile Talmeste (DEMO)",barrage_mobile,"Talmeste","Essaouira","Essaouira",0,0,1,2,3
+mq_msol48cs_b807a351c9,"RN4 — Talsint 14 km NO",barrage_fixe,"Talsint","Bouarfa","Bouarfa",1,1,1,3,6
+mq_msol48cs_4fb0d70676,"RN4 — Talsint 55 km E",barrage_fixe,"Talsint","Bouarfa","Bouarfa",1,1,1,3,6
+mq_msol48cs_fea29b7028,"RN4 — Talsint 32 km NE",barrage_fixe,"Talsint","Bouarfa","Bouarfa",1,1,1,3,6
+mq_msol48cu_818d5c887d,"RN4 — Talsint 12 km NE",barrage_fixe,"Talsint","Bouarfa","Bouarfa",1,1,1,3,6
+mq_msol48cu_ada93a4623,"RN4 — Talsint 39 km NO",barrage_fixe,"Talsint","Bouarfa","Bouarfa",1,1,1,3,6
+mq_mspur06s_253b6ff967,"RN4 — Ain Chair 56 km N",barrage_mobile,"Talsint","Bouarfa","Bouarfa",0,0,1,2,3
+mq_mspur06s_1b2ffa0853,"RN1 — Tamanar",barrage_mobile,"Tamanar","Tamanar","Essaouira",0,0,1,2,3
+mq_mspur06t_d17968f506,"RR211 — Tamanar",barrage_mobile,"Tamanar","Tamanar","Essaouira",0,0,1,2,3
+mq_mspv1v42_0169e796,"Entrée RN1 — Tamanar",barrage_fixe,"Tamanar","Tamanar","Essaouira",1,1,1,3,6
+mq_msol48cr_d6ca8ddc5f,"A3 — Tamansourte",barrage_fixe,"Tamansourte","Tamansourte","Marrakech",1,1,1,3,6
+mq_msracgrc_66f22c98,"Entrée A3 — Tamansourte",barrage_fixe,"Tamansourte","Tamansourte","Marrakech",1,1,1,3,6
+mq_semis_298d6082,"Poste mobile Tamansourte (DEMO)",barrage_mobile,"Tamansourte","Tamansourte","Marrakech",0,0,1,2,3
+mq_semis_4e1b1be8,"Poste fixe Tamaris (DEMO)",barrage_fixe,"Tamaris","Casablanca","Casablanca",1,1,1,3,6
+mq_semis_00bc77a4,"Poste mobile Tamaris (DEMO)",barrage_mobile,"Tamaris","Casablanca","Casablanca",0,0,1,2,3
+mq_msol48cs_a3e6aabba8,"RN9 — Tamegroute 15 km SE",barrage_fixe,"Tamegroute","Zagora","Ouarzazate",1,1,1,3,6
+mq_mspur06t_36470ee05d,"RN9 — Tamegroute 4 km NO",barrage_mobile,"Tamegroute","Zagora","Ouarzazate",0,0,1,2,3
+mq_msol48ct_e8626a644f,"Entrée RN8 — Tamelalt",barrage_fixe,"Tamellalt","El Kelaâ Des Sraghna","Marrakech",1,1,1,3,6
+mq_mspv1v43_79cf50ee,"Sortie RN8 — Kelaa Sraghna",barrage_fixe,"Tamellalt","El Kelaâ Des Sraghna","Marrakech",1,1,1,3,6
+mq_semis_c29e3085,"Poste mobile Tamellalt (DEMO)",barrage_mobile,"Tamellalt","El Kelaâ Des Sraghna","Marrakech",0,0,1,2,3
+mq_semis_90234ccd,"Poste fixe Tameslohte (DEMO)",barrage_fixe,"Tameslohte","Tahannaout","Marrakech",1,1,1,3,6
+mq_semis_ca22848d,"Poste mobile Tameslohte (DEMO)",barrage_mobile,"Tameslohte","Tahannaout","Marrakech",0,0,1,2,3
+mq_semis_09a1f072,"Poste fixe Tamesna (DEMO)",barrage_fixe,"Tamesna","Ain Aouda","Rabat",1,1,1,3,6
+mq_semis_0cf0ec02,"Poste mobile Tamesna (DEMO)",barrage_mobile,"Tamesna","Ain Aouda","Rabat",0,0,1,2,3
+mq_msol48ct_6c0fd2a38e,"Entrée RN1 — Tamri",barrage_fixe,"Tamri","Agadir","Agadir",1,1,1,3,6
+mq_mspur06t_f9cfb1bb47,"RN1 — Tamri",barrage_mobile,"Tamri","Agadir","Agadir",0,0,1,2,3
+mq_mspur06s_9dc095e633,"A3 — Tamzourt 15 km NE",barrage_mobile,"Tamzaourt","Taroudannt","Agadir",0,0,1,2,3
+mq_mspur06s_d99e997500,"A3 — Tamzourt 3 km O",barrage_mobile,"Tamzaourt","Taroudannt","Agadir",0,0,1,2,3
+mq_semis_fac21d9c,"Poste fixe Tamzaourt (DEMO)",barrage_fixe,"Tamzaourt","Taroudannt","Agadir",1,1,1,3,6
+mq_msol48cv_c60e8771f2,"Sortie RR120 — Tan Tan Plage",barrage_fixe,"Tan Tan","Tan Tan","Guelmim",1,1,1,3,6
+mq_mspur06t_8053a3e9f9,"RR120 — Tan Tan Plage",barrage_mobile,"Tan Tan","Tan Tan","Guelmim",0,0,1,2,3
+mq_mspv1v44_ab4030b5,"RN1 — Tan Tan 2 km E",barrage_fixe,"Tan Tan","Tan Tan","Guelmim",1,1,1,3,6
+mq_semis_40fb53b6,"Poste fixe Tan Tan Plage (DEMO)",barrage_fixe,"Tan Tan Plage","Tan Tan","Guelmim",1,1,1,3,6
+mq_semis_b011fc06,"Poste mobile Tan Tan Plage (DEMO)",barrage_mobile,"Tan Tan Plage","Tan Tan","Guelmim",0,0,1,2,3
+mq_semis_e8a74e0b,"Poste fixe Tanant (DEMO)",barrage_fixe,"Tanant","Azilal","Béni Mellal",1,1,1,3,6
+mq_semis_2df85a67,"Poste mobile Tanant (DEMO)",barrage_mobile,"Tanant","Azilal","Béni Mellal",0,0,1,2,3
+mq_mskzlock_021dde68,"Entrée — Tanger",barrage_fixe,"Tanger","Tanger","Tanger",1,1,1,3,6
+mq_mskzlteh_b7286bc0,"Tanger",barrage_fixe,"Tanger","Tanger","Tanger",1,1,1,3,6
+mq_semis_2470d228,"Poste mobile Tanger (DEMO)",barrage_mobile,"Tanger","Tanger","Tanger",0,0,1,2,3
+mq_msol48cv_dddf559e7f,"Entrée RR214 — Taouloukoult",barrage_fixe,"Taouloukoult","Chichaoua","Marrakech",1,1,1,3,6
+mq_semis_ebe8c39d,"Poste mobile Taouloukoult (DEMO)",barrage_mobile,"Taouloukoult","Chichaoua","Marrakech",0,0,1,2,3
+mq_msol48cs_3f1fa12816,"RN8 — Ikaouen 10 km SE",barrage_fixe,"Taounate","Taounate","Fès",1,1,1,3,6
+mq_mspur06s_d6875e2b85,"RN8 — Taounate",barrage_mobile,"Taounate","Taounate","Fès",0,0,1,2,3
+mq_mspv1v43_5627877e,"RR408 — Ain Aicha",barrage_fixe,"Taounate","Taounate","Fès",1,1,1,3,6
+mq_msol48ct_a807aa8daf,"RN19 — Taourirt 25 km NO",barrage_fixe,"Taourirt","Taourirt","Oujda",1,1,1,3,6
+mq_msol48cu_d039ca8ba0,"RN19 — Taourirt 23 km S",barrage_fixe,"Taourirt","Taourirt","Oujda",1,1,1,3,6
+mq_msol48cv_f6c208c27f,"RR603 — Taourirt 32 km SE",barrage_fixe,"Taourirt","Taourirt","Oujda",1,1,1,3,6
+mq_mspur06s_97e7e8429a,"A2 — Taourirt 11 km NO",barrage_mobile,"Taourirt","Taourirt","Oujda",0,0,1,2,3
+mq_mspur06s_22ba9218f6,"A2 — Taourirt 15 km N",barrage_mobile,"Taourirt","Taourirt","Oujda",0,0,1,2,3
+mq_mspur06s_01a84c1206,"RN6 — Taourirt 17 km SO",barrage_mobile,"Taourirt","Taourirt","Oujda",0,0,1,2,3
+mq_mspur06t_386fa6737d,"RN19 — Taourirt 10 km S",barrage_mobile,"Taourirt","Taourirt","Oujda",0,0,1,2,3
+mq_mspv1v43_c5fe356e,"Entrée RN19 — Taourirt",barrage_fixe,"Taourirt","Taourirt","Oujda",1,1,1,3,6
+mq_mspv1v43_a67a1965,"RN6 — Taourirt 5 km O",barrage_fixe,"Taourirt","Taourirt","Oujda",1,1,1,3,6
+mq_mspv1v43_7249f800,"RN6 — Taourirt 4 km N",barrage_fixe,"Taourirt","Taourirt","Oujda",1,1,1,3,6
+mq_msol48cu_6cf94f24a4,"RR702 — Taouz 21 km S",barrage_fixe,"Taouz","Marzouga","Errachidia",1,1,1,3,6
+mq_mspur06t_0d9d006305,"RR702 — Taouz 4 km NO",barrage_mobile,"Taouz","Marzouga","Errachidia",0,0,1,2,3
+mq_msojamr6_4d39fd8d,"RR109 — Tarfaya 6 km SO",barrage_fixe,"Tarfaya","Tarfaya","Laayoune",1,1,1,3,6
+mq_msol48cs_608b55d079,"RN1 — Dawra 24 km N",barrage_fixe,"Tarfaya","Tarfaya","Laayoune",1,1,1,3,6
+mq_msol48cs_c95fcbe983,"RN1 — Tarfaya 43 km E",barrage_fixe,"Tarfaya","Tarfaya","Laayoune",1,1,1,3,6
+mq_msol48ct_a54a86fdd0,"RN1 — Akhfenir 35 km SO",barrage_fixe,"Tarfaya","Tarfaya","Laayoune",1,1,1,3,6
+mq_msol48cu_a0410df333,"RN1 — Tarfaya 23 km E",barrage_fixe,"Tarfaya","Tarfaya","Laayoune",1,1,1,3,6
+mq_mspur06t_b0225a67f9,"RN1 — Tarfaya 8 km E",barrage_mobile,"Tarfaya","Tarfaya","Laayoune",0,0,1,2,3
+mq_mspur06t_f666c26ff2,"RR109 — Dawra 29 km NO",barrage_mobile,"Tarfaya","Tarfaya","Laayoune",0,0,1,2,3
+mq_mspur06t_de5f1ef83a,"RR109 — Tarfaya 22 km SO",barrage_mobile,"Tarfaya","Tarfaya","Laayoune",0,0,1,2,3
+mq_mspv1v43_b57cbfe6,"RN1 — Tarfaya 6 km E",barrage_fixe,"Tarfaya","Tarfaya","Laayoune",1,1,1,3,6
+mq_mspur06t_191196884c,"RR413 — Targuiste",barrage_mobile,"Targuiste","Targuiste","Al Hoceima",0,0,1,2,3
+mq_mspv1v43_a258b23c,"RN8 — Targuiste 2 km S",barrage_fixe,"Targuiste","Targuiste","Al Hoceima",1,1,1,3,6
+mq_mspv1v43_296a3cc8,"RN2 — Targuiste 4 km NO",barrage_fixe,"Targuiste","Targuiste","Al Hoceima",1,1,1,3,6
+mq_msol48ct_43a8f29c09,"RN21 — Assa 34 km NO",barrage_fixe,"Tarhjijt","Guelmim","Guelmim",1,1,1,3,6
+mq_msol48cw_a2a66cb325,"RR117 — Bouizakarne",barrage_fixe,"Tarhjijt","Guelmim","Guelmim",1,1,1,3,6
+mq_msol48cw_d2f15b22e0,"RR102 — Tarhjijt 3 km E",barrage_fixe,"Tarhjijt","Guelmim","Guelmim",1,1,1,3,6
+mq_mspur06t_fbd9c282ab,"RR102 — Tarhjijt 16 km E",barrage_mobile,"Tarhjijt","Guelmim","Guelmim",0,0,1,2,3
+mq_msol48cu_c0e509305a,"RN7 — Ait Iaaza 17 km SE",barrage_fixe,"Taroudannt","Taroudannt","Agadir",1,1,1,3,6
+mq_semis_37165b93,"Poste mobile Taroudannt (DEMO)",barrage_mobile,"Taroudannt","Taroudannt","Agadir",0,0,1,2,3
+mq_semis_19f8afe2,"Poste fixe Tassoultante (DEMO)",barrage_fixe,"Tassoultante","Marrakech","Marrakech",1,1,1,3,6
+mq_semis_7ed1fe12,"Poste mobile Tassoultante (DEMO)",barrage_mobile,"Tassoultante","Marrakech","Marrakech",0,0,1,2,3
+mq_msojamr8_9a4c200b,"RN17 — Tata 6 km E",barrage_fixe,"Tata","Tata","Agadir",1,1,1,3,6
+mq_msol48ct_f358b95279,"RN17 — Tata 22 km S",barrage_fixe,"Tata","Tata","Agadir",1,1,1,3,6
+mq_msol48ct_64440bb906,"Entrée RN7 — Tata",barrage_fixe,"Tata","Tata","Agadir",1,1,1,3,6
+mq_msol48cu_66f29c00fe,"RN7 — Ait Abdellah 35 km SE",barrage_fixe,"Tata","Tata","Agadir",1,1,1,3,6
+mq_msol48cu_b5c4c3442d,"RN7 — Ait Abdellah 25 km E",barrage_fixe,"Tata","Tata","Agadir",1,1,1,3,6
+mq_msol48cu_9cb27d10fe,"RN17 — Akka 15 km E",barrage_fixe,"Tata","Tata","Agadir",1,1,1,3,6
+mq_msol48cw_384f2d0485,"RR116 — Tata 27 km NO",barrage_fixe,"Tata","Tata","Agadir",1,1,1,3,6
+mq_mspur06t_584ef59e70,"RN7 — Akka",barrage_mobile,"Tata","Tata","Agadir",0,0,1,2,3
+mq_mspur06t_b1b8d4fc2f,"RR116 — Tata 14 km NO",barrage_mobile,"Tata","Tata","Agadir",0,0,1,2,3
+mq_mspv1v44_753b5cf7,"RR116 — Tata 6 km NO",barrage_fixe,"Tata","Tata","Agadir",1,1,1,3,6
+mq_mspv1v44_0220a8e0,"RN17 — Tata 5 km S",barrage_fixe,"Tata","Tata","Agadir",1,1,1,3,6
+mq_msol48cv_7b61de2bf5,"RR410 — Tatoft",barrage_fixe,"Tatoft","Larache","Tanger",1,1,1,3,6
+mq_semis_4776e59f,"Poste mobile Tatoft (DEMO)",barrage_mobile,"Tatoft","Larache","Tanger",0,0,1,2,3
+mq_msol48ct_d1c4e6bf6f,"RN29 — Taza 24 km NE",barrage_fixe,"Taza","Taza","Taza",1,1,1,3,6
+mq_semis_e0132d8d,"Poste mobile Taza (DEMO)",barrage_mobile,"Taza","Taza","Taza",0,0,1,2,3
+mq_msol48ct_3851bf5845,"Entrée RN17 — Tazarine",barrage_fixe,"Tazarine","Zagora","Ouarzazate",1,1,1,3,6
+mq_msol48cu_8f6e08161a,"RN17 — Tazarine 31 km SE",barrage_fixe,"Tazarine","Zagora","Ouarzazate",1,1,1,3,6
+mq_msol48cu_cbb1e38c92,"RN17 — Tazarine 16 km SE",barrage_fixe,"Tazarine","Zagora","Ouarzazate",1,1,1,3,6
+mq_msol48cu_0831a3b040,"RN17 — Tamegroute 33 km NE",barrage_fixe,"Tazarine","Zagora","Ouarzazate",1,1,1,3,6
+mq_semis_0a9ae289,"Poste mobile Tazarine (DEMO)",barrage_mobile,"Tazarine","Zagora","Ouarzazate",0,0,1,2,3
+mq_msol48cs_99b3c4f350,"RN10 — Taznakht 23 km N",barrage_fixe,"Taznakht","Ouarzazate","Ouarzazate",1,1,1,3,6
+mq_msol48cs_df0d98d172,"RN10 — Taznakht 4 km NO",barrage_fixe,"Taznakht","Ouarzazate","Ouarzazate",1,1,1,3,6
+mq_msol48ct_580ec53635,"RN10 — Taznakht 26 km SO",barrage_fixe,"Taznakht","Ouarzazate","Ouarzazate",1,1,1,3,6
+mq_msol48cu_0459b9b58d,"RN10 — Taliouine 28 km E",barrage_fixe,"Taznakht","Ouarzazate","Ouarzazate",1,1,1,3,6
+mq_msol48cu_90b9f1328a,"RR110 — Taznakht",barrage_fixe,"Taznakht","Ouarzazate","Ouarzazate",1,1,1,3,6
+mq_msol48cv_71bcbf7b42,"RR108 — Taznakht 25 km E",barrage_fixe,"Taznakht","Ouarzazate","Ouarzazate",1,1,1,3,6
+mq_mspur06t_8cd9771b0f,"RR111 — Taznakht",barrage_mobile,"Taznakht","Ouarzazate","Ouarzazate",0,0,1,2,3
+mq_mspur06t_1ce7bae6a5,"RR108 — Taznakht 11 km SE",barrage_mobile,"Taznakht","Ouarzazate","Ouarzazate",0,0,1,2,3
+mq_mspur06t_aca8387968,"RR110 — Taliouine",barrage_mobile,"Taznakht","Ouarzazate","Ouarzazate",0,0,1,2,3
+mq_semis_faf6aa68,"Poste fixe Telouate (DEMO)",barrage_fixe,"Telouate","Ouarzazate","Ouarzazate",1,1,1,3,6
+mq_semis_a5b2ea24,"Poste mobile Telouate (DEMO)",barrage_mobile,"Telouate","Ouarzazate","Ouarzazate",0,0,1,2,3
+mq_msjnz6la_090b735b,"RN1 — Skhirate Plage",barrage_fixe,"Témara","Témara","Rabat",1,1,1,3,6
+mq_msjo0hbu_5da2ab49,"RN1 — Temara",barrage_fixe,"Témara","Témara","Rabat",1,1,1,3,6
+mq_msra8pmb_886bb10b,"Entrée RR322 — Temara",barrage_fixe,"Témara","Témara","Rabat",1,1,1,3,6
+mq_msjkxs7m_d3bb4b97,"RN1 — Harhoura",barrage_fixe,"Témara","Témara","Rabat",1,1,1,3,6
+mq_semis_badd8b63,"Poste mobile Témara (DEMO)",barrage_mobile,"Témara","Témara","Rabat",0,0,1,2,3
+mq_msknd0lt_4ff3bb0a,"RR322 — Temara Plage",barrage_fixe,"Témara Plage","Témara","Rabat",1,1,1,3,6
+mq_semis_71f25114,"Poste mobile Témara Plage (DEMO)",barrage_mobile,"Témara Plage","Témara","Rabat",0,0,1,2,3
+mq_mspur06t_af9bd4160a,"RN10 — Temsia",barrage_mobile,"Temsia","Inezgane","Agadir",0,0,1,2,3
+mq_semis_80491092,"Poste fixe Temsia (DEMO)",barrage_fixe,"Temsia","Inezgane","Agadir",1,1,1,3,6
+mq_msol48cs_2d5896a320,"RN15 — Tendite 11 km SE",barrage_fixe,"Tendite","Missour","Fès",1,1,1,3,6
+mq_msol48cs_bbaf5eff36,"RN15 — Tendite 20 km NE",barrage_fixe,"Tendite","Missour","Fès",1,1,1,3,6
+mq_semis_f49c5b72,"Poste mobile Tendite (DEMO)",barrage_mobile,"Tendite","Missour","Fès",0,0,1,2,3
+mq_msol48cs_03432b8fbb,"RN19 — Tendrara 61 km NO",barrage_fixe,"Tendrara","Bouarfa","Bouarfa",1,1,1,3,6
+mq_msol48cs_66f71a999b,"RN17 — Ain Beni Mathar 39 km S",barrage_fixe,"Tendrara","Bouarfa","Bouarfa",1,1,1,3,6
+mq_msol48cs_6e9ba99987,"RN17 — Tendrara 52 km N",barrage_fixe,"Tendrara","Bouarfa","Bouarfa",1,1,1,3,6
+mq_msol48cs_997401fa6e,"RN17 — Tendrara 34 km N",barrage_fixe,"Tendrara","Bouarfa","Bouarfa",1,1,1,3,6
+mq_msol48ct_64e1ec80a4,"RN19 — Debdou 76 km S",barrage_fixe,"Tendrara","Bouarfa","Bouarfa",1,1,1,3,6
+mq_msol48ct_d1ac41f262,"Entrée RN19 — Tendrara",barrage_fixe,"Tendrara","Bouarfa","Bouarfa",1,1,1,3,6
+mq_msol48ct_3c16923b79,"RN19 — Tendrara 35 km NO",barrage_fixe,"Tendrara","Bouarfa","Bouarfa",1,1,1,3,6
+mq_msol48cu_c364e0a362,"RN19 — Debdou 61 km S",barrage_fixe,"Tendrara","Bouarfa","Bouarfa",1,1,1,3,6
+mq_msol48cu_fc19c92605,"RN17 — Tendrara 17 km S",barrage_fixe,"Tendrara","Bouarfa","Bouarfa",1,1,1,3,6
+mq_mspur06s_f49d419e56,"RN17 — Tendrara 21 km N",barrage_mobile,"Tendrara","Bouarfa","Bouarfa",0,0,1,2,3
+mq_mspur06s_7b99da5677,"RN17 — Tendrara 8 km N",barrage_mobile,"Tendrara","Bouarfa","Bouarfa",0,0,1,2,3
+mq_msol48ct_ac7657fa19,"Entrée RN2 — Dar Chaoui",barrage_fixe,"Tétouan","Tétouan","Tétouan",1,1,1,3,6
+mq_semis_0a569cbb,"Poste mobile Tétouan (DEMO)",barrage_mobile,"Tétouan","Tétouan","Tétouan",0,0,1,2,3
+mq_msol48cv_9ba6027929,"Entrée RR510 — Thar Souk",barrage_fixe,"Thar Souk","Taounate","Fès",1,1,1,3,6
+mq_msol48cv_48fb589a10,"RR510 — Bni Oulid",barrage_fixe,"Thar Souk","Taounate","Fès",1,1,1,3,6
+mq_semis_7dd87e72,"Poste mobile Thar Souk (DEMO)",barrage_mobile,"Thar Souk","Taounate","Fès",0,0,1,2,3
+mq_msol48cw_4a770a6ad0,"RR407 — Tidders",barrage_fixe,"Tiddas","Oulmes","Khémisset",1,1,1,3,6
+mq_semis_69add194,"Poste mobile Tiddas (DEMO)",barrage_mobile,"Tiddas","Oulmes","Khémisset",0,0,1,2,3
+mq_msjdq5dr_de4db0c1,"A2 — Ait Ouribel",barrage_fixe,"Tiflet","Khémisset","Khémisset",1,1,1,3,6
+mq_msjo0hcj_7e1afbe1,"A2 — Tifelt",barrage_fixe,"Tiflet","Khémisset","Khémisset",1,1,1,3,6
+mq_msm4cqxu_1b91c602,"Entrée — Tifelt",barrage_fixe,"Tiflet","Khémisset","Khémisset",1,1,1,3,6
+mq_semis_1ff1b743,"Poste mobile Tiflet (DEMO)",barrage_mobile,"Tiflet","Khémisset","Khémisset",0,0,1,2,3
+mq_mspur06s_597321094f,"RN29 — El Kbab",barrage_mobile,"Tighassaline","Ait Ishaq","Khénifra",0,0,1,2,3
+mq_semis_108f67d5,"Poste fixe Tighassaline (DEMO)",barrage_fixe,"Tighassaline","Ait Ishaq","Khénifra",1,1,1,3,6
+mq_msol48cw_1c4641cd22,"RR117 — Tighirt 8 km S",barrage_fixe,"Tighirt","Sidi Ifni","Guelmim",1,1,1,3,6
+mq_mspur06t_a5f19fc172,"RR117 — Tighirt 8 km NE",barrage_mobile,"Tighirt","Sidi Ifni","Guelmim",0,0,1,2,3
+mq_msol48cu_f220c389b9,"RR103 — Tilimzoune 7 km SE",barrage_fixe,"Tilimzoune","Tan Tan","Guelmim",1,1,1,3,6
+mq_msol48cu_22e10152df,"RR103 — Tilimzoune 24 km S",barrage_fixe,"Tilimzoune","Tan Tan","Guelmim",1,1,1,3,6
+mq_msol48cx_eee893eae0,"RR103 — Tilimzoune 74 km SE",barrage_fixe,"Tilimzoune","Tan Tan","Guelmim",1,1,1,3,6
+mq_msol48cx_d7b3039d4e,"RR103 — Tilimzoune 63 km SE",barrage_fixe,"Tilimzoune","Tan Tan","Guelmim",1,1,1,3,6
+mq_mspur06s_b5a91a653a,"RN1 — Tan Tan 7 km NE",barrage_mobile,"Tilimzoune","Tan Tan","Guelmim",0,0,1,2,3
+mq_mspur06t_8e035dace0,"RR103 — Tilimzoune 9 km NO",barrage_mobile,"Tilimzoune","Tan Tan","Guelmim",0,0,1,2,3
+mq_mspur06t_2924d27999,"RR103 — Tilimzoune 37 km S",barrage_mobile,"Tilimzoune","Tan Tan","Guelmim",0,0,1,2,3
+mq_mspv1v44_8a4fe30e,"RR103 — Tan Tan",barrage_fixe,"Tilimzoune","Tan Tan","Guelmim",1,1,1,3,6
+mq_semis_d70de71f,"Poste fixe Tilougguite (DEMO)",barrage_fixe,"Tilougguite","Azilal","Béni Mellal",1,1,1,3,6
+mq_semis_c4c556cb,"Poste mobile Tilougguite (DEMO)",barrage_mobile,"Tilougguite","Azilal","Béni Mellal",0,0,1,2,3
+mq_msol48cs_d6ff98269a,"RN13 — Timahdite 7 km N",barrage_fixe,"Timahdite","Ifrane","Meknès",1,1,1,3,6
+mq_mspur06s_f9b1ebc67e,"RN13 — Timahdite 7 km S",barrage_mobile,"Timahdite","Ifrane","Meknès",0,0,1,2,3
+mq_msol48cs_80327ac597,"A3 — Taouloukoult",barrage_fixe,"Timezgadiouine","Chichaoua","Marrakech",1,1,1,3,6
+mq_mspur06s_ab586620ea,"A3 — Timezgadiouine",barrage_mobile,"Timezgadiouine","Chichaoua","Marrakech",0,0,1,2,3
+mq_msol48cw_bb334b54f5,"RR108 — Imider 21 km S",barrage_fixe,"Tinghir","Tinghir","Ouarzazate",1,1,1,3,6
+mq_msol48cy_ea63e6b0a4,"RR108 — Imider 13 km E",barrage_fixe,"Tinghir","Tinghir","Ouarzazate",1,1,1,3,6
+mq_mspur06s_9e09e791b9,"RN12 — Tinghir 6 km NO",barrage_mobile,"Tinghir","Tinghir","Ouarzazate",0,0,1,2,3
+mq_mspur06s_d0796d05d0,"RN12 — Assoul",barrage_mobile,"Tinghir","Tinghir","Ouarzazate",0,0,1,2,3
+mq_mspur06s_6ec5aec9ea,"RN10 — Imider 13 km NE",barrage_mobile,"Tinghir","Tinghir","Ouarzazate",0,0,1,2,3
+mq_mspur06t_4b859708e8,"RN12 — Tinghir 17 km N",barrage_mobile,"Tinghir","Tinghir","Ouarzazate",0,0,1,2,3
+mq_mspv1v44_0a643df4,"RN12 — Tinghir 4 km NO",barrage_fixe,"Tinghir","Tinghir","Ouarzazate",1,1,1,3,6
+mq_mspv1v44_5190179e,"RN10 — Tinghir",barrage_fixe,"Tinghir","Tinghir","Ouarzazate",1,1,1,3,6
+mq_mspv1v44_e26e9e2c,"Entrée RN10 — Tinghir",barrage_fixe,"Tinghir","Tinghir","Ouarzazate",1,1,1,3,6
+mq_msol48ct_4341e912e1,"RN10 — Tinjdad",barrage_fixe,"Tinjdad","Arfoud","Errachidia",1,1,1,3,6
+mq_mspur06t_31bb35ef8a,"RR702 — Tinjdad",barrage_mobile,"Tinjdad","Arfoud","Errachidia",0,0,1,2,3
+mq_msol48ct_4e6ba038cc,"RN8 — Tissa 10 km SO",barrage_fixe,"Tissa","Taounate","Fès",1,1,1,3,6
+mq_mspur06s_f801663ab0,"RN8 — Tissa 7 km N",barrage_mobile,"Tissa","Taounate","Fès",0,0,1,2,3
+mq_msol48cs_f713e704df,"RN17 — Tissint 27 km SO",barrage_fixe,"Tissint","Tata","Agadir",1,1,1,3,6
+mq_msol48cs_8d4414fd31,"RN17 — Tissint 18 km SE",barrage_fixe,"Tissint","Tata","Agadir",1,1,1,3,6
+mq_msol48cu_6e529c36b0,"RN17 — Tissint 9 km O",barrage_fixe,"Tissint","Tata","Agadir",1,1,1,3,6
+mq_msol48cv_080e6d14cb,"RR119 — Tata 39 km N",barrage_fixe,"Tissint","Tata","Agadir",1,1,1,3,6
+mq_msol48cw_5401915b30,"RR119 — Tissint 33 km NO",barrage_fixe,"Tissint","Tata","Agadir",1,1,1,3,6
+mq_mspur06s_1a402666ef,"RN17 — Tata 21 km E",barrage_mobile,"Tissint","Tata","Agadir",0,0,1,2,3
+mq_mspur06t_41f65253b2,"RR119 — Tissint 21 km O",barrage_mobile,"Tissint","Tata","Agadir",0,0,1,2,3
+mq_mspur06t_b9113657be,"RR119 — Tata 31 km NE",barrage_mobile,"Tissint","Tata","Agadir",0,0,1,2,3
+mq_msol48cs_89d0e23e8d,"RN29 — Tizi Ouasli 6 km SO",barrage_fixe,"Tizi Ouasli","Taza","Taza",1,1,1,3,6
+mq_mspur06t_5b8ec1b370,"RN29 — Tizi Ouasli 8 km NE",barrage_mobile,"Tizi Ouasli","Taza","Taza",0,0,1,2,3
+mq_msol48ct_e3affeebaf,"RN1 — Massa",barrage_fixe,"Tiznit","Tiznit","Agadir",1,1,1,3,6
+mq_msol48cu_dfbfe11a03,"RN1 — Tlat Lakhssas 20 km N",barrage_fixe,"Tiznit","Tiznit","Agadir",1,1,1,3,6
+mq_msol48cv_adee867166,"RR104 — Anzi",barrage_fixe,"Tiznit","Tiznit","Agadir",1,1,1,3,6
+mq_mspur06s_12ea7fef77,"RN1 — Tiznit 12 km NE",barrage_mobile,"Tiznit","Tiznit","Agadir",0,0,1,2,3
+mq_mspur06t_67a45660f9,"RR121 — Tiznit 15 km S",barrage_mobile,"Tiznit","Tiznit","Agadir",0,0,1,2,3
+mq_mspv1v43_72d4ad72,"RR121 — Tiznit 6 km S",barrage_fixe,"Tiznit","Tiznit","Agadir",1,1,1,3,6
+mq_mspv1v43_d6159675,"Entrée RR104 — Tiznit",barrage_fixe,"Tiznit","Tiznit","Agadir",1,1,1,3,6
+mq_msol48cu_718b58e626,"RN1 — Tlat Lakhssas 6 km O",barrage_fixe,"Tlat Lakhssas","Sidi Ifni","Guelmim",1,1,1,3,6
+mq_msol48cu_2c439f65bd,"RN1 — Bouizakarne",barrage_fixe,"Tlat Lakhssas","Sidi Ifni","Guelmim",1,1,1,3,6
+mq_mspur06t_64bf2cbb53,"RR121 — Tlat Lakhssas",barrage_mobile,"Tlat Lakhssas","Sidi Ifni","Guelmim",0,0,1,2,3
+mq_msol48cv_c7bff4bdf7,"RR309 — El Gara",barrage_fixe,"Tlat Loulad","Settat","Settat",1,1,1,3,6
+mq_mspur06s_bca1110af8,"A4 — Tlat Loulad 11 km E",barrage_mobile,"Tlat Loulad","Settat","Settat",0,0,1,2,3
+mq_msol48cs_f30aa1e8d9,"RN8 — Tlet El Hanchane 5 km E",barrage_fixe,"Tlet El Hanchane","Essaouira","Essaouira",1,1,1,3,6
+mq_msra8pqp_bdbb518a,"RN8 — Tlet El Hanchane 2 km NE",barrage_fixe,"Tlet El Hanchane","Essaouira","Essaouira",1,1,1,3,6
+mq_semis_2f306c3f,"Poste mobile Tlet El Hanchane (DEMO)",barrage_mobile,"Tlet El Hanchane","Essaouira","Essaouira",0,0,1,2,3
+mq_msol48ct_fe86f288e6,"RN1 — Tlet Sidi Bouguedra",barrage_fixe,"Tlet Sidi Bouguedra","Safi","Safi",1,1,1,3,6
+mq_msol48cw_ec2f1df769,"RR205 — Sebt Gzoula",barrage_fixe,"Tlet Sidi Bouguedra","Safi","Safi",1,1,1,3,6
+mq_semis_41afc6e3,"Poste mobile Tlet Sidi Bouguedra (DEMO)",barrage_mobile,"Tlet Sidi Bouguedra","Safi","Safi",0,0,1,2,3
+mq_msol48ct_3b8fa2d3a0,"Entrée RN7 — Tnine Bouchane",barrage_fixe,"Tnine Bouchane","Benguerir","Marrakech",1,1,1,3,6
+mq_semis_13f3effe,"Poste mobile Tnine Bouchane (DEMO)",barrage_mobile,"Tnine Bouchane","Benguerir","Marrakech",0,0,1,2,3
+mq_msol48ct_752471371e,"RN9 — Ighram Nougdal 16 km N",barrage_fixe,"Touama","Tahannaout","Marrakech",1,1,1,3,6
+mq_mspur06t_5761e35df9,"RN9 — Touama",barrage_mobile,"Touama","Tahannaout","Marrakech",0,0,1,2,3
+mq_msol48cx_6aa2465c57,"RR602 — Touissite Boubker 13 km SO",barrage_fixe,"Touissite Boubker","Jerrada","Oujda",1,1,1,3,6
+mq_mspur06t_42ea9dee4a,"RR602 — Touissite Boubker 4 km NO",barrage_mobile,"Touissite Boubker","Jerrada","Oujda",0,0,1,2,3
+mq_semis_199bee2b,"Poste fixe Tounfite (DEMO)",barrage_fixe,"Tounfite","Midelt","Errachidia",1,1,1,3,6
+mq_semis_b0a80307,"Poste mobile Tounfite (DEMO)",barrage_mobile,"Tounfite","Midelt","Errachidia",0,0,1,2,3
+mq_msol48ct_45801776b3,"RN2 — Tsaft 9 km NO",barrage_fixe,"Tsaft","Azib Midar","Nador",1,1,1,3,6
+mq_mspur06s_3b5ffc938d,"RN2 — Tsaft 8 km E",barrage_mobile,"Tsaft","Azib Midar","Nador",0,0,1,2,3
+mq_semis_1a35b4bf,"Poste fixe Ville Verte (DEMO)",barrage_fixe,"Ville Verte","Nouaceur","Casablanca",1,1,1,3,6
+mq_semis_3a50ffeb,"Poste mobile Ville Verte (DEMO)",barrage_mobile,"Ville Verte","Nouaceur","Casablanca",0,0,1,2,3
+mq_msojamr8_5ff8b878,"RN11 — Youssoufia 7 km SO",barrage_fixe,"Youssoufia","Youssoufia","Safi",1,1,1,3,6
+mq_msojamr8_e1cde77a,"RR206 — Youssoufia",barrage_fixe,"Youssoufia","Youssoufia","Safi",1,1,1,3,6
+mq_mspv1v43_e5b0db66,"RN11 — Youssoufia 5 km N",barrage_fixe,"Youssoufia","Youssoufia","Safi",1,1,1,3,6
+mq_semis_1dcea570,"Poste mobile Youssoufia (DEMO)",barrage_mobile,"Youssoufia","Youssoufia","Safi",0,0,1,2,3
+mq_msol48cu_d03b6c2464,"RN17 — Zag 3 km S",barrage_fixe,"Zag","Assa Zag","Guelmim",1,1,1,3,6
+mq_msol48cu_c356940f4b,"RN17 — Zag 21 km S",barrage_fixe,"Zag","Assa Zag","Guelmim",1,1,1,3,6
+mq_msol48cu_93ee088850,"RN17 — Zag 38 km S",barrage_fixe,"Zag","Assa Zag","Guelmim",1,1,1,3,6
+mq_msol48cu_90b43bd0f2,"RN17 — Zag 55 km S",barrage_fixe,"Zag","Assa Zag","Guelmim",1,1,1,3,6
+mq_msol48cu_c516657635,"RN17 — Zag 71 km S",barrage_fixe,"Zag","Assa Zag","Guelmim",1,1,1,3,6
+mq_msol48cx_5c3f683778,"RR103 — Zag 66 km O",barrage_fixe,"Zag","Assa Zag","Guelmim",1,1,1,3,6
+mq_msol48cx_d7bab45ea5,"RR103 — Zag 86 km O",barrage_fixe,"Zag","Assa Zag","Guelmim",1,1,1,3,6
+mq_semis_e7087e0f,"Poste mobile Zag (DEMO)",barrage_mobile,"Zag","Assa Zag","Guelmim",0,0,1,2,3
+mq_mspur06s_387d11d2d3,"RN4 — Zagota",barrage_mobile,"Zaggota","Sidi Kacem","Sidi Kacem",0,0,1,2,3
+mq_semis_1db5684a,"Poste fixe Zaggota (DEMO)",barrage_fixe,"Zaggota","Sidi Kacem","Sidi Kacem",1,1,1,3,6
+mq_msjdq5fp_7581ad41,"RP1518 — Nkob 29.8 km S #2",barrage_fixe,"Zagora","Zagora","Ouarzazate",1,1,1,3,6
+mq_msjdq5g2_d09efee7,"RN17 — Zagora 31.6 km OSO #2",barrage_fixe,"Zagora","Zagora","Ouarzazate",1,1,1,3,6
+mq_msjf5xzc_35c2d4e7,"RP1518 — Nkob 29.8 km S #3",barrage_fixe,"Zagora","Zagora","Ouarzazate",1,1,1,3,6
+mq_msjnz6o8_837602e0,"RP1518 — Nkob 29.8 km S #4",barrage_fixe,"Zagora","Zagora","Ouarzazate",1,1,1,3,6
+mq_msjnz6p9_aead130c,"RN17 — Zagora 31.6 km OSO #3",barrage_fixe,"Zagora","Zagora","Ouarzazate",1,1,1,3,6
+mq_msojamr8_15bece62,"RN17 — Zagora 6 km SO",barrage_fixe,"Zagora","Zagora","Ouarzazate",1,1,1,3,6
+mq_msol48cs_8c8848a768,"RN9 — Zagora 27 km NO",barrage_fixe,"Zagora","Zagora","Ouarzazate",1,1,1,3,6
+mq_msol48cu_e7a9c67ae3,"RN17 — Zagora 48 km SO",barrage_fixe,"Zagora","Zagora","Ouarzazate",1,1,1,3,6
+mq_msol48cu_8400f0e3ea,"RN17 — Tamegroute 18 km N",barrage_fixe,"Zagora","Zagora","Ouarzazate",1,1,1,3,6
+mq_mspur06s_4ea5ad6ccf,"RN9 — Zagora 14 km NO",barrage_mobile,"Zagora","Zagora","Ouarzazate",0,0,1,2,3
+mq_mspv1v43_7a784542,"RN17 — Zagora 5 km NE",barrage_fixe,"Zagora","Zagora","Ouarzazate",1,1,1,3,6
+mq_mspv1v44_a1223651,"RN9 — Zagora 6 km N",barrage_fixe,"Zagora","Zagora","Ouarzazate",1,1,1,3,6
+mq_msol48cs_35997cd3b1,"RN29 — Boumia",barrage_fixe,"Zaida","Midelt","Errachidia",1,1,1,3,6
+mq_msol48cs_907b388a16,"RN29 — Itzer 8 km E",barrage_fixe,"Zaida","Midelt","Errachidia",1,1,1,3,6
+mq_semis_7f66fa42,"Poste mobile Zaida (DEMO)",barrage_mobile,"Zaida","Midelt","Errachidia",0,0,1,2,3
+mq_mspur06s_bc3d86f4ab,"RN2 — Zaiou",barrage_mobile,"Zaiou","Zaiou","Nador",0,0,1,2,3
+mq_semis_4acff415,"Poste fixe Zaiou (DEMO)",barrage_fixe,"Zaiou","Zaiou","Nador",1,1,1,3,6
+mq_semis_fc19a12a,"Poste fixe Zaouiat Cheikh (DEMO)",barrage_fixe,"Zaouiat Cheikh","Béni Mellal","Béni Mellal",1,1,1,3,6
+mq_semis_9b3f13da,"Poste mobile Zaouiat Cheikh (DEMO)",barrage_mobile,"Zaouiat Cheikh","Béni Mellal","Béni Mellal",0,0,1,2,3
+mq_semis_0976fc30,"Poste fixe Zenata (DEMO)",barrage_fixe,"Zenata","Mohammedia","Casablanca",1,1,1,3,6
+mq_semis_24d62eac,"Poste mobile Zenata (DEMO)",barrage_mobile,"Zenata","Mohammedia","Casablanca",0,0,1,2,3
+mq_semis_47f27bc2,"Poste fixe Zghanghane (DEMO)",barrage_fixe,"Zghanghane","Nador","Nador",1,1,1,3,6
+mq_semis_644d2df2,"Poste mobile Zghanghane (DEMO)",barrage_mobile,"Zghanghane","Nador","Nador",0,0,1,2,3
+mq_msol48ct_7143ddcf4e,"Entrée RN25 — Zhiliga",barrage_fixe,"Zhiliga","Rommani","Khémisset",1,1,1,3,6
+mq_mspur06s_9053fae74d,"RN25 — Rommani 9 km S",barrage_mobile,"Zhiliga","Rommani","Khémisset",0,0,1,2,3
+mq_mspur06s_10139561e7,"RN29 — Zhiliga",barrage_mobile,"Zhiliga","Rommani","Khémisset",0,0,1,2,3
+mq_msra8pkq_45433314,"RN25 — Zhiliga 8 km N",barrage_fixe,"Zhiliga","Rommani","Khémisset",1,1,1,3,6
+mq_semis_17be365d,"Poste fixe Zoumi (DEMO)",barrage_fixe,"Zoumi","Ouazzane","Tétouan",1,1,1,3,6
+mq_semis_6393dbbd,"Poste mobile Zoumi (DEMO)",barrage_mobile,"Zoumi","Ouazzane","Tétouan",0,0,1,2,3

@@ -1,0 +1,1615 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "id": 0,
+            "properties": {
+                "nom": "Gare Ennassim"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.6583805,
+                    33.5175026
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1,
+            "properties": {
+                "nom": "Mers Sultan"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.6087962,
+                    33.5697456
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 2,
+            "properties": {
+                "nom": "Sidi Bou Othmane"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.9465566,
+                    31.9230643
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 3,
+            "properties": {
+                "nom": "Gare"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.816330949999999,
+                    32.578302050000005
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 4,
+            "properties": {
+                "nom": "Ain Taoujdate عين تاوجطات"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.2136072,
+                    33.9339601
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 5,
+            "properties": {
+                "nom": "Gare d'El Jadida"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.5105594,
+                    33.2186527
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 6,
+            "properties": {
+                "nom": "Fès-Médina"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.9580471,
+                    34.0619721
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 7,
+            "properties": {
+                "nom": "Ben Guerir ابن جرير"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.958678,
+                    32.246661
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 8,
+            "properties": {
+                "nom": "Marrakech"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.0176731,
+                    31.6304291
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 9,
+            "properties": {
+                "nom": "Bab Tissera"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.7097711,
+                    34.1596946
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 10,
+            "properties": {
+                "nom": "Souk el Arba du Gharb"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.9985931,
+                    34.6846206
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 11,
+            "properties": {
+                "nom": "Matmata مطماطة"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.517263,
+                    34.1166503
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 12,
+            "properties": {
+                "nom": "Gare"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.1450542,
+                    34.322228
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 13,
+            "properties": {
+                "nom": "El Aïoun Sidi Mellouk العيون سيدي ملوك"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.5114025,
+                    34.5836002
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 14,
+            "properties": {
+                "nom": "Beni Oukil"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.0525739,
+                    34.6288968
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 15,
+            "properties": {
+                "nom": "Facultés"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.6499243,
+                    33.54127
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 16,
+            "properties": {
+                "nom": "Guercif جرسيف"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.3495027,
+                    34.229515
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 17,
+            "properties": {
+                "nom": "Nador Ville مدينة الناظور"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.9280038,
+                    35.183925
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 18,
+            "properties": {
+                "nom": "Meknès مكناس"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.5317426,
+                    33.8965745
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 19,
+            "properties": {
+                "nom": "Ras El Ma"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.1073314,
+                    33.9892376
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 20,
+            "properties": {
+                "nom": "Asilah"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.0238008,
+                    35.482372999999995
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 21,
+            "properties": {
+                "nom": "Taza تازة"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.0084037,
+                    34.2331025
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 22,
+            "properties": {
+                "nom": "Gare Skhirat"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.0392855,
+                    33.8545497
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 23,
+            "properties": {
+                "nom": "Ain Dalia"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.821843449999999,
+                    35.661365700000005
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 24,
+            "properties": {
+                "nom": "Melloussa"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.6597686,
+                    35.721336
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 25,
+            "properties": {
+                "nom": "Mengoub"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.2456564,
+                    32.2639777
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 26,
+            "properties": {
+                "nom": "Gare De Mechraa Bel Ksiri"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.96143395,
+                    34.57734655
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 27,
+            "properties": {
+                "nom": "Selouane سلوان"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.9395705,
+                    35.049717
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 28,
+            "properties": {
+                "nom": "Kceibya"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.0688202,
+                    34.2910183
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 29,
+            "properties": {
+                "nom": "Khemisset Chaouia اخميسات الشاوية"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.7233354,
+                    32.827535
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 30,
+            "properties": {
+                "nom": "Machraa Ben Abbou مشرع بن عبو"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.7874079,
+                    32.6531853
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 31,
+            "properties": {
+                "nom": "Mrizig مريزيق"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.0977223,
+                    32.8460352
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 32,
+            "properties": {
+                "nom": "Bni Nsar (Ville) بني انصار"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.9321286,
+                    35.2436868
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 33,
+            "properties": {
+                "nom": "Beni Ensar Port"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.9305738,
+                    35.2653506
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 34,
+            "properties": {
+                "nom": "Melga el Ouidane ملقى الويدان"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.0204284,
+                    34.5719975
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 35,
+            "properties": {
+                "nom": "Oulad Rahou"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.9856666,
+                    34.7753772
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 36,
+            "properties": {
+                "nom": "Sidi Kacem"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.7188349,
+                    34.2309805
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 37,
+            "properties": {
+                "nom": "Gare"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.9777419,
+                    34.7636096
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 38,
+            "properties": {
+                "nom": "Casa Port الدار البيضاء الميناء"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.6123131,
+                    33.5993825
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 39,
+            "properties": {
+                "nom": "Ksar Sghir"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.5472727,
+                    35.8455055
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 40,
+            "properties": {
+                "nom": "Gare"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.7307618,
+                    34.2388198
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 41,
+            "properties": {
+                "nom": "Azemmour"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.3430934,
+                    33.2751698
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 42,
+            "properties": {
+                "nom": "Ancienne Gare Routière محطة الحافلات القديمة"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.8938884,
+                    34.4157475
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 43,
+            "properties": {
+                "nom": "Khouribga"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.9086863,
+                    32.883583
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 44,
+            "properties": {
+                "nom": "El Goufaf"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.7219039,
+                    32.9199221
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 45,
+            "properties": {
+                "nom": "Souaken"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.9528373,
+                    35.11689285
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 46,
+            "properties": {
+                "nom": "Ksar-el-Kebir القصر الكبير"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.9060442,
+                    35.0098665
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 47,
+            "properties": {
+                "nom": "Arbaoua"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.92640415,
+                    34.8917543
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 48,
+            "properties": {
+                "nom": "Oujda وجدة"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.9244592,
+                    34.6799989
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 49,
+            "properties": {
+                "nom": "Naima النعيمة"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.2188401,
+                    34.601185
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 50,
+            "properties": {
+                "nom": "Gare"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.0425806,
+                    34.3519044
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 51,
+            "properties": {
+                "nom": "Touabaa"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.7063384,
+                    34.0997428
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 52,
+            "properties": {
+                "nom": "Gare"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.9367378,
+                    33.1070928
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 53,
+            "properties": {
+                "nom": "Gare"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.9119,
+                    32.4694049
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 54,
+            "properties": {
+                "nom": "Nzalat Laadam"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.9543312,
+                    32.0947206
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 55,
+            "properties": {
+                "nom": "Youssoufia"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.5347116,
+                    32.247564
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 56,
+            "properties": {
+                "nom": "Berrechid برشيد"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.5924531,
+                    33.2602048
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 57,
+            "properties": {
+                "nom": "Sidi el Aïdi سيدي العايدي"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.6263358,
+                    33.1272171
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 58,
+            "properties": {
+                "nom": "Oued Zem"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.5628874,
+                    32.8647915
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 59,
+            "properties": {
+                "nom": "النواصر"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.623807,
+                    33.3742682
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 60,
+            "properties": {
+                "nom": "Ain Karma"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.6246271,
+                    34.0105329
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 61,
+            "properties": {
+                "nom": "Laassilate"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.79392835,
+                    33.364348899999996
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 62,
+            "properties": {
+                "nom": "Tamdrost تامدروست"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.5532634,
+                    33.0765423
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 63,
+            "properties": {
+                "nom": "Bab Marzouka"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.1444623,
+                    34.2088185
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 64,
+            "properties": {
+                "nom": "Sidi Maârouf"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.6608886,
+                    33.5127209
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 65,
+            "properties": {
+                "nom": "Sidi Hajjaj"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.2664769,
+                    32.9115673
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 66,
+            "properties": {
+                "nom": "Oued Amlil"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.2813955,
+                    34.1887623
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 67,
+            "properties": {
+                "nom": "Ain sbit"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.7810666,
+                    34.0595434
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 68,
+            "properties": {
+                "nom": "M'Saada"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.7976666,
+                    34.3406926
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 69,
+            "properties": {
+                "nom": "Oued Rdom"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.6488534,
+                    34.0690844
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 70,
+            "properties": {
+                "nom": "Casa Voyageurs"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.5899961000000005,
+                    33.59005773333333
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 71,
+            "properties": {
+                "nom": "Chtouka"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.1587242,
+                    33.3319737
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 72,
+            "properties": {
+                "nom": "Safi"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -9.2444566,
+                    32.2854082
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 73,
+            "properties": {
+                "nom": "Gare"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -9.1372908,
+                    32.2312544
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 74,
+            "properties": {
+                "nom": "Bouguedra"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.9789339,
+                    32.2618096
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 75,
+            "properties": {
+                "nom": "Gare"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.7562658,
+                    32.2636437
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 76,
+            "properties": {
+                "nom": "Tanger Ville - Al Boraq"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.7853389,
+                    35.7703931
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 77,
+            "properties": {
+                "nom": "Gare"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.9953828,
+                    31.7901768
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 78,
+            "properties": {
+                "nom": "Tangier Mghouga"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.7888321000000005,
+                    35.75011745
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 79,
+            "properties": {
+                "nom": "Gare"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.5409783,
+                    34.198848
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 80,
+            "properties": {
+                "nom": "Sabaa Aiyoun"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.3756955,
+                    33.9016034
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 81,
+            "properties": {
+                "nom": "Meknès - Al Amir Abdelkader"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.5451334,
+                    33.8992372
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 82,
+            "properties": {
+                "nom": "Ouarzigha"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.5448096,
+                    33.9342348
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 83,
+            "properties": {
+                "nom": "Sidi Yahya"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.30817215,
+                    34.3122379
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 84,
+            "properties": {
+                "nom": "Kenitra Medina"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.56826,
+                    34.265135900000004
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 85,
+            "properties": {
+                "nom": "Kénitra"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.581916866666667,
+                    34.2515163
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 86,
+            "properties": {
+                "nom": "Lalla Yettou"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.203943,
+                    34.3430301
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 87,
+            "properties": {
+                "nom": "Dar Gueddari"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.1030821500000005,
+                    34.4299351
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 88,
+            "properties": {
+                "nom": "Oulad Khitib"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.0112996,
+                    34.4751895
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 89,
+            "properties": {
+                "nom": "Tlata Rissana"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.94478485,
+                    35.219118050000006
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 90,
+            "properties": {
+                "nom": "Tnine Sidi El Yamani"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.980485,
+                    35.3404052
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 91,
+            "properties": {
+                "nom": "Aqba Hamra"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.9159488499999995,
+                    35.6126125
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 92,
+            "properties": {
+                "nom": "Moualine El Oued"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.4801871,
+                    33.0073934
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 93,
+            "properties": {
+                "nom": "Ras El Ain"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.3921755,
+                    32.9781048
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 94,
+            "properties": {
+                "nom": "Sidi Daoui"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.6259807,
+                    32.895104
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 95,
+            "properties": {
+                "nom": "Imefoute"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.7722546,
+                    32.7485173
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 96,
+            "properties": {
+                "nom": "Mazagan"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.3670249,
+                    33.2656081
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 97,
+            "properties": {
+                "nom": "Zenata"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.4188426,
+                    33.6594285
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 98,
+            "properties": {
+                "nom": "El Mansouria"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.2809162,
+                    33.7373174
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 99,
+            "properties": {
+                "nom": "Gare Rabat Riad محطة الرباط الرياض"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.8825842,
+                    33.9640224
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 100,
+            "properties": {
+                "nom": "Mohammedia"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.3876759,
+                    33.6956681
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 101,
+            "properties": {
+                "nom": "Sidi Ichou"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.4309131,
+                    34.3026859
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 102,
+            "properties": {
+                "nom": "Gare du Kceibya"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.0695559,
+                    34.2912028
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 103,
+            "properties": {
+                "nom": "El Ksar El Kebir"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.9060936,
+                    35.0097869
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 104,
+            "properties": {
+                "nom": "Aïn-Sebaâ"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.75229295,
+                    34.4744265
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 105,
+            "properties": {
+                "nom": "Tanger Ville"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.7852462,
+                    35.77004543333334
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 106,
+            "properties": {
+                "nom": "Ain Taoujdate"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.2133275,
+                    33.9340816
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 107,
+            "properties": {
+                "nom": "Casa Port"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.6120293,
+                    33.5989919
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 108,
+            "properties": {
+                "nom": "Bouskoura"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.6517443,
+                    33.4612723
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 109,
+            "properties": {
+                "nom": "Boufarrouj بو فروج"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.6154747,
+                    33.1951194
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 110,
+            "properties": {
+                "nom": "Aeroport Mohammed V"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.5785883,
+                    33.3741232
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 111,
+            "properties": {
+                "nom": "Gare de Sidi Hrazem محطة سيدي حرازم"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.8726851,
+                    34.0380694
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 112,
+            "properties": {
+                "nom": "Sidi El Ghazouani"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.8702485,
+                    32.8920768
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 113,
+            "properties": {
+                "nom": "SIDI BRAHIM STADE MARRAKECH"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.0227269,
+                    31.705286
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 114,
+            "properties": {
+                "nom": "Taourirt تاوريرت"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.8982733,
+                    34.4086931
+                ]
+            }
+        }
+    ]
+}

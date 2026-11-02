@@ -1,0 +1,4948 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "not_mvjend7z_081f1e7f",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Bouznika a été assigné au CMND Région Settat — TEST.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-132",
+      "barrage": {
+        "id": "BF-BT-132",
+        "nom": "Poste fixe Bouznika",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -7.1612,
+        "lat": 33.7889,
+        "bt": "Bouznika",
+        "cie": "Bouznika",
+        "reg": "Settat",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Settat"
+      },
+      "perimetres": [
+        {
+          "bt": "Bouznika",
+          "cie": "Bouznika",
+          "reg": "Settat"
+        }
+      ],
+      "cree": "2026-10-22T10:35:24.718Z",
+      "maj": "2026-10-22T10:35:24.718Z",
+      "lues": {
+        "REG-SETTAT": "2026-10-22T10:36:46.372Z"
+      }
+    },
+    {
+      "id": "not_mvjer6pv_109801ca",
+      "type": "faction",
+      "titre": "Faction modifiée",
+      "description": "Poste fixe El Mansouria : Faction 4 → Faction 2.",
+      "actions": [
+        "changement_faction"
+      ],
+      "barrageId": "BF-BT-172",
+      "barrage": {
+        "id": "BF-BT-172",
+        "nom": "Poste fixe El Mansouria",
+        "type": "barrage_fixe",
+        "route": "RR322",
+        "lng": -7.33769,
+        "lat": 33.72085,
+        "bt": "El Mansouria",
+        "cie": "Bouznika",
+        "reg": "Settat",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-SETTAT",
+        "nom": "Chef de région Settat",
+        "rang": "reg",
+        "unite": "Settat"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "El Mansouria",
+          "cie": "Bouznika",
+          "reg": "Settat"
+        }
+      ],
+      "cree": "2026-10-22T10:38:22.914Z",
+      "maj": "2026-10-22T10:38:22.914Z",
+      "lues": {
+        "SUPERADMIN": "2026-10-22T10:58:11.040Z"
+      }
+    },
+    {
+      "id": "not_mvjery4m_f1faaefa",
+      "type": "traitement",
+      "titre": "Assignation traitée",
+      "description": "Poste fixe Bouznika : Faction 4 → Faction 3. L’assignation est clôturée.",
+      "actions": [
+        "changement_faction",
+        "assignation_traitee"
+      ],
+      "barrageId": "BF-BT-132",
+      "barrage": {
+        "id": "BF-BT-132",
+        "nom": "Poste fixe Bouznika",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -7.1612,
+        "lat": 33.7889,
+        "bt": "Bouznika",
+        "cie": "Bouznika",
+        "reg": "Settat",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-SETTAT",
+        "nom": "Chef de région Settat",
+        "rang": "reg",
+        "unite": "Settat"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Bouznika",
+          "cie": "Bouznika",
+          "reg": "Settat"
+        }
+      ],
+      "cree": "2026-10-22T10:38:58.438Z",
+      "maj": "2026-10-22T10:38:58.456Z",
+      "lues": {
+        "SUPERADMIN": "2026-10-22T10:40:31.208Z"
+      }
+    },
+    {
+      "id": "not_mvjesgpp_b3bf39c1",
+      "type": "demande",
+      "titre": "Demande de validation",
+      "description": "Une modification de Poste fixe Bouznika attend validation.",
+      "actions": [
+        "demander-modification"
+      ],
+      "barrageId": "BF-BT-132",
+      "barrage": {
+        "id": "BF-BT-132",
+        "nom": "Poste fixe Bouznika",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -7.1612,
+        "lat": 33.7889,
+        "bt": "Bouznika",
+        "cie": "Bouznika",
+        "reg": "Settat",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-SETTAT",
+        "nom": "Chef de région Settat",
+        "rang": "reg",
+        "unite": "Settat"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Bouznika",
+          "cie": "Bouznika",
+          "reg": "Settat"
+        }
+      ],
+      "cree": "2026-10-22T10:39:22.525Z",
+      "maj": "2026-10-22T10:39:22.525Z",
+      "lues": {
+        "SUPERADMIN": "2026-10-22T10:40:05.095Z"
+      }
+    },
+    {
+      "id": "not_mvjfkop8_47295e5e",
+      "type": "validation",
+      "titre": "Opération validée",
+      "description": "Poste fixe Bouznika a changé de position. Acceptée par l’administration.",
+      "actions": [
+        "modifier",
+        "decision-demande"
+      ],
+      "barrageId": "BF-BT-132",
+      "barrage": {
+        "id": "BF-BT-132",
+        "nom": "Poste fixe Bouznika",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -7.20861,
+        "lat": 33.76384,
+        "bt": "Bouznika",
+        "cie": "Bouznika",
+        "reg": "Settat",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Bouznika",
+          "cie": "Bouznika",
+          "reg": "Settat"
+        }
+      ],
+      "cree": "2026-10-22T11:01:19.244Z",
+      "maj": "2026-10-22T11:01:19.268Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvjg82m2_3aac97c6",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Boukraa a été assigné au CMND Région Laayoune.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-126",
+      "barrage": {
+        "id": "BF-BT-126",
+        "nom": "Poste fixe Boukraa",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -13.13073,
+        "lat": 27.26624,
+        "bt": "Boukraa",
+        "cie": "Laayoune",
+        "reg": "Laayoune",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Laayoune"
+      },
+      "perimetres": [
+        {
+          "bt": "Boukraa",
+          "cie": "Laayoune",
+          "reg": "Laayoune"
+        }
+      ],
+      "cree": "2026-10-22T11:19:30.362Z",
+      "maj": "2026-10-22T11:19:30.362Z",
+      "lues": {
+        "REG-LAAYOUNE": "2026-10-22T11:19:53.485Z"
+      }
+    },
+    {
+      "id": "not_mvjgdang_f24cd0bf",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Boukraa a été assigné au CMND Cie Laayoune.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-126",
+      "barrage": {
+        "id": "BF-BT-126",
+        "nom": "Poste fixe Boukraa",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -13.13073,
+        "lat": 27.26624,
+        "bt": "Boukraa",
+        "cie": "Laayoune",
+        "reg": "Laayoune",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-LAAYOUNE",
+        "nom": "Chef de région Laayoune",
+        "rang": "reg",
+        "unite": "Laayoune"
+      },
+      "destinataire": {
+        "rang": "cie",
+        "unite": "Laayoune",
+        "matricule": "CIE-LAAYOUNE"
+      },
+      "perimetres": [
+        {
+          "bt": "Boukraa",
+          "cie": "Laayoune",
+          "reg": "Laayoune"
+        }
+      ],
+      "cree": "2026-10-22T11:23:34.059Z",
+      "maj": "2026-10-22T11:23:34.059Z",
+      "lues": {
+        "CIE-LAAYOUNE": "2026-10-22T11:23:58.178Z",
+        "SUPERADMIN": "2026-10-22T11:25:43.407Z"
+      }
+    },
+    {
+      "id": "not_mvjgeqrw_974d9876",
+      "type": "demande",
+      "titre": "Demande de validation",
+      "description": "Une modification de Poste fixe Boukraa attend validation.",
+      "actions": [
+        "demander-modification"
+      ],
+      "barrageId": "BF-BT-126",
+      "barrage": {
+        "id": "BF-BT-126",
+        "nom": "Poste fixe Boukraa",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -13.13073,
+        "lat": 27.26624,
+        "bt": "Boukraa",
+        "cie": "Laayoune",
+        "reg": "Laayoune",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "CIE-LAAYOUNE",
+        "nom": "Chef de compagnie Laayoune",
+        "rang": "cie",
+        "unite": "Laayoune"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Boukraa",
+          "cie": "Laayoune",
+          "reg": "Laayoune"
+        }
+      ],
+      "cree": "2026-10-22T11:24:41.611Z",
+      "maj": "2026-10-22T11:24:41.611Z",
+      "lues": {
+        "REG-LAAYOUNE": "2026-10-22T11:25:01.959Z",
+        "SUPERADMIN": "2026-10-22T11:25:35.290Z"
+      }
+    },
+    {
+      "id": "not_mvjggivv_3e793ca7",
+      "type": "validation",
+      "titre": "Opération validée",
+      "description": "Poste fixe Boukraa a changé de position. L’assignation est clôturée. Acceptée par l’administration.",
+      "actions": [
+        "modifier",
+        "assignation_traitee",
+        "decision-demande"
+      ],
+      "barrageId": "BF-BT-126",
+      "barrage": {
+        "id": "BF-BT-126",
+        "nom": "Poste fixe Boukraa",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -13.08748,
+        "lat": 27.30145,
+        "bt": "Boukraa",
+        "cie": "Laayoune",
+        "reg": "Laayoune",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Boukraa",
+          "cie": "Laayoune",
+          "reg": "Laayoune"
+        }
+      ],
+      "cree": "2026-10-22T11:26:04.698Z",
+      "maj": "2026-10-22T11:26:04.716Z",
+      "lues": {
+        "REG-LAAYOUNE": "2026-10-22T11:26:34.595Z"
+      }
+    },
+    {
+      "id": "not_mvjhrp9n_fbb8c193",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Skhirate Plage a été assigné au CMND Région Rabat.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-406",
+      "barrage": {
+        "id": "BF-BT-406",
+        "nom": "Poste fixe Skhirate Plage",
+        "type": "barrage_fixe",
+        "route": "A1",
+        "lng": -7.00734,
+        "lat": 33.88203,
+        "bt": "Skhirate Plage",
+        "cie": "Skhirate",
+        "reg": "Rabat",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat"
+      },
+      "perimetres": [
+        {
+          "bt": "Skhirate Plage",
+          "cie": "Skhirate",
+          "reg": "Rabat"
+        }
+      ],
+      "cree": "2026-10-22T12:02:45.802Z",
+      "maj": "2026-10-22T12:02:45.802Z",
+      "lues": {
+        "REG-RABAT": "2026-10-22T12:03:08.340Z"
+      }
+    },
+    {
+      "id": "not_mvjkkll7_415e47d8",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Asni a été assigné au CMND Région Agadir.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-069",
+      "barrage": {
+        "id": "BF-BT-069",
+        "nom": "Poste fixe Asni",
+        "type": "barrage_fixe",
+        "route": "RN7",
+        "lng": -7.98413,
+        "lat": 31.24733,
+        "bt": "Asni",
+        "cie": "Tahannaout",
+        "reg": "Marrakech",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Agadir"
+      },
+      "perimetres": [
+        {
+          "bt": "Asni",
+          "cie": "Tahannaout",
+          "reg": "Marrakech"
+        }
+      ],
+      "cree": "2026-10-22T13:21:13.278Z",
+      "maj": "2026-10-22T13:21:13.278Z",
+      "lues": {
+        "REG-AGADIR": "2026-10-22T13:22:03.072Z"
+      }
+    },
+    {
+      "id": "not_mvjl0v04_381bc5fb",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Asni a été assigné au CMND Région Marrakech.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-069",
+      "barrage": {
+        "id": "BF-BT-069",
+        "nom": "Poste fixe Asni",
+        "type": "barrage_fixe",
+        "route": "RN7",
+        "lng": -7.98413,
+        "lat": 31.24733,
+        "bt": "Asni",
+        "cie": "Tahannaout",
+        "reg": "Marrakech",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Marrakech"
+      },
+      "perimetres": [
+        {
+          "bt": "Asni",
+          "cie": "Tahannaout",
+          "reg": "Marrakech"
+        }
+      ],
+      "cree": "2026-10-22T13:33:51.980Z",
+      "maj": "2026-10-22T13:33:51.980Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvjldbhu_5f72959c",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Al Hoceima a été assigné au CMND Région Al Hoceima.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-053",
+      "barrage": {
+        "id": "BF-BT-053",
+        "nom": "Poste fixe Al Hoceima",
+        "type": "barrage_fixe",
+        "route": "RN2",
+        "lng": -3.91614,
+        "lat": 35.19322,
+        "bt": "Al Hoceima",
+        "cie": "Al Hoceima",
+        "reg": "Al Hoceima",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Al Hoceima"
+      },
+      "perimetres": [
+        {
+          "bt": "Al Hoceima",
+          "cie": "Al Hoceima",
+          "reg": "Al Hoceima"
+        }
+      ],
+      "cree": "2026-10-22T13:43:33.211Z",
+      "maj": "2026-10-22T13:43:33.211Z",
+      "lues": {
+        "REG-AL HOCEIMA": "2026-10-22T13:44:24.150Z"
+      }
+    },
+    {
+      "id": "not_mvjlfn5l_6c706a04",
+      "type": "demande",
+      "titre": "Demande de validation",
+      "description": "Une modification de Poste fixe Al Hoceima attend validation.",
+      "actions": [
+        "demander-modification"
+      ],
+      "barrageId": "BF-BT-053",
+      "barrage": {
+        "id": "BF-BT-053",
+        "nom": "Poste fixe Al Hoceima",
+        "type": "barrage_fixe",
+        "route": "RN2",
+        "lng": -3.91614,
+        "lat": 35.19322,
+        "bt": "Al Hoceima",
+        "cie": "Al Hoceima",
+        "reg": "Al Hoceima",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-AL HOCEIMA",
+        "nom": "Chef de région Al Hoceima",
+        "rang": "reg",
+        "unite": "Al Hoceima"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Al Hoceima",
+          "cie": "Al Hoceima",
+          "reg": "Al Hoceima"
+        }
+      ],
+      "cree": "2026-10-22T13:45:21.657Z",
+      "maj": "2026-10-22T13:45:21.657Z",
+      "lues": {
+        "SUPERADMIN": "2026-10-22T13:45:58.742Z"
+      }
+    },
+    {
+      "id": "not_mvjlh1se_e330b31e",
+      "type": "validation",
+      "titre": "Opération validée",
+      "description": "Poste fixe Al Hoceima a changé de position. Acceptée par l’administration.",
+      "actions": [
+        "modifier",
+        "decision-demande"
+      ],
+      "barrageId": "BF-BT-053",
+      "barrage": {
+        "id": "BF-BT-053",
+        "nom": "Poste fixe Al Hoceima",
+        "type": "barrage_fixe",
+        "route": "RP5211",
+        "lng": -3.93044,
+        "lat": 35.2302,
+        "bt": "Al Hoceima",
+        "cie": "Al Hoceima",
+        "reg": "Al Hoceima",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Al Hoceima",
+          "cie": "Al Hoceima",
+          "reg": "Al Hoceima"
+        }
+      ],
+      "cree": "2026-10-22T13:46:27.278Z",
+      "maj": "2026-10-22T13:46:27.293Z",
+      "lues": {
+        "REG-AL HOCEIMA": "2026-10-23T10:12:54.859Z"
+      }
+    },
+    {
+      "id": "not_mvjmq8zu_fc493b2b",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Témara a été assigné au CMND Région Rabat.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-463",
+      "barrage": {
+        "id": "BF-BT-463",
+        "nom": "Poste fixe Témara",
+        "type": "barrage_fixe",
+        "route": "RN25",
+        "lng": -6.82615,
+        "lat": 33.95987,
+        "bt": "Rabat",
+        "cie": "Rabat",
+        "reg": "Rabat",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat"
+      },
+      "perimetres": [
+        {
+          "bt": "Rabat",
+          "cie": "Rabat",
+          "reg": "Rabat"
+        }
+      ],
+      "cree": "2026-10-22T14:21:36.138Z",
+      "maj": "2026-10-22T14:21:36.140Z",
+      "lues": {
+        "REG-RABAT": "2026-10-22T14:23:01.545Z"
+      }
+    },
+    {
+      "id": "not_mvjn3awh_42b1fb83",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Témara a été assigné au CMND Région Rabat.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-463",
+      "barrage": {
+        "id": "BF-BT-463",
+        "nom": "Poste fixe Témara",
+        "type": "barrage_fixe",
+        "route": "RN25",
+        "lng": -6.82615,
+        "lat": 33.95987,
+        "bt": "Rabat",
+        "cie": "Rabat",
+        "reg": "Rabat",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat"
+      },
+      "perimetres": [
+        {
+          "bt": "Rabat",
+          "cie": "Rabat",
+          "reg": "Rabat"
+        }
+      ],
+      "cree": "2026-10-22T14:31:45.128Z",
+      "maj": "2026-10-22T14:31:45.128Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvjn3g5f_8cd4fa20",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Témara a été assigné au CMND Région Rabat.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-463",
+      "barrage": {
+        "id": "BF-BT-463",
+        "nom": "Poste fixe Témara",
+        "type": "barrage_fixe",
+        "route": "RN25",
+        "lng": -6.82615,
+        "lat": 33.95987,
+        "bt": "Rabat",
+        "cie": "Rabat",
+        "reg": "Rabat",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat"
+      },
+      "perimetres": [
+        {
+          "bt": "Rabat",
+          "cie": "Rabat",
+          "reg": "Rabat"
+        }
+      ],
+      "cree": "2026-10-22T14:31:51.931Z",
+      "maj": "2026-10-22T14:31:51.931Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvjn3p9l_30e6bf5b",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Témara a été assigné au CMND Région Rabat.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-463",
+      "barrage": {
+        "id": "BF-BT-463",
+        "nom": "Poste fixe Témara",
+        "type": "barrage_fixe",
+        "route": "RN25",
+        "lng": -6.82615,
+        "lat": 33.95987,
+        "bt": "Rabat",
+        "cie": "Rabat",
+        "reg": "Rabat",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat"
+      },
+      "perimetres": [
+        {
+          "bt": "Rabat",
+          "cie": "Rabat",
+          "reg": "Rabat"
+        }
+      ],
+      "cree": "2026-10-22T14:32:03.746Z",
+      "maj": "2026-10-22T14:32:03.746Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvjn3x2r_55800ff3",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Témara a été assigné au CMND Région Rabat.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-463",
+      "barrage": {
+        "id": "BF-BT-463",
+        "nom": "Poste fixe Témara",
+        "type": "barrage_fixe",
+        "route": "RN25",
+        "lng": -6.82615,
+        "lat": 33.95987,
+        "bt": "Rabat",
+        "cie": "Rabat",
+        "reg": "Rabat",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat"
+      },
+      "perimetres": [
+        {
+          "bt": "Rabat",
+          "cie": "Rabat",
+          "reg": "Rabat"
+        }
+      ],
+      "cree": "2026-10-22T14:32:13.863Z",
+      "maj": "2026-10-22T14:32:13.863Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvjn3yhu_2cd26177",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Témara a été assigné au CMND Région Rabat.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-463",
+      "barrage": {
+        "id": "BF-BT-463",
+        "nom": "Poste fixe Témara",
+        "type": "barrage_fixe",
+        "route": "RN25",
+        "lng": -6.82615,
+        "lat": 33.95987,
+        "bt": "Rabat",
+        "cie": "Rabat",
+        "reg": "Rabat",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat"
+      },
+      "perimetres": [
+        {
+          "bt": "Rabat",
+          "cie": "Rabat",
+          "reg": "Rabat"
+        }
+      ],
+      "cree": "2026-10-22T14:32:15.707Z",
+      "maj": "2026-10-22T14:32:15.707Z",
+      "lues": {
+        "REG-RABAT": "2026-10-22T14:32:31.001Z"
+      }
+    },
+    {
+      "id": "not_mvjn7qwt_208130d4",
+      "type": "demande",
+      "titre": "Demande de validation",
+      "description": "Le retrait de Poste fixe Témara attend validation.",
+      "actions": [
+        "demander-suppression"
+      ],
+      "barrageId": "BF-BT-463",
+      "barrage": {
+        "id": "BF-BT-463",
+        "nom": "Poste fixe Témara",
+        "type": "barrage_fixe",
+        "route": "RN25",
+        "lng": -6.82615,
+        "lat": 33.95987,
+        "bt": "Rabat",
+        "cie": "Rabat",
+        "reg": "Rabat",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "rang": "reg",
+        "unite": "Rabat"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Rabat",
+          "cie": "Rabat",
+          "reg": "Rabat"
+        }
+      ],
+      "cree": "2026-10-22T14:35:12.509Z",
+      "maj": "2026-10-22T14:35:12.509Z",
+      "lues": {
+        "SUPERADMIN": "2026-10-22T14:35:24.160Z"
+      }
+    },
+    {
+      "id": "not_mvjn84cm_7743520a",
+      "type": "validation",
+      "titre": "Opération validée",
+      "description": "Poste fixe Témara a été retiré du dispositif. Acceptée par l’administration.",
+      "actions": [
+        "supprimer",
+        "decision-demande"
+      ],
+      "barrageId": "BF-BT-463",
+      "barrage": {
+        "id": "BF-BT-463",
+        "nom": "Poste fixe Témara",
+        "type": "barrage_fixe",
+        "route": "RN25",
+        "lng": -6.82615,
+        "lat": 33.95987,
+        "bt": "Rabat",
+        "cie": "Rabat",
+        "reg": "Rabat",
+        "factionId": "F3",
+        "statutBarrage": "supprime"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Rabat",
+          "cie": "Rabat",
+          "reg": "Rabat"
+        }
+      ],
+      "cree": "2026-10-22T14:35:29.926Z",
+      "maj": "2026-10-22T14:35:29.931Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvjp7voa_d4f33e6c",
+      "type": "demande",
+      "titre": "Demande de validation",
+      "description": "Une modification de Poste fixe Asni attend validation.",
+      "actions": [
+        "demander-modification"
+      ],
+      "barrageId": "BF-BT-069",
+      "barrage": {
+        "id": "BF-BT-069",
+        "nom": "Poste fixe Asni",
+        "type": "barrage_fixe",
+        "route": "RN7",
+        "lng": -7.98413,
+        "lat": 31.24733,
+        "bt": "Asni",
+        "cie": "Tahannaout",
+        "reg": "Marrakech",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-MARRAKECH",
+        "nom": "Chef de région Marrakech",
+        "rang": "reg",
+        "unite": "Marrakech"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Asni",
+          "cie": "Tahannaout",
+          "reg": "Marrakech"
+        }
+      ],
+      "cree": "2026-10-22T15:31:17.913Z",
+      "maj": "2026-10-22T15:31:17.913Z",
+      "lues": {
+        "SUPERADMIN": "2026-10-23T09:18:32.751Z"
+      }
+    },
+    {
+      "id": "not_mvkqxukc_cf7c228f",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Tamansourte a été assigné au CMND Région Marrakech.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-436",
+      "barrage": {
+        "id": "BF-BT-436",
+        "nom": "Poste fixe Tamansourte",
+        "type": "barrage_fixe",
+        "route": "RN7",
+        "lng": -8.06312,
+        "lat": 31.70484,
+        "bt": "Tamansourte",
+        "cie": "Tamansourte",
+        "reg": "Marrakech",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Marrakech"
+      },
+      "perimetres": [
+        {
+          "bt": "Tamansourte",
+          "cie": "Tamansourte",
+          "reg": "Marrakech"
+        }
+      ],
+      "cree": "2026-10-23T09:07:15.323Z",
+      "maj": "2026-10-23T09:07:15.326Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvkqxygz_a49cccaa",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Saada a été assigné au CMND Région Marrakech.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-358",
+      "barrage": {
+        "id": "BF-BT-358",
+        "nom": "Poste fixe Saada",
+        "type": "barrage_fixe",
+        "route": "RN8",
+        "lng": -8.10099,
+        "lat": 31.62858,
+        "bt": "Saada",
+        "cie": "Marrakech",
+        "reg": "Marrakech",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Marrakech"
+      },
+      "perimetres": [
+        {
+          "bt": "Saada",
+          "cie": "Marrakech",
+          "reg": "Marrakech"
+        }
+      ],
+      "cree": "2026-10-23T09:07:20.386Z",
+      "maj": "2026-10-23T09:07:20.388Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvkqy2tj_64d48cf6",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "TEST AUTO — Marrakech — Agafay a été assigné au CMND Région Marrakech.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "OPT-DEMO-MARRAKECH-001",
+      "barrage": {
+        "id": "OPT-DEMO-MARRAKECH-001",
+        "nom": "TEST AUTO — Marrakech — Agafay",
+        "type": "barrage_fixe",
+        "route": "RR212",
+        "lng": -8.11574,
+        "lat": 31.54889,
+        "bt": "Agafay",
+        "cie": "Marrakech",
+        "reg": "Marrakech",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Marrakech"
+      },
+      "perimetres": [
+        {
+          "bt": "Agafay",
+          "cie": "Marrakech",
+          "reg": "Marrakech"
+        }
+      ],
+      "cree": "2026-10-23T09:07:26.022Z",
+      "maj": "2026-10-23T09:07:26.025Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvkqya9h_51a282b4",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Agafay a été assigné au CMND Région Marrakech.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-006",
+      "barrage": {
+        "id": "BF-BT-006",
+        "nom": "Poste fixe Agafay",
+        "type": "barrage_fixe",
+        "route": "RR212",
+        "lng": -8.17476,
+        "lat": 31.49781,
+        "bt": "Agafay",
+        "cie": "Marrakech",
+        "reg": "Marrakech",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Marrakech"
+      },
+      "perimetres": [
+        {
+          "bt": "Agafay",
+          "cie": "Marrakech",
+          "reg": "Marrakech"
+        }
+      ],
+      "cree": "2026-10-23T09:07:35.669Z",
+      "maj": "2026-10-23T09:07:35.669Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvkqyd2j_986f7e56",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Tameslohte a été assigné au CMND Région Marrakech.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-440",
+      "barrage": {
+        "id": "BF-BT-440",
+        "nom": "Poste fixe Tameslohte",
+        "type": "barrage_fixe",
+        "route": "RP2014",
+        "lng": -8.09786,
+        "lat": 31.49652,
+        "bt": "Tameslohte",
+        "cie": "Tahannaout",
+        "reg": "Marrakech",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Marrakech"
+      },
+      "perimetres": [
+        {
+          "bt": "Tameslohte",
+          "cie": "Tahannaout",
+          "reg": "Marrakech"
+        }
+      ],
+      "cree": "2026-10-23T09:07:39.307Z",
+      "maj": "2026-10-23T09:07:39.309Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvkqyfzn_8d37563e",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Tassoultante a été assigné au CMND Région Marrakech.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-456",
+      "barrage": {
+        "id": "BF-BT-456",
+        "nom": "Poste fixe Tassoultante",
+        "type": "barrage_fixe",
+        "route": "RP2009",
+        "lng": -8.01841,
+        "lat": 31.57345,
+        "bt": "Tassoultante",
+        "cie": "Marrakech",
+        "reg": "Marrakech",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Marrakech"
+      },
+      "perimetres": [
+        {
+          "bt": "Tassoultante",
+          "cie": "Marrakech",
+          "reg": "Marrakech"
+        }
+      ],
+      "cree": "2026-10-23T09:07:43.091Z",
+      "maj": "2026-10-23T09:07:43.093Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvkqyjti_1e7f6c72",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Sidi Rahal a été assigné au CMND Région Marrakech.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-396",
+      "barrage": {
+        "id": "BF-BT-396",
+        "nom": "Poste fixe Sidi Rahal",
+        "type": "barrage_fixe",
+        "route": "RR210",
+        "lng": -7.47309,
+        "lat": 31.64612,
+        "bt": "Sidi Rahal",
+        "cie": "El Kelaâ Des Sraghna",
+        "reg": "Marrakech",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Marrakech"
+      },
+      "perimetres": [
+        {
+          "bt": "Sidi Rahal",
+          "cie": "El Kelaâ Des Sraghna",
+          "reg": "Marrakech"
+        }
+      ],
+      "cree": "2026-10-23T09:07:48.053Z",
+      "maj": "2026-10-23T09:07:48.056Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvkqymv7_a570f20e",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Had Ras El Ain a été assigné au CMND Région Marrakech.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-208",
+      "barrage": {
+        "id": "BF-BT-208",
+        "nom": "Poste fixe Had Ras El Ain",
+        "type": "barrage_fixe",
+        "route": "RR210",
+        "lng": -7.59739,
+        "lat": 31.63814,
+        "bt": "Had Ras El Ain",
+        "cie": "Benguerir",
+        "reg": "Marrakech",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Marrakech"
+      },
+      "perimetres": [
+        {
+          "bt": "Had Ras El Ain",
+          "cie": "Benguerir",
+          "reg": "Marrakech"
+        }
+      ],
+      "cree": "2026-10-23T09:07:52.003Z",
+      "maj": "2026-10-23T09:07:52.005Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvkqyqac_4808d49f",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Tahannaout a été assigné au CMND Région Marrakech.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-429",
+      "barrage": {
+        "id": "BF-BT-429",
+        "nom": "Poste fixe Tahannaout",
+        "type": "barrage_fixe",
+        "route": "RN7",
+        "lng": -7.94996,
+        "lat": 31.35668,
+        "bt": "Tahannaout",
+        "cie": "Tahannaout",
+        "reg": "Marrakech",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Marrakech"
+      },
+      "perimetres": [
+        {
+          "bt": "Tahannaout",
+          "cie": "Tahannaout",
+          "reg": "Marrakech"
+        }
+      ],
+      "cree": "2026-10-23T09:07:56.436Z",
+      "maj": "2026-10-23T09:07:56.437Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvkr002f_d133fba0",
+      "type": "traitement",
+      "titre": "Assignation traitée",
+      "description": "Poste fixe Tahannaout : Faction 1 → Faction 2. Poste fixe Tahannaout a été assigné au CMND Région Marrakech. La fiche de Poste fixe Tahannaout a été modifiée. L’assignation est clôturée.",
+      "actions": [
+        "changement_faction",
+        "assignation",
+        "modifier",
+        "assignation_traitee"
+      ],
+      "barrageId": "BF-BT-429",
+      "barrage": {
+        "id": "BF-BT-429",
+        "nom": "Poste fixe Tahannaout",
+        "type": "barrage_fixe",
+        "route": "RN7",
+        "lng": -7.94996,
+        "lat": 31.35668,
+        "bt": "Tahannaout",
+        "cie": "Tahannaout",
+        "reg": "Marrakech",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-MARRAKECH",
+        "nom": "Chef de région Marrakech",
+        "rang": "reg",
+        "unite": "Marrakech"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Marrakech"
+      },
+      "perimetres": [
+        {
+          "bt": "Tahannaout",
+          "cie": "Tahannaout",
+          "reg": "Marrakech"
+        }
+      ],
+      "cree": "2026-10-23T09:08:55.766Z",
+      "maj": "2026-10-23T09:08:55.806Z",
+      "lues": {
+        "SUPERADMIN": "2026-10-23T09:18:12.316Z"
+      }
+    },
+    {
+      "id": "not_mvkr0ejy_dd5f01ca",
+      "type": "faction",
+      "titre": "Faction modifiée",
+      "description": "Poste fixe Tahannaout : aucune → aucune.",
+      "actions": [
+        "changement_faction"
+      ],
+      "barrageId": "BF-BT-429",
+      "barrage": {
+        "id": "BF-BT-429",
+        "nom": "Poste fixe Tahannaout",
+        "type": "barrage_fixe",
+        "route": "RN7",
+        "lng": -7.94996,
+        "lat": 31.35668,
+        "bt": "Tahannaout",
+        "cie": "Tahannaout",
+        "reg": "Marrakech",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-MARRAKECH",
+        "nom": "Chef de région Marrakech",
+        "rang": "reg",
+        "unite": "Marrakech"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Tahannaout",
+          "cie": "Tahannaout",
+          "reg": "Marrakech"
+        }
+      ],
+      "cree": "2026-10-23T09:09:14.542Z",
+      "maj": "2026-10-23T09:09:14.542Z",
+      "lues": {
+        "SUPERADMIN": "2026-10-23T09:18:18.019Z"
+      }
+    },
+    {
+      "id": "not_mvkr107z_d82b1bbe",
+      "type": "traitement",
+      "titre": "Assignation traitée",
+      "description": "Poste fixe Asni : Faction 1 → Faction 2. Poste fixe Asni a été assigné au CMND Région Marrakech. L’assignation est clôturée.",
+      "actions": [
+        "changement_faction",
+        "assignation",
+        "assignation_traitee"
+      ],
+      "barrageId": "BF-BT-069",
+      "barrage": {
+        "id": "BF-BT-069",
+        "nom": "Poste fixe Asni",
+        "type": "barrage_fixe",
+        "route": "RN7",
+        "lng": -7.98413,
+        "lat": 31.24733,
+        "bt": "Asni",
+        "cie": "Tahannaout",
+        "reg": "Marrakech",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-MARRAKECH",
+        "nom": "Chef de région Marrakech",
+        "rang": "reg",
+        "unite": "Marrakech"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Marrakech"
+      },
+      "perimetres": [
+        {
+          "bt": "Asni",
+          "cie": "Tahannaout",
+          "reg": "Marrakech"
+        }
+      ],
+      "cree": "2026-10-23T09:09:42.623Z",
+      "maj": "2026-10-23T09:09:42.654Z",
+      "lues": {
+        "SUPERADMIN": "2026-10-23T09:17:55.947Z"
+      }
+    },
+    {
+      "id": "not_mvkrd0b2_79da57eb",
+      "type": "validation",
+      "titre": "Opération validée",
+      "description": "Poste fixe Asni a changé de position. Acceptée par l’administration.",
+      "actions": [
+        "modifier",
+        "decision-demande"
+      ],
+      "barrageId": "BF-BT-069",
+      "barrage": {
+        "id": "BF-BT-069",
+        "nom": "Poste fixe Asni",
+        "type": "barrage_fixe",
+        "route": "RN7",
+        "lng": -8.02316,
+        "lat": 31.22713,
+        "bt": "Asni",
+        "cie": "Tahannaout",
+        "reg": "Marrakech",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Asni",
+          "cie": "Tahannaout",
+          "reg": "Marrakech"
+        }
+      ],
+      "cree": "2026-10-23T09:19:02.606Z",
+      "maj": "2026-10-23T09:19:02.625Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvktb2fn_f407ff43",
+      "type": "demande",
+      "titre": "Demande de validation",
+      "description": "Une modification de Poste fixe Imzouren attend validation.",
+      "actions": [
+        "demander-modification"
+      ],
+      "barrageId": "BF-BT-230",
+      "barrage": {
+        "id": "BF-BT-230",
+        "nom": "Poste fixe Imzouren",
+        "type": "barrage_fixe",
+        "route": "RN2",
+        "lng": -3.8787,
+        "lat": 35.18003,
+        "bt": "Imzouren",
+        "cie": "Al Hoceima",
+        "reg": "Al Hoceima",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-AL HOCEIMA",
+        "nom": "Chef de région Al Hoceima",
+        "rang": "reg",
+        "unite": "Al Hoceima"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Imzouren",
+          "cie": "Al Hoceima",
+          "reg": "Al Hoceima"
+        }
+      ],
+      "cree": "2026-10-23T10:13:31.283Z",
+      "maj": "2026-10-23T10:13:31.283Z",
+      "lues": {
+        "SUPERADMIN": "2026-10-23T10:14:31.378Z"
+      }
+    },
+    {
+      "id": "not_mvktbb4d_942af219",
+      "type": "demande",
+      "titre": "Demande de validation",
+      "description": "Une modification de Poste fixe Al Hoceima attend validation.",
+      "actions": [
+        "demander-modification"
+      ],
+      "barrageId": "BF-BT-053",
+      "barrage": {
+        "id": "BF-BT-053",
+        "nom": "Poste fixe Al Hoceima",
+        "type": "barrage_fixe",
+        "route": "RP5211",
+        "lng": -3.93044,
+        "lat": 35.2302,
+        "bt": "Al Hoceima",
+        "cie": "Al Hoceima",
+        "reg": "Al Hoceima",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-AL HOCEIMA",
+        "nom": "Chef de région Al Hoceima",
+        "rang": "reg",
+        "unite": "Al Hoceima"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Al Hoceima",
+          "cie": "Al Hoceima",
+          "reg": "Al Hoceima"
+        }
+      ],
+      "cree": "2026-10-23T10:13:42.541Z",
+      "maj": "2026-10-23T10:13:42.541Z",
+      "lues": {
+        "SUPERADMIN": "2026-10-23T10:14:23.162Z"
+      }
+    },
+    {
+      "id": "not_mvktczdk_d0c3f139",
+      "type": "validation",
+      "titre": "Opération validée",
+      "description": "Poste fixe Al Hoceima a changé de position. Acceptée par l’administration.",
+      "actions": [
+        "modifier",
+        "decision-demande"
+      ],
+      "barrageId": "BF-BT-053",
+      "barrage": {
+        "id": "BF-BT-053",
+        "nom": "Poste fixe Al Hoceima",
+        "type": "barrage_fixe",
+        "route": "RP5211",
+        "lng": -3.92789,
+        "lat": 35.23911,
+        "bt": "Al Hoceima",
+        "cie": "Al Hoceima",
+        "reg": "Al Hoceima",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Al Hoceima",
+          "cie": "Al Hoceima",
+          "reg": "Al Hoceima"
+        }
+      ],
+      "cree": "2026-10-23T10:15:00.631Z",
+      "maj": "2026-10-23T10:15:00.645Z",
+      "lues": {
+        "REG-AL HOCEIMA": "2026-10-23T10:55:12.439Z"
+      }
+    },
+    {
+      "id": "not_mvktd7ir_c06c22a7",
+      "type": "validation",
+      "titre": "Opération validée",
+      "description": "Poste fixe Imzouren a changé de position. Acceptée par l’administration.",
+      "actions": [
+        "modifier",
+        "decision-demande"
+      ],
+      "barrageId": "BF-BT-230",
+      "barrage": {
+        "id": "BF-BT-230",
+        "nom": "Poste fixe Imzouren",
+        "type": "barrage_fixe",
+        "route": "RN2",
+        "lng": -3.96031,
+        "lat": 35.16826,
+        "bt": "Izemmouren",
+        "cie": "Al Hoceima",
+        "reg": "Al Hoceima",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Imzouren",
+          "cie": "Al Hoceima",
+          "reg": "Al Hoceima"
+        },
+        {
+          "bt": "Izemmouren",
+          "cie": "Al Hoceima",
+          "reg": "Al Hoceima"
+        }
+      ],
+      "cree": "2026-10-23T10:15:11.187Z",
+      "maj": "2026-10-23T10:15:11.199Z",
+      "lues": {
+        "REG-AL HOCEIMA": "2026-10-23T10:56:20.923Z"
+      }
+    },
+    {
+      "id": "not_mvktdv17_70ccf73c",
+      "type": "validation",
+      "titre": "Opération validée",
+      "description": "Poste fixe Témara a changé de position. L’assignation est clôturée. Acceptée par l’administration.",
+      "actions": [
+        "modifier",
+        "assignation_traitee",
+        "decision-demande"
+      ],
+      "barrageId": "BF-BT-463",
+      "barrage": {
+        "id": "BF-BT-463",
+        "nom": "Poste fixe Témara",
+        "type": "barrage_fixe",
+        "route": "RP4014",
+        "lng": -6.81024,
+        "lat": 33.94669,
+        "bt": "Rabat",
+        "cie": "Rabat",
+        "reg": "Rabat",
+        "factionId": "F3",
+        "statutBarrage": "supprime"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Rabat",
+          "cie": "Rabat",
+          "reg": "Rabat"
+        }
+      ],
+      "cree": "2026-10-23T10:15:41.658Z",
+      "maj": "2026-10-23T10:15:41.713Z",
+      "lues": {
+        "REG-RABAT": "2026-10-23T10:16:52.185Z"
+      }
+    },
+    {
+      "id": "not_mvktg6vj_034edd67",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Une modification de BFI Rabat attend validation. BFI Rabat a été assigné au CMND Région Rabat. La fiche de BFI Rabat a été modifiée.",
+      "actions": [
+        "demander-modification",
+        "assignation",
+        "modifier"
+      ],
+      "barrageId": "BFI-CIE-061",
+      "barrage": {
+        "id": "BFI-CIE-061",
+        "nom": "BFI Rabat",
+        "type": "barrage_fixe",
+        "route": "A1",
+        "lng": -6.88652,
+        "lat": 33.96705,
+        "bt": "Rabat",
+        "cie": "Rabat",
+        "reg": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "rang": "reg",
+        "unite": "Rabat"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat"
+      },
+      "perimetres": [
+        {
+          "bt": "Rabat",
+          "cie": "Rabat",
+          "reg": "Rabat"
+        }
+      ],
+      "cree": "2026-10-23T10:17:30.318Z",
+      "maj": "2026-10-23T10:17:30.322Z",
+      "lues": {
+        "SUPERADMIN": "2026-10-23T10:33:19.684Z"
+      }
+    },
+    {
+      "id": "not_mvku2ezj_0511a9df",
+      "type": "validation",
+      "titre": "Opération validée",
+      "description": "La fiche de BFI Rabat a été modifiée. Acceptée par l’administration.",
+      "actions": [
+        "modifier",
+        "decision-demande"
+      ],
+      "barrageId": "BFI-CIE-061",
+      "barrage": {
+        "id": "BFI-CIE-061",
+        "nom": "BFI Rabat",
+        "type": "barrage_fixe",
+        "route": "A1",
+        "lng": -6.88652,
+        "lat": 33.96705,
+        "bt": "Rabat",
+        "cie": "Rabat",
+        "reg": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Rabat",
+          "cie": "Rabat",
+          "reg": "Rabat"
+        }
+      ],
+      "cree": "2026-10-23T10:34:47.261Z",
+      "maj": "2026-10-23T10:34:47.316Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvkuqhu9_00768e70",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Selouane a été assigné au CMND Région Nador.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-369",
+      "barrage": {
+        "id": "BF-BT-369",
+        "nom": "Poste fixe Selouane",
+        "type": "barrage_fixe",
+        "route": "RN2",
+        "lng": -2.94428,
+        "lat": 35.05763,
+        "bt": "Selouane",
+        "cie": "Nador",
+        "reg": "Nador",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Nador"
+      },
+      "perimetres": [
+        {
+          "bt": "Selouane",
+          "cie": "Nador",
+          "reg": "Nador"
+        }
+      ],
+      "cree": "2026-10-23T10:53:30.677Z",
+      "maj": "2026-10-23T10:53:30.677Z",
+      "lues": {
+        "REG-NADOR": "2026-10-23T11:12:24.639Z"
+      }
+    },
+    {
+      "id": "not_mvkuqxok_648c85ba",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Driouch a été assigné au CMND Région Nador.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-155",
+      "barrage": {
+        "id": "BF-BT-155",
+        "nom": "Poste fixe Driouch",
+        "type": "barrage_fixe",
+        "route": "RN2",
+        "lng": -3.25725,
+        "lat": 34.9768,
+        "bt": "Driouch",
+        "cie": "Azib Midar",
+        "reg": "Nador",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Nador"
+      },
+      "perimetres": [
+        {
+          "bt": "Driouch",
+          "cie": "Azib Midar",
+          "reg": "Nador"
+        }
+      ],
+      "cree": "2026-10-23T10:53:51.208Z",
+      "maj": "2026-10-23T10:53:51.208Z",
+      "lues": {
+        "REG-NADOR": "2026-10-23T11:12:21.137Z"
+      }
+    },
+    {
+      "id": "not_mvkur35h_53b120ce",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Oued Nekkour a été assigné au CMND Région Al Hoceima.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-325",
+      "barrage": {
+        "id": "BF-BT-325",
+        "nom": "Poste fixe Oued Nekkour",
+        "type": "barrage_fixe",
+        "route": "RN2",
+        "lng": -3.81404,
+        "lat": 34.96674,
+        "bt": "Oued Nekkour",
+        "cie": "Al Hoceima",
+        "reg": "Al Hoceima",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Al Hoceima"
+      },
+      "perimetres": [
+        {
+          "bt": "Oued Nekkour",
+          "cie": "Al Hoceima",
+          "reg": "Al Hoceima"
+        }
+      ],
+      "cree": "2026-10-23T10:53:58.315Z",
+      "maj": "2026-10-23T10:53:58.315Z",
+      "lues": {
+        "REG-AL HOCEIMA": "2026-10-23T10:56:24.535Z"
+      }
+    },
+    {
+      "id": "not_mvkurags_b1d0a6d8",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Malloussa a été assigné au CMND Région Tanger. Poste fixe Malloussa a été assigné au CMND Région Tétouan.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-288",
+      "barrage": {
+        "id": "BF-BT-288",
+        "nom": "Poste fixe Malloussa",
+        "type": "barrage_fixe",
+        "route": "RN2",
+        "lng": -5.68475,
+        "lat": 35.64033,
+        "bt": "Malloussa",
+        "cie": "Fahs Anjra",
+        "reg": "Tanger",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Tanger"
+      },
+      "perimetres": [
+        {
+          "bt": "Malloussa",
+          "cie": "Fahs Anjra",
+          "reg": "Tanger"
+        }
+      ],
+      "cree": "2026-10-23T10:54:07.793Z",
+      "maj": "2026-10-23T10:54:07.793Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvkuthpy_1a6abd93",
+      "type": "demande",
+      "titre": "Demande de validation",
+      "description": "Une modification de Poste fixe Oued Nekkour attend validation.",
+      "actions": [
+        "demander-modification"
+      ],
+      "barrageId": "BF-BT-325",
+      "barrage": {
+        "id": "BF-BT-325",
+        "nom": "Poste fixe Oued Nekkour",
+        "type": "barrage_fixe",
+        "route": "RN2",
+        "lng": -3.81404,
+        "lat": 34.96674,
+        "bt": "Oued Nekkour",
+        "cie": "Al Hoceima",
+        "reg": "Al Hoceima",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-AL HOCEIMA",
+        "nom": "Chef de région Al Hoceima",
+        "rang": "reg",
+        "unite": "Al Hoceima"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Oued Nekkour",
+          "cie": "Al Hoceima",
+          "reg": "Al Hoceima"
+        }
+      ],
+      "cree": "2026-10-23T10:55:50.517Z",
+      "maj": "2026-10-23T10:55:50.517Z",
+      "lues": {
+        "SUPERADMIN": "2026-10-23T10:57:46.452Z"
+      }
+    },
+    {
+      "id": "not_mvkuwxpz_c2b5e530",
+      "type": "validation",
+      "titre": "Opération validée",
+      "description": "Poste fixe Oued Nekkour a changé de position. Acceptée par l’administration.",
+      "actions": [
+        "modifier",
+        "decision-demande"
+      ],
+      "barrageId": "BF-BT-325",
+      "barrage": {
+        "id": "BF-BT-325",
+        "nom": "Poste fixe Oued Nekkour",
+        "type": "barrage_fixe",
+        "route": "RP5204",
+        "lng": -3.84847,
+        "lat": 34.93976,
+        "bt": "Oued Nekkour",
+        "cie": "Al Hoceima",
+        "reg": "Al Hoceima",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Oued Nekkour",
+          "cie": "Al Hoceima",
+          "reg": "Al Hoceima"
+        }
+      ],
+      "cree": "2026-10-23T10:58:31.223Z",
+      "maj": "2026-10-23T10:58:31.242Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvkv0tu4_ed5b8591",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "BFI Biougra a été assigné au CMND Région Agadir.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BFI-CIE-016",
+      "barrage": {
+        "id": "BFI-CIE-016",
+        "nom": "BFI Biougra",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -9.55109,
+        "lat": 30.12983,
+        "bt": "Had Belfaa",
+        "cie": "Biougra",
+        "reg": "Agadir",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Agadir"
+      },
+      "perimetres": [
+        {
+          "bt": "Had Belfaa",
+          "cie": "Biougra",
+          "reg": "Agadir"
+        }
+      ],
+      "cree": "2026-10-23T11:01:32.806Z",
+      "maj": "2026-10-23T11:01:32.806Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvkv16x4_b44f9206",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "BFI Laayoune a été assigné au CMND Région Laayoune.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BFI-CIE-044",
+      "barrage": {
+        "id": "BFI-CIE-044",
+        "nom": "BFI Laayoune",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -13.23296,
+        "lat": 27.15235,
+        "bt": "Laayoune",
+        "cie": "Laayoune",
+        "reg": "Laayoune",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Laayoune"
+      },
+      "perimetres": [
+        {
+          "bt": "Laayoune",
+          "cie": "Laayoune",
+          "reg": "Laayoune"
+        }
+      ],
+      "cree": "2026-10-23T11:01:49.745Z",
+      "maj": "2026-10-23T11:01:49.745Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvkv1ga6_c9719bba",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "BFI Skhirate a été assigné au CMND Région Rabat. BFI Skhirate a été assigné au CMND Région Settat.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BFI-CIE-071",
+      "barrage": {
+        "id": "BFI-CIE-071",
+        "nom": "BFI Skhirate",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -7.05783,
+        "lat": 33.83761,
+        "bt": "Skhirate-El Fath",
+        "cie": "Skhirate",
+        "reg": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat"
+      },
+      "perimetres": [
+        {
+          "bt": "Skhirate-El Fath",
+          "cie": "Skhirate",
+          "reg": "Rabat"
+        }
+      ],
+      "cree": "2026-10-23T11:02:01.882Z",
+      "maj": "2026-10-23T11:02:01.882Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvkv1jg3_b0231cba",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "BFI Skhirate a été assigné au CMND Région Rabat.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BFI-CIE-071",
+      "barrage": {
+        "id": "BFI-CIE-071",
+        "nom": "BFI Skhirate",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -7.05783,
+        "lat": 33.83761,
+        "bt": "Skhirate-El Fath",
+        "cie": "Skhirate",
+        "reg": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat"
+      },
+      "perimetres": [
+        {
+          "bt": "Skhirate-El Fath",
+          "cie": "Skhirate",
+          "reg": "Rabat"
+        }
+      ],
+      "cree": "2026-10-23T11:02:05.991Z",
+      "maj": "2026-10-23T11:02:05.991Z",
+      "lues": {
+        "REG-RABAT": "2026-10-23T11:40:54.867Z"
+      }
+    },
+    {
+      "id": "not_mvkv1lsx_b4a8cb71",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Bouknadel a été assigné au CMND Région Kénitra. Poste fixe Bouknadel a été assigné au CMND Région Rabat.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-125",
+      "barrage": {
+        "id": "BF-BT-125",
+        "nom": "Poste fixe Bouknadel",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -6.73501,
+        "lat": 34.12797,
+        "bt": "Bouknadel",
+        "cie": "Salé",
+        "reg": "Rabat",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Kénitra"
+      },
+      "perimetres": [
+        {
+          "bt": "Bouknadel",
+          "cie": "Salé",
+          "reg": "Rabat"
+        }
+      ],
+      "cree": "2026-10-23T11:02:09.046Z",
+      "maj": "2026-10-23T11:02:09.046Z",
+      "lues": {
+        "REG-RABAT": "2026-10-23T11:40:00.321Z"
+      }
+    },
+    {
+      "id": "not_mvkv4kbt_5143bcf5",
+      "type": "demande",
+      "titre": "Demande de validation",
+      "description": "Une modification de Poste fixe Selouane attend validation.",
+      "actions": [
+        "demander-modification"
+      ],
+      "barrageId": "BF-BT-369",
+      "barrage": {
+        "id": "BF-BT-369",
+        "nom": "Poste fixe Selouane",
+        "type": "barrage_fixe",
+        "route": "RN2",
+        "lng": -2.94428,
+        "lat": 35.05763,
+        "bt": "Selouane",
+        "cie": "Nador",
+        "reg": "Nador",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-NADOR",
+        "nom": "Chef de région Nador",
+        "rang": "reg",
+        "unite": "Nador"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Selouane",
+          "cie": "Nador",
+          "reg": "Nador"
+        }
+      ],
+      "cree": "2026-10-23T11:04:27.113Z",
+      "maj": "2026-10-23T11:04:27.113Z",
+      "lues": {
+        "SUPERADMIN": "2026-10-23T11:05:32.057Z"
+      }
+    },
+    {
+      "id": "not_mvkv4zlu_4cced9a5",
+      "type": "demande",
+      "titre": "Demande de validation",
+      "description": "Le retrait de Poste fixe Driouch attend validation.",
+      "actions": [
+        "demander-suppression"
+      ],
+      "barrageId": "BF-BT-155",
+      "barrage": {
+        "id": "BF-BT-155",
+        "nom": "Poste fixe Driouch",
+        "type": "barrage_fixe",
+        "route": "RN2",
+        "lng": -3.25725,
+        "lat": 34.9768,
+        "bt": "Driouch",
+        "cie": "Azib Midar",
+        "reg": "Nador",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-NADOR",
+        "nom": "Chef de région Nador",
+        "rang": "reg",
+        "unite": "Nador"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Driouch",
+          "cie": "Azib Midar",
+          "reg": "Nador"
+        }
+      ],
+      "cree": "2026-10-23T11:04:46.913Z",
+      "maj": "2026-10-23T11:04:46.913Z",
+      "lues": {
+        "SUPERADMIN": "2026-10-23T11:05:22.239Z"
+      }
+    },
+    {
+      "id": "not_mvkv5ugf_6ab1b4e2",
+      "type": "validation",
+      "titre": "Opération validée",
+      "description": "Poste fixe Driouch a été retiré du dispositif. Acceptée par l’administration.",
+      "actions": [
+        "supprimer",
+        "decision-demande"
+      ],
+      "barrageId": "BF-BT-155",
+      "barrage": {
+        "id": "BF-BT-155",
+        "nom": "Poste fixe Driouch",
+        "type": "barrage_fixe",
+        "route": "RN2",
+        "lng": -3.25725,
+        "lat": 34.9768,
+        "bt": "Driouch",
+        "cie": "Azib Midar",
+        "reg": "Nador",
+        "factionId": "F3",
+        "statutBarrage": "supprime"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Driouch",
+          "cie": "Azib Midar",
+          "reg": "Nador"
+        }
+      ],
+      "cree": "2026-10-23T11:05:26.895Z",
+      "maj": "2026-10-23T11:05:26.901Z",
+      "lues": {
+        "REG-NADOR": "2026-10-23T11:12:16.023Z"
+      }
+    },
+    {
+      "id": "not_mvkv67ob_9f223f99",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Selouane a été assigné au CMND Région Nador.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-369",
+      "barrage": {
+        "id": "BF-BT-369",
+        "nom": "Poste fixe Selouane",
+        "type": "barrage_fixe",
+        "route": "RN2",
+        "lng": -2.94428,
+        "lat": 35.05763,
+        "bt": "Selouane",
+        "cie": "Nador",
+        "reg": "Nador",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Nador"
+      },
+      "perimetres": [
+        {
+          "bt": "Selouane",
+          "cie": "Nador",
+          "reg": "Nador"
+        }
+      ],
+      "cree": "2026-10-23T11:05:44.002Z",
+      "maj": "2026-10-23T11:05:44.002Z",
+      "lues": {
+        "REG-NADOR": "2026-10-23T11:11:14.630Z"
+      }
+    },
+    {
+      "id": "not_mvkvec05_107e55a0",
+      "type": "demande",
+      "titre": "Demande de validation",
+      "description": "Une modification de Poste fixe Selouane attend validation.",
+      "actions": [
+        "demander-modification"
+      ],
+      "barrageId": "BF-BT-369",
+      "barrage": {
+        "id": "BF-BT-369",
+        "nom": "Poste fixe Selouane",
+        "type": "barrage_fixe",
+        "route": "RN2",
+        "lng": -2.94428,
+        "lat": 35.05763,
+        "bt": "Selouane",
+        "cie": "Nador",
+        "reg": "Nador",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-NADOR",
+        "nom": "Chef de région Nador",
+        "rang": "reg",
+        "unite": "Nador"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Selouane",
+          "cie": "Nador",
+          "reg": "Nador"
+        }
+      ],
+      "cree": "2026-10-23T11:12:02.885Z",
+      "maj": "2026-10-23T11:12:02.885Z",
+      "lues": {
+        "SUPERADMIN": "2026-10-23T11:29:22.217Z"
+      }
+    },
+    {
+      "id": "not_mvkvf676_dcb08754",
+      "type": "demande",
+      "titre": "Demande de validation",
+      "description": "Une modification de Poste fixe Selouane attend validation.",
+      "actions": [
+        "demander-modification"
+      ],
+      "barrageId": "BF-BT-369",
+      "barrage": {
+        "id": "BF-BT-369",
+        "nom": "Poste fixe Selouane",
+        "type": "barrage_fixe",
+        "route": "RN2",
+        "lng": -2.94428,
+        "lat": 35.05763,
+        "bt": "Selouane",
+        "cie": "Nador",
+        "reg": "Nador",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-NADOR",
+        "nom": "Chef de région Nador",
+        "rang": "reg",
+        "unite": "Nador"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Selouane",
+          "cie": "Nador",
+          "reg": "Nador"
+        }
+      ],
+      "cree": "2026-10-23T11:12:42.017Z",
+      "maj": "2026-10-23T11:12:42.017Z",
+      "lues": {
+        "SUPERADMIN": "2026-10-23T11:12:51.007Z"
+      }
+    },
+    {
+      "id": "not_mvkvftli_09492269",
+      "type": "validation",
+      "titre": "Opération validée",
+      "description": "Poste fixe Selouane a changé de position. L’assignation est clôturée. Acceptée par l’administration.",
+      "actions": [
+        "modifier",
+        "assignation_traitee",
+        "decision-demande"
+      ],
+      "barrageId": "BF-BT-369",
+      "barrage": {
+        "id": "BF-BT-369",
+        "nom": "Poste fixe Selouane",
+        "type": "barrage_fixe",
+        "route": "RN2",
+        "lng": -3.16356,
+        "lat": 34.97122,
+        "bt": "Al Aaroui",
+        "cie": "Zaiou",
+        "reg": "Nador",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Selouane",
+          "cie": "Nador",
+          "reg": "Nador"
+        },
+        {
+          "bt": "Al Aaroui",
+          "cie": "Zaiou",
+          "reg": "Nador"
+        }
+      ],
+      "cree": "2026-10-23T11:13:12.342Z",
+      "maj": "2026-10-23T11:13:12.363Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvkwgj7a_09a91265",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Ville Verte a été assigné au CMND Région Casablanca.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-493",
+      "barrage": {
+        "id": "BF-BT-493",
+        "nom": "Poste fixe Ville Verte",
+        "type": "barrage_fixe",
+        "route": "RP3020",
+        "lng": -7.60863,
+        "lat": 33.50066,
+        "bt": "Ville Verte",
+        "cie": "Nouaceur",
+        "reg": "Casablanca",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Casablanca"
+      },
+      "perimetres": [
+        {
+          "bt": "Ville Verte",
+          "cie": "Nouaceur",
+          "reg": "Casablanca"
+        }
+      ],
+      "cree": "2026-10-23T11:41:45.133Z",
+      "maj": "2026-10-23T11:41:45.133Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvkwif4y_0b1fb131",
+      "type": "faction",
+      "titre": "Faction modifiée",
+      "description": "Poste fixe Ville Verte : aucune → aucune.",
+      "actions": [
+        "changement_faction"
+      ],
+      "barrageId": "BF-BT-493",
+      "barrage": {
+        "id": "BF-BT-493",
+        "nom": "Poste fixe Ville Verte",
+        "type": "barrage_fixe",
+        "route": "RP3020",
+        "lng": -7.60863,
+        "lat": 33.50066,
+        "bt": "Ville Verte",
+        "cie": "Nouaceur",
+        "reg": "Casablanca",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-CASABLANCA",
+        "nom": "Chef de région Casablanca",
+        "rang": "reg",
+        "unite": "Casablanca"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Ville Verte",
+          "cie": "Nouaceur",
+          "reg": "Casablanca"
+        }
+      ],
+      "cree": "2026-10-23T11:43:13.185Z",
+      "maj": "2026-10-23T11:43:13.185Z",
+      "lues": {
+        "SUPERADMIN": "2026-10-23T13:53:54.754Z"
+      }
+    },
+    {
+      "id": "not_mvkx04o7_7b9b27fe",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "BFI Figuig a été assigné au CMND Région Bouarfa.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BFI-CIE-032",
+      "barrage": {
+        "id": "BFI-CIE-032",
+        "nom": "BFI Figuig",
+        "type": "barrage_fixe",
+        "route": "RN17",
+        "lng": -3.05046,
+        "lat": 32.03692,
+        "bt": "Bouanane",
+        "cie": "Figuig",
+        "reg": "Bouarfa",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Bouarfa"
+      },
+      "perimetres": [
+        {
+          "bt": "Bouanane",
+          "cie": "Figuig",
+          "reg": "Bouarfa"
+        }
+      ],
+      "cree": "2026-10-23T11:56:59.422Z",
+      "maj": "2026-10-23T11:56:59.422Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvkxrcz7_a58e83e5",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "BFI Figuig a été assigné au CMND Région Bouarfa.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BFI-CIE-032",
+      "barrage": {
+        "id": "BFI-CIE-032",
+        "nom": "BFI Figuig",
+        "type": "barrage_fixe",
+        "route": "RN17",
+        "lng": -3.05046,
+        "lat": 32.03692,
+        "bt": "Bouanane",
+        "cie": "Figuig",
+        "reg": "Bouarfa",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Bouarfa"
+      },
+      "perimetres": [
+        {
+          "bt": "Bouanane",
+          "cie": "Figuig",
+          "reg": "Bouarfa"
+        }
+      ],
+      "cree": "2026-10-23T12:18:09.877Z",
+      "maj": "2026-10-23T12:18:09.877Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvkxube1_3eedd328",
+      "type": "demande",
+      "titre": "Demande de validation",
+      "description": "Une modification de Poste fixe Ain Chouater attend validation.",
+      "actions": [
+        "demander-modification"
+      ],
+      "barrageId": "BF-BT-021",
+      "barrage": {
+        "id": "BF-BT-021",
+        "nom": "Poste fixe Ain Chouater",
+        "type": "barrage_fixe",
+        "route": "RP6111",
+        "lng": -3.03114,
+        "lat": 31.96032,
+        "bt": "Ain Chouater",
+        "cie": "Figuig",
+        "reg": "Bouarfa",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-BOUARFA",
+        "nom": "Chef de région Bouarfa",
+        "rang": "reg",
+        "unite": "Bouarfa"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Ain Chouater",
+          "cie": "Figuig",
+          "reg": "Bouarfa"
+        }
+      ],
+      "cree": "2026-10-23T12:20:27.817Z",
+      "maj": "2026-10-23T12:20:27.817Z",
+      "lues": {
+        "SUPERADMIN": "2026-10-23T13:53:34.173Z"
+      }
+    },
+    {
+      "id": "not_mvl1dig6_af6d80d3",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "BFI Marrakech a été assigné au CMND Région Marrakech.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BFI-CIE-046",
+      "barrage": {
+        "id": "BFI-CIE-046",
+        "nom": "BFI Marrakech",
+        "type": "barrage_fixe",
+        "route": "A3",
+        "lng": -8.16378,
+        "lat": 31.7754,
+        "bt": "Tamansourte",
+        "cie": "Marrakech",
+        "reg": "Marrakech",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Marrakech"
+      },
+      "perimetres": [
+        {
+          "bt": "Tamansourte",
+          "cie": "Marrakech",
+          "reg": "Marrakech"
+        }
+      ],
+      "cree": "2026-10-23T13:59:22.252Z",
+      "maj": "2026-10-23T13:59:22.252Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvl1dzbn_6f9c1cc7",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Saada a été assigné au CMND Région Marrakech.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-358",
+      "barrage": {
+        "id": "BF-BT-358",
+        "nom": "Poste fixe Saada",
+        "type": "barrage_fixe",
+        "route": "RN8",
+        "lng": -8.10099,
+        "lat": 31.62858,
+        "bt": "Saada",
+        "cie": "Marrakech",
+        "reg": "Marrakech",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Marrakech"
+      },
+      "perimetres": [
+        {
+          "bt": "Saada",
+          "cie": "Marrakech",
+          "reg": "Marrakech"
+        }
+      ],
+      "cree": "2026-10-23T13:59:44.139Z",
+      "maj": "2026-10-23T13:59:44.139Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvl1ed4v_79cb0535",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Tassoultante a été assigné au CMND Région Marrakech.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-456",
+      "barrage": {
+        "id": "BF-BT-456",
+        "nom": "Poste fixe Tassoultante",
+        "type": "barrage_fixe",
+        "route": "RP2009",
+        "lng": -8.01841,
+        "lat": 31.57345,
+        "bt": "Tassoultante",
+        "cie": "Marrakech",
+        "reg": "Marrakech",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Marrakech"
+      },
+      "perimetres": [
+        {
+          "bt": "Tassoultante",
+          "cie": "Marrakech",
+          "reg": "Marrakech"
+        }
+      ],
+      "cree": "2026-10-23T14:00:02.039Z",
+      "maj": "2026-10-23T14:00:02.039Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvl1ejde_75501cb4",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Had Ras El Ain a été assigné au CMND Région Marrakech.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-208",
+      "barrage": {
+        "id": "BF-BT-208",
+        "nom": "Poste fixe Had Ras El Ain",
+        "type": "barrage_fixe",
+        "route": "RR210",
+        "lng": -7.59739,
+        "lat": 31.63814,
+        "bt": "Had Ras El Ain",
+        "cie": "Benguerir",
+        "reg": "Marrakech",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Marrakech"
+      },
+      "perimetres": [
+        {
+          "bt": "Had Ras El Ain",
+          "cie": "Benguerir",
+          "reg": "Marrakech"
+        }
+      ],
+      "cree": "2026-10-23T14:00:10.122Z",
+      "maj": "2026-10-23T14:00:10.122Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvl1enee_1955b20d",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "BFI Figuig a été assigné au CMND Région Marrakech — Assignation groupée automatique (Route RR212).",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BFI-CIE-032",
+      "barrage": {
+        "id": "BFI-CIE-032",
+        "nom": "BFI Figuig",
+        "type": "barrage_fixe",
+        "route": "RN17",
+        "lng": -3.05046,
+        "lat": 32.03692,
+        "bt": "Bouanane",
+        "cie": "Figuig",
+        "reg": "Bouarfa",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Marrakech"
+      },
+      "perimetres": [
+        {
+          "bt": "Bouanane",
+          "cie": "Figuig",
+          "reg": "Bouarfa"
+        }
+      ],
+      "cree": "2026-10-23T14:00:15.343Z",
+      "maj": "2026-10-23T14:00:15.343Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvl1jgt3_7b38bcc4",
+      "type": "demande",
+      "titre": "Demande de validation",
+      "description": "Une modification de Poste fixe Saada attend validation.",
+      "actions": [
+        "demander-modification"
+      ],
+      "barrageId": "BF-BT-358",
+      "barrage": {
+        "id": "BF-BT-358",
+        "nom": "Poste fixe Saada",
+        "type": "barrage_fixe",
+        "route": "RN8",
+        "lng": -8.10099,
+        "lat": 31.62858,
+        "bt": "Saada",
+        "cie": "Marrakech",
+        "reg": "Marrakech",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-MARRAKECH",
+        "nom": "Chef de région Marrakech",
+        "rang": "reg",
+        "unite": "Marrakech"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Saada",
+          "cie": "Marrakech",
+          "reg": "Marrakech"
+        }
+      ],
+      "cree": "2026-10-23T14:04:00.087Z",
+      "maj": "2026-10-23T14:04:00.087Z",
+      "lues": {
+        "SUPERADMIN": "2026-10-23T14:05:29.137Z"
+      }
+    },
+    {
+      "id": "not_mvl1k35u_4a9d4857",
+      "type": "demande",
+      "titre": "Demande de validation",
+      "description": "Une modification de Poste fixe Tassoultante attend validation.",
+      "actions": [
+        "demander-modification"
+      ],
+      "barrageId": "BF-BT-456",
+      "barrage": {
+        "id": "BF-BT-456",
+        "nom": "Poste fixe Tassoultante",
+        "type": "barrage_fixe",
+        "route": "RP2009",
+        "lng": -8.01841,
+        "lat": 31.57345,
+        "bt": "Tassoultante",
+        "cie": "Marrakech",
+        "reg": "Marrakech",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-MARRAKECH",
+        "nom": "Chef de région Marrakech",
+        "rang": "reg",
+        "unite": "Marrakech"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Tassoultante",
+          "cie": "Marrakech",
+          "reg": "Marrakech"
+        }
+      ],
+      "cree": "2026-10-23T14:04:29.058Z",
+      "maj": "2026-10-23T14:04:29.058Z",
+      "lues": {
+        "SUPERADMIN": "2026-10-23T14:05:22.139Z"
+      }
+    },
+    {
+      "id": "not_mvl1kj9j_49e3c289",
+      "type": "demande",
+      "titre": "Demande de validation",
+      "description": "Le retrait de Poste fixe Had Ras El Ain attend validation.",
+      "actions": [
+        "demander-suppression"
+      ],
+      "barrageId": "BF-BT-208",
+      "barrage": {
+        "id": "BF-BT-208",
+        "nom": "Poste fixe Had Ras El Ain",
+        "type": "barrage_fixe",
+        "route": "RR210",
+        "lng": -7.59739,
+        "lat": 31.63814,
+        "bt": "Had Ras El Ain",
+        "cie": "Benguerir",
+        "reg": "Marrakech",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-MARRAKECH",
+        "nom": "Chef de région Marrakech",
+        "rang": "reg",
+        "unite": "Marrakech"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Had Ras El Ain",
+          "cie": "Benguerir",
+          "reg": "Marrakech"
+        }
+      ],
+      "cree": "2026-10-23T14:04:49.927Z",
+      "maj": "2026-10-23T14:04:49.927Z",
+      "lues": {
+        "SUPERADMIN": "2026-10-23T14:05:15.197Z"
+      }
+    },
+    {
+      "id": "not_mvl1l5ij_853eddc4",
+      "type": "validation",
+      "titre": "Opération validée",
+      "description": "Poste fixe Had Ras El Ain a été retiré du dispositif. Acceptée par l’administration.",
+      "actions": [
+        "supprimer",
+        "decision-demande"
+      ],
+      "barrageId": "BF-BT-208",
+      "barrage": {
+        "id": "BF-BT-208",
+        "nom": "Poste fixe Had Ras El Ain",
+        "type": "barrage_fixe",
+        "route": "RR210",
+        "lng": -7.59739,
+        "lat": 31.63814,
+        "bt": "Had Ras El Ain",
+        "cie": "Benguerir",
+        "reg": "Marrakech",
+        "factionId": "F4",
+        "statutBarrage": "supprime"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Had Ras El Ain",
+          "cie": "Benguerir",
+          "reg": "Marrakech"
+        }
+      ],
+      "cree": "2026-10-23T14:05:18.762Z",
+      "maj": "2026-10-23T14:05:18.768Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvl1mg4v_780ce71f",
+      "type": "validation",
+      "titre": "Opération validée",
+      "description": "Poste fixe Tassoultante a changé de position. L’assignation est clôturée. Acceptée par l’administration.",
+      "actions": [
+        "modifier",
+        "assignation_traitee",
+        "decision-demande"
+      ],
+      "barrageId": "BF-BT-456",
+      "barrage": {
+        "id": "BF-BT-456",
+        "nom": "Poste fixe Tassoultante",
+        "type": "barrage_fixe",
+        "route": "RP2009",
+        "lng": -8.18104,
+        "lat": 31.33725,
+        "bt": "Amezmiz",
+        "cie": "Tahannaout",
+        "reg": "Marrakech",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Tassoultante",
+          "cie": "Marrakech",
+          "reg": "Marrakech"
+        },
+        {
+          "bt": "Amezmiz",
+          "cie": "Tahannaout",
+          "reg": "Marrakech"
+        }
+      ],
+      "cree": "2026-10-23T14:06:19.183Z",
+      "maj": "2026-10-23T14:06:19.207Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvl1mmup_7712d8c0",
+      "type": "validation",
+      "titre": "Opération validée",
+      "description": "Poste fixe Saada a changé de position. L’assignation est clôturée. Acceptée par l’administration.",
+      "actions": [
+        "modifier",
+        "assignation_traitee",
+        "decision-demande"
+      ],
+      "barrageId": "BF-BT-358",
+      "barrage": {
+        "id": "BF-BT-358",
+        "nom": "Poste fixe Saada",
+        "type": "barrage_fixe",
+        "route": "RR212",
+        "lng": -8.42076,
+        "lat": 31.41027,
+        "bt": "Had Mejjat",
+        "cie": "Chichaoua",
+        "reg": "Marrakech",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Saada",
+          "cie": "Marrakech",
+          "reg": "Marrakech"
+        },
+        {
+          "bt": "Had Mejjat",
+          "cie": "Chichaoua",
+          "reg": "Marrakech"
+        }
+      ],
+      "cree": "2026-10-23T14:06:27.889Z",
+      "maj": "2026-10-23T14:06:27.916Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvl1n0vr_9f354e27",
+      "type": "validation",
+      "titre": "Opération validée",
+      "description": "Poste fixe Ain Chouater a changé de position. Acceptée par l’administration.",
+      "actions": [
+        "modifier",
+        "decision-demande"
+      ],
+      "barrageId": "BF-BT-021",
+      "barrage": {
+        "id": "BF-BT-021",
+        "nom": "Poste fixe Ain Chouater",
+        "type": "barrage_fixe",
+        "route": "RP6111",
+        "lng": -2.98312,
+        "lat": 31.8708,
+        "bt": "Ain Chouater",
+        "cie": "Figuig",
+        "reg": "Bouarfa",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Ain Chouater",
+          "cie": "Figuig",
+          "reg": "Bouarfa"
+        }
+      ],
+      "cree": "2026-10-23T14:06:46.070Z",
+      "maj": "2026-10-23T14:06:46.083Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvl221q6_60ab59ca",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "BFI Biougra a été assigné au CMND Région Agadir.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BFI-CIE-016",
+      "barrage": {
+        "id": "BFI-CIE-016",
+        "nom": "BFI Biougra",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -9.55109,
+        "lat": 30.12983,
+        "bt": "Had Belfaa",
+        "cie": "Biougra",
+        "reg": "Agadir",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Agadir"
+      },
+      "perimetres": [
+        {
+          "bt": "Had Belfaa",
+          "cie": "Biougra",
+          "reg": "Agadir"
+        }
+      ],
+      "cree": "2026-10-23T14:18:26.999Z",
+      "maj": "2026-10-23T14:18:26.999Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvl224w6_d5703962",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "BFI Laayoune a été assigné au CMND Région Laayoune.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BFI-CIE-044",
+      "barrage": {
+        "id": "BFI-CIE-044",
+        "nom": "BFI Laayoune",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -13.23296,
+        "lat": 27.15235,
+        "bt": "Laayoune",
+        "cie": "Laayoune",
+        "reg": "Laayoune",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Laayoune"
+      },
+      "perimetres": [
+        {
+          "bt": "Laayoune",
+          "cie": "Laayoune",
+          "reg": "Laayoune"
+        }
+      ],
+      "cree": "2026-10-23T14:18:31.101Z",
+      "maj": "2026-10-23T14:18:31.101Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvl22bqm_2da2f38c",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "BFI Skhirate a été assigné au CMND Région Rabat. BFI Skhirate a été assigné au CMND Région Settat.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BFI-CIE-071",
+      "barrage": {
+        "id": "BFI-CIE-071",
+        "nom": "BFI Skhirate",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -7.05783,
+        "lat": 33.83761,
+        "bt": "Skhirate-El Fath",
+        "cie": "Skhirate",
+        "reg": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat"
+      },
+      "perimetres": [
+        {
+          "bt": "Skhirate-El Fath",
+          "cie": "Skhirate",
+          "reg": "Rabat"
+        }
+      ],
+      "cree": "2026-10-23T14:18:39.970Z",
+      "maj": "2026-10-23T14:18:39.970Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvl22jsg_da3e0f3a",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "BFI Skhirate a été assigné au CMND Région Rabat.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BFI-CIE-071",
+      "barrage": {
+        "id": "BFI-CIE-071",
+        "nom": "BFI Skhirate",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -7.05783,
+        "lat": 33.83761,
+        "bt": "Skhirate-El Fath",
+        "cie": "Skhirate",
+        "reg": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat"
+      },
+      "perimetres": [
+        {
+          "bt": "Skhirate-El Fath",
+          "cie": "Skhirate",
+          "reg": "Rabat"
+        }
+      ],
+      "cree": "2026-10-23T14:18:50.408Z",
+      "maj": "2026-10-23T14:18:50.408Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvl22o5w_d842577f",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Bouknadel a été assigné au CMND Région Kénitra. Poste fixe Bouknadel a été assigné au CMND Région Rabat.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-125",
+      "barrage": {
+        "id": "BF-BT-125",
+        "nom": "Poste fixe Bouknadel",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -6.73501,
+        "lat": 34.12797,
+        "bt": "Bouknadel",
+        "cie": "Salé",
+        "reg": "Rabat",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Kénitra"
+      },
+      "perimetres": [
+        {
+          "bt": "Bouknadel",
+          "cie": "Salé",
+          "reg": "Rabat"
+        }
+      ],
+      "cree": "2026-10-23T14:18:56.068Z",
+      "maj": "2026-10-23T14:18:56.068Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvl239in_2af4321d",
+      "type": "demande",
+      "titre": "Demande de validation",
+      "description": "Une modification de Poste fixe Foum El Oued attend validation.",
+      "actions": [
+        "demander-modification"
+      ],
+      "barrageId": "BF-BT-188",
+      "barrage": {
+        "id": "BF-BT-188",
+        "nom": "Poste fixe Foum El Oued",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -13.19609,
+        "lat": 27.18708,
+        "bt": "Foum El Oued",
+        "cie": "Laayoune",
+        "reg": "Laayoune",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-LAAYOUNE",
+        "nom": "Chef de région Laayoune",
+        "rang": "reg",
+        "unite": "Laayoune"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Foum El Oued",
+          "cie": "Laayoune",
+          "reg": "Laayoune"
+        }
+      ],
+      "cree": "2026-10-23T14:19:23.759Z",
+      "maj": "2026-10-23T14:19:23.759Z",
+      "lues": {
+        "SUPERADMIN": "2026-10-23T14:19:38.552Z"
+      }
+    },
+    {
+      "id": "not_mvl23t0c_ba143fc0",
+      "type": "validation",
+      "titre": "Opération validée",
+      "description": "Poste fixe Foum El Oued a changé de position. Acceptée par l’administration.",
+      "actions": [
+        "modifier",
+        "decision-demande"
+      ],
+      "barrageId": "BF-BT-188",
+      "barrage": {
+        "id": "BF-BT-188",
+        "nom": "Poste fixe Foum El Oued",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -13.16766,
+        "lat": 27.20397,
+        "bt": "Boukraa",
+        "cie": "Laayoune",
+        "reg": "Laayoune",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Foum El Oued",
+          "cie": "Laayoune",
+          "reg": "Laayoune"
+        },
+        {
+          "bt": "Boukraa",
+          "cie": "Laayoune",
+          "reg": "Laayoune"
+        }
+      ],
+      "cree": "2026-10-23T14:19:49.020Z",
+      "maj": "2026-10-23T14:19:49.036Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvl356lg_f47d5401",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Malloussa a été assigné au CMND Région Tanger. Poste fixe Malloussa a été assigné au CMND Région Tétouan.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-288",
+      "barrage": {
+        "id": "BF-BT-288",
+        "nom": "Poste fixe Malloussa",
+        "type": "barrage_fixe",
+        "route": "RN2",
+        "lng": -5.68475,
+        "lat": 35.64033,
+        "bt": "Malloussa",
+        "cie": "Fahs Anjra",
+        "reg": "Tanger",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Tanger"
+      },
+      "perimetres": [
+        {
+          "bt": "Malloussa",
+          "cie": "Fahs Anjra",
+          "reg": "Tanger"
+        }
+      ],
+      "cree": "2026-10-23T14:48:52.886Z",
+      "maj": "2026-10-23T14:48:52.886Z",
+      "lues": {
+        "REG-TANGER": "2026-10-23T14:49:55.019Z"
+      }
+    },
+    {
+      "id": "not_mvl368yx_a57f2fa7",
+      "type": "faction",
+      "titre": "Faction modifiée",
+      "description": "Poste fixe Malloussa : aucune → aucune.",
+      "actions": [
+        "changement_faction"
+      ],
+      "barrageId": "BF-BT-288",
+      "barrage": {
+        "id": "BF-BT-288",
+        "nom": "Poste fixe Malloussa",
+        "type": "barrage_fixe",
+        "route": "RN2",
+        "lng": -5.68475,
+        "lat": 35.64033,
+        "bt": "Malloussa",
+        "cie": "Fahs Anjra",
+        "reg": "Tanger",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-TANGER",
+        "nom": "Chef de région Tanger",
+        "rang": "reg",
+        "unite": "Tanger"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Malloussa",
+          "cie": "Fahs Anjra",
+          "reg": "Tanger"
+        }
+      ],
+      "cree": "2026-10-23T14:49:42.633Z",
+      "maj": "2026-10-23T14:49:42.633Z",
+      "lues": {
+        "SUPERADMIN": "2026-10-23T14:50:04.504Z"
+      }
+    },
+    {
+      "id": "not_mvlh6kz8_939f980c",
+      "type": "demande",
+      "titre": "Demande de validation",
+      "description": "Une modification de Poste fixe Ain Chouater attend validation.",
+      "actions": [
+        "demander-modification"
+      ],
+      "barrageId": "BF-BT-021",
+      "barrage": {
+        "id": "BF-BT-021",
+        "nom": "Poste fixe Ain Chouater",
+        "type": "barrage_fixe",
+        "route": "RP6111",
+        "lng": -2.98312,
+        "lat": 31.8708,
+        "bt": "Ain Chouater",
+        "cie": "Figuig",
+        "reg": "Bouarfa",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-BOUARFA",
+        "nom": "Chef de région Bouarfa",
+        "rang": "reg",
+        "unite": "Bouarfa"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Ain Chouater",
+          "cie": "Figuig",
+          "reg": "Bouarfa"
+        }
+      ],
+      "cree": "2026-10-23T21:21:52.818Z",
+      "maj": "2026-10-23T21:21:52.818Z",
+      "lues": {
+        "SUPERADMIN": "2026-10-24T11:57:07.087Z"
+      }
+    },
+    {
+      "id": "not_mvljpfc1_5cb689e1",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "BFI Figuig a été assigné au CMND Région Guelmim.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BFI-CIE-032",
+      "barrage": {
+        "id": "BFI-CIE-032",
+        "nom": "BFI Figuig",
+        "type": "barrage_fixe",
+        "route": "RN17",
+        "lng": -3.05046,
+        "lat": 32.03692,
+        "bt": "Bouanane",
+        "cie": "Figuig",
+        "reg": "Bouarfa",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Guelmim"
+      },
+      "perimetres": [
+        {
+          "bt": "Bouanane",
+          "cie": "Figuig",
+          "reg": "Bouarfa"
+        }
+      ],
+      "cree": "2026-10-23T22:32:31.158Z",
+      "maj": "2026-10-23T22:32:31.158Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvljre97_b4e92372",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Had Ras El Ain a été assigné au CMND Région Guelmim.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-208",
+      "barrage": {
+        "id": "BF-BT-208",
+        "nom": "Poste fixe Had Ras El Ain",
+        "type": "barrage_fixe",
+        "route": "RR210",
+        "lng": -7.59739,
+        "lat": 31.63814,
+        "bt": "Had Ras El Ain",
+        "cie": "Benguerir",
+        "reg": "Marrakech",
+        "factionId": "F4",
+        "statutBarrage": "supprime"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Guelmim"
+      },
+      "perimetres": [
+        {
+          "bt": "Had Ras El Ain",
+          "cie": "Benguerir",
+          "reg": "Marrakech"
+        }
+      ],
+      "cree": "2026-10-23T22:34:03.083Z",
+      "maj": "2026-10-23T22:34:03.083Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvmcf0hb_00a76e12",
+      "type": "faction",
+      "titre": "Faction modifiée",
+      "description": "Poste fixe Had Ras El Ain : aucune → aucune.",
+      "actions": [
+        "changement_faction"
+      ],
+      "barrageId": "BF-BT-208",
+      "barrage": {
+        "id": "BF-BT-208",
+        "nom": "Poste fixe Had Ras El Ain",
+        "type": "barrage_fixe",
+        "route": "RR210",
+        "lng": -7.59739,
+        "lat": 31.63814,
+        "bt": "Had Ras El Ain",
+        "cie": "Benguerir",
+        "reg": "Marrakech",
+        "factionId": "F2",
+        "statutBarrage": "supprime"
+      },
+      "acteur": {
+        "matricule": "REG-MARRAKECH",
+        "nom": "Chef de région Marrakech",
+        "rang": "reg",
+        "unite": "Marrakech"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Had Ras El Ain",
+          "cie": "Benguerir",
+          "reg": "Marrakech"
+        }
+      ],
+      "cree": "2026-10-24T11:56:14.251Z",
+      "maj": "2026-10-24T11:56:14.251Z",
+      "lues": {
+        "SUPERADMIN": "2026-10-24T11:57:01.856Z"
+      }
+    },
+    {
+      "id": "not_mvmeh30m_f47e593b",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "BFI Rabat a été assigné au CMND Région Rabat.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BFI-CIE-061",
+      "barrage": {
+        "id": "BFI-CIE-061",
+        "nom": "BFI Rabat",
+        "type": "barrage_fixe",
+        "route": "A1",
+        "lng": -6.88652,
+        "lat": 33.96705,
+        "bt": "Rabat",
+        "cie": "Rabat",
+        "reg": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat"
+      },
+      "perimetres": [
+        {
+          "bt": "Rabat",
+          "cie": "Rabat",
+          "reg": "Rabat"
+        }
+      ],
+      "cree": "2026-10-24T12:53:50.020Z",
+      "maj": "2026-10-24T12:53:50.020Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvmenfkm_252e1f41",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Inezgane a été assigné au CMND Région Agadir.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-231",
+      "barrage": {
+        "id": "BF-BT-231",
+        "nom": "Poste fixe Inezgane",
+        "type": "barrage_fixe",
+        "route": "RN10",
+        "lng": -9.55651,
+        "lat": 30.37524,
+        "bt": "Inezgane",
+        "cie": "Inezgane",
+        "reg": "Agadir",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Agadir"
+      },
+      "perimetres": [
+        {
+          "bt": "Inezgane",
+          "cie": "Inezgane",
+          "reg": "Agadir"
+        }
+      ],
+      "cree": "2026-10-24T12:58:46.240Z",
+      "maj": "2026-10-24T12:58:46.240Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvmenxg3_2170f2e4",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Lqliaa a été assigné au CMND Région Agadir.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-278",
+      "barrage": {
+        "id": "BF-BT-278",
+        "nom": "Poste fixe Lqliaa",
+        "type": "barrage_fixe",
+        "route": "RR105",
+        "lng": -9.46503,
+        "lat": 30.3023,
+        "bt": "Lqliaa",
+        "cie": "Inezgane",
+        "reg": "Agadir",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Agadir"
+      },
+      "perimetres": [
+        {
+          "bt": "Lqliaa",
+          "cie": "Inezgane",
+          "reg": "Agadir"
+        }
+      ],
+      "cree": "2026-10-24T12:59:09.408Z",
+      "maj": "2026-10-24T12:59:09.408Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvmenzrm_f0231fad",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Temsia a été assigné au CMND Région Agadir.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-465",
+      "barrage": {
+        "id": "BF-BT-465",
+        "nom": "Poste fixe Temsia",
+        "type": "barrage_fixe",
+        "route": "RR114",
+        "lng": -9.43982,
+        "lat": 30.36528,
+        "bt": "Temsia",
+        "cie": "Inezgane",
+        "reg": "Agadir",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Agadir"
+      },
+      "perimetres": [
+        {
+          "bt": "Temsia",
+          "cie": "Inezgane",
+          "reg": "Agadir"
+        }
+      ],
+      "cree": "2026-10-24T12:59:12.413Z",
+      "maj": "2026-10-24T12:59:12.413Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvmeo1jz_f1fdc53e",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "BFI Agadir a été assigné au CMND Région Agadir.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BFI-CIE-001",
+      "barrage": {
+        "id": "BFI-CIE-001",
+        "nom": "BFI Agadir",
+        "type": "barrage_fixe",
+        "route": "A3",
+        "lng": -9.36193,
+        "lat": 30.45434,
+        "bt": "Amskroud",
+        "cie": "Agadir",
+        "reg": "Agadir",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Agadir"
+      },
+      "perimetres": [
+        {
+          "bt": "Amskroud",
+          "cie": "Agadir",
+          "reg": "Agadir"
+        }
+      ],
+      "cree": "2026-10-24T12:59:14.714Z",
+      "maj": "2026-10-24T12:59:14.714Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvmeo2sf_fb15b43c",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "TEST AUTO — Agadir — Agadir a été assigné au CMND Région Agadir.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "OPT-DEMO-AGADIR-001",
+      "barrage": {
+        "id": "OPT-DEMO-AGADIR-001",
+        "nom": "TEST AUTO — Agadir — Agadir",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -9.53621,
+        "lat": 30.40711,
+        "bt": "Agadir",
+        "cie": "Agadir",
+        "reg": "Agadir",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Agadir"
+      },
+      "perimetres": [
+        {
+          "bt": "Agadir",
+          "cie": "Agadir",
+          "reg": "Agadir"
+        }
+      ],
+      "cree": "2026-10-24T12:59:16.342Z",
+      "maj": "2026-10-24T12:59:16.342Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvmeo47z_7a32f5e3",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Drargua a été assigné au CMND Région Agadir.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-154",
+      "barrage": {
+        "id": "BF-BT-154",
+        "nom": "Poste fixe Drargua",
+        "type": "barrage_fixe",
+        "route": "RN11",
+        "lng": -9.47161,
+        "lat": 30.39186,
+        "bt": "Drargua",
+        "cie": "Agadir",
+        "reg": "Agadir",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Agadir"
+      },
+      "perimetres": [
+        {
+          "bt": "Drargua",
+          "cie": "Agadir",
+          "reg": "Agadir"
+        }
+      ],
+      "cree": "2026-10-24T12:59:18.161Z",
+      "maj": "2026-10-24T12:59:18.161Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvmeo5uc_8c6f979f",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "BFI Biougra a été assigné au CMND Région Agadir.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BFI-CIE-016",
+      "barrage": {
+        "id": "BFI-CIE-016",
+        "nom": "BFI Biougra",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -9.55109,
+        "lat": 30.12983,
+        "bt": "Had Belfaa",
+        "cie": "Biougra",
+        "reg": "Agadir",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Agadir"
+      },
+      "perimetres": [
+        {
+          "bt": "Had Belfaa",
+          "cie": "Biougra",
+          "reg": "Agadir"
+        }
+      ],
+      "cree": "2026-10-24T12:59:20.277Z",
+      "maj": "2026-10-24T12:59:20.277Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvmeo72i_e9caef8a",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "BFI Tiznit a été assigné au CMND Région Agadir.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BFI-CIE-087",
+      "barrage": {
+        "id": "BFI-CIE-087",
+        "nom": "BFI Tiznit",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -9.72269,
+        "lat": 29.76478,
+        "bt": "Tiznit",
+        "cie": "Tiznit",
+        "reg": "Agadir",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Agadir"
+      },
+      "perimetres": [
+        {
+          "bt": "Tiznit",
+          "cie": "Tiznit",
+          "reg": "Agadir"
+        }
+      ],
+      "cree": "2026-10-24T12:59:21.861Z",
+      "maj": "2026-10-24T12:59:21.861Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvmeo892_dc11c0d7",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Agadir a été assigné au CMND Région Agadir.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-005",
+      "barrage": {
+        "id": "BF-BT-005",
+        "nom": "Poste fixe Agadir",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -9.61543,
+        "lat": 30.42946,
+        "bt": "Agadir",
+        "cie": "Agadir",
+        "reg": "Agadir",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Agadir"
+      },
+      "perimetres": [
+        {
+          "bt": "Agadir",
+          "cie": "Agadir",
+          "reg": "Agadir"
+        }
+      ],
+      "cree": "2026-10-24T12:59:23.413Z",
+      "maj": "2026-10-24T12:59:23.413Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvmeoa3h_0ad1959e",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Ait Amira a été assigné au CMND Région Agadir.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-035",
+      "barrage": {
+        "id": "BF-BT-035",
+        "nom": "Poste fixe Ait Amira",
+        "type": "barrage_fixe",
+        "route": "RP1014",
+        "lng": -9.41956,
+        "lat": 30.20044,
+        "bt": "Ait Amira",
+        "cie": "Biougra",
+        "reg": "Agadir",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Agadir"
+      },
+      "perimetres": [
+        {
+          "bt": "Ait Amira",
+          "cie": "Biougra",
+          "reg": "Agadir"
+        }
+      ],
+      "cree": "2026-10-24T12:59:25.765Z",
+      "maj": "2026-10-24T12:59:25.765Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvmeobib_e841859f",
+      "type": "assignation",
+      "titre": "Barrage assigné",
+      "description": "Poste fixe Tiznit a été assigné au CMND Région Agadir.",
+      "actions": [
+        "assignation"
+      ],
+      "barrageId": "BF-BT-483",
+      "barrage": {
+        "id": "BF-BT-483",
+        "nom": "Poste fixe Tiznit",
+        "type": "barrage_fixe",
+        "route": "RR115",
+        "lng": -9.58515,
+        "lat": 29.78446,
+        "bt": "Tiznit",
+        "cie": "Tiznit",
+        "reg": "Agadir",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Agadir"
+      },
+      "perimetres": [
+        {
+          "bt": "Tiznit",
+          "cie": "Tiznit",
+          "reg": "Agadir"
+        }
+      ],
+      "cree": "2026-10-24T12:59:27.644Z",
+      "maj": "2026-10-24T12:59:27.644Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvmeowe2_ac501610",
+      "type": "demande",
+      "titre": "Demande de validation",
+      "description": "Le retrait de Poste fixe Inezgane attend validation.",
+      "actions": [
+        "demander-suppression"
+      ],
+      "barrageId": "BF-BT-231",
+      "barrage": {
+        "id": "BF-BT-231",
+        "nom": "Poste fixe Inezgane",
+        "type": "barrage_fixe",
+        "route": "RN10",
+        "lng": -9.55651,
+        "lat": 30.37524,
+        "bt": "Inezgane",
+        "cie": "Inezgane",
+        "reg": "Agadir",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-AGADIR",
+        "nom": "Chef de région Agadir",
+        "rang": "reg",
+        "unite": "Agadir"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Inezgane",
+          "cie": "Inezgane",
+          "reg": "Agadir"
+        }
+      ],
+      "cree": "2026-10-24T12:59:54.744Z",
+      "maj": "2026-10-24T12:59:54.744Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvmepsok_1b6a539d",
+      "type": "demande",
+      "titre": "Demande de validation",
+      "description": "Une modification de Poste fixe Lqliaa attend validation.",
+      "actions": [
+        "demander-modification"
+      ],
+      "barrageId": "BF-BT-278",
+      "barrage": {
+        "id": "BF-BT-278",
+        "nom": "Poste fixe Lqliaa",
+        "type": "barrage_fixe",
+        "route": "RR105",
+        "lng": -9.46503,
+        "lat": 30.3023,
+        "bt": "Lqliaa",
+        "cie": "Inezgane",
+        "reg": "Agadir",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-AGADIR",
+        "nom": "Chef de région Agadir",
+        "rang": "reg",
+        "unite": "Agadir"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Lqliaa",
+          "cie": "Inezgane",
+          "reg": "Agadir"
+        }
+      ],
+      "cree": "2026-10-24T13:00:36.594Z",
+      "maj": "2026-10-24T13:00:36.594Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvmeq6e0_79978d15",
+      "type": "demande",
+      "titre": "Demande de validation",
+      "description": "Le retrait de Poste fixe Temsia attend validation.",
+      "actions": [
+        "demander-suppression"
+      ],
+      "barrageId": "BF-BT-465",
+      "barrage": {
+        "id": "BF-BT-465",
+        "nom": "Poste fixe Temsia",
+        "type": "barrage_fixe",
+        "route": "RR114",
+        "lng": -9.43982,
+        "lat": 30.36528,
+        "bt": "Temsia",
+        "cie": "Inezgane",
+        "reg": "Agadir",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-AGADIR",
+        "nom": "Chef de région Agadir",
+        "rang": "reg",
+        "unite": "Agadir"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Temsia",
+          "cie": "Inezgane",
+          "reg": "Agadir"
+        }
+      ],
+      "cree": "2026-10-24T13:00:54.359Z",
+      "maj": "2026-10-24T13:00:54.359Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvmeqrve_08176d6f",
+      "type": "demande",
+      "titre": "Demande de validation",
+      "description": "Une modification de Poste fixe Amskroud attend validation.",
+      "actions": [
+        "demander-modification"
+      ],
+      "barrageId": "BF-BT-059",
+      "barrage": {
+        "id": "BF-BT-059",
+        "nom": "Poste fixe Amskroud",
+        "type": "barrage_fixe",
+        "route": "RN11",
+        "lng": -9.3317,
+        "lat": 30.52842,
+        "bt": "Amskroud",
+        "cie": "Agadir",
+        "reg": "Agadir",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-AGADIR",
+        "nom": "Chef de région Agadir",
+        "rang": "reg",
+        "unite": "Agadir"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Amskroud",
+          "cie": "Agadir",
+          "reg": "Agadir"
+        }
+      ],
+      "cree": "2026-10-24T13:01:22.200Z",
+      "maj": "2026-10-24T13:01:22.200Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvmer04q_4ee804fe",
+      "type": "demande",
+      "titre": "Demande de validation",
+      "description": "Le retrait de TEST AUTO — Agadir — Agadir attend validation.",
+      "actions": [
+        "demander-suppression"
+      ],
+      "barrageId": "OPT-DEMO-AGADIR-001",
+      "barrage": {
+        "id": "OPT-DEMO-AGADIR-001",
+        "nom": "TEST AUTO — Agadir — Agadir",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -9.53621,
+        "lat": 30.40711,
+        "bt": "Agadir",
+        "cie": "Agadir",
+        "reg": "Agadir",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-AGADIR",
+        "nom": "Chef de région Agadir",
+        "rang": "reg",
+        "unite": "Agadir"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Agadir",
+          "cie": "Agadir",
+          "reg": "Agadir"
+        }
+      ],
+      "cree": "2026-10-24T13:01:32.904Z",
+      "maj": "2026-10-24T13:01:32.904Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvmer9fe_901caf07",
+      "type": "demande",
+      "titre": "Demande de validation",
+      "description": "Le retrait de Poste fixe Drargua attend validation.",
+      "actions": [
+        "demander-suppression"
+      ],
+      "barrageId": "BF-BT-154",
+      "barrage": {
+        "id": "BF-BT-154",
+        "nom": "Poste fixe Drargua",
+        "type": "barrage_fixe",
+        "route": "RN11",
+        "lng": -9.47161,
+        "lat": 30.39186,
+        "bt": "Drargua",
+        "cie": "Agadir",
+        "reg": "Agadir",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-AGADIR",
+        "nom": "Chef de région Agadir",
+        "rang": "reg",
+        "unite": "Agadir"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Drargua",
+          "cie": "Agadir",
+          "reg": "Agadir"
+        }
+      ],
+      "cree": "2026-10-24T13:01:44.946Z",
+      "maj": "2026-10-24T13:01:44.946Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvmes5hf_372dc6a3",
+      "type": "demande",
+      "titre": "Demande de validation",
+      "description": "Le retrait de Poste fixe Sidi Bibi attend validation.",
+      "actions": [
+        "demander-suppression"
+      ],
+      "barrageId": "BF-BT-382",
+      "barrage": {
+        "id": "BF-BT-382",
+        "nom": "Poste fixe Sidi Bibi",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -9.52972,
+        "lat": 30.23124,
+        "bt": "Sidi Bibi",
+        "cie": "Biougra",
+        "reg": "Agadir",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-AGADIR",
+        "nom": "Chef de région Agadir",
+        "rang": "reg",
+        "unite": "Agadir"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Sidi Bibi",
+          "cie": "Biougra",
+          "reg": "Agadir"
+        }
+      ],
+      "cree": "2026-10-24T13:02:26.498Z",
+      "maj": "2026-10-24T13:02:26.498Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvmesctt_39e64de1",
+      "type": "demande",
+      "titre": "Demande de validation",
+      "description": "Le retrait de Poste fixe Aglou attend validation.",
+      "actions": [
+        "demander-suppression"
+      ],
+      "barrageId": "BF-BT-009",
+      "barrage": {
+        "id": "BF-BT-009",
+        "nom": "Poste fixe Aglou",
+        "type": "barrage_fixe",
+        "route": "RR104",
+        "lng": -9.78807,
+        "lat": 29.67578,
+        "bt": "Aglou",
+        "cie": "Tiznit",
+        "reg": "Agadir",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-AGADIR",
+        "nom": "Chef de région Agadir",
+        "rang": "reg",
+        "unite": "Agadir"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Aglou",
+          "cie": "Tiznit",
+          "reg": "Agadir"
+        }
+      ],
+      "cree": "2026-10-24T13:02:36.012Z",
+      "maj": "2026-10-24T13:02:36.012Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvmesjl5_3260941b",
+      "type": "demande",
+      "titre": "Demande de validation",
+      "description": "Le retrait de Poste fixe Agadir attend validation.",
+      "actions": [
+        "demander-suppression"
+      ],
+      "barrageId": "BF-BT-005",
+      "barrage": {
+        "id": "BF-BT-005",
+        "nom": "Poste fixe Agadir",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "lng": -9.61543,
+        "lat": 30.42946,
+        "bt": "Agadir",
+        "cie": "Agadir",
+        "reg": "Agadir",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-AGADIR",
+        "nom": "Chef de région Agadir",
+        "rang": "reg",
+        "unite": "Agadir"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Agadir",
+          "cie": "Agadir",
+          "reg": "Agadir"
+        }
+      ],
+      "cree": "2026-10-24T13:02:44.776Z",
+      "maj": "2026-10-24T13:02:44.776Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvmet5rt_f71b79dc",
+      "type": "demande",
+      "titre": "Demande de validation",
+      "description": "Une modification de Poste fixe Ait Amira attend validation.",
+      "actions": [
+        "demander-modification"
+      ],
+      "barrageId": "BF-BT-035",
+      "barrage": {
+        "id": "BF-BT-035",
+        "nom": "Poste fixe Ait Amira",
+        "type": "barrage_fixe",
+        "route": "RP1014",
+        "lng": -9.41956,
+        "lat": 30.20044,
+        "bt": "Ait Amira",
+        "cie": "Biougra",
+        "reg": "Agadir",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-AGADIR",
+        "nom": "Chef de région Agadir",
+        "rang": "reg",
+        "unite": "Agadir"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Ait Amira",
+          "cie": "Biougra",
+          "reg": "Agadir"
+        }
+      ],
+      "cree": "2026-10-24T13:03:13.529Z",
+      "maj": "2026-10-24T13:03:13.529Z",
+      "lues": {}
+    },
+    {
+      "id": "not_mvmetdsn_21146478",
+      "type": "demande",
+      "titre": "Demande de validation",
+      "description": "Le retrait de Poste fixe Tiznit attend validation.",
+      "actions": [
+        "demander-suppression"
+      ],
+      "barrageId": "BF-BT-483",
+      "barrage": {
+        "id": "BF-BT-483",
+        "nom": "Poste fixe Tiznit",
+        "type": "barrage_fixe",
+        "route": "RR115",
+        "lng": -9.58515,
+        "lat": 29.78446,
+        "bt": "Tiznit",
+        "cie": "Tiznit",
+        "reg": "Agadir",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "acteur": {
+        "matricule": "REG-AGADIR",
+        "nom": "Chef de région Agadir",
+        "rang": "reg",
+        "unite": "Agadir"
+      },
+      "destinataire": null,
+      "perimetres": [
+        {
+          "bt": "Tiznit",
+          "cie": "Tiznit",
+          "reg": "Agadir"
+        }
+      ],
+      "cree": "2026-10-24T13:03:23.925Z",
+      "maj": "2026-10-24T13:03:23.925Z",
+      "lues": {}
+    }
+  ]
+}

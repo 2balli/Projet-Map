@@ -1,0 +1,15 @@
+{
+  "_lisezMoi": [
+    "MODE DE CE DOSSIER DE DONNÉES — ne pas modifier à la main.",
+    "",
+    "Le service refuse de démarrer si le mode qu’on lui déclare (--mode)",
+    "ne correspond pas à celui-ci. C’est ce qui empêche une séance de",
+    "démonstration d’écrire dans le dispositif réel, et inversement.",
+    "",
+    "PRODUCTION : les enregistrements sont RÉELS. Ne jamais y verser",
+    "de données de démonstration."
+  ],
+  "mode": "production",
+  "cree": "2026-09-04T13:52:37.783Z",
+  "note": "aucun enregistrement — le dispositif réel se saisit ici"
+}

@@ -1,0 +1,22 @@
+node_modules
+dist
+.vite
+intranet
+intranet-demo
+intranet-production
+*.zip
+RECONSTRUIRE.txt
+
+# Données d'exploitation du serveur : empreintes des codes d'habilitation et
+# marquages saisis sur le terrain. Ne se versionnent pas.
+donnees-serveur
+
+# Fichiers volumineux (> 100 Mo rejetés par GitHub) et données générées
+*.pbf
+data/source/
+*.tar
+*.tar.gz
+maroc-carte-offline/donnees/
+maroc-carte-offline/tools/
+maroc-carte-offline/transfert/
+

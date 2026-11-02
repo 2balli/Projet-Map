@@ -1,0 +1,425 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Reg Oujda",
+                "unite": "Oujda",
+                "categorie": "Région Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.91432,
+                    34.6739
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Reg Tétouan",
+                "unite": "Tétouan",
+                "categorie": "Région Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.33411,
+                    35.59346
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Reg Errachidia",
+                "unite": "Errachidia",
+                "categorie": "Région Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.44069,
+                    31.91964
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Reg Rabat",
+                "unite": "Rabat",
+                "categorie": "Région Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.84565,
+                    34.01907
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Reg Agadir",
+                "unite": "Agadir",
+                "categorie": "Région Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -9.60476,
+                    30.42429
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Reg Essaouira",
+                "unite": "Essaouira",
+                "categorie": "Région Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -9.76462,
+                    31.50989
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Reg Safi",
+                "unite": "Safi",
+                "categorie": "Région Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -9.22593,
+                    32.30071
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Reg Al Hoceima",
+                "unite": "Al Hoceima",
+                "categorie": "Région Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -3.92898,
+                    35.23934
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Reg Fès",
+                "unite": "Fès",
+                "categorie": "Région Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.00096,
+                    34.04628
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Reg Settat",
+                "unite": "Settat",
+                "categorie": "Région Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.61846,
+                    33.00759
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Reg Guelmim",
+                "unite": "Guelmim",
+                "categorie": "Région Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -10.05213,
+                    28.99287
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Reg Sidi Kacem",
+                "unite": "Sidi Kacem",
+                "categorie": "Région Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.71184,
+                    34.22601
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Reg Beni Mellal",
+                "unite": "Beni Mellal",
+                "categorie": "Région Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.37089,
+                    32.32836
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Reg Kénitra",
+                "unite": "Kénitra",
+                "categorie": "Région Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.5858,
+                    34.25309
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Reg Khémisset",
+                "unite": "Khémisset",
+                "categorie": "Région Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.07006,
+                    33.81866
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Reg Khenifra",
+                "unite": "Khénifra",
+                "categorie": "Région Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.66505,
+                    32.93722
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Reg Taza",
+                "unite": "Taza",
+                "categorie": "Région Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -4.01299,
+                    34.21291
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Reg Bouarfa",
+                "unite": "Bouarfa",
+                "categorie": "Région Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.95681,
+                    32.53092
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Reg Khouribga",
+                "unite": "Khouribga",
+                "categorie": "Région Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.91255,
+                    32.89576
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Reg Laayoune",
+                "unite": "Laayoune",
+                "categorie": "Région Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -13.20763,
+                    27.16382
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Reg Marrakech",
+                "unite": "Marrakech",
+                "categorie": "Région Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.00508,
+                    31.63344
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Reg Casablanca",
+                "unite": "Casablanca",
+                "categorie": "Région Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -7.62432,
+                    33.58517
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Reg Tanger",
+                "unite": "Tanger",
+                "categorie": "Région Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.81139,
+                    35.76685
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Reg Meknès",
+                "unite": "Meknès",
+                "categorie": "Région Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -5.53932,
+                    33.88722
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Reg Dakhla",
+                "unite": "Dakhla",
+                "categorie": "Région Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -15.92649,
+                    23.70648
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Reg Ouarzazate",
+                "unite": "Ouarzazate",
+                "categorie": "Région Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.90967,
+                    30.92018
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Reg Nador",
+                "unite": "Nador",
+                "categorie": "Région Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -2.93082,
+                    35.17603
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "nom": "Reg El Jadida",
+                "unite": "El Jadida",
+                "categorie": "Région Territoriale"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -8.49442,
+                    33.24316
+                ]
+            }
+        }
+    ]
+}

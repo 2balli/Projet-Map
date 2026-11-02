@@ -1,0 +1,4775 @@
+{
+    "_source": "circo_bt.geojson (population, superficie) — regénérer : node scripts/build-poles-population.mjs",
+    "poles": [
+        {
+            "nom": "Casablanca",
+            "cie": "Casablanca",
+            "parties": 1,
+            "lng": -7.6477,
+            "lat": 33.5532,
+            "pop": 1482554,
+            "densite": 11170.2,
+            "rayonKm": 6.5
+        },
+        {
+            "nom": "Fès",
+            "cie": "Fès",
+            "parties": 1,
+            "lng": -5.0094,
+            "lat": 34.0285,
+            "pop": 1182963,
+            "densite": 10891.53,
+            "rayonKm": 5.88
+        },
+        {
+            "nom": "Salé",
+            "cie": "Salé",
+            "parties": 2,
+            "lng": -6.7653,
+            "lat": 34.0212,
+            "pop": 945101,
+            "densite": 8307.18,
+            "rayonKm": 6.02
+        },
+        {
+            "nom": "Ain Sebâa",
+            "cie": "Mediouna",
+            "parties": 9,
+            "lng": -7.5371,
+            "lat": 33.5617,
+            "pop": 2314846,
+            "densite": 5199.42,
+            "rayonKm": 11.9
+        },
+        {
+            "nom": "Marrakech",
+            "cie": "Marrakech",
+            "parties": 1,
+            "lng": -7.9994,
+            "lat": 31.6357,
+            "pop": 1014813,
+            "densite": 4600.91,
+            "rayonKm": 8.38
+        },
+        {
+            "nom": "Agadir",
+            "cie": "Agadir",
+            "parties": 1,
+            "lng": -9.5717,
+            "lat": 30.4146,
+            "pop": 504768,
+            "densite": 4334.86,
+            "rayonKm": 6.09
+        },
+        {
+            "nom": "Rabat",
+            "cie": "Rabat",
+            "parties": 1,
+            "lng": -6.8416,
+            "lat": 33.9603,
+            "pop": 515619,
+            "densite": 3711.55,
+            "rayonKm": 6.65
+        },
+        {
+            "nom": "Témara",
+            "cie": "Témara",
+            "parties": 9,
+            "lng": -6.9604,
+            "lat": 33.8769,
+            "pop": 628445,
+            "densite": 3591.43,
+            "rayonKm": 7.46
+        },
+        {
+            "nom": "Ain Aouda",
+            "cie": "Ain Aouda",
+            "parties": 1,
+            "lng": -6.7994,
+            "lat": 33.8032,
+            "pop": 98502,
+            "densite": 3576.84,
+            "rayonKm": 2.96
+        },
+        {
+            "nom": "Inezgane",
+            "cie": "Inezgane",
+            "parties": 2,
+            "lng": -9.513,
+            "lat": 30.3431,
+            "pop": 568556,
+            "densite": 3410.46,
+            "rayonKm": 7.28
+        },
+        {
+            "nom": "Meknès",
+            "cie": "Meknès",
+            "parties": 1,
+            "lng": -5.551,
+            "lat": 33.8862,
+            "pop": 599861,
+            "densite": 3402.48,
+            "rayonKm": 7.49
+        },
+        {
+            "nom": "Tanger",
+            "cie": "Tanger",
+            "parties": 1,
+            "lng": -5.8489,
+            "lat": 35.6907,
+            "pop": 1417760,
+            "densite": 3003.96,
+            "rayonKm": 12.26
+        },
+        {
+            "nom": "Dar Bouazza",
+            "cie": "Casablanca",
+            "parties": 3,
+            "lng": -7.7749,
+            "lat": 33.5153,
+            "pop": 384018,
+            "densite": 2962.69,
+            "rayonKm": 6.42
+        },
+        {
+            "nom": "Boujniba",
+            "cie": "Khouribga",
+            "parties": 1,
+            "lng": -6.7755,
+            "lat": 32.8974,
+            "pop": 14722,
+            "densite": 2841.5,
+            "rayonKm": 1.5
+        },
+        {
+            "nom": "Mohammedia",
+            "cie": "Mohammedia",
+            "parties": 5,
+            "lng": -7.3962,
+            "lat": 33.6526,
+            "pop": 493839,
+            "densite": 2472.17,
+            "rayonKm": 7.97
+        },
+        {
+            "nom": "Al Hoceima",
+            "cie": "Al Hoceima",
+            "parties": 1,
+            "lng": -3.9273,
+            "lat": 35.2205,
+            "pop": 55855,
+            "densite": 1892.21,
+            "rayonKm": 3.07
+        },
+        {
+            "nom": "Dakhla",
+            "cie": "Dakhla",
+            "parties": 1,
+            "lng": -15.9072,
+            "lat": 23.7694,
+            "pop": 166413,
+            "densite": 1784.23,
+            "rayonKm": 5.45
+        },
+        {
+            "nom": "Nador",
+            "cie": "Nador",
+            "parties": 2,
+            "lng": -2.9582,
+            "lat": 35.2053,
+            "pop": 262654,
+            "densite": 1738.44,
+            "rayonKm": 6.93
+        },
+        {
+            "nom": "Oujda",
+            "cie": "Oujda",
+            "parties": 1,
+            "lng": -1.9898,
+            "lat": 34.688,
+            "pop": 516480,
+            "densite": 1708.76,
+            "rayonKm": 9.81
+        },
+        {
+            "nom": "Sidi Bouzid",
+            "cie": "El Jadida",
+            "parties": 1,
+            "lng": -8.5343,
+            "lat": 33.2037,
+            "pop": 62732,
+            "densite": 1693.67,
+            "rayonKm": 3.43
+        },
+        {
+            "nom": "Ouislane",
+            "cie": "Meknès",
+            "parties": 1,
+            "lng": -5.4973,
+            "lat": 33.9453,
+            "pop": 140476,
+            "densite": 1298.64,
+            "rayonKm": 5.87
+        },
+        {
+            "nom": "Tassoultante",
+            "cie": "Marrakech",
+            "parties": 1,
+            "lng": -7.9811,
+            "lat": 31.5476,
+            "pop": 106013,
+            "densite": 1183.55,
+            "rayonKm": 5.34
+        },
+        {
+            "nom": "Béni Mellal",
+            "cie": "Béni Mellal",
+            "parties": 1,
+            "lng": -6.3468,
+            "lat": 32.3982,
+            "pop": 235379,
+            "densite": 1087.05,
+            "rayonKm": 8.3
+        },
+        {
+            "nom": "El Jadida",
+            "cie": "El Jadida",
+            "parties": 1,
+            "lng": -8.4877,
+            "lat": 33.0428,
+            "pop": 273482,
+            "densite": 1011.92,
+            "rayonKm": 9.28
+        },
+        {
+            "nom": "Fnideq",
+            "cie": "Tétouan",
+            "parties": 1,
+            "lng": -5.3772,
+            "lat": 35.7496,
+            "pop": 254064,
+            "densite": 983.03,
+            "rayonKm": 9.07
+        },
+        {
+            "nom": "Larache",
+            "cie": "Larache",
+            "parties": 1,
+            "lng": -5.9715,
+            "lat": 35.1714,
+            "pop": 153211,
+            "densite": 855.14,
+            "rayonKm": 7.55
+        },
+        {
+            "nom": "Berkane",
+            "cie": "Berkane",
+            "parties": 1,
+            "lng": -2.3455,
+            "lat": 34.9064,
+            "pop": 154601,
+            "densite": 842.57,
+            "rayonKm": 7.64
+        },
+        {
+            "nom": "Sidi Rahal Chatai",
+            "cie": "Berrechid",
+            "parties": 1,
+            "lng": -7.953,
+            "lat": 33.4372,
+            "pop": 56462,
+            "densite": 839.8,
+            "rayonKm": 4.63
+        },
+        {
+            "nom": "Sidi Taibi",
+            "cie": "Kénitra",
+            "parties": 1,
+            "lng": -6.6452,
+            "lat": 34.1846,
+            "pop": 76227,
+            "densite": 795.03,
+            "rayonKm": 5.52
+        },
+        {
+            "nom": "Ouled Tayeb",
+            "cie": "Fès",
+            "parties": 1,
+            "lng": -4.9593,
+            "lat": 33.9259,
+            "pop": 56352,
+            "densite": 751.26,
+            "rayonKm": 4.89
+        },
+        {
+            "nom": "Port Laayoune",
+            "cie": "Laayoune",
+            "parties": 1,
+            "lng": -13.4085,
+            "lat": 27.0791,
+            "pop": 28848,
+            "densite": 743.28,
+            "rayonKm": 3.51
+        },
+        {
+            "nom": "Tétouan",
+            "cie": "Tétouan",
+            "parties": 1,
+            "lng": -5.5053,
+            "lat": 35.54,
+            "pop": 477029,
+            "densite": 692.95,
+            "rayonKm": 14.8
+        },
+        {
+            "nom": "Kénitra",
+            "cie": "Kénitra",
+            "parties": 1,
+            "lng": -6.4673,
+            "lat": 34.2751,
+            "pop": 692163,
+            "densite": 670.3,
+            "rayonKm": 18.13
+        },
+        {
+            "nom": "Ras El Ma",
+            "cie": "Moulay Yacoub",
+            "parties": 2,
+            "lng": -5.0967,
+            "lat": 33.971,
+            "pop": 91541,
+            "densite": 621.98,
+            "rayonKm": 6.84
+        },
+        {
+            "nom": "Sebaa Ayoune",
+            "cie": "El Hajeb",
+            "parties": 1,
+            "lng": -5.37,
+            "lat": 33.9004,
+            "pop": 28736,
+            "densite": 619.49,
+            "rayonKm": 3.84
+        },
+        {
+            "nom": "Ait Amira",
+            "cie": "Biougra",
+            "parties": 1,
+            "lng": -9.4604,
+            "lat": 30.1502,
+            "pop": 113236,
+            "densite": 605.13,
+            "rayonKm": 7.72
+        },
+        {
+            "nom": "Ouahat Sidi Brahim",
+            "cie": "Tamansourte",
+            "parties": 1,
+            "lng": -7.9801,
+            "lat": 31.7122,
+            "pop": 36493,
+            "densite": 598.76,
+            "rayonKm": 4.4
+        },
+        {
+            "nom": "Safi",
+            "cie": "Safi",
+            "parties": 1,
+            "lng": -9.1304,
+            "lat": 32.3797,
+            "pop": 383996,
+            "densite": 594.78,
+            "rayonKm": 14.34
+        },
+        {
+            "nom": "Souk Sebt Ouled Nemma",
+            "cie": "Fkih Ben Salah",
+            "parties": 1,
+            "lng": -6.6318,
+            "lat": 32.2844,
+            "pop": 87857,
+            "densite": 582.03,
+            "rayonKm": 6.93
+        },
+        {
+            "nom": "Tan Tan Plage",
+            "cie": "Tan Tan",
+            "parties": 1,
+            "lng": -11.3247,
+            "lat": 28.487,
+            "pop": 14258,
+            "densite": 574.06,
+            "rayonKm": 2.81
+        },
+        {
+            "nom": "Sidi Slimane",
+            "cie": "Sidi Slimane",
+            "parties": 1,
+            "lng": -5.8917,
+            "lat": 34.2692,
+            "pop": 131298,
+            "densite": 562.01,
+            "rayonKm": 8.62
+        },
+        {
+            "nom": "Bouknadel",
+            "cie": "Salé",
+            "parties": 1,
+            "lng": -6.6643,
+            "lat": 34.0899,
+            "pop": 119540,
+            "densite": 543.94,
+            "rayonKm": 8.36
+        },
+        {
+            "nom": "Khémisset",
+            "cie": "Khémisset",
+            "parties": 1,
+            "lng": -6.0745,
+            "lat": 33.8684,
+            "pop": 140353,
+            "densite": 536.87,
+            "rayonKm": 9.12
+        },
+        {
+            "nom": "Chouiter",
+            "cie": "Tahannaout",
+            "parties": 1,
+            "lng": -7.7981,
+            "lat": 31.5555,
+            "pop": 12449,
+            "densite": 515.4,
+            "rayonKm": 2.77
+        },
+        {
+            "nom": "Ksar El Kebir",
+            "cie": "Larache",
+            "parties": 1,
+            "lng": -5.8995,
+            "lat": 35.0535,
+            "pop": 180729,
+            "densite": 511,
+            "rayonKm": 10.61
+        },
+        {
+            "nom": "Drargua",
+            "cie": "Agadir",
+            "parties": 1,
+            "lng": -9.4723,
+            "lat": 30.444,
+            "pop": 107621,
+            "densite": 483.75,
+            "rayonKm": 8.42
+        },
+        {
+            "nom": "Imzouren",
+            "cie": "Al Hoceima",
+            "parties": 1,
+            "lng": -3.8805,
+            "lat": 35.1492,
+            "pop": 53086,
+            "densite": 483.54,
+            "rayonKm": 5.91
+        },
+        {
+            "nom": "Khouribga",
+            "cie": "Khouribga",
+            "parties": 1,
+            "lng": -6.9524,
+            "lat": 32.8009,
+            "pop": 214756,
+            "densite": 466.29,
+            "rayonKm": 12.11
+        },
+        {
+            "nom": "Temsia",
+            "cie": "Inezgane",
+            "parties": 1,
+            "lng": -9.3532,
+            "lat": 30.357,
+            "pop": 68360,
+            "densite": 448.65,
+            "rayonKm": 6.96
+        },
+        {
+            "nom": "Saada",
+            "cie": "Marrakech",
+            "parties": 2,
+            "lng": -8.1488,
+            "lat": 31.6269,
+            "pop": 124409,
+            "densite": 434.43,
+            "rayonKm": 9.55
+        },
+        {
+            "nom": "Selouane",
+            "cie": "Nador",
+            "parties": 1,
+            "lng": -2.9222,
+            "lat": 35.0817,
+            "pop": 74254,
+            "densite": 432.13,
+            "rayonKm": 7.4
+        },
+        {
+            "nom": "Nouaceur",
+            "cie": "Nouaceur",
+            "parties": 1,
+            "lng": -7.5836,
+            "lat": 33.3823,
+            "pop": 36326,
+            "densite": 401.02,
+            "rayonKm": 5.37
+        },
+        {
+            "nom": "Berrechid",
+            "cie": "Berrechid",
+            "parties": 1,
+            "lng": -7.5535,
+            "lat": 33.1967,
+            "pop": 203531,
+            "densite": 400.64,
+            "rayonKm": 12.72
+        },
+        {
+            "nom": "Sidi Bibi",
+            "cie": "Biougra",
+            "parties": 1,
+            "lng": -9.5544,
+            "lat": 30.2334,
+            "pop": 72929,
+            "densite": 391.71,
+            "rayonKm": 7.7
+        },
+        {
+            "nom": "Khénifra",
+            "cie": "Khénifra",
+            "parties": 1,
+            "lng": -5.656,
+            "lat": 32.9879,
+            "pop": 137448,
+            "densite": 374.48,
+            "rayonKm": 10.81
+        },
+        {
+            "nom": "El Mansouria",
+            "cie": "Bouznika",
+            "parties": 1,
+            "lng": -7.2788,
+            "lat": 33.7271,
+            "pop": 29139,
+            "densite": 361.32,
+            "rayonKm": 5.07
+        },
+        {
+            "nom": "Ouled Ayad",
+            "cie": "Fkih Ben Salah",
+            "parties": 1,
+            "lng": -6.7693,
+            "lat": 32.2537,
+            "pop": 51297,
+            "densite": 358.23,
+            "rayonKm": 6.75
+        },
+        {
+            "nom": "Bouznika",
+            "cie": "Bouznika",
+            "parties": 1,
+            "lng": -7.1571,
+            "lat": 33.7583,
+            "pop": 66988,
+            "densite": 351.43,
+            "rayonKm": 7.79
+        },
+        {
+            "nom": "Tiflet",
+            "cie": "Khémisset",
+            "parties": 1,
+            "lng": -6.3031,
+            "lat": 33.8283,
+            "pop": 119574,
+            "densite": 342.87,
+            "rayonKm": 10.54
+        },
+        {
+            "nom": "Deroua",
+            "cie": "Berrechid",
+            "parties": 1,
+            "lng": -7.4725,
+            "lat": 33.3011,
+            "pop": 151593,
+            "densite": 342.83,
+            "rayonKm": 11.86
+        },
+        {
+            "nom": "Tamansourte",
+            "cie": "Tamansourte",
+            "parties": 1,
+            "lng": -8.0986,
+            "lat": 31.7929,
+            "pop": 105790,
+            "densite": 341.48,
+            "rayonKm": 9.93
+        },
+        {
+            "nom": "Oulad Hassoune",
+            "cie": "Tamansourte",
+            "parties": 1,
+            "lng": -7.8345,
+            "lat": 31.6345,
+            "pop": 64764,
+            "densite": 334.34,
+            "rayonKm": 7.85
+        },
+        {
+            "nom": "Boufekrane",
+            "cie": "Meknès",
+            "parties": 1,
+            "lng": -5.4887,
+            "lat": 33.8223,
+            "pop": 58017,
+            "densite": 327.34,
+            "rayonKm": 7.51
+        },
+        {
+            "nom": "Sidi Yahya du Gharb",
+            "cie": "Sidi Slimane",
+            "parties": 1,
+            "lng": -6.2277,
+            "lat": 34.384,
+            "pop": 61944,
+            "densite": 310.68,
+            "rayonKm": 7.97
+        },
+        {
+            "nom": "Machraa Bel kssiri",
+            "cie": "Sidi Kacem",
+            "lng": -5.9745,
+            "lat": 34.5744,
+            "pop": 87554,
+            "densite": 293.12,
+            "rayonKm": 9.75,
+            "parties": 1
+        },
+        {
+            "nom": "Ouled Taima",
+            "cie": "Taroudannt",
+            "lng": -9.1991,
+            "lat": 30.4324,
+            "pop": 207033,
+            "densite": 291.98,
+            "rayonKm": 15.02,
+            "parties": 1
+        },
+        {
+            "nom": "Sidi Bennour",
+            "cie": "Sidi Bennour",
+            "lng": -8.4321,
+            "lat": 32.5932,
+            "pop": 119837,
+            "densite": 278.94,
+            "rayonKm": 11.69,
+            "parties": 1
+        },
+        {
+            "nom": "El Attaouia",
+            "cie": "El Kelaâ Des Sraghna",
+            "lng": -7.3175,
+            "lat": 31.8767,
+            "pop": 94195,
+            "densite": 278.91,
+            "rayonKm": 10.37,
+            "parties": 1
+        },
+        {
+            "nom": "Settat",
+            "cie": "Settat",
+            "lng": -7.5867,
+            "lat": 32.9769,
+            "pop": 221293,
+            "densite": 275.95,
+            "rayonKm": 15.98,
+            "parties": 1
+        },
+        {
+            "nom": "Ouezzane",
+            "cie": "Ouazzane",
+            "lng": -5.6945,
+            "lat": 34.7925,
+            "pop": 78557,
+            "densite": 271.73,
+            "rayonKm": 9.59,
+            "parties": 1
+        },
+        {
+            "nom": "M'Saada",
+            "cie": "Sidi Slimane",
+            "lng": -5.8186,
+            "lat": 34.3942,
+            "pop": 55626,
+            "densite": 271.21,
+            "rayonKm": 8.08,
+            "parties": 1
+        },
+        {
+            "nom": "Afourer",
+            "cie": "Azilal",
+            "lng": -6.5073,
+            "lat": 32.2057,
+            "pop": 27067,
+            "densite": 270,
+            "rayonKm": 5.65,
+            "parties": 1
+        },
+        {
+            "nom": "Had Soualem",
+            "cie": "Berrechid",
+            "lng": -7.8305,
+            "lat": 33.361,
+            "pop": 141792,
+            "densite": 269.56,
+            "rayonKm": 12.94,
+            "parties": 1
+        },
+        {
+            "nom": "Azemmour",
+            "cie": "El Jadida",
+            "lng": -8.3506,
+            "lat": 33.1915,
+            "pop": 111255,
+            "densite": 262.66,
+            "rayonKm": 11.61,
+            "parties": 1
+        },
+        {
+            "nom": "Sidi Jaber",
+            "cie": "Béni Mellal",
+            "lng": -6.43,
+            "lat": 32.3673,
+            "pop": 20455,
+            "densite": 257.14,
+            "rayonKm": 5.03,
+            "parties": 1
+        },
+        {
+            "nom": "Azla-Zaitoune",
+            "cie": "Tétouan",
+            "lng": -5.3191,
+            "lat": 35.5262,
+            "pop": 36477,
+            "densite": 256.75,
+            "rayonKm": 6.72,
+            "parties": 1
+        },
+        {
+            "nom": "Sidi Mohamed Lahmar",
+            "cie": "Souk Larbaa du Gharb",
+            "lng": -6.2545,
+            "lat": 34.7613,
+            "pop": 91290,
+            "densite": 255.31,
+            "rayonKm": 10.67,
+            "parties": 1
+        },
+        {
+            "nom": "Ain Cheggag",
+            "cie": "Sefrou",
+            "lng": -5.0491,
+            "lat": 33.8749,
+            "pop": 28584,
+            "densite": 254.2,
+            "rayonKm": 5.98,
+            "parties": 1
+        },
+        {
+            "nom": "Asilah",
+            "cie": "Tanger",
+            "lng": -6.0091,
+            "lat": 35.3859,
+            "pop": 51683,
+            "densite": 247.31,
+            "rayonKm": 8.16,
+            "parties": 1
+        },
+        {
+            "nom": "My Abdellah",
+            "cie": "El Jadida",
+            "lng": -8.5923,
+            "lat": 33.0944,
+            "pop": 61381,
+            "densite": 247.28,
+            "rayonKm": 8.89,
+            "parties": 1
+        },
+        {
+            "nom": "Ben Mansour",
+            "cie": "Kénitra",
+            "lng": -6.3812,
+            "lat": 34.5847,
+            "pop": 78248,
+            "densite": 246.18,
+            "rayonKm": 10.06,
+            "parties": 1
+        },
+        {
+            "nom": "Sidi Abdellah Ghiat",
+            "cie": "Tahannaout",
+            "lng": -7.8299,
+            "lat": 31.5091,
+            "pop": 47674,
+            "densite": 239.89,
+            "rayonKm": 7.95,
+            "parties": 1
+        },
+        {
+            "nom": "Lalla Mimouna",
+            "cie": "Souk Larbaa du Gharb",
+            "lng": -6.0555,
+            "lat": 34.8753,
+            "pop": 57210,
+            "densite": 239.54,
+            "rayonKm": 8.72,
+            "parties": 1
+        },
+        {
+            "nom": "Ain Taoujtat",
+            "cie": "El Hajeb",
+            "lng": -5.1936,
+            "lat": 33.8834,
+            "pop": 80673,
+            "densite": 238.34,
+            "rayonKm": 10.38,
+            "parties": 1
+        },
+        {
+            "nom": "Sidi Moussa Ben Ali",
+            "cie": "Mohammedia",
+            "lng": -7.3618,
+            "lat": 33.5741,
+            "pop": 20218,
+            "densite": 237.47,
+            "rayonKm": 5.21,
+            "parties": 1
+        },
+        {
+            "nom": "Sidi Zouine",
+            "cie": "Marrakech",
+            "lng": -8.3761,
+            "lat": 31.6534,
+            "pop": 17130,
+            "densite": 236.91,
+            "rayonKm": 4.8,
+            "parties": 1
+        },
+        {
+            "nom": "Ouled M'Barek",
+            "cie": "Béni Mellal",
+            "lng": -6.4479,
+            "lat": 32.2841,
+            "pop": 51258,
+            "densite": 232.82,
+            "rayonKm": 8.37,
+            "parties": 1
+        },
+        {
+            "nom": "Sidi Kacem",
+            "cie": "Sidi Kacem",
+            "lng": -5.6647,
+            "lat": 34.2731,
+            "pop": 129034,
+            "densite": 231.5,
+            "rayonKm": 13.32,
+            "parties": 1
+        },
+        {
+            "nom": "Biougra",
+            "cie": "Biougra",
+            "lng": -9.2972,
+            "lat": 30.1759,
+            "pop": 152819,
+            "densite": 228.26,
+            "rayonKm": 14.6,
+            "parties": 1
+        },
+        {
+            "nom": "Al Mokhtar",
+            "cie": "Sidi Kacem",
+            "lng": -6.1801,
+            "lat": 34.5364,
+            "pop": 34016,
+            "densite": 226.48,
+            "rayonKm": 6.91,
+            "parties": 1
+        },
+        {
+            "nom": "Taghazoute",
+            "cie": "Agadir",
+            "lng": -9.6395,
+            "lat": 30.5485,
+            "pop": 50893,
+            "densite": 225.98,
+            "rayonKm": 8.47,
+            "parties": 1
+        },
+        {
+            "nom": "Bir Jdid",
+            "cie": "El Jadida",
+            "lng": -8.0489,
+            "lat": 33.3356,
+            "pop": 77368,
+            "densite": 222.61,
+            "rayonKm": 10.52,
+            "parties": 1
+        },
+        {
+            "nom": "M'Haya",
+            "cie": "Meknès",
+            "lng": -5.2744,
+            "lat": 34.026,
+            "pop": 30060,
+            "densite": 217.42,
+            "rayonKm": 6.63,
+            "parties": 1
+        },
+        {
+            "nom": "Boujaad",
+            "cie": "Oued Zem",
+            "lng": -6.4722,
+            "lat": 32.7654,
+            "pop": 54191,
+            "densite": 212.52,
+            "rayonKm": 9.01,
+            "parties": 1
+        },
+        {
+            "nom": "El Aouamra",
+            "cie": "Larache",
+            "lng": -6.0995,
+            "lat": 35.059,
+            "pop": 73542,
+            "densite": 209.51,
+            "rayonKm": 10.57,
+            "parties": 1
+        },
+        {
+            "nom": "Loudaya",
+            "cie": "Marrakech",
+            "lng": -8.28,
+            "lat": 31.6643,
+            "pop": 41761,
+            "densite": 208.19,
+            "rayonKm": 7.99,
+            "parties": 1
+        },
+        {
+            "nom": "Souk Larbaa Du Gharb",
+            "cie": "Souk Larbaa du Gharb",
+            "lng": -6.0443,
+            "lat": 34.702,
+            "pop": 129573,
+            "densite": 207.87,
+            "rayonKm": 14.09,
+            "parties": 1
+        },
+        {
+            "nom": "Houafate",
+            "cie": "Sidi Kacem",
+            "lng": -5.9683,
+            "lat": 34.4339,
+            "pop": 54600,
+            "densite": 207.84,
+            "rayonKm": 9.14,
+            "parties": 1
+        },
+        {
+            "nom": "Chtouka",
+            "cie": "El Jadida",
+            "lng": -8.2073,
+            "lat": 33.2961,
+            "pop": 76194,
+            "densite": 207.4,
+            "rayonKm": 10.81,
+            "parties": 1
+        },
+        {
+            "nom": "Sidi Allal Tazi",
+            "cie": "Kénitra",
+            "lng": -6.3198,
+            "lat": 34.4869,
+            "pop": 64178,
+            "densite": 204.92,
+            "rayonKm": 9.98,
+            "parties": 1
+        },
+        {
+            "nom": "Taza",
+            "cie": "Taza",
+            "lng": -3.994,
+            "lat": 34.1936,
+            "pop": 202646,
+            "densite": 204.25,
+            "rayonKm": 17.77,
+            "parties": 1
+        },
+        {
+            "nom": "Sebbah",
+            "cie": "Skhirate",
+            "lng": -7.0153,
+            "lat": 33.8076,
+            "pop": 15552,
+            "densite": 202.49,
+            "rayonKm": 4.94,
+            "parties": 1
+        },
+        {
+            "nom": "Essaouira",
+            "cie": "Essaouira",
+            "lng": -9.6859,
+            "lat": 31.5028,
+            "pop": 98817,
+            "densite": 201.05,
+            "rayonKm": 12.51,
+            "parties": 1
+        },
+        {
+            "nom": "Ksar Sghir",
+            "cie": "Fahs Anjra",
+            "lng": -5.6222,
+            "lat": 35.8045,
+            "pop": 17125,
+            "densite": 197.09,
+            "rayonKm": 5.26,
+            "parties": 1
+        },
+        {
+            "nom": "Dar El Gueddari",
+            "cie": "Sidi Kacem",
+            "lng": -6.1227,
+            "lat": 34.4592,
+            "pop": 26943,
+            "densite": 193.23,
+            "rayonKm": 6.66,
+            "parties": 1
+        },
+        {
+            "nom": "Lamjaara",
+            "cie": "Ouazzane",
+            "lng": -5.2318,
+            "lat": 34.6464,
+            "pop": 32243,
+            "densite": 185.4,
+            "rayonKm": 7.44,
+            "parties": 1
+        },
+        {
+            "nom": "Jorf El Melha",
+            "cie": "Sidi Kacem",
+            "lng": -5.4697,
+            "lat": 34.4645,
+            "pop": 67143,
+            "densite": 185.2,
+            "rayonKm": 10.74,
+            "parties": 1
+        },
+        {
+            "nom": "Sidi Aissa",
+            "cie": "Fkih Ben Salah",
+            "lng": -6.7083,
+            "lat": 32.3774,
+            "pop": 54542,
+            "densite": 184.19,
+            "rayonKm": 9.71,
+            "parties": 1
+        },
+        {
+            "nom": "Ait Ourir",
+            "cie": "Tahannaout",
+            "lng": -7.5956,
+            "lat": 31.4377,
+            "pop": 152484,
+            "densite": 182.25,
+            "rayonKm": 16.32,
+            "parties": 1
+        },
+        {
+            "nom": "Moulay Bouselham",
+            "cie": "Souk Larbaa du Gharb",
+            "lng": -6.1839,
+            "lat": 34.9215,
+            "pop": 54017,
+            "densite": 181.86,
+            "rayonKm": 9.72,
+            "parties": 1
+        },
+        {
+            "nom": "Taounate",
+            "cie": "Taounate",
+            "lng": -4.6277,
+            "lat": 34.5613,
+            "pop": 87486,
+            "densite": 180.68,
+            "rayonKm": 12.41,
+            "parties": 1
+        },
+        {
+            "nom": "Khemiss Zemamra",
+            "cie": "Sidi Bennour",
+            "lng": -8.6819,
+            "lat": 32.6665,
+            "pop": 102265,
+            "densite": 179.52,
+            "rayonKm": 13.47,
+            "parties": 1
+        },
+        {
+            "nom": "Youssoufia",
+            "cie": "Youssoufia",
+            "lng": -8.5615,
+            "lat": 32.2015,
+            "pop": 97601,
+            "densite": 177.17,
+            "rayonKm": 13.24,
+            "parties": 1
+        },
+        {
+            "nom": "Chefchaouen",
+            "cie": "Chefchaouen",
+            "lng": -5.1594,
+            "lat": 35.0948,
+            "pop": 108589,
+            "densite": 170.44,
+            "rayonKm": 14.24,
+            "parties": 1
+        },
+        {
+            "nom": "Benguerir",
+            "cie": "Benguerir",
+            "lng": -7.967,
+            "lat": 32.256,
+            "pop": 141567,
+            "densite": 169.32,
+            "rayonKm": 16.31,
+            "parties": 1
+        },
+        {
+            "nom": "Saidia",
+            "cie": "Berkane",
+            "lng": -2.3049,
+            "lat": 35.0437,
+            "pop": 39734,
+            "densite": 167.56,
+            "rayonKm": 8.69,
+            "parties": 1
+        },
+        {
+            "nom": "El Kelaâ Des Sraghna",
+            "cie": "El Kelaâ Des Sraghna",
+            "lng": -7.4391,
+            "lat": 32.2201,
+            "pop": 167129,
+            "densite": 167.46,
+            "rayonKm": 17.82,
+            "parties": 1
+        },
+        {
+            "nom": "Tahannaout",
+            "cie": "Tahannaout",
+            "lng": -7.9285,
+            "lat": 31.3827,
+            "pop": 52494,
+            "densite": 167.4,
+            "rayonKm": 9.99,
+            "parties": 1
+        },
+        {
+            "nom": "Tameslohte",
+            "cie": "Tahannaout",
+            "lng": -8.0708,
+            "lat": 31.4618,
+            "pop": 40283,
+            "densite": 166.26,
+            "rayonKm": 8.78,
+            "parties": 1
+        },
+        {
+            "nom": "Ait Iaaza",
+            "cie": "Taroudannt",
+            "lng": -8.7582,
+            "lat": 30.5395,
+            "pop": 53331,
+            "densite": 165.2,
+            "rayonKm": 10.14,
+            "parties": 1
+        },
+        {
+            "nom": "Bni Ayat",
+            "cie": "Azilal",
+            "lng": -6.658,
+            "lat": 32.2034,
+            "pop": 23675,
+            "densite": 164.72,
+            "rayonKm": 6.76,
+            "parties": 1
+        },
+        {
+            "nom": "Benslimane",
+            "cie": "Benslimane",
+            "lng": -7.0754,
+            "lat": 33.5797,
+            "pop": 102657,
+            "densite": 164.09,
+            "rayonKm": 14.11,
+            "parties": 1
+        },
+        {
+            "nom": "Ben Ahmed",
+            "cie": "Settat",
+            "lng": -7.2378,
+            "lat": 33.0842,
+            "pop": 75069,
+            "densite": 162.44,
+            "rayonKm": 12.13,
+            "parties": 1
+        },
+        {
+            "nom": "Tan Tan",
+            "cie": "Tan Tan",
+            "lng": -11.1422,
+            "lat": 28.5379,
+            "pop": 77085,
+            "densite": 161.15,
+            "rayonKm": 12.34,
+            "parties": 1
+        },
+        {
+            "nom": "Malloussa",
+            "cie": "Fahs Anjra",
+            "lng": -5.6595,
+            "lat": 35.7022,
+            "pop": 44384,
+            "densite": 158.07,
+            "rayonKm": 9.45,
+            "parties": 1
+        },
+        {
+            "nom": "Arbaoua",
+            "cie": "Souk Larbaa du Gharb",
+            "lng": -5.895,
+            "lat": 34.8963,
+            "pop": 41341,
+            "densite": 157.64,
+            "rayonKm": 9.14,
+            "parties": 1
+        },
+        {
+            "nom": "Ouled Salah",
+            "cie": "Bouskoura",
+            "lng": -7.6674,
+            "lat": 33.3611,
+            "pop": 18403,
+            "densite": 157.42,
+            "rayonKm": 6.1,
+            "parties": 1
+        },
+        {
+            "nom": "Bni Chiker",
+            "cie": "Nador",
+            "lng": -3.048,
+            "lat": 35.2876,
+            "pop": 35469,
+            "densite": 155.67,
+            "rayonKm": 8.52,
+            "parties": 1
+        },
+        {
+            "nom": "Bni Oulichek",
+            "cie": "Azib Midar",
+            "lng": -3.493,
+            "lat": 35.0947,
+            "pop": 33923,
+            "densite": 155.21,
+            "rayonKm": 8.34,
+            "parties": 1
+        },
+        {
+            "nom": "Ain Dorrij",
+            "cie": "Ouazzane",
+            "lng": -5.3385,
+            "lat": 34.6069,
+            "pop": 41714,
+            "densite": 152.88,
+            "rayonKm": 9.32,
+            "parties": 1
+        },
+        {
+            "nom": "Sidi Driss",
+            "cie": "El Kelaâ Des Sraghna",
+            "lng": -7.1413,
+            "lat": 31.8893,
+            "pop": 93964,
+            "densite": 152.48,
+            "rayonKm": 14.01,
+            "parties": 1
+        },
+        {
+            "nom": "Bni Oulid",
+            "cie": "Taounate",
+            "lng": -4.4751,
+            "lat": 34.5885,
+            "pop": 45354,
+            "densite": 149.32,
+            "rayonKm": 9.83,
+            "parties": 1
+        },
+        {
+            "nom": "El Gara",
+            "cie": "Berrechid",
+            "lng": -7.3302,
+            "lat": 33.3093,
+            "pop": 34510,
+            "densite": 148.96,
+            "rayonKm": 8.59,
+            "parties": 1
+        },
+        {
+            "nom": "Ourika",
+            "cie": "Tahannaout",
+            "lng": -7.7404,
+            "lat": 31.3053,
+            "pop": 120613,
+            "densite": 148.73,
+            "rayonKm": 16.07,
+            "parties": 1
+        },
+        {
+            "nom": "Fkih Ben Saleh",
+            "cie": "Fkih Ben Salah",
+            "lng": -6.8101,
+            "lat": 32.5347,
+            "pop": 160183,
+            "densite": 148.04,
+            "rayonKm": 18.56,
+            "parties": 1
+        },
+        {
+            "nom": "Had Belfaa",
+            "cie": "Biougra",
+            "lng": -9.4929,
+            "lat": 30.0082,
+            "pop": 88204,
+            "densite": 147.97,
+            "rayonKm": 13.77,
+            "parties": 1
+        },
+        {
+            "nom": "Oued Laou",
+            "cie": "Tétouan",
+            "lng": -5.1979,
+            "lat": 35.459,
+            "pop": 35006,
+            "densite": 147.2,
+            "rayonKm": 8.7,
+            "parties": 1
+        },
+        {
+            "nom": "Bouderbala",
+            "cie": "El Hajeb",
+            "lng": -5.3038,
+            "lat": 33.7948,
+            "pop": 36384,
+            "densite": 143.96,
+            "rayonKm": 8.97,
+            "parties": 1
+        },
+        {
+            "nom": "Ksar El Majaz",
+            "cie": "Fahs Anjra",
+            "lng": -5.5208,
+            "lat": 35.8176,
+            "pop": 12703,
+            "densite": 142.75,
+            "rayonKm": 5.32,
+            "parties": 1
+        },
+        {
+            "nom": "Moulay Driss Zerhoun",
+            "cie": "Meknès",
+            "lng": -5.5232,
+            "lat": 34.0874,
+            "pop": 19047,
+            "densite": 141.68,
+            "rayonKm": 6.54,
+            "parties": 1
+        },
+        {
+            "nom": "Ain El Orma",
+            "cie": "Meknès",
+            "lng": -5.6822,
+            "lat": 33.9043,
+            "pop": 34029,
+            "densite": 141.51,
+            "rayonKm": 8.75,
+            "parties": 1
+        },
+        {
+            "nom": "Had Bradia",
+            "cie": "Fkih Ben Salah",
+            "lng": -6.53,
+            "lat": 32.4869,
+            "pop": 50830,
+            "densite": 138.04,
+            "rayonKm": 10.83,
+            "parties": 1
+        },
+        {
+            "nom": "Zaiou",
+            "cie": "Zaiou",
+            "lng": -2.7764,
+            "lat": 34.9327,
+            "pop": 62818,
+            "densite": 137.03,
+            "rayonKm": 12.08,
+            "parties": 1
+        },
+        {
+            "nom": "Khnichet",
+            "cie": "Sidi Kacem",
+            "lng": -5.6898,
+            "lat": 34.4727,
+            "pop": 45801,
+            "densite": 135.56,
+            "rayonKm": 10.37,
+            "parties": 1
+        },
+        {
+            "nom": "Immouzer Kandar",
+            "cie": "Sefrou",
+            "lng": -5.0581,
+            "lat": 33.734,
+            "pop": 40644,
+            "densite": 133.9,
+            "rayonKm": 9.83,
+            "parties": 1
+        },
+        {
+            "nom": "Kceibia",
+            "cie": "Sidi Slimane",
+            "lng": -6.1385,
+            "lat": 34.2953,
+            "pop": 57751,
+            "densite": 133.3,
+            "rayonKm": 11.74,
+            "parties": 1
+        },
+        {
+            "nom": "Bni Karrich",
+            "cie": "Tétouan",
+            "lng": -5.3928,
+            "lat": 35.4471,
+            "pop": 18329,
+            "densite": 132.02,
+            "rayonKm": 6.65,
+            "parties": 1
+        },
+        {
+            "nom": "Ahfir",
+            "cie": "Berkane",
+            "lng": -2.1902,
+            "lat": 34.9232,
+            "pop": 40597,
+            "densite": 131.23,
+            "rayonKm": 9.92,
+            "parties": 1
+        },
+        {
+            "nom": "Sidi Smail",
+            "cie": "El Jadida",
+            "lng": -8.5506,
+            "lat": 32.8635,
+            "pop": 71753,
+            "densite": 128.99,
+            "rayonKm": 13.31,
+            "parties": 1
+        },
+        {
+            "nom": "Beni Ahmed",
+            "cie": "Chefchaouen",
+            "lng": -5.0329,
+            "lat": 34.8613,
+            "pop": 47024,
+            "densite": 126.94,
+            "rayonKm": 10.86,
+            "parties": 1
+        },
+        {
+            "nom": "Dar Ouled Zidouh",
+            "cie": "Fkih Ben Salah",
+            "lng": -6.8884,
+            "lat": 32.3382,
+            "pop": 30114,
+            "densite": 125.46,
+            "rayonKm": 8.74,
+            "parties": 1
+        },
+        {
+            "nom": "M'Rirt",
+            "cie": "Khénifra",
+            "lng": -5.4194,
+            "lat": 33.0953,
+            "pop": 54106,
+            "densite": 125.29,
+            "rayonKm": 11.72,
+            "parties": 1
+        },
+        {
+            "nom": "Sidi Rahal",
+            "cie": "El Kelaâ Des Sraghna",
+            "lng": -7.4534,
+            "lat": 31.7304,
+            "pop": 54840,
+            "densite": 125.25,
+            "rayonKm": 11.81,
+            "parties": 1
+        },
+        {
+            "nom": "Oued Amlil",
+            "cie": "Oued Amlil",
+            "lng": -4.2588,
+            "lat": 34.2085,
+            "pop": 88214,
+            "densite": 123.21,
+            "rayonKm": 15.1,
+            "parties": 1
+        },
+        {
+            "nom": "Ain Aicha",
+            "cie": "Taounate",
+            "lng": -4.6036,
+            "lat": 34.4174,
+            "pop": 33362,
+            "densite": 123.06,
+            "rayonKm": 9.29,
+            "parties": 1
+        },
+        {
+            "nom": "Tahla",
+            "cie": "Oued Amlil",
+            "lng": -4.3175,
+            "lat": 33.9847,
+            "pop": 45340,
+            "densite": 121.67,
+            "rayonKm": 10.89,
+            "parties": 1
+        },
+        {
+            "nom": "Ghafsai",
+            "cie": "Kariat Ba Mohamed",
+            "lng": -4.8593,
+            "lat": 34.701,
+            "pop": 80564,
+            "densite": 120.62,
+            "rayonKm": 14.58,
+            "parties": 1
+        },
+        {
+            "nom": "Ketama",
+            "cie": "Targuiste",
+            "lng": -4.5801,
+            "lat": 34.9038,
+            "pop": 43881,
+            "densite": 120.51,
+            "rayonKm": 10.77,
+            "parties": 1
+        },
+        {
+            "nom": "Ouled Amrane",
+            "cie": "Sidi Bennour",
+            "lng": -8.5675,
+            "lat": 32.4605,
+            "pop": 55927,
+            "densite": 119.06,
+            "rayonKm": 12.23,
+            "parties": 1
+        },
+        {
+            "nom": "Khmis Metouh",
+            "cie": "El Jadida",
+            "lng": -8.1227,
+            "lat": 32.9018,
+            "pop": 50456,
+            "densite": 118.4,
+            "rayonKm": 11.65,
+            "parties": 1
+        },
+        {
+            "nom": "Ikaouene",
+            "cie": "Targuiste",
+            "lng": -4.6485,
+            "lat": 34.7876,
+            "pop": 41407,
+            "densite": 117.2,
+            "rayonKm": 10.6,
+            "parties": 1
+        },
+        {
+            "nom": "Oued Zem",
+            "cie": "Oued Zem",
+            "lng": -6.505,
+            "lat": 32.9737,
+            "pop": 133220,
+            "densite": 116.8,
+            "rayonKm": 19.05,
+            "parties": 1
+        },
+        {
+            "nom": "Bni Hlal",
+            "cie": "Sidi Bennour",
+            "lng": -8.345,
+            "lat": 32.7696,
+            "pop": 61029,
+            "densite": 114.5,
+            "rayonKm": 13.03,
+            "parties": 1
+        },
+        {
+            "nom": "Sidi Harazem",
+            "cie": "Fès",
+            "lng": -4.8849,
+            "lat": 33.9959,
+            "pop": 16857,
+            "densite": 114.4,
+            "rayonKm": 6.85,
+            "parties": 1
+        },
+        {
+            "nom": "Bab Berred",
+            "cie": "Chefchaouen",
+            "lng": -4.8982,
+            "lat": 35.0434,
+            "pop": 106568,
+            "densite": 114.32,
+            "rayonKm": 17.23,
+            "parties": 1
+        },
+        {
+            "nom": "Sefrou",
+            "cie": "Sefrou",
+            "lng": -4.7594,
+            "lat": 33.7054,
+            "pop": 122103,
+            "densite": 114.21,
+            "rayonKm": 18.45,
+            "parties": 1
+        },
+        {
+            "nom": "Zoumi",
+            "cie": "Ouazzane",
+            "lng": -5.3281,
+            "lat": 34.8008,
+            "pop": 50572,
+            "densite": 113.88,
+            "rayonKm": 11.89,
+            "parties": 1
+        },
+        {
+            "nom": "Taghzirt",
+            "cie": "Béni Mellal",
+            "lng": -6.1685,
+            "lat": 32.3932,
+            "pop": 58028,
+            "densite": 113.33,
+            "rayonKm": 12.77,
+            "parties": 1
+        },
+        {
+            "nom": "Khemis Anjra",
+            "cie": "Fahs Anjra",
+            "lng": -5.4923,
+            "lat": 35.7583,
+            "pop": 26577,
+            "densite": 113.22,
+            "rayonKm": 8.64,
+            "parties": 1
+        },
+        {
+            "nom": "El Beddouza",
+            "cie": "Safi",
+            "lng": -9.1178,
+            "lat": 32.589,
+            "pop": 45148,
+            "densite": 113.19,
+            "rayonKm": 11.27,
+            "parties": 1
+        },
+        {
+            "nom": "Fetouaka",
+            "cie": "Azilal",
+            "lng": -7.1605,
+            "lat": 31.674,
+            "pop": 49083,
+            "densite": 112.33,
+            "rayonKm": 11.79,
+            "parties": 1
+        },
+        {
+            "nom": "Mrhassiyine",
+            "cie": "Meknès",
+            "lng": -5.4353,
+            "lat": 34.0199,
+            "pop": 20513,
+            "densite": 110.33,
+            "rayonKm": 7.69,
+            "parties": 1
+        },
+        {
+            "nom": "Guercif",
+            "cie": "Guercif",
+            "lng": -3.2866,
+            "lat": 34.2029,
+            "pop": 120650,
+            "densite": 110.27,
+            "rayonKm": 18.66,
+            "parties": 1
+        },
+        {
+            "nom": "El Oualidia",
+            "cie": "Sidi Bennour",
+            "lng": -8.9138,
+            "lat": 32.6305,
+            "pop": 44364,
+            "densite": 109.79,
+            "rayonKm": 11.34,
+            "parties": 1
+        },
+        {
+            "nom": "Moulay Yacoub",
+            "cie": "Moulay Yacoub",
+            "lng": -5.2237,
+            "lat": 34.1303,
+            "pop": 49424,
+            "densite": 107.73,
+            "rayonKm": 12.08,
+            "parties": 1
+        },
+        {
+            "nom": "Jemaa Ouled Ghanem",
+            "cie": "El Jadida",
+            "lng": -8.7683,
+            "lat": 32.8477,
+            "pop": 70115,
+            "densite": 107.15,
+            "rayonKm": 14.43,
+            "parties": 1
+        },
+        {
+            "nom": "Sebt Gzoula",
+            "cie": "Safi",
+            "lng": -9.1549,
+            "lat": 32.0961,
+            "pop": 80857,
+            "densite": 106.39,
+            "rayonKm": 15.55,
+            "parties": 1
+        },
+        {
+            "nom": "Massa",
+            "cie": "Biougra",
+            "lng": -9.6566,
+            "lat": 29.9922,
+            "pop": 27996,
+            "densite": 106.05,
+            "rayonKm": 9.17,
+            "parties": 1
+        },
+        {
+            "nom": "Sidi Ameur Lhadi",
+            "cie": "Sidi Kacem",
+            "lng": -5.8313,
+            "lat": 34.7581,
+            "pop": 19388,
+            "densite": 105.05,
+            "rayonKm": 7.66,
+            "parties": 1
+        },
+        {
+            "nom": "Boulanouare",
+            "cie": "Khouribga",
+            "lng": -6.7989,
+            "lat": 32.8566,
+            "pop": 20660,
+            "densite": 104.53,
+            "rayonKm": 7.93,
+            "parties": 1
+        },
+        {
+            "nom": "Bouarous",
+            "cie": "Taounate",
+            "lng": -4.7908,
+            "lat": 34.4123,
+            "pop": 27129,
+            "densite": 104.45,
+            "rayonKm": 9.09,
+            "parties": 1
+        },
+        {
+            "nom": "Moul El Bergui",
+            "cie": "Safi",
+            "lng": -8.9833,
+            "lat": 32.5036,
+            "pop": 18856,
+            "densite": 104.43,
+            "rayonKm": 7.58,
+            "parties": 1
+        },
+        {
+            "nom": "Ait Yazem",
+            "cie": "El Hajeb",
+            "lng": -5.6124,
+            "lat": 33.7622,
+            "pop": 16912,
+            "densite": 104.1,
+            "rayonKm": 7.19,
+            "parties": 1
+        },
+        {
+            "nom": "Sidi Redouane",
+            "cie": "Ouazzane",
+            "lng": -5.4889,
+            "lat": 34.7213,
+            "pop": 31454,
+            "densite": 101.96,
+            "rayonKm": 9.91,
+            "parties": 1
+        },
+        {
+            "nom": "Sebt El Guerdane",
+            "cie": "Taroudannt",
+            "lng": -8.9766,
+            "lat": 30.2798,
+            "pop": 80276,
+            "densite": 101.83,
+            "rayonKm": 15.84,
+            "parties": 1
+        },
+        {
+            "nom": "Tamellalt",
+            "cie": "El Kelaâ Des Sraghna",
+            "lng": -7.4771,
+            "lat": 31.9358,
+            "pop": 41404,
+            "densite": 101.16,
+            "rayonKm": 11.41,
+            "parties": 1
+        },
+        {
+            "nom": "Karia Ba Mohamed",
+            "cie": "Kariat Ba Mohamed",
+            "lng": -5.2612,
+            "lat": 34.4101,
+            "pop": 88544,
+            "densite": 100.67,
+            "rayonKm": 16.73,
+            "parties": 1
+        },
+        {
+            "nom": "Boudinar",
+            "cie": "Azib Midar",
+            "lng": -3.6767,
+            "lat": 35.1719,
+            "pop": 42247,
+            "densite": 99.85,
+            "rayonKm": 11.6,
+            "parties": 1
+        },
+        {
+            "nom": "Ait Chouarite",
+            "cie": "Azilal",
+            "lng": -6.8198,
+            "lat": 31.7866,
+            "pop": 52788,
+            "densite": 99.23,
+            "rayonKm": 13.01,
+            "parties": 1
+        },
+        {
+            "nom": "El Aounate",
+            "cie": "Sidi Bennour",
+            "lng": -8.1402,
+            "lat": 32.6968,
+            "pop": 30280,
+            "densite": 98.53,
+            "rayonKm": 9.89,
+            "parties": 1
+        },
+        {
+            "nom": "Laajajra",
+            "cie": "Moulay Yacoub",
+            "lng": -5.1582,
+            "lat": 34.2195,
+            "pop": 27803,
+            "densite": 98.33,
+            "rayonKm": 9.49,
+            "parties": 1
+        },
+        {
+            "nom": "Kasba Tadla",
+            "cie": "Béni Mellal",
+            "lng": -6.3362,
+            "lat": 32.6052,
+            "pop": 97180,
+            "densite": 98.28,
+            "rayonKm": 17.74,
+            "parties": 1
+        },
+        {
+            "nom": "Oulja",
+            "cie": "Kariat Ba Mohamed",
+            "lng": -4.9892,
+            "lat": 34.3633,
+            "pop": 54590,
+            "densite": 98.12,
+            "rayonKm": 13.31,
+            "parties": 1
+        },
+        {
+            "nom": "Had Boumoussa",
+            "cie": "Fkih Ben Salah",
+            "lng": -7.0039,
+            "lat": 32.2651,
+            "pop": 41154,
+            "densite": 97.02,
+            "rayonKm": 11.62,
+            "parties": 1
+        },
+        {
+            "nom": "Ras El Ain Chaouia",
+            "cie": "Settat",
+            "lng": -7.3796,
+            "lat": 33.0041,
+            "pop": 30832,
+            "densite": 96.61,
+            "rayonKm": 10.08,
+            "parties": 1
+        },
+        {
+            "nom": "Agafay",
+            "cie": "Marrakech",
+            "lng": -8.2539,
+            "lat": 31.5026,
+            "pop": 32374,
+            "densite": 96.44,
+            "rayonKm": 10.34,
+            "parties": 1
+        },
+        {
+            "nom": "Azrou",
+            "cie": "Azrou",
+            "lng": -5.2919,
+            "lat": 33.4776,
+            "pop": 75418,
+            "densite": 95.88,
+            "rayonKm": 15.82,
+            "parties": 1
+        },
+        {
+            "nom": "Azib Midar",
+            "cie": "Azib Midar",
+            "lng": -3.5812,
+            "lat": 34.9752,
+            "pop": 28466,
+            "densite": 95.2,
+            "rayonKm": 9.76,
+            "parties": 1
+        },
+        {
+            "nom": "Bni Frassen",
+            "cie": "Oued Amlil",
+            "lng": -4.3582,
+            "lat": 34.3694,
+            "pop": 26029,
+            "densite": 93.91,
+            "rayonKm": 9.39,
+            "parties": 1
+        },
+        {
+            "nom": "Had Ras El Ain",
+            "cie": "Benguerir",
+            "lng": -7.6351,
+            "lat": 31.7999,
+            "pop": 43914,
+            "densite": 93.09,
+            "rayonKm": 12.25,
+            "parties": 1
+        },
+        {
+            "nom": "Ourtzagh",
+            "cie": "Kariat Ba Mohamed",
+            "lng": -5.002,
+            "lat": 34.6064,
+            "pop": 67072,
+            "densite": 92.91,
+            "rayonKm": 15.16,
+            "parties": 1
+        },
+        {
+            "nom": "Dar Bel Amri",
+            "cie": "Sidi Slimane",
+            "lng": -6.0097,
+            "lat": 34.1797,
+            "pop": 44580,
+            "densite": 91.92,
+            "rayonKm": 12.43,
+            "parties": 1
+        },
+        {
+            "nom": "Chemaia",
+            "cie": "Youssoufia",
+            "lng": -8.7308,
+            "lat": 32.0381,
+            "pop": 65692,
+            "densite": 91.69,
+            "rayonKm": 15.1,
+            "parties": 1
+        },
+        {
+            "nom": "Taroudannt",
+            "cie": "Taroudannt",
+            "lng": -8.9295,
+            "lat": 30.6223,
+            "pop": 178096,
+            "densite": 91.2,
+            "rayonKm": 24.93,
+            "parties": 1
+        },
+        {
+            "nom": "El Hajeb",
+            "cie": "El Hajeb",
+            "lng": -5.4173,
+            "lat": 33.6582,
+            "pop": 63896,
+            "densite": 90.75,
+            "rayonKm": 14.97,
+            "parties": 1
+        },
+        {
+            "nom": "Beni Drar",
+            "cie": "Oujda",
+            "lng": -2.0201,
+            "lat": 34.864,
+            "pop": 17146,
+            "densite": 90.1,
+            "rayonKm": 7.78,
+            "parties": 1
+        },
+        {
+            "nom": "Guisser",
+            "cie": "Settat",
+            "lng": -7.476,
+            "lat": 32.76,
+            "pop": 33491,
+            "densite": 89.74,
+            "rayonKm": 10.9,
+            "parties": 1
+        },
+        {
+            "nom": "Had Kourt",
+            "cie": "Sidi Kacem",
+            "lng": -5.7759,
+            "lat": 34.5894,
+            "pop": 30778,
+            "densite": 89.3,
+            "rayonKm": 10.47,
+            "parties": 1
+        },
+        {
+            "nom": "Arbaa Gazet",
+            "cie": "El Kelaâ Des Sraghna",
+            "lng": -7.2444,
+            "lat": 32.2273,
+            "pop": 76115,
+            "densite": 88.42,
+            "rayonKm": 16.55,
+            "parties": 1
+        },
+        {
+            "nom": "El Ksiba",
+            "cie": "Béni Mellal",
+            "lng": -5.9956,
+            "lat": 32.5279,
+            "pop": 51204,
+            "densite": 88.21,
+            "rayonKm": 13.59,
+            "parties": 1
+        },
+        {
+            "nom": "Tissa",
+            "cie": "Taounate",
+            "lng": -4.6594,
+            "lat": 34.2721,
+            "pop": 57685,
+            "densite": 87.96,
+            "rayonKm": 14.45,
+            "parties": 1
+        },
+        {
+            "nom": "Tlet Sidi Bouguedra",
+            "cie": "Safi",
+            "lng": -8.9575,
+            "lat": 32.1029,
+            "pop": 95371,
+            "densite": 87.41,
+            "rayonKm": 18.64,
+            "parties": 1
+        },
+        {
+            "nom": "Ait Yadine",
+            "cie": "Khémisset",
+            "lng": -5.974,
+            "lat": 34.0141,
+            "pop": 34799,
+            "densite": 86.22,
+            "rayonKm": 11.33,
+            "parties": 1
+        },
+        {
+            "nom": "Gharbia",
+            "cie": "Tanger",
+            "lng": -5.935,
+            "lat": 35.5044,
+            "pop": 17819,
+            "densite": 86.2,
+            "rayonKm": 8.11,
+            "parties": 1
+        },
+        {
+            "nom": "Rommani",
+            "cie": "Rommani",
+            "lng": -6.652,
+            "lat": 33.5466,
+            "pop": 24134,
+            "densite": 85.81,
+            "rayonKm": 9.46,
+            "parties": 1
+        },
+        {
+            "nom": "Laayoune",
+            "cie": "Laayoune",
+            "lng": -12.6937,
+            "lat": 26.9396,
+            "pop": 263692,
+            "densite": 85.69,
+            "rayonKm": 31.3,
+            "parties": 1
+        },
+        {
+            "nom": "Steha",
+            "cie": "Chefchaouen",
+            "lng": -5.0316,
+            "lat": 35.299,
+            "pop": 46556,
+            "densite": 85.51,
+            "rayonKm": 13.16,
+            "parties": 1
+        },
+        {
+            "nom": "Ain Bou Ali",
+            "cie": "Moulay Yacoub",
+            "lng": -4.9839,
+            "lat": 34.1254,
+            "pop": 12354,
+            "densite": 84.74,
+            "rayonKm": 6.81,
+            "parties": 1
+        },
+        {
+            "nom": "Sidi Hajjaj",
+            "cie": "Settat",
+            "lng": -7.2175,
+            "lat": 32.8233,
+            "pop": 70924,
+            "densite": 84.2,
+            "rayonKm": 16.37,
+            "parties": 1
+        },
+        {
+            "nom": "Ouled Berrehil",
+            "cie": "Taroudannt",
+            "lng": -8.5007,
+            "lat": 30.5627,
+            "pop": 106574,
+            "densite": 84.16,
+            "rayonKm": 20.08,
+            "parties": 1
+        },
+        {
+            "nom": "Targuiste",
+            "cie": "Targuiste",
+            "lng": -4.3753,
+            "lat": 34.8296,
+            "pop": 57089,
+            "densite": 83.84,
+            "rayonKm": 14.72,
+            "parties": 1
+        },
+        {
+            "nom": "Aquermoud",
+            "cie": "Essaouira",
+            "lng": -9.4767,
+            "lat": 31.8038,
+            "pop": 32135,
+            "densite": 83.57,
+            "rayonKm": 11.06,
+            "parties": 1
+        },
+        {
+            "nom": "Bhalil",
+            "cie": "Sefrou",
+            "lng": -4.808,
+            "lat": 33.8559,
+            "pop": 37395,
+            "densite": 83.57,
+            "rayonKm": 11.93,
+            "parties": 1
+        },
+        {
+            "nom": "Zaggota",
+            "cie": "Sidi Kacem",
+            "lng": -5.5229,
+            "lat": 34.2191,
+            "pop": 20611,
+            "densite": 83.47,
+            "rayonKm": 8.87,
+            "parties": 1
+        },
+        {
+            "nom": "Oued Nekkour",
+            "cie": "Al Hoceima",
+            "lng": -3.9237,
+            "lat": 34.9474,
+            "pop": 34839,
+            "densite": 83.37,
+            "rayonKm": 11.53,
+            "parties": 1
+        },
+        {
+            "nom": "El Menzel",
+            "cie": "Sefrou",
+            "lng": -4.5388,
+            "lat": 33.8334,
+            "pop": 27926,
+            "densite": 82.43,
+            "rayonKm": 10.38,
+            "parties": 1
+        },
+        {
+            "nom": "Had Ouled Frej",
+            "cie": "El Jadida",
+            "lng": -8.2637,
+            "lat": 33.0257,
+            "pop": 59631,
+            "densite": 82.01,
+            "rayonKm": 15.21,
+            "parties": 1
+        },
+        {
+            "nom": "Ait Ouribel",
+            "cie": "Khémisset",
+            "lng": -6.0344,
+            "lat": 33.7538,
+            "pop": 24822,
+            "densite": 81.33,
+            "rayonKm": 9.86,
+            "parties": 1
+        },
+        {
+            "nom": "Khémiss Sahel",
+            "cie": "Larache",
+            "lng": -6.0182,
+            "lat": 35.2545,
+            "pop": 38144,
+            "densite": 80.45,
+            "rayonKm": 12.29,
+            "parties": 1
+        },
+        {
+            "nom": "Agourai",
+            "cie": "El Hajeb",
+            "lng": -5.6376,
+            "lat": 33.512,
+            "pop": 22720,
+            "densite": 80.43,
+            "rayonKm": 9.48,
+            "parties": 1
+        },
+        {
+            "nom": "Ain Dfali",
+            "cie": "Sidi Kacem",
+            "lng": -5.5796,
+            "lat": 34.6244,
+            "pop": 29641,
+            "densite": 80.19,
+            "rayonKm": 10.85,
+            "parties": 1
+        },
+        {
+            "nom": "Jemaa S'Haim",
+            "cie": "Safi",
+            "lng": -8.7536,
+            "lat": 32.3813,
+            "pop": 69235,
+            "densite": 79.74,
+            "rayonKm": 16.62,
+            "parties": 1
+        },
+        {
+            "nom": "Ifrane",
+            "cie": "Ifrane",
+            "lng": -5.1483,
+            "lat": 33.6276,
+            "pop": 26168,
+            "densite": 79.69,
+            "rayonKm": 10.22,
+            "parties": 1
+        },
+        {
+            "nom": "Zaouiat Cheikh",
+            "cie": "Béni Mellal",
+            "lng": -5.9231,
+            "lat": 32.6609,
+            "pop": 32951,
+            "densite": 79.29,
+            "rayonKm": 11.5,
+            "parties": 1
+        },
+        {
+            "nom": "Tiznit",
+            "cie": "Tiznit",
+            "lng": -9.6539,
+            "lat": 29.6707,
+            "pop": 127366,
+            "densite": 78.49,
+            "rayonKm": 22.73,
+            "parties": 1
+        },
+        {
+            "nom": "Souiria Laqdima",
+            "cie": "Safi",
+            "lng": -9.3159,
+            "lat": 31.9657,
+            "pop": 26208,
+            "densite": 78.13,
+            "rayonKm": 10.33,
+            "parties": 1
+        },
+        {
+            "nom": "Ouled Mimoun",
+            "cie": "Moulay Yacoub",
+            "lng": -4.9138,
+            "lat": 34.1712,
+            "pop": 35832,
+            "densite": 77.92,
+            "rayonKm": 12.1,
+            "parties": 1
+        },
+        {
+            "nom": "Sidi Allal El Bahraoui",
+            "cie": "Khémisset",
+            "lng": -6.4245,
+            "lat": 34.0113,
+            "pop": 54739,
+            "densite": 77.37,
+            "rayonKm": 15.01,
+            "parties": 1
+        },
+        {
+            "nom": "Jebha",
+            "cie": "Chefchaouen",
+            "lng": -4.6545,
+            "lat": 35.0935,
+            "pop": 62127,
+            "densite": 76.79,
+            "rayonKm": 16.05,
+            "parties": 1
+        },
+        {
+            "nom": "Ait Aatab",
+            "cie": "Azilal",
+            "lng": -6.7042,
+            "lat": 32.0976,
+            "pop": 29397,
+            "densite": 75.31,
+            "rayonKm": 11.15,
+            "parties": 1
+        },
+        {
+            "nom": "Matmata",
+            "cie": "Oued Amlil",
+            "lng": -4.486,
+            "lat": 34.0288,
+            "pop": 26812,
+            "densite": 73.7,
+            "rayonKm": 10.76,
+            "parties": 1
+        },
+        {
+            "nom": "Oulad Riyab",
+            "cie": "Taounate",
+            "lng": -4.5455,
+            "lat": 34.1742,
+            "pop": 37116,
+            "densite": 73.01,
+            "rayonKm": 12.72,
+            "parties": 1
+        },
+        {
+            "nom": "Thar Souk",
+            "cie": "Taounate",
+            "lng": -4.2822,
+            "lat": 34.6694,
+            "pop": 33748,
+            "densite": 70.79,
+            "rayonKm": 12.32,
+            "parties": 1
+        },
+        {
+            "nom": "Ounagha",
+            "cie": "Essaouira",
+            "lng": -9.5482,
+            "lat": 31.5838,
+            "pop": 32738,
+            "densite": 69.4,
+            "rayonKm": 12.25,
+            "parties": 1
+        },
+        {
+            "nom": "Taourirt",
+            "cie": "Taourirt",
+            "lng": -2.9328,
+            "lat": 34.3414,
+            "pop": 127657,
+            "densite": 69.17,
+            "rayonKm": 24.24,
+            "parties": 1
+        },
+        {
+            "nom": "Imaddahen",
+            "cie": "Azilal",
+            "lng": -6.9494,
+            "lat": 32.0676,
+            "pop": 52071,
+            "densite": 68.75,
+            "rayonKm": 15.53,
+            "parties": 1
+        },
+        {
+            "nom": "Talmeste",
+            "cie": "Essaouira",
+            "lng": -9.2443,
+            "lat": 31.7986,
+            "pop": 41244,
+            "densite": 68,
+            "rayonKm": 13.89,
+            "parties": 1
+        },
+        {
+            "nom": "Lagfaf-Bni Ykhlef",
+            "cie": "Khouribga",
+            "lng": -6.8081,
+            "lat": 32.9661,
+            "pop": 17488,
+            "densite": 67.87,
+            "rayonKm": 9.06,
+            "parties": 1
+        },
+        {
+            "nom": "Demnate",
+            "cie": "Azilal",
+            "lng": -6.9354,
+            "lat": 31.5376,
+            "pop": 103944,
+            "densite": 67.7,
+            "rayonKm": 22.11,
+            "parties": 1
+        },
+        {
+            "nom": "Kabdana",
+            "cie": "Zaiou",
+            "lng": -2.6661,
+            "lat": 35.0541,
+            "pop": 18755,
+            "densite": 67.58,
+            "rayonKm": 9.4,
+            "parties": 1
+        },
+        {
+            "nom": "Taineste",
+            "cie": "Taza",
+            "lng": -4.1409,
+            "lat": 34.5427,
+            "pop": 16353,
+            "densite": 66.99,
+            "rayonKm": 8.82,
+            "parties": 1
+        },
+        {
+            "nom": "Aklim",
+            "cie": "Berkane",
+            "lng": -2.5664,
+            "lat": 34.8571,
+            "pop": 38892,
+            "densite": 66.92,
+            "rayonKm": 13.6,
+            "parties": 1
+        },
+        {
+            "nom": "Touama",
+            "cie": "Tahannaout",
+            "lng": -7.3558,
+            "lat": 31.507,
+            "pop": 81654,
+            "densite": 66.31,
+            "rayonKm": 19.8,
+            "parties": 1
+        },
+        {
+            "nom": "Bouizakarne",
+            "cie": "Guelmim",
+            "lng": -9.741,
+            "lat": 29.1939,
+            "pop": 23432,
+            "densite": 66.15,
+            "rayonKm": 10.62,
+            "parties": 1
+        },
+        {
+            "nom": "Laararcha",
+            "cie": "El Kelaâ Des Sraghna",
+            "lng": -7.6039,
+            "lat": 32.1643,
+            "pop": 32626,
+            "densite": 66.07,
+            "rayonKm": 12.54,
+            "parties": 1
+        },
+        {
+            "nom": "Fedalat",
+            "cie": "Benslimane",
+            "lng": -7.2642,
+            "lat": 33.5101,
+            "pop": 31429,
+            "densite": 65.71,
+            "rayonKm": 12.34,
+            "parties": 1
+        },
+        {
+            "nom": "Amezmiz",
+            "cie": "Tahannaout",
+            "lng": -8.2514,
+            "lat": 31.233,
+            "pop": 67828,
+            "densite": 65.39,
+            "rayonKm": 18.17,
+            "parties": 1
+        },
+        {
+            "nom": "Bni Hassan",
+            "cie": "Tétouan",
+            "lng": -5.3332,
+            "lat": 35.3208,
+            "pop": 32439,
+            "densite": 65.24,
+            "rayonKm": 12.58,
+            "parties": 1
+        },
+        {
+            "nom": "Tanant",
+            "cie": "Azilal",
+            "lng": -6.8431,
+            "lat": 31.9278,
+            "pop": 19553,
+            "densite": 63.86,
+            "rayonKm": 9.87,
+            "parties": 1
+        },
+        {
+            "nom": "Hattane",
+            "cie": "Khouribga",
+            "lng": -6.7732,
+            "lat": 32.7611,
+            "pop": 23647,
+            "densite": 62.4,
+            "rayonKm": 10.98,
+            "parties": 1
+        },
+        {
+            "nom": "Brikcha",
+            "cie": "Ouazzane",
+            "lng": -5.6218,
+            "lat": 34.915,
+            "pop": 20256,
+            "densite": 62.25,
+            "rayonKm": 10.18,
+            "parties": 1
+        },
+        {
+            "nom": "Souk Jemaa Ouled Abbou",
+            "cie": "Berrechid",
+            "lng": -7.9139,
+            "lat": 33.1415,
+            "pop": 52769,
+            "densite": 61.85,
+            "rayonKm": 16.48,
+            "parties": 1
+        },
+        {
+            "nom": "Al Aaroui",
+            "cie": "Zaiou",
+            "lng": -3.0351,
+            "lat": 34.8681,
+            "pop": 80065,
+            "densite": 61.79,
+            "rayonKm": 20.31,
+            "parties": 1
+        },
+        {
+            "nom": "Chichaoua",
+            "cie": "Chichaoua",
+            "lng": -8.6814,
+            "lat": 31.5227,
+            "pop": 94898,
+            "densite": 61.25,
+            "rayonKm": 22.21,
+            "parties": 1
+        },
+        {
+            "nom": "Machraa Ben Abbou",
+            "cie": "Settat",
+            "lng": -7.746,
+            "lat": 32.7301,
+            "pop": 31664,
+            "densite": 61.13,
+            "rayonKm": 12.84,
+            "parties": 1
+        },
+        {
+            "nom": "Ouarzazate",
+            "cie": "Ouarzazate",
+            "lng": -6.8893,
+            "lat": 31.0058,
+            "pop": 133350,
+            "densite": 60.96,
+            "rayonKm": 26.39,
+            "parties": 1
+        },
+        {
+            "nom": "Bouhmame",
+            "cie": "Sidi Bennour",
+            "lng": -8.367,
+            "lat": 32.4636,
+            "pop": 17816,
+            "densite": 60.54,
+            "rayonKm": 9.68,
+            "parties": 1
+        },
+        {
+            "nom": "Ahl Angad",
+            "cie": "Oujda",
+            "lng": -1.8645,
+            "lat": 34.6937,
+            "pop": 18051,
+            "densite": 60.39,
+            "rayonKm": 9.75,
+            "parties": 1
+        },
+        {
+            "nom": "Driouch",
+            "cie": "Azib Midar",
+            "lng": -3.4184,
+            "lat": 34.9062,
+            "pop": 32439,
+            "densite": 60.33,
+            "rayonKm": 13.08,
+            "parties": 1
+        },
+        {
+            "nom": "Metrane",
+            "cie": "Sidi Bennour",
+            "lng": -8.2056,
+            "lat": 32.5725,
+            "pop": 20412,
+            "densite": 59.87,
+            "rayonKm": 10.42,
+            "parties": 1
+        },
+        {
+            "nom": "Tlet El Hanchane",
+            "cie": "Essaouira",
+            "lng": -9.3477,
+            "lat": 31.466,
+            "pop": 48135,
+            "densite": 59.75,
+            "rayonKm": 16.01,
+            "parties": 1
+        },
+        {
+            "nom": "Shoul",
+            "cie": "Salé",
+            "lng": -6.6203,
+            "lat": 33.9161,
+            "pop": 24913,
+            "densite": 59.72,
+            "rayonKm": 11.52,
+            "parties": 1
+        },
+        {
+            "nom": "Ait Ishaq",
+            "cie": "Ait Ishaq",
+            "lng": -5.7849,
+            "lat": 32.7316,
+            "pop": 26697,
+            "densite": 59.69,
+            "rayonKm": 11.93,
+            "parties": 1
+        },
+        {
+            "nom": "Iksane",
+            "cie": "Nador",
+            "lng": -3.1115,
+            "lat": 35.1201,
+            "pop": 21296,
+            "densite": 59.61,
+            "rayonKm": 10.66,
+            "parties": 1
+        },
+        {
+            "nom": "Imrabten",
+            "cie": "Al Hoceima",
+            "lng": -3.9494,
+            "lat": 35.036,
+            "pop": 10301,
+            "densite": 59.07,
+            "rayonKm": 7.45,
+            "parties": 1
+        },
+        {
+            "nom": "Ain Jemaa",
+            "cie": "Meknès",
+            "lng": -5.7216,
+            "lat": 34.0679,
+            "pop": 28543,
+            "densite": 58.67,
+            "rayonKm": 12.44,
+            "parties": 1
+        },
+        {
+            "nom": "Bni Gmil",
+            "cie": "Targuiste",
+            "lng": -4.4177,
+            "lat": 35.0548,
+            "pop": 14966,
+            "densite": 58.09,
+            "rayonKm": 9.06,
+            "parties": 1
+        },
+        {
+            "nom": "Izemmouren",
+            "cie": "Al Hoceima",
+            "lng": -4.0836,
+            "lat": 35.1613,
+            "pop": 21492,
+            "densite": 58.08,
+            "rayonKm": 10.85,
+            "parties": 1
+        },
+        {
+            "nom": "Tighassaline",
+            "cie": "Ait Ishaq",
+            "lng": -5.5502,
+            "lat": 32.669,
+            "pop": 15788,
+            "densite": 57.63,
+            "rayonKm": 9.34,
+            "parties": 1
+        },
+        {
+            "nom": "Dar Chaffai",
+            "cie": "Settat",
+            "lng": -7.5166,
+            "lat": 32.5521,
+            "pop": 42544,
+            "densite": 57.52,
+            "rayonKm": 15.34,
+            "parties": 1
+        },
+        {
+            "nom": "Smimou",
+            "cie": "Tamanar",
+            "lng": -9.6729,
+            "lat": 31.2481,
+            "pop": 46801,
+            "densite": 57.04,
+            "rayonKm": 16.16,
+            "parties": 1
+        },
+        {
+            "nom": "Mellila",
+            "cie": "Benslimane",
+            "lng": -7.1378,
+            "lat": 33.331,
+            "pop": 37453,
+            "densite": 56.25,
+            "rayonKm": 14.56,
+            "parties": 1
+        },
+        {
+            "nom": "Imintanout",
+            "cie": "Chichaoua",
+            "lng": -8.9248,
+            "lat": 31.0787,
+            "pop": 72014,
+            "densite": 55.92,
+            "rayonKm": 20.25,
+            "parties": 1
+        },
+        {
+            "nom": "Had Ghdir Lakrouch",
+            "cie": "Chefchaouen",
+            "lng": -5.3422,
+            "lat": 35.0746,
+            "pop": 41849,
+            "densite": 55.79,
+            "rayonKm": 15.45,
+            "parties": 1
+        },
+        {
+            "nom": "Bir Tamtam",
+            "cie": "Sefrou",
+            "lng": -4.6748,
+            "lat": 34.0031,
+            "pop": 14976,
+            "densite": 55.35,
+            "rayonKm": 9.28,
+            "parties": 1
+        },
+        {
+            "nom": "Sidi Abderrazak",
+            "cie": "Khémisset",
+            "lng": -6.1983,
+            "lat": 34.0282,
+            "pop": 29091,
+            "densite": 54.88,
+            "rayonKm": 12.99,
+            "parties": 1
+        },
+        {
+            "nom": "Taftacht",
+            "cie": "Essaouira",
+            "lng": -9.1789,
+            "lat": 31.6708,
+            "pop": 39820,
+            "densite": 54.82,
+            "rayonKm": 15.21,
+            "parties": 1
+        },
+        {
+            "nom": "N'Zalt Bni Amar",
+            "cie": "Meknès",
+            "lng": -5.4078,
+            "lat": 34.1446,
+            "pop": 12399,
+            "densite": 54.6,
+            "rayonKm": 8.5,
+            "parties": 1
+        },
+        {
+            "nom": "Had Mejjat",
+            "cie": "Chichaoua",
+            "lng": -8.5257,
+            "lat": 31.2782,
+            "pop": 105673,
+            "densite": 54.01,
+            "rayonKm": 24.96,
+            "parties": 1
+        },
+        {
+            "nom": "Tamri",
+            "cie": "Agadir",
+            "lng": -9.7636,
+            "lat": 30.7353,
+            "pop": 27036,
+            "densite": 53.95,
+            "rayonKm": 12.63,
+            "parties": 1
+        },
+        {
+            "nom": "Arfoud",
+            "cie": "Arfoud",
+            "lng": -4.0307,
+            "lat": 31.475,
+            "pop": 55981,
+            "densite": 53.17,
+            "rayonKm": 18.31,
+            "parties": 1
+        },
+        {
+            "nom": "El Brouj",
+            "cie": "Settat",
+            "lng": -7.2036,
+            "lat": 32.553,
+            "pop": 66117,
+            "densite": 52.09,
+            "rayonKm": 20.1,
+            "parties": 1
+        },
+        {
+            "nom": "Msila",
+            "cie": "Taza",
+            "lng": -4.1051,
+            "lat": 34.4439,
+            "pop": 35830,
+            "densite": 51.35,
+            "rayonKm": 14.9,
+            "parties": 1
+        },
+        {
+            "nom": "Ouaouizaghte",
+            "cie": "Azilal",
+            "lng": -6.4038,
+            "lat": 32.1564,
+            "pop": 20930,
+            "densite": 50.97,
+            "rayonKm": 11.43,
+            "parties": 1
+        },
+        {
+            "nom": "Bni Boufrah",
+            "cie": "Targuiste",
+            "lng": -4.2553,
+            "lat": 35.0705,
+            "pop": 16460,
+            "densite": 50.86,
+            "rayonKm": 10.15,
+            "parties": 1
+        },
+        {
+            "nom": "El Manzeh",
+            "cie": "Ain Aouda",
+            "lng": -6.7929,
+            "lat": 33.823,
+            "pop": 11490,
+            "densite": 50.32,
+            "rayonKm": 8.53,
+            "parties": 1
+        },
+        {
+            "nom": "Sidi Yahya des Zaers",
+            "cie": "Ain Aouda",
+            "lng": -6.8838,
+            "lat": 33.6852,
+            "pop": 29486,
+            "densite": 50.13,
+            "rayonKm": 13.68,
+            "parties": 1
+        },
+        {
+            "nom": "Aoulouz",
+            "cie": "Taroudannt",
+            "lng": -8.1778,
+            "lat": 30.6428,
+            "pop": 53353,
+            "densite": 49.73,
+            "rayonKm": 18.48,
+            "parties": 1
+        },
+        {
+            "nom": "Azilal",
+            "cie": "Azilal",
+            "lng": -6.3319,
+            "lat": 31.8585,
+            "pop": 121400,
+            "densite": 49.19,
+            "rayonKm": 28.03,
+            "parties": 1
+        },
+        {
+            "nom": "Errachidia",
+            "cie": "Errachidia",
+            "lng": -4.3857,
+            "lat": 31.9386,
+            "pop": 134239,
+            "densite": 47.92,
+            "rayonKm": 29.86,
+            "parties": 1
+        },
+        {
+            "nom": "Ras El Ain",
+            "cie": "Youssoufia",
+            "lng": -8.4454,
+            "lat": 32.0221,
+            "pop": 40484,
+            "densite": 47.87,
+            "rayonKm": 16.41,
+            "parties": 1
+        },
+        {
+            "nom": "Ajdir",
+            "cie": "Taza",
+            "lng": -4.0034,
+            "lat": 34.7546,
+            "pop": 15636,
+            "densite": 47.82,
+            "rayonKm": 10.2,
+            "parties": 1
+        },
+        {
+            "nom": "Kaf El Ghar",
+            "cie": "Taza",
+            "lng": -4.2717,
+            "lat": 34.5355,
+            "pop": 7060,
+            "densite": 47.43,
+            "rayonKm": 6.88,
+            "parties": 1
+        },
+        {
+            "nom": "Tatoft",
+            "cie": "Larache",
+            "lng": -5.6685,
+            "lat": 35.077,
+            "pop": 31873,
+            "densite": 47.22,
+            "rayonKm": 14.66,
+            "parties": 1
+        },
+        {
+            "nom": "Bni Said",
+            "cie": "Azib Midar",
+            "lng": -3.3291,
+            "lat": 35.1277,
+            "pop": 20872,
+            "densite": 46.72,
+            "rayonKm": 11.93,
+            "parties": 1
+        },
+        {
+            "nom": "El Kbab",
+            "cie": "Ait Ishaq",
+            "lng": -5.464,
+            "lat": 32.6885,
+            "pop": 21491,
+            "densite": 46.53,
+            "rayonKm": 12.12,
+            "parties": 1
+        },
+        {
+            "nom": "Moqrissat",
+            "cie": "Ouazzane",
+            "lng": -5.4001,
+            "lat": 34.9331,
+            "pop": 19781,
+            "densite": 46.46,
+            "rayonKm": 11.64,
+            "parties": 1
+        },
+        {
+            "nom": "Tlat Loulad",
+            "cie": "Settat",
+            "lng": -7.0248,
+            "lat": 33.0877,
+            "pop": 42603,
+            "densite": 46.4,
+            "rayonKm": 17.1,
+            "parties": 1
+        },
+        {
+            "nom": "Jbel Lahbib",
+            "cie": "Tétouan",
+            "lng": -5.705,
+            "lat": 35.478,
+            "pop": 12648,
+            "densite": 45.91,
+            "rayonKm": 9.36,
+            "parties": 1
+        },
+        {
+            "nom": "Bizdad",
+            "cie": "Tamanar",
+            "lng": -9.3922,
+            "lat": 31.2554,
+            "pop": 23175,
+            "densite": 45.12,
+            "rayonKm": 12.79,
+            "parties": 1
+        },
+        {
+            "nom": "Maaziz",
+            "cie": "Oulmes",
+            "lng": -6.1854,
+            "lat": 33.6831,
+            "pop": 25040,
+            "densite": 44.88,
+            "rayonKm": 13.33,
+            "parties": 1
+        },
+        {
+            "nom": "Sidi chiker",
+            "cie": "Youssoufia",
+            "lng": -8.6959,
+            "lat": 31.8207,
+            "pop": 42371,
+            "densite": 44.6,
+            "rayonKm": 17.39,
+            "parties": 1
+        },
+        {
+            "nom": "Taouloukoult",
+            "cie": "Chichaoua",
+            "lng": -9.1056,
+            "lat": 31.2744,
+            "pop": 37506,
+            "densite": 44.36,
+            "rayonKm": 16.41,
+            "parties": 1
+        },
+        {
+            "nom": "Asni",
+            "cie": "Tahannaout",
+            "lng": -8.1911,
+            "lat": 31.0458,
+            "pop": 60734,
+            "densite": 43.47,
+            "rayonKm": 21.09,
+            "parties": 1
+        },
+        {
+            "nom": "Bni Garfett",
+            "cie": "Larache",
+            "lng": -5.7875,
+            "lat": 35.2478,
+            "pop": 19926,
+            "densite": 43.27,
+            "rayonKm": 12.11,
+            "parties": 1
+        },
+        {
+            "nom": "Kelaat M'Gouna",
+            "cie": "Tinghir",
+            "lng": -6.1704,
+            "lat": 31.3363,
+            "pop": 101485,
+            "densite": 43.2,
+            "rayonKm": 27.35,
+            "parties": 1
+        },
+        {
+            "nom": "Boumia",
+            "cie": "Midelt",
+            "lng": -5.2046,
+            "lat": 32.7018,
+            "pop": 37679,
+            "densite": 43.06,
+            "rayonKm": 16.69,
+            "parties": 1
+        },
+        {
+            "nom": "Midelt",
+            "cie": "Midelt",
+            "lng": -4.7057,
+            "lat": 32.6819,
+            "pop": 92449,
+            "densite": 43.06,
+            "rayonKm": 26.14,
+            "parties": 1
+        },
+        {
+            "nom": "Sid L'Mokhtar",
+            "cie": "Chichaoua",
+            "lng": -8.9683,
+            "lat": 31.5669,
+            "pop": 45305,
+            "densite": 42.85,
+            "rayonKm": 18.35,
+            "parties": 1
+        },
+        {
+            "nom": "Mirleft",
+            "cie": "Sidi Ifni",
+            "lng": -9.9843,
+            "lat": 29.4384,
+            "pop": 22506,
+            "densite": 42.78,
+            "rayonKm": 12.94,
+            "parties": 1
+        },
+        {
+            "nom": "Tsaft",
+            "cie": "Azib Midar",
+            "lng": -3.7258,
+            "lat": 34.9807,
+            "pop": 17836,
+            "densite": 42.63,
+            "rayonKm": 11.54,
+            "parties": 1
+        },
+        {
+            "nom": "Tamanar",
+            "cie": "Tamanar",
+            "lng": -9.6374,
+            "lat": 30.9971,
+            "pop": 41101,
+            "densite": 41.44,
+            "rayonKm": 17.77,
+            "parties": 1
+        },
+        {
+            "nom": "Guelmim",
+            "cie": "Guelmim",
+            "lng": -10.052,
+            "lat": 28.7521,
+            "pop": 135233,
+            "densite": 41.34,
+            "rayonKm": 32.27,
+            "parties": 1
+        },
+        {
+            "nom": "Sidi Bou Othman",
+            "cie": "Benguerir",
+            "lng": -7.8502,
+            "lat": 31.8332,
+            "pop": 36045,
+            "densite": 41.21,
+            "rayonKm": 16.69,
+            "parties": 1
+        },
+        {
+            "nom": "Tinjdad",
+            "cie": "Arfoud",
+            "lng": -5.0695,
+            "lat": 31.481,
+            "pop": 44863,
+            "densite": 40.59,
+            "rayonKm": 18.76,
+            "parties": 1
+        },
+        {
+            "nom": "Oulad Said",
+            "cie": "Settat",
+            "lng": -7.8635,
+            "lat": 32.914,
+            "pop": 37755,
+            "densite": 40.25,
+            "rayonKm": 17.28,
+            "parties": 1
+        },
+        {
+            "nom": "Beni Hadifa",
+            "cie": "Targuiste",
+            "lng": -4.1164,
+            "lat": 34.98,
+            "pop": 13812,
+            "densite": 40.15,
+            "rayonKm": 10.46,
+            "parties": 1
+        },
+        {
+            "nom": "Sebt Jahjouh",
+            "cie": "El Hajeb",
+            "lng": -5.7164,
+            "lat": 33.6356,
+            "pop": 17835,
+            "densite": 39.89,
+            "rayonKm": 11.93,
+            "parties": 1
+        },
+        {
+            "nom": "Jerrada",
+            "cie": "Jerrada",
+            "lng": -2.1899,
+            "lat": 34.3156,
+            "pop": 57338,
+            "densite": 39.48,
+            "rayonKm": 21.5,
+            "parties": 1
+        },
+        {
+            "nom": "Kerrouchen",
+            "cie": "Ait Ishaq",
+            "lng": -5.3589,
+            "lat": 32.738,
+            "pop": 9425,
+            "densite": 37.15,
+            "rayonKm": 8.99,
+            "parties": 1
+        },
+        {
+            "nom": "Dar Chaoui",
+            "cie": "Tanger",
+            "lng": -5.7992,
+            "lat": 35.5562,
+            "pop": 7151,
+            "densite": 36.43,
+            "rayonKm": 7.9,
+            "parties": 1
+        },
+        {
+            "nom": "Ribat El Kheir",
+            "cie": "Sefrou",
+            "lng": -4.2638,
+            "lat": 33.771,
+            "pop": 26967,
+            "densite": 36.31,
+            "rayonKm": 15.38,
+            "parties": 1
+        },
+        {
+            "nom": "Tamegroute",
+            "cie": "Zagora",
+            "lng": -5.6427,
+            "lat": 30.2497,
+            "pop": 27208,
+            "densite": 36.13,
+            "rayonKm": 15.48,
+            "parties": 1
+        },
+        {
+            "nom": "Tlat Lakhssas",
+            "cie": "Sidi Ifni",
+            "lng": -9.7197,
+            "lat": 29.3233,
+            "pop": 23284,
+            "densite": 35.88,
+            "rayonKm": 14.37,
+            "parties": 1
+        },
+        {
+            "nom": "Zaida",
+            "cie": "Midelt",
+            "lng": -4.9149,
+            "lat": 32.8295,
+            "pop": 14454,
+            "densite": 35.85,
+            "rayonKm": 11.33,
+            "parties": 1
+        },
+        {
+            "nom": "Dayet Aoua",
+            "cie": "Ifrane",
+            "lng": -4.9887,
+            "lat": 33.566,
+            "pop": 12050,
+            "densite": 35.71,
+            "rayonKm": 10.36,
+            "parties": 1
+        },
+        {
+            "nom": "Ras Kebdana",
+            "cie": "Zaiou",
+            "lng": -2.5335,
+            "lat": 35.0196,
+            "pop": 10676,
+            "densite": 35.49,
+            "rayonKm": 9.78,
+            "parties": 1
+        },
+        {
+            "nom": "Bni Aarouss",
+            "cie": "Larache",
+            "lng": -5.5835,
+            "lat": 35.3157,
+            "pop": 12786,
+            "densite": 35.2,
+            "rayonKm": 10.75,
+            "parties": 1
+        },
+        {
+            "nom": "Amskroud",
+            "cie": "Agadir",
+            "lng": -9.3655,
+            "lat": 30.5462,
+            "pop": 12363,
+            "densite": 34.83,
+            "rayonKm": 10.63,
+            "parties": 1
+        },
+        {
+            "nom": "Tnine Bouchane",
+            "cie": "Benguerir",
+            "lng": -8.2759,
+            "lat": 32.2981,
+            "pop": 29429,
+            "densite": 34.64,
+            "rayonKm": 16.45,
+            "parties": 1
+        },
+        {
+            "nom": "N'Zalt Laadem",
+            "cie": "Benguerir",
+            "lng": -7.8959,
+            "lat": 32.0688,
+            "pop": 38770,
+            "densite": 34.24,
+            "rayonKm": 18.99,
+            "parties": 1
+        },
+        {
+            "nom": "Bni Ammart",
+            "cie": "Targuiste",
+            "lng": -4.1534,
+            "lat": 34.8177,
+            "pop": 8339,
+            "densite": 34,
+            "rayonKm": 8.84,
+            "parties": 1
+        },
+        {
+            "nom": "Timezgadiouine",
+            "cie": "Chichaoua",
+            "lng": -8.9707,
+            "lat": 30.99,
+            "pop": 23683,
+            "densite": 33.83,
+            "rayonKm": 14.93,
+            "parties": 1
+        },
+        {
+            "nom": "Ifrane Atlas Saghir",
+            "cie": "Guelmim",
+            "lng": -9.5296,
+            "lat": 29.1846,
+            "pop": 15248,
+            "densite": 33.54,
+            "rayonKm": 12.03,
+            "parties": 1
+        },
+        {
+            "nom": "Tafingoult",
+            "cie": "Taroudannt",
+            "lng": -8.3799,
+            "lat": 30.8081,
+            "pop": 34642,
+            "densite": 33.46,
+            "rayonKm": 18.15,
+            "parties": 1
+        },
+        {
+            "nom": "Taghzoute",
+            "cie": "Tinghir",
+            "lng": -5.3505,
+            "lat": 31.3881,
+            "pop": 35197,
+            "densite": 33.42,
+            "rayonKm": 18.31,
+            "parties": 1
+        },
+        {
+            "nom": "Aglou",
+            "cie": "Tiznit",
+            "lng": -9.8547,
+            "lat": 29.6921,
+            "pop": 18770,
+            "densite": 33.17,
+            "rayonKm": 13.42,
+            "parties": 1
+        },
+        {
+            "nom": "Tabant",
+            "cie": "Azilal",
+            "lng": -6.5066,
+            "lat": 31.6301,
+            "pop": 28393,
+            "densite": 32.78,
+            "rayonKm": 16.6,
+            "parties": 1
+        },
+        {
+            "nom": "Tinghir",
+            "cie": "Tinghir",
+            "lng": -5.5739,
+            "lat": 31.4243,
+            "pop": 90200,
+            "densite": 31.72,
+            "rayonKm": 30.09,
+            "parties": 1
+        },
+        {
+            "nom": "Skhour Rhamna",
+            "cie": "Benguerir",
+            "lng": -7.8753,
+            "lat": 32.5004,
+            "pop": 56383,
+            "densite": 31.48,
+            "rayonKm": 23.88,
+            "parties": 1
+        },
+        {
+            "nom": "Aguelmous",
+            "cie": "Khénifra",
+            "lng": -5.8834,
+            "lat": 33.1316,
+            "pop": 39070,
+            "densite": 30.25,
+            "rayonKm": 20.28,
+            "parties": 1
+        },
+        {
+            "nom": "Kettara",
+            "cie": "Tamansourte",
+            "lng": -8.2328,
+            "lat": 31.9003,
+            "pop": 28033,
+            "densite": 30.1,
+            "rayonKm": 17.22,
+            "parties": 1
+        },
+        {
+            "nom": "Ouled Boughadi",
+            "cie": "Oued Zem",
+            "lng": -6.7302,
+            "lat": 33.1162,
+            "pop": 20996,
+            "densite": 29.49,
+            "rayonKm": 15.05,
+            "parties": 1
+        },
+        {
+            "nom": "Ighram Nougdal",
+            "cie": "Ouarzazate",
+            "lng": -7.5033,
+            "lat": 31.1233,
+            "pop": 28568,
+            "densite": 29.22,
+            "rayonKm": 17.64,
+            "parties": 1
+        },
+        {
+            "nom": "Sidi Ifni",
+            "cie": "Sidi Ifni",
+            "lng": -10.1165,
+            "lat": 29.219,
+            "pop": 37105,
+            "densite": 29.21,
+            "rayonKm": 20.11,
+            "parties": 1
+        },
+        {
+            "nom": "Kaf Nsour",
+            "cie": "Khénifra",
+            "lng": -5.9452,
+            "lat": 32.8977,
+            "pop": 18126,
+            "densite": 28.96,
+            "rayonKm": 14.12,
+            "parties": 1
+        },
+        {
+            "nom": "Boumalne Dades",
+            "cie": "Tinghir",
+            "lng": -5.9559,
+            "lat": 31.4948,
+            "pop": 27277,
+            "densite": 28.8,
+            "rayonKm": 17.36,
+            "parties": 1
+        },
+        {
+            "nom": "El Aioun",
+            "cie": "Taourirt",
+            "lng": -2.598,
+            "lat": 34.507,
+            "pop": 64074,
+            "densite": 28.48,
+            "rayonKm": 26.76,
+            "parties": 1
+        },
+        {
+            "nom": "Anzi",
+            "cie": "Tiznit",
+            "lng": -9.3465,
+            "lat": 29.6948,
+            "pop": 19319,
+            "densite": 28.23,
+            "rayonKm": 14.76,
+            "parties": 1
+        },
+        {
+            "nom": "Guigou",
+            "cie": "Missour",
+            "lng": -4.8286,
+            "lat": 33.3867,
+            "pop": 24677,
+            "densite": 28.19,
+            "rayonKm": 16.69,
+            "parties": 1
+        },
+        {
+            "nom": "Tagleft",
+            "cie": "Azilal",
+            "lng": -6.0261,
+            "lat": 32.2067,
+            "pop": 27577,
+            "densite": 27.52,
+            "rayonKm": 17.86,
+            "parties": 1
+        },
+        {
+            "nom": "Ain Sbit",
+            "cie": "Rommani",
+            "lng": -6.4591,
+            "lat": 33.4777,
+            "pop": 10425,
+            "densite": 27.31,
+            "rayonKm": 11.02,
+            "parties": 1
+        },
+        {
+            "nom": "Rissani",
+            "cie": "Marzouga",
+            "lng": -4.1386,
+            "lat": 31.2761,
+            "pop": 46946,
+            "densite": 26.53,
+            "rayonKm": 23.73,
+            "parties": 1
+        },
+        {
+            "nom": "Zhiliga",
+            "cie": "Rommani",
+            "lng": -6.53,
+            "lat": 33.2991,
+            "pop": 14788,
+            "densite": 26.49,
+            "rayonKm": 13.33,
+            "parties": 1
+        },
+        {
+            "nom": "Had Brachoua",
+            "cie": "Rommani",
+            "lng": -6.5677,
+            "lat": 33.7048,
+            "pop": 21485,
+            "densite": 26.43,
+            "rayonKm": 16.09,
+            "parties": 1
+        },
+        {
+            "nom": "Sidi Addi",
+            "cie": "Azrou",
+            "lng": -5.2931,
+            "lat": 33.2614,
+            "pop": 16441,
+            "densite": 26.19,
+            "rayonKm": 14.14,
+            "parties": 1
+        },
+        {
+            "nom": "Tighirt",
+            "cie": "Sidi Ifni",
+            "lng": -9.3663,
+            "lat": 29.3919,
+            "pop": 21706,
+            "densite": 25.98,
+            "rayonKm": 16.31,
+            "parties": 1
+        },
+        {
+            "nom": "Zagora",
+            "cie": "Zagora",
+            "lng": -6.0894,
+            "lat": 30.3872,
+            "pop": 117561,
+            "densite": 25.95,
+            "rayonKm": 37.98,
+            "parties": 1
+        },
+        {
+            "nom": "Er-Rich",
+            "cie": "Midelt",
+            "lng": -4.5206,
+            "lat": 32.3516,
+            "pop": 72666,
+            "densite": 25.41,
+            "rayonKm": 30.17,
+            "parties": 1
+        },
+        {
+            "nom": "Ain Louh",
+            "cie": "Azrou",
+            "lng": -5.3052,
+            "lat": 33.2764,
+            "pop": 8989,
+            "densite": 25.36,
+            "rayonKm": 10.62,
+            "parties": 1
+        },
+        {
+            "nom": "Taddart",
+            "cie": "Guercif",
+            "lng": -3.6721,
+            "lat": 34.2133,
+            "pop": 26540,
+            "densite": 24.69,
+            "rayonKm": 18.5,
+            "parties": 1
+        },
+        {
+            "nom": "Imlil",
+            "cie": "Tahannaout",
+            "lng": -7.9201,
+            "lat": 31.1534,
+            "pop": 6602,
+            "densite": 24.58,
+            "rayonKm": 9.25,
+            "parties": 1
+        },
+        {
+            "nom": "Ait Siberne",
+            "cie": "Khémisset",
+            "lng": -5.8451,
+            "lat": 33.7913,
+            "pop": 18812,
+            "densite": 24.49,
+            "rayonKm": 15.64,
+            "parties": 1
+        },
+        {
+            "nom": "Jorf",
+            "cie": "Arfoud",
+            "lng": -4.4469,
+            "lat": 31.4964,
+            "pop": 21023,
+            "densite": 23.78,
+            "rayonKm": 16.77,
+            "parties": 1
+        },
+        {
+            "nom": "Naima",
+            "cie": "Oujda",
+            "lng": -2.1707,
+            "lat": 34.5317,
+            "pop": 15016,
+            "densite": 23.63,
+            "rayonKm": 14.22,
+            "parties": 1
+        },
+        {
+            "nom": "Aknoul",
+            "cie": "Taza",
+            "lng": -3.8961,
+            "lat": 34.5995,
+            "pop": 14863,
+            "densite": 23.57,
+            "rayonKm": 14.17,
+            "parties": 1
+        },
+        {
+            "nom": "Ida Ou Gougmar",
+            "cie": "Tiznit",
+            "lng": -9.3222,
+            "lat": 29.5556,
+            "pop": 13811,
+            "densite": 22.96,
+            "rayonKm": 13.84,
+            "parties": 1
+        },
+        {
+            "nom": "Ait Baha",
+            "cie": "Biougra",
+            "lng": -9.1248,
+            "lat": 29.9567,
+            "pop": 38439,
+            "densite": 22.81,
+            "rayonKm": 23.16,
+            "parties": 1
+        },
+        {
+            "nom": "Ait Daoud",
+            "cie": "Tamanar",
+            "lng": -9.3502,
+            "lat": 30.972,
+            "pop": 22753,
+            "densite": 22.78,
+            "rayonKm": 17.83,
+            "parties": 1
+        },
+        {
+            "nom": "Beni Bataou",
+            "cie": "Oued Zem",
+            "lng": -6.2107,
+            "lat": 32.8058,
+            "pop": 16521,
+            "densite": 22.73,
+            "rayonKm": 15.21,
+            "parties": 1
+        },
+        {
+            "nom": "Tilougguite",
+            "cie": "Azilal",
+            "lng": -6.2105,
+            "lat": 32.0406,
+            "pop": 18234,
+            "densite": 22.27,
+            "rayonKm": 16.14,
+            "parties": 1
+        },
+        {
+            "nom": "Oulmes",
+            "cie": "Oulmes",
+            "lng": -5.9764,
+            "lat": 33.4439,
+            "pop": 23910,
+            "densite": 21.89,
+            "rayonKm": 18.65,
+            "parties": 1
+        },
+        {
+            "nom": "Had Laghoualem",
+            "cie": "Rommani",
+            "lng": -6.7242,
+            "lat": 33.3708,
+            "pop": 12051,
+            "densite": 21.75,
+            "rayonKm": 13.28,
+            "parties": 1
+        },
+        {
+            "nom": "Missour",
+            "cie": "Missour",
+            "lng": -4.037,
+            "lat": 32.9486,
+            "pop": 43807,
+            "densite": 21.61,
+            "rayonKm": 25.4,
+            "parties": 1
+        },
+        {
+            "nom": "Sidi Bettache",
+            "cie": "Benslimane",
+            "lng": -6.8905,
+            "lat": 33.4215,
+            "pop": 11851,
+            "densite": 21.59,
+            "rayonKm": 13.22,
+            "parties": 1
+        },
+        {
+            "nom": "Moulay Bouazza",
+            "cie": "Khénifra",
+            "lng": -6.2216,
+            "lat": 33.2373,
+            "pop": 22942,
+            "densite": 21.47,
+            "rayonKm": 18.44,
+            "parties": 1
+        },
+        {
+            "nom": "Moghrane",
+            "cie": "Ouarzazate",
+            "lng": -6.5265,
+            "lat": 31.3329,
+            "pop": 29911,
+            "densite": 21.13,
+            "rayonKm": 21.23,
+            "parties": 1
+        },
+        {
+            "nom": "Had Oued Ifrane",
+            "cie": "Azrou",
+            "lng": -5.3193,
+            "lat": 33.1353,
+            "pop": 10267,
+            "densite": 21.04,
+            "rayonKm": 12.46,
+            "parties": 1
+        },
+        {
+            "nom": "Chougrane",
+            "cie": "Oued Zem",
+            "lng": -6.3,
+            "lat": 32.9567,
+            "pop": 8944,
+            "densite": 20.66,
+            "rayonKm": 11.74,
+            "parties": 1
+        },
+        {
+            "nom": "Taliouine",
+            "cie": "Taroudannt",
+            "lng": -7.8602,
+            "lat": 30.5505,
+            "pop": 93455,
+            "densite": 20.65,
+            "rayonKm": 37.95,
+            "parties": 1
+        },
+        {
+            "nom": "Skoura",
+            "cie": "Ouarzazate",
+            "lng": -6.4799,
+            "lat": 31.0194,
+            "pop": 32733,
+            "densite": 20.49,
+            "rayonKm": 22.55,
+            "parties": 1
+        },
+        {
+            "nom": "Ain Zohra",
+            "cie": "Azib Midar",
+            "lng": -3.4463,
+            "lat": 34.7363,
+            "pop": 12408,
+            "densite": 20.47,
+            "rayonKm": 13.89,
+            "parties": 1
+        },
+        {
+            "nom": "Aghbala",
+            "cie": "Béni Mellal",
+            "lng": -5.7058,
+            "lat": 32.3673,
+            "pop": 33872,
+            "densite": 20.31,
+            "rayonKm": 23.04,
+            "parties": 1
+        },
+        {
+            "nom": "Tizi Ouasli",
+            "cie": "Taza",
+            "lng": -3.7352,
+            "lat": 34.7711,
+            "pop": 11716,
+            "densite": 19.02,
+            "rayonKm": 14,
+            "parties": 1
+        },
+        {
+            "nom": "M'Semrir",
+            "cie": "Tinghir",
+            "lng": -5.7682,
+            "lat": 31.7807,
+            "pop": 20377,
+            "densite": 18.79,
+            "rayonKm": 18.58,
+            "parties": 1
+        },
+        {
+            "nom": "Lamrija",
+            "cie": "Guercif",
+            "lng": -3.2911,
+            "lat": 33.9205,
+            "pop": 14457,
+            "densite": 18.73,
+            "rayonKm": 15.67,
+            "parties": 1
+        },
+        {
+            "nom": "Agdez",
+            "cie": "Zagora",
+            "lng": -6.4308,
+            "lat": 30.6962,
+            "pop": 65512,
+            "densite": 18.49,
+            "rayonKm": 33.58,
+            "parties": 1
+        },
+        {
+            "nom": "Tamzaourt",
+            "cie": "Taroudannt",
+            "lng": -9.0183,
+            "lat": 30.7896,
+            "pop": 16600,
+            "densite": 18.23,
+            "rayonKm": 17.03,
+            "parties": 1
+        },
+        {
+            "nom": "Skoura M'Daz",
+            "cie": "Missour",
+            "lng": -4.541,
+            "lat": 33.4779,
+            "pop": 13184,
+            "densite": 17.76,
+            "rayonKm": 15.37,
+            "parties": 1
+        },
+        {
+            "nom": "Aguelmam Azegza",
+            "cie": "Khénifra",
+            "lng": -5.4741,
+            "lat": 32.9016,
+            "pop": 15450,
+            "densite": 17.75,
+            "rayonKm": 16.65,
+            "parties": 1
+        },
+        {
+            "nom": "Goulmima",
+            "cie": "Arfoud",
+            "lng": -4.9906,
+            "lat": 31.8264,
+            "pop": 55098,
+            "densite": 17.6,
+            "rayonKm": 31.56,
+            "parties": 1
+        },
+        {
+            "nom": "Tafoughalt",
+            "cie": "Berkane",
+            "lng": -2.3875,
+            "lat": 34.7234,
+            "pop": 10237,
+            "densite": 17.51,
+            "rayonKm": 13.64,
+            "parties": 1
+        },
+        {
+            "nom": "Imouzer Ida Outanane",
+            "cie": "Agadir",
+            "lng": -9.4723,
+            "lat": 30.7172,
+            "pop": 18750,
+            "densite": 17.29,
+            "rayonKm": 18.58,
+            "parties": 1
+        },
+        {
+            "nom": "Timahdite",
+            "cie": "Ifrane",
+            "lng": -5.0232,
+            "lat": 33.241,
+            "pop": 11571,
+            "densite": 17.19,
+            "rayonKm": 14.64,
+            "parties": 1
+        },
+        {
+            "nom": "Itzer",
+            "cie": "Midelt",
+            "lng": -4.956,
+            "lat": 32.9693,
+            "pop": 14256,
+            "densite": 17.17,
+            "rayonKm": 16.26,
+            "parties": 1
+        },
+        {
+            "nom": "Melaab",
+            "cie": "Arfoud",
+            "lng": -4.7267,
+            "lat": 31.4888,
+            "pop": 17230,
+            "densite": 16.63,
+            "rayonKm": 18.16,
+            "parties": 1
+        },
+        {
+            "nom": "Tounfite",
+            "cie": "Midelt",
+            "lng": -5.2213,
+            "lat": 32.4167,
+            "pop": 27267,
+            "densite": 16.59,
+            "rayonKm": 22.87,
+            "parties": 1
+        },
+        {
+            "nom": "Touissite Boubker",
+            "cie": "Jerrada",
+            "lng": -1.8321,
+            "lat": 34.3772,
+            "pop": 11000,
+            "densite": 16.1,
+            "rayonKm": 14.75,
+            "parties": 1
+        },
+        {
+            "nom": "Telouate",
+            "cie": "Ouarzazate",
+            "lng": -7.1578,
+            "lat": 31.2708,
+            "pop": 12396,
+            "densite": 16.01,
+            "rayonKm": 15.7,
+            "parties": 1
+        },
+        {
+            "nom": "Tiddas",
+            "cie": "Oulmes",
+            "lng": -6.2689,
+            "lat": 33.5526,
+            "pop": 9013,
+            "densite": 15.52,
+            "rayonKm": 13.6,
+            "parties": 1
+        },
+        {
+            "nom": "Imilchil",
+            "cie": "Midelt",
+            "lng": -5.5278,
+            "lat": 32.0718,
+            "pop": 26027,
+            "densite": 15.07,
+            "rayonKm": 23.44,
+            "parties": 1
+        },
+        {
+            "nom": "N'Kob",
+            "cie": "Zagora",
+            "lng": -5.8645,
+            "lat": 30.9219,
+            "pop": 19493,
+            "densite": 15.04,
+            "rayonKm": 20.31,
+            "parties": 1
+        },
+        {
+            "nom": "Tendite",
+            "cie": "Missour",
+            "lng": -3.4556,
+            "lat": 33.6811,
+            "pop": 29594,
+            "densite": 15.03,
+            "rayonKm": 25.04,
+            "parties": 1
+        },
+        {
+            "nom": "El Hammam",
+            "cie": "Khénifra",
+            "lng": -5.6328,
+            "lat": 33.2743,
+            "pop": 9697,
+            "densite": 13.82,
+            "rayonKm": 14.94,
+            "parties": 1
+        },
+        {
+            "nom": "Amerzgane",
+            "cie": "Ouarzazate",
+            "lng": -7.2306,
+            "lat": 30.9901,
+            "pop": 19295,
+            "densite": 13.6,
+            "rayonKm": 21.25,
+            "parties": 1
+        },
+        {
+            "nom": "Berkine",
+            "cie": "Guercif",
+            "lng": -3.7728,
+            "lat": 33.8518,
+            "pop": 26075,
+            "densite": 13.07,
+            "rayonKm": 25.2,
+            "parties": 1
+        },
+        {
+            "nom": "Adrej",
+            "cie": "Sefrou",
+            "lng": -4.4046,
+            "lat": 33.6443,
+            "pop": 6153,
+            "densite": 13.03,
+            "rayonKm": 12.26,
+            "parties": 1
+        },
+        {
+            "nom": "Ain Sfa",
+            "cie": "Oujda",
+            "lng": -2.1537,
+            "lat": 34.7468,
+            "pop": 5761,
+            "densite": 12.76,
+            "rayonKm": 11.99,
+            "parties": 1
+        },
+        {
+            "nom": "Aoufous",
+            "cie": "Errachidia",
+            "lng": -4.0925,
+            "lat": 31.6868,
+            "pop": 21740,
+            "densite": 12.53,
+            "rayonKm": 23.5,
+            "parties": 1
+        },
+        {
+            "nom": "Maghraoua",
+            "cie": "Taza",
+            "lng": -4.0486,
+            "lat": 33.9021,
+            "pop": 10472,
+            "densite": 12.1,
+            "rayonKm": 16.6,
+            "parties": 1
+        },
+        {
+            "nom": "Tazarine",
+            "cie": "Zagora",
+            "lng": -5.5157,
+            "lat": 30.7487,
+            "pop": 27828,
+            "densite": 11.88,
+            "rayonKm": 27.31,
+            "parties": 1
+        },
+        {
+            "nom": "Sakka",
+            "cie": "Guercif",
+            "lng": -3.2719,
+            "lat": 34.558,
+            "pop": 20857,
+            "densite": 11.68,
+            "rayonKm": 23.84,
+            "parties": 1
+        },
+        {
+            "nom": "Immouzer Marmoucha",
+            "cie": "Missour",
+            "lng": -4.1991,
+            "lat": 33.381,
+            "pop": 13760,
+            "densite": 11.58,
+            "rayonKm": 19.45,
+            "parties": 1
+        },
+        {
+            "nom": "Ksabi",
+            "cie": "Missour",
+            "lng": -4.2774,
+            "lat": 32.7949,
+            "pop": 10471,
+            "densite": 10.91,
+            "rayonKm": 17.48,
+            "parties": 1
+        },
+        {
+            "nom": "Gourrama",
+            "cie": "Midelt",
+            "lng": -4.0467,
+            "lat": 32.3569,
+            "pop": 20315,
+            "densite": 10.88,
+            "rayonKm": 24.38,
+            "parties": 1
+        },
+        {
+            "nom": "Ighrem",
+            "cie": "Taroudannt",
+            "lng": -8.443,
+            "lat": 30.1729,
+            "pop": 28456,
+            "densite": 10.81,
+            "rayonKm": 28.95,
+            "parties": 1
+        },
+        {
+            "nom": "Tafraoute",
+            "cie": "Tiznit",
+            "lng": -8.923,
+            "lat": 29.5777,
+            "pop": 19276,
+            "densite": 10.73,
+            "rayonKm": 23.92,
+            "parties": 1
+        },
+        {
+            "nom": "Imider",
+            "cie": "Tinghir",
+            "lng": -5.7863,
+            "lat": 31.3719,
+            "pop": 4296,
+            "densite": 10.61,
+            "rayonKm": 11.35,
+            "parties": 1
+        },
+        {
+            "nom": "Taznakht",
+            "cie": "Ouarzazate",
+            "lng": -7.3132,
+            "lat": 30.5654,
+            "pop": 48679,
+            "densite": 10.55,
+            "rayonKm": 38.32,
+            "parties": 1
+        },
+        {
+            "nom": "Outat El Haj",
+            "cie": "Missour",
+            "lng": -3.5518,
+            "lat": 33.315,
+            "pop": 51606,
+            "densite": 10.33,
+            "rayonKm": 39.88,
+            "parties": 1
+        },
+        {
+            "nom": "Amouguer",
+            "cie": "Midelt",
+            "lng": -5.0575,
+            "lat": 32.2602,
+            "pop": 8656,
+            "densite": 10.15,
+            "rayonKm": 16.47,
+            "parties": 1
+        },
+        {
+            "nom": "El Guergarate",
+            "cie": "Aousserd",
+            "lng": -17.02,
+            "lat": 21.1769,
+            "pop": 3502,
+            "densite": 10.01,
+            "rayonKm": 10.55,
+            "parties": 1
+        },
+        {
+            "nom": "Mazguitam",
+            "cie": "Guercif",
+            "lng": -3.6695,
+            "lat": 34.4814,
+            "pop": 7258,
+            "densite": 9.32,
+            "rayonKm": 15.75,
+            "parties": 1
+        },
+        {
+            "nom": "Assoul",
+            "cie": "Tinghir",
+            "lng": -5.1906,
+            "lat": 32.0072,
+            "pop": 6827,
+            "densite": 8.56,
+            "rayonKm": 15.93,
+            "parties": 1
+        },
+        {
+            "nom": "Debdou",
+            "cie": "Taourirt",
+            "lng": -2.8902,
+            "lat": 33.8479,
+            "pop": 28426,
+            "densite": 8.06,
+            "rayonKm": 33.51,
+            "parties": 1
+        },
+        {
+            "nom": "Alnif",
+            "cie": "Tinghir",
+            "lng": -5.0239,
+            "lat": 30.9948,
+            "pop": 38146,
+            "densite": 7.82,
+            "rayonKm": 39.4,
+            "parties": 1
+        },
+        {
+            "nom": "Boulmane",
+            "cie": "Missour",
+            "lng": -4.5539,
+            "lat": 33.1393,
+            "pop": 18312,
+            "densite": 7.74,
+            "rayonKm": 27.44,
+            "parties": 1
+        },
+        {
+            "nom": "Ain Beni Mathar",
+            "cie": "Jerrada",
+            "lng": -2.131,
+            "lat": 33.9292,
+            "pop": 35189,
+            "densite": 6.94,
+            "rayonKm": 40.18,
+            "parties": 1
+        },
+        {
+            "nom": "Ait Abdallah",
+            "cie": "Taroudannt",
+            "lng": -8.8119,
+            "lat": 29.9075,
+            "pop": 6346,
+            "densite": 6.94,
+            "rayonKm": 17.06,
+            "parties": 1
+        },
+        {
+            "nom": "Figuig",
+            "cie": "Figuig",
+            "lng": -1.4764,
+            "lat": 32.2403,
+            "pop": 12239,
+            "densite": 6.71,
+            "rayonKm": 24.09,
+            "parties": 1
+        },
+        {
+            "nom": "Tata",
+            "cie": "Tata",
+            "lng": -8.1299,
+            "lat": 29.6291,
+            "pop": 43442,
+            "densite": 6.27,
+            "rayonKm": 45,
+            "parties": 1
+        },
+        {
+            "nom": "Beni Tadjit",
+            "cie": "Bouarfa",
+            "lng": -3.3237,
+            "lat": 32.3529,
+            "pop": 17557,
+            "densite": 5.81,
+            "rayonKm": 31,
+            "parties": 1
+        },
+        {
+            "nom": "Bouarfa",
+            "cie": "Bouarfa",
+            "lng": -1.9221,
+            "lat": 32.4949,
+            "pop": 38329,
+            "densite": 5.7,
+            "rayonKm": 45,
+            "parties": 1
+        },
+        {
+            "nom": "Talsint",
+            "cie": "Bouarfa",
+            "lng": -3.2888,
+            "lat": 32.78,
+            "pop": 42115,
+            "densite": 5.49,
+            "rayonKm": 45,
+            "parties": 1
+        },
+        {
+            "nom": "Tagounit",
+            "cie": "Zagora",
+            "lng": -5.5198,
+            "lat": 30.0641,
+            "pop": 21279,
+            "densite": 5.34,
+            "rayonKm": 35.62,
+            "parties": 1
+        },
+        {
+            "nom": "Tarhjijt",
+            "cie": "Guelmim",
+            "lng": -9.3882,
+            "lat": 29.0539,
+            "pop": 13024,
+            "densite": 4.98,
+            "rayonKm": 28.86,
+            "parties": 1
+        },
+        {
+            "nom": "Boudnib",
+            "cie": "Errachidia",
+            "lng": -3.6172,
+            "lat": 31.9289,
+            "pop": 19119,
+            "densite": 4.59,
+            "rayonKm": 36.4,
+            "parties": 1
+        },
+        {
+            "nom": "Tarfaya",
+            "cie": "Tarfaya",
+            "lng": -12.6493,
+            "lat": 27.8092,
+            "pop": 11924,
+            "densite": 4.13,
+            "rayonKm": 30.32,
+            "parties": 1
+        },
+        {
+            "nom": "Ain Chair",
+            "cie": "Figuig",
+            "lng": -2.5543,
+            "lat": 32.1922,
+            "pop": 1501,
+            "densite": 4.1,
+            "rayonKm": 10.8,
+            "parties": 1
+        },
+        {
+            "nom": "Bouanane",
+            "cie": "Figuig",
+            "lng": -2.83,
+            "lat": 32.2515,
+            "pop": 11181,
+            "densite": 4.01,
+            "rayonKm": 29.78,
+            "parties": 1
+        },
+        {
+            "nom": "Tissint",
+            "cie": "Tata",
+            "lng": -7.5065,
+            "lat": 29.8409,
+            "pop": 19768,
+            "densite": 3.78,
+            "rayonKm": 40.78,
+            "parties": 1
+        },
+        {
+            "nom": "Assa",
+            "cie": "Assa Zag",
+            "lng": -9.5391,
+            "lat": 28.4698,
+            "pop": 28346,
+            "densite": 3.5,
+            "rayonKm": 45,
+            "parties": 1
+        },
+        {
+            "nom": "Foum El Hisn",
+            "cie": "Tata",
+            "lng": -8.9251,
+            "lat": 28.9114,
+            "pop": 10907,
+            "densite": 3.3,
+            "rayonKm": 32.45,
+            "parties": 1
+        },
+        {
+            "nom": "Akka",
+            "cie": "Tata",
+            "lng": -8.4849,
+            "lat": 29.1421,
+            "pop": 16563,
+            "densite": 3.22,
+            "rayonKm": 40.44,
+            "parties": 1
+        },
+        {
+            "nom": "Foum Zguid",
+            "cie": "Tata",
+            "lng": -6.811,
+            "lat": 29.9449,
+            "pop": 21077,
+            "densite": 2.77,
+            "rayonKm": 45,
+            "parties": 1
+        },
+        {
+            "nom": "Boujdour",
+            "cie": "Boujdour",
+            "lng": -12.8448,
+            "lat": 25.1222,
+            "pop": 64241,
+            "densite": 2.62,
+            "rayonKm": 45,
+            "parties": 1
+        },
+        {
+            "nom": "Laqsabi",
+            "cie": "Guelmim",
+            "lng": -10.5659,
+            "lat": 28.8075,
+            "pop": 9330,
+            "densite": 2.4,
+            "rayonKm": 35.19,
+            "parties": 1
+        },
+        {
+            "nom": "M'hamid El Ghizlane",
+            "cie": "Zagora",
+            "lng": -5.9644,
+            "lat": 29.8072,
+            "pop": 6664,
+            "densite": 1.66,
+            "rayonKm": 35.7,
+            "parties": 1
+        },
+        {
+            "nom": "Tendrara",
+            "cie": "Bouarfa",
+            "lng": -2.1896,
+            "lat": 33.2014,
+            "pop": 20823,
+            "densite": 1.59,
+            "rayonKm": 45,
+            "parties": 1
+        },
+        {
+            "nom": "Zag",
+            "cie": "Assa Zag",
+            "lng": -9.3969,
+            "lat": 27.8007,
+            "pop": 24952,
+            "densite": 1.53,
+            "rayonKm": 45,
+            "parties": 1
+        },
+        {
+            "nom": "El Aargoub",
+            "cie": "Dakhla",
+            "lng": -15.3731,
+            "lat": 23.6666,
+            "pop": 10435,
+            "densite": 1.37,
+            "rayonKm": 45,
+            "parties": 1
+        },
+        {
+            "nom": "Es-Smara",
+            "cie": "Es-Smara",
+            "lng": -10.5907,
+            "lat": 26.7879,
+            "pop": 73864,
+            "densite": 1.14,
+            "rayonKm": 45,
+            "parties": 1
+        },
+        {
+            "nom": "Taouz",
+            "cie": "Marzouga",
+            "lng": -4.4121,
+            "lat": 30.7221,
+            "pop": 11333,
+            "densite": 1.04,
+            "rayonKm": 45,
+            "parties": 1
+        },
+        {
+            "nom": "Ain Chouater",
+            "cie": "Figuig",
+            "lng": -3.0313,
+            "lat": 31.8525,
+            "pop": 706,
+            "densite": 0.99,
+            "rayonKm": 15.07,
+            "parties": 1
+        },
+        {
+            "nom": "Akhfenir",
+            "cie": "Tarfaya",
+            "lng": -11.9334,
+            "lat": 27.9259,
+            "pop": 2841,
+            "densite": 0.97,
+            "rayonKm": 30.5,
+            "parties": 1
+        },
+        {
+            "nom": "Foum El Oued",
+            "cie": "Laayoune",
+            "lng": -13.3866,
+            "lat": 26.8545,
+            "pop": 1844,
+            "densite": 0.79,
+            "rayonKm": 27.24,
+            "parties": 1
+        },
+        {
+            "nom": "Bir Guendouz",
+            "cie": "Aousserd",
+            "lng": -16.415,
+            "lat": 21.8479,
+            "pop": 8808,
+            "densite": 0.73,
+            "rayonKm": 45,
+            "parties": 1
+        },
+        {
+            "nom": "Abteh",
+            "cie": "Tan Tan",
+            "lng": -11.3777,
+            "lat": 27.9328,
+            "pop": 651,
+            "densite": 0.45,
+            "rayonKm": 21.48,
+            "parties": 1
+        },
+        {
+            "nom": "Tilimzoune",
+            "cie": "Tan Tan",
+            "lng": -10.7808,
+            "lat": 28.0932,
+            "pop": 2248,
+            "densite": 0.37,
+            "rayonKm": 44.15,
+            "parties": 1
+        },
+        {
+            "nom": "Aarich",
+            "cie": "Dakhla",
+            "lng": -13.5718,
+            "lat": 23.8586,
+            "pop": 15274,
+            "densite": 0.3,
+            "rayonKm": 45,
+            "parties": 1
+        },
+        {
+            "nom": "Imlili",
+            "cie": "Dakhla",
+            "lng": -15.6858,
+            "lat": 22.8145,
+            "pop": 3345,
+            "densite": 0.26,
+            "rayonKm": 45,
+            "parties": 1
+        },
+        {
+            "nom": "Aousserd",
+            "cie": "Aousserd",
+            "lng": -14.3907,
+            "lat": 22.1499,
+            "pop": 12188,
+            "densite": 0.23,
+            "rayonKm": 45,
+            "parties": 1
+        },
+        {
+            "nom": "Dawra",
+            "cie": "Tarfaya",
+            "lng": -12.522,
+            "lat": 27.3947,
+            "pop": 1463,
+            "densite": 0.19,
+            "rayonKm": 45,
+            "parties": 1
+        },
+        {
+            "nom": "Boukraa",
+            "cie": "Laayoune",
+            "lng": -12.8972,
+            "lat": 26.5863,
+            "pop": 1171,
+            "densite": 0.19,
+            "rayonKm": 43.96,
+            "parties": 1
+        },
+        {
+            "nom": "Chbika",
+            "cie": "Tan Tan",
+            "lng": -11.4203,
+            "lat": 28.2473,
+            "pop": 277,
+            "densite": 0.15,
+            "rayonKm": 24.06,
+            "parties": 1
+        },
+        {
+            "nom": "Oued Craa",
+            "cie": "Boujdour",
+            "lng": -14.2864,
+            "lat": 25.2606,
+            "pop": 835,
+            "densite": 0.05,
+            "rayonKm": 45,
+            "parties": 1
+        },
+        {
+            "nom": "Sidi El Ghazi",
+            "cie": "Boujdour",
+            "lng": -13.3361,
+            "lat": 26.0266,
+            "pop": 305,
+            "densite": 0.02,
+            "rayonKm": 45,
+            "parties": 1
+        }
+    ]
+}
