@@ -1,0 +1,6020 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "conf_calc_BFI-CIE-024|syn_bf_039_5l3s6.",
+      "numero": "C-R1",
+      "paireCle": "BFI-CIE-024|syn_bf_039_5l3s6.",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BFI-CIE-024",
+      "barrageBId": "syn_bf_039_5l3s6.",
+      "barrageA": {
+        "id": "BFI-CIE-024",
+        "nom": "BFI Dakhla",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": null,
+        "lng": -15.67267,
+        "lat": 23.89229,
+        "reg": "Dakhla",
+        "cie": "Dakhla",
+        "bt": "El Aargoub",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "syn_bf_039_5l3s6.",
+        "nom": "Barrage Fixe RN1 — El Aargoub",
+        "type": "FIXED",
+        "route": "Route Nationale RN1",
+        "pk": null,
+        "lng": -15.63179,
+        "lat": 23.96563,
+        "reg": "Dakhla",
+        "cie": "Dakhla",
+        "bt": "El Aargoub",
+        "factionId": null,
+        "statutBarrage": "approuve"
+      },
+      "route": "RN1",
+      "factionsCommunes": [],
+      "distanceKm": 9.3,
+      "seuilKm": 20,
+      "motif": "Espacement de 9.3 km inférieur au seuil (20 km)",
+      "etat": "ASSIGNED_REGION",
+      "assignation": {
+        "regions": [
+          {
+            "unite": "Dakhla",
+            "matricule": "REG-DAKHLA",
+            "nom": "Chef de région Dakhla"
+          }
+        ],
+        "cie": null,
+        "responsable": null,
+        "assignePar": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "assigneLe": "2026-11-03T15:28:07.317Z"
+      },
+      "statut": "a_traiter",
+      "cree": "2026-11-03T15:28:07.316Z",
+      "maj": "2026-11-03T15:28:07.317Z",
+      "historique": [
+        {
+          "id": "h_mw0ue0lw_10403",
+          "date": "2026-11-03T15:28:07.316Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "de": null,
+          "vers": "NEW",
+          "statut": "nouveau",
+          "commentaire": "Conflit C-R1 identifié par la filtration du Super Admin."
+        },
+        {
+          "id": "h_mw0ue0lx_25cb5",
+          "date": "2026-11-03T15:28:07.317Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "statut": "a_traiter",
+          "commentaire": "Conflit C-R1 assigné au CMD Région Dakhla.",
+          "motif": null,
+          "destinataire": {
+            "rang": "reg",
+            "unite": "Dakhla"
+          }
+        }
+      ],
+      "assigneLe": "2026-11-03T15:28:07.317Z",
+      "transitions": [
+        {
+          "date": "2026-11-03T15:28:07.317Z",
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "motif": null
+        }
+      ],
+      "assignesA": [
+        {
+          "matricule": "REG-DAKHLA",
+          "nom": "Chef de région Dakhla",
+          "rang": "reg",
+          "unite": "Dakhla",
+          "region": "Dakhla"
+        }
+      ],
+      "assigneA": {
+        "matricule": "REG-DAKHLA",
+        "nom": "Chef de région Dakhla",
+        "rang": "reg",
+        "unite": "Dakhla",
+        "region": "Dakhla"
+      }
+    },
+    {
+      "id": "conf_calc_BF-BT-188|BFI-CIE-044",
+      "numero": "C-R2",
+      "paireCle": "BF-BT-188|BFI-CIE-044",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BFI-CIE-044",
+      "barrageBId": "BF-BT-188",
+      "barrageA": {
+        "id": "BFI-CIE-044",
+        "nom": "BFI Laayoune",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": null,
+        "lng": -13.23296,
+        "lat": 27.15235,
+        "reg": "Laayoune",
+        "cie": "Laayoune",
+        "bt": "Laayoune",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-188",
+        "nom": "Poste fixe Foum El Oued",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": 1474.5,
+        "lng": -13.14035,
+        "lat": 27.24646,
+        "reg": "Laayoune",
+        "cie": "Laayoune",
+        "bt": "Boukraa",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN1",
+      "factionsCommunes": [],
+      "distanceKm": 12,
+      "seuilKm": 20,
+      "motif": "Espacement de 12.0 km inférieur au seuil (20 km)",
+      "etat": "CLOSED",
+      "assignation": {
+        "regions": [
+          {
+            "unite": "Laayoune",
+            "matricule": "REG-LAAYOUNE",
+            "nom": "Chef de région Laayoune"
+          }
+        ],
+        "cie": null,
+        "responsable": {
+          "rang": "reg",
+          "unite": "Laayoune",
+          "reg": "Laayoune",
+          "matricule": "REG-LAAYOUNE"
+        },
+        "assignePar": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "assigneLe": "2026-11-03T15:28:17.543Z"
+      },
+      "statut": "cloture",
+      "cree": "2026-11-03T15:28:17.542Z",
+      "maj": "2026-11-04T11:12:15.382Z",
+      "historique": [
+        {
+          "id": "h_mw0ue8hy_3680c",
+          "date": "2026-11-03T15:28:17.542Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "de": null,
+          "vers": "NEW",
+          "statut": "nouveau",
+          "commentaire": "Conflit C-R2 identifié par la filtration du Super Admin."
+        },
+        {
+          "id": "h_mw0ue8hz_4ba39",
+          "date": "2026-11-03T15:28:17.543Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "statut": "a_traiter",
+          "commentaire": "Conflit C-R2 assigné au CMD Région Laayoune.",
+          "motif": null,
+          "destinataire": {
+            "rang": "reg",
+            "unite": "Laayoune"
+          }
+        },
+        {
+          "id": "h_mw205mtq_t1a72",
+          "date": "2026-11-04T10:57:20.078Z",
+          "auteur": {
+            "matricule": "REG-LAAYOUNE",
+            "nom": "Chef de région Laayoune",
+            "rang": "reg",
+            "unite": "Laayoune"
+          },
+          "action": "prendre_en_charge",
+          "de": "ASSIGNED_REGION",
+          "vers": "IN_PROGRESS_REGION",
+          "statut": "en_cours",
+          "commentaire": "Le CMD Région Laayoune prend en charge le traitement du conflit C-R2.",
+          "motif": null
+        },
+        {
+          "id": "h_mw20h5iq_u2e56",
+          "date": "2026-11-04T11:06:17.522Z",
+          "auteur": {
+            "matricule": "REG-LAAYOUNE",
+            "nom": "Chef de région Laayoune",
+            "rang": "reg",
+            "unite": "Laayoune"
+          },
+          "action": "soumettre",
+          "de": "IN_PROGRESS_REGION",
+          "vers": "PENDING_VALIDATION",
+          "statut": "traite",
+          "commentaire": "Traitement du conflit C-R2 : Déplacement du barrage (Réajustement position) — espacement réglementaire atteint, conflit résolu.",
+          "motif": null,
+          "decision": "Déplacement du barrage (Réajustement position)",
+          "justification": "Barrage Poste fixe Foum El Oued déplacé de [-13.1588, 27.2172] vers [-13.1403, 27.2465] sur RN1. Conflit résolu.",
+          "statutPhysique": "resolu",
+          "persiste": false,
+          "details": {
+            "barrageId": "BF-BT-188",
+            "barrageNom": "Poste fixe Foum El Oued",
+            "latAvant": 27.21723,
+            "lngAvant": -13.15879,
+            "routeAvant": "RN1",
+            "latApres": 27.24646,
+            "lngApres": -13.14035,
+            "routeApres": "RN1",
+            "distanceApresKm": 25,
+            "statut": "resolu",
+            "resolu": true,
+            "commentaire": "Barrage Poste fixe Foum El Oued déplacé de [-13.1588, 27.2172] vers [-13.1403, 27.2465] sur RN1. Conflit résolu."
+          },
+          "changement": {
+            "type": "deplacement",
+            "avant": {
+              "barrageId": "BF-BT-188",
+              "barrageNom": "Poste fixe Foum El Oued",
+              "lat": 27.21723,
+              "lng": -13.15879,
+              "route": "RN1",
+              "distanceKm": 12
+            },
+            "apres": {
+              "barrageId": "BF-BT-188",
+              "barrageNom": "Poste fixe Foum El Oued",
+              "lat": 27.24646,
+              "lng": -13.14035,
+              "route": "RN1",
+              "distanceKm": 25
+            }
+          }
+        },
+        {
+          "id": "h_mw20otna_13803a",
+          "date": "2026-11-04T11:12:15.382Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "valider",
+          "de": "PENDING_VALIDATION",
+          "vers": "APPROVED",
+          "statut": "traite",
+          "commentaire": "Validation du traitement — Validé."
+        },
+        {
+          "id": "h_mw20otna_14dc95",
+          "date": "2026-11-04T11:12:15.382Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "valider",
+          "de": "APPROVED",
+          "vers": "CLOSED",
+          "statut": "cloture",
+          "commentaire": "Traitement du conflit C-R2 validé par le Super Admin : archivé à l'historique.",
+          "motif": null
+        }
+      ],
+      "assigneLe": "2026-11-03T15:28:17.543Z",
+      "transitions": [
+        {
+          "date": "2026-11-03T15:28:17.543Z",
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "motif": null
+        },
+        {
+          "date": "2026-11-04T10:57:20.078Z",
+          "action": "prendre_en_charge",
+          "de": "ASSIGNED_REGION",
+          "vers": "IN_PROGRESS_REGION",
+          "auteur": {
+            "matricule": "REG-LAAYOUNE",
+            "nom": "Chef de région Laayoune",
+            "rang": "reg",
+            "unite": "Laayoune"
+          },
+          "motif": null
+        },
+        {
+          "date": "2026-11-04T11:06:17.522Z",
+          "action": "soumettre",
+          "de": "IN_PROGRESS_REGION",
+          "vers": "PENDING_VALIDATION",
+          "auteur": {
+            "matricule": "REG-LAAYOUNE",
+            "nom": "Chef de région Laayoune",
+            "rang": "reg",
+            "unite": "Laayoune"
+          },
+          "motif": null
+        },
+        {
+          "date": "2026-11-04T11:12:15.382Z",
+          "action": "valider",
+          "de": "PENDING_VALIDATION",
+          "vers": "CLOSED",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "motif": null
+        }
+      ],
+      "assignesA": [
+        {
+          "matricule": "REG-LAAYOUNE",
+          "nom": "Chef de région Laayoune",
+          "rang": "reg",
+          "unite": "Laayoune",
+          "region": "Laayoune"
+        }
+      ],
+      "assigneA": {
+        "matricule": "REG-LAAYOUNE",
+        "nom": "Chef de région Laayoune",
+        "rang": "reg",
+        "unite": "Laayoune",
+        "region": "Laayoune"
+      },
+      "traiteLe": "2026-11-04T11:06:17.521Z",
+      "traitePar": {
+        "matricule": "REG-LAAYOUNE",
+        "nom": "Chef de région Laayoune",
+        "rang": "reg",
+        "unite": "Laayoune"
+      },
+      "persiste": false,
+      "statutPhysique": "resolu",
+      "decision": "Déplacement du barrage (Réajustement position)",
+      "justification": "Barrage Poste fixe Foum El Oued déplacé de [-13.1588, 27.2172] vers [-13.1403, 27.2465] sur RN1. Conflit résolu.",
+      "changement": {
+        "type": "deplacement",
+        "avant": {
+          "barrageId": "BF-BT-188",
+          "barrageNom": "Poste fixe Foum El Oued",
+          "lat": 27.21723,
+          "lng": -13.15879,
+          "route": "RN1",
+          "distanceKm": 12
+        },
+        "apres": {
+          "barrageId": "BF-BT-188",
+          "barrageNom": "Poste fixe Foum El Oued",
+          "lat": 27.24646,
+          "lng": -13.14035,
+          "route": "RN1",
+          "distanceKm": 25
+        }
+      },
+      "traitement": {
+        "date": "2026-11-04T11:06:17.521Z",
+        "auteur": {
+          "matricule": "REG-LAAYOUNE",
+          "nom": "Chef de région Laayoune",
+          "rang": "reg",
+          "unite": "Laayoune"
+        },
+        "action": "deplacement",
+        "decision": "Déplacement du barrage (Réajustement position)",
+        "justification": "Barrage Poste fixe Foum El Oued déplacé de [-13.1588, 27.2172] vers [-13.1403, 27.2465] sur RN1. Conflit résolu.",
+        "persiste": false,
+        "statutPhysique": "resolu",
+        "details": {
+          "barrageId": "BF-BT-188",
+          "barrageNom": "Poste fixe Foum El Oued",
+          "latAvant": 27.21723,
+          "lngAvant": -13.15879,
+          "routeAvant": "RN1",
+          "latApres": 27.24646,
+          "lngApres": -13.14035,
+          "routeApres": "RN1",
+          "distanceApresKm": 25,
+          "statut": "resolu",
+          "resolu": true,
+          "commentaire": "Barrage Poste fixe Foum El Oued déplacé de [-13.1588, 27.2172] vers [-13.1403, 27.2465] sur RN1. Conflit résolu."
+        },
+        "changement": {
+          "type": "deplacement",
+          "avant": {
+            "barrageId": "BF-BT-188",
+            "barrageNom": "Poste fixe Foum El Oued",
+            "lat": 27.21723,
+            "lng": -13.15879,
+            "route": "RN1",
+            "distanceKm": 12
+          },
+          "apres": {
+            "barrageId": "BF-BT-188",
+            "barrageNom": "Poste fixe Foum El Oued",
+            "lat": 27.24646,
+            "lng": -13.14035,
+            "route": "RN1",
+            "distanceKm": 25
+          }
+        },
+        "approbation": {
+          "statut": "approuve",
+          "date": "2026-11-04T11:12:15.382Z",
+          "par": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "raison": null
+        }
+      },
+      "approbation": {
+        "statut": "approuve",
+        "date": "2026-11-04T11:12:15.382Z",
+        "par": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "raison": null
+      },
+      "validation": {
+        "decision": "valider",
+        "par": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "le": "2026-11-04T11:12:15.382Z",
+        "motif": null
+      },
+      "clotureLe": "2026-11-04T11:12:15.382Z",
+      "cloturePar": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      }
+    },
+    {
+      "id": "conf_calc_BFI-CIE-079|syn_bf_018_1c4i0.",
+      "numero": "C-R5",
+      "paireCle": "BFI-CIE-079|syn_bf_018_1c4i0.",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BFI-CIE-079",
+      "barrageBId": "syn_bf_018_1c4i0.",
+      "barrageA": {
+        "id": "BFI-CIE-079",
+        "nom": "BFI Tarfaya",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": null,
+        "lng": -12.82853,
+        "lat": 27.95973,
+        "reg": "Laayoune",
+        "cie": "Tarfaya",
+        "bt": "Tarfaya",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "syn_bf_018_1c4i0.",
+        "nom": "Barrage Fixe RN1 — Tarfaya",
+        "type": "FIXED",
+        "route": "RN1",
+        "pk": 1387,
+        "lng": -12.88232,
+        "lat": 27.94841,
+        "reg": "Laayoune",
+        "cie": "Tarfaya",
+        "bt": "Tarfaya",
+        "factionId": null,
+        "statutBarrage": "approuve"
+      },
+      "route": "RN1",
+      "factionsCommunes": [],
+      "distanceKm": 2.4,
+      "seuilKm": 20,
+      "motif": "Espacement de 2.4 km inférieur au seuil (20 km)",
+      "etat": "CLOSED",
+      "assignation": {
+        "regions": [
+          {
+            "unite": "Laayoune",
+            "matricule": "REG-LAAYOUNE",
+            "nom": "Chef de région Laayoune"
+          }
+        ],
+        "cie": null,
+        "responsable": {
+          "rang": "reg",
+          "unite": "Laayoune",
+          "reg": "Laayoune",
+          "matricule": "REG-LAAYOUNE"
+        },
+        "assignePar": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "assigneLe": "2026-11-03T15:28:22.026Z"
+      },
+      "statut": "cloture",
+      "cree": "2026-11-03T15:28:22.026Z",
+      "maj": "2026-11-04T11:12:26.690Z",
+      "historique": [
+        {
+          "id": "h_mw0uebyi_571e2",
+          "date": "2026-11-03T15:28:22.026Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "de": null,
+          "vers": "NEW",
+          "statut": "nouveau",
+          "commentaire": "Conflit C-R5 identifié par la filtration du Super Admin."
+        },
+        {
+          "id": "h_mw0uebyi_61d7a",
+          "date": "2026-11-03T15:28:22.026Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "statut": "a_traiter",
+          "commentaire": "Conflit C-R5 assigné au CMD Région Laayoune.",
+          "motif": null,
+          "destinataire": {
+            "rang": "reg",
+            "unite": "Laayoune"
+          }
+        },
+        {
+          "id": "h_mw20hb2v_v2791",
+          "date": "2026-11-04T11:06:24.727Z",
+          "auteur": {
+            "matricule": "REG-LAAYOUNE",
+            "nom": "Chef de région Laayoune",
+            "rang": "reg",
+            "unite": "Laayoune"
+          },
+          "action": "prendre_en_charge",
+          "de": "ASSIGNED_REGION",
+          "vers": "IN_PROGRESS_REGION",
+          "statut": "en_cours",
+          "commentaire": "Le CMD Région Laayoune prend en charge le traitement du conflit C-R5.",
+          "motif": null
+        },
+        {
+          "id": "h_mw20j7s7_w0340",
+          "date": "2026-11-04T11:07:53.767Z",
+          "auteur": {
+            "matricule": "REG-LAAYOUNE",
+            "nom": "Chef de région Laayoune",
+            "rang": "reg",
+            "unite": "Laayoune"
+          },
+          "action": "soumettre",
+          "de": "IN_PROGRESS_REGION",
+          "vers": "PENDING_VALIDATION",
+          "statut": "traite",
+          "commentaire": "Traitement du conflit C-R5 : Déplacement du barrage (Réajustement position) — espacement réglementaire atteint, conflit résolu.",
+          "motif": null,
+          "decision": "Déplacement du barrage (Réajustement position)",
+          "justification": "Barrage Barrage Fixe RN1 — Tarfaya déplacé de [-12.8054, 27.9658] vers [-12.8823, 27.9484] sur RN1. Conflit résolu.",
+          "statutPhysique": "resolu",
+          "persiste": false,
+          "details": {
+            "barrageId": "syn_bf_018_1c4i0.",
+            "barrageNom": "Barrage Fixe RN1 — Tarfaya",
+            "latAvant": 27.96585,
+            "lngAvant": -12.80538,
+            "routeAvant": "Route Nationale RN1",
+            "latApres": 27.94841,
+            "lngApres": -12.88232,
+            "routeApres": "RN1",
+            "distanceApresKm": 25,
+            "statut": "resolu",
+            "resolu": true,
+            "commentaire": "Barrage Barrage Fixe RN1 — Tarfaya déplacé de [-12.8054, 27.9658] vers [-12.8823, 27.9484] sur RN1. Conflit résolu."
+          },
+          "changement": {
+            "type": "deplacement",
+            "avant": {
+              "barrageId": "syn_bf_018_1c4i0.",
+              "barrageNom": "Barrage Fixe RN1 — Tarfaya",
+              "lat": 27.96585,
+              "lng": -12.80538,
+              "route": "Route Nationale RN1",
+              "distanceKm": 2.4
+            },
+            "apres": {
+              "barrageId": "syn_bf_018_1c4i0.",
+              "barrageNom": "Barrage Fixe RN1 — Tarfaya",
+              "lat": 27.94841,
+              "lng": -12.88232,
+              "route": "RN1",
+              "distanceKm": 25
+            }
+          }
+        },
+        {
+          "id": "h_mw20p2de_17fb41",
+          "date": "2026-11-04T11:12:26.690Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "valider",
+          "de": "PENDING_VALIDATION",
+          "vers": "APPROVED",
+          "statut": "traite",
+          "commentaire": "Validation du traitement — Validé."
+        },
+        {
+          "id": "h_mw20p2de_183212",
+          "date": "2026-11-04T11:12:26.690Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "valider",
+          "de": "APPROVED",
+          "vers": "CLOSED",
+          "statut": "cloture",
+          "commentaire": "Traitement du conflit C-R5 validé par le Super Admin : archivé à l'historique.",
+          "motif": null
+        }
+      ],
+      "assigneLe": "2026-11-03T15:28:22.026Z",
+      "transitions": [
+        {
+          "date": "2026-11-03T15:28:22.026Z",
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "motif": null
+        },
+        {
+          "date": "2026-11-04T11:06:24.727Z",
+          "action": "prendre_en_charge",
+          "de": "ASSIGNED_REGION",
+          "vers": "IN_PROGRESS_REGION",
+          "auteur": {
+            "matricule": "REG-LAAYOUNE",
+            "nom": "Chef de région Laayoune",
+            "rang": "reg",
+            "unite": "Laayoune"
+          },
+          "motif": null
+        },
+        {
+          "date": "2026-11-04T11:07:53.767Z",
+          "action": "soumettre",
+          "de": "IN_PROGRESS_REGION",
+          "vers": "PENDING_VALIDATION",
+          "auteur": {
+            "matricule": "REG-LAAYOUNE",
+            "nom": "Chef de région Laayoune",
+            "rang": "reg",
+            "unite": "Laayoune"
+          },
+          "motif": null
+        },
+        {
+          "date": "2026-11-04T11:12:26.690Z",
+          "action": "valider",
+          "de": "PENDING_VALIDATION",
+          "vers": "CLOSED",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "motif": null
+        }
+      ],
+      "assignesA": [
+        {
+          "matricule": "REG-LAAYOUNE",
+          "nom": "Chef de région Laayoune",
+          "rang": "reg",
+          "unite": "Laayoune",
+          "region": "Laayoune"
+        }
+      ],
+      "assigneA": {
+        "matricule": "REG-LAAYOUNE",
+        "nom": "Chef de région Laayoune",
+        "rang": "reg",
+        "unite": "Laayoune",
+        "region": "Laayoune"
+      },
+      "traiteLe": "2026-11-04T11:07:53.767Z",
+      "traitePar": {
+        "matricule": "REG-LAAYOUNE",
+        "nom": "Chef de région Laayoune",
+        "rang": "reg",
+        "unite": "Laayoune"
+      },
+      "persiste": false,
+      "statutPhysique": "resolu",
+      "decision": "Déplacement du barrage (Réajustement position)",
+      "justification": "Barrage Barrage Fixe RN1 — Tarfaya déplacé de [-12.8054, 27.9658] vers [-12.8823, 27.9484] sur RN1. Conflit résolu.",
+      "changement": {
+        "type": "deplacement",
+        "avant": {
+          "barrageId": "syn_bf_018_1c4i0.",
+          "barrageNom": "Barrage Fixe RN1 — Tarfaya",
+          "lat": 27.96585,
+          "lng": -12.80538,
+          "route": "Route Nationale RN1",
+          "distanceKm": 2.4
+        },
+        "apres": {
+          "barrageId": "syn_bf_018_1c4i0.",
+          "barrageNom": "Barrage Fixe RN1 — Tarfaya",
+          "lat": 27.94841,
+          "lng": -12.88232,
+          "route": "RN1",
+          "distanceKm": 25
+        }
+      },
+      "traitement": {
+        "date": "2026-11-04T11:07:53.767Z",
+        "auteur": {
+          "matricule": "REG-LAAYOUNE",
+          "nom": "Chef de région Laayoune",
+          "rang": "reg",
+          "unite": "Laayoune"
+        },
+        "action": "deplacement",
+        "decision": "Déplacement du barrage (Réajustement position)",
+        "justification": "Barrage Barrage Fixe RN1 — Tarfaya déplacé de [-12.8054, 27.9658] vers [-12.8823, 27.9484] sur RN1. Conflit résolu.",
+        "persiste": false,
+        "statutPhysique": "resolu",
+        "details": {
+          "barrageId": "syn_bf_018_1c4i0.",
+          "barrageNom": "Barrage Fixe RN1 — Tarfaya",
+          "latAvant": 27.96585,
+          "lngAvant": -12.80538,
+          "routeAvant": "Route Nationale RN1",
+          "latApres": 27.94841,
+          "lngApres": -12.88232,
+          "routeApres": "RN1",
+          "distanceApresKm": 25,
+          "statut": "resolu",
+          "resolu": true,
+          "commentaire": "Barrage Barrage Fixe RN1 — Tarfaya déplacé de [-12.8054, 27.9658] vers [-12.8823, 27.9484] sur RN1. Conflit résolu."
+        },
+        "changement": {
+          "type": "deplacement",
+          "avant": {
+            "barrageId": "syn_bf_018_1c4i0.",
+            "barrageNom": "Barrage Fixe RN1 — Tarfaya",
+            "lat": 27.96585,
+            "lng": -12.80538,
+            "route": "Route Nationale RN1",
+            "distanceKm": 2.4
+          },
+          "apres": {
+            "barrageId": "syn_bf_018_1c4i0.",
+            "barrageNom": "Barrage Fixe RN1 — Tarfaya",
+            "lat": 27.94841,
+            "lng": -12.88232,
+            "route": "RN1",
+            "distanceKm": 25
+          }
+        },
+        "approbation": {
+          "statut": "approuve",
+          "date": "2026-11-04T11:12:26.690Z",
+          "par": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "raison": null
+        }
+      },
+      "approbation": {
+        "statut": "approuve",
+        "date": "2026-11-04T11:12:26.690Z",
+        "par": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "raison": null
+      },
+      "validation": {
+        "decision": "valider",
+        "par": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "le": "2026-11-04T11:12:26.690Z",
+        "motif": null
+      },
+      "clotureLe": "2026-11-04T11:12:26.690Z",
+      "cloturePar": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      }
+    },
+    {
+      "id": "conf_calc_BF-BT-126|BF-BT-188",
+      "numero": "C-R7",
+      "paireCle": "BF-BT-126|BF-BT-188",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-126",
+      "barrageBId": "BF-BT-188",
+      "barrageA": {
+        "id": "BF-BT-126",
+        "nom": "Poste fixe Boukraa",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": 1465.9,
+        "lng": -13.08748,
+        "lat": 27.30145,
+        "reg": "Laayoune",
+        "cie": "Laayoune",
+        "bt": "Boukraa",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-188",
+        "nom": "Poste fixe Foum El Oued",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": 1478.2,
+        "lng": -13.15879,
+        "lat": 27.21723,
+        "reg": "Laayoune",
+        "cie": "Laayoune",
+        "bt": "Boukraa",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN1",
+      "factionsCommunes": [],
+      "distanceKm": 18.3,
+      "seuilKm": 20,
+      "motif": "Espacement de 18.3 km inférieur au seuil (20 km)",
+      "etat": "CLOSED",
+      "assignation": {
+        "regions": [
+          {
+            "unite": "Laayoune",
+            "matricule": "REG-LAAYOUNE",
+            "nom": "Chef de région Laayoune"
+          }
+        ],
+        "cie": null,
+        "responsable": {
+          "rang": "reg",
+          "unite": "Laayoune",
+          "reg": "Laayoune",
+          "matricule": "REG-LAAYOUNE"
+        },
+        "assignePar": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "assigneLe": "2026-11-03T15:28:26.234Z"
+      },
+      "statut": "cloture",
+      "cree": "2026-11-03T15:28:26.234Z",
+      "maj": "2026-11-04T11:12:30.710Z",
+      "historique": [
+        {
+          "id": "h_mw0uef7e_7fa43",
+          "date": "2026-11-03T15:28:26.234Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "de": null,
+          "vers": "NEW",
+          "statut": "nouveau",
+          "commentaire": "Conflit C-R7 identifié par la filtration du Super Admin."
+        },
+        {
+          "id": "h_mw0uef7e_846b8",
+          "date": "2026-11-03T15:28:26.234Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "statut": "a_traiter",
+          "commentaire": "Conflit C-R7 assigné au CMD Région Laayoune.",
+          "motif": null,
+          "destinataire": {
+            "rang": "reg",
+            "unite": "Laayoune"
+          }
+        },
+        {
+          "id": "h_mw20jo4z_x369d",
+          "date": "2026-11-04T11:08:14.963Z",
+          "auteur": {
+            "matricule": "REG-LAAYOUNE",
+            "nom": "Chef de région Laayoune",
+            "rang": "reg",
+            "unite": "Laayoune"
+          },
+          "action": "prendre_en_charge",
+          "de": "ASSIGNED_REGION",
+          "vers": "IN_PROGRESS_REGION",
+          "statut": "en_cours",
+          "commentaire": "Le CMD Région Laayoune prend en charge le traitement du conflit C-R7.",
+          "motif": null
+        },
+        {
+          "id": "h_mw20jt6b_yb604",
+          "date": "2026-11-04T11:08:21.491Z",
+          "auteur": {
+            "matricule": "REG-LAAYOUNE",
+            "nom": "Chef de région Laayoune",
+            "rang": "reg",
+            "unite": "Laayoune"
+          },
+          "action": "soumettre",
+          "de": "IN_PROGRESS_REGION",
+          "vers": "PENDING_VALIDATION",
+          "statut": "traite",
+          "commentaire": "Traitement du conflit C-R7 : Faction modifiée en Faction 1. Proximité physique maintenue sous décalage horaire.",
+          "motif": null,
+          "decision": "Changement de faction du barrage Poste fixe Boukraa (Faction 1)",
+          "justification": "",
+          "statutPhysique": "maintenu_decalage_horaire",
+          "persiste": true,
+          "details": {
+            "barrageId": "BF-BT-126",
+            "barrageNom": "Poste fixe Boukraa",
+            "ancienneFactionId": "F2",
+            "ancienneFactionNom": "Faction 2",
+            "nouvelleFactionId": "F1",
+            "nouvelleFactionNom": "Faction 1",
+            "justification": "",
+            "conflitData": {
+              "id": "conf_calc_BF-BT-126|BF-BT-188",
+              "numero": "C-R7",
+              "paireCle": "BF-BT-126|BF-BT-188",
+              "type": "distance_insuffisante",
+              "severite": "alerte",
+              "barrageAId": "BF-BT-126",
+              "barrageBId": "BF-BT-188",
+              "barrageA": {
+                "id": "BF-BT-126",
+                "nom": "Poste fixe Boukraa",
+                "type": "barrage_fixe",
+                "route": "RN1",
+                "pk": 1465.9,
+                "lng": -13.08748,
+                "lat": 27.30145,
+                "reg": "Laayoune",
+                "cie": "Laayoune",
+                "bt": "Boukraa",
+                "factionId": "F2",
+                "statutBarrage": "approuve"
+              },
+              "barrageB": {
+                "id": "BF-BT-188",
+                "nom": "Poste fixe Foum El Oued",
+                "type": "barrage_fixe",
+                "route": "RN1",
+                "pk": 1478.2,
+                "lng": -13.15879,
+                "lat": 27.21723,
+                "reg": "Laayoune",
+                "cie": "Laayoune",
+                "bt": "Boukraa",
+                "factionId": "F4",
+                "statutBarrage": "approuve"
+              },
+              "route": "RN1",
+              "factionsCommunes": [],
+              "distanceKm": 18.3,
+              "seuilKm": 20,
+              "motif": "Espacement de 18.3 km inférieur au seuil (20 km)",
+              "etat": "ASSIGNED_REGION",
+              "assignation": {
+                "regions": [
+                  {
+                    "unite": "Laayoune",
+                    "matricule": "REG-LAAYOUNE",
+                    "nom": "Chef de région Laayoune"
+                  }
+                ],
+                "cie": null,
+                "responsable": null,
+                "assignePar": {
+                  "matricule": "SUPERADMIN",
+                  "nom": "Administrateur superadmin",
+                  "rang": "admin",
+                  "unite": "superadmin"
+                },
+                "assigneLe": "2026-11-03T15:28:26.234Z"
+              },
+              "statut": "a_traiter",
+              "cree": "2026-11-03T15:28:26.234Z",
+              "maj": "2026-11-03T15:28:26.234Z",
+              "historique": [
+                {
+                  "id": "h_mw0uef7e_7fa43",
+                  "date": "2026-11-03T15:28:26.234Z",
+                  "auteur": {
+                    "matricule": "SUPERADMIN",
+                    "nom": "Administrateur superadmin",
+                    "rang": "admin",
+                    "unite": "superadmin"
+                  },
+                  "action": "detection",
+                  "de": null,
+                  "vers": "NEW",
+                  "statut": "nouveau",
+                  "commentaire": "Conflit C-R7 identifié par la filtration du Super Admin."
+                },
+                {
+                  "id": "h_mw0uef7e_846b8",
+                  "date": "2026-11-03T15:28:26.234Z",
+                  "auteur": {
+                    "matricule": "SUPERADMIN",
+                    "nom": "Administrateur superadmin",
+                    "rang": "admin",
+                    "unite": "superadmin"
+                  },
+                  "action": "assigner_region",
+                  "de": "NEW",
+                  "vers": "ASSIGNED_REGION",
+                  "statut": "a_traiter",
+                  "commentaire": "Conflit C-R7 assigné au CMD Région Laayoune.",
+                  "motif": null,
+                  "destinataire": {
+                    "rang": "reg",
+                    "unite": "Laayoune"
+                  }
+                }
+              ],
+              "assigneLe": "2026-11-03T15:28:26.234Z",
+              "transitions": [
+                {
+                  "date": "2026-11-03T15:28:26.234Z",
+                  "action": "assigner_region",
+                  "de": "NEW",
+                  "vers": "ASSIGNED_REGION",
+                  "auteur": {
+                    "matricule": "SUPERADMIN",
+                    "nom": "Administrateur superadmin",
+                    "rang": "admin",
+                    "unite": "superadmin"
+                  },
+                  "motif": null
+                }
+              ],
+              "assignesA": [
+                {
+                  "matricule": "REG-LAAYOUNE",
+                  "nom": "Chef de région Laayoune",
+                  "rang": "reg",
+                  "unite": "Laayoune",
+                  "region": "Laayoune"
+                }
+              ],
+              "assigneA": {
+                "matricule": "REG-LAAYOUNE",
+                "nom": "Chef de région Laayoune",
+                "rang": "reg",
+                "unite": "Laayoune",
+                "region": "Laayoune"
+              },
+              "workflow": {
+                "etat": "ASSIGNED_REGION",
+                "libelle": "Assigné au CMD Région",
+                "section": "a_traiter",
+                "actions": {
+                  "assigner_region": false,
+                  "desassigner": false,
+                  "prendre_en_charge": true,
+                  "assigner_cie": true,
+                  "commencer": false,
+                  "soumettre": true,
+                  "valider": false,
+                  "rejeter": false,
+                  "cloturer": false,
+                  "rouvrir": false,
+                  "supprimer": false
+                },
+                "regions": [
+                  "Laayoune"
+                ],
+                "compagnie": null,
+                "responsable": {
+                  "rang": "reg",
+                  "unite": "Laayoune",
+                  "matricule": "REG-LAAYOUNE"
+                },
+                "motifRejet": null
+              },
+              "a": {
+                "id": "BF-BT-126",
+                "nom": "Poste fixe Boukraa",
+                "type": "barrage_fixe",
+                "route": "RN1",
+                "pk": 1465.9,
+                "lng": -13.08748,
+                "lat": 27.30145,
+                "reg": "Laayoune",
+                "cie": "Laayoune",
+                "bt": "Boukraa",
+                "factionId": "F2",
+                "statutBarrage": "approuve"
+              },
+              "b": {
+                "id": "BF-BT-188",
+                "nom": "Poste fixe Foum El Oued",
+                "type": "barrage_fixe",
+                "route": "RN1",
+                "pk": 1478.2,
+                "lng": -13.15879,
+                "lat": 27.21723,
+                "reg": "Laayoune",
+                "cie": "Laayoune",
+                "bt": "Boukraa",
+                "factionId": "F4",
+                "statutBarrage": "approuve"
+              },
+              "estAssigne": true
+            }
+          },
+          "changement": {
+            "type": "changement_faction",
+            "avant": {
+              "barrageId": "BF-BT-126",
+              "barrageNom": "Poste fixe Boukraa",
+              "factionId": "F2",
+              "factionNom": "Faction 2"
+            },
+            "apres": {
+              "barrageId": "BF-BT-126",
+              "barrageNom": "Poste fixe Boukraa",
+              "factionId": "F1",
+              "factionNom": "Faction 1"
+            }
+          }
+        },
+        {
+          "id": "h_mw20otoa_164194",
+          "date": "2026-11-04T11:12:15.411Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "resolution_physique",
+          "de": "PENDING_VALIDATION",
+          "vers": "PENDING_VALIDATION",
+          "statut": "traite",
+          "commentaire": "Conflit résolu physiquement suite à l'opération « validation_traitement_conflit » : distance réglementaire ou factions conformes."
+        },
+        {
+          "id": "h_mw20p5h2_1bc178",
+          "date": "2026-11-04T11:12:30.710Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "valider",
+          "de": "PENDING_VALIDATION",
+          "vers": "APPROVED",
+          "statut": "traite",
+          "commentaire": "Validation du traitement — Validé."
+        },
+        {
+          "id": "h_mw20p5h3_1ce194",
+          "date": "2026-11-04T11:12:30.710Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "valider",
+          "de": "APPROVED",
+          "vers": "CLOSED",
+          "statut": "cloture",
+          "commentaire": "Traitement du conflit C-R7 validé par le Super Admin : archivé à l'historique.",
+          "motif": null
+        }
+      ],
+      "assigneLe": "2026-11-03T15:28:26.234Z",
+      "transitions": [
+        {
+          "date": "2026-11-03T15:28:26.234Z",
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "motif": null
+        },
+        {
+          "date": "2026-11-04T11:08:14.963Z",
+          "action": "prendre_en_charge",
+          "de": "ASSIGNED_REGION",
+          "vers": "IN_PROGRESS_REGION",
+          "auteur": {
+            "matricule": "REG-LAAYOUNE",
+            "nom": "Chef de région Laayoune",
+            "rang": "reg",
+            "unite": "Laayoune"
+          },
+          "motif": null
+        },
+        {
+          "date": "2026-11-04T11:08:21.491Z",
+          "action": "soumettre",
+          "de": "IN_PROGRESS_REGION",
+          "vers": "PENDING_VALIDATION",
+          "auteur": {
+            "matricule": "REG-LAAYOUNE",
+            "nom": "Chef de région Laayoune",
+            "rang": "reg",
+            "unite": "Laayoune"
+          },
+          "motif": null
+        },
+        {
+          "date": "2026-11-04T11:12:30.710Z",
+          "action": "valider",
+          "de": "PENDING_VALIDATION",
+          "vers": "CLOSED",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "motif": null
+        }
+      ],
+      "assignesA": [
+        {
+          "matricule": "REG-LAAYOUNE",
+          "nom": "Chef de région Laayoune",
+          "rang": "reg",
+          "unite": "Laayoune",
+          "region": "Laayoune"
+        }
+      ],
+      "assigneA": {
+        "matricule": "REG-LAAYOUNE",
+        "nom": "Chef de région Laayoune",
+        "rang": "reg",
+        "unite": "Laayoune",
+        "region": "Laayoune"
+      },
+      "traiteLe": "2026-11-04T11:08:21.491Z",
+      "traitePar": {
+        "matricule": "REG-LAAYOUNE",
+        "nom": "Chef de région Laayoune",
+        "rang": "reg",
+        "unite": "Laayoune"
+      },
+      "persiste": true,
+      "statutPhysique": "resolu",
+      "decision": "Changement de faction du barrage Poste fixe Boukraa (Faction 1)",
+      "justification": "",
+      "changement": {
+        "type": "changement_faction",
+        "avant": {
+          "barrageId": "BF-BT-126",
+          "barrageNom": "Poste fixe Boukraa",
+          "factionId": "F2",
+          "factionNom": "Faction 2"
+        },
+        "apres": {
+          "barrageId": "BF-BT-126",
+          "barrageNom": "Poste fixe Boukraa",
+          "factionId": "F1",
+          "factionNom": "Faction 1"
+        }
+      },
+      "traitement": {
+        "date": "2026-11-04T11:08:21.491Z",
+        "auteur": {
+          "matricule": "REG-LAAYOUNE",
+          "nom": "Chef de région Laayoune",
+          "rang": "reg",
+          "unite": "Laayoune"
+        },
+        "action": "changement_faction",
+        "decision": "Changement de faction du barrage Poste fixe Boukraa (Faction 1)",
+        "justification": "",
+        "persiste": true,
+        "statutPhysique": "maintenu_decalage_horaire",
+        "details": {
+          "barrageId": "BF-BT-126",
+          "barrageNom": "Poste fixe Boukraa",
+          "ancienneFactionId": "F2",
+          "ancienneFactionNom": "Faction 2",
+          "nouvelleFactionId": "F1",
+          "nouvelleFactionNom": "Faction 1",
+          "justification": "",
+          "conflitData": {
+            "id": "conf_calc_BF-BT-126|BF-BT-188",
+            "numero": "C-R7",
+            "paireCle": "BF-BT-126|BF-BT-188",
+            "type": "distance_insuffisante",
+            "severite": "alerte",
+            "barrageAId": "BF-BT-126",
+            "barrageBId": "BF-BT-188",
+            "barrageA": {
+              "id": "BF-BT-126",
+              "nom": "Poste fixe Boukraa",
+              "type": "barrage_fixe",
+              "route": "RN1",
+              "pk": 1465.9,
+              "lng": -13.08748,
+              "lat": 27.30145,
+              "reg": "Laayoune",
+              "cie": "Laayoune",
+              "bt": "Boukraa",
+              "factionId": "F2",
+              "statutBarrage": "approuve"
+            },
+            "barrageB": {
+              "id": "BF-BT-188",
+              "nom": "Poste fixe Foum El Oued",
+              "type": "barrage_fixe",
+              "route": "RN1",
+              "pk": 1478.2,
+              "lng": -13.15879,
+              "lat": 27.21723,
+              "reg": "Laayoune",
+              "cie": "Laayoune",
+              "bt": "Boukraa",
+              "factionId": "F4",
+              "statutBarrage": "approuve"
+            },
+            "route": "RN1",
+            "factionsCommunes": [],
+            "distanceKm": 18.3,
+            "seuilKm": 20,
+            "motif": "Espacement de 18.3 km inférieur au seuil (20 km)",
+            "etat": "ASSIGNED_REGION",
+            "assignation": {
+              "regions": [
+                {
+                  "unite": "Laayoune",
+                  "matricule": "REG-LAAYOUNE",
+                  "nom": "Chef de région Laayoune"
+                }
+              ],
+              "cie": null,
+              "responsable": null,
+              "assignePar": {
+                "matricule": "SUPERADMIN",
+                "nom": "Administrateur superadmin",
+                "rang": "admin",
+                "unite": "superadmin"
+              },
+              "assigneLe": "2026-11-03T15:28:26.234Z"
+            },
+            "statut": "a_traiter",
+            "cree": "2026-11-03T15:28:26.234Z",
+            "maj": "2026-11-03T15:28:26.234Z",
+            "historique": [
+              {
+                "id": "h_mw0uef7e_7fa43",
+                "date": "2026-11-03T15:28:26.234Z",
+                "auteur": {
+                  "matricule": "SUPERADMIN",
+                  "nom": "Administrateur superadmin",
+                  "rang": "admin",
+                  "unite": "superadmin"
+                },
+                "action": "detection",
+                "de": null,
+                "vers": "NEW",
+                "statut": "nouveau",
+                "commentaire": "Conflit C-R7 identifié par la filtration du Super Admin."
+              },
+              {
+                "id": "h_mw0uef7e_846b8",
+                "date": "2026-11-03T15:28:26.234Z",
+                "auteur": {
+                  "matricule": "SUPERADMIN",
+                  "nom": "Administrateur superadmin",
+                  "rang": "admin",
+                  "unite": "superadmin"
+                },
+                "action": "assigner_region",
+                "de": "NEW",
+                "vers": "ASSIGNED_REGION",
+                "statut": "a_traiter",
+                "commentaire": "Conflit C-R7 assigné au CMD Région Laayoune.",
+                "motif": null,
+                "destinataire": {
+                  "rang": "reg",
+                  "unite": "Laayoune"
+                }
+              }
+            ],
+            "assigneLe": "2026-11-03T15:28:26.234Z",
+            "transitions": [
+              {
+                "date": "2026-11-03T15:28:26.234Z",
+                "action": "assigner_region",
+                "de": "NEW",
+                "vers": "ASSIGNED_REGION",
+                "auteur": {
+                  "matricule": "SUPERADMIN",
+                  "nom": "Administrateur superadmin",
+                  "rang": "admin",
+                  "unite": "superadmin"
+                },
+                "motif": null
+              }
+            ],
+            "assignesA": [
+              {
+                "matricule": "REG-LAAYOUNE",
+                "nom": "Chef de région Laayoune",
+                "rang": "reg",
+                "unite": "Laayoune",
+                "region": "Laayoune"
+              }
+            ],
+            "assigneA": {
+              "matricule": "REG-LAAYOUNE",
+              "nom": "Chef de région Laayoune",
+              "rang": "reg",
+              "unite": "Laayoune",
+              "region": "Laayoune"
+            },
+            "workflow": {
+              "etat": "ASSIGNED_REGION",
+              "libelle": "Assigné au CMD Région",
+              "section": "a_traiter",
+              "actions": {
+                "assigner_region": false,
+                "desassigner": false,
+                "prendre_en_charge": true,
+                "assigner_cie": true,
+                "commencer": false,
+                "soumettre": true,
+                "valider": false,
+                "rejeter": false,
+                "cloturer": false,
+                "rouvrir": false,
+                "supprimer": false
+              },
+              "regions": [
+                "Laayoune"
+              ],
+              "compagnie": null,
+              "responsable": {
+                "rang": "reg",
+                "unite": "Laayoune",
+                "matricule": "REG-LAAYOUNE"
+              },
+              "motifRejet": null
+            },
+            "a": {
+              "id": "BF-BT-126",
+              "nom": "Poste fixe Boukraa",
+              "type": "barrage_fixe",
+              "route": "RN1",
+              "pk": 1465.9,
+              "lng": -13.08748,
+              "lat": 27.30145,
+              "reg": "Laayoune",
+              "cie": "Laayoune",
+              "bt": "Boukraa",
+              "factionId": "F2",
+              "statutBarrage": "approuve"
+            },
+            "b": {
+              "id": "BF-BT-188",
+              "nom": "Poste fixe Foum El Oued",
+              "type": "barrage_fixe",
+              "route": "RN1",
+              "pk": 1478.2,
+              "lng": -13.15879,
+              "lat": 27.21723,
+              "reg": "Laayoune",
+              "cie": "Laayoune",
+              "bt": "Boukraa",
+              "factionId": "F4",
+              "statutBarrage": "approuve"
+            },
+            "estAssigne": true
+          }
+        },
+        "changement": {
+          "type": "changement_faction",
+          "avant": {
+            "barrageId": "BF-BT-126",
+            "barrageNom": "Poste fixe Boukraa",
+            "factionId": "F2",
+            "factionNom": "Faction 2"
+          },
+          "apres": {
+            "barrageId": "BF-BT-126",
+            "barrageNom": "Poste fixe Boukraa",
+            "factionId": "F1",
+            "factionNom": "Faction 1"
+          }
+        },
+        "approbation": {
+          "statut": "approuve",
+          "date": "2026-11-04T11:12:30.710Z",
+          "par": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "raison": null
+        }
+      },
+      "approbation": {
+        "statut": "approuve",
+        "date": "2026-11-04T11:12:30.710Z",
+        "par": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "raison": null
+      },
+      "resolutionPhysique": {
+        "le": "2026-11-04T11:12:15.411Z",
+        "commentaire": "Conflit résolu physiquement suite à l'opération « validation_traitement_conflit » : distance réglementaire ou factions conformes."
+      },
+      "validation": {
+        "decision": "valider",
+        "par": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "le": "2026-11-04T11:12:30.710Z",
+        "motif": null
+      },
+      "clotureLe": "2026-11-04T11:12:30.710Z",
+      "cloturePar": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      }
+    },
+    {
+      "id": "conf_calc_BF-BT-132|BFI-CIE-071",
+      "numero": "C-R3",
+      "paireCle": "BF-BT-132|BFI-CIE-071",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BFI-CIE-071",
+      "barrageBId": "BF-BT-132",
+      "barrageA": {
+        "id": "BFI-CIE-071",
+        "nom": "BFI Skhirate",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": null,
+        "lng": -7.05783,
+        "lat": 33.83761,
+        "reg": "Rabat",
+        "cie": "Skhirate",
+        "bt": "Skhirate-El Fath",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-132",
+        "nom": "Poste fixe Bouznika",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": 300.6,
+        "lng": -7.20861,
+        "lat": 33.76384,
+        "reg": "Settat",
+        "cie": "Bouznika",
+        "bt": "Bouznika",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN1",
+      "factionsCommunes": [],
+      "distanceKm": 16.4,
+      "seuilKm": 20,
+      "motif": "Espacement de 16.4 km inférieur au seuil (20 km)",
+      "etat": "ASSIGNED_REGION",
+      "assignation": {
+        "regions": [
+          {
+            "unite": "Settat",
+            "matricule": "REG-SETTAT",
+            "nom": "Chef de région Settat"
+          }
+        ],
+        "cie": null,
+        "responsable": null,
+        "assignePar": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "assigneLe": "2026-11-03T15:28:36.047Z"
+      },
+      "statut": "a_traiter",
+      "cree": "2026-11-03T15:28:36.047Z",
+      "maj": "2026-11-03T15:28:36.047Z",
+      "historique": [
+        {
+          "id": "h_mw0uemrz_9c321",
+          "date": "2026-11-03T15:28:36.047Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "de": null,
+          "vers": "NEW",
+          "statut": "nouveau",
+          "commentaire": "Conflit C-R3 identifié par la filtration du Super Admin."
+        },
+        {
+          "id": "h_mw0uemrz_a4051",
+          "date": "2026-11-03T15:28:36.047Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "statut": "a_traiter",
+          "commentaire": "Conflit C-R3 assigné au CMD Région Settat.",
+          "motif": null,
+          "destinataire": {
+            "rang": "reg",
+            "unite": "Settat"
+          }
+        }
+      ],
+      "assigneLe": "2026-11-03T15:28:36.047Z",
+      "transitions": [
+        {
+          "date": "2026-11-03T15:28:36.047Z",
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "motif": null
+        }
+      ],
+      "assignesA": [
+        {
+          "matricule": "REG-SETTAT",
+          "nom": "Chef de région Settat",
+          "rang": "reg",
+          "unite": "Settat",
+          "region": "Settat"
+        }
+      ],
+      "assigneA": {
+        "matricule": "REG-SETTAT",
+        "nom": "Chef de région Settat",
+        "rang": "reg",
+        "unite": "Settat",
+        "region": "Settat"
+      }
+    },
+    {
+      "id": "conf_calc_BFI-CIE-071|syn_bfp_028_218tk.",
+      "numero": "C-R4",
+      "paireCle": "BFI-CIE-071|syn_bfp_028_218tk.",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BFI-CIE-071",
+      "barrageBId": "syn_bfp_028_218tk.",
+      "barrageA": {
+        "id": "BFI-CIE-071",
+        "nom": "BFI Skhirate",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": null,
+        "lng": -7.05783,
+        "lat": 33.83761,
+        "reg": "Rabat",
+        "cie": "Skhirate",
+        "bt": "Skhirate-El Fath",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "syn_bfp_028_218tk.",
+        "nom": "Barrage Permanent RN1 — Bouznika",
+        "type": "FIXED_PERMANENT",
+        "route": "Route Nationale RN1",
+        "pk": null,
+        "lng": -7.14655,
+        "lat": 33.79712,
+        "reg": "Settat",
+        "cie": "Bouznika",
+        "bt": "Bouznika",
+        "factionId": null,
+        "statutBarrage": "approuve"
+      },
+      "route": "RN1",
+      "factionsCommunes": [],
+      "distanceKm": 9.5,
+      "seuilKm": 20,
+      "motif": "Espacement de 9.5 km inférieur au seuil (20 km)",
+      "etat": "ASSIGNED_REGION",
+      "assignation": {
+        "regions": [
+          {
+            "unite": "Rabat",
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat"
+          },
+          {
+            "unite": "Settat",
+            "matricule": "REG-SETTAT",
+            "nom": "Chef de région Settat"
+          }
+        ],
+        "cie": null,
+        "responsable": null,
+        "assignePar": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "assigneLe": "2026-11-03T15:28:39.205Z"
+      },
+      "statut": "a_traiter",
+      "cree": "2026-11-03T15:28:39.205Z",
+      "maj": "2026-11-03T15:28:39.205Z",
+      "historique": [
+        {
+          "id": "h_mw0uep7p_b7ad8",
+          "date": "2026-11-03T15:28:39.205Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "de": null,
+          "vers": "NEW",
+          "statut": "nouveau",
+          "commentaire": "Conflit C-R4 identifié par la filtration du Super Admin."
+        },
+        {
+          "id": "h_mw0uep7p_c6766",
+          "date": "2026-11-03T15:28:39.205Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "statut": "a_traiter",
+          "commentaire": "Conflit C-R4 assigné au CMD Région Rabat & Settat.",
+          "motif": null,
+          "destinataire": {
+            "rang": "reg",
+            "unite": "Rabat & Settat"
+          }
+        }
+      ],
+      "assigneLe": "2026-11-03T15:28:39.205Z",
+      "transitions": [
+        {
+          "date": "2026-11-03T15:28:39.205Z",
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "motif": null
+        }
+      ],
+      "assignesA": [
+        {
+          "matricule": "REG-RABAT",
+          "nom": "Chef de région Rabat",
+          "rang": "reg",
+          "unite": "Rabat",
+          "region": "Rabat"
+        },
+        {
+          "matricule": "REG-SETTAT",
+          "nom": "Chef de région Settat",
+          "rang": "reg",
+          "unite": "Settat",
+          "region": "Settat"
+        }
+      ],
+      "assigneA": {
+        "matricule": "REG-RABAT,REG-SETTAT",
+        "nom": "Chef de région Rabat & Chef de région Settat",
+        "rang": "reg",
+        "unite": "Rabat & Settat"
+      }
+    },
+    {
+      "id": "conf_calc_BF-BT-112|BF-BT-132",
+      "numero": "C-R6",
+      "paireCle": "BF-BT-112|BF-BT-132",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-112",
+      "barrageBId": "BF-BT-132",
+      "barrageA": {
+        "id": "BF-BT-112",
+        "nom": "Poste fixe Bni Yakhlef",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": null,
+        "lng": -7.34544,
+        "lat": 33.68123,
+        "reg": "Casablanca",
+        "cie": "Mohammedia",
+        "bt": "Bni Yakhlef",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-132",
+        "nom": "Poste fixe Bouznika",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": 300.6,
+        "lng": -7.20861,
+        "lat": 33.76384,
+        "reg": "Settat",
+        "cie": "Bouznika",
+        "bt": "Bouznika",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN1",
+      "factionsCommunes": [],
+      "distanceKm": 16.5,
+      "seuilKm": 20,
+      "motif": "Espacement de 16.5 km inférieur au seuil (20 km)",
+      "etat": "ASSIGNED_REGION",
+      "assignation": {
+        "regions": [
+          {
+            "unite": "Casablanca",
+            "matricule": "REG-CASABLANCA",
+            "nom": "Chef de région Casablanca"
+          },
+          {
+            "unite": "Settat",
+            "matricule": "REG-SETTAT",
+            "nom": "Chef de région Settat"
+          }
+        ],
+        "cie": null,
+        "responsable": null,
+        "assignePar": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "assigneLe": "2026-11-03T15:28:44.327Z"
+      },
+      "statut": "a_traiter",
+      "cree": "2026-11-03T15:28:44.327Z",
+      "maj": "2026-11-03T15:28:44.327Z",
+      "historique": [
+        {
+          "id": "h_mw0uet5z_d5e78",
+          "date": "2026-11-03T15:28:44.327Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "de": null,
+          "vers": "NEW",
+          "statut": "nouveau",
+          "commentaire": "Conflit C-R6 identifié par la filtration du Super Admin."
+        },
+        {
+          "id": "h_mw0uet5z_ef837",
+          "date": "2026-11-03T15:28:44.327Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "statut": "a_traiter",
+          "commentaire": "Conflit C-R6 assigné au CMD Région Casablanca & Settat.",
+          "motif": null,
+          "destinataire": {
+            "rang": "reg",
+            "unite": "Casablanca & Settat"
+          }
+        }
+      ],
+      "assigneLe": "2026-11-03T15:28:44.327Z",
+      "transitions": [
+        {
+          "date": "2026-11-03T15:28:44.327Z",
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "motif": null
+        }
+      ],
+      "assignesA": [
+        {
+          "matricule": "REG-CASABLANCA",
+          "nom": "Chef de région Casablanca",
+          "rang": "reg",
+          "unite": "Casablanca",
+          "region": "Casablanca"
+        },
+        {
+          "matricule": "REG-SETTAT",
+          "nom": "Chef de région Settat",
+          "rang": "reg",
+          "unite": "Settat",
+          "region": "Settat"
+        }
+      ],
+      "assigneA": {
+        "matricule": "REG-CASABLANCA,REG-SETTAT",
+        "nom": "Chef de région Casablanca & Chef de région Settat",
+        "rang": "reg",
+        "unite": "Casablanca & Settat"
+      }
+    },
+    {
+      "id": "conf_calc_BF-BT-132|syn_bfp_028_218tk.",
+      "numero": "C-R8",
+      "paireCle": "BF-BT-132|syn_bfp_028_218tk.",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-132",
+      "barrageBId": "syn_bfp_028_218tk.",
+      "barrageA": {
+        "id": "BF-BT-132",
+        "nom": "Poste fixe Bouznika",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": 300.6,
+        "lng": -7.20861,
+        "lat": 33.76384,
+        "reg": "Settat",
+        "cie": "Bouznika",
+        "bt": "Bouznika",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "syn_bfp_028_218tk.",
+        "nom": "Barrage Permanent RN1 — Bouznika",
+        "type": "FIXED_PERMANENT",
+        "route": "Route Nationale RN1",
+        "pk": null,
+        "lng": -7.14655,
+        "lat": 33.79712,
+        "reg": "Settat",
+        "cie": "Bouznika",
+        "bt": "Bouznika",
+        "factionId": null,
+        "statutBarrage": "approuve"
+      },
+      "route": "RN1",
+      "factionsCommunes": [],
+      "distanceKm": 6.9,
+      "seuilKm": 20,
+      "motif": "Espacement de 6.9 km inférieur au seuil (20 km)",
+      "etat": "ASSIGNED_REGION",
+      "assignation": {
+        "regions": [
+          {
+            "unite": "Settat",
+            "matricule": "REG-SETTAT",
+            "nom": "Chef de région Settat"
+          }
+        ],
+        "cie": null,
+        "responsable": null,
+        "assignePar": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "assigneLe": "2026-11-03T15:28:47.146Z"
+      },
+      "statut": "a_traiter",
+      "cree": "2026-11-03T15:28:47.146Z",
+      "maj": "2026-11-03T15:28:47.146Z",
+      "historique": [
+        {
+          "id": "h_mw0uevca_f5289",
+          "date": "2026-11-03T15:28:47.146Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "de": null,
+          "vers": "NEW",
+          "statut": "nouveau",
+          "commentaire": "Conflit C-R8 identifié par la filtration du Super Admin."
+        },
+        {
+          "id": "h_mw0uevca_g83e9",
+          "date": "2026-11-03T15:28:47.146Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "statut": "a_traiter",
+          "commentaire": "Conflit C-R8 assigné au CMD Région Settat.",
+          "motif": null,
+          "destinataire": {
+            "rang": "reg",
+            "unite": "Settat"
+          }
+        }
+      ],
+      "assigneLe": "2026-11-03T15:28:47.146Z",
+      "transitions": [
+        {
+          "date": "2026-11-03T15:28:47.146Z",
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "motif": null
+        }
+      ],
+      "assignesA": [
+        {
+          "matricule": "REG-SETTAT",
+          "nom": "Chef de région Settat",
+          "rang": "reg",
+          "unite": "Settat",
+          "region": "Settat"
+        }
+      ],
+      "assigneA": {
+        "matricule": "REG-SETTAT",
+        "nom": "Chef de région Settat",
+        "rang": "reg",
+        "unite": "Settat",
+        "region": "Settat"
+      }
+    },
+    {
+      "id": "conf_calc_BF-BT-350|syn_bf_009_16876.",
+      "numero": "C-R9",
+      "paireCle": "BF-BT-350|syn_bf_009_16876.",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-350",
+      "barrageBId": "syn_bf_009_16876.",
+      "barrageA": {
+        "id": "BF-BT-350",
+        "nom": "Poste fixe Rabat",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": null,
+        "lng": -6.83679,
+        "lat": 34.02235,
+        "reg": "Rabat",
+        "cie": "Rabat",
+        "bt": "Rabat",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "syn_bf_009_16876.",
+        "nom": "Barrage Fixe RN1 — Salé",
+        "type": "FIXED",
+        "route": "Route Nationale RN1",
+        "pk": null,
+        "lng": -6.79484,
+        "lat": 34.06614,
+        "reg": "Rabat",
+        "cie": "Salé",
+        "bt": "Salé",
+        "factionId": null,
+        "statutBarrage": "approuve"
+      },
+      "route": "RN1",
+      "factionsCommunes": [],
+      "distanceKm": 7.3,
+      "seuilKm": 20,
+      "motif": "Espacement de 7.3 km inférieur au seuil (20 km)",
+      "etat": "ASSIGNED_REGION",
+      "assignation": {
+        "regions": [
+          {
+            "unite": "Rabat",
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat"
+          }
+        ],
+        "cie": null,
+        "responsable": null,
+        "assignePar": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "assigneLe": "2026-11-03T15:28:54.414Z"
+      },
+      "statut": "a_traiter",
+      "cree": "2026-11-03T15:28:54.414Z",
+      "maj": "2026-11-03T15:28:54.414Z",
+      "historique": [
+        {
+          "id": "h_mw0uf0y6_h4a3f",
+          "date": "2026-11-03T15:28:54.414Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "de": null,
+          "vers": "NEW",
+          "statut": "nouveau",
+          "commentaire": "Conflit C-R9 identifié par la filtration du Super Admin."
+        },
+        {
+          "id": "h_mw0uf0y6_i619d",
+          "date": "2026-11-03T15:28:54.414Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "statut": "a_traiter",
+          "commentaire": "Conflit C-R9 assigné au CMD Région Rabat.",
+          "motif": null,
+          "destinataire": {
+            "rang": "reg",
+            "unite": "Rabat"
+          }
+        }
+      ],
+      "assigneLe": "2026-11-03T15:28:54.414Z",
+      "transitions": [
+        {
+          "date": "2026-11-03T15:28:54.414Z",
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "motif": null
+        }
+      ],
+      "assignesA": [
+        {
+          "matricule": "REG-RABAT",
+          "nom": "Chef de région Rabat",
+          "rang": "reg",
+          "unite": "Rabat",
+          "region": "Rabat"
+        }
+      ],
+      "assigneA": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "rang": "reg",
+        "unite": "Rabat",
+        "region": "Rabat"
+      }
+    },
+    {
+      "id": "conf_calc_BF-BT-401|syn_bf_057_58gum.",
+      "numero": "C-R10",
+      "paireCle": "BF-BT-401|syn_bf_057_58gum.",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-401",
+      "barrageBId": "syn_bf_057_58gum.",
+      "barrageA": {
+        "id": "BF-BT-401",
+        "nom": "Poste fixe Sidi Taibi",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": null,
+        "lng": -6.65254,
+        "lat": 34.22633,
+        "reg": "Kénitra",
+        "cie": "Kénitra",
+        "bt": "Sidi Taibi",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "syn_bf_057_58gum.",
+        "nom": "Barrage Fixe RN1 — Kénitra",
+        "type": "FIXED",
+        "route": "Route Nationale RN1",
+        "pk": null,
+        "lng": -6.60091,
+        "lat": 34.25313,
+        "reg": "Kénitra",
+        "cie": "Kénitra",
+        "bt": "Kénitra",
+        "factionId": null,
+        "statutBarrage": "approuve"
+      },
+      "route": "RN1",
+      "factionsCommunes": [],
+      "distanceKm": 7.2,
+      "seuilKm": 20,
+      "motif": "Espacement de 7.2 km inférieur au seuil (20 km)",
+      "etat": "ASSIGNED_REGION",
+      "assignation": {
+        "regions": [
+          {
+            "unite": "Kénitra",
+            "matricule": "REG-KÉNITRA",
+            "nom": "Chef de région Kénitra"
+          }
+        ],
+        "cie": null,
+        "responsable": null,
+        "assignePar": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "assigneLe": "2026-11-03T15:28:59.319Z"
+      },
+      "statut": "a_traiter",
+      "cree": "2026-11-03T15:28:59.319Z",
+      "maj": "2026-11-03T15:28:59.319Z",
+      "historique": [
+        {
+          "id": "h_mw0uf4qf_jc153",
+          "date": "2026-11-03T15:28:59.319Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "de": null,
+          "vers": "NEW",
+          "statut": "nouveau",
+          "commentaire": "Conflit C-R10 identifié par la filtration du Super Admin."
+        },
+        {
+          "id": "h_mw0uf4qf_k86de",
+          "date": "2026-11-03T15:28:59.319Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "statut": "a_traiter",
+          "commentaire": "Conflit C-R10 assigné au CMD Région Kénitra.",
+          "motif": null,
+          "destinataire": {
+            "rang": "reg",
+            "unite": "Kénitra"
+          }
+        }
+      ],
+      "assigneLe": "2026-11-03T15:28:59.319Z",
+      "transitions": [
+        {
+          "date": "2026-11-03T15:28:59.319Z",
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "motif": null
+        }
+      ],
+      "assignesA": [
+        {
+          "matricule": "REG-KÉNITRA",
+          "nom": "Chef de région Kénitra",
+          "rang": "reg",
+          "unite": "Kénitra",
+          "region": "Kénitra"
+        }
+      ],
+      "assigneA": {
+        "matricule": "REG-KÉNITRA",
+        "nom": "Chef de région Kénitra",
+        "rang": "reg",
+        "unite": "Kénitra",
+        "region": "Kénitra"
+      }
+    },
+    {
+      "id": "conf_calc_BFI-CIE-016|syn_bf_056_fxqm.y",
+      "numero": "C-R1",
+      "paireCle": "BFI-CIE-016|syn_bf_056_fxqm.y",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BFI-CIE-016",
+      "barrageBId": "syn_bf_056_fxqm.y",
+      "barrageA": {
+        "id": "BFI-CIE-016",
+        "nom": "BFI Biougra",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": null,
+        "lng": -9.55109,
+        "lat": 30.12983,
+        "reg": "Agadir",
+        "cie": "Biougra",
+        "bt": "Had Belfaa",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "syn_bf_056_fxqm.y",
+        "nom": "Barrage Fixe RN1 — Lqliaa",
+        "type": "FIXED",
+        "route": "Route Nationale RN1",
+        "pk": null,
+        "lng": -9.50238,
+        "lat": 30.31012,
+        "reg": "Agadir",
+        "cie": "Inezgane",
+        "bt": "Lqliaa",
+        "factionId": null,
+        "statutBarrage": "approuve"
+      },
+      "route": "RN1",
+      "factionsCommunes": [],
+      "distanceKm": 21,
+      "seuilKm": 30,
+      "motif": "Espacement de 21.0 km inférieur au seuil (30 km)",
+      "etat": "ASSIGNED_REGION",
+      "assignation": {
+        "regions": [
+          {
+            "unite": "Agadir",
+            "matricule": "REG-AGADIR",
+            "nom": "Chef de région Agadir"
+          }
+        ],
+        "cie": null,
+        "responsable": null,
+        "assignePar": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "assigneLe": "2026-11-04T10:55:55.675Z"
+      },
+      "statut": "a_traiter",
+      "cree": "2026-11-04T10:55:55.675Z",
+      "maj": "2026-11-04T10:55:55.675Z",
+      "historique": [
+        {
+          "id": "h_mw203tp7_l4765",
+          "date": "2026-11-04T10:55:55.675Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "de": null,
+          "vers": "NEW",
+          "statut": "nouveau",
+          "commentaire": "Conflit C-R1 identifié par la filtration du Super Admin."
+        },
+        {
+          "id": "h_mw203tp7_m160f",
+          "date": "2026-11-04T10:55:55.675Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "statut": "a_traiter",
+          "commentaire": "Conflit C-R1 assigné au CMD Région Agadir.",
+          "motif": null,
+          "destinataire": {
+            "rang": "reg",
+            "unite": "Agadir"
+          }
+        }
+      ],
+      "assigneLe": "2026-11-04T10:55:55.675Z",
+      "transitions": [
+        {
+          "date": "2026-11-04T10:55:55.675Z",
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "motif": null
+        }
+      ],
+      "assignesA": [
+        {
+          "matricule": "REG-AGADIR",
+          "nom": "Chef de région Agadir",
+          "rang": "reg",
+          "unite": "Agadir",
+          "region": "Agadir"
+        }
+      ],
+      "assigneA": {
+        "matricule": "REG-AGADIR",
+        "nom": "Chef de région Agadir",
+        "rang": "reg",
+        "unite": "Agadir",
+        "region": "Agadir"
+      }
+    },
+    {
+      "id": "conf_calc_BF-BT-387|BFI-CIE-018",
+      "numero": "C-R2",
+      "paireCle": "BF-BT-387|BFI-CIE-018",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BFI-CIE-018",
+      "barrageBId": "BF-BT-387",
+      "barrageA": {
+        "id": "BFI-CIE-018",
+        "nom": "BFI Boujdour",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": null,
+        "lng": -14.46706,
+        "lat": 26.13606,
+        "reg": "Laayoune",
+        "cie": "Boujdour",
+        "bt": "Boujdour",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-387",
+        "nom": "Poste fixe Sidi El Ghazi",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": 1642.2,
+        "lng": -14.24624,
+        "lat": 26.28771,
+        "reg": "Laayoune",
+        "cie": "Boujdour",
+        "bt": "Sidi El Ghazi",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN1",
+      "factionsCommunes": [],
+      "distanceKm": 22.4,
+      "seuilKm": 30,
+      "motif": "Espacement de 22.4 km inférieur au seuil (30 km)",
+      "etat": "CLOSED",
+      "assignation": {
+        "regions": [
+          {
+            "unite": "Laayoune",
+            "matricule": "REG-LAAYOUNE",
+            "nom": "Chef de région Laayoune"
+          }
+        ],
+        "cie": null,
+        "responsable": {
+          "rang": "reg",
+          "unite": "Laayoune",
+          "reg": "Laayoune",
+          "matricule": "REG-LAAYOUNE"
+        },
+        "assignePar": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "assigneLe": "2026-11-04T10:56:13.964Z"
+      },
+      "statut": "cloture",
+      "cree": "2026-11-04T10:56:13.964Z",
+      "maj": "2026-11-04T11:12:34.319Z",
+      "historique": [
+        {
+          "id": "h_mw2047t8_ncd01",
+          "date": "2026-11-04T10:56:13.964Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "de": null,
+          "vers": "NEW",
+          "statut": "nouveau",
+          "commentaire": "Conflit C-R2 identifié par la filtration du Super Admin."
+        },
+        {
+          "id": "h_mw2047t8_od6c7",
+          "date": "2026-11-04T10:56:13.964Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "statut": "a_traiter",
+          "commentaire": "Conflit C-R2 assigné au CMD Région Laayoune.",
+          "motif": null,
+          "destinataire": {
+            "rang": "reg",
+            "unite": "Laayoune"
+          }
+        },
+        {
+          "id": "h_mw20m5o9_zb8e1",
+          "date": "2026-11-04T11:10:11.001Z",
+          "auteur": {
+            "matricule": "REG-LAAYOUNE",
+            "nom": "Chef de région Laayoune",
+            "rang": "reg",
+            "unite": "Laayoune"
+          },
+          "action": "prendre_en_charge",
+          "de": "ASSIGNED_REGION",
+          "vers": "IN_PROGRESS_REGION",
+          "statut": "en_cours",
+          "commentaire": "Le CMD Région Laayoune prend en charge le traitement du conflit C-R2.",
+          "motif": null
+        },
+        {
+          "id": "h_mw20mhvq_10f928",
+          "date": "2026-11-04T11:10:26.822Z",
+          "auteur": {
+            "matricule": "REG-LAAYOUNE",
+            "nom": "Chef de région Laayoune",
+            "rang": "reg",
+            "unite": "Laayoune"
+          },
+          "action": "soumettre",
+          "de": "IN_PROGRESS_REGION",
+          "vers": "PENDING_VALIDATION",
+          "statut": "traite",
+          "commentaire": "Traitement du conflit C-R2 : Déplacement du barrage (Réajustement position) — proximité résiduelle maintenue.",
+          "motif": null,
+          "decision": "Déplacement du barrage (Réajustement position)",
+          "justification": "Barrage Poste fixe Sidi El Ghazi déplacé de [-14.2947, 26.2590] vers [-14.2462, 26.2877] sur RN1. Conflit résolu.",
+          "statutPhysique": "maintenu",
+          "persiste": true,
+          "details": {
+            "barrageId": "BF-BT-387",
+            "barrageNom": "Poste fixe Sidi El Ghazi",
+            "latAvant": 26.259,
+            "lngAvant": -14.29471,
+            "routeAvant": "RN1",
+            "latApres": 26.28771,
+            "lngApres": -14.24624,
+            "routeApres": "RN1",
+            "distanceApresKm": 25,
+            "statut": "resolu",
+            "resolu": true,
+            "commentaire": "Barrage Poste fixe Sidi El Ghazi déplacé de [-14.2947, 26.2590] vers [-14.2462, 26.2877] sur RN1. Conflit résolu."
+          },
+          "changement": {
+            "type": "deplacement",
+            "avant": {
+              "barrageId": "BF-BT-387",
+              "barrageNom": "Poste fixe Sidi El Ghazi",
+              "lat": 26.259,
+              "lng": -14.29471,
+              "route": "RN1",
+              "distanceKm": 22.4
+            },
+            "apres": {
+              "barrageId": "BF-BT-387",
+              "barrageNom": "Poste fixe Sidi El Ghazi",
+              "lat": 26.28771,
+              "lng": -14.24624,
+              "route": "RN1",
+              "distanceKm": 25
+            }
+          }
+        },
+        {
+          "id": "h_mw20p89b_1e040f",
+          "date": "2026-11-04T11:12:34.319Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "valider",
+          "de": "PENDING_VALIDATION",
+          "vers": "APPROVED",
+          "statut": "traite",
+          "commentaire": "Validation du traitement — Validé."
+        },
+        {
+          "id": "h_mw20p89b_1fc343",
+          "date": "2026-11-04T11:12:34.319Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "valider",
+          "de": "APPROVED",
+          "vers": "CLOSED",
+          "statut": "cloture",
+          "commentaire": "Traitement du conflit C-R2 validé par le Super Admin : archivé à l'historique.",
+          "motif": null
+        }
+      ],
+      "assigneLe": "2026-11-04T10:56:13.964Z",
+      "transitions": [
+        {
+          "date": "2026-11-04T10:56:13.964Z",
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "motif": null
+        },
+        {
+          "date": "2026-11-04T11:10:11.001Z",
+          "action": "prendre_en_charge",
+          "de": "ASSIGNED_REGION",
+          "vers": "IN_PROGRESS_REGION",
+          "auteur": {
+            "matricule": "REG-LAAYOUNE",
+            "nom": "Chef de région Laayoune",
+            "rang": "reg",
+            "unite": "Laayoune"
+          },
+          "motif": null
+        },
+        {
+          "date": "2026-11-04T11:10:26.822Z",
+          "action": "soumettre",
+          "de": "IN_PROGRESS_REGION",
+          "vers": "PENDING_VALIDATION",
+          "auteur": {
+            "matricule": "REG-LAAYOUNE",
+            "nom": "Chef de région Laayoune",
+            "rang": "reg",
+            "unite": "Laayoune"
+          },
+          "motif": null
+        },
+        {
+          "date": "2026-11-04T11:12:34.319Z",
+          "action": "valider",
+          "de": "PENDING_VALIDATION",
+          "vers": "CLOSED",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "motif": null
+        }
+      ],
+      "assignesA": [
+        {
+          "matricule": "REG-LAAYOUNE",
+          "nom": "Chef de région Laayoune",
+          "rang": "reg",
+          "unite": "Laayoune",
+          "region": "Laayoune"
+        }
+      ],
+      "assigneA": {
+        "matricule": "REG-LAAYOUNE",
+        "nom": "Chef de région Laayoune",
+        "rang": "reg",
+        "unite": "Laayoune",
+        "region": "Laayoune"
+      },
+      "traiteLe": "2026-11-04T11:10:26.822Z",
+      "traitePar": {
+        "matricule": "REG-LAAYOUNE",
+        "nom": "Chef de région Laayoune",
+        "rang": "reg",
+        "unite": "Laayoune"
+      },
+      "persiste": true,
+      "statutPhysique": "maintenu",
+      "decision": "Déplacement du barrage (Réajustement position)",
+      "justification": "Barrage Poste fixe Sidi El Ghazi déplacé de [-14.2947, 26.2590] vers [-14.2462, 26.2877] sur RN1. Conflit résolu.",
+      "changement": {
+        "type": "deplacement",
+        "avant": {
+          "barrageId": "BF-BT-387",
+          "barrageNom": "Poste fixe Sidi El Ghazi",
+          "lat": 26.259,
+          "lng": -14.29471,
+          "route": "RN1",
+          "distanceKm": 22.4
+        },
+        "apres": {
+          "barrageId": "BF-BT-387",
+          "barrageNom": "Poste fixe Sidi El Ghazi",
+          "lat": 26.28771,
+          "lng": -14.24624,
+          "route": "RN1",
+          "distanceKm": 25
+        }
+      },
+      "traitement": {
+        "date": "2026-11-04T11:10:26.822Z",
+        "auteur": {
+          "matricule": "REG-LAAYOUNE",
+          "nom": "Chef de région Laayoune",
+          "rang": "reg",
+          "unite": "Laayoune"
+        },
+        "action": "deplacement",
+        "decision": "Déplacement du barrage (Réajustement position)",
+        "justification": "Barrage Poste fixe Sidi El Ghazi déplacé de [-14.2947, 26.2590] vers [-14.2462, 26.2877] sur RN1. Conflit résolu.",
+        "persiste": true,
+        "statutPhysique": "maintenu",
+        "details": {
+          "barrageId": "BF-BT-387",
+          "barrageNom": "Poste fixe Sidi El Ghazi",
+          "latAvant": 26.259,
+          "lngAvant": -14.29471,
+          "routeAvant": "RN1",
+          "latApres": 26.28771,
+          "lngApres": -14.24624,
+          "routeApres": "RN1",
+          "distanceApresKm": 25,
+          "statut": "resolu",
+          "resolu": true,
+          "commentaire": "Barrage Poste fixe Sidi El Ghazi déplacé de [-14.2947, 26.2590] vers [-14.2462, 26.2877] sur RN1. Conflit résolu."
+        },
+        "changement": {
+          "type": "deplacement",
+          "avant": {
+            "barrageId": "BF-BT-387",
+            "barrageNom": "Poste fixe Sidi El Ghazi",
+            "lat": 26.259,
+            "lng": -14.29471,
+            "route": "RN1",
+            "distanceKm": 22.4
+          },
+          "apres": {
+            "barrageId": "BF-BT-387",
+            "barrageNom": "Poste fixe Sidi El Ghazi",
+            "lat": 26.28771,
+            "lng": -14.24624,
+            "route": "RN1",
+            "distanceKm": 25
+          }
+        },
+        "approbation": {
+          "statut": "approuve",
+          "date": "2026-11-04T11:12:34.319Z",
+          "par": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "raison": null
+        }
+      },
+      "approbation": {
+        "statut": "approuve",
+        "date": "2026-11-04T11:12:34.319Z",
+        "par": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "raison": null
+      },
+      "validation": {
+        "decision": "valider",
+        "par": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "le": "2026-11-04T11:12:34.319Z",
+        "motif": null
+      },
+      "clotureLe": "2026-11-04T11:12:34.319Z",
+      "cloturePar": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      }
+    },
+    {
+      "id": "conf_calc_BF-BT-349|BFI-CIE-044",
+      "numero": "C-R6",
+      "paireCle": "BF-BT-349|BFI-CIE-044",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BFI-CIE-044",
+      "barrageBId": "BF-BT-349",
+      "barrageA": {
+        "id": "BFI-CIE-044",
+        "nom": "BFI Laayoune",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": null,
+        "lng": -13.23296,
+        "lat": 27.15235,
+        "reg": "Laayoune",
+        "cie": "Laayoune",
+        "bt": "Laayoune",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-349",
+        "nom": "Poste fixe Port Laayoune",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": 1517.6,
+        "lng": -13.41696,
+        "lat": 27.0343,
+        "reg": "Laayoune",
+        "cie": "Laayoune",
+        "bt": "Port Laayoune",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN1",
+      "factionsCommunes": [],
+      "distanceKm": 25.3,
+      "seuilKm": 30,
+      "motif": "Espacement de 25.3 km inférieur au seuil (30 km)",
+      "etat": "CLOSED",
+      "assignation": {
+        "regions": [
+          {
+            "unite": "Laayoune",
+            "matricule": "REG-LAAYOUNE",
+            "nom": "Chef de région Laayoune"
+          }
+        ],
+        "cie": null,
+        "responsable": {
+          "rang": "reg",
+          "unite": "Laayoune",
+          "reg": "Laayoune",
+          "matricule": "REG-LAAYOUNE"
+        },
+        "assignePar": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "assigneLe": "2026-11-04T10:56:25.193Z"
+      },
+      "statut": "cloture",
+      "cree": "2026-11-04T10:56:25.193Z",
+      "maj": "2026-11-04T11:12:40.668Z",
+      "historique": [
+        {
+          "id": "h_mw204gh5_pf6e8",
+          "date": "2026-11-04T10:56:25.193Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "de": null,
+          "vers": "NEW",
+          "statut": "nouveau",
+          "commentaire": "Conflit C-R6 identifié par la filtration du Super Admin."
+        },
+        {
+          "id": "h_mw204gh5_q2114",
+          "date": "2026-11-04T10:56:25.193Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "statut": "a_traiter",
+          "commentaire": "Conflit C-R6 assigné au CMD Région Laayoune.",
+          "motif": null,
+          "destinataire": {
+            "rang": "reg",
+            "unite": "Laayoune"
+          }
+        },
+        {
+          "id": "h_mw20moih_11f447",
+          "date": "2026-11-04T11:10:35.417Z",
+          "auteur": {
+            "matricule": "REG-LAAYOUNE",
+            "nom": "Chef de région Laayoune",
+            "rang": "reg",
+            "unite": "Laayoune"
+          },
+          "action": "prendre_en_charge",
+          "de": "ASSIGNED_REGION",
+          "vers": "IN_PROGRESS_REGION",
+          "statut": "en_cours",
+          "commentaire": "Le CMD Région Laayoune prend en charge le traitement du conflit C-R6.",
+          "motif": null
+        },
+        {
+          "id": "h_mw20mu34_12c939",
+          "date": "2026-11-04T11:10:42.640Z",
+          "auteur": {
+            "matricule": "REG-LAAYOUNE",
+            "nom": "Chef de région Laayoune",
+            "rang": "reg",
+            "unite": "Laayoune"
+          },
+          "action": "soumettre",
+          "de": "IN_PROGRESS_REGION",
+          "vers": "PENDING_VALIDATION",
+          "statut": "traite",
+          "commentaire": "Traitement du conflit C-R6 : Déplacement du barrage (Réajustement position) — proximité résiduelle maintenue.",
+          "motif": null,
+          "decision": "Déplacement du barrage (Réajustement position)",
+          "justification": "Barrage Poste fixe Port Laayoune déplacé de [-13.4113, 27.0662] vers [-13.4170, 27.0343] sur RN1. Conflit résolu.",
+          "statutPhysique": "maintenu",
+          "persiste": true,
+          "details": {
+            "barrageId": "BF-BT-349",
+            "barrageNom": "Poste fixe Port Laayoune",
+            "latAvant": 27.06615,
+            "lngAvant": -13.41127,
+            "routeAvant": "RN1",
+            "latApres": 27.0343,
+            "lngApres": -13.41696,
+            "routeApres": "RN1",
+            "distanceApresKm": 25,
+            "statut": "resolu",
+            "resolu": true,
+            "commentaire": "Barrage Poste fixe Port Laayoune déplacé de [-13.4113, 27.0662] vers [-13.4170, 27.0343] sur RN1. Conflit résolu."
+          },
+          "changement": {
+            "type": "deplacement",
+            "avant": {
+              "barrageId": "BF-BT-349",
+              "barrageNom": "Poste fixe Port Laayoune",
+              "lat": 27.06615,
+              "lng": -13.41127,
+              "route": "RN1",
+              "distanceKm": 25.3
+            },
+            "apres": {
+              "barrageId": "BF-BT-349",
+              "barrageNom": "Poste fixe Port Laayoune",
+              "lat": 27.0343,
+              "lng": -13.41696,
+              "route": "RN1",
+              "distanceKm": 25
+            }
+          }
+        },
+        {
+          "id": "h_mw20pd5o_1hc790",
+          "date": "2026-11-04T11:12:40.668Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "valider",
+          "de": "PENDING_VALIDATION",
+          "vers": "APPROVED",
+          "statut": "traite",
+          "commentaire": "Validation du traitement — Validé."
+        },
+        {
+          "id": "h_mw20pd5o_1i381e",
+          "date": "2026-11-04T11:12:40.668Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "valider",
+          "de": "APPROVED",
+          "vers": "CLOSED",
+          "statut": "cloture",
+          "commentaire": "Traitement du conflit C-R6 validé par le Super Admin : archivé à l'historique.",
+          "motif": null
+        }
+      ],
+      "assigneLe": "2026-11-04T10:56:25.193Z",
+      "transitions": [
+        {
+          "date": "2026-11-04T10:56:25.193Z",
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "motif": null
+        },
+        {
+          "date": "2026-11-04T11:10:35.417Z",
+          "action": "prendre_en_charge",
+          "de": "ASSIGNED_REGION",
+          "vers": "IN_PROGRESS_REGION",
+          "auteur": {
+            "matricule": "REG-LAAYOUNE",
+            "nom": "Chef de région Laayoune",
+            "rang": "reg",
+            "unite": "Laayoune"
+          },
+          "motif": null
+        },
+        {
+          "date": "2026-11-04T11:10:42.640Z",
+          "action": "soumettre",
+          "de": "IN_PROGRESS_REGION",
+          "vers": "PENDING_VALIDATION",
+          "auteur": {
+            "matricule": "REG-LAAYOUNE",
+            "nom": "Chef de région Laayoune",
+            "rang": "reg",
+            "unite": "Laayoune"
+          },
+          "motif": null
+        },
+        {
+          "date": "2026-11-04T11:12:40.668Z",
+          "action": "valider",
+          "de": "PENDING_VALIDATION",
+          "vers": "CLOSED",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "motif": null
+        }
+      ],
+      "assignesA": [
+        {
+          "matricule": "REG-LAAYOUNE",
+          "nom": "Chef de région Laayoune",
+          "rang": "reg",
+          "unite": "Laayoune",
+          "region": "Laayoune"
+        }
+      ],
+      "assigneA": {
+        "matricule": "REG-LAAYOUNE",
+        "nom": "Chef de région Laayoune",
+        "rang": "reg",
+        "unite": "Laayoune",
+        "region": "Laayoune"
+      },
+      "traiteLe": "2026-11-04T11:10:42.640Z",
+      "traitePar": {
+        "matricule": "REG-LAAYOUNE",
+        "nom": "Chef de région Laayoune",
+        "rang": "reg",
+        "unite": "Laayoune"
+      },
+      "persiste": true,
+      "statutPhysique": "maintenu",
+      "decision": "Déplacement du barrage (Réajustement position)",
+      "justification": "Barrage Poste fixe Port Laayoune déplacé de [-13.4113, 27.0662] vers [-13.4170, 27.0343] sur RN1. Conflit résolu.",
+      "changement": {
+        "type": "deplacement",
+        "avant": {
+          "barrageId": "BF-BT-349",
+          "barrageNom": "Poste fixe Port Laayoune",
+          "lat": 27.06615,
+          "lng": -13.41127,
+          "route": "RN1",
+          "distanceKm": 25.3
+        },
+        "apres": {
+          "barrageId": "BF-BT-349",
+          "barrageNom": "Poste fixe Port Laayoune",
+          "lat": 27.0343,
+          "lng": -13.41696,
+          "route": "RN1",
+          "distanceKm": 25
+        }
+      },
+      "traitement": {
+        "date": "2026-11-04T11:10:42.640Z",
+        "auteur": {
+          "matricule": "REG-LAAYOUNE",
+          "nom": "Chef de région Laayoune",
+          "rang": "reg",
+          "unite": "Laayoune"
+        },
+        "action": "deplacement",
+        "decision": "Déplacement du barrage (Réajustement position)",
+        "justification": "Barrage Poste fixe Port Laayoune déplacé de [-13.4113, 27.0662] vers [-13.4170, 27.0343] sur RN1. Conflit résolu.",
+        "persiste": true,
+        "statutPhysique": "maintenu",
+        "details": {
+          "barrageId": "BF-BT-349",
+          "barrageNom": "Poste fixe Port Laayoune",
+          "latAvant": 27.06615,
+          "lngAvant": -13.41127,
+          "routeAvant": "RN1",
+          "latApres": 27.0343,
+          "lngApres": -13.41696,
+          "routeApres": "RN1",
+          "distanceApresKm": 25,
+          "statut": "resolu",
+          "resolu": true,
+          "commentaire": "Barrage Poste fixe Port Laayoune déplacé de [-13.4113, 27.0662] vers [-13.4170, 27.0343] sur RN1. Conflit résolu."
+        },
+        "changement": {
+          "type": "deplacement",
+          "avant": {
+            "barrageId": "BF-BT-349",
+            "barrageNom": "Poste fixe Port Laayoune",
+            "lat": 27.06615,
+            "lng": -13.41127,
+            "route": "RN1",
+            "distanceKm": 25.3
+          },
+          "apres": {
+            "barrageId": "BF-BT-349",
+            "barrageNom": "Poste fixe Port Laayoune",
+            "lat": 27.0343,
+            "lng": -13.41696,
+            "route": "RN1",
+            "distanceKm": 25
+          }
+        },
+        "approbation": {
+          "statut": "approuve",
+          "date": "2026-11-04T11:12:40.668Z",
+          "par": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "raison": null
+        }
+      },
+      "approbation": {
+        "statut": "approuve",
+        "date": "2026-11-04T11:12:40.668Z",
+        "par": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "raison": null
+      },
+      "validation": {
+        "decision": "valider",
+        "par": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "le": "2026-11-04T11:12:40.668Z",
+        "motif": null
+      },
+      "clotureLe": "2026-11-04T11:12:40.668Z",
+      "cloturePar": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      }
+    },
+    {
+      "id": "conf_calc_BF-BT-194|BFI-CIE-034",
+      "numero": "C-R4",
+      "paireCle": "BF-BT-194|BFI-CIE-034",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BFI-CIE-034",
+      "barrageBId": "BF-BT-194",
+      "barrageA": {
+        "id": "BFI-CIE-034",
+        "nom": "BFI Guelmim",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": null,
+        "lng": -10.14665,
+        "lat": 28.92736,
+        "reg": "Guelmim",
+        "cie": "Guelmim",
+        "bt": "Guelmim",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-194",
+        "nom": "Poste fixe Guelmim",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": 1084.9,
+        "lng": -10.33829,
+        "lat": 28.81703,
+        "reg": "Guelmim",
+        "cie": "Guelmim",
+        "bt": "Guelmim",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN1",
+      "factionsCommunes": [],
+      "distanceKm": 23.9,
+      "seuilKm": 30,
+      "motif": "Espacement de 23.9 km inférieur au seuil (30 km)",
+      "etat": "ASSIGNED_REGION",
+      "assignation": {
+        "regions": [
+          {
+            "unite": "Guelmim",
+            "matricule": "REG-GUELMIM",
+            "nom": "Chef de région Guelmim"
+          }
+        ],
+        "cie": null,
+        "responsable": null,
+        "assignePar": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "assigneLe": "2026-11-04T10:56:38.135Z"
+      },
+      "statut": "a_traiter",
+      "cree": "2026-11-04T10:56:38.135Z",
+      "maj": "2026-11-04T10:56:38.135Z",
+      "historique": [
+        {
+          "id": "h_mw204qgn_rdbd0",
+          "date": "2026-11-04T10:56:38.135Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "de": null,
+          "vers": "NEW",
+          "statut": "nouveau",
+          "commentaire": "Conflit C-R4 identifié par la filtration du Super Admin."
+        },
+        {
+          "id": "h_mw204qgn_sb7c7",
+          "date": "2026-11-04T10:56:38.135Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "statut": "a_traiter",
+          "commentaire": "Conflit C-R4 assigné au CMD Région Guelmim.",
+          "motif": null,
+          "destinataire": {
+            "rang": "reg",
+            "unite": "Guelmim"
+          }
+        }
+      ],
+      "assigneLe": "2026-11-04T10:56:38.135Z",
+      "transitions": [
+        {
+          "date": "2026-11-04T10:56:38.135Z",
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "motif": null
+        }
+      ],
+      "assignesA": [
+        {
+          "matricule": "REG-GUELMIM",
+          "nom": "Chef de région Guelmim",
+          "rang": "reg",
+          "unite": "Guelmim",
+          "region": "Guelmim"
+        }
+      ],
+      "assigneA": {
+        "matricule": "REG-GUELMIM",
+        "nom": "Chef de région Guelmim",
+        "rang": "reg",
+        "unite": "Guelmim",
+        "region": "Guelmim"
+      }
+    },
+    {
+      "id": "conf_mw20oto8_2c79244e",
+      "paireCle": "BF-BT-188|BFI-CIE-044",
+      "type": "distance_insuffisante",
+      "severite": "critique",
+      "barrageAId": "BF-BT-188",
+      "barrageBId": "BFI-CIE-044",
+      "barrageA": {
+        "id": "BF-BT-188",
+        "nom": "Poste fixe Foum El Oued",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": 1474.5,
+        "lng": -13.14035,
+        "lat": 27.24646,
+        "reg": "Laayoune",
+        "cie": "Laayoune",
+        "bt": "Boukraa",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BFI-CIE-044",
+        "nom": "BFI Laayoune",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": null,
+        "lng": -13.23296,
+        "lat": 27.15235,
+        "reg": "Laayoune",
+        "cie": "Laayoune",
+        "bt": "Laayoune",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN1",
+      "factionsCommunes": [
+        "F4"
+      ],
+      "distanceKm": 15.7,
+      "distanceRouteKm": 15.7,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "etat": "NEW",
+      "assignation": {
+        "regions": [],
+        "cie": null,
+        "responsable": null,
+        "assignePar": null,
+        "assigneLe": null
+      },
+      "statut": "nouveau",
+      "cree": "2026-11-04T11:12:15.411Z",
+      "maj": "2026-11-04T11:12:15.411Z",
+      "resoluLe": null,
+      "historique": [
+        {
+          "id": "h_mw20oto8_15ef65",
+          "date": "2026-11-04T11:12:15.411Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "de": null,
+          "vers": "NEW",
+          "statut": "nouveau",
+          "commentaire": "Conflit détecté le long de la route : espacement 15.7 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mw20p2e1_35e25c27",
+      "paireCle": "BFI-CIE-079|syn_bf_018_1c4i0.",
+      "type": "distance_insuffisante",
+      "severite": "critique",
+      "barrageAId": "syn_bf_018_1c4i0.",
+      "barrageBId": "BFI-CIE-079",
+      "barrageA": {
+        "id": "syn_bf_018_1c4i0.",
+        "nom": "Barrage Fixe RN1 — Tarfaya",
+        "type": "FIXED",
+        "route": "RN1",
+        "pk": 1387,
+        "lng": -12.88232,
+        "lat": 27.94841,
+        "reg": "Laayoune",
+        "cie": "Tarfaya",
+        "bt": "Tarfaya",
+        "factionId": null,
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BFI-CIE-079",
+        "nom": "BFI Tarfaya",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": null,
+        "lng": -12.82853,
+        "lat": 27.95973,
+        "reg": "Laayoune",
+        "cie": "Tarfaya",
+        "bt": "Tarfaya",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN1",
+      "factionsCommunes": [
+        "F1",
+        "F2",
+        "F3",
+        "F4"
+      ],
+      "distanceKm": 6.1,
+      "distanceRouteKm": 6.1,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "etat": "NEW",
+      "assignation": {
+        "regions": [],
+        "cie": null,
+        "responsable": null,
+        "assignePar": null,
+        "assigneLe": null
+      },
+      "statut": "nouveau",
+      "cree": "2026-11-04T11:12:26.712Z",
+      "maj": "2026-11-04T11:12:26.712Z",
+      "resoluLe": null,
+      "historique": [
+        {
+          "id": "h_mw20p2e1_19404e",
+          "date": "2026-11-04T11:12:26.712Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "de": null,
+          "vers": "NEW",
+          "statut": "nouveau",
+          "commentaire": "Conflit détecté le long de la route : espacement 6.1 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mw20p2e2_eb426b8f",
+      "paireCle": "BF-BT-452|syn_bf_018_1c4i0.",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "syn_bf_018_1c4i0.",
+      "barrageBId": "BF-BT-452",
+      "barrageA": {
+        "id": "syn_bf_018_1c4i0.",
+        "nom": "Barrage Fixe RN1 — Tarfaya",
+        "type": "FIXED",
+        "route": "RN1",
+        "pk": 1387,
+        "lng": -12.88232,
+        "lat": 27.94841,
+        "reg": "Laayoune",
+        "cie": "Tarfaya",
+        "bt": "Tarfaya",
+        "factionId": null,
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-452",
+        "nom": "Poste fixe Tarfaya",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": null,
+        "lng": -12.9565,
+        "lat": 27.67213,
+        "reg": "Laayoune",
+        "cie": "Tarfaya",
+        "bt": "Tarfaya",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN1",
+      "factionsCommunes": [
+        "F4"
+      ],
+      "distanceKm": 32.8,
+      "distanceRouteKm": 32.8,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "etat": "NEW",
+      "assignation": {
+        "regions": [],
+        "cie": null,
+        "responsable": null,
+        "assignePar": null,
+        "assigneLe": null
+      },
+      "statut": "nouveau",
+      "cree": "2026-11-04T11:12:26.712Z",
+      "maj": "2026-11-04T11:12:26.712Z",
+      "resoluLe": null,
+      "historique": [
+        {
+          "id": "h_mw20p2e2_1ae7cc",
+          "date": "2026-11-04T11:12:26.712Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "de": null,
+          "vers": "NEW",
+          "statut": "nouveau",
+          "commentaire": "Conflit détecté le long de la route : espacement 32.8 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mw20p5hp_adaab4e3",
+      "paireCle": "BF-BT-126|BFI-CIE-044",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-126",
+      "barrageBId": "BFI-CIE-044",
+      "barrageA": {
+        "id": "BF-BT-126",
+        "nom": "Poste fixe Boukraa",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": 1465.9,
+        "lng": -13.08748,
+        "lat": 27.30145,
+        "reg": "Laayoune",
+        "cie": "Laayoune",
+        "bt": "Boukraa",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BFI-CIE-044",
+        "nom": "BFI Laayoune",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": null,
+        "lng": -13.23296,
+        "lat": 27.15235,
+        "reg": "Laayoune",
+        "cie": "Laayoune",
+        "bt": "Laayoune",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN1",
+      "factionsCommunes": [
+        "F1"
+      ],
+      "distanceKm": 24.2,
+      "distanceRouteKm": 24.2,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "etat": "NEW",
+      "assignation": {
+        "regions": [],
+        "cie": null,
+        "responsable": null,
+        "assignePar": null,
+        "assigneLe": null
+      },
+      "statut": "nouveau",
+      "cree": "2026-11-04T11:12:30.729Z",
+      "maj": "2026-11-04T11:12:30.729Z",
+      "resoluLe": null,
+      "historique": [
+        {
+          "id": "h_mw20p5hp_1df158",
+          "date": "2026-11-04T11:12:30.729Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "de": null,
+          "vers": "NEW",
+          "statut": "nouveau",
+          "commentaire": "Conflit détecté le long de la route : espacement 24.2 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mw20p8a8_0ebe66ff",
+      "paireCle": "BF-BT-387|BFI-CIE-018",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-387",
+      "barrageBId": "BFI-CIE-018",
+      "barrageA": {
+        "id": "BF-BT-387",
+        "nom": "Poste fixe Sidi El Ghazi",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": 1642.2,
+        "lng": -14.24624,
+        "lat": 26.28771,
+        "reg": "Laayoune",
+        "cie": "Boujdour",
+        "bt": "Sidi El Ghazi",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BFI-CIE-018",
+        "nom": "BFI Boujdour",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": null,
+        "lng": -14.46706,
+        "lat": 26.13606,
+        "reg": "Laayoune",
+        "cie": "Boujdour",
+        "bt": "Boujdour",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN1",
+      "factionsCommunes": [
+        "F3"
+      ],
+      "distanceKm": 28.2,
+      "distanceRouteKm": 28.2,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "etat": "NEW",
+      "assignation": {
+        "regions": [],
+        "cie": null,
+        "responsable": null,
+        "assignePar": null,
+        "assigneLe": null
+      },
+      "statut": "nouveau",
+      "cree": "2026-11-04T11:12:34.352Z",
+      "maj": "2026-11-04T11:12:34.352Z",
+      "resoluLe": null,
+      "historique": [
+        {
+          "id": "h_mw20p8a9_1g8a16",
+          "date": "2026-11-04T11:12:34.352Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "de": null,
+          "vers": "NEW",
+          "statut": "nouveau",
+          "commentaire": "Conflit détecté le long de la route : espacement 28.2 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mw20pd6a_2e71e6f8",
+      "paireCle": "BF-BT-349|BFI-CIE-044",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-349",
+      "barrageBId": "BFI-CIE-044",
+      "barrageA": {
+        "id": "BF-BT-349",
+        "nom": "Poste fixe Port Laayoune",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": 1517.6,
+        "lng": -13.41696,
+        "lat": 27.0343,
+        "reg": "Laayoune",
+        "cie": "Laayoune",
+        "bt": "Port Laayoune",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BFI-CIE-044",
+        "nom": "BFI Laayoune",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": null,
+        "lng": -13.23296,
+        "lat": 27.15235,
+        "reg": "Laayoune",
+        "cie": "Laayoune",
+        "bt": "Laayoune",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN1",
+      "factionsCommunes": [
+        "F1"
+      ],
+      "distanceKm": 28.9,
+      "distanceRouteKm": 28.9,
+      "estDistanceRoute": true,
+      "seuilKm": 40,
+      "etat": "NEW",
+      "assignation": {
+        "regions": [],
+        "cie": null,
+        "responsable": null,
+        "assignePar": null,
+        "assigneLe": null
+      },
+      "statut": "nouveau",
+      "cree": "2026-11-04T11:12:40.688Z",
+      "maj": "2026-11-04T11:12:40.688Z",
+      "resoluLe": null,
+      "historique": [
+        {
+          "id": "h_mw20pd6a_1jfe58",
+          "date": "2026-11-04T11:12:40.688Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "de": null,
+          "vers": "NEW",
+          "statut": "nouveau",
+          "commentaire": "Conflit détecté le long de la route : espacement 28.9 km (seuil réglementaire 40 km)."
+        }
+      ]
+    },
+    {
+      "id": "conf_mw21r3g4_a719216c",
+      "numero": "C-01",
+      "paireCle": "BF-BT-278|BFI-CIE-037",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BFI-CIE-037",
+      "barrageBId": "BF-BT-278",
+      "barrageA": {
+        "id": "BFI-CIE-037",
+        "nom": "BFI Inezgane",
+        "type": "barrage_fixe",
+        "route": "RN10",
+        "pk": null,
+        "lng": -9.51317,
+        "lat": 30.35502,
+        "reg": "Agadir",
+        "cie": "Inezgane",
+        "bt": "Inezgane",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-278",
+        "nom": "Poste fixe Lqliaa",
+        "type": "barrage_fixe",
+        "route": "RR105",
+        "pk": null,
+        "lng": -9.46503,
+        "lat": 30.3023,
+        "reg": "Agadir",
+        "cie": "Inezgane",
+        "bt": "Lqliaa",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN10",
+      "factionsCommunes": [],
+      "distanceKm": 7.68,
+      "seuilKm": 20,
+      "motif": "Distance routière de 7.68 km inférieure au seuil de sécurité",
+      "etat": "ASSIGNED_REGION",
+      "assignation": {
+        "regions": [
+          {
+            "unite": "Agadir",
+            "matricule": "REG-AGADIR",
+            "nom": "Chef de région Agadir"
+          }
+        ],
+        "cie": null,
+        "responsable": null,
+        "assignePar": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "assigneLe": "2026-11-04T11:42:01.012Z"
+      },
+      "statut": "a_traiter",
+      "cree": "2026-11-04T11:42:01.012Z",
+      "maj": "2026-11-04T11:42:01.012Z",
+      "historique": [
+        {
+          "id": "h_mw21r3g4_1kd3fc",
+          "date": "2026-11-04T11:42:01.012Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "de": null,
+          "vers": "NEW",
+          "statut": "nouveau",
+          "commentaire": "Conflit C-01 identifié par la filtration du Super Admin."
+        },
+        {
+          "id": "h_mw21r3g4_1l0439",
+          "date": "2026-11-04T11:42:01.012Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "statut": "a_traiter",
+          "commentaire": "Conflit C-01 assigné au CMD Région Agadir.",
+          "motif": null,
+          "destinataire": {
+            "rang": "reg",
+            "unite": "Agadir"
+          }
+        }
+      ],
+      "assigneLe": "2026-11-04T11:42:01.012Z",
+      "transitions": [
+        {
+          "date": "2026-11-04T11:42:01.012Z",
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "motif": null
+        }
+      ],
+      "assignesA": [
+        {
+          "matricule": "REG-AGADIR",
+          "nom": "Chef de région Agadir",
+          "rang": "reg",
+          "unite": "Agadir",
+          "region": "Agadir"
+        }
+      ],
+      "assigneA": {
+        "matricule": "REG-AGADIR",
+        "nom": "Chef de région Agadir",
+        "rang": "reg",
+        "unite": "Agadir",
+        "region": "Agadir"
+      }
+    },
+    {
+      "id": "conf_mw21r6dh_958e5c8a",
+      "numero": "C-02",
+      "paireCle": "BF-BT-059|BFI-CIE-001",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BFI-CIE-001",
+      "barrageBId": "BF-BT-059",
+      "barrageA": {
+        "id": "BFI-CIE-001",
+        "nom": "BFI Agadir",
+        "type": "barrage_fixe",
+        "route": "A3",
+        "pk": null,
+        "lng": -9.36193,
+        "lat": 30.45434,
+        "reg": "Agadir",
+        "cie": "Agadir",
+        "bt": "Amskroud",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-059",
+        "nom": "Poste fixe Amskroud",
+        "type": "barrage_fixe",
+        "route": "RN11",
+        "pk": null,
+        "lng": -9.3317,
+        "lat": 30.52842,
+        "reg": "Agadir",
+        "cie": "Agadir",
+        "bt": "Amskroud",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "route": "A3",
+      "factionsCommunes": [],
+      "distanceKm": 9.95,
+      "seuilKm": 20,
+      "motif": "Distance routière de 9.95 km inférieure au seuil de sécurité",
+      "etat": "ASSIGNED_REGION",
+      "assignation": {
+        "regions": [
+          {
+            "unite": "Agadir",
+            "matricule": "REG-AGADIR",
+            "nom": "Chef de région Agadir"
+          }
+        ],
+        "cie": null,
+        "responsable": null,
+        "assignePar": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "assigneLe": "2026-11-04T11:42:04.805Z"
+      },
+      "statut": "a_traiter",
+      "cree": "2026-11-04T11:42:04.805Z",
+      "maj": "2026-11-04T11:42:04.805Z",
+      "historique": [
+        {
+          "id": "h_mw21r6dh_1m308a",
+          "date": "2026-11-04T11:42:04.805Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "de": null,
+          "vers": "NEW",
+          "statut": "nouveau",
+          "commentaire": "Conflit C-02 identifié par la filtration du Super Admin."
+        },
+        {
+          "id": "h_mw21r6dh_1ne4e9",
+          "date": "2026-11-04T11:42:04.805Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "statut": "a_traiter",
+          "commentaire": "Conflit C-02 assigné au CMD Région Agadir.",
+          "motif": null,
+          "destinataire": {
+            "rang": "reg",
+            "unite": "Agadir"
+          }
+        }
+      ],
+      "assigneLe": "2026-11-04T11:42:04.805Z",
+      "transitions": [
+        {
+          "date": "2026-11-04T11:42:04.805Z",
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "motif": null
+        }
+      ],
+      "assignesA": [
+        {
+          "matricule": "REG-AGADIR",
+          "nom": "Chef de région Agadir",
+          "rang": "reg",
+          "unite": "Agadir",
+          "region": "Agadir"
+        }
+      ],
+      "assigneA": {
+        "matricule": "REG-AGADIR",
+        "nom": "Chef de région Agadir",
+        "rang": "reg",
+        "unite": "Agadir",
+        "region": "Agadir"
+      }
+    },
+    {
+      "id": "conf_mw21r86a_0ed187e9",
+      "numero": "C-03",
+      "paireCle": "BF-BT-035|BFI-CIE-016",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BFI-CIE-016",
+      "barrageBId": "BF-BT-035",
+      "barrageA": {
+        "id": "BFI-CIE-016",
+        "nom": "BFI Biougra",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": null,
+        "lng": -9.55109,
+        "lat": 30.12983,
+        "reg": "Agadir",
+        "cie": "Biougra",
+        "bt": "Had Belfaa",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-035",
+        "nom": "Poste fixe Ait Amira",
+        "type": "barrage_fixe",
+        "route": "RP1014",
+        "pk": null,
+        "lng": -9.41956,
+        "lat": 30.20044,
+        "reg": "Agadir",
+        "cie": "Biougra",
+        "bt": "Ait Amira",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN1",
+      "factionsCommunes": [],
+      "distanceKm": 18.07,
+      "seuilKm": 20,
+      "motif": "Distance routière de 18.07 km inférieure au seuil de sécurité",
+      "etat": "ASSIGNED_REGION",
+      "assignation": {
+        "regions": [
+          {
+            "unite": "Agadir",
+            "matricule": "REG-AGADIR",
+            "nom": "Chef de région Agadir"
+          }
+        ],
+        "cie": null,
+        "responsable": null,
+        "assignePar": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "assigneLe": "2026-11-04T11:42:07.138Z"
+      },
+      "statut": "a_traiter",
+      "cree": "2026-11-04T11:42:07.138Z",
+      "maj": "2026-11-04T11:42:07.138Z",
+      "historique": [
+        {
+          "id": "h_mw21r86a_1o6c47",
+          "date": "2026-11-04T11:42:07.138Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "de": null,
+          "vers": "NEW",
+          "statut": "nouveau",
+          "commentaire": "Conflit C-03 identifié par la filtration du Super Admin."
+        },
+        {
+          "id": "h_mw21r86a_1p3cfe",
+          "date": "2026-11-04T11:42:07.138Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "statut": "a_traiter",
+          "commentaire": "Conflit C-03 assigné au CMD Région Agadir.",
+          "motif": null,
+          "destinataire": {
+            "rang": "reg",
+            "unite": "Agadir"
+          }
+        }
+      ],
+      "assigneLe": "2026-11-04T11:42:07.138Z",
+      "transitions": [
+        {
+          "date": "2026-11-04T11:42:07.138Z",
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "motif": null
+        }
+      ],
+      "assignesA": [
+        {
+          "matricule": "REG-AGADIR",
+          "nom": "Chef de région Agadir",
+          "rang": "reg",
+          "unite": "Agadir",
+          "region": "Agadir"
+        }
+      ],
+      "assigneA": {
+        "matricule": "REG-AGADIR",
+        "nom": "Chef de région Agadir",
+        "rang": "reg",
+        "unite": "Agadir",
+        "region": "Agadir"
+      }
+    },
+    {
+      "id": "conf_mw22ifci_aea4e5cf",
+      "numero": "C-01",
+      "paireCle": "BF-BT-441|BFI-CIE-002",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BFI-CIE-002",
+      "barrageBId": "BF-BT-441",
+      "barrageA": {
+        "id": "BFI-CIE-002",
+        "nom": "BFI Ain Aouda",
+        "type": "barrage_fixe",
+        "route": "A5",
+        "pk": null,
+        "lng": -6.88284,
+        "lat": 33.83966,
+        "reg": "Rabat",
+        "cie": "Ain Aouda",
+        "bt": "Sidi Yahya des Zaers",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-441",
+        "nom": "Poste fixe Tamesna",
+        "type": "barrage_fixe",
+        "route": "RP4032",
+        "pk": null,
+        "lng": -6.91354,
+        "lat": 33.85457,
+        "reg": "Rabat",
+        "cie": "Ain Aouda",
+        "bt": "Tamesna",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "route": "A5",
+      "factionsCommunes": [],
+      "distanceKm": 5.26,
+      "seuilKm": 20,
+      "motif": "Distance routière de 5.26 km inférieure au seuil de sécurité",
+      "etat": "ASSIGNED_REGION",
+      "assignation": {
+        "regions": [
+          {
+            "unite": "Rabat",
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat"
+          }
+        ],
+        "cie": null,
+        "responsable": null,
+        "assignePar": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "assigneLe": "2026-11-04T12:03:16.147Z"
+      },
+      "statut": "a_traiter",
+      "cree": "2026-11-04T12:03:16.146Z",
+      "maj": "2026-11-04T12:03:16.147Z",
+      "historique": [
+        {
+          "id": "h_mw22ifci_1qcb79",
+          "date": "2026-11-04T12:03:16.146Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "de": null,
+          "vers": "NEW",
+          "statut": "nouveau",
+          "commentaire": "Conflit C-01 identifié par la filtration du Super Admin."
+        },
+        {
+          "id": "h_mw22ifcj_1r7fb1",
+          "date": "2026-11-04T12:03:16.147Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "statut": "a_traiter",
+          "commentaire": "Conflit C-01 assigné au CMD Région Rabat : Assignation automatique pour traitement : conflit sur A5 (5.3 km)..",
+          "motif": null,
+          "destinataire": {
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "consigne": "Assignation automatique pour traitement : conflit sur A5 (5.3 km)."
+        }
+      ],
+      "assigneLe": "2026-11-04T12:03:16.147Z",
+      "transitions": [
+        {
+          "date": "2026-11-04T12:03:16.147Z",
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "motif": null
+        }
+      ],
+      "assignesA": [
+        {
+          "matricule": "REG-RABAT",
+          "nom": "Chef de région Rabat",
+          "rang": "reg",
+          "unite": "Rabat",
+          "region": "Rabat"
+        }
+      ],
+      "assigneA": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "rang": "reg",
+        "unite": "Rabat",
+        "region": "Rabat"
+      }
+    },
+    {
+      "id": "conf_mw22ifcw_a6197af2",
+      "numero": "C-02",
+      "paireCle": "BF-BT-350|BF-BT-362",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-350",
+      "barrageBId": "BF-BT-362",
+      "barrageA": {
+        "id": "BF-BT-350",
+        "nom": "Poste fixe Rabat",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": null,
+        "lng": -6.83679,
+        "lat": 34.02235,
+        "reg": "Rabat",
+        "cie": "Rabat",
+        "bt": "Rabat",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-362",
+        "nom": "Poste fixe Salé",
+        "type": "barrage_fixe",
+        "route": "nationale",
+        "pk": null,
+        "lng": -6.79134,
+        "lat": 34.01666,
+        "reg": "Rabat",
+        "cie": "Salé",
+        "bt": "Salé",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN1",
+      "factionsCommunes": [],
+      "distanceKm": 5.65,
+      "seuilKm": 20,
+      "motif": "Distance routière de 5.65 km inférieure au seuil de sécurité",
+      "etat": "ASSIGNED_REGION",
+      "assignation": {
+        "regions": [
+          {
+            "unite": "Rabat",
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat"
+          }
+        ],
+        "cie": null,
+        "responsable": null,
+        "assignePar": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "assigneLe": "2026-11-04T12:03:16.160Z"
+      },
+      "statut": "a_traiter",
+      "cree": "2026-11-04T12:03:16.160Z",
+      "maj": "2026-11-04T12:03:16.160Z",
+      "historique": [
+        {
+          "id": "h_mw22ifcw_1s0f16",
+          "date": "2026-11-04T12:03:16.160Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "de": null,
+          "vers": "NEW",
+          "statut": "nouveau",
+          "commentaire": "Conflit C-02 identifié par la filtration du Super Admin."
+        },
+        {
+          "id": "h_mw22ifcw_1t367b",
+          "date": "2026-11-04T12:03:16.160Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "statut": "a_traiter",
+          "commentaire": "Conflit C-02 assigné au CMD Région Rabat : Assignation automatique pour traitement : conflit sur RN1 (5.7 km)..",
+          "motif": null,
+          "destinataire": {
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "consigne": "Assignation automatique pour traitement : conflit sur RN1 (5.7 km)."
+        }
+      ],
+      "assigneLe": "2026-11-04T12:03:16.160Z",
+      "transitions": [
+        {
+          "date": "2026-11-04T12:03:16.160Z",
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "motif": null
+        }
+      ],
+      "assignesA": [
+        {
+          "matricule": "REG-RABAT",
+          "nom": "Chef de région Rabat",
+          "rang": "reg",
+          "unite": "Rabat",
+          "region": "Rabat"
+        }
+      ],
+      "assigneA": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "rang": "reg",
+        "unite": "Rabat",
+        "region": "Rabat"
+      }
+    },
+    {
+      "id": "conf_mw22ifda_1e236a88",
+      "numero": "C-03",
+      "paireCle": "BF-BT-364|BFI-CIE-071",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BFI-CIE-071",
+      "barrageBId": "BF-BT-364",
+      "barrageA": {
+        "id": "BFI-CIE-071",
+        "nom": "BFI Skhirate",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": null,
+        "lng": -7.05783,
+        "lat": 33.83761,
+        "reg": "Rabat",
+        "cie": "Skhirate",
+        "bt": "Skhirate-El Fath",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-364",
+        "nom": "Poste fixe Sebbah",
+        "type": "barrage_fixe",
+        "route": "RP4032",
+        "pk": null,
+        "lng": -7.04158,
+        "lat": 33.80261,
+        "reg": "Rabat",
+        "cie": "Skhirate",
+        "bt": "Sebbah",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN1",
+      "factionsCommunes": [],
+      "distanceKm": 6.28,
+      "seuilKm": 20,
+      "motif": "Distance routière de 6.28 km inférieure au seuil de sécurité",
+      "etat": "ASSIGNED_REGION",
+      "assignation": {
+        "regions": [
+          {
+            "unite": "Rabat",
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat"
+          }
+        ],
+        "cie": null,
+        "responsable": null,
+        "assignePar": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "assigneLe": "2026-11-04T12:03:16.174Z"
+      },
+      "statut": "a_traiter",
+      "cree": "2026-11-04T12:03:16.174Z",
+      "maj": "2026-11-04T12:03:16.174Z",
+      "historique": [
+        {
+          "id": "h_mw22ifda_1u7cd4",
+          "date": "2026-11-04T12:03:16.174Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "de": null,
+          "vers": "NEW",
+          "statut": "nouveau",
+          "commentaire": "Conflit C-03 identifié par la filtration du Super Admin."
+        },
+        {
+          "id": "h_mw22ifda_1v49f0",
+          "date": "2026-11-04T12:03:16.174Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "statut": "a_traiter",
+          "commentaire": "Conflit C-03 assigné au CMD Région Rabat : Assignation automatique pour traitement : conflit sur RN1 (6.3 km)..",
+          "motif": null,
+          "destinataire": {
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "consigne": "Assignation automatique pour traitement : conflit sur RN1 (6.3 km)."
+        }
+      ],
+      "assigneLe": "2026-11-04T12:03:16.174Z",
+      "transitions": [
+        {
+          "date": "2026-11-04T12:03:16.174Z",
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "motif": null
+        }
+      ],
+      "assignesA": [
+        {
+          "matricule": "REG-RABAT",
+          "nom": "Chef de région Rabat",
+          "rang": "reg",
+          "unite": "Rabat",
+          "region": "Rabat"
+        }
+      ],
+      "assigneA": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "rang": "reg",
+        "unite": "Rabat",
+        "region": "Rabat"
+      }
+    },
+    {
+      "id": "conf_mw22ifdl_80521343",
+      "numero": "C-04",
+      "paireCle": "BF-BT-173|BF-BT-441",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-173",
+      "barrageBId": "BF-BT-441",
+      "barrageA": {
+        "id": "BF-BT-173",
+        "nom": "Poste fixe El Manzeh",
+        "type": "barrage_fixe",
+        "route": "RP4020",
+        "pk": null,
+        "lng": -6.86461,
+        "lat": 33.86578,
+        "reg": "Rabat",
+        "cie": "Ain Aouda",
+        "bt": "El Manzeh",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-441",
+        "nom": "Poste fixe Tamesna",
+        "type": "barrage_fixe",
+        "route": "RP4032",
+        "pk": null,
+        "lng": -6.91354,
+        "lat": 33.85457,
+        "reg": "Rabat",
+        "cie": "Ain Aouda",
+        "bt": "Tamesna",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "route": "RP4020",
+      "factionsCommunes": [],
+      "distanceKm": 6.47,
+      "seuilKm": 20,
+      "motif": "Distance routière de 6.47 km inférieure au seuil de sécurité",
+      "etat": "ASSIGNED_REGION",
+      "assignation": {
+        "regions": [
+          {
+            "unite": "Rabat",
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat"
+          }
+        ],
+        "cie": null,
+        "responsable": null,
+        "assignePar": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "assigneLe": "2026-11-04T12:03:16.185Z"
+      },
+      "statut": "a_traiter",
+      "cree": "2026-11-04T12:03:16.185Z",
+      "maj": "2026-11-04T12:03:16.185Z",
+      "historique": [
+        {
+          "id": "h_mw22ifdl_1w4a42",
+          "date": "2026-11-04T12:03:16.185Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "de": null,
+          "vers": "NEW",
+          "statut": "nouveau",
+          "commentaire": "Conflit C-04 identifié par la filtration du Super Admin."
+        },
+        {
+          "id": "h_mw22ifdl_1x7d84",
+          "date": "2026-11-04T12:03:16.185Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "statut": "a_traiter",
+          "commentaire": "Conflit C-04 assigné au CMD Région Rabat : Assignation automatique pour traitement : conflit sur RP4020 (6.5 km)..",
+          "motif": null,
+          "destinataire": {
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "consigne": "Assignation automatique pour traitement : conflit sur RP4020 (6.5 km)."
+        }
+      ],
+      "assigneLe": "2026-11-04T12:03:16.185Z",
+      "transitions": [
+        {
+          "date": "2026-11-04T12:03:16.185Z",
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "motif": null
+        }
+      ],
+      "assignesA": [
+        {
+          "matricule": "REG-RABAT",
+          "nom": "Chef de région Rabat",
+          "rang": "reg",
+          "unite": "Rabat",
+          "region": "Rabat"
+        }
+      ],
+      "assigneA": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "rang": "reg",
+        "unite": "Rabat",
+        "region": "Rabat"
+      }
+    },
+    {
+      "id": "conf_mw22ifdv_f2e0aee7",
+      "numero": "C-05",
+      "paireCle": "BF-BT-407|BFI-CIE-071",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-407",
+      "barrageBId": "BFI-CIE-071",
+      "barrageA": {
+        "id": "BF-BT-407",
+        "nom": "Poste fixe Skhirate-El Fath",
+        "type": "barrage_fixe",
+        "route": "RP4001",
+        "pk": 6.4,
+        "lng": -7.02445,
+        "lat": 33.79255,
+        "reg": "Rabat",
+        "cie": "Skhirate",
+        "bt": "Sebbah",
+        "factionId": "F3",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BFI-CIE-071",
+        "nom": "BFI Skhirate",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": null,
+        "lng": -7.05783,
+        "lat": 33.83761,
+        "reg": "Rabat",
+        "cie": "Skhirate",
+        "bt": "Skhirate-El Fath",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "route": "RP4001",
+      "factionsCommunes": [],
+      "distanceKm": 7.69,
+      "seuilKm": 20,
+      "motif": "Distance routière de 7.69 km inférieure au seuil de sécurité",
+      "etat": "ASSIGNED_REGION",
+      "assignation": {
+        "regions": [
+          {
+            "unite": "Rabat",
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat"
+          }
+        ],
+        "cie": null,
+        "responsable": null,
+        "assignePar": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "assigneLe": "2026-11-04T12:03:16.195Z"
+      },
+      "statut": "a_traiter",
+      "cree": "2026-11-04T12:03:16.195Z",
+      "maj": "2026-11-04T12:03:16.195Z",
+      "historique": [
+        {
+          "id": "h_mw22ifdv_1y820b",
+          "date": "2026-11-04T12:03:16.195Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "de": null,
+          "vers": "NEW",
+          "statut": "nouveau",
+          "commentaire": "Conflit C-05 identifié par la filtration du Super Admin."
+        },
+        {
+          "id": "h_mw22ifdv_1z5256",
+          "date": "2026-11-04T12:03:16.195Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "statut": "a_traiter",
+          "commentaire": "Conflit C-05 assigné au CMD Région Rabat : Assignation automatique pour traitement : conflit sur RP4001 (7.7 km)..",
+          "motif": null,
+          "destinataire": {
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "consigne": "Assignation automatique pour traitement : conflit sur RP4001 (7.7 km)."
+        }
+      ],
+      "assigneLe": "2026-11-04T12:03:16.195Z",
+      "transitions": [
+        {
+          "date": "2026-11-04T12:03:16.195Z",
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "motif": null
+        }
+      ],
+      "assignesA": [
+        {
+          "matricule": "REG-RABAT",
+          "nom": "Chef de région Rabat",
+          "rang": "reg",
+          "unite": "Rabat",
+          "region": "Rabat"
+        }
+      ],
+      "assigneA": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "rang": "reg",
+        "unite": "Rabat",
+        "region": "Rabat"
+      }
+    },
+    {
+      "id": "conf_mw22ife8_885a349e",
+      "numero": "C-06",
+      "paireCle": "BF-BT-269|BFI-CIE-071",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-269",
+      "barrageBId": "BFI-CIE-071",
+      "barrageA": {
+        "id": "BF-BT-269",
+        "nom": "Poste fixe Laghouazi",
+        "type": "barrage_fixe",
+        "route": "A1",
+        "pk": 24.6,
+        "lng": -7.08766,
+        "lat": 33.83778,
+        "reg": "Rabat",
+        "cie": "Skhirate",
+        "bt": "Laghouazi",
+        "factionId": "F1",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BFI-CIE-071",
+        "nom": "BFI Skhirate",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": null,
+        "lng": -7.05783,
+        "lat": 33.83761,
+        "reg": "Rabat",
+        "cie": "Skhirate",
+        "bt": "Skhirate-El Fath",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "route": "A1",
+      "factionsCommunes": [],
+      "distanceKm": 7.87,
+      "seuilKm": 20,
+      "motif": "Distance routière de 7.87 km inférieure au seuil de sécurité",
+      "etat": "ASSIGNED_REGION",
+      "assignation": {
+        "regions": [
+          {
+            "unite": "Rabat",
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat"
+          }
+        ],
+        "cie": null,
+        "responsable": null,
+        "assignePar": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "assigneLe": "2026-11-04T12:03:16.208Z"
+      },
+      "statut": "a_traiter",
+      "cree": "2026-11-04T12:03:16.208Z",
+      "maj": "2026-11-04T12:03:16.208Z",
+      "historique": [
+        {
+          "id": "h_mw22ife8_20c0d5",
+          "date": "2026-11-04T12:03:16.208Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "de": null,
+          "vers": "NEW",
+          "statut": "nouveau",
+          "commentaire": "Conflit C-06 identifié par la filtration du Super Admin."
+        },
+        {
+          "id": "h_mw22ife8_2146e5",
+          "date": "2026-11-04T12:03:16.208Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "statut": "a_traiter",
+          "commentaire": "Conflit C-06 assigné au CMD Région Rabat : Assignation automatique pour traitement : conflit sur A1 (7.9 km)..",
+          "motif": null,
+          "destinataire": {
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "consigne": "Assignation automatique pour traitement : conflit sur A1 (7.9 km)."
+        }
+      ],
+      "assigneLe": "2026-11-04T12:03:16.208Z",
+      "transitions": [
+        {
+          "date": "2026-11-04T12:03:16.208Z",
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "motif": null
+        }
+      ],
+      "assignesA": [
+        {
+          "matricule": "REG-RABAT",
+          "nom": "Chef de région Rabat",
+          "rang": "reg",
+          "unite": "Rabat",
+          "region": "Rabat"
+        }
+      ],
+      "assigneA": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "rang": "reg",
+        "unite": "Rabat",
+        "region": "Rabat"
+      }
+    },
+    {
+      "id": "conf_mw22ifek_3fd2ca8e",
+      "numero": "C-07",
+      "paireCle": "BF-BT-350|BFI-CIE-061",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BFI-CIE-061",
+      "barrageBId": "BF-BT-350",
+      "barrageA": {
+        "id": "BFI-CIE-061",
+        "nom": "BFI Rabat",
+        "type": "barrage_fixe",
+        "route": "A1",
+        "pk": null,
+        "lng": -6.88652,
+        "lat": 33.96705,
+        "reg": "Rabat",
+        "cie": "Rabat",
+        "bt": "Rabat",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-350",
+        "nom": "Poste fixe Rabat",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": null,
+        "lng": -6.83679,
+        "lat": 34.02235,
+        "reg": "Rabat",
+        "cie": "Rabat",
+        "bt": "Rabat",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "route": "A1",
+      "factionsCommunes": [],
+      "distanceKm": 7.89,
+      "seuilKm": 20,
+      "motif": "Distance routière de 7.89 km inférieure au seuil de sécurité",
+      "etat": "ASSIGNED_REGION",
+      "assignation": {
+        "regions": [
+          {
+            "unite": "Rabat",
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat"
+          }
+        ],
+        "cie": null,
+        "responsable": null,
+        "assignePar": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "assigneLe": "2026-11-04T12:03:16.220Z"
+      },
+      "statut": "a_traiter",
+      "cree": "2026-11-04T12:03:16.220Z",
+      "maj": "2026-11-04T12:03:16.220Z",
+      "historique": [
+        {
+          "id": "h_mw22ifek_224cbc",
+          "date": "2026-11-04T12:03:16.220Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "de": null,
+          "vers": "NEW",
+          "statut": "nouveau",
+          "commentaire": "Conflit C-07 identifié par la filtration du Super Admin."
+        },
+        {
+          "id": "h_mw22ifek_2302ea",
+          "date": "2026-11-04T12:03:16.220Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "statut": "a_traiter",
+          "commentaire": "Conflit C-07 assigné au CMD Région Rabat : Assignation automatique pour traitement : conflit sur A1 (7.9 km)..",
+          "motif": null,
+          "destinataire": {
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "consigne": "Assignation automatique pour traitement : conflit sur A1 (7.9 km)."
+        }
+      ],
+      "assigneLe": "2026-11-04T12:03:16.220Z",
+      "transitions": [
+        {
+          "date": "2026-11-04T12:03:16.220Z",
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "motif": null
+        }
+      ],
+      "assignesA": [
+        {
+          "matricule": "REG-RABAT",
+          "nom": "Chef de région Rabat",
+          "rang": "reg",
+          "unite": "Rabat",
+          "region": "Rabat"
+        }
+      ],
+      "assigneA": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "rang": "reg",
+        "unite": "Rabat",
+        "region": "Rabat"
+      }
+    },
+    {
+      "id": "conf_mw22iff5_ac1e376c",
+      "numero": "C-08",
+      "paireCle": "BF-BT-402|BFI-CIE-002",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-402",
+      "barrageBId": "BFI-CIE-002",
+      "barrageA": {
+        "id": "BF-BT-402",
+        "nom": "Poste fixe Sidi Yahya des Zaers",
+        "type": "barrage_fixe",
+        "route": "RR416",
+        "pk": 7.8,
+        "lng": -6.87352,
+        "lat": 33.80402,
+        "reg": "Rabat",
+        "cie": "Ain Aouda",
+        "bt": "Sidi Yahya des Zaers",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BFI-CIE-002",
+        "nom": "BFI Ain Aouda",
+        "type": "barrage_fixe",
+        "route": "A5",
+        "pk": null,
+        "lng": -6.88284,
+        "lat": 33.83966,
+        "reg": "Rabat",
+        "cie": "Ain Aouda",
+        "bt": "Sidi Yahya des Zaers",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "route": "RR416",
+      "factionsCommunes": [],
+      "distanceKm": 8.58,
+      "seuilKm": 20,
+      "motif": "Distance routière de 8.58 km inférieure au seuil de sécurité",
+      "etat": "ASSIGNED_REGION",
+      "assignation": {
+        "regions": [
+          {
+            "unite": "Rabat",
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat"
+          }
+        ],
+        "cie": null,
+        "responsable": null,
+        "assignePar": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "assigneLe": "2026-11-04T12:03:16.241Z"
+      },
+      "statut": "a_traiter",
+      "cree": "2026-11-04T12:03:16.241Z",
+      "maj": "2026-11-04T12:03:16.241Z",
+      "historique": [
+        {
+          "id": "h_mw22iff5_24592a",
+          "date": "2026-11-04T12:03:16.241Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "de": null,
+          "vers": "NEW",
+          "statut": "nouveau",
+          "commentaire": "Conflit C-08 identifié par la filtration du Super Admin."
+        },
+        {
+          "id": "h_mw22iff5_25512e",
+          "date": "2026-11-04T12:03:16.241Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "statut": "a_traiter",
+          "commentaire": "Conflit C-08 assigné au CMD Région Rabat : Assignation automatique pour traitement : conflit sur RR416 (8.6 km)..",
+          "motif": null,
+          "destinataire": {
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "consigne": "Assignation automatique pour traitement : conflit sur RR416 (8.6 km)."
+        }
+      ],
+      "assigneLe": "2026-11-04T12:03:16.241Z",
+      "transitions": [
+        {
+          "date": "2026-11-04T12:03:16.241Z",
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "motif": null
+        }
+      ],
+      "assignesA": [
+        {
+          "matricule": "REG-RABAT",
+          "nom": "Chef de région Rabat",
+          "rang": "reg",
+          "unite": "Rabat",
+          "region": "Rabat"
+        }
+      ],
+      "assigneA": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "rang": "reg",
+        "unite": "Rabat",
+        "region": "Rabat"
+      }
+    },
+    {
+      "id": "conf_mw22iffg_1bfe011c",
+      "numero": "C-09",
+      "paireCle": "BF-BT-297|BFI-CIE-002",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-297",
+      "barrageBId": "BFI-CIE-002",
+      "barrageA": {
+        "id": "BF-BT-297",
+        "nom": "Poste fixe Mers El Kheir",
+        "type": "barrage_fixe",
+        "route": "RR403",
+        "pk": null,
+        "lng": -6.91998,
+        "lat": 33.87345,
+        "reg": "Rabat",
+        "cie": "Témara",
+        "bt": "Mers El Kheir",
+        "factionId": "F2",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BFI-CIE-002",
+        "nom": "BFI Ain Aouda",
+        "type": "barrage_fixe",
+        "route": "A5",
+        "pk": null,
+        "lng": -6.88284,
+        "lat": 33.83966,
+        "reg": "Rabat",
+        "cie": "Ain Aouda",
+        "bt": "Sidi Yahya des Zaers",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "route": "RR403",
+      "factionsCommunes": [],
+      "distanceKm": 9.21,
+      "seuilKm": 20,
+      "motif": "Distance routière de 9.21 km inférieure au seuil de sécurité",
+      "etat": "ASSIGNED_REGION",
+      "assignation": {
+        "regions": [
+          {
+            "unite": "Rabat",
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat"
+          }
+        ],
+        "cie": null,
+        "responsable": null,
+        "assignePar": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "assigneLe": "2026-11-04T12:03:16.252Z"
+      },
+      "statut": "a_traiter",
+      "cree": "2026-11-04T12:03:16.252Z",
+      "maj": "2026-11-04T12:03:16.252Z",
+      "historique": [
+        {
+          "id": "h_mw22iffg_26ec2a",
+          "date": "2026-11-04T12:03:16.252Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "de": null,
+          "vers": "NEW",
+          "statut": "nouveau",
+          "commentaire": "Conflit C-09 identifié par la filtration du Super Admin."
+        },
+        {
+          "id": "h_mw22iffg_27d231",
+          "date": "2026-11-04T12:03:16.252Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "statut": "a_traiter",
+          "commentaire": "Conflit C-09 assigné au CMD Région Rabat : Assignation automatique pour traitement : conflit sur RR403 (9.2 km)..",
+          "motif": null,
+          "destinataire": {
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "consigne": "Assignation automatique pour traitement : conflit sur RR403 (9.2 km)."
+        }
+      ],
+      "assigneLe": "2026-11-04T12:03:16.252Z",
+      "transitions": [
+        {
+          "date": "2026-11-04T12:03:16.252Z",
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "motif": null
+        }
+      ],
+      "assignesA": [
+        {
+          "matricule": "REG-RABAT",
+          "nom": "Chef de région Rabat",
+          "rang": "reg",
+          "unite": "Rabat",
+          "region": "Rabat"
+        }
+      ],
+      "assigneA": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "rang": "reg",
+        "unite": "Rabat",
+        "region": "Rabat"
+      }
+    },
+    {
+      "id": "conf_mw22ifft_9a3f27c1",
+      "numero": "C-10",
+      "paireCle": "BFI-CIE-071|BFI-CIE-084",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BFI-CIE-084",
+      "barrageBId": "BFI-CIE-071",
+      "barrageA": {
+        "id": "BFI-CIE-084",
+        "nom": "BFI Témara",
+        "type": "barrage_fixe",
+        "route": "RR322",
+        "pk": null,
+        "lng": -7.00102,
+        "lat": 33.89339,
+        "reg": "Rabat",
+        "cie": "Témara",
+        "bt": "Témara Plage",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BFI-CIE-071",
+        "nom": "BFI Skhirate",
+        "type": "barrage_fixe",
+        "route": "RN1",
+        "pk": null,
+        "lng": -7.05783,
+        "lat": 33.83761,
+        "reg": "Rabat",
+        "cie": "Skhirate",
+        "bt": "Skhirate-El Fath",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "route": "RR322",
+      "factionsCommunes": [],
+      "distanceKm": 10.12,
+      "seuilKm": 20,
+      "motif": "Distance routière de 10.12 km inférieure au seuil de sécurité",
+      "etat": "ASSIGNED_REGION",
+      "assignation": {
+        "regions": [
+          {
+            "unite": "Rabat",
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat"
+          }
+        ],
+        "cie": null,
+        "responsable": null,
+        "assignePar": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "assigneLe": "2026-11-04T12:03:16.265Z"
+      },
+      "statut": "a_traiter",
+      "cree": "2026-11-04T12:03:16.265Z",
+      "maj": "2026-11-04T12:03:16.265Z",
+      "historique": [
+        {
+          "id": "h_mw22ifft_2861aa",
+          "date": "2026-11-04T12:03:16.265Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "de": null,
+          "vers": "NEW",
+          "statut": "nouveau",
+          "commentaire": "Conflit C-10 identifié par la filtration du Super Admin."
+        },
+        {
+          "id": "h_mw22ifft_292b1e",
+          "date": "2026-11-04T12:03:16.265Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "statut": "a_traiter",
+          "commentaire": "Conflit C-10 assigné au CMD Région Rabat : Assignation automatique pour traitement : conflit sur RR322 (10.1 km)..",
+          "motif": null,
+          "destinataire": {
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "consigne": "Assignation automatique pour traitement : conflit sur RR322 (10.1 km)."
+        }
+      ],
+      "assigneLe": "2026-11-04T12:03:16.265Z",
+      "transitions": [
+        {
+          "date": "2026-11-04T12:03:16.265Z",
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "motif": null
+        }
+      ],
+      "assignesA": [
+        {
+          "matricule": "REG-RABAT",
+          "nom": "Chef de région Rabat",
+          "rang": "reg",
+          "unite": "Rabat",
+          "region": "Rabat"
+        }
+      ],
+      "assigneA": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "rang": "reg",
+        "unite": "Rabat",
+        "region": "Rabat"
+      }
+    },
+    {
+      "id": "conf_mw22ifg5_28eacf18",
+      "numero": "C-11",
+      "paireCle": "BF-BT-266|BFI-CIE-064",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BFI-CIE-064",
+      "barrageBId": "BF-BT-266",
+      "barrageA": {
+        "id": "BFI-CIE-064",
+        "nom": "BFI Salé",
+        "type": "barrage_fixe",
+        "route": "A2",
+        "pk": null,
+        "lng": -6.64819,
+        "lat": 34.02873,
+        "reg": "Rabat",
+        "cie": "Salé",
+        "bt": "Shoul",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BF-BT-266",
+        "nom": "Poste fixe Laayayda",
+        "type": "barrage_fixe",
+        "route": "RN6",
+        "pk": null,
+        "lng": -6.75387,
+        "lat": 34.03114,
+        "reg": "Rabat",
+        "cie": "Salé",
+        "bt": "Laayayda",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "route": "A2",
+      "factionsCommunes": [],
+      "distanceKm": 10.19,
+      "seuilKm": 20,
+      "motif": "Distance routière de 10.19 km inférieure au seuil de sécurité",
+      "etat": "ASSIGNED_REGION",
+      "assignation": {
+        "regions": [
+          {
+            "unite": "Rabat",
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat"
+          }
+        ],
+        "cie": null,
+        "responsable": null,
+        "assignePar": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "assigneLe": "2026-11-04T12:03:16.277Z"
+      },
+      "statut": "a_traiter",
+      "cree": "2026-11-04T12:03:16.277Z",
+      "maj": "2026-11-04T12:03:16.277Z",
+      "historique": [
+        {
+          "id": "h_mw22ifg5_2a3f82",
+          "date": "2026-11-04T12:03:16.277Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "de": null,
+          "vers": "NEW",
+          "statut": "nouveau",
+          "commentaire": "Conflit C-11 identifié par la filtration du Super Admin."
+        },
+        {
+          "id": "h_mw22ifg5_2b1c6c",
+          "date": "2026-11-04T12:03:16.277Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "statut": "a_traiter",
+          "commentaire": "Conflit C-11 assigné au CMD Région Rabat : Assignation automatique pour traitement : conflit sur A2 (10.2 km)..",
+          "motif": null,
+          "destinataire": {
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "consigne": "Assignation automatique pour traitement : conflit sur A2 (10.2 km)."
+        }
+      ],
+      "assigneLe": "2026-11-04T12:03:16.277Z",
+      "transitions": [
+        {
+          "date": "2026-11-04T12:03:16.277Z",
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "motif": null
+        }
+      ],
+      "assignesA": [
+        {
+          "matricule": "REG-RABAT",
+          "nom": "Chef de région Rabat",
+          "rang": "reg",
+          "unite": "Rabat",
+          "region": "Rabat"
+        }
+      ],
+      "assigneA": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "rang": "reg",
+        "unite": "Rabat",
+        "region": "Rabat"
+      }
+    },
+    {
+      "id": "conf_mw22ifgf_e6f84402",
+      "numero": "C-12",
+      "paireCle": "BF-BT-016|BFI-CIE-002",
+      "type": "distance_insuffisante",
+      "severite": "alerte",
+      "barrageAId": "BF-BT-016",
+      "barrageBId": "BFI-CIE-002",
+      "barrageA": {
+        "id": "BF-BT-016",
+        "nom": "Poste fixe Ain Aouda",
+        "type": "barrage_fixe",
+        "route": "RN25",
+        "pk": null,
+        "lng": -6.79533,
+        "lat": 33.81292,
+        "reg": "Rabat",
+        "cie": "Ain Aouda",
+        "bt": "Ain Aouda",
+        "factionId": "F4",
+        "statutBarrage": "approuve"
+      },
+      "barrageB": {
+        "id": "BFI-CIE-002",
+        "nom": "BFI Ain Aouda",
+        "type": "barrage_fixe",
+        "route": "A5",
+        "pk": null,
+        "lng": -6.88284,
+        "lat": 33.83966,
+        "reg": "Rabat",
+        "cie": "Ain Aouda",
+        "bt": "Sidi Yahya des Zaers",
+        "factionId": "",
+        "statutBarrage": "approuve"
+      },
+      "route": "RN25",
+      "factionsCommunes": [],
+      "distanceKm": 11.71,
+      "seuilKm": 20,
+      "motif": "Distance routière de 11.71 km inférieure au seuil de sécurité",
+      "etat": "ASSIGNED_REGION",
+      "assignation": {
+        "regions": [
+          {
+            "unite": "Rabat",
+            "matricule": "REG-RABAT",
+            "nom": "Chef de région Rabat"
+          }
+        ],
+        "cie": null,
+        "responsable": null,
+        "assignePar": {
+          "matricule": "SUPERADMIN",
+          "nom": "Administrateur superadmin",
+          "rang": "admin",
+          "unite": "superadmin"
+        },
+        "assigneLe": "2026-11-04T12:03:16.287Z"
+      },
+      "statut": "a_traiter",
+      "cree": "2026-11-04T12:03:16.287Z",
+      "maj": "2026-11-04T12:03:16.287Z",
+      "historique": [
+        {
+          "id": "h_mw22ifgf_2c1916",
+          "date": "2026-11-04T12:03:16.287Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "detection",
+          "de": null,
+          "vers": "NEW",
+          "statut": "nouveau",
+          "commentaire": "Conflit C-12 identifié par la filtration du Super Admin."
+        },
+        {
+          "id": "h_mw22ifgf_2d8281",
+          "date": "2026-11-04T12:03:16.287Z",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "statut": "a_traiter",
+          "commentaire": "Conflit C-12 assigné au CMD Région Rabat : Assignation automatique pour traitement : conflit sur RN25 (11.7 km)..",
+          "motif": null,
+          "destinataire": {
+            "rang": "reg",
+            "unite": "Rabat"
+          },
+          "consigne": "Assignation automatique pour traitement : conflit sur RN25 (11.7 km)."
+        }
+      ],
+      "assigneLe": "2026-11-04T12:03:16.287Z",
+      "transitions": [
+        {
+          "date": "2026-11-04T12:03:16.287Z",
+          "action": "assigner_region",
+          "de": "NEW",
+          "vers": "ASSIGNED_REGION",
+          "auteur": {
+            "matricule": "SUPERADMIN",
+            "nom": "Administrateur superadmin",
+            "rang": "admin",
+            "unite": "superadmin"
+          },
+          "motif": null
+        }
+      ],
+      "assignesA": [
+        {
+          "matricule": "REG-RABAT",
+          "nom": "Chef de région Rabat",
+          "rang": "reg",
+          "unite": "Rabat",
+          "region": "Rabat"
+        }
+      ],
+      "assigneA": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "rang": "reg",
+        "unite": "Rabat",
+        "region": "Rabat"
+      }
+    }
+  ],
+  "supprimes": []
+}

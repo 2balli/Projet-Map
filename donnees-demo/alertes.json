@@ -189,17 +189,6 @@
       "createdAt": "2026-09-29T09:32:20.444Z"
     },
     {
-      "id": "al_mumonafn_5752d2e7",
-      "checkpointAId": "BFI-CIE-001",
-      "checkpointBId": "BF-BT-059",
-      "roadDistanceKm": 9.950428066897032,
-      "thresholdKm": 20,
-      "status": "open",
-      "acknowledgedById": null,
-      "acknowledgedComment": null,
-      "createdAt": "2026-09-29T12:58:53.459Z"
-    },
-    {
       "id": "al_mumonaft_270246b0",
       "checkpointAId": "BFI-CIE-002",
       "checkpointBId": "BFI-CIE-084",
@@ -233,21 +222,10 @@
       "createdAt": "2026-09-29T12:58:53.467Z"
     },
     {
-      "id": "al_mumonafx_37daafa1",
-      "checkpointAId": "BFI-CIE-002",
-      "checkpointBId": "BF-BT-269",
-      "roadDistanceKm": 19.375322968080503,
-      "thresholdKm": 20,
-      "status": "open",
-      "acknowledgedById": null,
-      "acknowledgedComment": null,
-      "createdAt": "2026-09-29T12:58:53.469Z"
-    },
-    {
       "id": "al_mumonafx_fff42f31",
       "checkpointAId": "BFI-CIE-002",
       "checkpointBId": "BF-BT-297",
-      "roadDistanceKm": 9.208308175204172,
+      "roadDistanceKm": 17.007104200557098,
       "thresholdKm": 20,
       "status": "open",
       "acknowledgedById": null,
@@ -297,17 +275,6 @@
       "acknowledgedById": null,
       "acknowledgedComment": null,
       "createdAt": "2026-09-29T12:58:53.478Z"
-    },
-    {
-      "id": "al_mumonag8_e9cf9f18",
-      "checkpointAId": "BFI-CIE-002",
-      "checkpointBId": "BF-BT-464",
-      "roadDistanceKm": 19.26492099531831,
-      "thresholdKm": 20,
-      "status": "open",
-      "acknowledgedById": null,
-      "acknowledgedComment": null,
-      "createdAt": "2026-09-29T12:58:53.480Z"
     },
     {
       "id": "al_mumonag9_060c40f3",
@@ -434,7 +401,7 @@
       "id": "al_mumonah0_878d273d",
       "checkpointAId": "BFI-CIE-016",
       "checkpointBId": "BF-BT-035",
-      "roadDistanceKm": 18.070744706261372,
+      "roadDistanceKm": 18.171744706261368,
       "thresholdKm": 20,
       "status": "open",
       "acknowledgedById": null,
@@ -792,17 +759,6 @@
       "acknowledgedById": null,
       "acknowledgedComment": null,
       "createdAt": "2026-09-29T12:58:53.609Z"
-    },
-    {
-      "id": "al_mumonaju_77e69287",
-      "checkpointAId": "BFI-CIE-037",
-      "checkpointBId": "BF-BT-278",
-      "roadDistanceKm": 7.714419694013699,
-      "thresholdKm": 20,
-      "status": "open",
-      "acknowledgedById": null,
-      "acknowledgedComment": null,
-      "createdAt": "2026-09-29T12:58:53.610Z"
     },
     {
       "id": "al_mumonaju_b206893b",
@@ -1215,7 +1171,7 @@
       "id": "al_mumonamn_a8f34e44",
       "checkpointAId": "BFI-CIE-061",
       "checkpointBId": "BF-BT-266",
-      "roadDistanceKm": 16.231979213680333,
+      "roadDistanceKm": 16.321614818930744,
       "thresholdKm": 20,
       "status": "open",
       "acknowledgedById": null,
@@ -1226,7 +1182,7 @@
       "id": "al_mumonamo_3c714c5a",
       "checkpointAId": "BFI-CIE-061",
       "checkpointBId": "BF-BT-297",
-      "roadDistanceKm": 12.281964420804004,
+      "roadDistanceKm": 13.208452526784503,
       "thresholdKm": 20,
       "status": "open",
       "acknowledgedById": null,
@@ -1278,21 +1234,10 @@
       "createdAt": "2026-09-29T12:58:53.721Z"
     },
     {
-      "id": "al_mumonamz_02c72598",
-      "checkpointAId": "BFI-CIE-061",
-      "checkpointBId": "BF-BT-464",
-      "roadDistanceKm": 11.102979213680342,
-      "thresholdKm": 20,
-      "status": "open",
-      "acknowledgedById": null,
-      "acknowledgedComment": null,
-      "createdAt": "2026-09-29T12:58:53.723Z"
-    },
-    {
       "id": "al_mumonan1_3333cb0c",
       "checkpointAId": "BFI-CIE-064",
       "checkpointBId": "BF-BT-266",
-      "roadDistanceKm": 19.94368560149304,
+      "roadDistanceKm": 10.186899805238163,
       "thresholdKm": 20,
       "status": "open",
       "acknowledgedById": null,
@@ -1443,21 +1388,10 @@
       "createdAt": "2026-09-29T12:58:53.737Z"
     },
     {
-      "id": "al_mumonanf_b944eb6a",
-      "checkpointAId": "BFI-CIE-071",
-      "checkpointBId": "BF-BT-269",
-      "roadDistanceKm": 4.977589258192266,
-      "thresholdKm": 20,
-      "status": "open",
-      "acknowledgedById": null,
-      "acknowledgedComment": null,
-      "createdAt": "2026-09-29T12:58:53.739Z"
-    },
-    {
       "id": "al_mumonang_46ff5a04",
       "checkpointAId": "BFI-CIE-071",
       "checkpointBId": "BF-BT-297",
-      "roadDistanceKm": 17.297574465315922,
+      "roadDistanceKm": 17.879473313104164,
       "thresholdKm": 20,
       "status": "open",
       "acknowledgedById": null,
@@ -1496,28 +1430,6 @@
       "acknowledgedById": null,
       "acknowledgedComment": null,
       "createdAt": "2026-09-29T12:58:53.744Z"
-    },
-    {
-      "id": "al_mumonanm_d7dc207f",
-      "checkpointAId": "BFI-CIE-071",
-      "checkpointBId": "BF-BT-464",
-      "roadDistanceKm": 13.236187285430066,
-      "thresholdKm": 20,
-      "status": "open",
-      "acknowledgedById": null,
-      "acknowledgedComment": null,
-      "createdAt": "2026-09-29T12:58:53.746Z"
-    },
-    {
-      "id": "al_mumonanr_a5f82966",
-      "checkpointAId": "BFI-CIE-075",
-      "checkpointBId": "BF-BT-445",
-      "roadDistanceKm": 16.315146517126056,
-      "thresholdKm": 20,
-      "status": "open",
-      "acknowledgedById": null,
-      "acknowledgedComment": null,
-      "createdAt": "2026-09-29T12:58:53.751Z"
     },
     {
       "id": "al_mumonans_70a5e532",
@@ -1597,21 +1509,10 @@
       "createdAt": "2026-09-29T12:58:53.762Z"
     },
     {
-      "id": "al_mumonao4_28890a3c",
-      "checkpointAId": "BFI-CIE-084",
-      "checkpointBId": "BF-BT-269",
-      "roadDistanceKm": 6.847281327768542,
-      "thresholdKm": 20,
-      "status": "open",
-      "acknowledgedById": null,
-      "acknowledgedComment": null,
-      "createdAt": "2026-09-29T12:58:53.764Z"
-    },
-    {
       "id": "al_mumonao4_e0222815",
       "checkpointAId": "BFI-CIE-084",
       "checkpointBId": "BF-BT-297",
-      "roadDistanceKm": 11.91798520712366,
+      "roadDistanceKm": 12.50747331310416,
       "thresholdKm": 20,
       "status": "open",
       "acknowledgedById": null,
@@ -1650,17 +1551,6 @@
       "acknowledgedById": null,
       "acknowledgedComment": null,
       "createdAt": "2026-09-29T12:58:53.770Z"
-    },
-    {
-      "id": "al_mumonaoc_47957749",
-      "checkpointAId": "BFI-CIE-084",
-      "checkpointBId": "BF-BT-464",
-      "roadDistanceKm": 3.1895980272377993,
-      "thresholdKm": 20,
-      "status": "open",
-      "acknowledgedById": null,
-      "acknowledgedComment": null,
-      "createdAt": "2026-09-29T12:58:53.772Z"
     },
     {
       "id": "al_mumonaod_6aeb9040",
@@ -1853,7 +1743,7 @@
       "id": "al_mumonaph_f37417fd",
       "checkpointAId": "BF-BT-016",
       "checkpointBId": "BF-BT-297",
-      "roadDistanceKm": 19.550924367256837,
+      "roadDistanceKm": 17.734412473237334,
       "thresholdKm": 20,
       "status": "open",
       "acknowledgedById": null,
@@ -2172,7 +2062,7 @@
       "id": "al_mumonard_1f5b823a",
       "checkpointAId": "BF-BT-035",
       "checkpointBId": "BF-BT-278",
-      "roadDistanceKm": 19.127626856099162,
+      "roadDistanceKm": 9.715338752111313,
       "thresholdKm": 20,
       "status": "open",
       "acknowledgedById": null,
@@ -2689,7 +2579,7 @@
       "id": "al_mumonatx_c4a5ddd6",
       "checkpointAId": "BF-BT-093",
       "checkpointBId": "BF-BT-278",
-      "roadDistanceKm": 13.744626856099163,
+      "roadDistanceKm": 5.014146182199915,
       "thresholdKm": 20,
       "status": "open",
       "acknowledgedById": null,
@@ -3558,7 +3448,7 @@
       "id": "al_mumonaxw_62e4e947",
       "checkpointAId": "BF-BT-173",
       "checkpointBId": "BF-BT-297",
-      "roadDistanceKm": 10.465091813649959,
+      "roadDistanceKm": 8.645579919630459,
       "thresholdKm": 20,
       "status": "open",
       "acknowledgedById": null,
@@ -3597,17 +3487,6 @@
       "acknowledgedById": null,
       "acknowledgedComment": null,
       "createdAt": "2026-09-29T12:58:54.123Z"
-    },
-    {
-      "id": "al_mumonay5_eee1be0c",
-      "checkpointAId": "BF-BT-173",
-      "checkpointBId": "BF-BT-464",
-      "roadDistanceKm": 15.755106606526294,
-      "thresholdKm": 20,
-      "status": "open",
-      "acknowledgedById": null,
-      "acknowledgedComment": null,
-      "createdAt": "2026-09-29T12:58:54.125Z"
     },
     {
       "id": "al_mumonay5_e9096528",
@@ -4094,61 +3973,6 @@
       "createdAt": "2026-09-29T12:58:54.204Z"
     },
     {
-      "id": "al_mumonb0d_ee20c497",
-      "checkpointAId": "BF-BT-269",
-      "checkpointBId": "BF-BT-297",
-      "roadDistanceKm": 18.038985207123655,
-      "thresholdKm": 20,
-      "status": "open",
-      "acknowledgedById": null,
-      "acknowledgedComment": null,
-      "createdAt": "2026-09-29T12:58:54.205Z"
-    },
-    {
-      "id": "al_mumonb0d_f072d183",
-      "checkpointAId": "BF-BT-269",
-      "checkpointBId": "BF-BT-364",
-      "roadDistanceKm": 8.53773910123683,
-      "thresholdKm": 20,
-      "status": "open",
-      "acknowledgedById": null,
-      "acknowledgedComment": null,
-      "createdAt": "2026-09-29T12:58:54.205Z"
-    },
-    {
-      "id": "al_mumonb0f_f476c0cf",
-      "checkpointAId": "BF-BT-269",
-      "checkpointBId": "BF-BT-407",
-      "roadDistanceKm": 10.014630548176102,
-      "thresholdKm": 20,
-      "status": "open",
-      "acknowledgedById": null,
-      "acknowledgedComment": null,
-      "createdAt": "2026-09-29T12:58:54.207Z"
-    },
-    {
-      "id": "al_mumonb0f_f303dffe",
-      "checkpointAId": "BF-BT-269",
-      "checkpointBId": "BF-BT-441",
-      "roadDistanceKm": 18.32605315406366,
-      "thresholdKm": 20,
-      "status": "open",
-      "acknowledgedById": null,
-      "acknowledgedComment": null,
-      "createdAt": "2026-09-29T12:58:54.207Z"
-    },
-    {
-      "id": "al_mumonb0h_b763a90e",
-      "checkpointAId": "BF-BT-269",
-      "checkpointBId": "BF-BT-464",
-      "roadDistanceKm": 9.9945980272378,
-      "thresholdKm": 20,
-      "status": "open",
-      "acknowledgedById": null,
-      "acknowledgedComment": null,
-      "createdAt": "2026-09-29T12:58:54.209Z"
-    },
-    {
       "id": "al_mumonb0j_bb1421e8",
       "checkpointAId": "BF-BT-270",
       "checkpointBId": "BF-BT-273",
@@ -4556,17 +4380,6 @@
       "createdAt": "2026-09-29T12:58:54.272Z"
     },
     {
-      "id": "al_mumonb2b_45e927a7",
-      "checkpointAId": "BF-BT-297",
-      "checkpointBId": "BF-BT-464",
-      "roadDistanceKm": 13.332473313104158,
-      "thresholdKm": 20,
-      "status": "open",
-      "acknowledgedById": null,
-      "acknowledgedComment": null,
-      "createdAt": "2026-09-29T12:58:54.275Z"
-    },
-    {
       "id": "al_mumonb2b_5189635e",
       "checkpointAId": "BF-BT-298",
       "checkpointBId": "BF-BT-380",
@@ -4798,17 +4611,6 @@
       "createdAt": "2026-09-29T12:58:54.318Z"
     },
     {
-      "id": "al_mumonb3p_9114ccc5",
-      "checkpointAId": "BF-BT-350",
-      "checkpointBId": "BF-BT-464",
-      "roadDistanceKm": 18.781,
-      "thresholdKm": 20,
-      "status": "open",
-      "acknowledgedById": null,
-      "acknowledgedComment": null,
-      "createdAt": "2026-09-29T12:58:54.325Z"
-    },
-    {
       "id": "al_mumonb40_b26a1a21",
       "checkpointAId": "BF-BT-364",
       "checkpointBId": "BF-BT-407",
@@ -4928,28 +4730,6 @@
       "acknowledgedById": null,
       "acknowledgedComment": null,
       "createdAt": "2026-09-29T12:58:54.358Z"
-    },
-    {
-      "id": "al_mumonb50_ae94c40a",
-      "checkpointAId": "BF-BT-407",
-      "checkpointBId": "BF-BT-464",
-      "roadDistanceKm": 18.273228575413903,
-      "thresholdKm": 20,
-      "status": "open",
-      "acknowledgedById": null,
-      "acknowledgedComment": null,
-      "createdAt": "2026-09-29T12:58:54.372Z"
-    },
-    {
-      "id": "al_mumonb56_3e68381c",
-      "checkpointAId": "BF-BT-441",
-      "checkpointBId": "BF-BT-464",
-      "roadDistanceKm": 13.989651181301465,
-      "thresholdKm": 20,
-      "status": "open",
-      "acknowledgedById": null,
-      "acknowledgedComment": null,
-      "createdAt": "2026-09-29T12:58:54.378Z"
     },
     {
       "id": "al_mumonb57_251767e6",
@@ -5293,17 +5073,6 @@
       "createdAt": "2026-10-02T10:41:04.824Z"
     },
     {
-      "id": "al_muqu1mbf_0595b7b1",
-      "checkpointAId": "BF-BT-364",
-      "checkpointBId": "BF-BT-464",
-      "roadDistanceKm": 16.909337128474625,
-      "thresholdKm": 20,
-      "status": "open",
-      "acknowledgedById": null,
-      "acknowledgedComment": null,
-      "createdAt": "2026-10-02T10:41:04.827Z"
-    },
-    {
       "id": "al_muqu1mby_4e630243",
       "checkpointAId": "BF-BT-392",
       "checkpointBId": "BF-BT-416",
@@ -5384,7 +5153,7 @@
       "id": "al_mvi4norv_77a50cae",
       "checkpointAId": "BF-BT-407",
       "checkpointBId": "BF-BT-297",
-      "roadDistanceKm": 16.87661575529976,
+      "roadDistanceKm": 16.549103861280265,
       "thresholdKm": 20,
       "status": "open",
       "acknowledgedById": null,
@@ -5494,7 +5263,7 @@
       "id": "al_mvjery4u_734c6b14",
       "checkpointAId": "BF-BT-132",
       "checkpointBId": "BF-BT-269",
-      "roadDistanceKm": 18.539311189500896,
+      "roadDistanceKm": 14.71005769552433,
       "thresholdKm": 20,
       "status": "open",
       "acknowledgedById": null,
@@ -5593,7 +5362,7 @@
       "id": "al_mvktdv1h_db456358",
       "checkpointAId": "BF-BT-463",
       "checkpointBId": "BF-BT-266",
-      "roadDistanceKm": 15.125538422697643,
+      "roadDistanceKm": 16.17517402794806,
       "thresholdKm": 20,
       "status": "open",
       "acknowledgedById": null,
@@ -5604,7 +5373,7 @@
       "id": "al_mvktdv1i_51ad3e71",
       "checkpointAId": "BF-BT-463",
       "checkpointBId": "BF-BT-297",
-      "roadDistanceKm": 17.0315236298213,
+      "roadDistanceKm": 17.387011735801806,
       "thresholdKm": 20,
       "status": "open",
       "acknowledgedById": null,
@@ -5656,17 +5425,6 @@
       "createdAt": "2026-10-23T10:15:41.678Z"
     },
     {
-      "id": "al_mvktdv1r_fcf11fe9",
-      "checkpointAId": "BF-BT-463",
-      "checkpointBId": "BF-BT-464",
-      "roadDistanceKm": 18.71253842269764,
-      "thresholdKm": 20,
-      "status": "open",
-      "acknowledgedById": null,
-      "acknowledgedComment": null,
-      "createdAt": "2026-10-23T10:15:41.679Z"
-    },
-    {
       "id": "al_mvku2ezw_da4ec307",
       "checkpointAId": "BFI-CIE-061",
       "checkpointBId": "BF-BT-210",
@@ -5709,6 +5467,83 @@
       "acknowledgedById": null,
       "acknowledgedComment": null,
       "createdAt": "2026-10-23T14:06:19.186Z"
+    },
+    {
+      "id": "al_mw0qpggb_8dd20d34",
+      "checkpointAId": "BF-BT-297",
+      "checkpointBId": "BF-BT-210",
+      "roadDistanceKm": 10.908473313104164,
+      "thresholdKm": 20,
+      "status": "open",
+      "acknowledgedById": null,
+      "acknowledgedComment": null,
+      "createdAt": "2026-11-03T13:45:02.603Z"
+    },
+    {
+      "id": "al_mw0qrpqh_242721ae",
+      "checkpointAId": "BF-BT-266",
+      "checkpointBId": "syn_bf_004_5xhb1.",
+      "roadDistanceKm": 11.342339314679196,
+      "thresholdKm": 20,
+      "status": "open",
+      "acknowledgedById": null,
+      "acknowledgedComment": null,
+      "createdAt": "2026-11-03T13:46:47.945Z"
+    },
+    {
+      "id": "al_mw0qrpqh_72978c0f",
+      "checkpointAId": "BF-BT-266",
+      "checkpointBId": "syn_bf_006_1zgj6.",
+      "roadDistanceKm": 9.875364260085412,
+      "thresholdKm": 20,
+      "status": "open",
+      "acknowledgedById": null,
+      "acknowledgedComment": null,
+      "createdAt": "2026-11-03T13:46:47.945Z"
+    },
+    {
+      "id": "al_mw0qrpqi_77932612",
+      "checkpointAId": "BF-BT-266",
+      "checkpointBId": "syn_bf_009_16876.",
+      "roadDistanceKm": 7.2676356052504065,
+      "thresholdKm": 20,
+      "status": "open",
+      "acknowledgedById": null,
+      "acknowledgedComment": null,
+      "createdAt": "2026-11-03T13:46:47.946Z"
+    },
+    {
+      "id": "al_mw0qruon_2791bfa1",
+      "checkpointAId": "BF-BT-464",
+      "checkpointBId": "BF-BT-381",
+      "roadDistanceKm": 13.777649678031178,
+      "thresholdKm": 20,
+      "status": "open",
+      "acknowledgedById": null,
+      "acknowledgedComment": null,
+      "createdAt": "2026-11-03T13:46:54.359Z"
+    },
+    {
+      "id": "al_mw0qry44_4d452b17",
+      "checkpointAId": "BF-BT-269",
+      "checkpointBId": "syn_bf_015_i62q.o",
+      "roadDistanceKm": 18.93083910729689,
+      "thresholdKm": 20,
+      "status": "open",
+      "acknowledgedById": null,
+      "acknowledgedComment": null,
+      "createdAt": "2026-11-03T13:46:58.804Z"
+    },
+    {
+      "id": "al_mw0qry45_04f08c94",
+      "checkpointAId": "BF-BT-269",
+      "checkpointBId": "syn_bfp_028_218tk.",
+      "roadDistanceKm": 10.69365206351128,
+      "thresholdKm": 20,
+      "status": "open",
+      "acknowledgedById": null,
+      "acknowledgedComment": null,
+      "createdAt": "2026-11-03T13:46:58.805Z"
     }
   ]
 }

@@ -3,7 +3,8 @@
  *
  *   npm run check:radar
  *
- * Sur des conflits issus des données réelles (donnees-demo/suivi-conflits.json).
+ * Sur des conflits issus des données de démonstration (jeu d’essai fixe :
+ * scripts/fixtures/suivi-conflits-anciens.json).
  * L'épreuve de bout en bout — une vraie opération par l'API, qui fait détecter
  * un vrai conflit au serveur — est `npm run check:radar:api`.
  */
@@ -15,7 +16,9 @@ import {
   phaseConflit, PHASES,
 } from '../src/detectionConflits.js';
 
-const reels = JSON.parse(readFileSync(new URL('../donnees-demo/suivi-conflits.json', import.meta.url), 'utf8')).items;
+/* Jeu d'essai FIXE (copie des données de démonstration, voir fixtures/) : un
+   reset des conflits peut vider les données vivantes. */
+const reels = JSON.parse(readFileSync(new URL('./fixtures/suivi-conflits-anciens.json', import.meta.url), 'utf8')).items;
 const actifs = reels.filter(estActif);
 const copie = (c, modifs = {}) => ({ ...structuredClone(c), ...modifs });
 

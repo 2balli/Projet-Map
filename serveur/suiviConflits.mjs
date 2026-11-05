@@ -141,6 +141,42 @@ export function creerDepotSuiviConflits(fichier) {
     return parPaireActive(paire) ?? (paire ? items.find((c) => c.paireCle === paire) ?? null : null);
   };
 
+  /**
+   * LE CONFLIT DÉSIGNÉ PAR UNE PAIRE CONNUE — l'identité stable d'un conflit,
+   * c'est sa paire de barrages (`cleDePaire`, indépendante de l'ordre A/B).
+   *
+   * Les numéros « C-01 », « C-02 »… sont ceux d'UN calcul d'optimisation : ils
+   * repartent de 1 à chaque optimisation et désignent alors d'autres paires.
+   * Chercher d'abord par numéro rattachait un conflit fraîchement calculé à un
+   * conflit enregistré ENTRE D'AUTRES BARRAGES. Dès que la paire est connue :
+   *   — le conflit ACTIF de cette paire (assigné, en cours…) est retenu, quel que
+   *     soit le numéro que le calcul lui a donné ;
+   *   — un identifiant exact n'est retenu que s'il désigne la MÊME paire, et
+   *     jamais un numéro de calcul « C-n » ;
+   *   — sinon rien : le conflit est nouveau.
+   * Sans paire connue, la recherche historique (`trouverConflit`) s'applique.
+   */
+  const estNumeroDeCalcul = (id) => /^C-\d+$/i.test(String(id ?? '').trim());
+  const paireDeDonnees = (donnees, conflitId = null) => {
+    const a = donnees?.barrageAId || donnees?.a?.id || donnees?.barrageA?.id;
+    const b = donnees?.barrageBId || donnees?.b?.id || donnees?.barrageB?.id;
+    if (a && b) return cleDePaire(a, b);
+    if (donnees?.paireCle) return extrairePaireId(donnees.paireCle) ?? String(donnees.paireCle);
+    return extrairePaireId(conflitId);
+  };
+  const resoudreConflit = (conflitId, paire = null) => {
+    const p = paire || extrairePaireId(conflitId);
+    if (!p) return trouverConflit(conflitId);
+    const actif = parPaireActive(p);
+    if (actif) return actif;
+    /* L'identifiant EXACT du conflit, et lui seul : `trouverConflit` se rabat sur
+       n'importe quel conflit de la paire (« conf_calc_a|b »), clos compris — et un
+       conflit traité n'a pas à être réassigné par une nouvelle détection. */
+    const id = String(conflitId ?? '').trim();
+    const exact = id && !estNumeroDeCalcul(id) ? items.find((c) => c.id === id && !c.is_deleted && !c.deleted) ?? null : null;
+    return exact && exact.paireCle === p ? exact : null;
+  };
+
   /** Trace de transition, ajoutée au conflit et jamais réécrite. */
   const ajouterTransition = (conf, { ts, auteur, action, de, vers, motif = null, changement = null }) => {
     conf.transitions = conf.transitions ?? [];
@@ -182,6 +218,12 @@ export function creerDepotSuiviConflits(fichier) {
     }
     modifier?.(conf, { ts, auteur });
     conf.etat = vers;
+    /* Toute arrivée à l'historique (validation, traitement direct, clôture)
+       est datée et signée : c'est ce que l'historique affiche et trie. */
+    if (vers === ETATS.CLOSED) {
+      conf.clotureLe = ts;
+      conf.cloturePar = auteur;
+    }
     const entree = {
       id: idHistorique(),
       date: ts,
@@ -239,7 +281,10 @@ export function creerDepotSuiviConflits(fichier) {
     try {
       const ouvertes = depotInstructions.ouvertes ? depotInstructions.ouvertes() : (depotInstructions.tous?.() ?? []).filter((x) => x.statut === 'ouverte');
       for (const inst of ouvertes) {
-        if ((inst.criteres?.conflitId === conf.id || inst.criteres?.conflitNumero === conf.numero) && filtre(inst)) {
+        /* Par l'identifiant du conflit ; le numéro (« C-R1 »…) n'est pas unique et ne
+           sert qu'aux anciennes instructions qui n'en portent pas. */
+        const duConflit = inst.criteres?.conflitId ? inst.criteres.conflitId === conf.id : inst.criteres?.conflitNumero === conf.numero;
+        if (duConflit && filtre(inst)) {
           inst.statut = 'annulee';
           inst.traiteeLe = ts;
           inst.traiteePar = auteur;
@@ -410,9 +455,9 @@ export function creerDepotSuiviConflits(fichier) {
       if (!conflitId && !paireCle && (!barrageAId || !barrageBId)) {
         throw new Error('Identifiant du conflit manquant.');
       }
-      let conf = trouverConflit(conflitId);
-      if (!conf && paireCle) conf = trouverConflit(paireCle);
-      if (!conf && barrageAId && barrageBId) conf = trouverConflit(cleDePaire(barrageAId, barrageBId));
+      const paireSupp = barrageAId && barrageBId ? cleDePaire(barrageAId, barrageBId) : (paireCle ? (extrairePaireId(paireCle) ?? paireCle) : null);
+      let conf = paireSupp ? resoudreConflit(conflitId, paireSupp) : trouverConflit(conflitId);
+      if (!conf && paireSupp) conf = trouverConflit(paireSupp);
 
       let paireStr = conf?.paireCle
         ? String(conf.paireCle).trim()
@@ -697,6 +742,7 @@ export function creerDepotSuiviConflits(fichier) {
     }) {
       if (!session) throw new ErreurWorkflow(401, 'Authentification requise.');
       if (session.rang !== 'admin') throw new ErreurWorkflow(403, 'Seul le Super Admin peut assigner un conflit à un CMD Région.');
+      if (etatAttendu && !Object.values(ETATS).includes(etatAttendu)) etatAttendu = null;
       if (!conflitId) throw new ErreurWorkflow(422, 'Identifiant du conflit manquant.');
       relireSiModifie();
 
@@ -712,10 +758,23 @@ export function creerDepotSuiviConflits(fichier) {
         if (!cibles.some((x) => normExact(x.unite) === normExact(c.unite))) cibles.push(c);
       }
 
-      let conf = trouverConflit(conflitId);
+      /* Le même conflit d'une optimisation à l'autre : reconnu par sa paire, pas
+         par son numéro de calcul (voir `resoudreConflit`). */
       const aIdCand = conflitData?.barrageAId || conflitData?.a?.id;
       const bIdCand = conflitData?.barrageBId || conflitData?.b?.id;
-      if (!conf && aIdCand && bIdCand) conf = parPaireActive(cleDePaire(aIdCand, bIdCand));
+      const paireDemandee = paireDeDonnees(conflitData, conflitId);
+      let conf = resoudreConflit(conflitId, paireDemandee);
+      /* DÉJÀ TRAITÉ — la paire porte un conflit traité et approuvé (Historique)
+         et aucun conflit actif : une nouvelle détection ne le réassigne pas. Le
+         reprendre, c'est le rouvrir depuis l'Historique (action « rouvrir »). */
+      const archive = conf && estClos(conf)
+        ? conf
+        : !conf && paireDemandee
+          ? items.find((c) => c.paireCle === paireDemandee && estClos(c) && !c.is_deleted && !c.deleted) ?? null
+          : null;
+      if (archive) {
+        throw new ErreurWorkflow(409, `Conflit ${numeroDe(archive)} déjà traité et approuvé (Historique). Pour le reprendre, rouvrez-le depuis l'Historique. Aucune nouvelle assignation n'a été créée.`);
+      }
       let cree = null;
       if (!conf) {
         /* Conflit issu de la filtration du Super Admin : enregistré à l'état NEW. */
@@ -726,8 +785,12 @@ export function creerDepotSuiviConflits(fichier) {
         const bB = bBId ? depotBarrages?.parId(bBId) : null;
         if (!bA || !bB) throw new ErreurWorkflow(404, 'Conflit introuvable : ses deux barrages doivent exister.');
         const ts0 = new Date().toISOString();
+        /* Un numéro de calcul (« C-03 ») ne devient jamais un identifiant : il
+           resservira à une autre paire à la prochaine optimisation. */
+        const idPropose = conflitData?.id || conflitId;
+        const idStable = idPropose && !estNumeroDeCalcul(idPropose) && !items.some((c) => c.id === idPropose) ? idPropose : nouvelId();
         conf = {
-          id: conflitData?.id || conflitId || nouvelId(),
+          id: idStable,
           numero: conflitData?.numero || conflitData?.id || conflitId,
           paireCle: cleDePaire(bAId, bBId),
           type: 'distance_insuffisante',
@@ -770,6 +833,31 @@ export function creerDepotSuiviConflits(fichier) {
         cibles = [compteBF];
       }
 
+      /**
+       * SEUL LE CMD RÉGION CONCERNÉ — celui de la région du barrage (des deux
+       * barrages pour un conflit inter-régions ; du poste ordinaire face à un
+       * intouchable, voir ci-dessus). Toute autre région est refusée ici, côté
+       * serveur : masquer les autres dans l'écran ne suffit pas.
+       */
+      const regionsAutorisees = regionPosteOrdinaire ? [regionPosteOrdinaire] : [bA?.reg, bB?.reg].filter(Boolean);
+      if (!regionsAutorisees.length) {
+        if (cree) items.splice(items.indexOf(cree), 1);
+        throw new ErreurWorkflow(422, `Conflit ${numeroDe(conf)} : aucun de ses barrages n'a de région de rattachement — impossible de désigner le CMD Région concerné.`);
+      }
+      const horsRegion = cibles.filter((c) => !regionsAutorisees.some((r) => normExact(r) === normExact(c.unite)));
+      if (horsRegion.length) {
+        if (cree) items.splice(items.indexOf(cree), 1);
+        throw new ErreurWorkflow(403, `Ce conflit ne peut être assigné qu'au CMD Région ${[...new Set(regionsAutorisees)].join(' ou ')}, région du barrage concerné (refusé : ${horsRegion.map((c) => c.unite).join(', ')}).`);
+      }
+
+      /* DÉJÀ ASSIGNÉ — une nouvelle optimisation retrouve un conflit déjà remis
+         à un commandement et pas encore traité : on ne le réassigne pas par
+         accident (`etatAttendu: 'NEW'` = « assigner un conflit nouveau »). La
+         réassignation volontaire passe par l'état courant du conflit. */
+      if (etatAttendu === ETATS.NEW && etatDe(conf) !== ETATS.NEW) {
+        const chez = regionsAssignees(conf).map((x) => x.unite).join(' & ');
+        throw new ErreurWorkflow(409, `Conflit ${numeroDe(conf)} déjà assigné${chez ? ` au CMD Région ${chez}` : ''} — en attente de traitement. Aucune nouvelle assignation n'a été créée.`);
+      }
       const anciennes = regionsAssignees(conf);
       /* Même assignation déjà en place (double clic, requête rejouée) : rien
          ne change — ni transition, ni instruction, ni notification. */
@@ -946,7 +1034,8 @@ export function creerDepotSuiviConflits(fichier) {
         unite: session.unite,
       };
 
-      let conf = trouverConflit(conflitId);
+      const paireConnue = paireDeDonnees(details?.conflitData, null) || (details?.paireCle ? (extrairePaireId(details.paireCle) ?? details.paireCle) : null);
+      let conf = paireConnue ? resoudreConflit(conflitId, paireConnue) : trouverConflit(conflitId);
       let confCree = null;
       const paireDeId = extrairePaireId(conflitId);
       if (!conf && paireDeId) {
@@ -956,7 +1045,7 @@ export function creerDepotSuiviConflits(fichier) {
         const p = details.paireCle || details.conflitData.paireCle;
         conf = parPaireActive(p);
       }
-      if (!conf && conflitId && !conflitId.includes('|')) {
+      if (!conf && !paireConnue && conflitId && !conflitId.includes('|')) {
         const candNorm = String(conflitId).trim().toLowerCase();
         const cand = items.find((c) => String(c.id).toLowerCase() === candNorm || String(c.numero).toLowerCase() === candNorm);
         if (cand) conf = cand;
@@ -1005,6 +1094,11 @@ export function creerDepotSuiviConflits(fichier) {
         if (confCree) items.splice(items.indexOf(confCree), 1);
         throw err;
       }
+      /* Un ancien enregistrement sans \`etat\` a un état DÉDUIT de ses champs
+         (etatDe) : écrire \`traitement\` ci-dessous le ferait passer pour « à
+         valider » avant la transition, qui serait alors refusée — après avoir
+         modifié le conflit. L'état vérifié est donc figé maintenant. */
+      if (!conf.etat) conf.etat = etatDe(conf);
 
       const bA = depotBarrages?.parId(conf.barrageAId) || conf.barrageA;
       const bB = depotBarrages?.parId(conf.barrageBId) || conf.barrageB;
@@ -1199,7 +1293,7 @@ export function creerDepotSuiviConflits(fichier) {
 
       /* Les informations du traitement (inchangées), puis LA transition :
          CMD CIE / CMD Région → À valider (PENDING_VALIDATION) ; Super Admin
-         (traitement direct, fonction existante) → validé et en suivi. */
+         (traitement direct, fonction existante) → validé et archivé. */
       const estParAdmin = session.rang === 'admin';
       conf.traiteLe = ts;
       conf.traitePar = auteur;
@@ -1273,7 +1367,7 @@ export function creerDepotSuiviConflits(fichier) {
 
     /**
      * ÉTAPE 4 — LE SUPER ADMIN VALIDE OU REJETTE UN TRAITEMENT SOUMIS.
-     *   valider : PENDING_VALIDATION → APPROVED → FOLLOW_UP (section Suivi) ;
+     *   valider : PENDING_VALIDATION → APPROVED → CLOSED (archivé à l'historique) ;
      *   rejeter : motif OBLIGATOIRE → REJECTED, renvoyé au responsable (l'auteur
      *             de la soumission), qui corrige et soumet de nouveau.
      */
@@ -1300,7 +1394,7 @@ export function creerDepotSuiviConflits(fichier) {
         motif,
         etatAttendu,
         commentaire: action === 'valider'
-          ? `Traitement du conflit ${numeroDe(conf ?? {})} validé par le Super Admin : en suivi.`
+          ? `Traitement du conflit ${numeroDe(conf ?? {})} validé par le Super Admin : archivé à l'historique.`
           : `Traitement du conflit ${numeroDe(conf ?? {})} rejeté par le Super Admin : ${motif}`,
         modifier: (c, { ts, auteur }) => {
           c.validation = { decision: action, par: auteur, le: ts, motif: motif || null };
@@ -1429,7 +1523,7 @@ export function creerDepotSuiviConflits(fichier) {
         ? {
           type: 'validation',
           titre: 'Traitement validé',
-          description: `Le Super Admin a validé le traitement du conflit ${numeroDe(conf)}. Le conflit passe en suivi.`,
+          description: `Le Super Admin a validé le traitement du conflit ${numeroDe(conf)}. Le conflit est archivé à l'historique.`,
           destinataires,
         }
         : {
@@ -1495,7 +1589,7 @@ export function creerDepotSuiviConflits(fichier) {
       return this.visiblesPour(session)
         .filter((c) => estClos(c))
         .filter((c) => {
-          const t = Date.parse(c.clotureLe ?? c.maj ?? '') || 0;
+          const t = Date.parse(c.clotureLe ?? c.validation?.le ?? c.maj ?? '') || 0;
           if (du && t < du) return false;
           if (au && t > au) return false;
           const postes = [c.barrageA, c.barrageB];
@@ -1511,7 +1605,7 @@ export function creerDepotSuiviConflits(fichier) {
           }
           return true;
         })
-        .sort((a, b) => (Date.parse(b.clotureLe ?? '') || 0) - (Date.parse(a.clotureLe ?? '') || 0));
+        .sort((a, b) => (Date.parse(b.clotureLe ?? b.validation?.le ?? b.maj ?? '') || 0) - (Date.parse(a.clotureLe ?? a.validation?.le ?? a.maj ?? '') || 0));
     },
 
     /**
@@ -1550,6 +1644,55 @@ export function creerDepotSuiviConflits(fichier) {
     /**
      * DÉTECTION ET ACTUALISATION AUTOMATIQUE DES CONFLITS APRÈS OPÉRATION.
      */
+    /**
+     * ÉVALUER UNE POSITION DEMANDÉE, SANS RIEN ÉCRIRE — le même moteur
+     * (analyserConflitsComplet), les mêmes seuils (celui de chaque conflit
+     * existant ; `seuilKm` pour un nouveau) et le même bilan que
+     * actualiserApresOperation. Sert quand le déplacement attend la validation
+     * de l'administration : la position officielle n'a pas bougé, mais qui l'a
+     * demandé sait déjà si elle règle ses conflits.
+     */
+    evaluerPosition({ barrageId, lng, lat, graphe = null, depotBarrages, seuilKm = 40 }) {
+      relireSiModifie();
+      const officiel = depotBarrages.parId(barrageId);
+      if (!officiel) return null;
+      const cible = { ...officiel, lng: Number(lng), lat: Number(lat) };
+      const barrages = depotBarrages.tous().map((b) => (b.id === barrageId ? cible : b));
+      const seuilDe = (c) => (Number(c?.seuilKm) > 0 ? Number(c.seuilKm) : seuilKm);
+      const sesConflits = items.filter((c) => (c.barrageAId === cible.id || c.barrageBId === cible.id) && !estClos(c) && !c.is_deleted && !c.deleted && !c.resolutionPhysique);
+      const seuilAnalyse = Math.max(seuilKm, ...sesConflits.map(seuilDe));
+      const rapport = analyserConflitsComplet({ graphe, cible, barrages, seuilKm: seuilAnalyse });
+      const parAutre = new Map((rapport.conflits || []).map((c) => [c.barrageId, c]));
+      const intou = (b) => Boolean(b && (estIntouchable(b) || b.type === 'barrage_vip' || b.protection === 'intouchable' || b.intouchable === true || String(b.id || '').startsWith('BFI-')));
+      const ligne = (autre, distanceKm, seuil, conflitId = null) => {
+        const aBouger = !intou(cible) ? cible : !intou(autre) ? autre : null;
+        return {
+          conflitId, autreId: autre?.id ?? null, autreNom: autre?.nom || autre?.id || '—',
+          distanceKm, seuilKm: seuil, aDeplacerId: aBouger?.id ?? null, aDeplacerNom: aBouger ? aBouger.nom || aBouger.id : null,
+        };
+      };
+      const bilan = { barrageId: cible.id, barrageNom: cible.nom || cible.id, seuilKm, simulation: true, resolus: [], restants: [], nouveaux: [] };
+      const vus = new Set();
+      for (const c of sesConflits) {
+        const autreId = c.barrageAId === cible.id ? c.barrageBId : c.barrageAId;
+        const autre = depotBarrages.parId(autreId) ?? (c.barrageAId === cible.id ? c.barrageB : c.barrageA);
+        const d = parAutre.get(autreId);
+        const mesure = Number(d?.distanceBruteKm ?? d?.distanceKm);
+        vus.add(autreId);
+        if (d && (d.type !== 'distance_insuffisante' || mesure < seuilDe(c))) bilan.restants.push(ligne(autre, d.distanceKm, seuilDe(c), c.id));
+        else bilan.resolus.push(ligne(autre, d?.distanceKm ?? null, seuilDe(c), c.id));
+      }
+      for (const d of rapport.conflits || []) {
+        if (vus.has(d.barrageId)) continue;
+        if (supprimes.includes(cleDePaire(cible.id, d.barrageId))) continue;
+        const mesure = Number(d.distanceBruteKm ?? d.distanceKm);
+        if (d.type === 'distance_insuffisante' && !(mesure < seuilKm)) continue;
+        bilan.nouveaux.push(ligne(depotBarrages.parId(d.barrageId), d.distanceKm, seuilKm));
+      }
+      bilan.valide = bilan.restants.length === 0 && bilan.nouveaux.length === 0;
+      return bilan;
+    },
+
     actualiserApresOperation({
       barrageId,
       session = null,
@@ -1580,12 +1723,47 @@ export function creerDepotSuiviConflits(fichier) {
         return conflitsModifies;
       }
 
+      /*
+       * LES SEUILS — un conflit existant est jugé avec le seuil qui l'a créé
+       * (celui de l'optimisation : 20 km…), un conflit nouveau avec `seuilKm`
+       * (celui de l'optimisation active, transmis par l'écran, sinon celui du
+       * serveur). L'analyse balaie jusqu'au plus grand des deux : seules les
+       * paires de CE barrage sont mesurées, jamais le reste de la carte.
+       */
+      const seuilDe = (c) => (Number(c?.seuilKm) > 0 ? Number(c.seuilKm) : seuilKm);
+      const sesConflits = items.filter((c) => (c.barrageAId === cible.id || c.barrageBId === cible.id) && !estClos(c) && !c.is_deleted && !c.deleted);
+      const seuilAnalyse = Math.max(seuilKm, ...sesConflits.map(seuilDe));
+      const activesAvant = new Set(sesConflits.map((c) => c.paireCle));
+      /*
+       * LE BILAN DE LA RÉÉVALUATION — pour guider qui vient de déplacer le poste :
+       * paires résolues, restantes, nouvelles, et pour chacune le poste qui doit
+       * bouger selon les règles existantes (jamais un intouchable).
+       */
+      const autreDe = (c) => depotBarrages.parId(c.barrageAId === cible.id ? c.barrageBId : c.barrageAId)
+        ?? (c.barrageAId === cible.id ? c.barrageB : c.barrageA);
+      const intouchableBarrage = (b) => Boolean(b && (estIntouchable(b) || b.type === 'barrage_vip' || b.protection === 'intouchable' || b.intouchable === true || String(b.id || '').startsWith('BFI-')));
+      const ligneBilan = (c, distanceKm) => {
+        const autre = autreDe(c);
+        const aBouger = !intouchableBarrage(cible) ? cible : !intouchableBarrage(autre) ? autre : null;
+        return {
+          conflitId: c.id,
+          numero: c.numero ?? null,
+          autreId: autre?.id ?? null,
+          autreNom: autre?.nom || autre?.id || '—',
+          distanceKm: distanceKm ?? c.distanceKm ?? null,
+          seuilKm: seuilDe(c),
+          aDeplacerId: aBouger?.id ?? null,
+          aDeplacerNom: aBouger ? aBouger.nom || aBouger.id : null,
+        };
+      };
+      const bilan = { barrageId: cible.id, barrageNom: cible.nom || cible.id, seuilKm, resolus: [], restants: [], nouveaux: [] };
+
       /* Analyser les conflits réels via le moteur existant */
       const rapport = analyserConflitsComplet({
         graphe,
         cible,
         barrages: depotBarrages.tous(),
-        seuilKm,
+        seuilKm: seuilAnalyse,
       });
 
       const detectes = rapport.conflits || [];
@@ -1600,6 +1778,13 @@ export function creerDepotSuiviConflits(fichier) {
         if (supprimes.includes(paireCle)) {
           continue;
         }
+        /* Sous le seuil de CETTE paire ? À 20 km ou plus d'un seuil de 20 km,
+           il n'y a plus de conflit : la paire n'est pas retenue, et un conflit
+           enregistré est résolu plus bas (étape 2). */
+        const dejaLa = parPaireActive(paireCle);
+        const seuilPaire = dejaLa ? seuilDe(dejaLa) : seuilKm;
+        const mesure = Number(conf.distanceBruteKm ?? conf.distanceKm);
+        if (conf.type === 'distance_insuffisante' && !(mesure < seuilPaire)) continue;
         pairesDetectees.add(paireCle);
 
         /* LA DÉTECTION NE DÉCIDE JAMAIS DE L'ÉTAT D'UN CONFLIT EXISTANT : elle
@@ -1612,13 +1797,15 @@ export function creerDepotSuiviConflits(fichier) {
         const routeCommune = conf.barrageRoute || cible.route || autre.route || rapport.routeDetectee || null;
 
         if (existant) {
+          if (activesAvant.has(paireCle)) bilan.restants.push(ligneBilan(existant, conf.distanceKm));
           existant.barrageA = resumeBarrage(cible);
           existant.barrageB = resumeBarrage(autre);
           existant.route = routeCommune;
           existant.distanceKm = conf.distanceKm;
           existant.distanceRouteKm = conf.distanceRouteKm;
           existant.estDistanceRoute = conf.estDistanceRoute;
-          existant.seuilKm = conf.seuilKm;
+          /* Le seuil du conflit reste le sien (celui qui l'a créé). */
+          existant.seuilKm = seuilPaire;
           existant.factionsCommunes = conf.factionsCommunes ?? [];
           existant.severite = conf.severite ?? 'alerte';
           existant.maj = ts;
@@ -1651,7 +1838,7 @@ export function creerDepotSuiviConflits(fichier) {
             distanceKm: conf.distanceKm,
             distanceRouteKm: conf.distanceRouteKm,
             estDistanceRoute: conf.estDistanceRoute,
-            seuilKm: conf.seuilKm,
+            seuilKm: seuilPaire,
             etat: ETATS.NEW,
             assignation: { regions: [], cie: null, responsable: null, assignePar: null, assigneLe: null },
             statut: STATUT_HERITE.NEW,
@@ -1667,12 +1854,13 @@ export function creerDepotSuiviConflits(fichier) {
                 de: null,
                 vers: ETATS.NEW,
                 statut: STATUT_HERITE.NEW,
-                commentaire: `Conflit détecté le long de la route : espacement ${conf.distanceKm} km (seuil réglementaire ${conf.seuilKm} km).`,
+                commentaire: `Conflit détecté le long de la route : espacement ${conf.distanceKm} km (seuil réglementaire ${seuilPaire} km).`,
               },
             ],
           };
           items.push(nouveau);
           conflitsModifies.push(nouveau);
+          bilan.nouveaux.push(ligneBilan(nouveau, conf.distanceKm));
 
           /* Notification au Super Admin (lui seul : le conflit n'est encore assigné à personne). */
           if (depotNotifications?.publierConflit) {
@@ -1681,7 +1869,7 @@ export function creerDepotSuiviConflits(fichier) {
               conf: nouveau,
               type: 'assignation',
               titre: 'Nouveau conflit détecté',
-              description: `Conflit détecté : ${paireTexte(nouveau)} à ${nouveau.distanceKm} km (seuil ${nouveau.seuilKm} km)${nouveau.route ? ` sur ${nouveau.route}` : ''}. À assigner.`,
+              description: `Conflit détecté : ${paireTexte(nouveau)} à ${nouveau.distanceKm} km (seuil ${seuilPaire} km)${nouveau.route ? ` sur ${nouveau.route}` : ''}. À assigner.`,
               destinataires: ADMINS,
               ts,
               cle: `${nouveau.id}:detection`,
@@ -1694,13 +1882,17 @@ export function creerDepotSuiviConflits(fichier) {
          physiquement (voir resoudrePhysiquement — jamais une décision). */
       for (const c of items) {
         if ((c.barrageAId === cible.id || c.barrageBId === cible.id) && !pairesDetectees.has(c.paireCle)) {
+          const etaitActif = activesAvant.has(c.paireCle) && !c.resolutionPhysique;
           if (resoudrePhysiquement(c, ts, auteur, `Conflit résolu physiquement suite à l'opération « ${action} » : distance réglementaire ou factions conformes.`)) {
             conflitsModifies.push(c);
           }
+          if (etaitActif) bilan.resolus.push(ligneBilan(c, null));
         }
       }
 
       if (conflitsModifies.length) ecrire();
+      bilan.valide = bilan.restants.length === 0 && bilan.nouveaux.length === 0;
+      conflitsModifies.reevaluation = bilan;
       return conflitsModifies;
     },
   };

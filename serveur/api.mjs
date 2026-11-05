@@ -109,7 +109,7 @@ import { creerJournal } from './journal.mjs';
 import { creerDepotNotifications, presenterNotification, visiblePour } from './notifications.mjs';
 import { suivreAssignations, ACTIONS_SUIVIES } from './suiviAssignations.mjs';
 import { creerDepotSuiviConflits } from './suiviConflits.mjs';
-import { ErreurWorkflow, presenterWorkflow, verifierAction, peutSupprimer, estClos, compterSections, LIBELLES_SECTIONS } from './workflowConflits.mjs';
+import { ErreurWorkflow, presenterWorkflow, verifierAction, peutSupprimer, estClos, compterSections, LIBELLES_SECTIONS, ETATS, etatDe, regionsAssignees } from './workflowConflits.mjs';
 import { creerDepotAlertes } from './alertes.mjs';
 import { creerDepotConflits, recalculerConflits } from './conflitsPlanification.mjs';
 import { creerDepotRegles } from './regles.mjs';
@@ -719,7 +719,10 @@ export function creerApi({
    * met à jour les statuts ('nouveau', 'a_traiter', 'en_cours', 'resolu'),
    * préserve l'historique et notifie de façon ciblée les commandements concernés.
    */
-  const actualiserSuiviConflits = (barrageId, session = null, action = 'operation', details = null) => {
+  const actualiserSuiviConflits = (barrageId, session = null, action = 'operation', details = null, { seuilKm = null } = {}) => {
+    /* Le seuil de l'optimisation active (transmis par l'écran) prime sur celui du serveur. */
+    const seuilDemande = Number(seuilKm);
+    const seuil = Number.isFinite(seuilDemande) && seuilDemande > 0 && seuilDemande <= 200 ? seuilDemande : seuilConflitKm;
     try {
       if (barrageId) {
         return depotSuiviConflits.actualiserApresOperation({
@@ -732,7 +735,7 @@ export function creerApi({
           depotInstructions,
           depotDemandes,
           depotNotifications,
-          seuilKm: seuilConflitKm,
+          seuilKm: seuil,
         });
       }
     } catch (err) {
@@ -1138,6 +1141,17 @@ export function creerApi({
   /** L'assignation encore ouverte pour ce barrage, s'il y en a une (quel que soit son destinataire). */
   const assignationOuverte = (barrageId) =>
     depotInstructions.ouvertesPour(barrageId).find((i) => i.action === 'assignation') ?? null;
+  /**
+   * Le conflit ACTIF de ce barrage déjà remis au CMD Région de sa région (circuit
+   * des conflits) : le barrage est déjà entre ses mains, une seconde assignation
+   * par l'autre circuit ferait doublon. Seule l'instruction du barrage A d'un
+   * conflit est écrite, d'où cette lecture du conflit lui-même.
+   */
+  const conflitAssignePour = (b) =>
+    depotSuiviConflits.tous().find((c) =>
+      !c.is_deleted && !c.deleted && !estClos(c) && etatDe(c) !== ETATS.NEW &&
+      (c.barrageAId === b.id || c.barrageBId === b.id) &&
+      regionsAssignees(c).some((r) => String(r.unite ?? '').toLowerCase() === String(b.reg ?? '').toLowerCase())) ?? null;
 
   /**
    * LA CHAÎNE D'ASSIGNATION — Super Admin → CMND Région → CMND Cie.
@@ -6112,7 +6126,8 @@ export function creerApi({
             action: 'assignation_groupee_conflits',
             details: {
               nbAssignes: resGrp.assignes.length,
-              nbEchecs: resGrp.echecs.length,
+              /* Le dépôt rend `erreurs` (et non `echecs`) : lire l'absent faisait échouer la requête. */
+              nbEchecs: (resGrp.erreurs ?? []).length,
               matricules,
               consigne,
             },
@@ -6121,8 +6136,9 @@ export function creerApi({
           json(res, 200, {
             ok: true,
             count: resGrp.assignes.length,
-            assignes: resGrp.assignes.map((c) => ({ ...c, workflow: presenterWorkflow(c, session) })),
-            echecs: resGrp.echecs,
+            /* Chaque entrée du dépôt est { id, res } : le conflit est dans `res.conflit`. */
+            assignes: resGrp.assignes.map((a) => a.res?.conflit).filter(Boolean).map((c) => ({ ...c, workflow: presenterWorkflow(c, session) })),
+            echecs: resGrp.erreurs ?? [],
             message: `${resGrp.assignes.length} conflit(s) assigné(s) avec succès.`,
           });
         } catch (err) {
@@ -6162,7 +6178,8 @@ export function creerApi({
             action: 'suppression_groupee_conflits',
             details: {
               nbSupprimes: resSuppr.supprimes.length,
-              nbEchecs: resSuppr.echecs.length,
+              /* Le dépôt rend `nonSupprimes` (et non `echecs`) : lire l'absent faisait échouer la requête. */
+              nbEchecs: (resSuppr.nonSupprimes ?? []).length,
               supprimes: resSuppr.supprimes,
             },
           });
@@ -6171,7 +6188,7 @@ export function creerApi({
             ok: true,
             count: resSuppr.supprimes.length,
             supprimes: resSuppr.supprimes,
-            echecs: resSuppr.echecs,
+            echecs: resSuppr.nonSupprimes ?? [],
             message: `${resSuppr.supprimes.length} conflit(s) supprimé(s) avec succès.`,
           });
         } catch (err) {
@@ -6984,6 +7001,11 @@ export function creerApi({
             ignores.push({ id, nom: b.nom || id, raison: 'déjà assigné, en attente de traitement' });
             continue;
           }
+          const dejaConflit = conflitAssignePour(b);
+          if (dejaConflit) {
+            ignores.push({ id, nom: b.nom || id, raison: `déjà assigné au CMD Région ${b.reg} (conflit ${dejaConflit.numero || dejaConflit.id}), en attente de traitement` });
+            continue;
+          }
           const bconflit = corps?.criteres?.[b.id] ?? (corps?.criteres?.distanceKm != null ? corps.criteres : null) ?? (b.distanceKm ? { distanceKm: b.distanceKm, seuilKm: corps?.seuilKm || 20, voisinNom: b.voisin?.nom } : null);
           const instruction = depotInstructions.creer({
             barrageId: b.id,
@@ -7752,7 +7774,17 @@ export function creerApi({
         return true;
       }
 
-      const modif = chemin.match(/^\/api\/marquages\/([\w-]+)$/);
+      /* Tout identifiant : ceux de démonstration finissent parfois par un point
+         (« syn_bf_001_5y1i0. ») — avant, seuls [\w-] passaient, et ces barrages
+         ne pouvaient être ni déplacés, ni modifiés, ni supprimés. */
+      const modifBrut = chemin.match(/^\/api\/marquages\/([^/]+)$/);
+      let idModif = null;
+      try {
+        idModif = modifBrut ? decodeURIComponent(modifBrut[1]) : null;
+      } catch {
+        idModif = null;
+      }
+      const modif = idModif ? [modifBrut[0], idModif] : null;
       if (modif) {
         if (!session) return refuseNonConnecte(json, res);
 
@@ -8054,11 +8086,27 @@ export function creerApi({
             /* 202 : reçu, pas appliqué. Et l'item RENVOYÉ est l'officiel, celui
                qui n'a pas bougé — l'écran qui l'affiche revient donc de
                lui-même à la valeur en vigueur. */
-            json(res, 202, { item: existant, demande, enAttente: true });
+            /* La position demandée, évaluée sans rien écrire : qui l'a demandée
+               sait déjà si elle règle ses conflits (statuts mis à jour à
+               l'approbation, par la même réévaluation que pour l'administration). */
+            let reevaluation = null;
+            if (estBarrage(existant) && (existant.lng !== item.lng || existant.lat !== item.lat)) {
+              try {
+                const s = Number(corps.seuilKm);
+                reevaluation = depotSuiviConflits.evaluerPosition({
+                  barrageId: existant.id, lng: item.lng, lat: item.lat, graphe, depotBarrages: depot,
+                  seuilKm: Number.isFinite(s) && s > 0 && s <= 200 ? s : seuilConflitKm,
+                });
+              } catch (err) {
+                console.error(`  ! évaluation de la position demandée (${existant.id}) : ${err.message}`);
+              }
+            }
+            json(res, 202, { item: existant, demande, enAttente: true, reevaluation });
             return true;
           }
 
           depot.remplacer(existant.id, item);
+          let reevaluation = null;
           journal.consigner({
             session,
             /* Un déplacement se lit autrement qu'une correction de fiche : le
@@ -8073,9 +8121,14 @@ export function creerApi({
             recalculerConflitsSiPresent();
             if (existant.lng !== item.lng || existant.lat !== item.lat) {
               terminerAssignationsDe(session, item.id, session, 'Barrage déplacé.');
+              /* LA POSITION A CHANGÉ : les conflits de CE barrage sont réévalués
+                 sur ses nouvelles coordonnées (résolus à partir du seuil, nouveaux
+                 détectés) — sans relancer d'optimisation, sans toucher aux autres. */
+              reevaluation = actualiserSuiviConflits(item.id, session, 'deplacer', null, { seuilKm: corps.seuilKm })?.reevaluation ?? null;
             }
           }
-          json(res, 200, { item });
+          /* Le bilan de la réévaluation guide l'étape suivante (voir actualiserApresOperation). */
+          json(res, 200, { item, reevaluation });
           return true;
         }
 

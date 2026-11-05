@@ -353,6 +353,20 @@ export const IconClose = (p) => (
   </Svg>
 );
 
+/** Menu : trois traits, le bouton qui ouvre le volet de navigation. */
+export const IconMenu = (p) => (
+  <Svg {...p}>
+    <path d="M4 7h16M4 12h16M4 17h16" />
+  </Svg>
+);
+
+/** Filtres : un entonnoir. */
+export const IconFiltre = (p) => (
+  <Svg {...p}>
+    <path d="M4 5h16l-6.2 7.4V18l-3.6 1.8v-7.4L4 5z" />
+  </Svg>
+);
+
 /* ---------------- Affichage ---------------- */
 
 /** Thème clair : un soleil. */

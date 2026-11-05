@@ -23615,12 +23615,12 @@
       "infraction": "low",
       "positionVille": "none",
       "eclairage": "inconnu",
-      "statutBarrage": "approuve",
+      "statutBarrage": "supprime",
       "etatAvant": null,
       "optimisationAuto": null,
       "supprimeLe": null,
       "supprimePar": null,
-      "decisionOptimisation": "aucune",
+      "decisionOptimisation": "a_supprimer",
       "origineId": null,
       "patrouilles": [],
       "sousType": "none",
@@ -23646,14 +23646,13 @@
         "unite": "systeme"
       },
       "majPar": {
-        "matricule": "SYSTEME",
-        "nom": "Génération Dispositif",
-        "role": "commandement",
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
         "rang": "admin",
-        "unite": "systeme"
+        "unite": "superadmin"
       },
       "cree": "2026-09-24T12:00:00.000Z",
-      "maj": "2026-09-24T12:00:00.000Z",
+      "maj": "2026-11-04T13:43:34.275Z",
       "accident_count": null,
       "lighting_status": "inconnu"
     },
@@ -25021,7 +25020,7 @@
       "type": "barrage_fixe",
       "protection": "aucune",
       "intouchable": false,
-      "route": "RN11",
+      "route": "A3",
       "note": "Point de contrôle fixe sur RN11 — Faction 3 (12h00 → 18h00).",
       "debut": "12:00",
       "fin": "18:00",
@@ -25051,8 +25050,8 @@
       "compagnieId": "Agadir",
       "brigadeId": "Amskroud",
       "regionId": "Agadir",
-      "lng": -9.3317,
-      "lat": 30.52842,
+      "lng": -9.22575,
+      "lat": 30.69046,
       "longitude": -9.3317,
       "latitude": 30.52842,
       "auteur": {
@@ -25063,16 +25062,16 @@
         "unite": "systeme"
       },
       "majPar": {
-        "matricule": "SYSTEME",
-        "nom": "Génération Dispositif",
-        "role": "commandement",
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
         "rang": "admin",
-        "unite": "systeme"
+        "unite": "superadmin"
       },
       "cree": "2026-09-24T12:00:00.000Z",
-      "maj": "2026-09-24T12:00:00.000Z",
+      "maj": "2026-11-04T13:43:29.257Z",
       "accident_count": null,
-      "lighting_status": "inconnu"
+      "lighting_status": "inconnu",
+      "pk": 389
     },
     {
       "id": "BF-BT-060",
@@ -28925,7 +28924,7 @@
       "infraction": "low",
       "positionVille": "none",
       "eclairage": "inconnu",
-      "factionId": "F2",
+      "factionId": "F1",
       "statutBarrage": "approuve",
       "etatAvant": null,
       "optimisationAuto": null,
@@ -28959,14 +28958,13 @@
         "unite": "systeme"
       },
       "majPar": {
-        "matricule": "SYSTEME",
-        "nom": "Génération Dispositif",
-        "role": "commandement",
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
         "rang": "admin",
-        "unite": "systeme"
+        "unite": "superadmin"
       },
       "cree": "2026-09-24T12:00:00.000Z",
-      "maj": "2026-10-22T11:26:04.690Z",
+      "maj": "2026-11-04T11:12:30.714Z",
       "accident_count": null,
       "lighting_status": "inconnu"
     },
@@ -32567,7 +32565,7 @@
       "type": "barrage_fixe",
       "nom": "Poste fixe Foum El Oued",
       "route": "RN1",
-      "pk": 1478.2,
+      "pk": 1474.5,
       "note": "Point de contrôle fixe sur RN1 — Faction 4 (18h00 → 00h00).",
       "debut": "18:00",
       "fin": "00:00",
@@ -32599,8 +32597,8 @@
       "compagnieId": "Laayoune",
       "brigadeId": "Boukraa",
       "regionId": "Laayoune",
-      "lng": -13.15879,
-      "lat": 27.21723,
+      "lng": -13.14034,
+      "lat": 27.24647,
       "longitude": -13.15879,
       "latitude": 27.21723,
       "auteur": {
@@ -32611,14 +32609,13 @@
         "unite": "systeme"
       },
       "majPar": {
-        "matricule": "SYSTEME",
-        "nom": "Génération Dispositif",
-        "role": "commandement",
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
         "rang": "admin",
-        "unite": "systeme"
+        "unite": "superadmin"
       },
       "cree": "2026-09-24T12:00:00.000Z",
-      "maj": "2026-10-24T15:03:51.474Z"
+      "maj": "2026-11-04T14:03:39.200Z"
     },
     {
       "id": "BF-BT-189",
@@ -37108,7 +37105,7 @@
       "note": "Point de contrôle fixe sur RN6 — Faction 2 (06h00 → 12h00).",
       "debut": "06:00",
       "fin": "12:00",
-      "factionId": "F2",
+      "factionId": "F4",
       "accidentCount": 0,
       "severite": "none",
       "activite": "low",
@@ -37146,14 +37143,13 @@
         "unite": "systeme"
       },
       "majPar": {
-        "matricule": "SYSTEME",
-        "nom": "Génération Dispositif",
-        "role": "commandement",
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
         "rang": "admin",
-        "unite": "systeme"
+        "unite": "superadmin"
       },
       "cree": "2026-09-24T12:00:00.000Z",
-      "maj": "2026-09-24T12:00:00.000Z",
+      "maj": "2026-11-03T13:46:47.923Z",
       "accident_count": null,
       "lighting_status": "inconnu"
     },
@@ -37281,7 +37277,7 @@
       "type": "barrage_fixe",
       "protection": "aucune",
       "intouchable": false,
-      "route": "RR322",
+      "route": "A1",
       "note": "Point de contrôle fixe sur RR322 — Faction 1 (00h00 → 06h00).",
       "debut": "00:00",
       "fin": "06:00",
@@ -37311,8 +37307,8 @@
       "compagnieId": "Skhirate",
       "brigadeId": "Laghouazi",
       "regionId": "Rabat",
-      "lng": -7.06252,
-      "lat": 33.86166,
+      "lng": -7.08766,
+      "lat": 33.83778,
       "longitude": -7.06252,
       "latitude": 33.86166,
       "auteur": {
@@ -37323,16 +37319,16 @@
         "unite": "systeme"
       },
       "majPar": {
-        "matricule": "SYSTEME",
-        "nom": "Génération Dispositif",
-        "role": "commandement",
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
         "rang": "admin",
-        "unite": "systeme"
+        "unite": "superadmin"
       },
       "cree": "2026-09-24T12:00:00.000Z",
-      "maj": "2026-09-24T12:00:00.000Z",
+      "maj": "2026-11-03T13:46:58.784Z",
       "accident_count": null,
-      "lighting_status": "inconnu"
+      "lighting_status": "inconnu",
+      "pk": 24.6
     },
     {
       "id": "BF-BT-270",
@@ -37812,7 +37808,7 @@
       "type": "barrage_fixe",
       "protection": "aucune",
       "intouchable": false,
-      "route": "RR105",
+      "route": "RP1009",
       "note": "Point de contrôle fixe sur RR105 — Faction 2 (06h00 → 12h00).",
       "debut": "06:00",
       "fin": "12:00",
@@ -37842,8 +37838,8 @@
       "compagnieId": "Inezgane",
       "brigadeId": "Lqliaa",
       "regionId": "Agadir",
-      "lng": -9.46503,
-      "lat": 30.3023,
+      "lng": -9.36286,
+      "lat": 30.1711,
       "longitude": -9.46503,
       "latitude": 30.3023,
       "auteur": {
@@ -37854,16 +37850,16 @@
         "unite": "systeme"
       },
       "majPar": {
-        "matricule": "SYSTEME",
-        "nom": "Génération Dispositif",
-        "role": "commandement",
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
         "rang": "admin",
-        "unite": "systeme"
+        "unite": "superadmin"
       },
       "cree": "2026-09-24T12:00:00.000Z",
-      "maj": "2026-09-24T12:00:00.000Z",
+      "maj": "2026-11-04T13:08:52.811Z",
       "accident_count": null,
-      "lighting_status": "inconnu"
+      "lighting_status": "inconnu",
+      "pk": 22.7
     },
     {
       "id": "BF-BT-279",
@@ -38937,7 +38933,7 @@
       "note": "Point de contrôle fixe sur RR403 — Faction 1 (00h00 → 06h00).",
       "debut": "00:00",
       "fin": "06:00",
-      "factionId": "F1",
+      "factionId": "F2",
       "accidentCount": 0,
       "severite": "none",
       "activite": "low",
@@ -38975,14 +38971,13 @@
         "unite": "systeme"
       },
       "majPar": {
-        "matricule": "SYSTEME",
-        "nom": "Génération Dispositif",
-        "role": "commandement",
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
         "rang": "admin",
-        "unite": "systeme"
+        "unite": "superadmin"
       },
       "cree": "2026-09-24T12:00:00.000Z",
-      "maj": "2026-09-24T12:00:00.000Z",
+      "maj": "2026-11-03T13:45:02.579Z",
       "accident_count": null,
       "lighting_status": "inconnu"
     },
@@ -42042,8 +42037,8 @@
       "compagnieId": "Laayoune",
       "brigadeId": "Port Laayoune",
       "regionId": "Laayoune",
-      "lng": -13.41127,
-      "lat": 27.06615,
+      "lng": -13.41696,
+      "lat": 27.0343,
       "longitude": -13.41127,
       "latitude": 27.06615,
       "auteur": {
@@ -42054,16 +42049,16 @@
         "unite": "systeme"
       },
       "majPar": {
-        "matricule": "SYSTEME",
-        "nom": "Génération Dispositif",
-        "role": "commandement",
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
         "rang": "admin",
-        "unite": "systeme"
+        "unite": "superadmin"
       },
       "cree": "2026-09-24T12:00:00.000Z",
-      "maj": "2026-09-24T12:00:00.000Z",
+      "maj": "2026-11-04T11:12:40.674Z",
       "accident_count": null,
-      "lighting_status": "inconnu"
+      "lighting_status": "inconnu",
+      "pk": 1517.6
     },
     {
       "id": "BF-BT-350",
@@ -44264,8 +44259,8 @@
       "compagnieId": "Boujdour",
       "brigadeId": "Sidi El Ghazi",
       "regionId": "Laayoune",
-      "lng": -14.29471,
-      "lat": 26.259,
+      "lng": -14.24624,
+      "lat": 26.28771,
       "longitude": -14.29471,
       "latitude": 26.259,
       "auteur": {
@@ -44276,16 +44271,16 @@
         "unite": "systeme"
       },
       "majPar": {
-        "matricule": "SYSTEME",
-        "nom": "Génération Dispositif",
-        "role": "commandement",
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
         "rang": "admin",
-        "unite": "systeme"
+        "unite": "superadmin"
       },
       "cree": "2026-09-24T12:00:00.000Z",
-      "maj": "2026-09-24T12:00:00.000Z",
+      "maj": "2026-11-04T11:12:34.328Z",
       "accident_count": null,
-      "lighting_status": "inconnu"
+      "lighting_status": "inconnu",
+      "pk": 1642.2
     },
     {
       "id": "BF-BT-388",
@@ -47575,8 +47570,8 @@
       "compagnieId": "Tan Tan",
       "brigadeId": "Tan Tan Plage",
       "regionId": "Guelmim",
-      "lng": -11.32283,
-      "lat": 28.48554,
+      "lng": -11.36015,
+      "lat": 28.45476,
       "longitude": -11.32283,
       "latitude": 28.48554,
       "auteur": {
@@ -47587,16 +47582,16 @@
         "unite": "systeme"
       },
       "majPar": {
-        "matricule": "SYSTEME",
-        "nom": "Génération Dispositif",
-        "role": "commandement",
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
         "rang": "admin",
-        "unite": "systeme"
+        "unite": "superadmin"
       },
       "cree": "2026-09-24T12:00:00.000Z",
-      "maj": "2026-09-24T12:00:00.000Z",
+      "maj": "2026-11-04T13:48:23.600Z",
       "accident_count": null,
-      "lighting_status": "inconnu"
+      "lighting_status": "inconnu",
+      "pk": 34
     },
     {
       "id": "BF-BT-446",
@@ -48676,7 +48671,7 @@
       "type": "barrage_fixe",
       "protection": "aucune",
       "intouchable": false,
-      "route": "RR322",
+      "route": "RR403",
       "note": "Point de contrôle fixe sur RR322 — Faction 4 (18h00 → 00h00).",
       "debut": "18:00",
       "fin": "00:00",
@@ -48706,8 +48701,8 @@
       "compagnieId": "Témara",
       "brigadeId": "Témara Plage",
       "regionId": "Rabat",
-      "lng": -6.97693,
-      "lat": 33.91233,
+      "lng": -6.90233,
+      "lat": 33.68181,
       "longitude": -6.97693,
       "latitude": 33.91233,
       "auteur": {
@@ -48718,16 +48713,16 @@
         "unite": "systeme"
       },
       "majPar": {
-        "matricule": "SYSTEME",
-        "nom": "Génération Dispositif",
-        "role": "commandement",
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
         "rang": "admin",
-        "unite": "systeme"
+        "unite": "superadmin"
       },
       "cree": "2026-09-24T12:00:00.000Z",
-      "maj": "2026-09-24T12:00:00.000Z",
+      "maj": "2026-11-03T13:46:54.343Z",
       "accident_count": null,
-      "lighting_status": "inconnu"
+      "lighting_status": "inconnu",
+      "pk": 28.7
     },
     {
       "id": "BF-BT-466",
@@ -49768,8 +49763,8 @@
       "compagnieId": "Sidi Ifni",
       "brigadeId": "Tlat Lakhssas",
       "regionId": "Guelmim",
-      "lng": -9.83705,
-      "lat": 29.25633,
+      "lng": -9.8425,
+      "lat": 29.21192,
       "longitude": -9.83705,
       "latitude": 29.25633,
       "auteur": {
@@ -49780,16 +49775,16 @@
         "unite": "systeme"
       },
       "majPar": {
-        "matricule": "SYSTEME",
-        "nom": "Génération Dispositif",
-        "role": "commandement",
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
         "rang": "admin",
-        "unite": "systeme"
+        "unite": "superadmin"
       },
       "cree": "2026-09-24T12:00:00.000Z",
-      "maj": "2026-09-24T12:00:00.000Z",
+      "maj": "2026-11-04T13:48:33.332Z",
       "accident_count": null,
-      "lighting_status": "inconnu"
+      "lighting_status": "inconnu",
+      "pk": 22
     },
     {
       "id": "BF-BT-485",
@@ -51802,48 +51797,82 @@
     },
     {
       "id": "syn_bf_018_1c4i0.",
-      "name": "Barrage Fixe RN1 — Tarfaya",
-      "nom": "Barrage Fixe RN1 — Tarfaya",
       "type": "FIXED",
-      "latitude": 27.96585,
-      "longitude": -12.80538,
-      "lat": 27.96585,
-      "lng": -12.80538,
-      "roadName": "Route Nationale RN1",
-      "route": "Route Nationale RN1",
-      "roadType": "Route Nationale",
-      "roadReference": "RN1",
-      "ref": "RN1",
+      "nom": "Barrage Fixe RN1 — Tarfaya",
+      "route": "RN1",
+      "pk": 1389.3,
+      "note": "",
+      "debut": "",
+      "fin": "",
       "accidentCount": 15,
-      "accidentPeriod": "2025-2026",
-      "isLighted": true,
+      "severite": "none",
+      "activite": "low",
+      "infraction": "low",
+      "positionVille": "none",
       "eclairage": "oui",
-      "trafficLevel": "MODERATE",
-      "trafficDescription": "Circulation modérée",
-      "isPermanent": false,
-      "isSynthetic": true,
+      "factionId": "",
+      "statutBarrage": "approuve",
+      "etatAvant": null,
+      "optimisationAuto": null,
+      "supprimeLe": null,
+      "supprimePar": null,
+      "decisionOptimisation": "aucune",
+      "origineId": null,
+      "patrouilles": [],
       "protection": "aucune",
       "intouchable": false,
-      "statutBarrage": "approuve",
-      "statut": "Opérationnel",
+      "exceptionnel": false,
+      "missionId": null,
+      "viaAssistant": false,
+      "partage": false,
+      "isSynthetic": true,
+      "isPermanent": false,
+      "name": "Barrage Fixe RN1 — Tarfaya",
+      "roadName": "Route Nationale RN1",
+      "roadType": "Route Nationale",
+      "roadReference": "RN1",
+      "accidentPeriod": "2025-2026",
+      "isLighted": true,
+      "trafficLevel": "MODERATE",
+      "trafficDescription": "Circulation modérée",
+      "createdAt": "2026-10-27T08:06:00.000Z",
+      "updatedAt": "2026-10-27T08:06:00.000Z",
       "bt": "Tarfaya",
       "cie": "Tarfaya",
       "reg": "Laayoune",
       "compagnieId": "Tarfaya",
       "brigadeId": "Tarfaya",
       "regionId": "Laayoune",
-      "contexte": "urban",
-      "createdAt": "2026-10-27T08:06:00.000Z",
-      "updatedAt": "2026-10-27T08:06:00.000Z",
-      "cree": "2026-10-27T08:06:00.000Z",
-      "maj": "2026-10-27T08:06:00.000Z",
+      "lng": -12.88288,
+      "lat": 27.93071,
+      "longitude": -12.88288,
+      "latitude": 27.93071,
+      "direction": "RETOUR",
+      "sens": "RETOUR",
+      "road_id": "RN1",
+      "route_position": 1387,
+      "coordinates": [
+        -12.88288,
+        27.93071
+      ],
       "auteur": {
         "matricule": "SYNTHETIC-SYSTEM",
         "nom": "Générateur Synthétique",
         "role": "systeme",
         "rang": "admin",
         "unite": "systeme"
-      }
+      },
+      "majPar": {
+        "matricule": "REG-LAAYOUNE",
+        "nom": "Chef de région Laayoune",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Laayoune",
+        "reg": "Laayoune",
+        "cie": null
+      },
+      "cree": "2026-10-27T08:06:00.000Z",
+      "maj": "2026-11-04T14:03:11.277Z"
     },
     {
       "id": "syn_bf_019_45qz2.",
@@ -52747,48 +52776,79 @@
     },
     {
       "id": "syn_bf_039_5l3s6.",
-      "name": "Barrage Fixe RN1 — El Aargoub",
-      "nom": "Barrage Fixe RN1 — El Aargoub",
       "type": "FIXED",
-      "latitude": 23.96563,
-      "longitude": -15.63179,
-      "lat": 23.96563,
-      "lng": -15.63179,
-      "roadName": "Route Nationale RN1",
-      "route": "Route Nationale RN1",
-      "roadType": "Route Nationale",
-      "roadReference": "RN1",
-      "ref": "RN1",
+      "nom": "Barrage Fixe RN1 — El Aargoub",
+      "route": "RN1",
+      "pk": 1953.6,
+      "note": "",
+      "debut": "",
+      "fin": "",
       "accidentCount": 20,
-      "accidentPeriod": "2025-2026",
-      "isLighted": false,
+      "severite": "none",
+      "activite": "low",
+      "infraction": "low",
+      "positionVille": "none",
       "eclairage": "non",
-      "trafficLevel": "MODERATE",
-      "trafficDescription": "Circulation modérée",
-      "isPermanent": false,
-      "isSynthetic": true,
+      "factionId": "",
+      "statutBarrage": "approuve",
+      "etatAvant": null,
+      "optimisationAuto": null,
+      "supprimeLe": null,
+      "supprimePar": null,
+      "decisionOptimisation": "aucune",
+      "origineId": null,
+      "patrouilles": [],
       "protection": "aucune",
       "intouchable": false,
-      "statutBarrage": "approuve",
-      "statut": "Opérationnel",
-      "bt": "El Aargoub",
+      "exceptionnel": false,
+      "missionId": null,
+      "viaAssistant": false,
+      "partage": false,
+      "isSynthetic": true,
+      "isPermanent": false,
+      "name": "Barrage Fixe RN1 — El Aargoub",
+      "roadName": "Route Nationale RN1",
+      "roadType": "Route Nationale",
+      "roadReference": "RN1",
+      "accidentPeriod": "2025-2026",
+      "isLighted": false,
+      "trafficLevel": "MODERATE",
+      "trafficDescription": "Circulation modérée",
+      "createdAt": "2026-10-27T08:33:00.000Z",
+      "updatedAt": "2026-10-27T08:33:00.000Z",
+      "bt": "Aarich",
       "cie": "Dakhla",
       "reg": "Dakhla",
       "compagnieId": "Dakhla",
-      "brigadeId": "El Aargoub",
+      "brigadeId": "Aarich",
       "regionId": "Dakhla",
-      "contexte": "rural",
-      "createdAt": "2026-10-27T08:33:00.000Z",
-      "updatedAt": "2026-10-27T08:33:00.000Z",
-      "cree": "2026-10-27T08:33:00.000Z",
-      "maj": "2026-10-27T08:33:00.000Z",
+      "lng": -15.56542,
+      "lat": 24.06958,
+      "longitude": -15.56542,
+      "latitude": 24.06958,
+      "direction": "ALLER",
+      "sens": "ALLER",
+      "road_id": "RN1",
+      "route_position": null,
+      "coordinates": [
+        -15.56542,
+        24.06958
+      ],
       "auteur": {
         "matricule": "SYNTHETIC-SYSTEM",
         "nom": "Générateur Synthétique",
         "role": "systeme",
         "rang": "admin",
         "unite": "systeme"
-      }
+      },
+      "majPar": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "cree": "2026-10-27T08:33:00.000Z",
+      "maj": "2026-11-04T13:56:35.099Z"
     },
     {
       "id": "syn_bfp_040_1a9vn.",

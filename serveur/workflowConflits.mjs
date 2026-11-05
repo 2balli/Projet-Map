@@ -17,14 +17,19 @@
  *                                   │
  *                                valider
  *                                   ▼
- *                     APPROVED ─▶ FOLLOW_UP ──cloturer──▶ CLOSED ──rouvrir (motif)──▶ ASSIGNED_REGION | NEW
+ *                     (APPROVED) ─▶ CLOSED ──rouvrir (motif)──▶ ASSIGNED_REGION | NEW
+ *
+ * L'APPROBATION ARCHIVE : `valider` traverse APPROVED (inscrit à
+ * l'historique) et aboutit directement à CLOSED — il n'y a plus d'étape de
+ * suivi à clôturer à la main. Les conflits enregistrés avant ce changement en
+ * APPROVED ou FOLLOW_UP ne sont pas réécrits : ils sont LUS comme archivés
+ * (section Historique, `estClos`), et `cloturer` reste permis pour eux.
  *
  * SECTIONS (une et une seule par état — aucun conflit n'apparaît dans deux) :
  *   Les Conflits  NEW
  *   À traiter     ASSIGNED_REGION, IN_PROGRESS_REGION, ASSIGNED_CIE, IN_PROGRESS_CIE, REJECTED
  *   À valider     PENDING_VALIDATION
- *   Suivi         APPROVED, FOLLOW_UP
- *   Historique    CLOSED
+ *   Historique    CLOSED (et APPROVED, FOLLOW_UP antérieurs)
  *
  * VISIBILITÉ (équivalent des policies RLS, appliquée par le serveur) :
  *   Super Admin  tout ;
@@ -58,7 +63,7 @@ export const LIBELLES = Object.freeze({
   PENDING_VALIDATION: 'À valider',
   REJECTED: 'Rejeté — à corriger',
   APPROVED: 'Validé',
-  FOLLOW_UP: 'En suivi',
+  FOLLOW_UP: 'Validé',
   CLOSED: 'Clôturé',
 });
 
@@ -66,15 +71,13 @@ export const SECTIONS = Object.freeze({
   CONFLITS: 'conflits',
   A_TRAITER: 'a_traiter',
   A_VALIDER: 'a_valider',
-  SUIVI: 'suivi',
   HISTORIQUE: 'historique',
 });
 
 export const LIBELLES_SECTIONS = Object.freeze({
-  conflits: 'Les Conflits',
+  conflits: 'Nouveaux',
   a_traiter: 'À traiter',
   a_valider: 'À valider',
-  suivi: 'Suivi',
   historique: 'Historique',
 });
 
@@ -86,8 +89,8 @@ export const SECTION_DE = Object.freeze({
   IN_PROGRESS_CIE: SECTIONS.A_TRAITER,
   REJECTED: SECTIONS.A_TRAITER,
   PENDING_VALIDATION: SECTIONS.A_VALIDER,
-  APPROVED: SECTIONS.SUIVI,
-  FOLLOW_UP: SECTIONS.SUIVI,
+  APPROVED: SECTIONS.HISTORIQUE,
+  FOLLOW_UP: SECTIONS.HISTORIQUE,
   CLOSED: SECTIONS.HISTORIQUE,
 });
 
@@ -170,7 +173,9 @@ export function etatDe(conf) {
 }
 
 export const sectionDe = (conf) => SECTION_DE[etatDe(conf)] ?? SECTIONS.CONFLITS;
-export const estClos = (conf) => etatDe(conf) === ETATS.CLOSED;
+/** Archivé : à l'historique, hors des listes actives (CLOSED, ou validé avant la suppression du suivi). */
+export const estClos = (conf) => sectionDe(conf) === SECTIONS.HISTORIQUE;
+const ARCHIVES = [ETATS.APPROVED, ETATS.FOLLOW_UP, ETATS.CLOSED];
 
 /* Un traitement soumis, validé, en suivi ou clos fait partie de l'historique :
    il n'est jamais supprimé physiquement. */
@@ -297,7 +302,8 @@ const ACTIONS = {
     libelle: 'Début du traitement par le CMD CIE',
   },
   /* Le responsable soumet son traitement. Le Super Admin peut traiter
-     directement (fonction existante) : son traitement vaut validation. */
+     directement (fonction existante) : son traitement vaut validation, et
+     comme toute validation il archive le conflit. */
   soumettre: {
     roles: ['reg', 'cie', 'admin'],
     depuis: [ETATS.NEW, ...EN_TRAITEMENT],
@@ -307,7 +313,7 @@ const ACTIONS = {
       if (session.rang === 'reg') return [ETATS.ASSIGNED_REGION, ETATS.IN_PROGRESS_REGION].includes(etat) || rejetPour(conf, 'reg');
       return [ETATS.ASSIGNED_CIE, ETATS.IN_PROGRESS_CIE].includes(etat) || rejetPour(conf, 'cie');
     },
-    vers: (conf, session) => (session.rang === 'admin' ? ETATS.FOLLOW_UP : ETATS.PENDING_VALIDATION),
+    vers: (conf, session) => (session.rang === 'admin' ? ETATS.CLOSED : ETATS.PENDING_VALIDATION),
     etapes: (conf, session) => {
       const etat = etatDe(conf);
       if (session.rang === 'admin') return [ETATS.APPROVED];
@@ -317,10 +323,11 @@ const ACTIONS = {
     },
     libelle: 'Soumission du traitement pour validation',
   },
+  /* Approuver = archiver : le conflit passe directement à l'historique. */
   valider: {
     roles: ['admin'],
     depuis: [ETATS.PENDING_VALIDATION],
-    vers: () => ETATS.FOLLOW_UP,
+    vers: () => ETATS.CLOSED,
     etapes: () => [ETATS.APPROVED],
     libelle: 'Validation du traitement',
   },
@@ -331,15 +338,17 @@ const ACTIONS = {
     motifObligatoire: true,
     libelle: 'Rejet du traitement',
   },
+  /* Ne sert plus qu'aux conflits validés avant que l'approbation archive. */
   cloturer: {
     roles: ['admin'],
     depuis: [ETATS.APPROVED, ETATS.FOLLOW_UP],
     vers: () => ETATS.CLOSED,
     libelle: 'Clôture',
   },
+  /* Tout ce qui est à l'historique peut être rouvert (correction exceptionnelle). */
   rouvrir: {
     roles: ['admin'],
-    depuis: [ETATS.CLOSED],
+    depuis: ARCHIVES,
     vers: (conf) => (regionsAssignees(conf).length ? ETATS.ASSIGNED_REGION : ETATS.NEW),
     motifObligatoire: true,
     libelle: 'Réouverture',
@@ -415,7 +424,7 @@ export function presenterWorkflow(conf, session) {
 
 /** Compteurs par section, sur les conflits VISIBLES de la session. */
 export function compterSections(conflits, session) {
-  const c = { conflits: 0, a_traiter: 0, a_valider: 0, suivi: 0, historique: 0 };
+  const c = { conflits: 0, a_traiter: 0, a_valider: 0, historique: 0 };
   for (const conf of conflits) if (!conf.is_deleted && !conf.deleted && peutVoir(conf, session)) c[sectionDe(conf)]++;
   return c;
 }

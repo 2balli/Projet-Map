@@ -217,7 +217,7 @@ function SeuilAccidents({ valeur, onChange }) {
       */}
       {valeur === ACCIDENTS_MIN && (
         <p className="mt-1 rounded border border-gr-gold/40 bg-gr-gold/10 px-1.5 py-1 text-[9px] leading-snug text-gr-gold">
-          À 0, <b>tous</b> les postes sont exclus : la filtration n’aura plus rien à proposer.
+          À 0, <b>tous</b> les postes sont exclus : l’optimisation n’aura plus rien à proposer.
         </p>
       )}
     </div>
@@ -375,7 +375,7 @@ function BoutonDecision({ actif, teinte, titre, titreActif, onClick, children })
  * particulier où cliquer. C'est cette liste qui garde la mémoire des arbitrages
  * rendus.
  */
-function LigneBarrage({ b, onCadrer, onDecider, demande, onDeciderDemande, etat = 'aucune', simulation = null, session = null, onAssigner = null }) {
+function LigneBarrage({ b, onCadrer, onDecider, demande, onDeciderDemande, etat = 'aucune', simulation = null, session = null, onAssigner = null, dejaAssigne = null }) {
   /* La demande part au serveur : deux clics pendant l'aller-retour vaudraient
      deux décisions, dont la seconde serait refusée (409). */
   const [occupe, setOccupe] = useState(false);
@@ -465,16 +465,27 @@ function LigneBarrage({ b, onCadrer, onDecider, demande, onDeciderDemande, etat 
           </span>
         </button>
 
+        {/* Déjà assigné (retrouvé à chaque optimisation, voir `assignationDe`) :
+            l'état remplace le bouton — pas de seconde assignation. */}
         {session?.rang === 'admin' && (
           <span className="flex shrink-0 items-center">
-            <button
-              type="button"
-              onClick={() => onAssigner?.(b)}
-              title="Assigner ce barrage au CMND Région pour traitement"
-              className="rounded-lg border border-gr-gold/60 bg-gr-gold/20 px-2.5 py-1.5 text-[11px] font-bold text-gr-gold hover:bg-gr-gold/30 transition-colors"
-            >
-              Assigner
-            </button>
+            {dejaAssigne ? (
+              <span
+            className="rounded-lg border border-sky-400/40 bg-sky-500/15 px-2.5 py-1.5 text-[11px] font-bold text-sky-200 max-w-[150px] truncate"
+            title={`Assigné à ${dejaAssigne} — en attente de traitement.`}
+          >
+            ✓ Assigné à {dejaAssigne}
+          </span>
+            ) : (
+              <button
+                type="button"
+                onClick={() => onAssigner?.(b)}
+                title="Assigner ce barrage au CMND Région pour traitement"
+                className="rounded-lg border border-gr-gold/60 bg-gr-gold/20 px-2.5 py-1.5 text-[11px] font-bold text-gr-gold hover:bg-gr-gold/30 transition-colors"
+              >
+                Assigner
+              </button>
+            )}
           </span>
         )}
 
@@ -522,7 +533,7 @@ function LigneBarrage({ b, onCadrer, onDecider, demande, onDeciderDemande, etat 
         * retire quelque chose, et il passe par le même chemin serveur que
         * toute autre suppression. Refuser rend le poste à son état d'avant.
         */}
-      {simulation && <ActionsConflit {...simulation} session={session} barrage={b} onAssigner={onAssigner} />}
+      {simulation && <ActionsConflit {...simulation} session={session} barrage={b} onAssigner={onAssigner} dejaAssigne={dejaAssigne} />}
 
       {demande && (
         <div
@@ -582,10 +593,10 @@ function ListeIntouchables({ barrages, onCadrer, factionActuelle }) {
   if (!barrages.length) return null;
   return (
     <ListePostes
-      titre={`${barrages.length} barrage(s) fixe(s) intouchable(s) — visibles, protégés des actions de filtration`}
+      titre={`${barrages.length} barrage(s) fixe(s) intouchable(s) — visibles, protégés des actions d’optimisation`}
       teinte="neutre"
       listClassName="max-h-72 overflow-y-auto pr-1"
-      phrase="STATUT PERMANENT — NON MODIFIABLE PAR LA FILTRATION. Aucun déplacement, retrait ou changement de ces postes n’est proposé. La faction actuelle est indiquée ; sélectionnez un poste pour le retrouver sur la carte."
+      phrase="STATUT PERMANENT — NON MODIFIABLE PAR L’OPTIMISATION. Aucun déplacement, retrait ou changement de ces postes n’est proposé. La faction actuelle est indiquée ; sélectionnez un poste pour le retrouver sur la carte."
     >
       {barrages.map((b) => (
         <LigneIntouchable key={b.id} b={b} onCadrer={onCadrer} factionActuelle={factionActuelle} />
@@ -705,7 +716,7 @@ function SectionBarragesRetires({
   if (!barrages || barrages.length === 0) {
     return (
       <Vide>
-        Aucun barrage retiré par la filtration sur ce territoire.
+        Aucun barrage retiré par l’optimisation sur ce territoire.
       </Vide>
     );
   }
@@ -714,7 +725,7 @@ function SectionBarragesRetires({
     <div className="space-y-2.5">
       <div className="rounded-xl border border-white/12 bg-white/5 px-3 py-2">
         <p className="text-[12px] font-bold text-white/90">
-          Barrages retirés par filtration ({barrages.length})
+          Barrages retirés par optimisation ({barrages.length})
         </p>
         <p className="text-[10px] text-white/50 mt-0.5 leading-snug">
           Ces barrages ne sont pas supprimés : leurs données sont intégralement conservées et ils peuvent être restaurés vers leur état actif à tout moment.
@@ -742,7 +753,7 @@ function SectionBarragesRetires({
               <div className="flex items-start justify-between gap-2">
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-1.5">
-                    <span className="shrink-0 size-2 rounded-full bg-gr-gold" title="Retiré par filtration" />
+                    <span className="shrink-0 size-2 rounded-full bg-gr-gold" title="Retiré par optimisation" />
                     <p className="truncate text-[12px] font-bold text-white/90">
                       {b.nom || 'Barrage sans nom'}
                     </p>
@@ -787,7 +798,7 @@ function SectionBarragesRetires({
                 )}
                 {dateStr && (
                   <div className="flex items-center justify-between text-white/60">
-                    <span>Date de filtration :</span>
+                    <span>Date d’optimisation :</span>
                     <span className="text-white/75">{dateStr} · {opt.mode || 'AUTOMATIQUE'}</span>
                   </div>
                 )}
@@ -835,7 +846,7 @@ function HistoriqueOptimisations({ rapports }) {
   return (
     <Depliable cle="historique" className="rounded-xl border border-white/10 bg-black/20 p-2.5">
       <summary className="cursor-pointer text-[11.5px] font-semibold text-white/80">
-        Historique des filtrations ({rapports.length})
+        Historique des optimisations ({rapports.length})
       </summary>
       <ul className="mt-2 space-y-2">
         {rapports.map((r) => {
@@ -850,7 +861,7 @@ function HistoriqueOptimisations({ rapports }) {
                     restauration ? 'text-gr-green' : 'text-gr-gold'
                   }`}
                 >
-                  {restauration ? 'RESTAURATION' : 'FILTRATION'} #
+                  {restauration ? 'RESTAURATION' : 'OPTIMISATION'} #
                   {String(r.numero).padStart(3, '0')}
                 </span>
                 <span className="text-[9.5px] text-white/45">
@@ -1034,7 +1045,7 @@ function SyntheseOptimisation({ synthese, simulation, etatSimulation, onRelancer
   const heure = (iso) => (iso ? new Date(iso).toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' }) : '—');
   return (
     <div data-gr-synthese="1" className="space-y-2 rounded-xl border border-gr-gold/35 bg-black/25 p-2.5 text-[11px]">
-      <p className="text-[10px] font-bold uppercase tracking-wider text-gr-gold">Filtration</p>
+      <p className="text-[10px] font-bold uppercase tracking-wider text-gr-gold">Optimisation</p>
       <div className="space-y-0.5">
         {cellule('Zone :', synthese.zone, 'text-gr-gold')}
         {cellule('Faction :', synthese.faction, 'text-gr-gold')}
@@ -1084,7 +1095,7 @@ function SyntheseOptimisation({ synthese, simulation, etatSimulation, onRelancer
               </p>
               <p className="text-[10.5px] text-white/75">
                 <b className="block text-white/90">{positionChangee.nom}</b>
-                Les résultats de filtration doivent être recalculés.
+                Les résultats d’optimisation doivent être recalculés.
               </p>
               <button type="button" onClick={onRelancer} className={`${bouton} w-full bg-[#F59E0B] font-bold uppercase text-gr-navy hover:brightness-110`}>
                 Recalculer
@@ -1092,14 +1103,14 @@ function SyntheseOptimisation({ synthese, simulation, etatSimulation, onRelancer
             </>
           ) : (
             <>
-              <p className="text-[11.5px] font-bold text-amber-300">⚠ Cette filtration n’est plus valide.</p>
+              <p className="text-[11.5px] font-bold text-amber-300">⚠ Cette optimisation n’est plus valide.</p>
               <p className="text-[10.5px] text-white/75">
                 {etatSimulation.raison === 'les données ont changé depuis l’analyse.'
                   ? 'Les données ont changé depuis l’analyse.'
                   : `Motif : ${etatSimulation.raison}`}
               </p>
               <button type="button" onClick={onRelancer} className={`${bouton} w-full bg-[#F59E0B] font-bold uppercase text-gr-navy hover:brightness-110`}>
-                Relancer la filtration
+                Relancer l’optimisation
               </button>
             </>
           )}
@@ -1127,7 +1138,7 @@ const FILTRES_OPTIMISATION = [
 ];
 function FiltresOptimisation({ filtres, onFiltres }) {
   return (
-    <div className="flex flex-wrap gap-1" role="group" aria-label="Filtres d'affichage de la filtration">
+    <div className="flex flex-wrap gap-1" role="group" aria-label="Filtres d'affichage de l’optimisation">
       {FILTRES_OPTIMISATION.map(([cle, libelle]) => (
         <label
           key={cle}
@@ -1161,7 +1172,7 @@ function JournalOptimisation({ entrees }) {
   return (
     <Depliable cle="journal-optimisation" className="rounded-xl border border-white/10 bg-black/20 p-2.5">
       <summary className="cursor-pointer text-[11.5px] font-semibold text-white/80">
-        Journal de la filtration ({entrees.length})
+        Journal de l’optimisation ({entrees.length})
       </summary>
       <ol className="mt-2 max-h-56 space-y-1.5 overflow-y-auto pr-1 text-[10px] leading-snug text-white/70" data-gr-journal="1">
         {entrees.map((e, i) => {
@@ -1202,7 +1213,7 @@ function JournalOptimisation({ entrees }) {
  * serveur. Cliquer la décision déjà choisie la retire de la simulation.
  * Un poste protégé (Intouchable, porte de ville) n'a que CONSERVER.
  */
-function ActionsConflit({ decision = null, protege = false, enCours = false, onDecider, explication = null, session = null, barrage = null, onAssigner = null }) {
+function ActionsConflit({ decision = null, protege = false, enCours = false, onDecider, explication = null, session = null, barrage = null, onAssigner = null, dejaAssigne = null }) {
   const estAdmin = session?.rang === 'admin';
   const km = (v) => (v != null && Number.isFinite(Number(v)) ? `${Number(v).toFixed(2)} km` : '—');
   const [confirmerRetrait, setConfirmerRetrait] = useState(false);
@@ -1271,7 +1282,14 @@ function ActionsConflit({ decision = null, protege = false, enCours = false, onD
     <div className="space-y-1 px-1 pb-1">
       {protege && <p className="text-[10px] font-bold text-[#F59E0B]">🔒 INTOUCHABLE / PROTÉGÉ</p>}
       <div className="flex gap-1">
-        {estAdmin ? (
+        {estAdmin && dejaAssigne ? (
+          <span
+            className="rounded-lg border border-sky-400/40 bg-sky-500/15 px-2.5 py-1.5 text-[11px] font-bold text-sky-200 flex-1 text-center"
+            title={`Assigné à ${dejaAssigne} — en attente de traitement.`}
+          >
+            ✓ Assigné à {dejaAssigne}
+          </span>
+        ) : estAdmin ? (
           <button
             type="button"
             onClick={() => onAssigner?.(barrage)}
@@ -1337,7 +1355,7 @@ function ActivationManuelle({ simulation, enCours, calculEnCours, onActiver, onA
   const indisponible = enCours || calculEnCours || !simulation.simulationId || retenues.length === 0;
   return (
     <div className="space-y-2 rounded-xl border border-gr-green/35 bg-gr-green/8 p-3">
-      <p className="text-[12px] font-bold text-gr-green">✓ Filtration simulée</p>
+      <p className="text-[12px] font-bold text-gr-green">✓ Optimisation simulée</p>
       <ul className="space-y-0.5 text-[11.5px] text-white/80">
         <li><b className="font-mono text-white">{n('deplacer')}</b> déplacement(s) proposé(s)</li>
         <li><b className="font-mono text-white">{n('supprimer')}</b> suppression(s) proposée(s)</li>
@@ -1424,8 +1442,8 @@ function Reinitialisation({ visible, enAttente, confirmer, onDemander, onConfirm
   if (!visible) return null;
   if (confirmer) {
     return (
-      <div role="alertdialog" aria-label="Réinitialiser la filtration ?" className="space-y-2 rounded-xl border border-[#F59E0B]/45 bg-[#F59E0B]/10 p-3">
-        <p className="text-[12px] font-bold text-amber-300">Réinitialiser la filtration ?</p>
+      <div role="alertdialog" aria-label="Réinitialiser l’optimisation ?" className="space-y-2 rounded-xl border border-[#F59E0B]/45 bg-[#F59E0B]/10 p-3">
+        <p className="text-[12px] font-bold text-amber-300">Réinitialiser l’optimisation ?</p>
         <p className="text-[11px] leading-snug text-white/75">
           Toutes les modifications simulées non activées seront perdues.
         </p>
@@ -1446,7 +1464,7 @@ function Reinitialisation({ visible, enAttente, confirmer, onDemander, onConfirm
       onClick={() => (enAttente ? onDemander() : onConfirmer())}
       className={`${bouton} w-full border border-white/15 bg-white/5 py-2 font-bold uppercase tracking-wide text-white/80 hover:bg-white/12 hover:text-white`}
     >
-      ↻ Réinitialiser la filtration
+      ↻ Réinitialiser l’optimisation
     </button>
   );
 }
@@ -1470,7 +1488,7 @@ function ActivationOptimisation({ rapport, retenus, applicationEnCours, calculEn
   const estAdmin = session?.rang === 'admin';
   return (
     <div className="space-y-2 rounded-xl border border-gr-green/35 bg-gr-green/8 p-3">
-      <p className="text-[12px] font-bold text-gr-green">✓ Filtration simulée</p>
+      <p className="text-[12px] font-bold text-gr-green">✓ Optimisation simulée</p>
       <ul className="space-y-0.5 text-[11.5px] text-white/80">
         <li>
           <b className="font-mono text-white">{aDeplacer}</b> barrage(s) à déplacer
@@ -2081,7 +2099,7 @@ function ResumeOptimisationAuto({
       {/* LE BILAN — ce que l'analyse a trouvé, et ce qu'elle dénoue. */}
       <div className="rounded-xl border border-gr-gold/30 bg-gr-gold/8 p-3 space-y-2">
         <p className="text-[11px] font-bold uppercase tracking-wider text-gr-gold">
-          Filtration automatique
+          Optimisation automatique
         </p>
         {rapport.perimetre && (
           <p className="text-[11px] text-white/80">
@@ -2100,7 +2118,7 @@ function ResumeOptimisationAuto({
           {conflitsEntreIntouchables > 0 && (
             <p className="mt-1 text-[9.5px] leading-snug text-white/45">
               + {conflitsEntreIntouchables} conflit(s) entre Intouchables voisins, permanents et hors
-              filtration — non comptés ici.
+              optimisation — non comptés ici.
             </p>
           )}
         </div>
@@ -2184,7 +2202,7 @@ function ResumeOptimisationAuto({
 
         {Object.keys(repartitionFactionApres).length > 0 && (
           <div className="pt-2 border-t border-white/10 text-[11px] space-y-0.5">
-            <p className="font-semibold text-white/80">Répartition après filtration :</p>
+            <p className="font-semibold text-white/80">Répartition après optimisation :</p>
             {Object.entries(repartitionFactionApres).map(([id, n]) => (
               <div key={id} className="flex items-center justify-between text-white/65">
                 <span>{FACTION_LIBELLE[id] ?? id} :</span>
@@ -2430,7 +2448,7 @@ function ControlesDistanceEtFaction({
         <div className="flex items-center gap-1.5">
           <span className="flex h-2 w-2 rounded-full bg-gr-gold animate-pulse" />
           <span className="text-[11px] font-bold uppercase tracking-wider text-gr-gold">
-            Critères de filtration
+            Critères d’optimisation
           </span>
         </div>
         <span className="text-[10.5px] font-mono text-white/60">
@@ -2677,7 +2695,7 @@ function DialogueOnglet({
       >
         <div className="flex items-start gap-3 border-b border-white/10 px-4 py-3">
           <div className="min-w-0 flex-1">
-            <p className="text-[9px] font-black uppercase tracking-[0.15em] text-gr-gold">Filtration</p>
+            <p className="text-[9px] font-black uppercase tracking-[0.15em] text-gr-gold">Optimisation</p>
             <h2 id="titre-onglet-optimisation" className="text-[15px] font-bold text-text-primary">
               {onglet.libelle}
             </h2>
@@ -2869,7 +2887,7 @@ function DialogueOnglet({
             className={`${bouton} bg-gr-gold px-3.5 text-[#0B192C] hover:brightness-110`}
           >
             {enCours && <IconSpinner size={13} />}
-            {enCours ? 'Filtration…' : 'Lancer la filtration'}
+            {enCours ? 'Optimisation…' : 'Lancer l’optimisation'}
           </button>
         </div>
       </div>
@@ -2894,6 +2912,8 @@ export default function OptimisationPanel({
    */
   session,
   onAssigner = null,
+  /** « CMD Région X » si le barrage (ou sa paire en conflit) est déjà assigné et pas encore traité. */
+  assignationDe = null,
   /** Le dépôt vivant — porte les décisions rendues et les postes encore là. */
   items,
   /** Callback pour mettre à jour la liste des items en direct après retrait/restauration. */
@@ -2957,6 +2977,12 @@ export default function OptimisationPanel({
   /** Onglets de la carte : reçoit la fonction `(cle) => …` qui active un onglet. */
   onEnregistrerOnglets = null,
 }) {
+  /* Un numéro par rapport calculé : la carte reconnaît un NOUVEAU calcul. */
+  const calculsVus = useRef({ rapport: null, n: 0 });
+  const idCalcul = (r) => {
+    if (r && calculsVus.current.rapport !== r) calculsVus.current = { rapport: r, n: calculsVus.current.n + 1 };
+    return calculsVus.current.n;
+  };
   /**
    * LE PÉRIMÈTRE N'EST PLUS UN CHOIX POUR UN PROFIL HIÉRARCHIQUE.
    *
@@ -3366,7 +3392,7 @@ export default function OptimisationPanel({
     setErreur(null);
     try {
       /* Le radar de la carte suit ce calcul réel (radarCalcul.js). */
-      const r = await avecRadar(`Filtration par distance · ${km} km`, () => API.optimiserParDistance({
+      const r = await avecRadar(`Optimisation par distance · ${km} km`, () => API.optimiserParDistance({
         distanceMinKm: km,
         niveau: niveauCalcul === 'national' ? null : niveauCalcul,
         unite: niveauCalcul === 'national' ? null : uniteCalcul,
@@ -3384,7 +3410,7 @@ export default function OptimisationPanel({
       }));
       setOptimisationReinitialisee(false);
       console.log(
-        `[FILTRATION MANUELLE] zone=${r?.perimetre?.zoneLibelle} faction=${r?.perimetre?.factionId} ` +
+        `[OPTIMISATION MANUELLE] zone=${r?.perimetre?.zoneLibelle} faction=${r?.perimetre?.factionId} ` +
           `autorisés=${r?.perimetre?.autorises} analysés=${r?.perimetre?.analyses} contexte=${r?.perimetre?.contexte} ` +
           `hors-périmètre-exclus=${r?.perimetre?.horsPerimetreExclus}`,
       );
@@ -3520,7 +3546,7 @@ export default function OptimisationPanel({
         const km = 20;
         setOptimisationReinitialisee(false);
         await assurerInstantane(`auto|${fId}|${zoneAuto.niveau ?? ''}|${zoneAuto.unite ?? ''}`);
-        const res = await avecRadar('Filtration automatique · 20 km', () => API.analyserOptimisationAuto({
+        const res = await avecRadar('Optimisation automatique · 20 km', () => API.analyserOptimisationAuto({
           factionId: fId,
           seuilKm: 20,
           distanceMinKm: 20,
@@ -3719,7 +3745,7 @@ export default function OptimisationPanel({
         await API.actionLotBarrages('conserver', [p.id], p.stats ?? null);
       } catch (err) {
         setErreurAuto(
-          `« ${p.nom} » est exclu de cette filtration, mais la protection durable n’a pas pu être écrite : ${err.message}`,
+          `« ${p.nom} » est exclu de cette optimisation, mais la protection durable n’a pas pu être écrite : ${err.message}`,
         );
       } finally {
         setGesteAuto(null);
@@ -3822,8 +3848,8 @@ export default function OptimisationPanel({
       const message = err.message ?? '';
       setErreurAuto(
         /OBSOL/i.test(message)
-          ? `Filtration devenue obsolète. Veuillez relancer l’analyse. (${message.replace(/^.*OBSOLÈTE\s*—\s*/i, '')})`
-          : message || 'Erreur lors de l’application de la filtration automatique.',
+          ? `Optimisation devenue obsolète. Veuillez relancer l’analyse. (${message.replace(/^.*OBSOLÈTE\s*—\s*/i, '')})`
+          : message || 'Erreur lors de l’application de l’optimisation automatique.',
       );
     } finally {
       setApplicationAutoEnCours(false);
@@ -3987,7 +4013,7 @@ export default function OptimisationPanel({
       setMessageManuel({
         ton: 'alerte',
         texte: /OBSOL/i.test(m)
-          ? `Filtration devenue obsolète. Veuillez relancer l’analyse. (${m.replace(/^.*OBSOLÈTE\s*—\s*/i, '')})`
+          ? `Optimisation devenue obsolète. Veuillez relancer l’analyse. (${m.replace(/^.*OBSOLÈTE\s*—\s*/i, '')})`
           : m || 'L’activation a échoué.',
       });
     } finally {
@@ -4201,7 +4227,7 @@ export default function OptimisationPanel({
       />
       {optimisationReinitialisee && !optimisationEnCours && (
         <p className="rounded-lg border border-white/12 bg-white/5 px-3 py-2 text-[11.5px] font-semibold text-white/75">
-          Aucune filtration en cours
+          Aucune optimisation en cours
         </p>
       )}
       <RestaurationAvantSimulation
@@ -4502,6 +4528,9 @@ export default function OptimisationPanel({
       });
 
       onResultatsChange({
+        /* Un nouveau calcul (et non une simple republication) : la carte enchaîne
+           alors les étapes communes à toutes les optimisations. */
+        calculId: idCalcul(rapportAuto),
         annulesIds: new Set(),
         conservesIds: new Set(),
         /* Les postes concernés portent un repère de décision, jamais un « ✗ » :
@@ -4578,7 +4607,7 @@ export default function OptimisationPanel({
           retenus.map((p) => [
             p.id,
             {
-              texte: p.raison || 'Filtration par distance routière',
+              texte: p.raison || 'Optimisation par distance routière',
               seuilKm: rapportAuto.seuilKm,
               criteres: {
                 action: p.action,
@@ -4721,6 +4750,7 @@ export default function OptimisationPanel({
     }
 
     onResultatsChange({
+      calculId: idCalcul(rapport),
       /* Un poste décidé porte le repère de sa décision, plus le « ? ». */
       annulesIds: new Set(aDecider.filter((b) => !decisionsVue.has(b.id)).map((b) => b.id)),
       conservesIds: new Set(conserves.map((b) => b.id)),
@@ -5445,10 +5475,10 @@ export default function OptimisationPanel({
           {FILTRATION_AUTOMATIQUE_VISIBLE && (
           <div className="space-y-1.5 pb-2 border-b border-white/10">
             <p className="text-[11px] font-bold uppercase tracking-wider text-white/70">
-              Mode de filtration
+              Mode d’optimisation
             </p>
             <Choix
-              nom="Mode de filtration"
+              nom="Mode d’optimisation"
               colonnes={2}
               valeur={modeOptimisation}
               onChange={(m) => {
@@ -5702,7 +5732,7 @@ export default function OptimisationPanel({
     /* ---------------- 3 — les barrages concernés ---------------- */
     {
       cle: 'calcul',
-      titre: modeOptimisation === 'auto' ? 'Filtration automatique' : 'Les barrages concernés',
+      titre: modeOptimisation === 'auto' ? 'Optimisation automatique' : 'Les barrages concernés',
       ar: modeOptimisation === 'auto' ? 'الترشيد التلقائي' : 'الحواجز المعنية',
       carte: true,
       aide:
@@ -5716,7 +5746,7 @@ export default function OptimisationPanel({
       valide: modeOptimisation === 'auto' ? Boolean(rapportAuto) : (Boolean(rapport) && !reglagesModifies),
       empeche:
         modeOptimisation === 'auto'
-          ? 'Lancez la filtration automatique pour analyser le territoire.'
+          ? 'Lancez l’optimisation automatique pour analyser le territoire.'
           : (rapport
               ? 'Vos réglages ont changé depuis ce calcul : refaites-le avant de trancher.'
               : 'Lancez le calcul pour voir les barrages concernés.'),
@@ -5756,7 +5786,7 @@ export default function OptimisationPanel({
           {exclusAuto.size > 0 && (
             <div className="flex items-center justify-between rounded-lg border border-white/10 bg-black/20 px-2.5 py-1.5 text-[10.5px] text-white/65">
               <span>
-                {exclusAuto.size} barrage(s) écarté(s) de cette filtration par vos soins.
+                {exclusAuto.size} barrage(s) écarté(s) de cette optimisation par vos soins.
               </span>
               <button
                 type="button"
@@ -5788,8 +5818,8 @@ export default function OptimisationPanel({
               {calculAutoEnCours
                 ? 'Analyse automatique en cours…'
                 : rapportAuto
-                  ? 'Relancer la filtration automatique'
-                  : 'Lancer la filtration automatique'}
+                  ? 'Relancer l’optimisation automatique'
+                  : 'Lancer l’optimisation automatique'}
             </span>
           </button>
 
@@ -5797,7 +5827,7 @@ export default function OptimisationPanel({
             <Vide>
               Rien n’a encore été analysé en mode automatique.
               <br />
-              Appuyez sur <b className="text-gr-gold">Lancer la filtration automatique</b> ci-dessus.
+              Appuyez sur <b className="text-gr-gold">Lancer l’optimisation automatique</b> ci-dessus.
             </Vide>
           ) : (
             <ResumeOptimisationAuto
@@ -5915,7 +5945,7 @@ export default function OptimisationPanel({
               {situation && (
                 <div className="rounded-xl border border-white/12 bg-white/4 px-3 py-2.5">
                   <p className="mb-1.5 text-[10px] font-bold uppercase tracking-[0.12em] text-gr-gold/80">
-                    Résultat de la filtration
+                    Résultat de l’optimisation
                   </p>
                   <ul className="space-y-1">
                     {situation.criteres.map((c) => (
@@ -6015,7 +6045,7 @@ export default function OptimisationPanel({
       carte: true,
       aide:
         modeOptimisation === 'auto'
-          ? 'Consultez les barrages retirés par filtration et restaurez-les si nécessaire.'
+          ? 'Consultez les barrages retirés par optimisation et restaurez-les si nécessaire.'
           : (aDecider.length > 0
             ? 'Cliquez un poste ci-dessous pour le voir sur la carte, puis tranchez depuis sa bulle. Rien n’est effacé : le commandant concerné est notifié et décide.'
             : 'Rien ne reste à trancher sur ce périmètre.'),
@@ -6139,6 +6169,7 @@ export default function OptimisationPanel({
                   onCadrer={onCadrer}
                   session={session}
                   onAssigner={onAssigner}
+                  dejaAssigne={assignationDe?.(b) ?? null}
                   simulation={{
                     decision: decisionsVue.get(b.id) ?? null,
                     protege: false,
@@ -6164,6 +6195,7 @@ export default function OptimisationPanel({
                   onCadrer={onCadrer}
                   session={session}
                   onAssigner={onAssigner}
+                  dejaAssigne={assignationDe?.(b) ?? null}
                   etat="intouchable"
                   simulation={{
                     decision: decisionsVue.get(b.id) ?? null,
@@ -6197,6 +6229,7 @@ export default function OptimisationPanel({
                   onDecider={onDecider}
                   session={session}
                   onAssigner={onAssigner}
+                  dejaAssigne={assignationDe?.(b) ?? null}
                   demande={retraitATrancher(notifications, b.id, session)}
                   onDeciderDemande={onDeciderDemande}
                   etat="a_supprimer"
@@ -6224,6 +6257,7 @@ export default function OptimisationPanel({
                   onDecider={onDecider}
                   session={session}
                   onAssigner={onAssigner}
+                  dejaAssigne={assignationDe?.(b) ?? null}
                   etat="conserve"
                 />
               ))}
@@ -6265,7 +6299,7 @@ export default function OptimisationPanel({
     <>
       <Parcours
         icone={IconBarrageFixe}
-        titre="FILTRATION DES BARRAGES"
+        titre="OPTIMISATION DES BARRAGES"
         ar="ترشيد الحواجز"
         etapes={etapes}
         indice={etape}

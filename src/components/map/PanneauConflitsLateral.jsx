@@ -5,9 +5,6 @@ import {
   IconAlert,
   IconClose,
   IconSpinner,
-  IconCoche,
-  IconTerritoire,
-  IconDistance,
   IconRoute,
   IconPoubelle,
 } from '../../icons.jsx';
@@ -21,10 +18,26 @@ import {
   SENS_TOUS,
 } from '../../directionSens.js';
 import ModalComparatifAvantApres from './ModalComparatifAvantApres.jsx';
-import ModalConfirmationTraitement from './ModalConfirmationTraitement.jsx';
 import HistoriqueConflits from './HistoriqueConflits.jsx';
+import ActionsConflit from './ActionsConflit.jsx';
 import ValeurAnimee from '../ValeurAnimee.jsx';
 import { notifier } from '../Toasts.jsx';
+import { etatListeConflit, prochainConflitAAssigner, libelleAssignation, compterATraiter, auteurAssignation } from '../../actionsConflit.js';
+
+/** Pastille du statut (voir `etatListeConflit`). */
+const BADGE_STATUT = {
+  a_traiter: 'bg-amber-500/15 text-amber-300 border-amber-500/30',
+  assigne: 'bg-sky-500/15 text-sky-300 border-sky-500/30',
+  en_cours: 'bg-sky-500/15 text-sky-300 border-sky-500/30',
+  a_valider: 'bg-violet-500/15 text-violet-300 border-violet-500/30',
+  a_corriger: 'bg-red-500/15 text-red-300 border-red-500/30',
+  archive: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30',
+  a_assigner: 'bg-amber-500/15 text-amber-300 border-amber-500/30',
+};
+
+/** Largeur de la carte déroulante, et marge à l'écran. */
+const LARGEUR_MENU = 400;
+const MARGE_MENU = 12;
 
 /** Durée du repli d'une carte qui quitte sa file — celle de `--duree-lente`. */
 const DUREE_SORTIE_CARTE = 280;
@@ -34,12 +47,26 @@ const DUREE_SORTIE_CARTE = 280;
 import { estConflitTraite, estConflitAssigne, estConflitNonAssigne } from '../../etatConflits.js';
 
 /**
- * PANNEAU LATÉRAL : GESTION DES CONFLITS (REFONTE SUPERADMIN & COMMANDEMENT)
+ * GESTION DES CONFLITS — UN MENU DÉROULANT SOUS LE BOUTON « CONFLITS »
  *
- * 3 Onglets principaux mutuellement exclusifs :
- *   1. Traités       : Tous les conflits traités (avec statut d'approbation).
- *   2. En attente    : Conflits assignés en attente de traitement.
- *   3. Les Conflits  : conflits détectés, pas encore assignés (Super Admin).
+ * Plus de colonne permanente à droite : un clic sur le bouton « Conflits »
+ * (`ancreRef`) ouvre, juste en dessous, une carte compacte :
+ *   — la LISTE : une ligne par conflit (barrages, statut, état d'assignation) ;
+ *   — choisir une ligne referme la liste et montre, au même endroit, le
+ *     DÉTAIL du conflit avec ses actions (« ← Tous les conflits » pour revenir).
+ * Après une assignation (`derniereAssignation`), le détail passe tout seul au
+ * prochain conflit à assigner de la même région (prochainConflitAAssigner) ;
+ * s'il n'y en a plus, la liste revient avec un message.
+ *
+ * Les files du workflow, une section serveur chacune (workflow.section) :
+ *   Nouveaux    détectés, pas encore assignés — Super Admin seul ;
+ *   À traiter   assignés, en traitement, ou renvoyés pour correction ;
+ *   À valider   traitements soumis, en attente du Super Admin ;
+ *   Historique  approuvés : un conflit approuvé y passe directement.
+ *
+ * Chaque conflit tient en quelques lignes (numéro, région, barrages, distance,
+ * statut) et une action principale choisie selon le rôle (src/actionsConflit.js).
+ * Le technique reste sous « Détails ».
  */
 export default function PanneauConflitsLateral({
   ouvert,
@@ -70,6 +97,16 @@ export default function PanneauConflitsLateral({
   parametresRoute = null,
   onEffacerFiltreRoute = null,
   onBarragesModifies = null,
+  /** Le bouton sous lequel la carte se pose. */
+  ancreRef = null,
+  /** { ts, ids, paires, regions, destinataire } — la dernière assignation enregistrée. */
+  derniereAssignation = null,
+  /** Le bord droit de la carte déroulante (px), ou null fermée : les barres flottantes s'écartent. */
+  onBordDroit = null,
+  /** Compteur : chaque incrément montre la LISTE (après une analyse, tous les conflits détectés). */
+  demandeListe = 0,
+  /** { id, n } : montrer la FICHE de ce conflit (désigné sur la carte, « Voir »…). */
+  demandeDetail = null,
 }) {
   const fermer = onClose || onFermer;
   const conflitActuel = conflitVise || conflitSelectionne;
@@ -78,9 +115,9 @@ export default function PanneauConflitsLateral({
   const [charge, setCharge] = useState(false);
   const [erreur, setErreur] = useState(null);
   const [detailsOuverts, setDetailsOuverts] = useState({});
-  const [ongletActif, setOngletActif] = useState('non_assignes'); // 'non_assignes' | 'en_attente' | 'a_valider' | 'suivi' | 'historique'
+  /* Les autres rôles ne voient jamais de conflit non assigné : ils ouvrent sur « À traiter ». */
+  const [ongletActif, setOngletActif] = useState(() => (session?.rang === 'admin' ? 'non_assignes' : 'en_attente')); // 'non_assignes' | 'en_attente' | 'a_valider' | 'historique'
   const [actionEnCours, setActionEnCours] = useState(null);
-  const [conflitEnConfirmation, setConflitEnConfirmation] = useState(null);
   const [conflitAgrandir, setConflitAgrandir] = useState(null);
   const [conflitASupprimer, setConflitASupprimer] = useState(null);
   const [conflitsASupprimerGroupe, setConflitsASupprimerGroupe] = useState(null);
@@ -94,11 +131,73 @@ export default function PanneauConflitsLateral({
      redétecte), compteurs des files tenus par le serveur, refus en saisie. */
   const [pairesCloses, setPairesCloses] = useState(() => new Set());
   const [compteursServeur, setCompteursServeur] = useState(null);
-  const [refus, setRefus] = useState(null); // { id, texte }
   const [erreurAction, setErreurAction] = useState(null); // { id, message }
+  /* Rejet demandé depuis le comparatif : la carte ouvre la saisie du motif. */
+  const [demandesRejet, setDemandesRejet] = useState({});
   const cardRefs = useRef({});
   /* Gardé monté le temps de sa sortie (voir usePresence). */
   const presence = usePresence(ouvert);
+  /* Le conflit montré en détail (null : la liste). */
+  const [detailId, setDetailId] = useState(null);
+  /* « C-03 assigné… conflit suivant », ou « plus rien à assigner ». */
+  const [annonce, setAnnonce] = useState(null);
+  /* Sous le bouton déclencheur, sans sortir de l'écran. */
+  const [position, setPosition] = useState({ top: 120, left: MARGE_MENU });
+  useEffect(() => {
+    if (!ouvert) return undefined;
+    const placer = () => {
+      const r = ancreRef?.current?.getBoundingClientRect?.();
+      const largeur = Math.min(LARGEUR_MENU, window.innerWidth - 2 * MARGE_MENU);
+      const top = r ? Math.round(r.bottom + 8) : 120;
+      const left = r ? Math.round(Math.min(Math.max(r.left, MARGE_MENU), window.innerWidth - largeur - MARGE_MENU)) : MARGE_MENU;
+      setPosition((p) => (p.top === top && p.left === left ? p : { top, left }));
+    };
+    placer();
+    /* Le bouton se déplace quand un panneau de gauche s'ouvre : on suit. */
+    const minuterie = setInterval(placer, 400);
+    window.addEventListener('resize', placer);
+    return () => {
+      clearInterval(minuterie);
+      window.removeEventListener('resize', placer);
+    };
+  }, [ouvert, ancreRef]);
+  useEffect(() => {
+    if (!ouvert) {
+      setDetailId(null);
+      setAnnonce(null);
+    }
+  }, [ouvert]);
+  /* Après une analyse : la liste de TOUS les conflits détectés, pas le détail
+     du premier. Pour le Super Admin, la file « Nouveaux » qui les reçoit. */
+  useEffect(() => {
+    if (!demandeListe) return;
+    setDetailId(null);
+    setAnnonce(null);
+    if (session?.rang === 'admin') setOngletActif('non_assignes');
+  }, [demandeListe, session?.rang]);
+  /* Un conflit désigné ailleurs (carte, notification, résultat) : sa fiche,
+     ici — la seule fiche de conflit de l'application. */
+  useEffect(() => {
+    if (!demandeDetail?.id) return;
+    setAnnonce(null);
+    setDetailId(demandeDetail.id);
+  }, [demandeDetail]);
+  useEffect(() => {
+    onBordDroit?.(ouvert ? position.left + Math.min(LARGEUR_MENU, window.innerWidth - 2 * MARGE_MENU) : null);
+  }, [ouvert, position.left, onBordDroit]);
+  /* Échap : le détail revient à la liste ; la liste se referme. */
+  useEffect(() => {
+    if (!ouvert) return undefined;
+    const auClavier = (e) => {
+      if (e.key !== 'Escape' || e.defaultPrevented) return;
+      if (document.querySelector('[role="dialog"][aria-modal="true"]')) return;
+      e.stopPropagation();
+      if (detailId) setDetailId(null);
+      else fermer?.();
+    };
+    window.addEventListener('keydown', auClavier);
+    return () => window.removeEventListener('keydown', auClavier);
+  }, [ouvert, detailId, fermer]);
 
   // Basculer automatiquement sur l'onglet 'non_assignes' lorsqu'un calcul d'espacement par route est effectué
   // et restaurer les conflits calculés dans conflitsSupprimesLocaux pour qu'ils réapparaissent immédiatement
@@ -138,7 +237,7 @@ export default function PanneauConflitsLateral({
   const dejaCharge = useRef(false);
   const recharger = useCallback(() => {
     if (!dejaCharge.current) setCharge(false);
-    API.listerConflits()
+    return API.listerConflits()
       .then((res) => {
         setDbConflits(res?.items ?? []);
         setPairesCloses(new Set((res?.clos ?? []).map((c) => c.paireCle).filter(Boolean)));
@@ -281,6 +380,10 @@ export default function PanneauConflitsLateral({
         const paire = cc.paireCle || clePaire(aId, bId);
         // Les conflits explicitement calculés par l'utilisateur ne sont pas bloqués par les anciennes suppressions
         const existant = mapParPaire.get(paire);
+        /* Traité et approuvé, sans conflit actif ouvert depuis : il est à
+           l'historique — comme pour les conflits de l'optimisation (étape 2),
+           il ne revient pas en « Nouveaux » avec un bouton « Assigner ». */
+        if (pairesCloses.has(paire) && !existant) continue;
 
         const bAObj = (barrages || []).find((x) => x.id === aId) || cc.a || cc.barrageA || { id: aId };
         const bBObj = (barrages || []).find((x) => x.id === bId) || cc.b || cc.barrageB || { id: bId };
@@ -346,45 +449,13 @@ export default function PanneauConflitsLateral({
     return reg ? `Région ${reg}` : 'Région non définie';
   }, []);
 
-  /* Statut simple parmi les 3 demandés : À traiter | En cours | Traité */
-  const getStatutSimple = useCallback((conf) => {
-    const etat = conf.workflow?.etat;
-    if (
-      etat === 'APPROVED' ||
-      etat === 'FOLLOW_UP' ||
-      etat === 'CLOSED' ||
-      conf.statut === 'resolu' ||
-      conf.statut === 'traite' ||
-      conf.statut === 'cloture'
-    ) {
-      return {
-        label: 'Traité',
-        code: 'traite',
-        badgeClasse: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30',
-      };
-    }
-    if (
-      etat === 'IN_PROGRESS_REGION' ||
-      etat === 'IN_PROGRESS_CIE' ||
-      etat === 'PENDING_VALIDATION' ||
-      conf.statut === 'en_cours'
-    ) {
-      return {
-        label: 'En cours',
-        code: 'en_cours',
-        badgeClasse: 'bg-sky-500/15 text-sky-300 border-sky-500/30',
-      };
-    }
-    return {
-      label: 'À traiter',
-      code: 'a_traiter',
-      badgeClasse: 'bg-amber-500/15 text-amber-300 border-amber-500/30',
-    };
-  }, []);
-
   /* Prise en charge préalable transparente puis ouverture du traitement */
+  const traitementRef = useRef(null);
   const handlePrendreEnChargeEtTraiter = useCallback(
     async (conf) => {
+      /* Un double clic ne relance pas la prise en charge (une seule requête). */
+      if (traitementRef.current === conf.id) return;
+      traitementRef.current = conf.id;
       try {
         if (conf.workflow?.actions?.prendre_en_charge) {
           await API.actionConflit(conf.id, 'prendre_en_charge', { etatAttendu: conf.workflow?.etat ?? null });
@@ -393,6 +464,8 @@ export default function PanneauConflitsLateral({
         }
       } catch (err) {
         console.warn('Action préalable :', err?.message);
+      } finally {
+        traitementRef.current = null;
       }
       fermer?.();
       onTraiter?.(conf);
@@ -442,15 +515,15 @@ export default function PanneauConflitsLateral({
    * CLASSIFICATION — LA SECTION VIENT DU SERVEUR (workflow.section), une et
    * une seule par conflit :
    *
-   *   Les Conflits : NEW — détectés, pas encore assignés (Super Admin) ;
+   *   Nouveaux     : NEW — détectés, pas encore assignés (Super Admin) ;
    *   À traiter    : assignés à une région ou une compagnie, en traitement,
    *                  ou rejetés pour correction (motif affiché) ;
    *   À valider    : traitements soumis, en attente du Super Admin ;
-   *   Suivi        : validés, en suivi jusqu'à la clôture ;
-   *   Historique   : clôturés (onglet dédié, lu à part).
+   *   Historique   : approuvés (onglet dédié, lu à part) — le serveur ne les
+   *                  renvoie plus dans les listes actives.
    *
    * Un conflit seulement CALCULÉ (filtration, analyse d'un axe — pas encore
-   * enregistré) n'a pas de section : il est « Les Conflits » pour le Super
+   * enregistré) n'a pas de section : il est « Nouveaux » pour le Super
    * Admin, qui seul peut l'assigner ; les autres rôles ne voient que ce qui
    * leur est assigné.
    */
@@ -494,12 +567,35 @@ export default function PanneauConflitsLateral({
   }, [tousConflitsCombines]);
   const visibles = useMemo(() => conflitsFiltres.filter(passeFiltres), [conflitsFiltres, passeFiltres]);
 
-  const conflitsSuivi = useMemo(() => visibles.filter((c) => sectionDe(c) === 'suivi'), [visibles]); // eslint-disable-line react-hooks/exhaustive-deps
   const conflitsAValider = useMemo(() => visibles.filter((c) => sectionDe(c) === 'a_valider'), [visibles]); // eslint-disable-line react-hooks/exhaustive-deps
   const conflitsEnAttente = useMemo(() => visibles.filter((c) => sectionDe(c) === 'a_traiter'), [visibles]); // eslint-disable-line react-hooks/exhaustive-deps
-  const conflitsNonAssignes = useMemo(() => visibles.filter((c) => sectionDe(c) === 'conflits'), [visibles]); // eslint-disable-line react-hooks/exhaustive-deps
+  /*
+   * « NOUVEAUX » = LE CALCUL EN COURS, ET LUI SEUL. Une optimisation (par
+   * paramètres ou par route — une seule à la fois) est active : la file ne
+   * montre que les paires de SON résultat. Les conflits nouveaux enregistrés
+   * par un calcul précédent (autre mode, autre zone) restent en base, intacts,
+   * mais ne se mêlent pas à ce résultat. Sans calcul actif : tous, comme avant.
+   * Les files assignées, à valider et l'historique ne sont jamais filtrées.
+   */
+  const pairesDuCalcul = useMemo(() => {
+    const listes = [conflitsIdentifies, conflitsCalculesRoute].filter(Array.isArray);
+    if (!listes.length) return null;
+    const p = new Set();
+    for (const l of listes) {
+      for (const c of l) {
+        const aId = c.barrageAId || c.a?.id || c.barrageA?.id;
+        const bId = c.barrageBId || c.b?.id || c.barrageB?.id;
+        const cle = c.cle || c.paireCle || (aId && bId ? clePaire(aId, bId) : null);
+        if (cle) p.add(cle);
+      }
+    }
+    return p;
+  }, [conflitsIdentifies, conflitsCalculesRoute]);
+  const conflitsNonAssignes = useMemo(
+    () => visibles.filter((c) => sectionDe(c) === 'conflits' && (!pairesDuCalcul || pairesDuCalcul.has(c.paireCle))),
+    [visibles, pairesDuCalcul], // eslint-disable-line react-hooks/exhaustive-deps
+  );
 
-  const totalSuivi = conflitsSuivi.length;
   const totalAValider = conflitsAValider.length;
   const totalEnAttente = conflitsEnAttente.length;
   const totalNonAssignes = conflitsNonAssignes.length;
@@ -516,17 +612,12 @@ export default function PanneauConflitsLateral({
         if (conf) {
           const section = sectionDe(conf);
           if (section === 'a_valider') setOngletActif('a_valider');
-          else if (section === 'suivi') setOngletActif('suivi');
           else if (section === 'a_traiter') setOngletActif('en_attente');
           else if (section === 'conflits') setOngletActif('non_assignes');
         }
       }
-      if (id) {
-        const el = cardRefs.current[id];
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-      }
+      /* Désigné ailleurs (carte, notification) : le menu montre son détail. */
+      if (id) setDetailId(id);
     }
   }, [conflitActuel]);
 
@@ -534,9 +625,8 @@ export default function PanneauConflitsLateral({
     if (ongletActif === 'non_assignes') return conflitsNonAssignes;
     if (ongletActif === 'en_attente') return conflitsEnAttente;
     if (ongletActif === 'a_valider') return conflitsAValider;
-    if (ongletActif === 'suivi') return conflitsSuivi;
     return [];
-  }, [ongletActif, conflitsNonAssignes, conflitsEnAttente, conflitsAValider, conflitsSuivi]);
+  }, [ongletActif, conflitsNonAssignes, conflitsEnAttente, conflitsAValider]);
 
   const selectionIdsDansOnglet = useMemo(() => {
     const ids = new Set();
@@ -598,22 +688,58 @@ export default function PanneauConflitsLateral({
 
   const handleVoirSurCarte = (conf, e, mode = 'comparer') => {
     e?.stopPropagation?.();
-    onVoirSurCarte?.(conf, mode);
-    fermer?.();
+    onVoirSurCarte?.(conf, mode, { garderPanneau: true });
   };
+
+  /* Choisir un conflit dans la liste : la liste se referme sur son détail, et
+     la carte se rend sur lui (deux barrages, route). */
+  const ouvrirDetail = (conf) => {
+    setAnnonce(null);
+    setDetailId(conf.id || conf.numero);
+    onVoirSurCarte?.(conf, null, { garderPanneau: true });
+  };
+
+  /*
+   * PASSAGE AU CONFLIT SUIVANT — après une assignation enregistrée : la liste
+   * est relue (un conflit assigné entre-temps par un autre traitement est
+   * reconnu, voir aAssignerPar), puis le détail passe au prochain conflit à
+   * assigner de la même région. Plus rien : la liste, avec un message.
+   */
+  const assignationVue = useRef(null);
+  const [avancer, setAvancer] = useState(null);
+  useEffect(() => {
+    if (!ouvert || !derniereAssignation?.ts || assignationVue.current === derniereAssignation.ts) return;
+    assignationVue.current = derniereAssignation.ts;
+    const faite = derniereAssignation;
+    Promise.resolve(recharger()).finally(() => setAvancer(faite));
+  }, [ouvert, derniereAssignation, recharger]);
+  useEffect(() => {
+    if (!avancer) return;
+    setAvancer(null);
+    const assigne = tousConflitsCombines.find((c) => (avancer.ids ?? []).includes(c.id) || (c.paireCle && (avancer.paires ?? []).includes(c.paireCle)));
+    const nomFait = assigne ? `Conflit ${indexConflitMap.get(assigne.id) ?? indexConflitMap.get(assigne.paireCle) ?? ''}`.trim() : 'Le conflit';
+    const chez = avancer.destinataire || (assigne ? libelleAssignation(assigne) : null);
+    const suivant = prochainConflitAAssigner(tousConflitsCombines, avancer, session);
+    if (suivant) {
+      setDetailId(suivant.id || suivant.numero);
+      setAnnonce({ type: 'suivant', texte: `${nomFait} assigné${chez ? ` à ${chez}` : ''}. Conflit suivant :` });
+      onVoirSurCarte?.(suivant, null, { garderPanneau: true });
+    } else {
+      setDetailId(null);
+      const portee = (avancer.regions ?? []).length ? ` pour CMD Région ${avancer.regions.join(' & ')}` : '';
+      setAnnonce({ type: 'fin', texte: `${nomFait} assigné${chez ? ` à ${chez}` : ''}. Il n'y a plus de conflit à assigner${portee}.` });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [avancer]);
 
   const handleDesassigner = async (conf, e) => {
     e?.stopPropagation?.();
-    if (onDesassigner) {
-      await onDesassigner(conf);
-      recharger();
-      return;
-    }
     try {
-      await API.desassignerConflit(conf.id);
+      if (onDesassigner) await onDesassigner(conf);
+      else await API.desassignerConflit(conf.id);
       recharger();
     } catch (err) {
-      alert(err.message || 'Impossible de désassigner le conflit.');
+      setErreurAction({ id: conf.id, message: err?.message || 'Impossible de désassigner le conflit.' });
     }
   };
 
@@ -651,32 +777,28 @@ export default function PanneauConflitsLateral({
   );
 
   /*
-   * DÉCIDER — approuver tout de suite ; refuser ouvre un formulaire dans la
-   * carte, motif obligatoire. L'état affiché est envoyé (`etatAttendu`) : si
-   * un autre validateur est passé entre-temps, le serveur refuse (409) et la
-   * liste est relue au lieu d'appliquer la décision à un état non vu.
+   * DÉCIDER — approuver tout de suite ; refuser exige un motif (saisi dans la
+   * carte, voir ActionsConflit). L'état affiché est envoyé (`etatAttendu`) :
+   * si un autre validateur est passé entre-temps, le serveur refuse (409) et
+   * la liste est relue au lieu d'appliquer la décision à un état non vu.
+   * Approuvé, le conflit passe directement à l'historique (serveur).
    */
   const handleDecider = async (conf, decision, e, raison = '') => {
     e?.stopPropagation?.();
     if (actionEnCours) return;
-    if (decision === 'rejeter' && !raison.trim()) {
-      setRefus({ id: conf.id, texte: '' });
-      setErreurAction(null);
-      return;
-    }
+    if (decision === 'rejeter' && !raison.trim()) return;
     setActionEnCours(conf.id);
     setErreurAction(null);
     try {
       /* L'écriture d'abord : aucune animation ne précède ni ne retarde la
          réponse du serveur. */
       const r = await API.deciderConflit(conf.id, { decision, raison: raison.trim(), etatAttendu: conf.workflow?.etat ?? null });
-      setRefus(null);
-      const vers = r?.conflit?.workflow?.etat;
+      const approuve = decision !== 'rejeter';
       notifier({
-        type: decision === 'rejeter' ? 'info' : 'succes',
-        titre: vers === 'FOLLOW_UP' ? 'Traitement validé' : 'Traitement rejeté',
-        message: vers === 'FOLLOW_UP'
-          ? `${conf.numero || conf.id} passe en suivi.`
+        type: approuve ? 'succes' : 'info',
+        titre: approuve ? 'Conflit approuvé' : 'Traitement rejeté',
+        message: approuve
+          ? `${conf.numero || conf.id} est archivé dans l’historique.`
           : `${conf.numero || conf.id} retourne à son responsable, avec votre motif.`,
       });
       if (Array.isArray(r?.barragesModifies) && r.barragesModifies.length > 0) {
@@ -695,32 +817,34 @@ export default function PanneauConflitsLateral({
   };
 
   /**
-   * ACTIONS SIMPLES DU WORKFLOW — prendre en charge (CMD Région), commencer
-   * (CMD CIE), clôturer (Super Admin). L'écriture d'abord ; l'état attendu
-   * est envoyé : si le conflit a changé entre-temps, le serveur refuse (409)
-   * et la liste est relue.
+   * LES BOUTONS D'UNE CARTE (voir ActionsConflit) — chaque clé renvoie au
+   * geste existant du workflow : la modale d'assignation, celle de
+   * transmission, le traitement, la décision. Aucun droit n'est décidé ici.
    */
-  const handleAction = async (conf, action, e) => {
-    e?.stopPropagation?.();
-    if (actionEnCours) return;
-    setActionEnCours(conf.id);
+  const executerAction = (cle, conf, { motif = '' } = {}) => {
     setErreurAction(null);
-    try {
-      const r = await API.actionConflit(conf.id, action, { etatAttendu: conf.workflow?.etat ?? null });
-      const titres = {
-        prendre_en_charge: ['Pris en charge', `${conf.numero || conf.id} : vous traitez ce conflit.`],
-        commencer: ['Traitement commencé', `${conf.numero || conf.id} : renseignez le traitement puis soumettez-le.`],
-        cloturer: ['Conflit clôturé', `${conf.numero || conf.id} est archivé dans l’historique.`],
-      }[action] ?? ['Action enregistrée', ''];
-      notifier({ type: 'succes', titre: titres[0], message: titres[1] });
-      quitterLaFile(conf.id, r?.conflit ?? null);
-    } catch (err) {
-      const message = err?.message || 'L’action n’a pas pu être enregistrée.';
-      setErreurAction({ id: conf.id, message });
-      notifier({ type: 'erreur', titre: 'Action non enregistrée', message });
-      if (err?.statut === 409 || err?.status === 409) recharger();
-    } finally {
-      setActionEnCours(null);
+    switch (cle) {
+      case 'assigner':
+      case 'reassigner':
+        onAssigner?.(conf);
+        break;
+      case 'desassigner':
+        handleDesassigner(conf);
+        break;
+      case 'transmettre':
+        onTransmettre?.(conf);
+        break;
+      case 'traiter':
+      case 'traiter_direct':
+        handlePrendreEnChargeEtTraiter(conf);
+        break;
+      case 'approuver':
+        handleDecider(conf, 'approuver');
+        break;
+      case 'rejeter':
+        handleDecider(conf, 'rejeter', null, motif);
+        break;
+      default:
     }
   };
 
@@ -790,9 +914,13 @@ export default function PanneauConflitsLateral({
         }
       }
       recharger();
-      alert(`✓ ${reussis} conflit(s) assigné(s) avec succès aux régions concernées.`);
+      notifier({
+        type: reussis === nb ? 'succes' : 'erreur',
+        titre: reussis === nb ? 'Conflits assignés' : 'Assignation incomplète',
+        message: `${reussis} sur ${nb} conflit(s) assigné(s) aux régions concernées.`,
+      });
     } catch (err) {
-      alert(err.message || 'Erreur lors de l’assignation groupée.');
+      notifier({ type: 'erreur', titre: 'Assignation impossible', message: err?.message || 'Erreur lors de l’assignation groupée.' });
     } finally {
       setAssignationEnMasseEnCours(false);
     }
@@ -905,63 +1033,163 @@ export default function PanneauConflitsLateral({
 
   if (!presence.monte) return null;
 
-  return (
-    <aside
-      role="complementary"
-      aria-label="Gestion des conflits"
-      data-presence={presence.etat}
-      data-depuis="droite"
-      className="fixed inset-y-0 right-0 z-[2000] flex w-full max-w-[430px] flex-col border-l border-white/10 bg-gr-navy/95 text-white shadow-2xl backdrop-blur-xl"
+  const onglets = [
+    ...(estAdmin ? [{ cle: 'non_assignes', libelle: 'Nouveaux', total: totalNonAssignes }] : []),
+    { cle: 'en_attente', libelle: 'À traiter', total: totalEnAttente },
+    { cle: 'a_valider', libelle: 'À valider', total: totalAValider },
+    { cle: 'historique', libelle: 'Historique', total: totalHistorique },
+  ];
+  const VIDES = {
+    non_assignes: ['Aucun nouveau conflit', 'Les conflits détectés et pas encore assignés apparaissent ici.'],
+    en_attente: ['Rien à traiter', estAdmin ? 'Les conflits assignés aux CMD Région et CMD CIE apparaissent ici.' : 'Les conflits qui vous sont assignés apparaissent ici.'],
+    a_valider: ['Aucun traitement à valider', estAdmin ? 'Les traitements soumis par les CMD Région et CMD CIE apparaîtront ici.' : 'Vos traitements soumis, en attente du Super Admin, apparaîtront ici.'],
+  };
+
+  const confDetail = detailId
+    ? tousConflitsCombines.find((c) => c.id === detailId || c.numero === detailId || c.paireCle === detailId) ?? null
+    : null;
+  const indexDetail = confDetail ? tousConflitsCombines.indexOf(confDetail) : -1;
+  /*
+   * L'AXE ISOLÉ — l'ancienne barre flottante du haut de la carte, désormais
+   * ici : la route, ses barrages, ses conflits, le sens, « Modifier » et
+   * « Désactiver ». Visible dans la liste comme dans le détail.
+   */
+  const nbConflitsAxe = Array.isArray(conflitsCalculesRoute) ? conflitsCalculesRoute.length : null;
+  const bandeauAxe = filtreRoute && (
+    <div className="space-y-1.5 border-b border-gr-gold/25 bg-gr-gold/[0.07] px-4 py-2 text-[11px] text-white">
+      <div className="flex flex-wrap items-center gap-1.5">
+        <span aria-hidden="true" className="size-2 shrink-0 rounded-full bg-gr-gold" />
+        <span className="text-white/65">Axe isolé :</span>
+        <b className="font-mono uppercase text-gr-gold">{filtreRoute}</b>
+        {barragesVisiblesCount != null && (
+          <span className="rounded-md bg-white/10 px-1.5 py-0.5 text-[10.5px] text-white/80">
+            {barragesVisiblesCount} barrage{barragesVisiblesCount > 1 ? 's' : ''}
+          </span>
+        )}
+        {nbConflitsAxe != null && (
+          <span
+            className={`rounded-md border px-1.5 py-0.5 text-[10.5px] font-bold ${
+              nbConflitsAxe > 0 ? 'border-amber-500/40 bg-amber-500/20 text-amber-300' : 'border-emerald-500/30 bg-emerald-500/15 text-emerald-300'
+            }`}
+          >
+            {nbConflitsAxe > 0 ? `⚠ ${nbConflitsAxe} conflit${nbConflitsAxe > 1 ? 's' : ''}` : '✓ Espacement respecté'}
+          </span>
+        )}
+      </div>
+      <div className="flex flex-wrap items-center gap-1">
+        {[
+          { id: SENS_TOUS, label: 'Tous', actif: 'bg-gr-gold text-gr-navy' },
+          { id: SENS_ALLER, label: 'Aller ➔', actif: 'bg-sky-500 text-white' },
+          { id: SENS_RETOUR, label: 'Retour ⬅', actif: 'bg-amber-500 text-gr-navy' },
+        ].map((x) => (
+          <button
+            key={x.id}
+            type="button"
+            aria-pressed={(filtreSensRoute || SENS_TOUS) === x.id}
+            disabled={!onChangerSensRoute}
+            onClick={() => onChangerSensRoute?.(x.id)}
+            className={`rounded px-2 py-0.5 text-[10.5px] font-bold transition-colors ${
+              (filtreSensRoute || SENS_TOUS) === x.id ? x.actif : 'bg-white/5 text-white/70 hover:bg-white/15 hover:text-white'
+            }`}
+          >
+            {x.label}
+          </button>
+        ))}
+        <span className="flex-1" />
+        {onOuvrirFiltreRoute && (
+          <button type="button" onClick={onOuvrirFiltreRoute} className="rounded-lg bg-white/10 px-2 py-0.5 text-[11px] font-semibold text-white/90 hover:bg-white/20">
+            Modifier
+          </button>
+        )}
+        {onEffacerFiltreRoute && (
+          <button
+            type="button"
+            onClick={onEffacerFiltreRoute}
+            title="Désactiver le filtre et afficher toutes les routes"
+            className="rounded-lg bg-red-500/20 px-2 py-0.5 text-[11px] font-semibold text-red-300 hover:bg-red-500/30"
+          >
+            Désactiver
+          </button>
+        )}
+      </div>
+    </div>
+  );
+  const bandeauAnnonce = annonce && (
+    <div
+      role="status"
+      className={`flex items-start gap-2 border-b px-4 py-2 text-[11.5px] ${
+        annonce.type === 'fin' ? 'border-emerald-500/25 bg-emerald-500/10 text-emerald-200' : 'border-sky-500/25 bg-sky-500/10 text-sky-100'
+      }`}
     >
-      {/* 1. EN-TÊTE PRINCIPAL ÉPURÉ */}
-      <header className="p-3.5 border-b border-white/10 shrink-0 space-y-2.5">
-        <div className="flex items-center justify-between gap-2">
-          <div className="flex items-center gap-2.5 min-w-0">
-            <span className="grid size-8 place-items-center rounded-xl bg-amber-500/15 text-amber-300 border border-amber-500/30 shrink-0">
-              <IconAlert size={15} />
-            </span>
-            <div className="min-w-0">
-              <h2 className="text-[14px] font-bold tracking-tight text-white truncate">
-                Gestion des conflits
-              </h2>
-              <p className="text-[11px] text-white/50 truncate">
-                {estAdmin
-                  ? 'Super Admin · Contrôle & arbitrage'
-                  : estRegion
-                  ? `CMD Région ${session?.unite ?? ''}`
-                  : `CMD Compagnie ${session?.unite ?? ''}`}
-              </p>
-            </div>
+      <span className="min-w-0 flex-1">{annonce.texte}</span>
+      <button type="button" onClick={() => setAnnonce(null)} aria-label="Masquer ce message" className="shrink-0 text-white/50 hover:text-white">
+        <IconClose size={11} />
+      </button>
+    </div>
+  );
+
+  return (
+    <div
+      role="dialog"
+      aria-label="Conflits"
+      data-gr-chrome
+      data-presence={presence.etat}
+      data-depuis="haut"
+      className="fixed z-[2000] flex w-[min(400px,calc(100vw-1.5rem))] flex-col overflow-hidden rounded-2xl border border-white/10 bg-gr-navy/97 text-white shadow-panel backdrop-blur-xl"
+      style={{ top: position.top, left: position.left, maxHeight: `calc(100dvh - ${position.top + MARGE_MENU}px)` }}
+    >
+      {confDetail ? (
+        <>
+          {/* LE DÉTAIL : la liste est refermée, le conflit choisi et ses actions. */}
+          <header className="flex shrink-0 items-center justify-between gap-2 border-b border-white/10 px-3 py-2">
+            <button
+              type="button"
+              onClick={() => {
+                setDetailId(null);
+                setAnnonce(null);
+              }}
+              className="flex items-center gap-1 rounded-lg px-1.5 py-1 text-[12px] font-semibold text-white/75 transition-colors hover:bg-white/10 hover:text-white"
+            >
+              <span aria-hidden="true">←</span> Tous les conflits
+            </button>
+            <button
+              type="button"
+              onClick={fermer}
+              aria-label="Masquer les conflits"
+              className="flex items-center gap-1.5 rounded-lg border border-white/15 px-2.5 py-1 text-[12px] font-semibold text-white transition-colors hover:bg-white/10"
+            >
+              <IconClose size={12} />
+              Masquer
+            </button>
+          </header>
+          {bandeauAxe}
+          {bandeauAnnonce}
+          <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain p-3">
+            {renderCarteConflit(confDetail, indexDetail >= 0 ? indexDetail : null)}
           </div>
-
-          <div className="flex items-center gap-1.5 shrink-0">
-            {/* Bouton discret Filtrer par route */}
-            {onOuvrirFiltreRoute && (
-              <button
-                type="button"
-                onClick={onOuvrirFiltreRoute}
-                title="Filtrer les conflits par axe routier"
-                className={`flex items-center gap-1 rounded-lg border px-2 py-1 text-[11px] font-semibold transition-all ${
-                  parametresRoute?.route
-                    ? 'border-gr-gold/60 bg-gr-gold/20 text-gr-gold font-bold'
-                    : 'border-white/15 bg-white/5 text-white/70 hover:bg-white/10 hover:text-white'
-                }`}
-              >
-                <IconRoute size={12} className="text-gr-gold" />
-                <span className="hidden sm:inline">Filtrer</span>
-                {parametresRoute?.route && (
-                  <span className="font-mono text-[9.5px]">({parametresRoute.route})</span>
-                )}
-              </button>
-            )}
-
+        </>
+      ) : (
+      <>
+      {/* EN-TÊTE : titre et « Masquer », rien d'autre */}
+      <header className="shrink-0 space-y-3 border-b border-white/10 px-4 pb-3 pt-3.5">
+        <div className="flex items-center justify-between gap-2">
+          <div className="min-w-0">
+            <h2 className="truncate text-[15px] font-bold text-white">
+              {estAdmin ? 'Conflits' : `Conflits à traiter (${compterATraiter(tousConflitsCombines, session)})`}
+            </h2>
+            <p className="truncate text-[11.5px] text-white/55">
+              {estAdmin ? 'Super Admin' : estRegion ? `CMD Région ${session?.unite ?? ''}` : `CMD CIE ${session?.unite ?? ''}`}
+            </p>
+          </div>
+          <div className="flex shrink-0 items-center gap-1">
             <button
               type="button"
               onClick={recharger}
-              title="Rafraîchir les données"
-              className="grid size-7 place-items-center rounded-lg text-white/50 hover:bg-white/10 hover:text-white transition-colors"
+              title="Actualiser la liste"
+              aria-label="Actualiser la liste"
+              className="grid size-8 place-items-center rounded-lg text-white/55 transition-colors hover:bg-white/10 hover:text-white"
             >
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
                 <path d="M3 3v5h5" />
                 <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16" />
@@ -971,267 +1199,132 @@ export default function PanneauConflitsLateral({
             <button
               type="button"
               onClick={fermer}
-              aria-label="Fermer le panneau et revenir à la carte"
-              title="Fermer et revenir à la carte"
-              className="flex items-center gap-1.5 rounded-xl border border-white/20 bg-white/10 px-3 py-1 text-[11.5px] font-bold text-white hover:bg-white/20 hover:border-white/30 transition-all shadow-sm active:scale-95 ml-1"
+              aria-label="Masquer le panneau des conflits"
+              className="flex items-center gap-1.5 rounded-lg border border-white/15 px-2.5 py-1.5 text-[12px] font-semibold text-white transition-colors hover:bg-white/10"
             >
               <IconClose size={13} />
-              <span>Fermer</span>
+              Masquer
             </button>
           </div>
         </div>
 
-        {/* Bannière de filtrage d'axe actif (si présent) */}
-        {parametresRoute?.route && (
-          <div className="flex flex-col gap-1.5 rounded-xl border border-sky-500/30 bg-sky-950/40 p-2 text-[10.5px] text-white">
-            <div className="flex items-center justify-between gap-1">
-              <div className="flex items-center gap-1.5 truncate">
-                <IconRoute size={12} className="text-sky-400 shrink-0" />
-                <span className="truncate">
-                  Axe : <b>{parametresRoute.route}</b> ({parametresRoute.distance} km)
-                </span>
-              </div>
-              <div className="flex items-center gap-1.5 shrink-0 ml-1">
-                <button
-                  type="button"
-                  onClick={onOuvrirFiltreRoute}
-                  className="font-bold text-sky-300 hover:text-sky-200 text-[10px] hover:underline"
-                >
-                  Modifier
-                </button>
-                {onEffacerFiltreRoute && (
+        {/* LES FILES — compteurs des files réelles */}
+        <div role="tablist" aria-label="Files des conflits" className="flex gap-1 rounded-xl bg-white/5 p-1">
+          {onglets.map((o) => {
+            const actif = ongletActif === o.cle;
+            return (
+              <button
+                key={o.cle}
+                type="button"
+                role="tab"
+                aria-selected={actif}
+                onClick={() => setOngletActif(o.cle)}
+                className={`flex min-w-0 flex-auto items-center justify-center gap-1 whitespace-nowrap rounded-lg px-1 py-1.5 text-[11px] font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-gr-primary ${
+                  actif ? 'bg-gr-card text-white shadow-sm' : 'text-white/60 hover:text-white'
+                }`}
+              >
+                <span className="truncate">{o.libelle}</span>
+                {o.total > 0 && (
+                  <span className={`rounded-full px-1 font-mono text-[9.5px] ${actif ? 'bg-gr-primary text-gr-primary-contrast' : 'bg-white/10 text-white/70'}`}>
+                    <ValeurAnimee valeur={o.total} classe="gr-compteur-change">{o.total}</ValeurAnimee>
+                  </span>
+                )}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Recherche ; filtres et axe routier repliés derrière un bouton */}
+        {ongletActif !== 'historique' && (
+          <div className="space-y-2">
+            <div className="flex items-center gap-1.5">
+              <input
+                type="search"
+                value={filtres.texte}
+                onChange={(e) => setFiltres((f) => ({ ...f, texte: e.target.value }))}
+                placeholder="Rechercher un barrage, une route…"
+                aria-label="Rechercher un conflit"
+                className="min-w-0 flex-1 rounded-lg border border-border-default bg-gr-card px-2.5 py-1.5 text-[12px] text-text-primary placeholder:text-text-muted focus:border-gr-primary focus:outline-none"
+              />
+              <button
+                type="button"
+                onClick={() => setFiltresOuverts((v) => !v)}
+                aria-expanded={filtresOuverts}
+                className={`shrink-0 rounded-lg border px-2.5 py-1.5 text-[11.5px] font-semibold ${filtresActifs || parametresRoute?.route ? 'border-gr-primary/50 bg-gr-primary/12 text-gr-primary' : 'border-border-default bg-gr-card text-text-secondary hover:bg-gr-hover'}`}
+              >
+                Filtres{filtresActifs || parametresRoute?.route ? ' •' : ''}
+              </button>
+            </div>
+            {filtresOuverts && (
+              <div className="grid grid-cols-2 gap-1.5 rounded-xl border border-border-default bg-gr-card/60 p-2">
+                <label className="text-[10.5px] text-text-muted">
+                  Région
+                  <select value={filtres.region} onChange={(e) => setFiltres((f) => ({ ...f, region: e.target.value }))} className="mt-0.5 w-full rounded-md border border-border-default bg-gr-card px-1.5 py-1 text-[11.5px] text-text-primary">
+                    <option value="">Toutes</option>
+                    {optionsFiltres.regions.map((r) => <option key={r} value={r}>{r}</option>)}
+                  </select>
+                </label>
+                <label className="text-[10.5px] text-text-muted">
+                  Compagnie
+                  <select value={filtres.compagnie} onChange={(e) => setFiltres((f) => ({ ...f, compagnie: e.target.value }))} className="mt-0.5 w-full rounded-md border border-border-default bg-gr-card px-1.5 py-1 text-[11.5px] text-text-primary">
+                    <option value="">Toutes</option>
+                    {optionsFiltres.cies.map((r) => <option key={r} value={r}>{r}</option>)}
+                  </select>
+                </label>
+                <label className="col-span-2 text-[10.5px] text-text-muted">
+                  État
+                  <select value={filtres.etat} onChange={(e) => setFiltres((f) => ({ ...f, etat: e.target.value }))} className="mt-0.5 w-full rounded-md border border-border-default bg-gr-card px-1.5 py-1 text-[11.5px] text-text-primary">
+                    <option value="">Tous</option>
+                    {Object.entries(LIBELLES_ETATS)
+                      .filter(([k]) => !['APPROVED', 'FOLLOW_UP', 'CLOSED'].includes(k))
+                      .map(([k, v]) => <option key={k} value={k}>{v}</option>)}
+                  </select>
+                </label>
+                <label className="text-[10.5px] text-text-muted">
+                  Du
+                  <input type="date" value={filtres.du} onChange={(e) => setFiltres((f) => ({ ...f, du: e.target.value }))} className="mt-0.5 w-full rounded-md border border-border-default bg-gr-card px-1.5 py-1 text-[11.5px] text-text-primary" />
+                </label>
+                <label className="text-[10.5px] text-text-muted">
+                  Au
+                  <input type="date" value={filtres.au} onChange={(e) => setFiltres((f) => ({ ...f, au: e.target.value }))} className="mt-0.5 w-full rounded-md border border-border-default bg-gr-card px-1.5 py-1 text-[11.5px] text-text-primary" />
+                </label>
+                {onOuvrirFiltreRoute && (
                   <button
                     type="button"
-                    onClick={onEffacerFiltreRoute}
-                    title="Effacer le filtre d'axe"
-                    className="rounded bg-white/10 hover:bg-white/20 px-1 py-0.2 text-[9.5px] text-white/80"
+                    onClick={onOuvrirFiltreRoute}
+                    className="col-span-2 flex items-center justify-center gap-1.5 rounded-md border border-border-default px-2 py-1 text-[11px] font-semibold text-text-secondary hover:bg-gr-hover"
                   >
-                    ✕
+                    <IconRoute size={12} />
+                    {parametresRoute?.route ? `Axe routier : ${parametresRoute.route}` : 'Filtrer par axe routier'}
+                  </button>
+                )}
+                {filtresActifs && (
+                  <button
+                    type="button"
+                    onClick={() => setFiltres({ texte: '', region: '', compagnie: '', etat: '', du: '', au: '' })}
+                    className="col-span-2 rounded-md border border-border-default px-2 py-1 text-[11px] font-semibold text-text-secondary hover:bg-gr-hover"
+                  >
+                    Réinitialiser
                   </button>
                 )}
               </div>
-            </div>
+            )}
 
-            {/* Sélecteur de sens Aller / Retour sur l'axe */}
-            <div className="flex items-center justify-between border-t border-sky-500/20 pt-1.5 text-[9.5px]">
-              <span className="text-white/60">Sens :</span>
-              <div className="flex items-center gap-1">
-                {[
-                  { id: SENS_TOUS, label: 'Tous' },
-                  { id: SENS_ALLER, label: 'Aller ➔' },
-                  { id: SENS_RETOUR, label: '⬅ Retour' },
-                ].map((s) => {
-                  const estChoisi = sensActif === s.id;
-                  return (
-                    <button
-                      key={s.id}
-                      type="button"
-                      disabled={!onChangerSensRoute}
-                      onClick={() => onChangerSensRoute?.(s.id)}
-                      className={`px-1.5 py-0.5 rounded font-bold transition-all ${
-                        estChoisi
-                          ? s.id === SENS_ALLER
-                            ? 'bg-sky-500 text-white shadow-sm'
-                            : s.id === SENS_RETOUR
-                            ? 'bg-amber-500 text-slate-950 shadow-sm'
-                            : 'bg-white/20 text-white'
-                          : 'bg-white/5 text-white/60 hover:bg-white/10 hover:text-white'
-                      }`}
-                    >
-                      {s.label}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
           </div>
         )}
-
-        {/* 2. LES FILES DU WORKFLOW — compteurs = files réelles du serveur */}
-        <div role="tablist" aria-label="Files des conflits" className="flex flex-wrap gap-1.5 pt-0.5 text-[11px] font-semibold">
-          <button
-            type="button"
-            role="tab"
-            aria-selected={ongletActif === 'non_assignes'}
-            onClick={() => setOngletActif('non_assignes')}
-            className={`flex items-center justify-center gap-1 rounded-xl border px-2 py-1.5 text-center transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gr-primary ${
-              ongletActif === 'non_assignes'
-                ? 'border-gr-gold bg-gr-gold font-extrabold text-gr-navy shadow-md'
-                : 'border-white/10 bg-white/5 text-white/70 hover:bg-white/10 hover:text-white'
-            }`}
-          >
-            <span>Les Conflits</span>
-            <span
-              className={`rounded-full px-1.5 font-mono text-[9.5px] ${
-                ongletActif === 'non_assignes' ? 'bg-gr-navy/30 font-bold text-gr-navy' : 'border border-amber-500/30 bg-amber-500/20 text-amber-300'
-              }`}
-            >
-              <ValeurAnimee valeur={totalNonAssignes} classe="gr-compteur-change">{totalNonAssignes}</ValeurAnimee>
-            </span>
-          </button>
-          <button
-            type="button"
-            role="tab"
-            aria-selected={ongletActif === 'en_attente'}
-            onClick={() => setOngletActif('en_attente')}
-            className={`flex items-center justify-center gap-1 rounded-xl border px-2 py-1.5 text-center transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gr-primary ${
-              ongletActif === 'en_attente'
-                ? 'border-gr-gold bg-gr-gold font-extrabold text-gr-navy shadow-md'
-                : 'border-white/10 bg-white/5 text-white/70 hover:bg-white/10 hover:text-white'
-            }`}
-          >
-            <span>À traiter</span>
-            <span
-              className={`rounded-full px-1.5 font-mono text-[9.5px] ${
-                ongletActif === 'en_attente' ? 'bg-gr-navy/30 font-bold text-gr-navy' : 'border border-sky-500/30 bg-sky-500/20 text-sky-300'
-              }`}
-            >
-              <ValeurAnimee valeur={totalEnAttente} classe="gr-compteur-change">{totalEnAttente}</ValeurAnimee>
-            </span>
-          </button>
-          <button
-            type="button"
-            role="tab"
-            aria-selected={ongletActif === 'a_valider'}
-            onClick={() => setOngletActif('a_valider')}
-            className={`flex items-center justify-center gap-1 rounded-xl border px-2 py-1.5 text-center transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gr-primary ${
-              ongletActif === 'a_valider'
-                ? 'border-gr-gold bg-gr-gold font-extrabold text-gr-navy shadow-md'
-                : 'border-white/10 bg-white/5 text-white/70 hover:bg-white/10 hover:text-white'
-            }`}
-          >
-            <span>À valider</span>
-            <span
-              className={`rounded-full px-1.5 font-mono text-[9.5px] ${
-                ongletActif === 'a_valider' ? 'bg-gr-navy/30 font-bold text-gr-navy' : 'border border-red-500/30 bg-red-500/20 text-red-300'
-              }`}
-            >
-              <ValeurAnimee valeur={totalAValider} classe="gr-compteur-change">{totalAValider}</ValeurAnimee>
-            </span>
-          </button>
-          <button
-            type="button"
-            role="tab"
-            aria-selected={ongletActif === 'suivi'}
-            onClick={() => setOngletActif('suivi')}
-            className={`flex items-center justify-center gap-1 rounded-xl border px-2 py-1.5 text-center transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gr-primary ${
-              ongletActif === 'suivi'
-                ? 'border-gr-gold bg-gr-gold font-extrabold text-gr-navy shadow-md'
-                : 'border-white/10 bg-white/5 text-white/70 hover:bg-white/10 hover:text-white'
-            }`}
-          >
-            <span>Suivi</span>
-            <span
-              className={`rounded-full px-1.5 font-mono text-[9.5px] ${
-                ongletActif === 'suivi' ? 'bg-gr-navy/30 font-bold text-gr-navy' : 'border border-white/15 bg-white/10 text-white/70'
-              }`}
-            >
-              <ValeurAnimee valeur={totalSuivi} classe="gr-compteur-change">{totalSuivi}</ValeurAnimee>
-            </span>
-          </button>
-          <button
-            type="button"
-            role="tab"
-            aria-selected={ongletActif === 'historique'}
-            onClick={() => setOngletActif('historique')}
-            className={`flex items-center justify-center gap-1 rounded-xl border px-2 py-1.5 text-center transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gr-primary ${
-              ongletActif === 'historique'
-                ? 'border-gr-gold bg-gr-gold font-extrabold text-gr-navy shadow-md'
-                : 'border-white/10 bg-white/5 text-white/70 hover:bg-white/10 hover:text-white'
-            }`}
-          >
-            <span>Historique</span>
-            <span
-              className={`rounded-full px-1.5 font-mono text-[9.5px] ${
-                ongletActif === 'historique' ? 'bg-gr-navy/30 font-bold text-gr-navy' : 'border border-emerald-500/30 bg-emerald-500/20 text-emerald-300'
-              }`}
-            >
-              <ValeurAnimee valeur={totalHistorique} classe="gr-compteur-change">{totalHistorique}</ValeurAnimee>
-            </span>
-          </button>
-        </div>
-
-        {/* Filtres : recherche, région, compagnie, état, période. */}
-        <div className="mt-2 space-y-1.5">
-          <div className="flex items-center gap-1.5">
-            <input
-              type="search"
-              value={filtres.texte}
-              onChange={(e) => setFiltres((f) => ({ ...f, texte: e.target.value }))}
-              placeholder="Rechercher (n°, poste, route)…"
-              aria-label="Rechercher un conflit"
-              className="min-w-0 flex-1 rounded-lg border border-border-default bg-gr-card px-2.5 py-1.5 text-[11.5px] text-text-primary placeholder:text-text-muted focus:border-gr-primary focus:outline-none"
-            />
-            <button
-              type="button"
-              onClick={() => setFiltresOuverts((v) => !v)}
-              aria-expanded={filtresOuverts}
-              className={`shrink-0 rounded-lg border px-2.5 py-1.5 text-[11px] font-semibold ${filtresActifs ? 'border-gr-primary/50 bg-gr-primary/12 text-gr-primary' : 'border-border-default bg-gr-card text-text-secondary hover:bg-gr-hover'}`}
-            >
-              Filtres{filtresActifs ? ' •' : ''}
-            </button>
-          </div>
-          {filtresOuverts && (
-            <div className="grid grid-cols-2 gap-1.5 rounded-xl border border-border-default bg-gr-card/60 p-2">
-              <label className="text-[10px] text-text-muted">
-                Région
-                <select value={filtres.region} onChange={(e) => setFiltres((f) => ({ ...f, region: e.target.value }))} className="mt-0.5 w-full rounded-md border border-border-default bg-gr-card px-1.5 py-1 text-[11px] text-text-primary">
-                  <option value="">Toutes</option>
-                  {optionsFiltres.regions.map((r) => <option key={r} value={r}>{r}</option>)}
-                </select>
-              </label>
-              <label className="text-[10px] text-text-muted">
-                Compagnie
-                <select value={filtres.compagnie} onChange={(e) => setFiltres((f) => ({ ...f, compagnie: e.target.value }))} className="mt-0.5 w-full rounded-md border border-border-default bg-gr-card px-1.5 py-1 text-[11px] text-text-primary">
-                  <option value="">Toutes</option>
-                  {optionsFiltres.cies.map((r) => <option key={r} value={r}>{r}</option>)}
-                </select>
-              </label>
-              <label className="col-span-2 text-[10px] text-text-muted">
-                État
-                <select value={filtres.etat} onChange={(e) => setFiltres((f) => ({ ...f, etat: e.target.value }))} className="mt-0.5 w-full rounded-md border border-border-default bg-gr-card px-1.5 py-1 text-[11px] text-text-primary">
-                  <option value="">Tous</option>
-                  {Object.entries(LIBELLES_ETATS).map(([k, v]) => <option key={k} value={k}>{v}</option>)}
-                </select>
-              </label>
-              <label className="text-[10px] text-text-muted">
-                Du
-                <input type="date" value={filtres.du} onChange={(e) => setFiltres((f) => ({ ...f, du: e.target.value }))} className="mt-0.5 w-full rounded-md border border-border-default bg-gr-card px-1.5 py-1 text-[11px] text-text-primary" />
-              </label>
-              <label className="text-[10px] text-text-muted">
-                Au
-                <input type="date" value={filtres.au} onChange={(e) => setFiltres((f) => ({ ...f, au: e.target.value }))} className="mt-0.5 w-full rounded-md border border-border-default bg-gr-card px-1.5 py-1 text-[11px] text-text-primary" />
-              </label>
-              {filtresActifs && (
-                <button
-                  type="button"
-                  onClick={() => setFiltres({ texte: '', region: '', compagnie: '', etat: '', du: '', au: '' })}
-                  className="col-span-2 rounded-md border border-border-default px-2 py-1 text-[10.5px] font-semibold text-text-secondary hover:bg-gr-hover"
-                >
-                  Effacer les filtres
-                </button>
-              )}
-            </div>
-          )}
-        </div>
       </header>
+      {bandeauAxe}
+      {bandeauAnnonce}
 
-      {/* 3. CORPS DE LISTE DES CONFLITS SELON L'ONGLET ACTIF */}
-      <div className="min-h-0 flex-1 overflow-y-auto p-3 space-y-3">
+      {/* LISTE DE LA FILE CHOISIE */}
+      <div className="min-h-0 flex-1 space-y-1.5 overflow-y-auto overscroll-contain p-2.5">
         {!charge && (
           <div role="status" aria-label="Chargement des conflits" className="space-y-2.5">
             {[0, 1, 2].map((i) => (
               <div key={i} className="space-y-2 rounded-2xl border border-border-default p-3">
-                <div className="flex justify-between gap-2">
-                  <span className="gr-squelette h-5 w-28" />
-                  <span className="gr-squelette h-5 w-24" />
-                </div>
+                <span className="gr-squelette block h-5 w-28" />
                 <span className="gr-squelette block h-4 w-3/4" />
-                <span className="gr-squelette block h-12 w-full" />
-                <div className="flex gap-2">
-                  <span className="gr-squelette h-7 flex-1" />
-                  <span className="gr-squelette h-7 w-20" />
-                </div>
+                <span className="gr-squelette block h-8 w-full" />
               </div>
             ))}
           </div>
@@ -1243,12 +1336,16 @@ export default function PanneauConflitsLateral({
           </div>
         )}
 
-        {charge && !erreur && (
+        {charge && !erreur && ongletActif === 'historique' && (
+          <HistoriqueConflits session={session} version={version} onVoirSurCarte={onVoirSurCarte} onRouvert={recharger} />
+        )}
+
+        {charge && !erreur && ongletActif !== 'historique' && (
           <>
-            {/* Barre de sélection multiple & actions groupées */}
-            {ongletActif !== 'historique' && conflitsOngletActif.length > 0 && (
-              <div className="flex items-center justify-between gap-2 rounded-xl border border-white/10 bg-white/5 p-2 px-2.5 text-[11px] mb-2">
-                <label className="flex items-center gap-2 font-medium cursor-pointer select-none min-w-0">
+            {/* Super Admin : sélection multiple et actions groupées, discrètes */}
+            {estAdmin && conflitsOngletActif.length > 0 && (
+              <div className="flex items-center justify-between gap-2 px-1 text-[11.5px]">
+                <label className="flex min-w-0 cursor-pointer select-none items-center gap-2 text-white/65">
                   <input
                     type="checkbox"
                     checked={tousSelectionnes}
@@ -1257,213 +1354,84 @@ export default function PanneauConflitsLateral({
                     }}
                     onChange={toggleSelectionnerTout}
                     aria-label="Sélectionner tous les conflits de cette liste"
-                    className="size-4 rounded border-white/30 bg-white/10 text-gr-gold focus:ring-gr-gold/50 cursor-pointer accent-gr-gold shrink-0"
+                    className="size-4 shrink-0 cursor-pointer accent-gr-primary"
                   />
-                  <span className="text-white/80 truncate">
-                    {selectionIdsDansOnglet.size > 0
-                      ? `${selectionIdsDansOnglet.size} / ${conflitsOngletActif.length} sélectionné(s)`
-                      : 'Sélectionner tout'}
+                  <span className="truncate">
+                    {selectionIdsDansOnglet.size > 0 ? `${selectionIdsDansOnglet.size} sélectionné(s)` : `${conflitsOngletActif.length} conflit(s)`}
                   </span>
                 </label>
-
-                {selectionIdsDansOnglet.size > 0 && (
-                  <div className="flex items-center gap-1.5 shrink-0 flex-wrap justify-end">
-                    <button
-                      type="button"
-                      onClick={deselectionnerTout}
-                      className="text-[10px] text-white/50 hover:text-white underline px-1 py-0.5"
-                    >
-                      Désélectionner
-                    </button>
-
-                    {estAdmin && (ongletActif === 'non_assignes' || ongletActif === 'en_attente') && (
-                      <button
-                        type="button"
-                        onClick={() => {
-                          const selectionnes = conflitsOngletActif.filter((c) =>
-                            selectionIds.has(c.id || c.numero || c.paireCle)
-                          );
-                          if (selectionnes.length > 0 && onAssigner) {
-                            onAssigner(selectionnes);
-                          }
-                        }}
-                        className="flex items-center gap-1 rounded-lg bg-gradient-to-r from-gr-gold to-amber-500 px-2.5 py-1 text-[10.5px] font-extrabold text-gr-navy shadow hover:brightness-110 active:scale-95 transition-all"
-                      >
-                        Assigner ({selectionIdsDansOnglet.size})
-                      </button>
-                    )}
-
-                    {estAdmin && (
-                      <button
-                        type="button"
-                        onClick={() => {
-                          const selectionnes = conflitsOngletActif.filter((c) =>
-                            selectionIds.has(c.id || c.numero || c.paireCle)
-                          );
-                          if (selectionnes.length > 0) {
-                            setConflitsASupprimerGroupe(selectionnes);
-                          }
-                        }}
-                        className="flex items-center gap-1 rounded-lg bg-red-600/80 hover:bg-red-600 border border-red-500/50 px-2 py-1 text-[10.5px] font-bold text-white shadow hover:brightness-110 active:scale-95 transition-all"
-                      >
-                        <IconPoubelle size={12} />
-                        <span>Supprimer ({selectionIdsDansOnglet.size})</span>
-                      </button>
-                    )}
-                  </div>
-                )}
-              </div>
-            )}
-            {/* ============================================================== */}
-            {/* VUE 1 : CONFLITS TRAITÉS (CMD Région / Cie / Superadmin)       */}
-            {/* ============================================================== */}
-            {ongletActif === 'a_valider' && (
-              <div className="space-y-2.5">
-                {conflitsAValider.length === 0 ? (
-                  <div className="rounded-xl border border-dashed border-white/10 p-6 text-center text-white/50 space-y-1">
-                    <p className="text-[13px] font-bold text-white/80">Aucun traitement à valider</p>
-                    <p className="text-[11px]">
-                      {estAdmin
-                        ? 'Les traitements soumis par les CMD Région et les CMD CIE apparaîtront ici pour validation.'
-                        : 'Vos traitements soumis, en attente de la validation du Super Admin, apparaîtront ici.'}
-                    </p>
-                  </div>
-                ) : (
-                  conflitsAValider.map((conf, idx) => envelopper(conf, renderCarteConflit(conf, idx)))
-                )}
-              </div>
-            )}
-
-            {ongletActif === 'suivi' && (
-              <div className="space-y-2.5">
-                {conflitsSuivi.length === 0 ? (
-                  <div className="rounded-xl border border-dashed border-white/10 p-6 text-center text-white/50 space-y-1">
-                    <p className="text-[13px] font-bold text-white/80">Aucun conflit en suivi</p>
-                    <p className="text-[11px]">Les conflits dont le traitement a été validé restent ici jusqu’à leur clôture.</p>
-                  </div>
-                ) : (
-                  conflitsSuivi.map((conf, idx) => envelopper(conf, renderCarteConflit(conf, idx)))
-                )}
-              </div>
-            )}
-
-            {ongletActif === 'historique' && (
-              <HistoriqueConflits session={session} version={version} onVoirSurCarte={onVoirSurCarte} onRouvert={recharger} />
-            )}
-
-            {/* ============================================================== */}
-            {/* VUE 2 : EN ATTENTE (Assignés mais non encore traités)           */}
-            {/* ============================================================== */}
-            {ongletActif === 'en_attente' && (
-              <div className="space-y-2.5">
-                {conflitsEnAttente.length === 0 ? (
-                  <div className="rounded-xl border border-dashed border-white/10 p-6 text-center text-white/50 space-y-1">
-                    <p className="text-[13px] font-bold text-white/80">Aucun conflit en attente</p>
-                    <p className="text-[11px]">
-                      Tous les conflits assignés ont été traités ou sont en attente d'assignation.
-                    </p>
-                  </div>
-                ) : (
-                  conflitsEnAttente.map((conf, idx) => envelopper(conf, renderCarteConflit(conf, idx)))
-                )}
-              </div>
-            )}
-
-            {/* ============================================================== */}
-            {/* VUE 3 : NON ASSIGNÉS (À arbitrer par Superadmin)                */}
-            {/* ============================================================== */}
-            {ongletActif === 'non_assignes' && (
-              <div className="space-y-2.5">
-                {/* Barre d'action groupée pour Superadmin si conflits non assignés */}
-                {estAdmin && conflitsNonAssignes.length > 0 && (
-                  <div className="flex items-center justify-between pb-1 text-[11px] text-white/60">
-                    <span>{totalNonAssignes} conflit(s) à arbitrer</span>
-                    <button
-                      type="button"
-                      disabled={assignationEnMasseEnCours}
-                      onClick={handleAssignerTout}
-                      title="Assigner automatiquement tous les conflits aux régions concernées"
-                      className="flex items-center gap-1 rounded-lg bg-gradient-to-r from-gr-gold to-amber-500 px-2.5 py-1 text-[11px] font-extrabold text-gr-navy shadow hover:brightness-110 active:scale-95 transition-all disabled:opacity-50"
-                    >
-                      {assignationEnMasseEnCours ? (
-                        <>
-                          <IconSpinner size={10} className="animate-spin" />
-                          <span>En cours…</span>
-                        </>
-                      ) : (
-                        <span>Assigner tout</span>
+                <div className="flex shrink-0 items-center gap-2">
+                  {selectionIdsDansOnglet.size > 0 ? (
+                    <>
+                      {(ongletActif === 'non_assignes' || ongletActif === 'en_attente') && onAssigner && (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            const selectionnes = conflitsOngletActif.filter((c) => selectionIds.has(c.id || c.numero || c.paireCle));
+                            if (selectionnes.length > 0) onAssigner(selectionnes);
+                          }}
+                          className="font-semibold text-gr-primary hover:underline"
+                        >
+                          Assigner
+                        </button>
                       )}
-                    </button>
-                  </div>
-                )}
+                      <button
+                        type="button"
+                        onClick={() => {
+                          const selectionnes = conflitsOngletActif.filter((c) => selectionIds.has(c.id || c.numero || c.paireCle));
+                          if (selectionnes.length > 0) setConflitsASupprimerGroupe(selectionnes);
+                        }}
+                        className="font-semibold text-red-300 hover:underline"
+                      >
+                        Supprimer
+                      </button>
+                      <button type="button" onClick={deselectionnerTout} className="text-white/50 hover:text-white">
+                        Annuler
+                      </button>
+                    </>
+                  ) : (
+                    ongletActif === 'non_assignes' && (
+                      <button
+                        type="button"
+                        disabled={assignationEnMasseEnCours}
+                        onClick={handleAssignerTout}
+                        title="Assigner chaque conflit au CMD Région concerné"
+                        className="flex items-center gap-1 font-semibold text-gr-primary hover:underline disabled:opacity-50"
+                      >
+                        {assignationEnMasseEnCours && <IconSpinner size={11} />}
+                        Assigner tout
+                      </button>
+                    )
+                  )}
+                </div>
+              </div>
+            )}
 
-                {conflitsNonAssignes.length === 0 ? (
-                  <div className="rounded-xl border border-dashed border-white/10 p-6 text-center text-white/50 space-y-1">
-                    <p className="text-[13px] font-bold text-white/80">Aucun conflit à assigner</p>
-                    <p className="text-[11px]">
-                      {estAdmin
-                        ? 'Les conflits détectés et pas encore assignés apparaissent ici.'
-                        : 'Les conflits non assignés sont gérés par le Super Admin : vous voyez ceux qui vous sont assignés.'}
-                    </p>
-                  </div>
-                ) : (
-                  conflitsNonAssignes.map((conf, idx) => envelopper(conf, renderCarteConflit(conf, idx)))
-                )}
+            {conflitsOngletActif.length === 0 ? (
+              <div className="space-y-1 rounded-xl border border-dashed border-white/10 p-6 text-center">
+                <p className="text-[13px] font-semibold text-white/80">{VIDES[ongletActif]?.[0]}</p>
+                <p className="text-[11.5px] text-white/55">{VIDES[ongletActif]?.[1]}</p>
+              </div>
+            ) : (
+              <div className="space-y-1">
+                {conflitsOngletActif.map((conf, idx) => envelopper(conf, renderLigneConflit(conf, idx)))}
               </div>
             )}
           </>
         )}
       </div>
+      </>
+      )}
 
-      {/* MODALE AGRANDIR COMPARATIF COMPLET */}
+      {/* COMPARATIF AVANT / APRÈS d'un traitement (ouvert depuis « Détails ») */}
       {conflitAgrandir && (
         <ModalComparatifAvantApres
           conflit={conflitAgrandir}
           session={session}
           onClose={() => setConflitAgrandir(null)}
           onApprouver={(c) => handleDecider(c, 'approuver')}
-          onRejeter={(c) => handleDecider(c, 'rejeter')}
+          onRejeter={(c) => setDemandesRejet((d) => ({ ...d, [c.id]: (d[c.id] ?? 0) + 1 }))}
           onVoirSurCarte={handleVoirSurCarte}
-        />
-      )}
-
-      {/* MODALE DE CONFIRMATION DE TRAITEMENT (Map First Experience) */}
-      {conflitEnConfirmation && (
-        <ModalConfirmationTraitement
-          conflit={conflitEnConfirmation}
-          session={session}
-          numeroAffiche={
-            indexConflitMap.get(conflitEnConfirmation.id) ||
-            (conflitEnConfirmation.paireCle && indexConflitMap.get(conflitEnConfirmation.paireCle)) ||
-            1
-          }
-          regionAffichee={getRegionConflit(conflitEnConfirmation)}
-          statutSimple={getStatutSimple(conflitEnConfirmation)}
-          onClose={() => setConflitEnConfirmation(null)}
-          onAssignerRegion={(c) => {
-            setConflitEnConfirmation(null);
-            onAssigner?.(c);
-          }}
-          onAssignerCie={(c) => {
-            setConflitEnConfirmation(null);
-            onTransmettre?.(c);
-          }}
-          onTraiterDirect={(c) => {
-            setConflitEnConfirmation(null);
-            handlePrendreEnChargeEtTraiter(c);
-          }}
-          onValiderAdmin={(c) => {
-            setConflitEnConfirmation(null);
-            handleDecider(c, 'approuver');
-          }}
-          onRejeterAdmin={(c, motif) => {
-            setConflitEnConfirmation(null);
-            handleDecider(c, 'rejeter', null, motif);
-          }}
-          onCloturerAdmin={(c) => {
-            setConflitEnConfirmation(null);
-            handleAction(c, 'cloturer');
-          }}
         />
       )}
 
@@ -1579,158 +1547,69 @@ export default function PanneauConflitsLateral({
           </div>
         </div>
       )}
-    </aside>
+    </div>
   );
 
   /**
-   * Résout les informations et permissions d'approbation d'un conflit traité :
-   * Workflow hiérarchique :
-   *   1. CMD Compagnie traite -> En attente validation CMD Région
-   *   2. CMD Région valide -> Transmis au Super Admin (En attente validation Super Admin)
-   *      CMD Région refuse -> Rejeté CMD Région (avec motif), renvoyé à la Compagnie
-   *   3. Super Admin valide -> Validé définitivement Super Admin (Résolu)
-   *      Super Admin refuse -> Rejeté Super Admin (avec motif), renvoyé pour correction
+   * UNE LIGNE DE LA LISTE — compacte : numéro, barrages, statut et à qui il
+   * est remis. Un clic montre le détail (et ses actions) à la place de la liste.
    */
-  function getStatutApprobationInfo(conf) {
-    /* Conflit enregistré : le serveur dit l'état et les actions permises. */
-    const w = conf.workflow;
-    if (w) {
-      /* État et droits DONNÉS PAR LE SERVEUR (serveur/workflowConflits.mjs) :
-         l'interface ne recalcule pas qui peut quoi. */
-      const ton = {
-        NEW: 'bg-white/10 text-white/70 border-white/20',
-        ASSIGNED_REGION: 'bg-amber-500/20 text-amber-300 border-amber-500/40',
-        ASSIGNED_CIE: 'bg-amber-500/20 text-amber-300 border-amber-500/40',
-        IN_PROGRESS_REGION: 'bg-sky-500/20 text-sky-300 border-sky-500/40',
-        IN_PROGRESS_CIE: 'bg-sky-500/20 text-sky-300 border-sky-500/40',
-        PENDING_VALIDATION: 'bg-violet-500/20 text-violet-300 border-violet-500/40',
-        REJECTED: 'bg-red-500/20 text-red-300 border-red-500/40',
-        APPROVED: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40',
-        FOLLOW_UP: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40',
-        CLOSED: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40',
-      }[w.etat] ?? 'bg-white/10 text-white/70 border-white/20';
-      const rejetPar = [...(conf.historique ?? [])].reverse().find((h) => h.action === 'rejeter')?.auteur;
-      const label = w.etat === 'PENDING_VALIDATION'
-        ? (w.actions?.valider ? '⏳ À valider par vous' : '⏳ En attente de validation (Super Admin)')
-        : w.etat === 'REJECTED'
-          ? `✕ ${w.libelle}`
-          : ['APPROVED', 'FOLLOW_UP', 'CLOSED'].includes(w.etat)
-            ? `✓ ${w.libelle}`
-            : `⏳ ${w.libelle}`;
-      return {
-        code: w.etat,
-        label,
-        classe: ton,
-        raison: w.motifRejet,
-        par: rejetPar?.nom || rejetPar?.unite || null,
-        peutValiderReg: false,
-        peutValiderAdmin: Boolean(w.actions?.valider),
-        peutRetraiter: w.etat === 'REJECTED' && Boolean(w.actions?.soumettre),
-        peutCloturer: Boolean(w.actions?.cloturer),
-      };
-    }
-    const app = conf.approbation || conf.traitement?.approbation;
-    const statutApp = app?.statut;
-    const valReg = app?.validationReg;
-    const valAdmin = app?.validationAdmin;
-    const auteurTraitement = conf.traitePar || conf.traitement?.auteur;
-    const traiteParRang = auteurTraitement?.rang;
-
-    // 1. Validé définitivement par le Super Admin
-    if (statutApp === 'approuve' || valAdmin?.statut === 'valide' || conf.statut === 'resolu') {
-      return {
-        code: 'approuve',
-        label: '✓ Validé Super Admin',
-        classe: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40',
-        peutValiderReg: false,
-        peutValiderAdmin: false,
-        peutRetraiter: false,
-      };
-    }
-
-    // 2. Rejeté par le Super Admin
-    if (statutApp === 'rejete_admin' || valAdmin?.statut === 'rejete') {
-      return {
-        code: 'rejete_admin',
-        label: '✕ Rejeté Super Admin',
-        classe: 'bg-red-500/20 text-red-300 border-red-500/40',
-        raison: valAdmin?.raison || app?.raison || conf.justification,
-        par: valAdmin?.par?.nom || 'Super Admin',
-        date: valAdmin?.date || app?.date,
-        peutValiderReg: false,
-        peutValiderAdmin: false,
-        peutRetraiter: estRegion || estCie,
-      };
-    }
-
-    // 3. Rejeté par le Commandant de Région
-    if (statutApp === 'rejete_reg' || valReg?.statut === 'rejete') {
-      return {
-        code: 'rejete_reg',
-        label: '✕ Rejeté CMD Région',
-        classe: 'bg-red-500/20 text-red-300 border-red-500/40',
-        raison: valReg?.raison || app?.raison || conf.justification,
-        par: valReg?.par?.nom || (valReg?.par?.unite ? `CMD Région ${valReg.par.unite}` : 'CMD Région'),
-        date: valReg?.date || app?.date,
-        peutValiderReg: false,
-        peutValiderAdmin: false,
-        peutRetraiter: estCie || estRegion,
-      };
-    }
-
-    // 4. Validé par le CMD Région -> Transmis et en attente validation Super Admin
-    if (statutApp === 'en_attente_admin' || valReg?.statut === 'valide' || traiteParRang === 'reg') {
-      return {
-        code: 'en_attente_admin',
-        label: estAdmin
-          ? '⏳ En attente validation Super Admin'
-          : estCie
-          ? '✓ Validé Région · En attente Super Admin'
-          : '⏳ Transmis Super Admin',
-        classe: 'bg-sky-500/20 text-sky-300 border-sky-500/40',
-        peutValiderReg: false,
-        peutValiderAdmin: estAdmin,
-        peutRetraiter: false,
-      };
-    }
-
-    // 5. Traité par la Compagnie -> En attente validation Région
-    if (statutApp === 'en_attente_reg' || traiteParRang === 'cie') {
-      return {
-        code: 'en_attente_reg',
-        label: estRegion ? '⏳ En attente de votre validation' : '⏳ En attente validation Région',
-        classe: 'bg-amber-500/20 text-amber-300 border-amber-500/40',
-        peutValiderReg: estRegion,
-        peutValiderAdmin: false,
-        peutRetraiter: false,
-      };
-    }
-
-    // Par défaut : en attente de validation
-    return {
-      code: 'en_attente',
-      label: '⏳ En attente validation',
-      classe: 'bg-amber-500/20 text-amber-300 border-amber-500/40',
-      peutValiderReg: false,
-      peutValiderAdmin: estAdmin,
-      peutRetraiter: false,
-    };
+  function renderLigneConflit(conf, index) {
+    const id = conf.id || conf.numero;
+    const bA = conf.a || conf.barrageA;
+    const bB = conf.b || conf.barrageB;
+    const numero =
+      indexConflitMap.get(id) || (conf.paireCle && indexConflitMap.get(conf.paireCle)) || (index != null ? index + 1 : 1);
+    const etat = etatListeConflit(conf, session);
+    const distance = Number(conf.distanceKm ?? conf.km ?? 0);
+    return (
+      <div className="flex items-stretch gap-1.5">
+        {estAdmin && (
+          <input
+            type="checkbox"
+            checked={selectionIds.has(id) || Boolean(conf.paireCle && selectionIds.has(conf.paireCle))}
+            onChange={() => toggleSelection(conf)}
+            aria-label={`Sélectionner le conflit ${numero}`}
+            className="mt-3 size-4 shrink-0 cursor-pointer accent-gr-primary"
+          />
+        )}
+        <button
+          type="button"
+          onClick={() => ouvrirDetail(conf)}
+          className="min-w-0 flex-1 rounded-xl border border-white/8 bg-white/[0.03] px-3 py-2 text-left transition-colors hover:border-white/20 hover:bg-white/[0.06] focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-gr-primary"
+        >
+          <span className="flex items-center justify-between gap-2">
+            <span className="text-[12.5px] font-bold text-white">Conflit {numero}</span>
+            <span className={`shrink-0 rounded-full border px-2 py-0.5 text-[10px] font-semibold ${BADGE_STATUT[etat.code] ?? BADGE_STATUT.a_traiter}`}>
+              {etat.libelle}
+            </span>
+          </span>
+          <span className="mt-0.5 flex min-w-0 items-center gap-1 text-[12px] text-white/85">
+            <span className="truncate">{bA?.nom || bA?.id || 'Barrage A'}</span>
+            <span aria-label="vers" className="shrink-0 text-white/35">→</span>
+            <span className="truncate">{bB?.nom || bB?.id || 'Barrage B'}</span>
+          </span>
+          <span className="mt-0.5 flex items-center justify-between gap-2 text-[11px] text-white/50">
+            <span className="truncate">{etat.assignation ?? getRegionConflit(conf)}</span>
+            {distance > 0 && <span className="shrink-0 font-mono">{distance.toLocaleString('fr-FR', { maximumFractionDigits: 1 })} km</span>}
+          </span>
+        </button>
+      </div>
+    );
   }
 
   /**
-   * NOUVEAU DESIGN ÉPURÉ — SIMPLIFICATION RADICALE DU MODULE CONFLITS
+   * UNE CARTE DE CONFLIT — ce qu'il faut pour décider, rien de plus :
    *
-   * Chaque conflit est présenté sous forme d'une carte très simple :
-   *   Conflit 1
+   *   Conflit 1                      [statut]
    *   Région Rabat
    *   Barrage A → Barrage B
    *   Distance routière : 13,1 km
+   *   (à qui il est assigné, s'il l'est)
+   *   [Voir sur carte] [action du rôle]
    *
-   * Deux boutons uniquement :
-   *   - Voir sur carte
-   *   - Traiter
-   *
-   * Détails techniques masqués par défaut et accessibles via [▼ Détails].
+   * Identifiants, seuil, état technique, parcours et suppression : sous
+   * « Détails ».
    */
   function renderCarteConflit(conf, index) {
     const id = conf.id || conf.numero;
@@ -1741,28 +1620,23 @@ export default function PanneauConflitsLateral({
     const distance = Number(conf.distanceKm ?? conf.km ?? 0);
     const estVise = conflitActuel && (conflitActuel.id === id || conflitActuel.numero === id);
     const detailsOuvert = Boolean(detailsOuverts[id]);
-
     const numeroAffiche =
       indexConflitMap.get(id) ||
       (conf.paireCle && indexConflitMap.get(conf.paireCle)) ||
       (index != null ? index + 1 : 1);
-    const titreAffiche = `Conflit ${numeroAffiche}`;
-    const regionAffichee = getRegionConflit(conf);
-    const statutSimple = getStatutSimple(conf);
+    const statut = etatListeConflit(conf, session);
+    const aUnTraitement = Boolean(conf.changement || conf.traitement);
 
     return (
       <article
         key={id}
         ref={(el) => (cardRefs.current[id] = el)}
-        className={`rounded-2xl border p-4 space-y-3 transition-all ${
-          estVise
-            ? 'border-gr-gold bg-gr-gold/15 shadow-xl ring-1 ring-gr-gold/50'
-            : 'border-white/10 bg-white/5 hover:border-white/20 hover:bg-white/[0.07]'
+        className={`space-y-2.5 rounded-2xl border p-3.5 transition-colors ${
+          estVise ? 'border-gr-gold bg-gr-gold/10 ring-1 ring-gr-gold/40' : 'border-white/10 bg-white/[0.03] hover:border-white/20'
         }`}
       >
-        {/* Ligne 1 : Titre "Conflit N" + Statut simple (À traiter | En cours | Traité) */}
         <div className="flex items-center justify-between gap-2">
-          <div className="flex items-center gap-2 min-w-0">
+          <div className="flex min-w-0 items-center gap-2">
             {estAdmin && (
               <input
                 type="checkbox"
@@ -1772,124 +1646,104 @@ export default function PanneauConflitsLateral({
                   toggleSelection(conf);
                 }}
                 aria-label={`Sélectionner le conflit ${numeroAffiche}`}
-                className="size-4 rounded border-white/30 bg-white/10 text-gr-gold focus:ring-gr-gold/50 cursor-pointer accent-gr-gold shrink-0"
+                className="size-4 shrink-0 cursor-pointer accent-gr-primary"
               />
             )}
-            <span className="text-base font-extrabold text-white tracking-wide">
-              {titreAffiche}
-            </span>
+            <h3 className="text-[14px] font-bold text-white">Conflit {numeroAffiche}</h3>
           </div>
-
-          <span className={`rounded-full px-2.5 py-0.5 text-[10.5px] font-bold border shrink-0 ${statutSimple.badgeClasse}`}>
-            {statutSimple.label}
+          <span className={`shrink-0 rounded-full border px-2 py-0.5 text-[10.5px] font-semibold ${BADGE_STATUT[statut.code]}`}>
+            {statut.libelle}
           </span>
         </div>
 
-        {/* Ligne 2 : Région concernée */}
-        <div className="text-xs font-semibold text-gr-gold flex items-center gap-1.5">
-          <span>📍</span>
-          <span>{regionAffichee}</span>
-        </div>
+        <dl className="space-y-1 text-[12.5px]">
+          <dt className="sr-only">Région</dt>
+          <dd className="font-medium text-white/70">{getRegionConflit(conf)}</dd>
+          <dt className="sr-only">Barrages</dt>
+          <dd className="flex min-w-0 items-center gap-1.5 font-semibold text-white">
+            <span className="truncate" title={nomA}>{nomA}</span>
+            <span aria-label="vers" className="shrink-0 text-white/40">→</span>
+            <span className="truncate" title={nomB}>{nomB}</span>
+          </dd>
+          <dd className="text-white/70">
+            Distance routière : <b className="font-semibold text-white">{distance.toLocaleString('fr-FR', { minimumFractionDigits: 1, maximumFractionDigits: 1 })} km</b>
+          </dd>
+        </dl>
 
-        {/* Ligne 3 : Barrage A → Barrage B */}
-        <div className="flex items-center gap-2 text-[13px] font-medium text-white/95 bg-black/40 border border-white/5 rounded-xl px-3 py-2.5">
-          <span className="truncate font-semibold">{nomA}</span>
-          <span className="text-gr-gold font-extrabold text-sm shrink-0">→</span>
-          <span className="truncate font-semibold">{nomB}</span>
-        </div>
+        <ActionsConflit
+          conf={conf}
+          session={session}
+          onAction={executerAction}
+          onVoirSurCarte={(c) => handleVoirSurCarte(c, null, 'comparer')}
+          enCours={actionEnCours === conf.id}
+          erreur={erreurAction?.id === conf.id ? erreurAction.message : null}
+          demandeRejet={demandesRejet[conf.id] ?? 0}
+        />
 
-        {/* Ligne 4 : Distance routière */}
-        <div className="flex items-center justify-between text-xs px-0.5 text-white/70">
-          <span className="text-white/50">Distance routière :</span>
-          <span className="font-mono font-bold text-red-300 text-sm">
-            {distance.toFixed(1)} km
-          </span>
-        </div>
-
-        {/* Ligne 5 : Deux boutons uniquement : Voir sur carte & Traiter */}
-        <div className="pt-1 flex items-center gap-2" onClick={(e) => e.stopPropagation()}>
+        <div className="border-t border-white/5 pt-1.5">
           <button
             type="button"
-            onClick={(e) => handleVoirSurCarte(conf, e, 'comparer')}
-            className="flex-1 flex items-center justify-center gap-1.5 rounded-xl border border-white/20 bg-white/10 hover:bg-white/20 py-2.5 text-xs font-bold text-white transition-all active:scale-95 shadow-sm cursor-pointer"
-            title="Fermer le panneau et centrer la carte sur ce conflit"
-          >
-            <IconTerritoire size={14} className="text-gr-gold" />
-            <span>Voir sur carte</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={(e) => {
-              e.stopPropagation();
-              setConflitEnConfirmation(conf);
-            }}
-            className="flex-1 flex items-center justify-center gap-1.5 rounded-xl bg-gradient-to-r from-gr-gold to-amber-500 hover:brightness-110 py-2.5 text-xs font-extrabold text-gr-navy transition-all active:scale-95 shadow-md cursor-pointer"
-            title="Ouvrir la confirmation et traiter ce conflit"
-          >
-            <span>Traiter</span>
-          </button>
-        </div>
-
-        {/* Section secondaire repliable : Détails techniques */}
-        <div className="pt-1 border-t border-white/5" onClick={(e) => e.stopPropagation()}>
-          <button
-            type="button"
+            aria-expanded={detailsOuvert}
             onClick={() => toggleDetails(id)}
-            className="text-[10px] text-white/40 hover:text-white/70 flex items-center gap-1 cursor-pointer transition-colors"
+            className="text-[11px] font-medium text-white/50 transition-colors hover:text-white/80"
           >
-            <span>{detailsOuvert ? '▲ Masquer les détails techniques' : '▼ Détails techniques'}</span>
+            {detailsOuvert ? 'Masquer les détails' : 'Détails'}
           </button>
 
           {detailsOuvert && (
-            <div className="mt-2 rounded-xl bg-black/40 border border-white/5 p-3 space-y-1.5 text-[10.5px] text-white/70 animate-in fade-in duration-150">
-              <div className="flex justify-between">
-                <span className="text-white/40">ID technique :</span>
-                <span className="font-mono text-white/80 select-all">{id}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-white/40">Axe routier :</span>
-                <span className="font-mono text-amber-300">{conf.route || bA?.route || bB?.route || '—'}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-white/40">Seuil réglementaire :</span>
-                <span className="font-mono">{conf.seuilKm || 20} km</span>
-              </div>
-              {conf.assigneA && (
-                <div className="flex justify-between">
-                  <span className="text-white/40">Délégué région :</span>
-                  <span className="font-semibold text-sky-300">{conf.assigneA.unite || conf.assigneA.nom}</span>
-                </div>
+            <div className="mt-2 space-y-2.5 rounded-xl border border-white/5 bg-black/20 p-2.5 text-[11px] text-white/70">
+              <dl className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1">
+                <dt className="text-white/45">Référence</dt>
+                <dd className="select-all truncate font-mono text-white/80">{conf.numero && conf.numero !== id ? `${conf.numero} · ${id}` : id}</dd>
+                <dt className="text-white/45">Axe routier</dt>
+                <dd className="font-mono">{conf.route || bA?.route || bB?.route || '—'}</dd>
+                <dt className="text-white/45">Seuil</dt>
+                <dd>{conf.seuilKm || 20} km</dd>
+                {conf.workflow?.etat && (
+                  <>
+                    <dt className="text-white/45">État</dt>
+                    <dd>{LIBELLES_ETATS[conf.workflow.etat] ?? conf.workflow.etat}</dd>
+                  </>
+                )}
+                {conf.assignation?.assignePar && (
+                  <>
+                    <dt className="text-white/45">Assigné par</dt>
+                    <dd>
+                      {auteurAssignation(conf)}
+                      {conf.assignation.assigneLe
+                        ? ` · ${new Date(conf.assignation.assigneLe).toLocaleString('fr-FR', { dateStyle: 'short', timeStyle: 'short' })}`
+                        : ''}
+                    </dd>
+                  </>
+                )}
+                {conf.workflow?.responsable && (
+                  <>
+                    <dt className="text-white/45">Responsable</dt>
+                    <dd>{conf.workflow.responsable.rang === 'cie' ? 'CMD CIE' : 'CMD Région'} {conf.workflow.responsable.unite}</dd>
+                  </>
+                )}
+              </dl>
+              {aUnTraitement && (
+                <button
+                  type="button"
+                  onClick={() => setConflitAgrandir(conf)}
+                  className="font-semibold text-gr-primary hover:underline"
+                >
+                  Comparer avant / après le traitement
+                </button>
               )}
-              {conf.assigneCie && (
-                <div className="flex justify-between">
-                  <span className="text-white/40">Délégué compagnie :</span>
-                  <span className="font-semibold text-sky-300">{conf.assigneCie.unite || conf.assigneCie.nom}</span>
-                </div>
-              )}
-              {conf.traitePar && (
-                <div className="flex justify-between">
-                  <span className="text-white/40">Traité par :</span>
-                  <span className="font-semibold text-emerald-300">{conf.traitePar.nom || 'Commandement'}</span>
-                </div>
-              )}
-              {conf.workflow?.etat && (
-                <div className="flex justify-between">
-                  <span className="text-white/40">Statut technique :</span>
-                  <span className="font-mono text-[9.5px] text-white/60">{conf.workflow.etat}</span>
-                </div>
-              )}
-              {conf.refus?.raison && (
-                <div className="p-2 rounded-lg bg-red-500/10 border border-red-500/20 text-red-300 text-[10px]">
-                  <b>Motif rejet :</b> « {conf.refus.raison} »
+              {conf.historique?.length > 0 && (
+                <div className="space-y-1.5">
+                  <p className="font-semibold text-white/60">Actions effectuées</p>
+                  <ChronologieConflit conf={conf} />
                 </div>
               )}
               {peutSupprimer(conf) && (
-                <div className="pt-1.5 flex justify-end">
+                <div className="flex justify-end">
                   <button
                     type="button"
                     onClick={() => setConflitASupprimer(conf)}
-                    className="text-[10.5px] font-semibold text-red-400 hover:text-red-300 underline cursor-pointer"
+                    className="font-semibold text-red-300 hover:underline"
                   >
                     Supprimer ce conflit
                   </button>
@@ -1901,8 +1755,6 @@ export default function PanneauConflitsLateral({
       </article>
     );
   }
-
-
 }
 
 /** Libellés des états du workflow (serveur/workflowConflits.mjs). */
@@ -1915,7 +1767,7 @@ const LIBELLES_ETATS = {
   PENDING_VALIDATION: 'À valider',
   REJECTED: 'Rejeté — à corriger',
   APPROVED: 'Validé',
-  FOLLOW_UP: 'En suivi',
+  FOLLOW_UP: 'Validé',
   CLOSED: 'Clôturé',
 };
 const LIBELLES_ACTIONS = {

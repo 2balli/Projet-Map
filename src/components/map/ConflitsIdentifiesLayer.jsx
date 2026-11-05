@@ -260,6 +260,9 @@ export function FicheConflit({
   const route = c.route || c.a?.route || c.b?.route || 'Axe routier';
   const faction = c.factionLibelle || (c.factions?.length ? c.factions.join(' · ') : 'Toutes factions');
   const motif = c.motif || (dist > 0 ? `Distance routière de ${kmConflit(dist)} inférieure au seuil réglementaire (${seuilKm ?? 20} km).` : 'Conflit de proximité');
+  /* À qui il est déjà remis : l'état enregistré (retrouvé par sa paire à chaque
+     optimisation), à défaut l'assignation faite à l'instant dans cette page. */
+  const dejaAssigne = c.dejaAssigne || (c.assigneA?.unite ? `CMD Région ${c.assigneA.unite}` : null);
 
   const poste = (e, lettre) => (
     <div className="flex-1 min-w-0">
@@ -287,9 +290,13 @@ export function FicheConflit({
           <span className="rounded bg-green-500/20 px-2 py-0.5 text-[10px] font-bold text-green-300 border border-green-500/30">
             ✓ Résolu
           </span>
-        ) : c.assigneA ? (
-          <span className="rounded bg-sky-400/20 px-2 py-0.5 text-[10px] font-bold text-sky-300 border border-sky-400/30 truncate max-w-[170px]" title={`Assigné au CMND Région ${c.assigneA.unite}`}>
-            Assigné : Région {c.assigneA.unite}
+        ) : c.dejaTraite ? (
+          <span className="rounded bg-emerald-500/20 px-2 py-0.5 text-[10px] font-bold text-emerald-300 border border-emerald-500/30" title="Traité et approuvé — voir l’Historique">
+            ✓ Déjà traité
+          </span>
+        ) : dejaAssigne ? (
+          <span className="rounded bg-sky-400/20 px-2 py-0.5 text-[10px] font-bold text-sky-300 border border-sky-400/30 truncate max-w-[190px]" title={`Assigné à ${dejaAssigne} — en attente de traitement`}>
+            ✓ Assigné à {dejaAssigne}
           </span>
         ) : (
           <span className="rounded bg-amber-500/20 px-2 py-0.5 text-[10px] font-bold text-amber-300 border border-amber-500/30">
@@ -373,22 +380,18 @@ export function FicheConflit({
         </div>
       </div>
 
-      {/* Informations de suivi si assigné */}
-      {c.assigneA && (
+      {/* DÉJÀ ASSIGNÉ — en attente de traitement : ni nouvel « Assigner », ni doublon. */}
+      {dejaAssigne && !resolu && (
         <div className="rounded-xl border border-sky-400/30 bg-sky-500/10 p-2 text-[11px] text-sky-200">
           <div className="flex items-center justify-between font-semibold">
-            <span>Assigné au CMND Région {c.assigneA.unite}</span>
+            <span>Assigné à {dejaAssigne}</span>
             {c.assigneLe && (
               <span className="text-[10px] text-white/50 font-normal">
                 {quand(c.assigneLe)}
               </span>
             )}
           </div>
-          {c.assigneA.nom && (
-            <div className="text-[10px] text-white/60 mt-0.5">
-              Responsable : {c.assigneA.nom} ({c.assigneA.matricule})
-            </div>
-          )}
+          <div className="text-[10px] text-white/60 mt-0.5">En attente de traitement.</div>
         </div>
       )}
 
@@ -411,8 +414,9 @@ export function FicheConflit({
           ))}
         </div>
 
-        {/* Action Assigner le conflit pour le Super Admin (au CMD Région) */}
-        {estAdmin && !resolu && onAssigner && (
+        {/* Action Assigner le conflit pour le Super Admin (au CMD Région
+            concerné) — pas pour un conflit déjà assigné. */}
+        {estAdmin && !resolu && !dejaAssigne && !c.dejaTraite && onAssigner && (
           <button
             type="button"
             onClick={(e) => {

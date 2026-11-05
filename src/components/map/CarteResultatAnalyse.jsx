@@ -22,7 +22,7 @@ const DUREE_AUCUN = 9000;
  * décaler, et c'est la gauche — l'Atlantique — qui reste libre ; à droite,
  * la carte cachait les conflits du nord (Rabat, Kénitra…).
  */
-export default function CarteResultatAnalyse({ analyse, onVoir, onFermer, onReessayer }) {
+export default function CarteResultatAnalyse({ analyse, onVoir, onFermer, onReessayer, gauche = 88 }) {
   const etat = analyse?.etat;
   const visible = etat === 'conflits' || etat === 'aucun' || etat === 'erreur';
   const presence = usePresence(visible);
@@ -42,7 +42,9 @@ export default function CarteResultatAnalyse({ analyse, onVoir, onFermer, onRees
   if (!presence.monte) return null;
   const a = dernier.current;
   const conflits = a?.conflits ?? [];
-  const pied = `Axe ${a?.route} · seuil ≤ ${a?.distance} km${a?.paires != null ? ` · ${a.barrages} barrage${a.barrages > 1 ? 's' : ''}, ${a.paires.toLocaleString('fr-FR')} paire${a.paires > 1 ? 's' : ''} analysée${a.paires > 1 ? 's' : ''}` : ''}`;
+  /* `libelle` : le mode (« Axe RN1 », « Optimisation par paramètres »…). */
+  const nomCalcul = a?.libelle ?? `Axe ${a?.route}`;
+  const pied = `${nomCalcul} · seuil ≤ ${a?.distance} km${a?.paires != null ? ` · ${a.barrages} barrage${a.barrages > 1 ? 's' : ''}, ${a.paires.toLocaleString('fr-FR')} paire${a.paires > 1 ? 's' : ''} analysée${a.paires > 1 ? 's' : ''}` : ''}`;
   /* Couleurs du thème actif : alerte, succès, avertissement. */
   const couleur = { conflits: 'var(--gr-conflit)', aucun: 'var(--tone-ok)', erreur: 'var(--tone-warn)' }[a?.etat];
 
@@ -55,7 +57,7 @@ export default function CarteResultatAnalyse({ analyse, onVoir, onFermer, onRees
       onMouseLeave={() => setFige(false)}
       className="pointer-events-auto absolute z-[1150] w-[350px] max-w-[calc(100vw-2rem)] rounded-xl border border-border-default bg-gr-navy p-3 shadow-panel"
       data-depuis="gauche"
-      style={{ top: 'calc(10rem + var(--gr-bandeau, 0px))', left: 88, borderLeft: `3px solid ${couleur}` }}
+      style={{ top: 'calc(10rem + var(--gr-bandeau, 0px))', left: gauche, borderLeft: `3px solid ${couleur}` }}
     >
       <div className="flex items-start gap-2.5">
         {a?.etat === 'aucun' ? (
@@ -87,7 +89,7 @@ export default function CarteResultatAnalyse({ analyse, onVoir, onFermer, onRees
               <p className="text-[11.5px] text-text-secondary">{a.message}</p>
             </>
           )}
-          <p className="mt-0.5 text-[10.5px] text-text-muted">{a?.etat === 'erreur' ? `Axe ${a?.route} · seuil ≤ ${a?.distance} km — aucun résultat n’a été affiché.` : pied}</p>
+          <p className="mt-0.5 text-[10.5px] text-text-muted">{a?.etat === 'erreur' ? `${nomCalcul} · seuil ≤ ${a?.distance} km — aucun résultat n’a été affiché.` : pied}</p>
         </div>
         <button
           type="button"

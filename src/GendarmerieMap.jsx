@@ -7,6 +7,7 @@ import {
   GeoJSON,
   Marker,
   Circle,
+  CircleMarker,
   Polyline,
   Popup,
   Tooltip,
@@ -27,7 +28,6 @@ import ConflitAnalysePanel from './components/ConflitAnalysePanel.jsx';
 import DemandeApprovalPanel from './components/DemandeApprovalPanel.jsx';
 import {
   ARCHIVE_FOND,
-  FOND_OPTIONS,
   INITIAL_VIEW,
   BORNES_MAROC,
   PROXIMITY_KM,
@@ -45,24 +45,26 @@ import {
   MARQUAGE_LAYERS,
   ALL_LAYERS,
 } from './layersConfig.js';
+
+/** Couches proposées dans « Filtres » (le panneau des couches n'a plus d'entrée propre). */
+const COUCHES_FILTRES = [...CIRCO_LAYERS, ...POINT_LAYERS];
 import SidePanel from './SidePanel.jsx';
 import AnalysisPanel from './AnalysisPanel.jsx';
 import MarquagePanel, { PointNoirModal } from './MarquagePanel.jsx';
 import { MessageFlottant } from './Parcours.jsx';
 import DistancePanel from './DistancePanel.jsx';
 import OptimisationPanel from './OptimisationPanel.jsx';
-import OngletsOptimisation from './components/map/OngletsOptimisation.jsx';
 import Modal3D from './Modal3D.jsx';
 import ConflitsIdentifiesLayer from './components/map/ConflitsIdentifiesLayer.jsx';
-import PanneauConflitIsole from './components/map/PanneauConflitIsole.jsx';
-import ModalConfirmationTraitement from './components/map/ModalConfirmationTraitement.jsx';
 import ModalAssignerConflit from './components/map/ModalAssignerConflit.jsx';
 import ModalTransmettreCie from './components/map/ModalTransmettreCie.jsx';
+import CarteReevaluation from './components/map/CarteReevaluation.jsx';
 import ModalTraiterConflit from './components/map/ModalTraiterConflit.jsx';
 import PanneauConflitsLateral from './components/map/PanneauConflitsLateral.jsx';
 import ModalFiltrerParRoute from './components/map/ModalFiltrerParRoute.jsx';
 import BarreComparatifAvantApresCarte from './components/map/BarreComparatifAvantApresCarte.jsx';
 import { canonicalRouteId, clePaire } from './conflitsIdentifies.js';
+import { compterATraiter, libelleAssignation, rapprocherConflitsEnregistres } from './actionsConflit.js';
 import {
   obtenirDirectionBarrage,
   libelleDirection,
@@ -82,12 +84,14 @@ import {
   NavigationRail,
   TerritorialBreadcrumb,
   ContextSummary,
-  MapControlDock,
   MapFilters,
   FactionFilter,
   MapStateNotice,
   BarrageStatFilter,
   MenuFiltresUnifie,
+  MenuOptimisation,
+  MenuOutilsCarte,
+  nombreOptimisationsActives,
 } from './components/command-center/index.js';
 import {
   StatistiquesCarte,
@@ -226,9 +230,6 @@ function useGeoJsonStore() {
 /* Rendu des entités                                                  */
 /* ================================================================== */
 
-const num = (v) =>
-  typeof v === 'number' ? v.toLocaleString('fr-FR', { maximumFractionDigits: 0 }) : '—';
-
 /**
  * Nom lisible d'un contour, quelle que soit la couche :
  * `nom` est posé au build sur les contours régionaux et de compagnie,
@@ -263,26 +264,17 @@ const trouverContour = (fc, nom) => {
   return features.find((f) => nomCirco(f.properties) === nom) ?? approchant ?? null;
 };
 
-/** Popup compacte : la fiche complète est dans le panneau d'analyse. */
-const circoPopupHtml = (p) => {
-  const lignes = [
-    p.reg && `<tr><td>Région</td><td>${p.reg}</td></tr>`,
-    p.gr_cie && `<tr><td>Compagnie</td><td>${p.gr_cie}</td></tr>`,
-    p.gr_region && `<tr><td>Région</td><td>${p.gr_region}</td></tr>`,
-    p.nbBt != null && `<tr><td>Brigades</td><td>${num(p.nbBt)}</td></tr>`,
-    p.nbCie > 1 && `<tr><td>Compagnies</td><td>${num(p.nbCie)}</td></tr>`,
-    p.population != null && `<tr><td>Population</td><td>${num(p.population)} hab.</td></tr>`,
-    p.superficie != null && `<tr><td>Superficie</td><td>${num(p.superficie)} km²</td></tr>`,
-  ]
-    .filter(Boolean)
-    .join('');
-
-  return `
-    <div class="gr-popup">
-      <h4>${nomCirco(p) ?? 'Circonscription'}</h4>
-      <table class="gr-tbl">${lignes}</table>
-    </div>`;
-};
+/**
+ * LA PETITE BULLE D'UNE RÉGION (ou compagnie, brigade) — après un double-clic :
+ * le nom, l'échelon, et deux ou trois chiffres utiles. Pas de tableau.
+ */
+const echapperHtml = (v) => String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+const bulleCirconscription = ({ echelon, nom, lignes }) => `
+  <div class="gr-bulle-circo">
+    <span class="gr-bulle-circo-tag">${echapperHtml(echelon)}</span>
+    <strong class="gr-bulle-circo-nom">${echapperHtml(nom)}</strong>
+    ${lignes.filter(Boolean).map((l) => `<span class="gr-bulle-circo-ligne">${echapperHtml(l)}</span>`).join('')}
+  </div>`;
 
 /** Thème courant, lu sur <html> (voir src/theme.js) : défaut des couches sans prop. */
 const themeDocument = () => themeInitial();
@@ -339,6 +331,7 @@ function Casing({ data, weight, pane, theme = themeDocument() }) {
 function CircoLayer({
   cfg, data, selection, onSelect, outilArme, pane, attenue = false,
   autorise = () => true, onRefus = () => { }, bornesRetour = null, theme = 'dark',
+  onEntrer = null,
 }) {
   const map = useMap();
   const ref = useRef(null);
@@ -364,6 +357,9 @@ function CircoLayer({
   bornesRef.current = bornesRetour;
   const themeRef = useRef(theme);
   themeRef.current = theme;
+  /* Double-clic : entrer dans l'entité (lu par référence, comme les autres). */
+  const entrerRef = useRef(onEntrer);
+  entrerRef.current = onEntrer;
 
   const selectionne = selection?.couche === cfg.key ? selection.nom : null;
 
@@ -420,7 +416,8 @@ function CircoLayer({
         return;
       }
 
-      layer.bindPopup(circoPopupHtml(p));
+      /* Plus de bulle de détails au clic : le double-clic entre dans l'entité
+         et montre une petite bulle (voir `entrerCirconscription`). */
 
       const isReg = cfg.key === 'circo_reg';
       const isCie = cfg.key === 'circo_cie';
@@ -480,9 +477,15 @@ function CircoLayer({
           }
         },
         dblclick: (e) => {
-          // Double-clic : zoom / cadrage sur la circonscription
+          /* Double-clic : ENTRER dans la circonscription — cadrage adapté,
+             contour, fil d'Ariane, et une petite bulle. Repli : le cadrage seul. */
           L.DomEvent.stopPropagation(e);
           L.DomEvent.preventDefault(e);
+          if (armeRef.current) return;
+          if (entrerRef.current) {
+            entrerRef.current({ couche: cfg.key, nom, properties: p, latlng: e.latlng });
+            return;
+          }
           const bounds = e.target.getBounds();
           if (bounds && bounds.isValid()) {
             map.fitBounds(bounds, { padding: [48, 48], maxZoom: 12 });
@@ -821,6 +824,21 @@ const MONDE = turf.polygon([
  * motion`) : la bascule est alors immédiate, ce qui reste juste — le fondu
  * est un confort de lecture, pas une information.
  */
+/**
+ * VOLET DE LA SÉLECTION DE POSITION — le seul, avec le fond de carte, qui
+ * reste visible pendant le choix d'une nouvelle position (déplacement d'un
+ * barrage) : voir `[data-gr-selection-position]` dans index.css. Les autres
+ * couches sont masquées, jamais retirées.
+ */
+const PANE_SELECTION = 'gr-selection';
+function VoletSelection() {
+  const map = useMap();
+  useEffect(() => {
+    if (!map.getPane(PANE_SELECTION)) map.createPane(PANE_SELECTION).style.zIndex = '660';
+  }, [map]);
+  return null;
+}
+
 function VoletsLimites() {
   const map = useMap();
 
@@ -1232,17 +1250,20 @@ function ecartMetres(aLat, aLng, bLat, bLng) {
  * RIEN N'EST ENVOYÉ AU SERVEUR AVANT « ENREGISTRER ». Annuler ne défait pas un
  * enregistrement : il n'y en a pas eu.
  *
- * Carte NON BLOQUANTE, en bas de l'écran : un autre clic sur la carte propose
+ * Carte NON BLOQUANTE, dans le coin bas-droit (centrée en bas sur téléphone) :
+ * elle ne recouvre pas l'endroit où l'on clique. Un autre clic sur la carte propose
  * une autre position, sans avoir à annuler d'abord.
  */
-function ConfirmationDeplacement({ m, demande, chargementReseau, occupe, onAnnuler, onConfirmer }) {
+function ConfirmationDeplacement({ m, demande, chargementReseau, occupe, onAnnuler, onConfirmer, onChoisirSens = null }) {
   const p = demande?.point;
   const t = demande?.territoire;
-  const pret = Boolean(p && t && !demande.erreur);
+  /* Deux chaussées : rien ne s'enregistre tant que le sens n'est pas choisi. */
+  const sensManquant = Boolean(demande?.sens && !demande?.sensChoisi);
+  const pret = Boolean(p && t && !demande.erreur && !sensManquant);
 
   const carteApercu = (
     <div
-      className="pointer-events-auto fixed bottom-16 left-1/2 z-[1600] w-[min(420px,calc(100vw-24px))] -translate-x-1/2 rounded-2xl border border-gr-gold/40 bg-gr-navy/95 shadow-panel backdrop-blur"
+      className="pointer-events-auto fixed bottom-16 left-1/2 z-[1600] max-h-[calc(100dvh-6rem)] w-[min(420px,calc(100vw-24px))] -translate-x-1/2 overflow-y-auto rounded-2xl border border-gr-gold/40 bg-gr-navy/95 shadow-panel backdrop-blur md:bottom-3 md:left-auto md:right-3 md:translate-x-0"
       role="dialog"
       aria-labelledby="gr-depl-titre"
       data-testid="deplacement-barrage"
@@ -1312,6 +1333,34 @@ function ConfirmationDeplacement({ m, demande, chargementReseau, occupe, onAnnul
             </tbody>
           </table>
         )}
+        {p && demande.sens && (
+          <div className="rounded-xl border border-sky-400/30 bg-sky-500/10 p-2.5" role="group" aria-label="Sens de circulation">
+            <p className="text-[11.5px] font-semibold text-white">Route à deux chaussées : choisissez le sens</p>
+            <p className="text-[10.5px] text-white/55">
+              Les deux sens sont tracés sur la carte (cliquables). Aller : la chaussée vers le nord ou l’est ; Retour : l’autre.
+            </p>
+            <div className="mt-2 grid grid-cols-2 gap-1.5">
+              {[[SENS_ALLER, 'Aller', '#0284c7'], [SENS_RETOUR, 'Retour', '#ea580c']].map(([valeur, libelle, couleur]) => {
+                const choisi = demande.sensChoisi === valeur;
+                return (
+                  <button
+                    key={valeur}
+                    type="button"
+                    aria-pressed={choisi}
+                    disabled={occupe}
+                    onClick={() => onChoisirSens?.(valeur)}
+                    className={`flex items-center justify-center gap-2 rounded-lg border py-1.5 text-[12px] font-bold transition-colors ${
+                      choisi ? 'border-white/70 bg-white/15 text-white' : 'border-white/15 text-white/75 hover:bg-white/10'
+                    }`}
+                  >
+                    <span aria-hidden="true" className="size-2.5 rounded-full" style={{ backgroundColor: couleur }} />
+                    {libelle}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
         {demande?.conflitNouveau ? (
           <div className="rounded-xl border border-red-500/40 bg-red-500/15 p-2.5 text-[11.5px] text-red-200">
             <p className="font-bold text-red-300 flex items-center gap-1.5">
@@ -1322,7 +1371,7 @@ function ConfirmationDeplacement({ m, demande, chargementReseau, occupe, onAnnul
               Trop rapproché de <b>{demande.conflitNouveau.voisinNom}</b> : {demande.conflitNouveau.distanceKm} km par la route (seuil réglementaire {demande.conflitNouveau.seuilKm} km).
             </p>
             <p className="mt-1 text-[10.5px] text-white/60">
-              Choisissez un autre point le long de la route pour résoudre le conflit.
+              Choisissez un autre point, ou enregistrez : la réévaluation indiquera le poste à déplacer ensuite.
             </p>
           </div>
         ) : p && !demande?.erreur && (
@@ -1360,11 +1409,13 @@ function ConfirmationDeplacement({ m, demande, chargementReseau, occupe, onAnnul
         <button
           type="button"
           onClick={onConfirmer}
-          disabled={occupe || !pret || Boolean(demande?.conflitNouveau)}
+          /* Un conflit à la nouvelle position n'interdit plus l'enregistrement : la
+             réévaluation qui suit guide vers la position (ou le poste) suivant. */
+          disabled={occupe || !pret}
           className={`${bouton} flex-[1.4] bg-gr-gold py-2 text-gr-navy hover:brightness-110 disabled:opacity-50`}
-          title={demande?.conflitNouveau ? `Impossible d'enregistrer : conflit de ${demande.conflitNouveau.distanceKm} km sous le seuil requis de ${demande.conflitNouveau.seuilKm} km.` : undefined}
+          title={demande?.conflitNouveau ? `Conflit de ${demande.conflitNouveau.distanceKm} km sous le seuil de ${demande.conflitNouveau.seuilKm} km : la réévaluation indiquera la suite.` : undefined}
         >
-          {occupe ? <IconSpinner size={13} /> : null} {demande?.conflitNouveau ? 'Position non conforme (conflit)' : 'Enregistrer la nouvelle position'}
+          {occupe ? <IconSpinner size={13} /> : null} {sensManquant ? 'Choisissez le sens' : demande?.conflitNouveau ? 'Enregistrer malgré le conflit' : 'Enregistrer la nouvelle position'}
         </button>
       </div>
     </div>
@@ -1850,18 +1901,6 @@ function MarquageLayer({
 
 
 /**
- * Commandes de zoom + / −.
- *
- * Le contrôle natif de Leaflet est désactivé (`zoomControl={false}`) : ses
- * boutons font 26 px, trop petits pour être visés sans effort, et son style
- * clair jure avec le reste. Ceux-ci font 44 px — la taille minimale d'une
- * cible confortable — et suivent la charte des autres boutons.
- *
- * Ils se désactivent aux bornes du fond de carte (voir FOND_OPTIONS),
- * pour qu'un clic sans effet ne laisse pas croire à une panne.
- */
-
-/**
  * Empêche de zoomer en arrière au-delà de SA ZONE — le territoire national
  * pour un administrateur, sa circonscription pour tout autre compte.
  *
@@ -2092,235 +2131,6 @@ function reperesVus(matricule) {
     return new Set();
   }
 }
-function marquerRepereVu(matricule, cle) {
-  try {
-    const vus = [...reperesVus(matricule), cle].slice(-200);
-    localStorage.setItem(CLE_REPERES_VUS(matricule), JSON.stringify(vus));
-  } catch {
-    /* stockage indisponible : le repère reviendra au rechargement */
-  }
-}
-
-/**
- * LA BULLE D'UN REPOSITIONNEMENT — ce que le serveur a consigné, rien d'autre.
- *
- * En attente : position OFFICIELLE (inchangée) et position DEMANDÉE ; aucune
- * distance, puisque rien d'officiel n'a bougé. Enregistré / validé : ancienne
- * et nouvelle position, puis les distances PAR LA ROUTE recalculées depuis la
- * nouvelle position avec chaque voisin concerné — conflit résolu, nouveau
- * conflit, conflit maintenu. Un poste qui règle un conflit et en crée un autre
- * n'est jamais déclaré conforme.
- */
-function ChangementPosition({ m, info, onVu }) {
-  const coord = (p) => (p && Number.isFinite(p.lat) ? `${p.lat.toFixed(5)}, ${p.lng.toFixed(5)}` : '—');
-  const axe = (p) => [p?.route || null, Number.isFinite(p?.pk) ? `PK ${p.pk}` : null].filter(Boolean).join(' · ') || '—';
-  const date = (ts) => (Number.isFinite(ts) ? new Date(ts).toLocaleString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' }) : '—');
-  const personne = (p) => (p ? [p.nom, p.matricule].filter(Boolean).join(' · ') : null);
-  const imp = info.impact;
-  const seuil = imp?.seuilKm;
-  const km = (v) => (v == null ? '—' : `${Number(v).toFixed(2)} km`);
-  const etat = (v) => (v == null || seuil == null ? '' : v < seuil ? ' ❌' : ' ✓');
-  const VERT = '#4ADE80';
-  const ROUGE = '#FCA5A5';
-  const titre = info.enAttente
-    ? 'BARRAGE NOUVELLEMENT POSÉ — EN ATTENTE DE VALIDATION'
-    : info.statut === 'APPROVED'
-      ? 'BARRAGE DÉPLACÉ — VALIDÉ PAR LE COMMANDEMENT'
-      : 'BARRAGE NOUVELLEMENT POSÉ';
-  const nouveaux = (imp?.voisins ?? []).filter((v) => v.evolution === 'nouveau');
-  const resolus = (imp?.voisins ?? []).filter((v) => v.evolution === 'resolu');
-  const maintenus = (imp?.voisins ?? []).filter((v) => v.evolution === 'maintenu');
-  return (
-    <div className="gr-popup" data-gr-changement-position={m.id} data-gr-statut-repositionnement={info.statut} style={{ maxWidth: 330 }}>
-      <h4>{titre}</h4>
-      <p style={{ margin: '0 0 6px', fontWeight: 700 }}>{MQ.libelle(m)}</p>
-      <table className="gr-tbl" style={{ width: '100%' }}>
-        <tbody>
-          <tr>
-            <td>{info.enAttente ? 'Position officielle' : 'Ancienne position'}</td>
-            <td>{coord(info.avant)}</td>
-          </tr>
-          <tr>
-            <td>{info.enAttente ? 'Route officielle' : 'Ancienne route'}</td>
-            <td>{axe(info.avant)}</td>
-          </tr>
-          <tr>
-            <td>{info.enAttente ? 'Position demandée' : 'Nouvelle position'}</td>
-            <td style={{ fontWeight: 700, color: VERT }}>{coord(info.apres)}</td>
-          </tr>
-          <tr>
-            <td>{info.enAttente ? 'Route demandée' : 'Nouvelle route'}</td>
-            <td style={{ fontWeight: 700, color: VERT }}>{axe(info.apres)}</td>
-          </tr>
-          <tr>
-            <td>{info.enAttente ? 'Date/heure de la demande' : info.statut === 'APPROVED' ? 'Validé le' : 'Enregistré le'}</td>
-            <td>{date(info.ts)}</td>
-          </tr>
-          {personne(info.auteur) && (
-            <tr>
-              <td>{info.enAttente || info.statut === 'APPROVED' ? 'Demandé par' : 'Par'}</td>
-              <td>{personne(info.auteur)}</td>
-            </tr>
-          )}
-          {info.statut === 'APPROVED' && personne(info.validePar) && (
-            <tr>
-              <td>Validé par</td>
-              <td>{personne(info.validePar)}</td>
-            </tr>
-          )}
-        </tbody>
-      </table>
-
-      {info.enAttente ? (
-        <p style={{ margin: '6px 0', fontSize: 10.5, opacity: 0.75 }}>
-          {`Déplacement transmis pour validation (${info.valideur === 'admin' ? 'administration' : 'commandement de l’unité'
-            }). La position officielle reste l’ancienne jusqu’à la décision ; les distances et la filtration ne sont pas recalculées d’ici là.`}
-        </p>
-      ) : imp ? (
-        <div data-gr-impact-repositionnement={imp.statut} style={{ marginTop: 8 }}>
-          <p style={{ margin: '0 0 4px', fontSize: 10.5, fontWeight: 800, letterSpacing: '.04em' }}>DISTANCE AVEC LE BARRAGE VOISIN</p>
-          <table className="gr-tbl" style={{ width: '100%' }}>
-            <tbody>
-              <tr>
-                <td>Avant</td>
-                <td style={{ color: imp.plusProcheAvant?.km < seuil ? ROUGE : VERT, fontWeight: 700 }}>
-                  {imp.plusProcheAvant ? `${km(imp.plusProcheAvant.km)}${etat(imp.plusProcheAvant.km)} — ${imp.plusProcheAvant.nom}` : `aucun voisin à moins de ${imp.porteeKm} km`}
-                </td>
-              </tr>
-              <tr>
-                <td>Après</td>
-                <td style={{ color: imp.plusProcheApres?.km < seuil ? ROUGE : VERT, fontWeight: 700 }}>
-                  {imp.plusProcheApres ? `${km(imp.plusProcheApres.km)}${etat(imp.plusProcheApres.km)} — ${imp.plusProcheApres.nom}` : `aucun voisin à moins de ${imp.porteeKm} km`}
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          {resolus.map((v) => (
-            <p key={`r-${v.id}`} data-gr-conflit-resolu={v.id} style={{ margin: '5px 0 0', fontSize: 11, color: VERT, fontWeight: 700 }}>
-              ✓ Conflit résolu — {v.nom}
-              <span style={{ display: 'block', fontWeight: 500, color: 'inherit', opacity: 0.85 }}>
-                Distance : {km(v.avantKm)} → {km(v.apresKm)}
-              </span>
-            </p>
-          ))}
-          {nouveaux.map((v) => (
-            <p key={`n-${v.id}`} data-gr-nouveau-conflit={v.id} style={{ margin: '5px 0 0', fontSize: 11, color: ROUGE, fontWeight: 700 }}>
-              ⚠ Nouveau conflit détecté — {v.nom}
-              <span style={{ display: 'block', fontWeight: 500, opacity: 0.85 }}>
-                Distance : {km(v.apresKm)} · Seuil : {seuil} km
-              </span>
-            </p>
-          ))}
-          {maintenus.map((v) => (
-            <p key={`m-${v.id}`} data-gr-conflit-maintenu={v.id} style={{ margin: '5px 0 0', fontSize: 11, color: ROUGE, fontWeight: 700 }}>
-              ⚠ Conflit maintenu — {v.nom}
-              <span style={{ display: 'block', fontWeight: 500, opacity: 0.85 }}>
-                Distance : {km(v.avantKm)} → {km(v.apresKm)} · Seuil : {seuil} km
-              </span>
-            </p>
-          ))}
-          <p style={{ margin: '6px 0 0', fontSize: 11, fontWeight: 800, color: imp.statut === 'conforme' ? VERT : ROUGE }}>
-            {imp.statut === 'conforme'
-              ? `✓ Aucun conflit à ${seuil} km depuis la nouvelle position`
-              : `⚠ Ce barrage reste en conflit : ${imp.conflitsApres} voisin(s) à moins de ${seuil} km`}
-          </p>
-          <p style={{ margin: '6px 0', fontSize: 10, opacity: 0.65 }}>
-            Distances recalculées par la route (réseau hors ligne) depuis la nouvelle position officielle · seuil {seuil} km ·
-            faction {(imp.factions ?? []).join(', ') || '—'}.
-          </p>
-        </div>
-      ) : (
-        <p style={{ margin: '6px 0', fontSize: 10.5, opacity: 0.7 }}>Position enregistrée.</p>
-      )}
-      <div className="gr-popup-actions">
-        <button
-          type="button"
-          className="gr-popup-act"
-          onClick={(e) => {
-            e.stopPropagation();
-            onVu?.(m.id);
-          }}
-        >
-          Vu — retirer le repère
-        </button>
-      </div>
-    </div>
-  );
-}
-
-function NouveauxBarragesLayer({ items, notifications, focusId, onOuvrir, repositionnes = null, tousItems = null, onVu, afficherDeplaces = true }) {
-  const nouveaux = useMemo(() => {
-    const attendus = new Set(
-      (notifications ?? [])
-        .filter((n) => n.action === 'nouveau_barrage' && n.statut === 'ouverte')
-        .map((n) => n.barrageId),
-    );
-    return attendus.size ? items.filter((m) => attendus.has(m.id) && !repositionnes?.has(m.id)) : [];
-  }, [items, notifications, repositionnes]);
-
-  /**
-   * LES POSTES QUE L'ON VIENT DE DÉPLACER — même repère « nouvellement posé »,
-   * à leur NOUVELLE position, avec d'où ils viennent. Cherchés dans tout le
-   * dépôt visible : un poste qu'on vient de poser doit se voir même si un filtre
-   * de faction ou de portée le cacherait.
-   */
-  const deplaces = useMemo(() => {
-    if (!afficherDeplaces || !repositionnes?.size) return [];
-    const parId = new Map((tousItems ?? items).map((m) => [m.id, m]));
-    return [...repositionnes.entries()]
-      .map(([id, info]) => ({ m: parId.get(id), info }))
-      .filter((x) => x.m && Number.isFinite(x.m.lat));
-  }, [afficherDeplaces, repositionnes, tousItems, items]);
-
-  if (!nouveaux.length && !deplaces.length) return null;
-
-  return (
-    <LayerGroup>
-      {deplaces.map(({ m, info }) => (
-        <Marker
-          key={`repose-${m.id}`}
-          position={info.enAttente ? [info.apres.lat, info.apres.lng] : [m.lat, m.lng]}
-          zIndexOffset={1400}
-          icon={divIconStable({
-            className: '',
-            html: `<div class="gr-nouveau${info.enAttente ? ' gr-nouveau-attente' : ''}" data-gr-nouvellement-pose="${m.id}"${info.enAttente ? ' data-gr-en-attente="1"' : ''
-              } aria-hidden="true">!</div>`,
-            iconSize: [26, 26],
-            iconAnchor: [13, 13],
-          })}
-        >
-          <Tooltip direction="top" offset={[0, -12]}>
-            Barrage nouvellement posé — {MQ.libelle(m)}
-            {info.enAttente ? ' (en attente de validation)' : ''}
-          </Tooltip>
-          <Popup>
-            <ChangementPosition m={m} info={info} onVu={onVu} />
-          </Popup>
-        </Marker>
-      ))}
-      {nouveaux.map((m) => (
-        <Marker
-          key={`neuf-${m.id}`}
-          position={[m.lat, m.lng]}
-          zIndexOffset={800}
-          icon={divIconStable({
-            className: '',
-            html: `<div class="gr-nouveau${focusId === m.id ? ' gr-decision-vise' : ''
-              }" aria-hidden="true">!</div>`,
-            iconSize: [26, 26],
-            iconAnchor: [13, 13],
-          })}
-          eventHandlers={{ click: () => onOuvrir?.(m) }}
-        >
-          <Tooltip direction="top" offset={[0, -12]}>
-            Nouveau barrage — {MQ.libelle(m)}
-          </Tooltip>
-        </Marker>
-      ))}
-    </LayerGroup>
-  );
-}
-
 
 /**
  * BADGES DE CARACTÉRISTIQUES — accidents, VIP, éclairage, entrée/sortie.
@@ -3379,7 +3189,7 @@ function ApercuOptimisationLayer({ apercu, echelle = 1, intouchables = true, act
  * la simulation affichée, voisin en cause. « Voir le conflit sur la carte »
  * cadre les deux extrémités ; rien n'est recalculé ici.
  */
-function SectionConflit({ c, voisin = null, simulation = null }) {
+function SectionConflit({ c, voisin = null }) {
   const map = useMap();
   const km = (v) => (v != null && Number.isFinite(Number(v)) ? `${Number(v).toFixed(2)} km` : '—');
   const voir = (e) => {
@@ -3404,7 +3214,8 @@ function SectionConflit({ c, voisin = null, simulation = null }) {
       <div className="gr-popup-actions" style={{ marginTop: 5 }}>
         <button type="button" className="gr-popup-act" data-gr-voir-conflit="1" onClick={voir}>Voir le conflit sur la carte</button>
       </div>
-      {simulation && <ActionsSimulation {...simulation} />}
+      {/* Plus de bloc « décision / Assigner » ici : comme pour l'analyse par axe,
+          les conflits se traitent dans le menu des conflits. */}
     </div>
   );
 }
@@ -4751,6 +4562,9 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
    * serveur avant « Enregistrer la nouvelle position ».
    */
   const [armeDeplacement, setArmeDeplacement] = useState(null);
+  /* Le bilan de la DERNIÈRE réévaluation après un déplacement (CarteReevaluation). */
+  const [reevaluation, setReevaluation] = useState(null);
+  const demandeDeplacementNo = useRef(0);
   const [demandeDeplacement, setDemandeDeplacement] = useState(null);
   /**
    * « TRAITER » — un geste vient d'être fait sur ces barrages (effacer,
@@ -4844,14 +4658,15 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
        * La borne ne retenait que le bas et la droite. On pouvait donc lâcher
        * la légende SUR le rail (12 → 72 px) : elle y disparaissait derrière
        * lui, tronquée, exactement comme la version rangée l'était avant
-       * correction. `MARGE_RAIL` vaut le `left-[76px]` des trois colonnes de
-       * gauche — la même valeur, pour la même raison.
+       * correction. `MARGE_RAIL` vaut le `left-3` des trois colonnes de
+       * gauche — la même valeur, pour la même raison (le rail permanent n'est
+       * plus : il ne reste que la marge).
        *
        * Appliqué au montage : une position enregistrée hier derrière le rail
        * se corrige toute seule à l'ouverture, sans que personne ait à vider
        * son stockage local.
        */
-      const MARGE_RAIL = 76;
+      const MARGE_RAIL = 12;
       const minX = Math.min(MARGE_RAIL, maxX);
       setPosLegende((p) => {
         if (!p) return p;
@@ -5045,7 +4860,8 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
         brigade: sel.nom,
       });
     }
-    ouvrirPanneau('analyse');
+    /* Plus d'ouverture automatique du panneau Analyse : il masquait la moitié
+       de la carte à chaque clic sur une région. Il reste dans le menu ☰. */
   }, []);
 
   const clearSelection = useCallback(() => setSelection(null), []);
@@ -5178,12 +4994,12 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
             bounds,
             geometry: sauvegarde.selection.geometry,
           });
-          ouvrirPanneau('analyse');
         }
       }
+      /* La sélection est restaurée, mais AUCUN panneau ne s'ouvre seul à la
+         connexion : la carte s'affiche dégagée. */
       if (sauvegarde.mqSelectionId && items.some((m) => m.id === sauvegarde.mqSelectionId)) {
         setMqSelection(sauvegarde.mqSelectionId);
-        ouvrirPanneau('saisie');
       }
     } catch {
       // stockage indisponible ou corrompu (navigation privée…) : écran vide, sans planter
@@ -5310,12 +5126,16 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
   const [optimisationResultats, setOptimisationResultats] = useState(null);
   const [distanceOptimisation, setDistanceOptimisation] = useState('20');
   const [distanceBaseOptimisation, setDistanceBaseOptimisation] = useState('20');
-  const [chargementOptimisation, setChargementOptimisation] = useState(false);
-  const [optimisationDemarree, setOptimisationDemarree] = useState(false);
-  const recalculerOptimisationRef = useRef(null);
-  const calculEnCoursRef = useRef(false);
-  /* Les onglets en haut de la carte : état publié par OptimisationPanel, et la
-     fonctions qu’il enregistre pour ouvrir ou désactiver un onglet (même schéma que le recalcul). */
+  /**
+   * LA FACTION DE L'OPTIMISATION — son propre état, distinct du filtre
+   * « Faction » de la carte. L'optimisation des barrages est un module à
+   * part : lancer un calcul sur une faction ne change pas la faction affichée,
+   * et changer la faction affichée ne relance pas le calcul. Le panneau
+   * d'optimisation recalcule lui-même quand on change SA faction.
+   */
+  const [factionOptimisationChoisie, setFactionOptimisationChoisie] = useState('toutes');
+  /* Les calculs de l'optimisation : état publié par OptimisationPanel, et les
+     fonctions qu’il enregistre pour ouvrir ou désactiver un calcul. */
   const [ongletsOptimisation, setOngletsOptimisation] = useState(null);
   const ongletsOptimisationRef = useRef(null);
   const enregistrerOngletsOptimisation = useCallback((fns) => {
@@ -5341,17 +5161,31 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
   const [conflitVise, setConflitVise] = useState(null);
   const [conflitAAssigner, setConflitAAssigner] = useState(null);
   const [panneauConflitsOuvert, setPanneauConflitsOuvert] = useState(false);
+  /* Le bouton « Conflits » : le menu déroulant des conflits se pose dessous. */
+  const boutonConflitsRef = useRef(null);
+  /* La dernière assignation enregistrée : le menu passe au conflit suivant. */
+  const [derniereAssignation, setDerniereAssignation] = useState(null);
+  /* Chaque incrément : le menu des conflits montre la liste (après une analyse). */
+  const [demandeListeConflits, setDemandeListeConflits] = useState(0);
+  /* { id, n } : le menu des conflits s'ouvre sur la fiche de ce conflit. */
+  const [demandeDetailConflit, setDemandeDetailConflit] = useState(null);
+  /* Bord droit du menu des conflits ouvert (px) : la barre AVANT / APRÈS s'y range à droite. */
+  const [bordMenuConflits, setBordMenuConflits] = useState(null);
   const [menuFiltresOuvert, setMenuFiltresOuvert] = useState(false);
+  /* Optimisation des barrages : son propre panneau, indépendant des filtres. */
+  const [menuOptimisationOuvert, setMenuOptimisationOuvert] = useState(false);
+  /* Le volet de navigation (☰), ouvert depuis la boîte de recherche. */
+  const [voletNavigationOuvert, setVoletNavigationOuvert] = useState(false);
   const [conflitViseLateral, setConflitViseLateral] = useState(null);
   const [conflitATransmettre, setConflitATransmettre] = useState(null);
   const [conflitATraiter, setConflitATraiter] = useState(null);
-  const [conflitEnConfirmation, setConflitEnConfirmation] = useState(null);
   const [conflitEnTraitement, setConflitEnTraitement] = useState(null);
-  const [conflitApresDeplacement, setConflitApresDeplacement] = useState(null);
   const [versionConflits, setVersionConflits] = useState(0);
   const [conflitsSupprimes, setConflitsSupprimes] = useState(() => new Set());
   /** Conflits enregistrés par le serveur — ceux du panneau latéral. */
   const [conflitsServeur, setConflitsServeur] = useState([]);
+  /* Conflits traités et approuvés (Historique) : `{ id, paireCle }`, lus avec la liste. */
+  const [conflitsClos, setConflitsClos] = useState([]);
   /** Paires closes (historique) : jamais retracées comme conflit actif. */
   const [pairesCloses, setPairesCloses] = useState(() => new Set());
 
@@ -5435,6 +5269,7 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
     API.listerConflits()
       .then((res) => {
         setConflitsServeur(Array.isArray(res?.items) ? res.items : []);
+        setConflitsClos(Array.isArray(res?.clos) ? res.clos : []);
         setPairesCloses(new Set((res?.clos ?? []).map((c) => c.paireCle).filter(Boolean)));
 
         /* Nouveaux conflits détectés depuis la dernière lecture : impulsion
@@ -5545,33 +5380,11 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
     });
   }, []);
 
-  const declencherRecalculOptimisation = useCallback(async (nouvelleDist, nouvelleFaction, options = {}) => {
-    if (recalculerOptimisationRef.current && !calculEnCoursRef.current) {
-      calculEnCoursRef.current = true;
-      setChargementOptimisation(true);
-      setOptimisationDemarree(true);
-      const distStr = String(nouvelleDist);
-      setDistanceOptimisation(distStr);
-      if (!options?.estAlternative) {
-        setDistanceBaseOptimisation(distStr);
-      }
-      try {
-        await recalculerOptimisationRef.current(distStr, nouvelleFaction, options);
-      } finally {
-        setChargementOptimisation(false);
-        calculEnCoursRef.current = false;
-      }
-    }
-  }, []);
-
   const handleFiltrerRoute = useCallback((route) => {
     const can = route ? canonicalRouteId(route) : null;
     setFiltreRoute(can);
     setOptimisationRouteOpen(false);
     setVersionConflits((v) => v + 1);
-    if (session?.rang === 'admin') {
-      setPanneauConflitsOuvert(true);
-    }
     if (can && carte.current) {
       // Isoler immédiatement la route et cadrer sur ses barrages ("triq m3zola")
       const barragesSurRoute = items.filter((m) => MQ.estBarrage(m) && canonicalRouteId(m.route) === can);
@@ -5594,14 +5407,124 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
       const confObj = typeof idOrObj === 'object' && idOrObj !== null ? idOrObj : { id };
       setConflitVise(id ? { id, cadrer: options.cadrer === true, n: Date.now() } : null);
       if (id) {
-        setPanneauConflitsOuvert(true);
+        /* Sa FICHE s'ouvre dans le menu des conflits (pas la liste) — la même
+           que pour l'optimisation par route ; plus de petit panneau à part. */
         setConflitViseLateral((prev) => (prev?.id === id ? prev : confObj));
+        if (['admin', 'reg', 'cie'].includes(session?.rang)) {
+          setDemandeDetailConflit({ id, n: Date.now() });
+          setPanneauConflitsOuvert(true);
+        }
         carte.current?.closePopup();
       }
     },
-    [],
+    [session?.rang],
   );
-  const conflitsIdentifies = optimisationResultats?.conflitsIdentifies ?? null;
+  /**
+   * LES CONFLITS DE L'OPTIMISATION, RAPPROCHÉS DES CONFLITS ENREGISTRÉS — par
+   * leur paire de barrages, jamais par leur numéro de calcul (qui change à
+   * chaque optimisation). Un conflit déjà assigné et pas encore traité arrive
+   * donc marqué `dejaAssigne` (« CMD Région Rabat »…) à chaque nouvelle
+   * optimisation : la carte et le panneau montrent « Assigné à … » au lieu
+   * d'« Assigner ». Voir rapprocherConflitsEnregistres (src/actionsConflit.js).
+   */
+  const conflitsIdentifies = useMemo(
+    () => rapprocherConflitsEnregistres(optimisationResultats?.conflitsIdentifies ?? null, conflitsServeur, session, conflitsClos),
+    [optimisationResultats?.conflitsIdentifies, conflitsServeur, session, conflitsClos],
+  );
+
+  /* Les conflits d'une analyse par axe routier : même rapprochement. */
+  const vueRouteAffichee = useMemo(() => {
+    const liste = vueRoute?.conflits?.liste;
+    if (!Array.isArray(liste)) return vueRoute;
+    const rapprochee = rapprocherConflitsEnregistres(liste, conflitsServeur, session, conflitsClos);
+    return rapprochee === liste ? vueRoute : { ...vueRoute, conflits: { ...vueRoute.conflits, liste: rapprochee } };
+  }, [vueRoute, conflitsServeur, session, conflitsClos]);
+
+  /**
+   * DEMANDER L'ASSIGNATION D'UN CONFLIT — le seul chemin vers la fenêtre
+   * d'assignation, quel que soit le bouton. Un conflit CALCULÉ (sans état du
+   * serveur) dont la paire est déjà assignée et pas encore traitée, ou déjà
+   * traitée et approuvée, n'ouvre pas la fenêtre : l'état est dit à la place.
+   * La réassignation volontaire d'un conflit enregistré (`workflow`) passe.
+   */
+  const demanderAssignationConflit = useCallback(
+    (c) => {
+      const liste = Array.isArray(c) ? c : c?.conflits ?? null;
+      const etatDe = (x) => (x?.workflow ? null : rapprocherConflitsEnregistres([x], conflitsServeur, session, conflitsClos)[0]);
+      if (liste) {
+        const libres = liste.filter((x) => {
+          const r = etatDe(x);
+          return !(r?.dejaAssigne || r?.dejaTraite);
+        });
+        if (libres.length < liste.length) {
+          notifier({ type: 'info', titre: 'Conflits déjà pris en charge', message: `${liste.length - libres.length} conflit(s) déjà assigné(s) ou traité(s) : ignoré(s).` });
+        }
+        if (libres.length) setConflitAAssigner({ conflits: libres });
+        return;
+      }
+      const r = etatDe(c);
+      if (r?.dejaAssigne) {
+        notifier({ type: 'info', titre: 'Conflit déjà assigné', message: `Assigné à ${r.dejaAssigne} — en attente de traitement. Aucune nouvelle assignation.` });
+        return;
+      }
+      if (r?.dejaTraite) {
+        notifier({ type: 'info', titre: 'Déjà traité', message: 'Ce conflit est déjà traité et approuvé. Pour le reprendre, rouvrez-le depuis l’Historique.' });
+        return;
+      }
+      setConflitAAssigner(c);
+    },
+    [conflitsServeur, session, conflitsClos],
+  );
+
+  /**
+   * CONFLITS À TRAITER — par le CMD Région (ou CMD CIE) connecté : ceux remis
+   * à son commandement et pas encore traités (compterATraiter). Relu avec la
+   * liste des conflits, donc après chaque assignation reçue (notification),
+   * traitement, transmission ou changement d'état.
+   */
+  const conflitsATraiter = useMemo(() => compterATraiter(conflitsServeur, session), [conflitsServeur, session]);
+  const destinataireConflits = session?.rang === 'reg' || session?.rang === 'cie';
+
+  /**
+   * DÉJÀ ASSIGNÉ ? — pour une ligne du panneau d'optimisation (un barrage et
+   * son voisin en conflit). Même lecture que le serveur, qui refuse de toute
+   * façon une seconde assignation :
+   *   1. le conflit de la PAIRE, assigné et pas encore traité ;
+   *   2. un autre conflit actif du barrage, remis au CMD Région de sa région ;
+   *   3. l'assignation encore ouverte du barrage (Super Admin → CMND Région) ;
+   *   4. celle qui vient d'être faite dans cette page.
+   * Rend « CMD Région X » (ou la CIE), ou null : le bouton « Assigner » reste.
+   */
+  const assignationsOuvertesBarrage = useMemo(() => {
+    const m = new Map();
+    for (const n of notifications ?? []) {
+      if (n.action === 'assignation' && n.statut === 'ouverte' && n.barrageId) {
+        m.set(n.barrageId, n.destinataire?.unite ? `CMD Région ${n.destinataire.unite}` : 'CMD Région');
+      }
+    }
+    return m;
+  }, [notifications]);
+  const assignationDe = useCallback(
+    (b) => {
+      if (!b?.id) return null;
+      const voisin = b.voisin?.id;
+      if (voisin) {
+        const c = conflitsIdentifies?.find((x) => x.cle === clePaire(b.id, voisin));
+        if (c?.dejaAssigne) return c.dejaAssigne;
+      }
+      const autre = conflitsServeur.find(
+        (c) =>
+          (c.barrageAId === b.id || c.barrageBId === b.id) &&
+          c.workflow?.etat && c.workflow.etat !== 'NEW' && c.workflow.section !== 'historique' &&
+          (c.workflow.regions ?? []).some((r) => String(r).toLowerCase() === String(b.reg ?? '').toLowerCase()),
+      );
+      if (autre) return libelleAssignation(autre);
+      if (assignationsOuvertesBarrage.has(b.id)) return assignationsOuvertesBarrage.get(b.id);
+      if (idsAssignesLocaux.has(b.id)) return b.reg ? `CMD Région ${b.reg}` : 'CMD Région';
+      return null;
+    },
+    [conflitsIdentifies, conflitsServeur, assignationsOuvertesBarrage, idsAssignesLocaux],
+  );
 
   /* Les conflits restent accessibles via le bouton "Conflits" dans la barre latérale sans recouvrir la carte par défaut */
 
@@ -5718,12 +5641,76 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
    * écrite dans le JSX, la prop change d'identité à CHAQUE rendu du parent :
    * l'effet se rejoue sans fin et republie le même résultat.
    */
+  /**
+   * LES ÉTAPES COMMUNES À TOUTES LES OPTIMISATIONS — celles de l'analyse par
+   * axe (lancerAnalyseRoute), la référence :
+   *   1. pendant le calcul : le radar (RadarAnalyse), piloté par le calcul réel
+   *      (avecRadar) — la progression chiffrée n'existe que si le calcul la
+   *      fournit (analyse par axe) : rien n'est simulé ;
+   *   2. les routes des conflits trouvés se dessinent l'une après l'autre
+   *      (radarCalcul → RadarConflits) ;
+   *   3. le résultat (`analyseAxe` → CarteResultatAnalyse), et le menu des
+   *      conflits s'ouvre sur la LISTE de tous les conflits détectés.
+   * Les calculs, eux, restent propres à chaque mode.
+   */
+  const presenterResultatCalcul = useCallback(({ libelle, distance, conflits, barrages = null, paires = null, route = null }) => {
+    const t = Date.now();
+    const ECART = 0.4;
+    const durees = conflits.map((c) => dureeDessin(c.distanceKm));
+    const total = durees.reduce((n, d) => n + d + ECART, 0);
+    const facteur = total > 30 ? 30 / total : 1;
+    let delai = 0;
+    setRadarCalcul(conflits.map((c, i) => {
+      const dureeTrace = Math.max(1.8, Math.round(durees[i] * facteur * 100) / 100);
+      const entree = { conf: c, impulsionLe: t, pris: false, delai, dureeTrace, rejoue: 0, resultat: true };
+      delai += dureeTrace + ECART;
+      return entree;
+    }));
+    setAnalyseAxe({ etat: conflits.length ? 'conflits' : 'aucun', libelle, route, distance, conflits, barrages, paires, version: t });
+    setConflitViseLateral(null);
+    /* Rien de la consultation précédente ne reste à l'écran. */
+    setConflitAssigneVise(null);
+    setConflitVise(null);
+    setMenuOptimisationOuvert(false);
+    setPanneauConflitsOuvert(true);
+    setDemandeListeConflits((n) => n + 1);
+  }, []);
+
+  /* Optimisation par paramètres : à chaque NOUVEAU calcul (calculId), les
+     étapes communes ; désactivée, ses routes dessinées s'effacent. */
+  const dernierCalculOptimisation = useRef(0);
+  const radarDeLOptimisation = useRef(false);
   const publierResultatsOptimisation = useCallback((res) => {
     setOptimisationResultats(res);
-    if (res !== null) {
-      setOptimisationDemarree(true);
+    if (!res) {
+      if (radarDeLOptimisation.current) {
+        radarDeLOptimisation.current = false;
+        setRadarCalcul([]);
+        setAnalyseAxe((a) => (a?.libelle?.startsWith('Optimisation') ? null : a));
+      }
+      return;
     }
-  }, []);
+    if (!res.calculId || res.calculId === dernierCalculOptimisation.current) return;
+    dernierCalculOptimisation.current = res.calculId;
+    /* Une analyse par route lancée APRÈS ce calcul est en cours : ce résultat
+       est périmé — il n'écrase rien, et l'optimisation se retire. */
+    if (analyseEnCours.current) {
+      ongletsOptimisationRef.current?.desactiver?.('distance');
+      return;
+    }
+    /* UN SEUL MODE À LA FOIS : les résultats d'une analyse par route (axe
+       isolé, ses conflits, ses tracés) ne restent pas affichés ni mélangés. */
+    handleEffacerFiltreRouteComplet();
+    radarDeLOptimisation.current = true;
+    const conflits = (res.conflitsIdentifies ?? [])
+      .filter((c) => c.statut !== 'resolu')
+      .map((c) => ({ ...c, distanceKm: Number(c.distanceKm ?? c.km ?? 0) }));
+    presenterResultatCalcul({
+      libelle: 'Optimisation par paramètres',
+      distance: res.seuilKm ?? '—',
+      conflits,
+    });
+  }, [presenterResultatCalcul, handleEffacerFiltreRouteComplet]);
 
 
   /**
@@ -6696,14 +6683,22 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
         /* La ROUTE part avec la position : c'est la voie sur laquelle le point
            vient d'être recalé, et c'est sur elle que le serveur recalcule le
            PK. Sans elle, le poste garderait l'axe de son ancienne position. */
-        const r = await API.deplacerMarquage(item.id, { lng: lngLat[0], lat: lngLat[1], route, ...extraOptions });
+        /* Le seuil de l'optimisation affichée : le serveur réévalue les conflits
+           du poste avec lui (voir actualiserApresOperation). */
+        const seuilKm = extraOptions.seuilKm ?? optimisationResultats?.seuilKm ?? undefined;
+        const no = ++demandeDeplacementNo.current;
+        const r = await API.deplacerMarquage(item.id, { lng: lngLat[0], lat: lngLat[1], route, ...(seuilKm ? { seuilKm } : {}), ...extraOptions });
+        /* Les conflits réévalués côté serveur : la liste est relue, et le bilan
+           s'affiche — sauf si un déplacement plus récent a déjà répondu. */
+        setVersionConflits((v) => v + 1);
+        if (no === demandeDeplacementNo.current) setReevaluation(r.reevaluation ? { ...r.reevaluation, ts: Date.now() } : null);
         const maj = r.item;
         setItems((prev) => prev.map((m) => (m.id === maj.id ? maj : m)));
         /**
          * LE CHANGEMENT SE VOIT — position écrite, pas une demande en attente.
          *
-         * Le poste prend le repère « barrage nouvellement posé » à sa nouvelle
-         * place (voir NouveauxBarragesLayer), avec d'où il vient ; la carte s'y
+         * Le poste est redessiné à sa nouvelle place (le repère « barrage
+         * nouvellement posé » et sa bulle ont été retirés de la carte) ; la carte s'y
          * rend ; et le dispositif ayant changé, l'optimisation manuelle refait
          * sa mesure sur la position réelle (`dispositifVersion`).
          *
@@ -6725,10 +6720,10 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
             ? `${MQ.libelle(maj)} : déplacement transmis pour validation ` +
             `(${r.demande?.aDecider === 'admin' ? 'administration' : 'commandement de l’unité'}). ` +
             'La position officielle reste inchangée d’ici là.' +
-            (MQ.estBarrage(maj) ? ' Repère « barrage nouvellement posé » à la position demandée (en attente).' : '')
+''
             : `${MQ.libelle(maj)} repositionné` +
             `${maj.route ? ` sur ${maj.route}` : ''}${Number.isFinite(maj.pk) ? ` · PK ${maj.pk}` : ''}.` +
-            (MQ.estBarrage(maj) ? ' Repère « barrage nouvellement posé » à la nouvelle position ; filtration remesurée.' : ''),
+            (MQ.estBarrage(maj) ? ' Distances et conflits remesurés.' : ''),
         };
         setMqMessage(compteRendu);
         setMessageEdition(compteRendu);
@@ -6737,14 +6732,14 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
           signalerTraitement(maj.id);
         }
         rafraichirNotifications();
-        return true;
+        return r;
       } catch (err) {
         signaler(err);
         setMessageEdition({ ok: false, texte: err.message });
         return false;
       }
     },
-    [preControle, signaler, rafraichirAlertes, rafraichirNotifications, signalerTraitement],
+    [preControle, signaler, rafraichirAlertes, rafraichirNotifications, signalerTraitement, optimisationResultats?.seuilKm],
   );
 
   /**
@@ -7475,10 +7470,11 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
       });
       API.restaurerConflits(pairesTrouvees.concat(idsTrouves)).catch(() => {});
 
-      setConflitViseLateral(conflitsTrouves[0]);
-      /* Le premier est désigné dans le panneau, SANS recadrer la carte sur lui :
-         la carte montre tous les conflits trouvés (cadrage plus bas). */
-      setConflitVise({ id: conflitsTrouves[0].id, cadrer: false, n: Date.now() });
+      /* TOUS les conflits trouvés : le menu des conflits s'ouvre sur leur
+         liste (pas sur le détail du premier), et la carte les cadre tous
+         (plus bas). Aucun n'est désigné d'office. */
+      setConflitViseLateral(null);
+      setConflitVise(null);
       setMqMessage({
         ok: true,
         texte: `Axe ${can} : ${conflitsTrouves.length} conflit(s) d'espacement détecté(s) (seuil ≤ ${distance} km).`,
@@ -7492,6 +7488,7 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
       });
     }
     setPanneauConflitsOuvert(true);
+    setDemandeListeConflits((n) => n + 1);
     setVersionConflits((v) => v + 1);
 
     // Cadrage automatique : sur les conflits détectés (leurs deux postes),
@@ -7550,7 +7547,9 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
     const signal = { aborted: false };
     analyseEnCours.current = signal;
     const contexte = { route: canonicalRouteId(params.route) || params.route, distance: params.distance };
-    /* Rien d'ancien n'est montré comme résultat de ce calcul. */
+    /* Rien d'ancien n'est montré comme résultat de ce calcul — ni celui d'une
+       autre route, ni celui de l'optimisation par paramètres (un seul mode). */
+    ongletsOptimisationRef.current?.desactiver?.('distance');
     setRadarCalcul([]);
     setConflitsCalculesRoute(null);
     setAnalyseAxe({ etat: 'scan', ...contexte, progression: null, debut: Date.now() });
@@ -7580,26 +7579,15 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
          sa longueur réelle (dureeDessin : ~4–6 s). Beaucoup de conflits : les
          durées sont réduites d'autant (jamais sous 1,8 s) pour que la séquence
          complète ne dépasse pas ~30 s. */
-      const t = Date.now();
-      const ECART = 0.4;
-      const durees = res.conflits.map((c) => dureeDessin(c.distanceKm));
-      const total = durees.reduce((a, d) => a + d + ECART, 0);
-      const facteur = total > 30 ? 30 / total : 1;
-      let delai = 0;
-      setRadarCalcul(res.conflits.map((c, i) => {
-        const dureeTrace = Math.max(1.8, Math.round(durees[i] * facteur * 100) / 100);
-        const entree = { conf: c, impulsionLe: t, pris: false, delai, dureeTrace, rejoue: 0, resultat: true };
-        delai += dureeTrace + ECART;
-        return entree;
-      }));
-      setAnalyseAxe({
-        etat: res.conflits.length ? 'conflits' : 'aucun',
-        ...contexte,
+      /* Les étapes communes (routes dessinées, résultat, liste des conflits). */
+      radarDeLOptimisation.current = false;
+      presenterResultatCalcul({
+        libelle: `Axe ${res.can || contexte.route}`,
         route: res.can || contexte.route,
+        distance: contexte.distance,
         conflits: res.conflits,
         barrages: res.barragesCandidats.length,
         paires: res.pairesAnalysees,
-        version: t,
       });
     } catch (err) {
       if (signal.aborted || err instanceof AnalyseInterrompue) return;
@@ -7613,7 +7601,7 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
     } finally {
       if (analyseEnCours.current === signal) analyseEnCours.current = null;
     }
-  }, [handleCalculerFiltreRoute]);
+  }, [handleCalculerFiltreRoute, presenterResultatCalcul]);
 
   /**
    * Le graphe (4 Mo) n'est téléchargé qu'à la première ouverture de l'outil
@@ -7664,6 +7652,28 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
     setDemandeDeplacement(null);
   }, []);
 
+  /* Deux chaussées à départager : la carte s'approche (zoom 17), sans quoi
+     les deux voies, à une quinzaine de mètres, se confondent à l'écran. */
+  const sensACadrer = demandeDeplacement?.sens && !demandeDeplacement.sensChoisi ? demandeDeplacement.ts : null;
+  useEffect(() => {
+    const p = demandeDeplacement?.point;
+    if (!sensACadrer || !p || !carte.current) return;
+    const z = Math.max(carte.current.getZoom(), 17);
+    if (mouvementReduit()) carte.current.setView([p.lat, p.lng], z);
+    else carte.current.flyTo([p.lat, p.lng], z, { duration: 0.8 });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sensACadrer]);
+
+  /* Le sens choisi : la position est reprise sur la chaussée de ce sens, et le
+     contrôle (route, distance, conflits) refait à partir d'elle. */
+  const choisirSensDeplacement = useCallback((sens) => {
+    setDemandeDeplacement((d) => {
+      if (!d?.sens) return d;
+      const c = sens === SENS_ALLER ? d.sens.aller : d.sens.retour;
+      return { id: d.id, clic: { lng: c.lng, lat: c.lat }, ts: Date.now(), sensChoisi: sens };
+    });
+  }, []);
+
   const demarrerDeplacement = useCallback(
     (m, options = {}) => {
       const autoriserBfi = Boolean(
@@ -7682,6 +7692,7 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
       }
       carte.current?.closePopup();
       setDemandeDeplacement(null);
+      setReevaluation(null);
       setArmeDeplacement(m.id);
       /* Le réseau routier est chargé à la demande : le mode déplacement en a besoin. */
       if (grapheEtat === 'absent') setBesoinGrapheDeplacement(true);
@@ -7868,7 +7879,7 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
          conflit, en laissant libres la barre du haut et le panneau des
          conflits ; animations réduites : cadrage immédiat. */
       const reduit = mouvementReduit();
-      const marges = { paddingTopLeft: [120, 150], paddingBottomRight: [panneauConflitsOuvert ? 470 : 90, 110], maxZoom: 14 };
+      const marges = { paddingTopLeft: [panneauConflitsOuvert ? 430 : 120, 150], paddingBottomRight: [90, 110], maxZoom: 14 };
       if (pts.length >= 2) {
         if (reduit) carte.current?.fitBounds(L.latLngBounds(pts), marges);
         else carte.current?.flyToBounds(L.latLngBounds(pts), { ...marges, duration: 1.1, easeLinearity: 0.3 });
@@ -7886,7 +7897,7 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
    * des conflits traités ou déplacés.
    */
   const afficherConflitSurCarte = useCallback(
-    async (cible, modeDemande = null) => {
+    async (cible, modeDemande = null, { garderPanneau = false, detail = true } = {}) => {
       if (!cible) return;
       /* Les routes RÉELLES viennent du graphe routier : on l'attend (une
          seule requête, partagée) ; indisponible, la vue le dira. */
@@ -8008,8 +8019,16 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
         setConflitVise({ id: cible.id, cadrer: true, n: Date.now() });
       }
 
-      // Fermer le panneau latéral pour dégager immédiatement la carte et afficher le conflit
-      setPanneauConflitsOuvert(false);
+      /* Depuis le menu des conflits, il reste ouvert sur le détail ; sinon il se
+         ferme pour dégager la carte. */
+      if (!garderPanneau) {
+        if (detail && cible.id && ['admin', 'reg', 'cie'].includes(session?.rang)) {
+          setDemandeDetailConflit({ id: cible.id, n: Date.now() });
+          setPanneauConflitsOuvert(true);
+        } else {
+          setPanneauConflitsOuvert(false);
+        }
+      }
       fermerPanneau('notifications');
 
       // Fermer toute popup résiduelle sur la carte pour laisser la vue dégagée
@@ -8018,7 +8037,7 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
       // Cadrage selon le mode actif
       changerModeComparatifCarte(modeActif, conflitData);
     },
-    [items, graphe, chargerGrapheRoutier, fermerPanneau, changerModeComparatifCarte],
+    [items, graphe, chargerGrapheRoutier, fermerPanneau, changerModeComparatifCarte, session?.rang],
   );
 
   /* « Voir sur la carte » d'un conflit nouvellement détecté : l'impulsion
@@ -8217,7 +8236,7 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
   );
 
   const confirmerAssignationConflit = useCallback(
-    async ({ conflitId, conflitIds, matricule, matricules, consigne, conflitData, conflitsData, destinataire, destinataires }) => {
+    async ({ conflitId, conflitIds, matricule, matricules, consigne, conflitData, conflitsData, destinataire, destinataires, etatAttendu = null }) => {
       const listeMatricules = Array.isArray(matricules) && matricules.length > 0
         ? matricules
         : (matricule ? [matricule] : []);
@@ -8248,6 +8267,16 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
         matricules: listeMatricules,
         consigne,
         conflitData,
+        etatAttendu,
+      });
+      /* Enregistrée : le menu des conflits passe au suivant de la même région. */
+      const regionsAssignees = listeDestinataires.map((d) => d.unite).filter(Boolean);
+      setDerniereAssignation({
+        ts: Date.now(),
+        ids: [conflitId, res?.conflit?.id].filter(Boolean),
+        paires: [conflitData?.paireCle, res?.conflit?.paireCle].filter(Boolean),
+        regions: regionsAssignees.length ? regionsAssignees : (res?.conflit?.assignation?.regions ?? []).map((r) => r.unite),
+        destinataire: regionsAssignees.length ? `CMD Région ${regionsAssignees.join(' & ')}` : null,
       });
 
       rafraichirNotifications();
@@ -8314,6 +8343,14 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
   const confirmerTransmissionConflit = useCallback(
     async ({ conflitId, matricule, consigne, conflitData, destinataire }) => {
       const res = await API.transmettreConflit(conflitId, { matricule, consigne, conflitData });
+      /* Transmis : le menu passe au conflit suivant à transmettre. */
+      setDerniereAssignation({
+        ts: Date.now(),
+        ids: [conflitId, res?.conflit?.id].filter(Boolean),
+        paires: [conflitData?.paireCle, res?.conflit?.paireCle].filter(Boolean),
+        regions: session?.unite ? [session.unite] : [],
+        destinataire: destinataire?.unite ? `CMD CIE ${destinataire.unite}` : null,
+      });
       rafraichirNotifications();
       setVersionConflits((v) => v + 1);
       const cieNom = destinataire?.unite ? `Cie ${destinataire.unite}` : (matricule || 'CMD Compagnie');
@@ -8323,7 +8360,7 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
       });
       return res;
     },
-    [rafraichirNotifications],
+    [rafraichirNotifications, session?.unite],
   );
 
   const confirmerTraitementConflit = useCallback(
@@ -8350,135 +8387,23 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
     [rafraichirNotifications],
   );
 
-  /* GESTION DU PANNEAU CONFLIT ISOLÉ ET DE LA CONFIRMATION (Map-First Experience) */
-  const fermerConflitIsole = useCallback(() => {
-    setConflitAssigneVise(null);
-    setConflitVise(null);
-    setConflitViseLateral(null);
-    carte.current?.closePopup();
-  }, []);
-
-  const handleTraiterDirectDepuisConfirmation = useCallback(async (c) => {
-    setConflitEnConfirmation(null);
-    try {
-      if (c.workflow?.actions?.prendre_en_charge) {
-        await API.actionConflit(c.id, 'prendre_en_charge', { etatAttendu: c.workflow?.etat ?? null });
-      } else if (c.workflow?.actions?.commencer) {
-        await API.actionConflit(c.id, 'commencer', { etatAttendu: c.workflow?.etat ?? null });
-      }
-    } catch (err) {
-      console.warn('Action préalable traitement :', err?.message);
-    }
-    setConflitATraiter(c);
-  }, []);
-
-  const handleValiderAdminDepuisConfirmation = useCallback(async (c) => {
-    setConflitEnConfirmation(null);
-    try {
-      await API.deciderConflit(c.id, { decision: 'approuver', etatAttendu: c.workflow?.etat ?? null });
-      setVersionConflits((v) => v + 1);
-      rafraichirNotifications();
-      notifier({ type: 'succes', titre: 'Conflit validé', message: 'Le traitement du conflit a été validé avec succès.' });
-    } catch (err) {
-      console.error('Erreur validation :', err);
-      notifier({ type: 'erreur', titre: 'Erreur', message: err?.message || 'Erreur lors de la validation' });
-    }
-  }, [rafraichirNotifications]);
-
-  const handleRejeterAdminDepuisConfirmation = useCallback(async (c, motif) => {
-    setConflitEnConfirmation(null);
-    try {
-      await API.deciderConflit(c.id, { decision: 'rejeter', raison: motif, etatAttendu: c.workflow?.etat ?? null });
-      setVersionConflits((v) => v + 1);
-      rafraichirNotifications();
-      notifier({ type: 'info', titre: 'Traitement rejeté', message: 'Le traitement a été rejeté et renvoyé pour correction.' });
-    } catch (err) {
-      console.error('Erreur rejet :', err);
-      notifier({ type: 'erreur', titre: 'Erreur', message: err?.message || 'Erreur lors du rejet' });
-    }
-  }, [rafraichirNotifications]);
-
-  const handleCloturerAdminDepuisConfirmation = useCallback(async (c) => {
-    setConflitEnConfirmation(null);
-    try {
-      await API.actionConflit(c.id, 'cloturer', { etatAttendu: c.workflow?.etat ?? null });
-      setVersionConflits((v) => v + 1);
-      rafraichirNotifications();
-      notifier({ type: 'succes', titre: 'Conflit clôturé', message: 'Le conflit a été clôturé et archivé dans l’historique.' });
-    } catch (err) {
-      console.error('Erreur clôture :', err);
-      notifier({ type: 'erreur', titre: 'Erreur', message: err?.message || 'Erreur lors de la clôture' });
-    }
-  }, [rafraichirNotifications]);
-
-  const conflitActifIsole = useMemo(() => {
-    if (conflitViseLateral) return conflitViseLateral;
-    if (conflitVise?.id) {
-      const found = (conflitsIdentifies ?? []).find((c) => c.id === conflitVise.id);
-      if (found) return found;
-    }
-    if (conflitAssigneVise) {
-      return {
-        id: conflitAssigneVise.conflitNumero || conflitAssigneVise.conflitId || 'Conflit',
-        a: conflitAssigneVise.barrage,
-        b: conflitAssigneVise.voisin,
-        barrageA: conflitAssigneVise.barrage,
-        barrageB: conflitAssigneVise.voisin,
-        distanceKm: conflitAssigneVise.distanceKm ?? conflitAssigneVise.kmTrace,
-        distanceRoutiereKm: conflitAssigneVise.distanceKm ?? conflitAssigneVise.kmTrace,
-        route: conflitAssigneVise.route || conflitAssigneVise.barrage?.route,
-        statut: conflitAssigneVise.statut,
-        workflow: conflitAssigneVise.workflow,
-        changement: conflitAssigneVise.changement,
-        ...conflitAssigneVise,
-      };
-    }
-    return null;
-  }, [conflitViseLateral, conflitVise, conflitsIdentifies, conflitAssigneVise]);
-
-  const numeroConflitActifIsole = useMemo(() => {
-    if (!conflitActifIsole) return 1;
-    if (Array.isArray(conflitsIdentifies)) {
-      const idx = conflitsIdentifies.findIndex((c) => c.id === (conflitActifIsole.id || conflitActifIsole.numero));
-      if (idx !== -1) return idx + 1;
-    }
-    return 1;
-  }, [conflitActifIsole, conflitsIdentifies]);
-
-  const regionConflitActifIsole = useMemo(() => {
-    if (!conflitActifIsole) return 'Région non définie';
-    const bA = conflitActifIsole.a || conflitActifIsole.barrageA || conflitActifIsole.barrage;
-    const bB = conflitActifIsole.b || conflitActifIsole.barrageB || conflitActifIsole.voisin;
-    const regA = bA?.reg;
-    const regB = bB?.reg;
-    if (regA && regB) return regA === regB ? `Région ${regA}` : `Région ${regA} / ${regB}`;
-    const reg = regA || regB || conflitActifIsole.workflow?.regions?.[0] || conflitActifIsole.workflow?.region;
-    return reg ? `Région ${reg}` : 'Région non définie';
-  }, [conflitActifIsole]);
-
-  const statutConflitActifIsole = useMemo(() => {
-    if (!conflitActifIsole) return { label: 'À traiter', badgeClasse: 'bg-amber-500/15 text-amber-300 border-amber-500/30' };
-    const etat = conflitActifIsole.workflow?.etat;
-    if (
-      etat === 'APPROVED' ||
-      etat === 'FOLLOW_UP' ||
-      etat === 'CLOSED' ||
-      conflitActifIsole.statut === 'resolu' ||
-      conflitActifIsole.statut === 'traite' ||
-      conflitActifIsole.statut === 'cloture'
-    ) {
-      return { label: 'Traité', badgeClasse: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30' };
-    }
-    if (
-      etat === 'IN_PROGRESS_REGION' ||
-      etat === 'IN_PROGRESS_CIE' ||
-      etat === 'PENDING_VALIDATION' ||
-      conflitActifIsole.statut === 'en_cours'
-    ) {
-      return { label: 'En cours', badgeClasse: 'bg-sky-500/15 text-sky-300 border-sky-500/30' };
-    }
-    return { label: 'À traiter', badgeClasse: 'bg-amber-500/15 text-amber-300 border-amber-500/30' };
-  }, [conflitActifIsole]);
+  /* Après une assignation, une transmission… le panneau relit le conflit :
+     il montre « Assigné à … » et non plus « Assigner ». */
+  useEffect(() => {
+    const id = conflitViseLateral?.id;
+    if (!id || !commandement) return undefined;
+    let annule = false;
+    API.listerConflits()
+      .then((r) => {
+        const maj = (r?.items ?? []).find((c) => c.id === id);
+        if (!annule && maj) setConflitViseLateral((p) => (p?.id === id ? { ...p, ...maj } : p));
+      })
+      .catch(() => {});
+    return () => {
+      annule = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [versionConflits]);
 
   const handleConflitSupprime = useCallback(
     (conf) => {
@@ -8614,6 +8539,8 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
     }
     const point = { lng: +acc.lng.toFixed(5), lat: +acc.lat.toFixed(5) };
     const route = RT.refArete(graphe, acc.arete) ?? RT.nomArete(graphe, acc.arete) ?? null;
+    /* Route à deux chaussées : Aller et Retour, à choisir — jamais d'office. */
+    const choixSens = RT.chausseesOpposees(graphe, acc);
     const depart = RT.accrocher(graphe, barrageEnDeplacement.lng, barrageEnDeplacement.lat, 30);
     const it = depart ? RT.itineraire(graphe, depart, acc, 'court') : null;
     const verdict = preControle([point.lng, point.lat]);
@@ -8678,6 +8605,10 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
       trace: it?.trace ?? null,
       erreur: verdict === 'refuse' ? 'Nouvelle position hors de votre périmètre : enregistrement impossible.' : null,
       conflitNouveau: conflitDetecte,
+      /* Le seuil de cet aperçu : la réévaluation du serveur jugera avec le même. */
+      seuilKm: SEUIL_CONFLIT_KM,
+      sens: choixSens,
+      sensChoisi: choixSens ? (d.sensChoisi ?? null) : null,
       plusProcheAutre: plusProcheAutre
         ? {
           nom: MQ.libelle(plusProcheAutre.m) || plusProcheAutre.m.nom || plusProcheAutre.m.id,
@@ -9046,12 +8977,10 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
     [session, contexteTerritorial],
   );
 
-  // Synchronisation automatique et rafraîchissement des conflits lors de tout filtrage pour le Super Admin
+  /* Tout filtrage relit la liste des conflits (Super Admin) — sans jamais
+     ouvrir le panneau : il ne s'ouvre qu'à la demande. */
   useEffect(() => {
-    if (session?.rang === 'admin') {
-      setVersionConflits((v) => v + 1);
-      setPanneauConflitsOuvert(true);
-    }
+    if (session?.rang === 'admin') setVersionConflits((v) => v + 1);
   }, [filtreRoute, portee, active, session?.rang]);
 
   /**
@@ -9070,62 +8999,28 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
    * à l'écran. On décidait sur une unité en lisant le dispositif d'une autre.
    */
   /**
-   * LA FACTION RETENUE — un identifiant, ou `null` pour tout le dispositif.
-   *
-   * Le menu ne propose que « Toutes » et les quatre factions : il n'y a plus de
-   * consigne à résoudre. L'entrée « Faction actuelle » a existé et a été
-   * retirée ; la faction en cours reste signalée dans la liste par sa pastille,
-   * d'après l'horloge du serveur — jamais celle du navigateur, qui désignerait
-   * le mauvais tour de service sur un poste mal réglé.
-   */
-  const factionRetenue =
-    factionChoisie === 'toutes' ? null : (factionChoisie ?? factions?.factionActuelle ?? null);
-
-  /**
-   * LA FACTION QUE L'OPTIMISATION AUTOMATIQUE ANALYSE — dérivée du même choix,
-   * jamais d'un second état. Deux factions ne sont pas tenues en même temps :
-   * l'optimisation raisonne donc toujours sur UNE faction. Sous « Toutes » ou
-   * « Sans faction », c'est la faction en cours selon l'horloge du serveur.
+   * LA FACTION QUE L'OPTIMISATION ANALYSE — celle de SON propre choix
+   * (`factionOptimisationChoisie`), pas celle du filtre d'affichage.
+   * Deux factions ne sont pas tenues en même temps : l'optimisation raisonne
+   * donc toujours sur UNE faction. Sous « Sans faction », c'est la faction en
+   * cours selon l'horloge du serveur.
    */
   const factionOptimisation =
-    factionChoisie === 'toutes'
+    !factionOptimisationChoisie || factionOptimisationChoisie === 'toutes'
       ? 'toutes'
-      : (factionRetenue && factionRetenue !== 'sans_faction' ? factionRetenue : (factions?.factionActuelle ?? 'toutes'));
+      : (factionOptimisationChoisie !== 'sans_faction' ? factionOptimisationChoisie : (factions?.factionActuelle ?? 'toutes'));
 
   /**
-   * CHANGEMENT DE FACTION AVEC RECALCUL AUTOMATIQUE DE L'OPTIMISATION.
+   * CHANGEMENT DE FACTION — le filtre d'affichage, et lui seul.
    *
-   * Quand l'optimisation est active (en mode manuel ou automatique : panneau ouvert,
-   * calcul démarré ou résultats déjà affichés sur la carte), changer de faction
-   * recalcule immédiatement les conflits pour la nouvelle faction sélectionnée.
+   * Il relançait autrefois l'optimisation en cours sur la nouvelle faction.
+   * L'optimisation des barrages est désormais un module indépendant, avec sa
+   * propre faction (`factionOptimisationChoisie`) : filtrer l'affichage ne
+   * touche plus à ses calculs.
    */
-  const gererChangementFaction = useCallback(
-    (nouvelleFaction) => {
-      setFactionChoisie(nouvelleFaction);
-
-      const factionCible =
-        !nouvelleFaction || nouvelleFaction === 'toutes'
-          ? 'toutes'
-          : (nouvelleFaction === 'sans_faction' ? (factions?.factionActuelle ?? 'toutes') : nouvelleFaction);
-
-      const optimisationEstActive =
-        optimisationDemarree ||
-        optimisationResultats !== null ||
-        panneauOuvert === 'optimisation';
-
-      if (optimisationEstActive && recalculerOptimisationRef.current && !calculEnCoursRef.current) {
-        declencherRecalculOptimisation(distanceOptimisation, factionCible);
-      }
-    },
-    [
-      factions?.factionActuelle,
-      optimisationDemarree,
-      optimisationResultats,
-      panneauOuvert,
-      distanceOptimisation,
-      declencherRecalculOptimisation,
-    ],
-  );
+  const gererChangementFaction = useCallback((nouvelleFaction) => {
+    setFactionChoisie(nouvelleFaction);
+  }, []);
 
   /**
    * RELIRE LES REPOSITIONNEMENTS — et réagir à un changement OFFICIEL.
@@ -9609,9 +9504,8 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
 
   /**
    * RÉINITIALISATION DES FILTRES DE LA BARRE DU BAS — natures de marquage,
-   * faction, éclairage, accidents — à leur état d'ouverture. La faction passe
-   * par `gererChangementFaction` : c'est lui qui relance une optimisation en
-   * cours, exactement comme un choix fait à la main.
+   * faction, éclairage, accidents — à leur état d'ouverture. L'optimisation
+   * des barrages, module à part, n'est pas touchée.
    */
   const filtresModifies =
     MARQUAGE_LAYERS.filter((l) => active.has(l.key) !== Boolean(l.defaultOn)).length +
@@ -9628,6 +9522,72 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
     setFiltreEclairageBarrages('tous');
     setFiltreAccidentsBarrages('tous');
   };
+
+  /**
+   * « RÉINITIALISER » DU BOUTON FILTRES — l'affichage initial : les filtres
+   * ci-dessus, les couches et les numéros de routes. L'optimisation des
+   * barrages n'est PAS touchée : elle a son propre état et se désactive
+   * depuis son propre panneau (MenuOptimisation).
+   */
+  const reinitialiserAffichage = () => {
+    reinitialiserFiltres();
+    setActive((prev) => {
+      const next = new Set(prev);
+      for (const l of COUCHES_FILTRES) (l.defaultOn ? next.add(l.key) : next.delete(l.key));
+      return next;
+    });
+    if (!routesVisibles) basculerRoutes();
+  };
+
+  /* Un panneau à la fois : les filtres et les outils de gauche ne se superposent pas. */
+  const ouvrirFiltres = () => {
+    setPanneauOuvert(null);
+    setMenuOptimisationOuvert(false);
+    setPanneauConflitsOuvert(false);
+    setMenuFiltresOuvert(true);
+  };
+  const ouvrirOptimisation = () => {
+    setPanneauOuvert(null);
+    setMenuFiltresOuvert(false);
+    setPanneauConflitsOuvert(false);
+    setMenuOptimisationOuvert(true);
+  };
+  /* Le menu des conflits s'ouvre sous son bouton, là où s'ouvrent aussi les
+     filtres et l'optimisation : un seul à la fois. */
+  useEffect(() => {
+    if (panneauConflitsOuvert) {
+      setMenuFiltresOuvert(false);
+      setMenuOptimisationOuvert(false);
+    }
+  }, [panneauConflitsOuvert]);
+  useEffect(() => {
+    if (panneauOuvert) {
+      setMenuFiltresOuvert(false);
+      setMenuOptimisationOuvert(false);
+    }
+  }, [panneauOuvert]);
+
+  /* Où s'ouvrent les panneaux des outils : sous la puce « Outils », dans l'écran. */
+  const [ancreOutils, setAncreOutils] = useState(null);
+  useEffect(() => {
+    const placer = () => {
+      const r = boutonConflitsRef.current?.getBoundingClientRect?.();
+      if (!r) return;
+      const gauche = Math.round(Math.max(12, Math.min(r.left, window.innerWidth - 352)));
+      const haut = Math.round(r.bottom + 8);
+      setAncreOutils((a) => (a?.gauche === gauche && a?.haut === haut ? a : { gauche, haut }));
+    };
+    placer();
+    const minuterie = setInterval(placer, 500);
+    window.addEventListener('resize', placer);
+    return () => {
+      clearInterval(minuterie);
+      window.removeEventListener('resize', placer);
+    };
+  }, []);
+
+  /* Le bord gauche libre : la marge, ou la droite du panneau d'outil ouvert. */
+  const bordGauche = panneauOuvert ? 364 : 12;
 
   /* Les repères dessinés en vue agrégée (accidents, zahma…) : une étiquette
      décalée ne vient pas se poser dessus. */
@@ -9777,6 +9737,46 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
     cadrerCirconscription(niveau, nom);
   };
 
+  /**
+   * DOUBLE-CLIC SUR UNE RÉGION (compagnie, brigade) : on y ENTRE — même chemin
+   * que la navigation géographique (cadrage, contour, fil d'Ariane) — puis une
+   * petite bulle s'ouvre, une fois la carte arrivée : nom, échelon, chiffres
+   * utiles selon le rôle. Aucune grande fenêtre.
+   */
+  const entrerCirconscription = ({ couche, nom, properties: p = {}, latlng }) => {
+    const niveau = couche === 'circo_reg' ? 'region' : couche === 'circo_cie' ? 'compagnie' : 'brigade';
+    const champ = niveau === 'region' ? 'reg' : niveau === 'compagnie' ? 'cie' : 'bt';
+    const norm = (v) => String(v ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim().toLowerCase();
+    const barrages = items.filter((m) => MQ.estBarrage(m) && norm(m[champ]) === norm(nom)).length;
+    const conflitsZone = conflitsServeur.filter((c) =>
+      [c.barrageA ?? c.a, c.barrageB ?? c.b].some((b) => norm(b?.[champ]) === norm(nom)));
+    const lignes = [
+      `${barrages} barrage${barrages > 1 ? 's' : ''}${p.nbBt != null && niveau !== 'brigade' ? ` · ${p.nbBt} brigade${p.nbBt > 1 ? 's' : ''}` : ''}`,
+      commandement && conflitsZone.length ? `${conflitsZone.length} conflit${conflitsZone.length > 1 ? 's' : ''} en cours` : null,
+      p.population != null ? `${Number(p.population).toLocaleString('fr-FR')} hab.` : null,
+    ];
+    const html = bulleCirconscription({
+      echelon: niveau === 'region' ? 'Région' : niveau === 'compagnie' ? 'Compagnie' : 'Brigade',
+      nom,
+      lignes,
+    });
+    naviguerTerritoire(niveau, nom);
+    const map = carte.current;
+    if (!map || !latlng) return;
+    let ouverte = false;
+    const ouvrir = () => {
+      if (ouverte) return;
+      ouverte = true;
+      L.popup({ className: 'gr-bulle-circo-cadre', maxWidth: 220, minWidth: 150, autoPan: false, closeButton: true })
+        .setLatLng(latlng)
+        .setContent(html)
+        .openOn(map);
+    };
+    map.once('moveend', ouvrir);
+    /* La carte était peut-être déjà cadrée : pas de mouvement, pas d'attente. */
+    setTimeout(ouvrir, 1400);
+  };
+
   /* NAVIGATION GÉOGRAPHIQUE (NavigationGeographique.jsx) — les contours des
      trois échelons, chargés à l'ouverture du menu seulement. */
   const chargerContoursNavigation = useCallback(() => {
@@ -9861,26 +9861,8 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
             ouvrirPanneau('saisie');
           },
         },
-        ...(commandement
-          ? [
-              {
-                id: 'conflits',
-                label: 'Conflits',
-                court: 'Conflits',
-                icon: IconAlert,
-                active: panneauConflitsOuvert,
-                onClick: () => setPanneauConflitsOuvert((prev) => !prev),
-              },
-            ]
-          : []),
-        {
-          id: 'filtres',
-          label: 'Filtres',
-          court: 'Filtres',
-          icon: IconLayers,
-          active: menuFiltresOuvert,
-          onClick: () => setMenuFiltresOuvert((prev) => !prev),
-        },
+        /* Filtres, Optimisation et Conflits : dans le menu « Outils » de la carte
+           (MenuOutilsCarte) — pas en double ici. */
         {
           id: 'distances',
           label: 'Itinéraires',
@@ -9919,6 +9901,14 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
       active: modalFiltreRouteOuverte || Boolean(filtreRoute),
       badge: filtreRoute ? filtreRoute : null,
       onClick: () => setModalFiltreRouteOuverte(true),
+    },
+    /* Ancien bouton « Ma position » de la colonne de droite, retirée pour
+       dégager la carte : la fonction reste ici. */
+    {
+      id: 'ma_position',
+      label: 'Ma position (GPS)',
+      icon: IconTarget,
+      onClick: localiserPosition,
     },
     {
       id: 'organisation',
@@ -9966,9 +9956,17 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
            `data-gr-scene` : un repère stable pour les épreuves, et de quoi
            constater d'un coup d'œil sur quoi la carte travaille. */
         data-gr-portee={portee ? `${portee.niveau}:${portee.unite}` : 'national'}
+        /* Choix d'une nouvelle position : le fond de carte seul (index.css).
+           L'attribut tombe avec le mode — confirmation, annulation ou erreur —
+           et tout revient tel quel. */
+        data-gr-selection-position={armeDeplacement !== null || undefined}
         className={`relative h-full w-full ${arme || enAttente ? 'gr-armed' : ''}`}
       >
         <NavigationRail
+          masquerBouton
+          ouvert={voletNavigationOuvert}
+          onOuvertChange={setVoletNavigationOuvert}
+          decalageGauche={bordGauche}
           sections={sectionsNavigation}
           outilsSecondaires={outilsSecondaires}
           canCreate={session?.role !== 'lecture'}
@@ -9980,14 +9978,55 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
           mode={mode}
           source={API.sourceDonnees()}
           panneauOuvert={panneauOuvert !== null}
-          panneauDroitOuvert={panneauConflitsOuvert}
-          onOuvrirFiltres={() => setMenuFiltresOuvert(true)}
-          filtresModifies={filtresModifies}
+          panneauDroitOuvert={false}
           onLogout={deconnexion}
           onDemandeDeconnexion={() => setDemandeDeconnexion(true)}
           apparence={apparence}
           onChoisirTheme={choisirTheme}
           onFocus={() => setModeFocus(true)}
+          /* OUTILS DE LA CARTE — Filtres, Optimisation, Conflits : une puce de la
+             rangée du haut. Chaque outil garde son panneau, ouvert sous elle. */
+          outils={
+            <MenuOutilsCarte
+            enLigne
+            ref={boutonConflitsRef}
+            decalageGauche={bordGauche}
+            outils={[
+              {
+                cle: 'filtres',
+                libelle: 'Filtres',
+                compteur:
+                  filtresModifies +
+                  COUCHES_FILTRES.filter((c) => active.has(c.key) !== Boolean(c.defaultOn)).length +
+                  (routesVisibles ? 0 : 1),
+                actif: menuFiltresOuvert,
+                onChoisir: () => (menuFiltresOuvert ? setMenuFiltresOuvert(false) : ouvrirFiltres()),
+              },
+              {
+                cle: 'optimisation',
+                libelle: 'Optimisation des barrages',
+                libelleCourt: 'Optimisation',
+                compteur: nombreOptimisationsActives(ongletsOptimisationComplets),
+                actif: menuOptimisationOuvert,
+                onChoisir: () => (menuOptimisationOuvert ? setMenuOptimisationOuvert(false) : ouvrirOptimisation()),
+              },
+              ...(commandement
+                ? [
+                    {
+                      cle: 'conflits',
+                      libelle: destinataireConflits ? 'Conflits à traiter' : 'Conflits',
+                      libelleCourt: 'Conflits',
+                      compteur: destinataireConflits ? conflitsATraiter : 0,
+                      /* Ce qui attend le commandement se voit sans ouvrir le menu. */
+                      compteurBouton: destinataireConflits ? conflitsATraiter : 0,
+                      actif: panneauConflitsOuvert,
+                      onChoisir: () => setPanneauConflitsOuvert((v) => !v),
+                    },
+                  ]
+                : []),
+            ]}
+          />
+          }
           breadcrumb={
             /* Le bouton de navigation AVANT le fil d'Ariane : la barre du haut
                est bornée en largeur, c'est le fil qui se tronque, jamais lui. */
@@ -10013,6 +10052,8 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
           recherche={(
             <RechercheCarte
               integree
+              fixe
+              onMenu={() => setVoletNavigationOuvert(true)}
               masquee={bulleOuverte}
               items={items}
               onAller={(m) => cadrerMq(m, { persistant: true })}
@@ -10042,8 +10083,9 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
           maxBounds={BORNES_MAROC}
           maxBoundsViscosity={1}
           /* Molette et pavé tactile : zoom par quarts de niveau, moins
-             brusque (120 px de défilement par niveau au lieu de 60) ; les
-             boutons +/− gardent un niveau entier (CommandesZoom). */
+             brusque (120 px de défilement par niveau au lieu de 60). Il n'y a
+             pas de boutons +/− : molette, pincement, double-clic et clavier
+             suffisent, et la carte reste dégagée. */
           zoomSnap={0.25}
           zoomDelta={0.5}
           wheelPxPerZoomLevel={120}
@@ -10068,8 +10110,8 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
           {/* Optimisation par route : tracé, corridor, barrages concernés, conflits. */}
           {Boolean(vueRoute?.lignes?.length) && (
             <CoucheOptimisationRoute
-              vue={vueRoute}
-              onAssigner={(c) => setConflitAAssigner(c)}
+              vue={vueRouteAffichee}
+              onAssigner={demanderAssignationConflit}
               estAdmin={session?.rang === 'admin'}
             />
           )}
@@ -10160,6 +10202,7 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
             seul endroit décide : `visibiliteLimites` (limitesTerritoriales.js).
             Ordre de superposition : surfaces, puis points, puis liaisons. */}
           <VoletsLimites />
+          <VoletSelection />
           <AppliquerLimites couches={limites.couches} />
           {CIRCO_LAYERS.map((cfg) => {
             const data = donneesLimite(cfg.key);
@@ -10174,6 +10217,7 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
                   data={data}
                   selection={selection}
                   onSelect={handleSelect}
+                  onEntrer={entrerCirconscription}
                   pane={PANE_LIMITES[cfg.key].nom}
                   attenue={etat.role !== 'principal'}
                   /* Cloisonnement : un contour hors portée se voit, ne s'ouvre
@@ -10358,19 +10402,6 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
               peutReprendre={!superviseur && session?.rang === 'admin'}
             />
 
-            {/* Un barrage tout juste posé se signale de lui-même, sans attendre
-            qu'une optimisation soit lancée — voir NouveauxBarragesLayer. */}
-            <NouveauxBarragesLayer
-              items={marquagesVisibles}
-              repositionnes={repositionnes}
-              afficherDeplaces={false}
-              notifications={notifications}
-              focusId={focusBarrageId}
-              onOuvrir={(m) => {
-                setMqSelection(m.id);
-                ouvrirPanneau('notifications');
-              }}
-            />
 
           </>}
 
@@ -10436,7 +10467,7 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
             marges={{ gauche: (panneauOuvert ? 440 : 96) + 40, haut: 260, droite: 90, bas: 110 }}
             estAdmin={session?.rang === 'admin'}
             session={session}
-            onAssigner={(c) => setConflitAAssigner(c)}
+            onAssigner={demanderAssignationConflit}
           />
 
           <RoutesConflitLayer routes={routesRepositionnement} seuilKm={seuilRepositionnement} items={items} />
@@ -10465,20 +10496,6 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
               </div>
             </div>
           )}
-          <NouveauxBarragesLayer
-            items={[]}
-            notifications={null}
-            tousItems={items}
-            repositionnes={repositionnes}
-            onVu={(id) =>
-              setRepositionnes((prev) => {
-                const info = prev.get(id);
-                if (info?.cleVu && session?.matricule) marquerRepereVu(session.matricule, info.cleVu);
-                const suivant = new Map(prev);
-                suivant.delete(id);
-                return suivant;
-              })}
-          />
 
           <ApercuOptimisationLayer
             apercu={filtreOptim(optimisationResultats, 'deplacements') ? optimisationResultats?.apercu : null}
@@ -10577,7 +10594,75 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
               }
               pathOptions={{ color: '#D6A928', weight: 4, dashArray: '6 6', opacity: 0.95 }}
               interactive={false}
+              pane={PANE_SELECTION}
             />
+          )}
+
+          {/* LES POSTES DE LA DERNIÈRE RÉÉVALUATION — rouge : encore en conflit ;
+              vert : résolu ; doré : le poste déplacé. */}
+          {reevaluation && !barrageEnDeplacement && [
+            [reevaluation.barrageId, '#D6A928'],
+            ...[...reevaluation.restants, ...reevaluation.nouveaux].map((l) => [l.autreId, '#DC2626']),
+            ...reevaluation.resolus.map((l) => [l.autreId, '#16A34A']),
+          ].map(([id, couleur]) => {
+            const m = items.find((x) => x.id === id);
+            return m && Number.isFinite(m.lat) ? (
+              <CircleMarker
+                key={`reev-${id}-${reevaluation.ts}`}
+                center={[m.lat, m.lng]}
+                radius={16}
+                interactive={false}
+                pathOptions={{ color: couleur, weight: 3, fillColor: couleur, fillOpacity: 0.12, dashArray: '4 3' }}
+              />
+            ) : null;
+          })}
+
+          {/* SÉLECTION DE POSITION — repère de la position actuelle, les deux
+              chaussées s'il y en a deux, et le marqueur temporaire. */}
+          {barrageEnDeplacement && Number.isFinite(barrageEnDeplacement.lat) && (
+            <CircleMarker
+              center={[barrageEnDeplacement.lat, barrageEnDeplacement.lng]}
+              radius={7}
+              pane={PANE_SELECTION}
+              interactive={false}
+              pathOptions={{ color: '#ffffff', weight: 2, fillColor: '#64748b', fillOpacity: 0.9, dashArray: '3 3' }}
+            >
+              <Tooltip direction="top" offset={[0, -8]} permanent pane={PANE_SELECTION}>Position actuelle</Tooltip>
+            </CircleMarker>
+          )}
+          {demandeDeplacement?.sens &&
+            [['aller', SENS_ALLER, 'Aller', '#0284c7'], ['retour', SENS_RETOUR, 'Retour', '#ea580c']].map(([cle, valeur, libelle, couleur]) => {
+              const choisi = demandeDeplacement.sensChoisi === valeur;
+              return (
+                <Polyline
+                  key={`sens-${cle}-${demandeDeplacement.ts}`}
+                  positions={demandeDeplacement.sens[cle].trace.map(([lng, lat]) => [lat, lng])}
+                  pane={PANE_SELECTION}
+                  pathOptions={{ color: couleur, weight: choisi ? 10 : 7, opacity: choisi || !demandeDeplacement.sensChoisi ? 0.95 : 0.35, lineCap: 'round' }}
+                  eventHandlers={{
+                    click: (e) => {
+                      L.DomEvent.stopPropagation(e);
+                      choisirSensDeplacement(valeur);
+                    },
+                  }}
+                >
+                  <Tooltip permanent direction={cle === 'aller' ? 'left' : 'right'} offset={[cle === 'aller' ? -12 : 12, 0]} pane={PANE_SELECTION}>{libelle}</Tooltip>
+                </Polyline>
+              );
+            })}
+          {(demandeDeplacement?.point || demandeDeplacement?.clic) && barrageEnDeplacement && (
+            <CircleMarker
+              center={[
+                (demandeDeplacement.point ?? demandeDeplacement.clic).lat,
+                (demandeDeplacement.point ?? demandeDeplacement.clic).lng,
+              ]}
+              radius={9}
+              pane={PANE_SELECTION}
+              interactive={false}
+              pathOptions={{ color: '#0B1B2D', weight: 3, fillColor: '#D6A928', fillOpacity: 1 }}
+            >
+              <Tooltip direction="top" offset={[0, -10]} permanent pane={PANE_SELECTION}>Nouvelle position</Tooltip>
+            </CircleMarker>
           )}
 
           {/* Tracé de la route réelle du conflit détecté lors du déplacement */}
@@ -10587,12 +10672,14 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
                 positions={demandeDeplacement.conflitNouveau.trace.map(([lng, lat]) => [lat, lng])}
                 pathOptions={{ color: '#0B1B2D', weight: 8, opacity: 0.75 }}
                 interactive={false}
+                pane={PANE_SELECTION}
               />
               <Polyline
                 positions={demandeDeplacement.conflitNouveau.trace.map(([lng, lat]) => [lat, lng])}
                 pathOptions={{ color: '#EF4444', weight: 4.5, dashArray: '8, 8', opacity: 0.95 }}
+                pane={PANE_SELECTION}
               >
-                <Tooltip sticky>
+                <Tooltip sticky pane={PANE_SELECTION}>
                   {`⚠ Conflit par la route : ${demandeDeplacement.conflitNouveau.distanceKm} km (seuil ${demandeDeplacement.conflitNouveau.seuilKm} km) ↔ ${demandeDeplacement.conflitNouveau.voisinNom}`}
                 </Tooltip>
               </Polyline>
@@ -10653,7 +10740,6 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
                           e.originalEvent.stopPropagation();
                           viserConflit(conf.id);
                           setConflitViseLateral(conf);
-                          setPanneauConflitsOuvert(true);
                         },
                       }}
                     >
@@ -10674,121 +10760,9 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
           <AttributionControl position="bottomright" prefix={false} />
         </MapContainer>
 
-        {/* LES ONGLETS D'OPTIMISATION — sous la barre de commande, hors de la
-          carte : ils ne remplacent ni ne recouvrent ses contrôles. Un clic ouvre
-          la configuration de l’onglet (voir `DialogueOnglet`), sans ouvrir le panneau.
-          Sur petit écran, le haut est pris par le résumé de contexte : la barre
-          descend juste au-dessus des filtres, et défile horizontalement. */}
-        {/* LES ONGLETS DE FILTRAGE DES BARRAGES — repliable, conservant Distance, Accidents, VIP et Éclairage */}
-        <div data-gr-chrome
-          className="pointer-events-none absolute inset-x-0 bottom-16 z-[1050] flex justify-center transition-[padding] duration-150 md:bottom-auto md:top-[calc(4.25rem+var(--gr-bandeau,0px))]"
-          style={{
-            paddingLeft: panneauOuvert ? 420 : 76,
-            paddingRight: 64,
-          }}
-        >
-          <div className="flex items-center gap-2">
-            <OngletsOptimisation
-              onglets={ongletsOptimisationComplets}
-              onOuvrir={gererOuvertureOnglet}
-              onDesactiver={gererDesactivationOnglet}
-            />
-          </div>
-        </div>
 
-        {/* Bandeau d'isolation de la route sélectionnée */}
-        {filtreRoute && (
-          <div
-            className="pointer-events-none absolute inset-x-0 z-[1049] flex justify-center transition-all duration-150 top-[calc(7.2rem+var(--gr-bandeau,0px))]"
-            style={{
-              paddingLeft: panneauOuvert ? 420 : 76,
-              paddingRight: 64,
-            }}
-          >
-            <div className="pointer-events-auto flex items-center gap-2 rounded-xl border border-gr-gold/60 bg-gr-navy/95 px-3 py-1.5 text-xs text-white shadow-xl backdrop-blur-md animate-in fade-in slide-in-from-top-2">
-              <span className="flex size-2 rounded-full bg-gr-gold animate-pulse" />
-              <span className="text-white/70">Axe isolé :</span>
-              <span className="font-bold text-gr-gold font-mono uppercase">{filtreRoute}</span>
-              {barragesVisiblesCount != null && (
-                <span className="rounded-md bg-white/10 px-1.5 py-0.5 text-[10.5px] text-white/80">
-                  {barragesVisiblesCount} barrage{barragesVisiblesCount > 1 ? 's' : ''}
-                </span>
-              )}
-              {conflitsCalculesRoute && (
-                <button
-                  type="button"
-                  onClick={() => setPanneauConflitsOuvert(true)}
-                  className={`rounded-md px-2 py-0.5 text-[10.5px] font-bold transition-all cursor-pointer ${
-                    conflitsCalculesRoute.length > 0
-                      ? 'bg-amber-500/25 text-amber-300 hover:bg-amber-500/40 border border-amber-500/40 animate-pulse'
-                      : 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'
-                  }`}
-                  title="Cliquer pour ouvrir le panneau latéral des conflits"
-                >
-                  {conflitsCalculesRoute.length > 0
-                    ? `⚠️ ${conflitsCalculesRoute.length} conflit${conflitsCalculesRoute.length > 1 ? 's' : ''}`
-                    : '✓ Espacement respecté'}
-                </button>
-              )}
-              {/* Sélecteur rapide de sens sur le bandeau */}
-              <div className="flex items-center gap-1 border-l border-white/20 pl-2 ml-1">
-                <button
-                  type="button"
-                  onClick={() => setFiltreSensRoute(SENS_TOUS)}
-                  className={`px-2 py-0.5 rounded text-[10.5px] font-bold transition-all cursor-pointer ${
-                    filtreSensRoute === SENS_TOUS
-                      ? 'bg-gr-gold text-gr-navy font-extrabold'
-                      : 'bg-white/5 text-white/70 hover:bg-white/15 hover:text-white'
-                  }`}
-                  title="Afficher tous les barrages (Aller et Retour)"
-                >
-                  Tous
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setFiltreSensRoute(SENS_ALLER)}
-                  className={`px-2 py-0.5 rounded text-[10.5px] font-bold flex items-center gap-1 transition-all cursor-pointer ${
-                    filtreSensRoute === SENS_ALLER
-                      ? 'bg-sky-500 text-white font-extrabold shadow-sm'
-                      : 'bg-white/5 text-sky-300 hover:bg-sky-500/20'
-                  }`}
-                  title="Afficher uniquement les barrages du sens Aller"
-                >
-                  <span>Aller</span>
-                  <span>➔</span>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setFiltreSensRoute(SENS_RETOUR)}
-                  className={`px-2 py-0.5 rounded text-[10.5px] font-bold flex items-center gap-1 transition-all cursor-pointer ${
-                    filtreSensRoute === SENS_RETOUR
-                      ? 'bg-amber-500 text-gr-navy font-extrabold shadow-sm'
-                      : 'bg-white/5 text-amber-300 hover:bg-amber-500/20'
-                  }`}
-                  title="Afficher uniquement les barrages du sens Retour"
-                >
-                  <span>Retour</span>
-                  <span>⬅</span>
-                </button>
-              </div>
-              <button
-                type="button"
-                onClick={() => setModalFiltreRouteOuverte(true)}
-                className="ml-1 rounded-lg bg-white/10 px-2 py-0.5 text-[11px] font-semibold text-white/90 hover:bg-white/20 transition-colors"
-              >
-                Modifier
-              </button>
-              <button
-                type="button"
-                onClick={handleEffacerFiltreRouteComplet}
-                className="rounded-lg bg-red-500/20 px-2 py-0.5 text-[11px] font-semibold text-red-300 hover:bg-red-500/30 transition-colors"
-                title="Désactiver le filtre et afficher toutes les routes"
-              >
-                Désactiver
-              </button>
-            </div>
-          </div>
-        )}
+        {/* L'axe isolé (route, barrages, conflits, sens, Modifier, Désactiver) est
+            dans le menu des conflits — plus de barre flottante sur la carte. */}
 
         {conflitAnalysePreTraitement && (
           <ConflitAnalysePanel
@@ -10834,10 +10808,15 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
         )}
 
         {/* Barre flottante interactive AVANT / APRÈS / COMPARER pour un conflit traité */}
-        {conflitAssigneVise && (conflitAssigneVise.changement || conflitAssigneVise.estTraite) && (
+        {conflitAssigneVise && (conflitAssigneVise.changement || conflitAssigneVise.estTraite) && (() => {
+          /* Jamais sous le menu des conflits : à sa droite, et s'il ne reste pas
+             la place d'une barre lisible (petit écran), en bas de la carte. */
+          const gauche = Math.max(panneauOuvert ? 420 : 64, bordMenuConflits != null ? bordMenuConflits + 16 : 0);
+          const enBas = bordMenuConflits != null && window.innerWidth - gauche - 16 < 440;
+          return (
           <div
-            className="pointer-events-none absolute top-28 inset-x-0 z-[1051] flex justify-center px-4 transition-all duration-150"
-            style={{ paddingLeft: panneauOuvert ? 420 : 76, paddingRight: 64 }}
+            className={`pointer-events-none absolute inset-x-0 z-[1051] flex justify-center px-4 transition-all duration-150 ${enBas ? 'bottom-12' : 'top-28'}`}
+            style={enBas ? undefined : { paddingLeft: gauche, paddingRight: 16 }}
           >
             <BarreComparatifAvantApresCarte
               conflit={conflitAssigneVise}
@@ -10847,59 +10826,31 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
               onFermer={() => setConflitAssigneVise(null)}
             />
           </div>
-        )}
-
-        {/* PANNEAU CONFLIT ISOLÉ DÉDIÉ (Map-First Experience) — affiché uniquement si le grand panneau latéral est fermé */}
-        {(conflitAssigneVise || conflitVise) && !panneauConflitsOuvert && conflitActifIsole && (
-          <PanneauConflitIsole
-            conflit={conflitActifIsole}
-            numeroAffiche={numeroConflitActifIsole}
-            regionAffichee={regionConflitActifIsole}
-            statutSimple={statutConflitActifIsole}
-            onFermer={fermerConflitIsole}
-            onTraiter={(c) => setConflitEnConfirmation(c)}
-          />
-        )}
-
-        {/* MODALE DE CONFIRMATION DE TRAITEMENT DEPUIS LA CARTE (Workflow & rôles respectés) */}
-        {conflitEnConfirmation && (
-          <ModalConfirmationTraitement
-            conflit={conflitEnConfirmation}
-            session={session}
-            numeroAffiche={numeroConflitActifIsole}
-            regionAffichee={regionConflitActifIsole}
-            statutSimple={statutConflitActifIsole}
-            onClose={() => setConflitEnConfirmation(null)}
-            onAssignerRegion={(c) => {
-              setConflitEnConfirmation(null);
-              setConflitAAssigner(Array.isArray(c) ? { conflits: c } : c);
-            }}
-            onAssignerCie={(c) => {
-              setConflitEnConfirmation(null);
-              setConflitATransmettre(c);
-            }}
-            onTraiterDirect={handleTraiterDirectDepuisConfirmation}
-            onValiderAdmin={handleValiderAdminDepuisConfirmation}
-            onRejeterAdmin={handleRejeterAdminDepuisConfirmation}
-            onCloturerAdmin={handleCloturerAdminDepuisConfirmation}
-          />
-        )}
+          );
+        })()}
 
         {/* Panneau latéral unique et centralisé pour les conflits */}
         <PanneauConflitsLateral
           ouvert={panneauConflitsOuvert}
           onFermer={() => setPanneauConflitsOuvert(false)}
+          ancreRef={boutonConflitsRef}
+          onBordDroit={setBordMenuConflits}
+          demandeListe={demandeListeConflits}
+          demandeDetail={demandeDetailConflit}
+          derniereAssignation={derniereAssignation}
           session={session}
           factions={factions}
           conflitsIdentifies={conflitsIdentifies}
           conflitVise={conflitViseLateral}
           version={versionConflits}
           onVoirSurCarte={afficherConflitSurCarte}
-          onAssigner={(c) => setConflitAAssigner(Array.isArray(c) ? { conflits: c } : c)}
+          onAssigner={demanderAssignationConflit}
           onDesassigner={handleDesassignerConflit}
           onTransmettre={(c) => setConflitATransmettre(c)}
           onTraiter={(c) => {
-            afficherConflitSurCarte(c);
+            /* La carte se cadre sur le conflit (sans rien ouvrir d'autre), et la
+               fenêtre de traitement s'ouvre une seule fois. */
+            afficherConflitSurCarte(c, null, { detail: false });
             setConflitATraiter(c);
           }}
           onConflitSupprime={handleConflitSupprime}
@@ -10950,6 +10901,8 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
             session={session}
             onClose={() => setConflitAAssigner(null)}
             onConfirmer={confirmerAssignationConflit}
+            /* À côté du menu des conflits (qui reste ouvert pour passer au suivant), jamais dessus. */
+            gauche={panneauConflitsOuvert && bordMenuConflits != null ? Math.max(12, Math.min(bordMenuConflits + 12, window.innerWidth - 352)) : 12}
           />
         )}
 
@@ -11018,15 +10971,23 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
           onStatut={setStatutRoute}
           items={items}
           onAssigner={superviseur ? demanderAssignation : null}
-          onAssignerConflit={(c) => setConflitAAssigner(c)}
+          onAssignerConflit={demanderAssignationConflit}
           estAdmin={session?.rang === 'admin'}
           session={session}
         />
 
-        {/* Menu Filtres Unifié — Map First Experience (modal/tiroir épuré) */}
+        {/* FILTRES — un seul bouton sur le côté de la carte, et à côté, l'accès
+            aux conflits pour le commandement. */}
         <MenuFiltresUnifie
           ouvert={menuFiltresOuvert}
+          onOuvrir={ouvrirFiltres}
           onFermer={() => setMenuFiltresOuvert(false)}
+          decalageGauche={ancreOutils?.gauche ?? bordGauche}
+          haut={ancreOutils?.haut ?? null}
+          afficherBouton={false}
+          couches={COUCHES_FILTRES}
+          routesVisibles={routesVisibles}
+          onToggleRoutes={basculerRoutes}
           layers={MARQUAGE_LAYERS}
           activeLayers={active}
           onToggleLayer={toggleLayer}
@@ -11041,37 +11002,27 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
           onChangerAccidents={setFiltreAccidentsBarrages}
           totalBarrages={items.filter(MQ.estBarrage).length}
           filtresModifies={filtresModifies}
-          onReinitialiser={reinitialiserFiltres}
+          onReinitialiser={reinitialiserAffichage}
         />
 
-        {/* Indicateur discret : visible UNIQUEMENT quand des filtres personnalisés sont actifs */}
-        {filtresModifies > 0 && (
-          <div
-            data-gr-chrome
-            className="pointer-events-none absolute bottom-3 inset-x-0 z-[1048] flex justify-center transition-[padding] duration-150"
-            style={{ paddingLeft: panneauOuvert ? 420 : 76, paddingRight: 64 }}
-          >
-            <div className="pointer-events-auto flex items-center gap-2 rounded-full border border-amber-500/40 bg-gr-navy/95 px-3.5 py-1.5 text-xs text-amber-200 shadow-xl backdrop-blur-md">
-              <span className="flex size-2 rounded-full bg-amber-400 animate-pulse" />
-              <span className="font-semibold">{filtresModifies} filtre{filtresModifies > 1 ? 's' : ''} actif{filtresModifies > 1 ? 's' : ''}</span>
-              <button
-                type="button"
-                onClick={() => setMenuFiltresOuvert(true)}
-                className="font-bold underline text-amber-300 hover:text-white cursor-pointer ml-1"
-              >
-                Modifier
-              </button>
-              <span className="text-white/20">·</span>
-              <button
-                type="button"
-                onClick={reinitialiserFiltres}
-                className="text-[11px] text-white/60 hover:text-white cursor-pointer"
-              >
-                Réinitialiser
-              </button>
-            </div>
-          </div>
-        )}
+        {/* OPTIMISATION DES BARRAGES — module à part : ouvert depuis le menu
+            « Outils », ni son état ni ses calculs ne dépendent des filtres. */}
+        <MenuOptimisation
+          ouvert={menuOptimisationOuvert}
+          onFermer={() => setMenuOptimisationOuvert(false)}
+          decalageGauche={ancreOutils?.gauche ?? bordGauche}
+          haut={ancreOutils?.haut ?? null}
+          onglets={ongletsOptimisationComplets}
+          onOuvrirOnglet={(cle) => {
+            setMenuOptimisationOuvert(false);
+            gererOuvertureOnglet(cle);
+          }}
+          onDesactiverOnglet={gererDesactivationOnglet}
+          onOuvrirPanneauComplet={() => {
+            setMenuOptimisationOuvert(false);
+            ouvrirPanneau('optimisation');
+          }}
+        />
 
         {/* Retours brefs (succès, erreur, étapes du workflow) — voir Toasts.jsx. */}
         <Toasts />
@@ -11082,11 +11033,14 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
         </GardeErreur>
         {/* Analyse d'un axe : radar pendant le calcul réel, puis son résultat. */}
         <GardeErreur nom="radar-analyse" silencieux cle={radarAffiche?.libelle}>
-          <RadarAnalyse radar={radarAffiche} decalageDroit={panneauConflitsOuvert ? 430 : 0} />
+          <RadarAnalyse radar={radarAffiche} decalageDroit={0} />
         </GardeErreur>
         <GardeErreur nom="resultat-analyse" silencieux cle={analyseAxe}>
+          {/* Menu des conflits ouvert : il liste déjà tous les conflits détectés —
+              seule une ERREUR de calcul (« Réessayer ») reste affichée, à côté. */}
           <CarteResultatAnalyse
-            analyse={analyseAxe}
+            analyse={analyseAxe?.etat === 'erreur' || (analyseAxe?.etat === 'aucun' && !panneauConflitsOuvert) ? analyseAxe : null}
+            gauche={panneauConflitsOuvert && bordMenuConflits != null ? bordMenuConflits + 16 : 88}
             onVoir={voirResultatCalcul}
             onFermer={fermerResultatAnalyse}
             onReessayer={reessayerAnalyse}
@@ -11099,7 +11053,7 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
             onVoir={voirConflitDetecte}
             onVoirListe={() => setPanneauConflitsOuvert(true)}
             onFermer={fermerAlerteConflits}
-            decalageDroit={panneauConflitsOuvert ? 442 : 12}
+            decalageDroit={12}
           />
         </GardeErreur>
 
@@ -11117,19 +11071,6 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
             Quitter le focus
           </button>
         )}
-
-        {/* Commandes regroupées hors du MapContainer : toujours accessibles. */}
-        <MapControlDock
-          carte={carte}
-          zoom={zoomActuel}
-          min={FOND_OPTIONS.minZoom}
-          max={FOND_OPTIONS.maxZoom}
-          onRecentrer={recentrerCarte}
-          onMaroc={() => naviguerTerritoire('maroc')}
-          onLocaliser={localiserPosition}
-          /* Le découpage que ce zoom fait apparaître, écrit sous le chiffre. */
-          echelon={LIBELLE_ECHELON[echelonTerritorial]}
-        />
 
         {/**
        * LE COIN BAS-GAUCHE — UNE SEULE COLONNE, empilée vers le haut.
@@ -11174,6 +11115,24 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
           />
         )}
 
+        {/* RÉÉVALUATION APRÈS DÉPLACEMENT — position valide, conflits restants ou
+            nouveaux, et le poste à déplacer ensuite (voir CarteReevaluation). */}
+        {reevaluation && !barrageEnDeplacement && (
+          <CarteReevaluation
+            bilan={reevaluation}
+            onFermer={() => setReevaluation(null)}
+            onVoirConflits={commandement ? () => {
+              setPanneauConflitsOuvert(true);
+              setDemandeListeConflits((n) => n + 1);
+            } : null}
+            onDeplacer={(id) => {
+              const m = items.find((x) => x.id === id);
+              if (m) demarrerDeplacement(m);
+              else setMessageEdition({ ok: false, texte: 'Ce barrage n’est pas dans votre périmètre affiché : déplacement impossible d’ici.' });
+            }}
+          />
+        )}
+
         {/* Déplacement : consigne, puis aperçu — voir ConfirmationDeplacement. */}
         {barrageEnDeplacement && (
           <ConfirmationDeplacement
@@ -11181,10 +11140,12 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
             demande={demandeDeplacement}
             chargementReseau={grapheEtat === 'chargement'}
             occupe={deplacementEnCours}
+            onChoisirSens={choisirSensDeplacement}
             onAnnuler={() => {
               /* Rien à défaire côté serveur : rien n'y a été envoyé. Le repère
                  revient de lui-même, la position proposée disparaissant. */
               annulerDeplacement();
+              setConflitEnTraitement(null);
               setMessageEdition({ ok: true, texte: 'Déplacement annulé : le barrage est resté à sa place.' });
             }}
             onConfirmer={async () => {
@@ -11209,16 +11170,53 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
                      MQ.estIntouchable(conflitEnTraitement.b || conflitEnTraitement.barrageB))
                   )
                 );
-                await deplacer(barrageEnDeplacement, [d.point.lng, d.point.lat], d.route ?? '', {
+                const deplace = await deplacer(barrageEnDeplacement, [d.point.lng, d.point.lat], d.route ?? '', {
                   conflitInterRegionBfi: estInterRegionBfi,
                   autoriserBfi: estInterRegionBfi,
+                  /* Le sens choisi sur une route à deux chaussées, enregistré avec
+                     la position (les deux champs : le dépôt relit l'un ou l'autre). */
+                  ...(d.sensChoisi ? { direction: d.sensChoisi, sens: d.sensChoisi } : {}),
+                  ...(d.seuilKm ? { seuilKm: d.seuilKm } : {}),
                 });
-                if (conflitEnTraitement) {
-                  setConflitApresDeplacement({
-                    ...conflitEnTraitement,
-                    deplacementDetails: depDetails,
-                  });
+                /* Conflit en cours de traitement : le déplacement ENREGISTRÉ est son
+                   traitement — enregistré d'office, sans bandeau à valider. Un
+                   déplacement refusé ou en échec n'enregistre rien. */
+                /* Le traitement n'est enregistré que si la réévaluation du serveur ne
+                   laisse pas CE conflit sous le seuil ; sinon la carte de
+                   réévaluation guide vers la position suivante. */
+                const paireTraitee = conflitEnTraitement
+                  ? [conflitEnTraitement.barrageAId || conflitEnTraitement.a?.id, conflitEnTraitement.barrageBId || conflitEnTraitement.b?.id]
+                  : [];
+                const toujoursEnConflit = Boolean(deplace?.reevaluation?.restants?.some((l) => paireTraitee.includes(l.autreId)));
+                if (conflitEnTraitement && deplace && !toujoursEnConflit) {
+                  const conf = conflitEnTraitement;
+                  const coord = (v) => (Number.isFinite(v) ? v.toFixed(4) : v);
+                  try {
+                    await confirmerTraitementConflit({
+                      conflitId: conf.id,
+                      action: 'deplacement',
+                      details: {
+                        barrageId: depDetails.id,
+                        barrageNom: depDetails.nom,
+                        latAvant: depDetails.latAvant,
+                        lngAvant: depDetails.lngAvant,
+                        routeAvant: depDetails.routeAvant,
+                        latApres: depDetails.latApres,
+                        lngApres: depDetails.lngApres,
+                        routeApres: depDetails.routeApres,
+                        /* Distance au plus proche voisin, mesurée à la nouvelle position. */
+                        distanceApresKm: d.plusProcheAutre?.dist ?? conf.seuilKm ?? 20,
+                        seuilKm: conf.seuilKm ?? 20,
+                        statut: 'resolu',
+                        resolu: true,
+                        commentaire: `Barrage ${depDetails.nom || depDetails.id} déplacé de [${coord(depDetails.lngAvant)}, ${coord(depDetails.latAvant)}] vers [${coord(depDetails.lngApres)}, ${coord(depDetails.latApres)}] sur ${depDetails.routeApres || 'la route'}.`,
+                      },
+                    });
+                  } catch (err) {
+                    setMessageEdition({ ok: false, texte: `Barrage déplacé, mais le traitement du conflit n'a pas pu être enregistré : ${err?.message ?? 'erreur'}` });
+                  }
                 }
+                setConflitEnTraitement(null);
               } finally {
                 setDeplacementEnCours(false);
                 annulerDeplacement();
@@ -11227,79 +11225,12 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
           />
         )}
 
-        {/* Bandeau d'arbitrage post-déplacement pour valider la résolution du conflit */}
-        {conflitApresDeplacement && (
-          <div
-            role="status"
-            className="fixed top-20 left-1/2 -translate-x-1/2 z-[2500] flex items-center gap-3 rounded-2xl border border-gr-gold/60 bg-gr-navy/95 px-5 py-3 text-white shadow-2xl backdrop-blur-md animate-in slide-in-from-top duration-200"
-          >
-            <div className="grid size-8 place-items-center rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
-              <IconCoche size={16} />
-            </div>
-            <div>
-              <p className="text-[12.5px] font-bold text-white">
-                Barrage repositionné avec succès !
-              </p>
-              <p className="text-[11px] text-white/70">
-                Conflit <b className="text-amber-300 font-mono">{conflitApresDeplacement.numero || conflitApresDeplacement.id}</b> : Voulez-vous marquer ce conflit comme Traité / Résolu ?
-              </p>
-            </div>
-            <div className="flex items-center gap-2 ml-2">
-              <button
-                type="button"
-                onClick={async () => {
-                  try {
-                    const depDet = conflitApresDeplacement.deplacementDetails;
-                    await confirmerTraitementConflit({
-                      conflitId: conflitApresDeplacement.id,
-                      action: 'deplacement',
-                      details: {
-                        barrageId: depDet?.id,
-                        barrageNom: depDet?.nom,
-                        latAvant: depDet?.latAvant,
-                        lngAvant: depDet?.lngAvant,
-                        routeAvant: depDet?.routeAvant,
-                        latApres: depDet?.latApres,
-                        lngApres: depDet?.lngApres,
-                        routeApres: depDet?.routeApres,
-                        distanceApresKm: 25,
-                        statut: 'resolu',
-                        resolu: true,
-                        commentaire: `Barrage ${depDet?.nom || depDet?.id} déplacé de [${depDet?.lngAvant?.toFixed?.(4) ?? depDet?.lngAvant}, ${depDet?.latAvant?.toFixed?.(4) ?? depDet?.latAvant}] vers [${depDet?.lngApres?.toFixed?.(4) ?? depDet?.lngApres}, ${depDet?.latApres?.toFixed?.(4) ?? depDet?.latApres}] sur ${depDet?.routeApres || 'la route'}. Conflit résolu.`,
-                      },
-                    });
-                    setConflitApresDeplacement(null);
-                    setConflitEnTraitement(null);
-                    setVersionConflits((v) => v + 1);
-                  } catch (err) {
-                    alert(err.message || 'Impossible de marquer le conflit comme résolu.');
-                  }
-                }}
-                className="flex items-center gap-1.5 rounded-xl bg-gr-gold px-3.5 py-1.5 text-[11.5px] font-bold text-gr-navy hover:bg-gr-gold/90 transition-all shadow-md active:scale-95"
-              >
-                <IconCoche size={13} />
-                <span>✓ Marquer comme Résolu (Done)</span>
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  setConflitApresDeplacement(null);
-                  setConflitEnTraitement(null);
-                }}
-                className="rounded-xl border border-white/15 bg-white/5 px-2.5 py-1.5 text-[11px] font-semibold text-white/70 hover:bg-white/10 hover:text-white transition-colors"
-              >
-                Laisser en cours
-              </button>
-            </div>
-          </div>
-        )}
-
         {(sondeOk === false || tilesOk === false) && (
           <FondInjoignable
             url={ARCHIVE_FOND}
             coupe={fondCoupe}
             onReessayer={reessayerFond}
-            decalageGauche={panneauOuvert ? 420 : 76}
+            decalageGauche={bordGauche}
           />
         )}
 
@@ -11357,13 +11288,15 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
            * Cette colonne était ancrée à `left-3`, c'est-à-dire exactement sous
            * le rail (`left-3`, largeur 60 px) : la légende passait derrière lui
            * et son libellé s'affichait tronqué — « ÉGENDE ». Les deux autres
-           * colonnes de gauche prennent déjà `left-[76px]` (12 px de marge +
-           * 60 px de rail + 4 px de jour) ; celle-ci avait été oubliée.
+           * colonnes de gauche prenaient `left-[76px]` (12 px de marge +
+           * 60 px de rail + 4 px de jour). Le rail permanent a laissé place à
+           * un volet masqué par défaut : les trois colonnes sont revenues à
+           * `left-3`, la marge seule.
            *
            * `max-w` suit le même décalage, sinon la colonne déborderait à droite
            * de ce qu'elle gagne à gauche sur un écran étroit.
            */
-          className="pointer-events-none absolute bottom-3 left-[76px] z-[900] flex w-[228px] max-w-[calc(100vw-5.5rem)] flex-col gap-2"
+          className="pointer-events-none absolute bottom-3 left-3 z-[900] flex w-[228px] max-w-[calc(100vw-1.5rem)] flex-col gap-2"
           style={{ zoom: echelleUI }}
         >
           {/**
@@ -11406,7 +11339,7 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
         {/* ---------- Panneaux OUVERTS : à côté des boutons, pleine hauteur ---------- */}
         <div
           data-gr-chrome
-          className="gr-haut pointer-events-none absolute bottom-3 left-[76px] z-[1200] flex items-start gap-3 overflow-x-auto overflow-y-hidden overscroll-contain"
+          data-gr-masque-selection className="gr-haut pointer-events-none absolute bottom-3 left-3 z-[1200] flex items-start gap-3 overflow-x-auto overflow-y-hidden overscroll-contain"
           style={{ zoom: echelleUI }}
         >
           <SidePanel
@@ -11506,7 +11439,7 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
 
         {/* ---------- Panneaux de décision : à GAUCHE de leurs boutons ---------- */}
         <div
-          className="gr-haut pointer-events-none absolute bottom-3 left-[76px] z-[1200] flex items-start gap-3 overflow-x-auto overflow-y-hidden overscroll-contain"
+          data-gr-masque-selection className="gr-haut pointer-events-none absolute bottom-3 left-3 z-[1200] flex items-start gap-3 overflow-x-auto overflow-y-hidden overscroll-contain"
           style={{ zoom: echelleUI }}
         >
           {/* Optimisation : les barrages FIXES trop proches de leur voisin — voir
@@ -11521,6 +11454,7 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
             onClose={() => fermerPanneau('optimisation')}
             session={session}
             onAssigner={superviseur ? demanderAssignation : null}
+            assignationDe={assignationDe}
             unites={unitesApi}
             /* Sert au seul bouton « Analyser ce résultat » : il n'apparaît que si
                le serveur a un assistant configuré (voir /api/etat). */
@@ -11544,27 +11478,18 @@ export default function GendarmerieMap({ session: sessionInit, onLogout, mode = 
             /* La faction dont les barrages sont optimisés — voir `factionOptimisation`. */
             factionAnalysee={factionOptimisation}
             factions={factions}
-            onFactionChange={setFactionChoisie}
+            onFactionChange={setFactionOptimisationChoisie}
             distance={distanceOptimisation}
             onDistanceChange={setDistanceOptimisation}
-            onDistanceBaseChange={(base) => {
-              setDistanceBaseOptimisation(base);
-              setOptimisationDemarree(true);
-            }}
-            onEnregistrerRecalcul={(fn) => {
-              recalculerOptimisationRef.current = fn;
-            }}
+            onDistanceBaseChange={setDistanceBaseOptimisation}
             onOngletsChange={setOngletsOptimisation}
             onEnregistrerOnglets={enregistrerOngletsOptimisation}
             positionChangee={positionChangee}
             presentationVersion={presentationVersion}
             onDemanderPlacement={demanderPlacement}
             onEtatOfficielRestaure={presentationRestauree}
-            /* RÉINITIALISER : la carte oublie le poste ou le conflit désigné et désactive l'état d'optimisation. */
-            onReinitialiser={() => {
-              setVise(null);
-              setOptimisationDemarree(false);
-            }}
+            /* RÉINITIALISER : la carte oublie le poste ou le conflit désigné. */
+            onReinitialiser={() => setVise(null)}
             /* Le panneau reste OUVERT au cadrage : c'est un panneau latéral, la
                carte est visible à côté — le refermer ferait perdre la liste
                qu'on est en train de parcourir. */

@@ -5,7 +5,7 @@ import {
   IconDeconnexion,
   IconFocus,
   IconChevron,
-  IconLayers,
+  IconReglages,
 } from '../../icons.jsx';
 import MenuParametres from './MenuParametres.jsx';
 
@@ -86,8 +86,9 @@ export function ConfirmationDeconnexionModal({ onConfirmer, onAnnuler }) {
 
 /**
  * BARRE SUPÉRIEURE ÉPURÉE — Map-First Experience
- * Conserve uniquement l'essentiel : logo, sélecteur de zone, recherche et profil/notifications.
- * Déplace les paramètres secondaires dans un menu discret pour libérer 100% de la carte.
+ * Conserve uniquement l'essentiel : logo, sélecteur de zone, recherche et profil.
+ * Les filtres ont leur bouton sur le côté de la carte (MenuFiltresUnifie) ; le
+ * menu, un bouton à gauche de cette barre (NavigationRail).
  */
 export default function CommandBar({
   session,
@@ -95,8 +96,6 @@ export default function CommandBar({
   source = null,
   recherche,
   breadcrumb,
-  onOuvrirFiltres = null,
-  filtresModifies = 0,
   notifications = 0,
   onNotifications,
   onVoirNotification = null,
@@ -108,17 +107,22 @@ export default function CommandBar({
   apparence = null,
   onChoisirTheme = null,
   onFocus = null,
+  /** Les puces de la rangée du haut (menu « Outils »…), après le fil d'Ariane. */
+  outils = null,
 }) {
   const [demandeLocale, setDemandeLocale] = useState(false);
   const [menuProfilOuvert, setMenuProfilOuvert] = useState(false);
+  const [parametresOuverts, setParametresOuverts] = useState(false);
   const menuProfilRef = useRef(null);
 
   const declencherDeconnexion = onDemandeDeconnexion || (() => setDemandeLocale(true));
 
   const identite = session?.nom || session?.matricule || session?.unite || 'Utilisateur';
-  const contexte = [ROLE_LABELS[session?.role], RANK_LABELS[session?.rang], session?.unite]
-    .filter(Boolean)
-    .join(' · ');
+  /* « Superadmin », « CMD Région Rabat »… */
+  const libelleRole =
+    session?.rang === 'admin'
+      ? 'Superadmin'
+      : [RANK_LABELS[session?.rang] ? `CMD ${RANK_LABELS[session.rang]}` : ROLE_LABELS[session?.role], session?.unite].filter(Boolean).join(' ');
 
   // Fermer le menu profil au clic extérieur
   useEffect(() => {
@@ -128,144 +132,138 @@ export default function CommandBar({
         setMenuProfilOuvert(false);
       }
     };
+    const gererClavier = (e) => {
+      if (e.key === 'Escape') setMenuProfilOuvert(false);
+    };
     document.addEventListener('mousedown', gererClicDehors);
-    return () => document.removeEventListener('mousedown', gererClicDehors);
+    window.addEventListener('keydown', gererClavier);
+    return () => {
+      document.removeEventListener('mousedown', gererClicDehors);
+      window.removeEventListener('keydown', gererClavier);
+    };
   }, [menuProfilOuvert]);
 
   return (
     <>
       <header
         data-gr-chrome
-        className="pointer-events-none absolute inset-x-0 top-0 z-[1100] flex items-center justify-between pr-3 pt-2.5 pb-2 transition-[padding-left] duration-200 ease-out"
+        /* Au-dessus des panneaux flottants : les menus de cette rangée (Outils,
+           zone, profil) s'ouvrent dessous sans jamais passer derrière. */
+        className="pointer-events-none absolute inset-x-0 top-0 z-[2100] flex items-start justify-between gap-2 pr-3 pt-3 pb-2 transition-[padding-left] duration-200 ease-out"
         style={{
-          paddingLeft: panneauOuvert ? '420px' : '88px',
+          /* À droite d'un panneau d'outil ouvert ; sinon la simple marge. */
+          paddingLeft: panneauOuvert ? '420px' : '12px',
           paddingRight: panneauDroitOuvert ? 'min(442px, 100vw)' : undefined,
         }}
       >
-        {/* Gauche : Logo tactique discret & Sélecteur de zone géographique */}
-        <div className="pointer-events-auto flex items-center gap-2 max-w-[calc(50vw-120px)] overflow-hidden">
-          <div className="flex items-center gap-2 rounded-xl border border-border-default bg-gr-navy/95 px-3 py-1.5 shadow-panel backdrop-blur-md shrink-0">
-            <span className="grid size-6 shrink-0 place-items-center rounded-lg border border-gr-gold/45 bg-gr-card text-gr-gold">
-              <IconTerritoire size={14} />
-            </span>
-            <span className="hidden sm:inline text-[11px] font-bold uppercase tracking-[0.08em] text-text-primary whitespace-nowrap">
-              Carte tactique
-            </span>
+        {/* GAUCHE, comme Google Maps : la boîte de recherche (☰ intégré), puis la
+            rangée de puces — zone, fil d'Ariane, Outils, et « Démo » si c'en est une.
+            Sur petit écran, les puces passent sous la recherche. */}
+        <div className="flex min-w-0 flex-1 flex-wrap items-center gap-2">
+          {recherche}
+          <div className="pointer-events-auto flex min-w-0 items-center gap-2">
+            {outils}
+            <div className="flex min-w-0 max-w-[min(520px,calc(100vw-10rem))] items-center gap-2 overflow-hidden">{breadcrumb}</div>
             {mode === 'demo' && (
               <span
-                title={source === 'fictif' ? 'Données fictives locales' : 'Service de démonstration'}
-                className="rounded border border-gr-gold/45 bg-gr-gold/15 px-1.5 py-0.2 text-[8.5px] font-black uppercase text-gr-gold"
+                title={source === 'fictif' ? 'Données fictives locales' : 'Service de démonstration — données fictives'}
+                className="shrink-0 rounded-full border border-gr-gold/45 bg-gr-surface px-2 py-1 text-[10px] font-black uppercase tracking-wide text-gr-gold shadow-panel"
               >
                 Démo
               </span>
             )}
           </div>
-          {breadcrumb}
         </div>
 
-        {/* Centre : Recherche cartographique et Filtres */}
-        <div className="pointer-events-auto hidden md:flex items-center gap-2">
-          {recherche}
-          {onOuvrirFiltres && (
-            <button
-              type="button"
-              onClick={onOuvrirFiltres}
-              className={`flex items-center gap-1.5 h-10 px-3 rounded-xl border text-[11.5px] font-bold shadow-panel backdrop-blur-md transition-all cursor-pointer ${
-                filtresModifies > 0
-                  ? 'border-amber-500/50 bg-amber-500/20 text-amber-200 hover:bg-amber-500/30 ring-1 ring-amber-500/30'
-                  : 'border-border-default bg-gr-navy/95 text-white/80 hover:text-white hover:border-white/25 hover:bg-white/10'
-              }`}
-              title="Ouvrir les filtres des barrages"
+        {/* Droite : un petit avatar ; nom, rôle, Paramètres et Déconnexion dans son menu. */}
+        <div className="pointer-events-auto relative" ref={menuProfilRef}>
+          <button
+            type="button"
+            onClick={() => {
+              setMenuProfilOuvert((v) => !v);
+              setParametresOuverts(false);
+            }}
+            aria-expanded={menuProfilOuvert}
+            aria-haspopup="menu"
+            aria-label={`Profil : ${identite}`}
+            title={identite}
+            className={`mt-1 grid size-10 place-items-center rounded-full border text-[14px] font-bold shadow-panel backdrop-blur-md transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gr-primary ${
+              menuProfilOuvert
+                ? 'border-gr-primary/60 bg-gr-surface text-gr-primary'
+                : 'border-border-default bg-gr-surface/95 text-gr-gold hover:bg-gr-hover'
+            }`}
+          >
+            {identite.charAt(0).toUpperCase()}
+          </button>
+
+          {menuProfilOuvert && (
+            <div
+              role="menu"
+              aria-label="Menu du profil"
+              className="absolute right-0 top-full z-[1500] mt-2 w-[230px] overflow-hidden rounded-2xl border border-border-default bg-gr-navy/98 p-1.5 shadow-panel backdrop-blur-xl animate-in fade-in-0 zoom-in-95 duration-100"
             >
-              <IconLayers size={14} className={filtresModifies > 0 ? 'text-amber-300' : 'text-gr-gold'} />
-              <span>Filtres</span>
-              {filtresModifies > 0 && (
-                <span className="ml-0.5 rounded-full bg-amber-500 px-1.5 py-0.2 text-[9.5px] font-extrabold text-gr-navy leading-tight">
-                  {filtresModifies}
+              <div className="flex items-center gap-2.5 border-b border-white/10 px-2.5 pb-2.5 pt-1.5">
+                <span className="grid size-8 shrink-0 place-items-center rounded-full border border-white/10 bg-gr-card text-[13px] font-bold text-gr-gold">
+                  {identite.charAt(0).toUpperCase()}
                 </span>
+                <div className="min-w-0">
+                  <p className="truncate text-[12.5px] font-bold text-white">{identite}</p>
+                  <p className="truncate text-[11px] text-white/55">Rôle : {libelleRole}</p>
+                </div>
+              </div>
+
+              {(onChoisirTheme && apparence) || onFocus ? (
+                <button
+                  type="button"
+                  role="menuitem"
+                  aria-expanded={parametresOuverts}
+                  onClick={() => setParametresOuverts((v) => !v)}
+                  className="mt-1 flex w-full items-center gap-2.5 rounded-xl px-2.5 py-2 text-left text-[12.5px] font-medium text-white/85 transition-colors hover:bg-white/8 hover:text-white"
+                >
+                  <IconReglages size={15} className="shrink-0 opacity-80" />
+                  <span className="flex-1">Paramètres</span>
+                  <IconChevron size={10} open={parametresOuverts} className="text-white/40" />
+                </button>
+              ) : null}
+              {/* Les paramètres existants : thème d'affichage et mode focus. */}
+              {parametresOuverts && (
+                <div className="space-y-2 px-2.5 pb-2 pt-1">
+                  {onChoisirTheme && apparence && (
+                    <div>
+                      <p className="mb-1.5 text-[10px] font-bold uppercase tracking-wider text-white/40">Thème d’affichage</p>
+                      <MenuParametres apparence={apparence} onChoisir={onChoisirTheme} />
+                    </div>
+                  )}
+                  {onFocus && (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setMenuProfilOuvert(false);
+                        onFocus();
+                      }}
+                      className="flex w-full items-center gap-2 rounded-lg border border-white/5 bg-white/5 px-2.5 py-1.5 text-[11px] font-semibold text-white/80 transition-colors hover:bg-white/10 hover:text-white"
+                    >
+                      <IconFocus size={14} className="text-gr-gold" />
+                      <span>Mode plein écran (Focus)</span>
+                    </button>
+                  )}
+                </div>
               )}
-            </button>
+
+              <button
+                type="button"
+                role="menuitem"
+                onClick={() => {
+                  setMenuProfilOuvert(false);
+                  declencherDeconnexion();
+                }}
+                className="mt-0.5 flex w-full items-center gap-2.5 rounded-xl px-2.5 py-2 text-left text-[12.5px] font-semibold text-red-300 transition-colors hover:bg-red-500/12"
+              >
+                <IconDeconnexion size={15} className="shrink-0" />
+                <span>Déconnexion</span>
+              </button>
+            </div>
           )}
-        </div>
-
-        {/* Droite : Menu Profil discret (Pas de cloche ni badges) */}
-        <div className="pointer-events-auto flex items-center gap-2" ref={menuProfilRef}>
-
-          {/* Bouton profil compact avec menu déroulant */}
-          <div className="relative">
-            <button
-              type="button"
-              onClick={() => setMenuProfilOuvert((v) => !v)}
-              aria-expanded={menuProfilOuvert}
-              aria-label="Menu utilisateur et paramètres"
-              title={`${identite} (${contexte})`}
-              className={`flex items-center gap-2 rounded-xl border p-1.5 md:px-3 md:py-1.5 shadow-panel backdrop-blur-md transition-all ${
-                menuProfilOuvert
-                  ? 'border-gr-gold/60 bg-gr-hover text-white ring-1 ring-gr-gold/30'
-                  : 'border-border-default bg-gr-navy/95 text-text-primary hover:border-white/20 hover:bg-gr-hover'
-              }`}
-            >
-              <div className="size-7 rounded-lg bg-gr-card flex items-center justify-center text-gr-gold font-bold text-xs border border-white/10 shrink-0">
-                {identite.charAt(0).toUpperCase()}
-              </div>
-              <div className="hidden lg:block text-left min-w-0 max-w-[140px]">
-                <p className="truncate text-[11px] font-bold text-white leading-tight">{identite}</p>
-                <p className="truncate text-[9px] text-white/50 uppercase font-mono">{session?.rang || 'Commandement'}</p>
-              </div>
-              <IconChevron size={10} open={menuProfilOuvert} className="text-white/40 hidden sm:block" />
-            </button>
-
-            {/* Menu discret au clic sur le profil */}
-            {menuProfilOuvert && (
-              <div className="absolute right-0 top-full mt-2 w-[240px] rounded-2xl border border-border-default bg-gr-navy/98 p-3 shadow-2xl backdrop-blur-xl z-[1500] space-y-2.5 animate-in fade-in-0 zoom-in-95 duration-100">
-                {/* En-tête profil */}
-                <div className="pb-2 border-b border-white/10">
-                  <p className="font-bold text-[12px] text-white truncate">{identite}</p>
-                  <p className="text-[10px] text-white/60 truncate">{contexte}</p>
-                </div>
-
-                {/* Paramètres d'apparence (Thème) */}
-                {onChoisirTheme && apparence && (
-                  <div className="py-1">
-                    <p className="text-[10px] font-bold uppercase tracking-wider text-white/40 mb-1.5">
-                      Thème d'affichage
-                    </p>
-                    <MenuParametres apparence={apparence} onChoisir={onChoisirTheme} />
-                  </div>
-                )}
-
-                {/* Mode Focus */}
-                {onFocus && (
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setMenuProfilOuvert(false);
-                      onFocus();
-                    }}
-                    className="w-full flex items-center gap-2 px-2.5 py-1.5 rounded-xl border border-white/5 bg-white/5 hover:bg-white/10 text-white/80 hover:text-white text-[11px] font-semibold transition-colors"
-                  >
-                    <IconFocus size={14} className="text-gr-gold" />
-                    <span>Mode plein écran (Focus)</span>
-                  </button>
-                )}
-
-                {/* Déconnexion */}
-                <div className="pt-2 border-t border-white/10">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setMenuProfilOuvert(false);
-                      declencherDeconnexion();
-                    }}
-                    className="w-full flex items-center gap-2 px-2.5 py-1.5 rounded-xl border border-red-500/20 bg-red-500/10 hover:bg-red-500/20 text-red-300 text-[11px] font-bold transition-colors"
-                  >
-                    <IconDeconnexion size={14} />
-                    <span>Se déconnecter</span>
-                  </button>
-                </div>
-              </div>
-            )}
-          </div>
         </div>
       </header>
 

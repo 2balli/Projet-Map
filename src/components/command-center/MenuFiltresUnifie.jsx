@@ -1,21 +1,61 @@
-import React, { useState, useEffect, useRef } from 'react';
-import {
-  IconClose,
-  IconLayers,
-  IconHoraire,
-  IconRestaurer,
-  IconCoche,
-} from '../../icons.jsx';
+import { useEffect, useRef } from 'react';
+import { IconClose, IconFiltre, IconRestaurer } from '../../icons.jsx';
+import { usePresence } from '../../usePresence.js';
 
 /**
- * MENU FILTRES UNIFIÉ — Map-First Experience
- * Regroupe tous les filtres de la carte (Nature des barrages, Factions opérationnelles,
- * Éclairage, Accidentologie) dans un panneau unique, épuré et compréhensible sans formation.
+ * FILTRES — UN SEUL BOUTON, SUR LE CÔTÉ DE LA CARTE.
+ *
+ * Il remplace l'ancien bouton « Filtres » de la barre et la fenêtre plein
+ * écran qui voilait la carte. Le panneau s'ouvre à côté du bouton, sans
+ * voile : la carte reste visible et réagit à chaque choix.
+ *
+ * Il regroupe, sans en changer le fonctionnement :
+ *   Barrages        natures affichées (fixe, mobile, point noir…) ;
+ *   Faction         le tour de service affiché ;
+ *   Vigilance       éclairage nocturne, points noirs ;
+ *   Couches         circonscriptions, implantations, numéros de routes.
+ *
+ * L'OPTIMISATION DES BARRAGES (Distance, Accidents, VIP, Éclairage, Par
+ * routes) n'en fait PAS partie : c'est un calcul, pas un filtre d'affichage.
+ * Elle a son propre bouton et son propre état — voir MenuOptimisation.jsx.
+ * Ni le compteur ni « Réinitialiser » ne la touchent.
+ *
+ * Le bouton porte le nombre de filtres actifs ; « Réinitialiser » ramène
+ * l'affichage initial.
  */
+function Puce({ actif, onClick, couleur = null, children }) {
+  return (
+    <button
+      type="button"
+      aria-pressed={actif}
+      onClick={onClick}
+      className={`flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[12px] font-medium transition-colors ${
+        actif ? 'border-gr-primary/60 bg-gr-primary/12 text-gr-primary' : 'border-white/12 text-white/70 hover:border-white/25 hover:text-white'
+      }`}
+    >
+      {couleur && <span aria-hidden="true" className="size-2 shrink-0 rounded-full" style={{ backgroundColor: couleur }} />}
+      {children}
+    </button>
+  );
+}
+
+function Section({ titre, modifie = false, children }) {
+  return (
+    <section className="space-y-2">
+      <h3 className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-white/50">
+        {titre}
+        {modifie && <span aria-label="modifié" className="size-1.5 rounded-full bg-gr-primary" />}
+      </h3>
+      {children}
+    </section>
+  );
+}
+
 export default function MenuFiltresUnifie({
   ouvert,
+  onOuvrir,
   onFermer,
-  // Types / Natures de barrages
+  // Natures de barrages
   layers = [],
   activeLayers = new Set(),
   onToggleLayer,
@@ -25,311 +65,200 @@ export default function MenuFiltresUnifie({
   onChangerFaction,
   factionActuelle = null,
   compteursFactions = {},
-  // Éclairage & Accidents
+  // Éclairage & accidents
   filtreEclairage = 'tous',
   onChangerEclairage,
   filtreAccidents = 'tous',
   onChangerAccidents,
-  // Totaux & Réinitialisation
-  totalBarrages = 0,
+  // Couches de la carte
+  couches = [],
+  routesVisibles = true,
+  onToggleRoutes = null,
+  // Totaux & réinitialisation
   filtresModifies = 0,
   onReinitialiser,
+  decalageGauche = 12,
+  /** Haut du panneau (px) : sous le bouton qui l'ouvre ; null = position d'origine. */
+  haut = null,
+  /** Raccourcis posés à côté du bouton (ex. « Conflits »). */
+  aCote = null,
+  /** false : pas de bouton propre — le panneau est ouvert par le menu « Outils ». */
+  afficherBouton = true,
 }) {
-  const [ongletActif, setOngletActif] = useState('types'); // 'types' | 'factions' | 'vigilance'
-  const conteneurRef = useRef(null);
+  const presence = usePresence(ouvert);
+  const boutonRef = useRef(null);
+  const panneauRef = useRef(null);
 
-  // Fermeture au clic extérieur ou touche Échap
   useEffect(() => {
     if (!ouvert) return undefined;
-    const gererClicDehors = (e) => {
-      if (conteneurRef.current && !conteneurRef.current.contains(e.target)) {
+    const auClavier = (e) => {
+      if (e.key === 'Escape') {
+        e.stopPropagation();
         onFermer?.();
+        boutonRef.current?.focus();
       }
     };
-    const gererTouche = (e) => {
-      if (e.key === 'Escape') onFermer?.();
-    };
-    document.addEventListener('mousedown', gererClicDehors);
-    document.addEventListener('keydown', gererTouche);
-    return () => {
-      document.removeEventListener('mousedown', gererClicDehors);
-      document.removeEventListener('keydown', gererTouche);
-    };
+    window.addEventListener('keydown', auClavier, true);
+    return () => window.removeEventListener('keydown', auClavier, true);
   }, [ouvert, onFermer]);
 
-  if (!ouvert) return null;
+  const couchesModifiees = couches.filter((c) => activeLayers.has(c.key) !== Boolean(c.defaultOn)).length + (routesVisibles ? 0 : 1);
+  const total = filtresModifies + couchesModifiees;
+  const naturesModifiees = layers.some((l) => activeLayers.has(l.key) !== Boolean(l.defaultOn));
 
   return (
-    <div
-      role="dialog"
-      aria-modal="true"
-      aria-label="Filtres de la carte"
-      className="fixed inset-0 z-[2100] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm pointer-events-auto animate-in fade-in duration-150"
-    >
+    <>
+      {afficherBouton && (
       <div
-        ref={conteneurRef}
-        className="w-full max-w-[460px] rounded-2xl border border-white/15 bg-gr-navy/98 p-5 text-white shadow-2xl backdrop-blur-xl animate-in zoom-in-95 duration-150"
+        data-gr-chrome
+        className="pointer-events-none absolute top-[calc(4.25rem+var(--gr-bandeau,0px))] z-[1150] flex items-center gap-2 transition-[left] duration-200"
+        style={{ left: decalageGauche }}
       >
-        {/* En-tête */}
-        <div className="flex items-center justify-between pb-3 border-b border-white/10">
-          <div className="flex items-center gap-2.5">
-            <span className="grid size-8 place-items-center rounded-xl bg-gr-gold/15 text-gr-gold border border-gr-gold/30">
-              <IconLayers size={16} />
-            </span>
-            <div>
-              <h2 className="text-[14px] font-bold text-white tracking-wide">Filtres de la carte</h2>
-              <p className="text-[11px] text-white/50">
-                {filtresModifies > 0 ? `${filtresModifies} critère(s) personnalisé(s)` : 'Tous les barrages affichés'}
-              </p>
-            </div>
-          </div>
-          <button
-            type="button"
-            onClick={onFermer}
-            aria-label="Fermer les filtres"
-            className="grid size-8 place-items-center rounded-xl text-white/60 hover:text-white hover:bg-white/10 transition-colors"
-          >
-            <IconClose size={16} />
-          </button>
-        </div>
-
-        {/* Résumé des filtres actifs */}
-        {filtresModifies > 0 && (
-          <div className="flex items-center justify-between px-3 py-1.5 mt-3 rounded-xl bg-amber-500/10 border border-amber-500/20 text-[11px] text-amber-200">
-            <span className="font-semibold">✓ {filtresModifies} critère{filtresModifies > 1 ? 's' : ''} actif{filtresModifies > 1 ? 's' : ''}</span>
-            <button
-              type="button"
-              onClick={onReinitialiser}
-              className="text-amber-300 hover:text-white font-bold underline cursor-pointer"
-            >
-              Réinitialiser tout
-            </button>
-          </div>
+      <button
+        ref={boutonRef}
+        type="button"
+        onClick={() => (ouvert ? onFermer?.() : onOuvrir?.())}
+        aria-expanded={ouvert}
+        aria-label={total > 0 ? `Filtres (${total} actif${total > 1 ? 's' : ''})` : 'Filtres'}
+        className={`pointer-events-auto flex h-10 items-center gap-2 rounded-full border px-3.5 text-[13px] font-semibold shadow-panel backdrop-blur-md transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gr-primary ${
+          ouvert || total > 0 ? 'border-gr-primary/50 bg-gr-surface/95 text-gr-primary' : 'border-border-default bg-gr-surface/95 text-text-primary hover:bg-gr-hover'
+        }`}
+      >
+        <IconFiltre size={16} />
+        Filtres
+        {total > 0 && (
+          <span className="rounded-full bg-gr-primary px-1.5 font-mono text-[11px] font-bold text-gr-primary-contrast">{total}</span>
         )}
-
-        {/* Onglets de catégories de filtres */}
-        <div className="flex items-center gap-1.5 p-1 my-3.5 rounded-xl bg-black/40 border border-white/5">
-          <button
-            type="button"
-            onClick={() => setOngletActif('types')}
-            className={`flex-1 py-1.5 text-[11px] font-bold rounded-lg transition-all ${
-              ongletActif === 'types'
-                ? 'bg-gr-gold text-gr-navy shadow-sm'
-                : 'text-white/70 hover:text-white hover:bg-white/5'
-            }`}
-          >
-            Types de postes
-          </button>
-          <button
-            type="button"
-            onClick={() => setOngletActif('factions')}
-            className={`flex-1 py-1.5 text-[11px] font-bold rounded-lg transition-all ${
-              ongletActif === 'factions'
-                ? 'bg-gr-gold text-gr-navy shadow-sm'
-                : 'text-white/70 hover:text-white hover:bg-white/5'
-            }`}
-          >
-            Factions (Horaires)
-          </button>
-          <button
-            type="button"
-            onClick={() => setOngletActif('vigilance')}
-            className={`flex-1 py-1.5 text-[11px] font-bold rounded-lg transition-all ${
-              ongletActif === 'vigilance'
-                ? 'bg-gr-gold text-gr-navy shadow-sm'
-                : 'text-white/70 hover:text-white hover:bg-white/5'
-            }`}
-          >
-            Vigilance
-          </button>
-        </div>
-
-        {/* Contenu de l'onglet 1 : Types de barrages */}
-        {ongletActif === 'types' && (
-          <div className="space-y-2 py-1 min-h-[190px]">
-            <p className="text-[11px] text-white/60 mb-2">
-              Sélectionnez les catégories de barrages à afficher sur la carte :
-            </p>
-            <div className="grid grid-cols-1 gap-2">
-              {layers.map((layer) => {
-                const actif = activeLayers.has(layer.key);
-                return (
-                  <button
-                    key={layer.key}
-                    type="button"
-                    onClick={() => onToggleLayer?.(layer.key)}
-                    className={`flex items-center justify-between p-2.5 rounded-xl border text-[12px] font-semibold transition-all ${
-                      actif
-                        ? 'border-gr-gold/50 bg-gr-gold/10 text-white'
-                        : 'border-white/5 bg-white/5 text-white/40 hover:border-white/10'
-                    }`}
-                  >
-                    <div className="flex items-center gap-2.5">
-                      <span
-                        className="size-3 rounded-full shrink-0 shadow-sm"
-                        style={{ backgroundColor: layer.color }}
-                      />
-                      <span>{layer.fr}</span>
-                    </div>
-                    <span
-                      className={`grid size-5 place-items-center rounded-md border text-[10px] ${
-                        actif
-                          ? 'border-gr-gold bg-gr-gold text-gr-navy'
-                          : 'border-white/20 text-transparent'
-                      }`}
-                    >
-                      ✓
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-        )}
-
-        {/* Contenu de l'onglet 2 : Factions opérationnelles */}
-        {ongletActif === 'factions' && (
-          <div className="space-y-2 py-1 min-h-[190px]">
-            <div className="flex items-center justify-between text-[11px] text-white/60 mb-2">
-              <span>Tour de service opérationnel :</span>
-              {factionActuelle && (
-                <span className="text-amber-300 font-semibold bg-amber-500/10 px-2 py-0.5 rounded-md border border-amber-500/20">
-                  En cours : {factionActuelle}
-                </span>
-              )}
-            </div>
-
-            <button
-              type="button"
-              onClick={() => onChangerFaction?.('toutes')}
-              className={`w-full flex items-center justify-between p-2.5 rounded-xl border text-[12px] font-semibold transition-all ${
-                factionChoisie === 'toutes' || !factionChoisie
-                  ? 'border-gr-gold/50 bg-gr-gold/10 text-white'
-                  : 'border-white/5 bg-white/5 text-white/60 hover:border-white/10'
-              }`}
-            >
-              <span>Toutes les factions (Vue complète)</span>
-              {factionChoisie === 'toutes' || !factionChoisie ? (
-                <span className="text-gr-gold font-bold">✓</span>
-              ) : null}
-            </button>
-
-            <div className="grid grid-cols-2 gap-2 pt-1">
-              {factions.map((f) => {
-                const estChoisie = factionChoisie === f.id;
-                const estEnCours = factionActuelle === f.id;
-                const compte = compteursFactions[f.id] ?? 0;
-                return (
-                  <button
-                    key={f.id}
-                    type="button"
-                    onClick={() => onChangerFaction?.(f.id)}
-                    className={`flex flex-col p-2.5 rounded-xl border text-left transition-all ${
-                      estChoisie
-                        ? 'border-gr-gold/60 bg-gr-gold/15 text-white shadow-md'
-                        : 'border-white/5 bg-white/5 text-white/70 hover:border-white/10 hover:text-white'
-                    }`}
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className="font-bold text-[11.5px]">{f.nom}</span>
-                      {estEnCours && (
-                        <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" title="Faction active en ce moment" />
-                      )}
-                    </div>
-                    <span className="text-[10px] text-white/50 mt-0.5 font-mono">
-                      {f.debut} – {f.fin} ({compte} postes)
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-        )}
-
-        {/* Contenu de l'onglet 3 : Vigilance (Éclairage & Accidents) */}
-        {ongletActif === 'vigilance' && (
-          <div className="space-y-3.5 py-1 min-h-[190px]">
-            {/* Éclairage nocturne */}
-            <div>
-              <label className="block text-[11px] font-semibold text-white/70 mb-1.5">
-                💡 Éclairage nocturne des barrages :
-              </label>
-              <div className="grid grid-cols-3 gap-1.5">
-                {[
-                  { id: 'tous', label: 'Tous' },
-                  { id: 'eclaires', label: 'Éclairés' },
-                  { id: 'non_eclaires', label: 'Non éclairés' },
-                ].map((opt) => (
-                  <button
-                    key={opt.id}
-                    type="button"
-                    onClick={() => onChangerEclairage?.(opt.id)}
-                    className={`py-1.5 px-2 rounded-lg text-[11px] font-semibold border transition-all ${
-                      filtreEclairage === opt.id
-                        ? 'border-amber-400/50 bg-amber-500/20 text-amber-200'
-                        : 'border-white/5 bg-white/5 text-white/60 hover:border-white/10'
-                    }`}
-                  >
-                    {opt.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Accidentologie / Points noirs */}
-            <div>
-              <label className="block text-[11px] font-semibold text-white/70 mb-1.5">
-                🚗 Zones accidentogènes (Points noirs) :
-              </label>
-              <div className="grid grid-cols-3 gap-1.5">
-                {[
-                  { id: 'tous', label: 'Tous' },
-                  { id: 'accidentogenes', label: 'Sur points noirs' },
-                  { id: 'hors_points_noirs', label: 'Hors points noirs' },
-                ].map((opt) => (
-                  <button
-                    key={opt.id}
-                    type="button"
-                    onClick={() => onChangerAccidents?.(opt.id)}
-                    className={`py-1.5 px-2 rounded-lg text-[11px] font-semibold border transition-all ${
-                      filtreAccidents === opt.id
-                        ? 'border-rose-400/50 bg-rose-500/20 text-rose-200'
-                        : 'border-white/5 bg-white/5 text-white/60 hover:border-white/10'
-                    }`}
-                  >
-                    {opt.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Pied du menu : Bouton Réinitialiser & Fermer */}
-        <div className="flex items-center justify-between pt-3 mt-4 border-t border-white/10">
-          {filtresModifies > 0 ? (
-            <button
-              type="button"
-              onClick={onReinitialiser}
-              className="flex items-center gap-1.5 text-[11px] font-semibold text-red-300 hover:text-red-200 transition-colors"
-            >
-              <IconRestaurer size={12} />
-              <span>Réinitialiser les filtres</span>
-            </button>
-          ) : (
-            <span className="text-[11px] text-white/40">Filtres par défaut actifs</span>
-          )}
-
-          <button
-            type="button"
-            onClick={onFermer}
-            className="rounded-xl bg-gr-gold px-4 py-1.5 text-[12px] font-extrabold text-gr-navy hover:bg-gr-gold/90 transition-all shadow-md active:scale-95"
-          >
-            Appliquer & Fermer
-          </button>
-        </div>
+      </button>
+      {aCote}
       </div>
-    </div>
+      )}
+
+      {presence.monte && (
+        <div
+          ref={panneauRef}
+          role="dialog"
+          aria-label="Filtres de la carte"
+          data-gr-chrome
+          data-presence={presence.etat}
+          data-depuis="gauche"
+          className="pointer-events-auto absolute bottom-3 z-[1160] flex w-[min(340px,calc(100vw-1.5rem))] flex-col overflow-hidden rounded-2xl border border-white/10 bg-gr-surface/97 text-white shadow-panel backdrop-blur-xl transition-[left] duration-200 md:bottom-auto "
+          style={{
+            left: decalageGauche,
+            top: haut ?? 'calc(7.25rem + var(--gr-bandeau, 0px))',
+            maxHeight: `calc(100% - ${haut != null ? `${haut + 12}px` : '8.5rem'})`,
+          }}
+        >
+          <header className="flex items-center justify-between gap-2 border-b border-white/10 px-4 py-3">
+            <div className="min-w-0">
+              <h2 className="text-[14px] font-bold text-white">Filtres</h2>
+              <p className="text-[11.5px] text-white/55">{total > 0 ? `${total} filtre${total > 1 ? 's' : ''} actif${total > 1 ? 's' : ''}` : 'Affichage initial'}</p>
+            </div>
+            <button
+              type="button"
+              onClick={onFermer}
+              aria-label="Masquer les filtres"
+              className="flex items-center gap-1.5 rounded-lg border border-white/15 px-2.5 py-1.5 text-[12px] font-semibold text-white transition-colors hover:bg-white/10"
+            >
+              <IconClose size={13} />
+              Masquer
+            </button>
+          </header>
+
+          <div className="min-h-0 flex-1 space-y-5 overflow-y-auto overscroll-contain px-4 py-4">
+            <Section titre="Barrages" modifie={naturesModifiees}>
+              <div className="flex flex-wrap gap-1.5">
+                {layers.map((l) => (
+                  <Puce key={l.key} actif={activeLayers.has(l.key)} couleur={l.color} onClick={() => onToggleLayer?.(l.key)}>
+                    {l.fr}
+                  </Puce>
+                ))}
+              </div>
+            </Section>
+
+            {factions.length > 0 && (
+              <Section titre="Faction" modifie={Boolean(factionChoisie && factionChoisie !== 'toutes')}>
+                <div className="flex flex-wrap gap-1.5">
+                  <Puce actif={!factionChoisie || factionChoisie === 'toutes'} onClick={() => onChangerFaction?.('toutes')}>
+                    Toutes
+                  </Puce>
+                  {factions.map((f) => (
+                    <Puce key={f.id} actif={factionChoisie === f.id} onClick={() => onChangerFaction?.(f.id)}>
+                      <span>{f.nom}</span>
+                      <span className="font-mono text-[10.5px] opacity-70">{f.debut}–{f.fin}</span>
+                      {factionActuelle === f.id && <span title="Faction en cours" className="size-1.5 rounded-full bg-emerald-400" />}
+                      <span className="sr-only">{compteursFactions[f.id] ?? 0} postes</span>
+                    </Puce>
+                  ))}
+                </div>
+              </Section>
+            )}
+
+            <Section titre="Vigilance" modifie={filtreEclairage !== 'tous' || filtreAccidents !== 'tous'}>
+              <p className="text-[11.5px] text-white/60">Éclairage nocturne</p>
+              <div className="flex flex-wrap gap-1.5">
+                {[
+                  ['tous', 'Tous'],
+                  ['eclaires', 'Éclairés'],
+                  ['non_eclaires', 'Non éclairés'],
+                ].map(([id, l]) => (
+                  <Puce key={id} actif={filtreEclairage === id} onClick={() => onChangerEclairage?.(id)}>
+                    {l}
+                  </Puce>
+                ))}
+              </div>
+              <p className="pt-1 text-[11.5px] text-white/60">Points noirs (accidents)</p>
+              <div className="flex flex-wrap gap-1.5">
+                {[
+                  ['tous', 'Tous'],
+                  ['accidentogenes', 'Sur points noirs'],
+                  ['hors_points_noirs', 'Hors points noirs'],
+                ].map(([id, l]) => (
+                  <Puce key={id} actif={filtreAccidents === id} onClick={() => onChangerAccidents?.(id)}>
+                    {l}
+                  </Puce>
+                ))}
+              </div>
+            </Section>
+
+            {(couches.length > 0 || onToggleRoutes) && (
+              <Section titre="Couches de la carte" modifie={couchesModifiees > 0}>
+                <div className="flex flex-wrap gap-1.5">
+                  {onToggleRoutes && (
+                    <Puce actif={routesVisibles} onClick={onToggleRoutes}>
+                      Numéros de routes
+                    </Puce>
+                  )}
+                  {couches.map((c) => (
+                    <Puce key={c.key} actif={activeLayers.has(c.key)} couleur={c.color} onClick={() => onToggleLayer?.(c.key)}>
+                      {c.fr}
+                    </Puce>
+                  ))}
+                </div>
+              </Section>
+            )}
+          </div>
+
+          <footer className="flex items-center justify-between gap-2 border-t border-white/10 px-4 py-2.5">
+            <button
+              type="button"
+              disabled={total === 0}
+              onClick={onReinitialiser}
+              className="flex items-center gap-1.5 text-[12px] font-semibold text-gr-primary hover:underline disabled:cursor-default disabled:text-white/35 disabled:no-underline"
+            >
+              <IconRestaurer size={13} />
+              Réinitialiser
+            </button>
+            <button
+              type="button"
+              onClick={onFermer}
+              className="rounded-lg bg-gr-primary px-3.5 py-1.5 text-[12px] font-bold text-gr-primary-contrast hover:bg-gr-primary-hover"
+            >
+              Terminé
+            </button>
+          </footer>
+        </div>
+      )}
+    </>
   );
 }
-

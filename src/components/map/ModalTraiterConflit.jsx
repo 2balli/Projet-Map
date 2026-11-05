@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { IconAlert, IconClose, IconSpinner, IconCoche, IconDistance, IconRoute } from '../../icons.jsx';
 
 const FACTIONS_DEFAUT = [
@@ -118,6 +118,15 @@ export default function ModalTraiterConflit({
   const [justification, setJustification] = useState(conflit?.justification || conflit?.traitement?.justification || '');
   const [envoi, setEnvoi] = useState(false);
   const [erreur, setErreur] = useState(null);
+
+  /* Échap referme (sauf pendant un enregistrement). */
+  useEffect(() => {
+    const clavier = (e) => {
+      if (e.key === 'Escape' && !envoi) fermer?.();
+    };
+    window.addEventListener('keydown', clavier);
+    return () => window.removeEventListener('keydown', clavier);
+  }, [envoi, fermer]);
 
   if (!conflit) return null;
 
@@ -266,384 +275,169 @@ export default function ModalTraiterConflit({
     }
   };
 
+  /* Une ligne, selon l'action choisie (le détail des règles reste appliqué ci-dessus). */
+  const NOTES = {
+    faction: 'Découple les créneaux ; le conflit est marqué Traité.',
+    deplacement: `Choisissez la nouvelle position sur la carte (au-delà de ${seuilKm} km).`,
+    retrograder: 'Lève la protection BFI : le poste devient un BF ordinaire.',
+    suppression: 'Retire le poste ; le conflit est résolu.',
+    derogation: 'Maintien justifié ; motif obligatoire.',
+  };
+  const TEINTES = {
+    sky: 'border-sky-400 bg-sky-500/20 text-sky-100',
+    amber: 'border-amber-400 bg-amber-500/20 text-amber-100',
+    purple: 'border-purple-400 bg-purple-500/20 text-purple-100',
+    red: 'border-red-400 bg-red-500/20 text-red-100',
+    emerald: 'border-emerald-400 bg-emerald-500/20 text-emerald-100',
+  };
+  const poste = (b, intouchable) => {
+    const choisi = barrageCibleId === b?.id;
+    const choisissable = !intouchable || estInterRegionDeuxBfi;
+    return (
+      <button
+        type="button"
+        disabled={!choisissable || envoi}
+        onClick={() => setBarrageCibleId(b?.id ?? '')}
+        aria-pressed={choisi}
+        title={`${b?.nom || b?.id} · ${b?.reg || 'région ?'} · faction ${extraireFactionId(b) || '—'}`}
+        className={`min-w-0 flex-1 rounded-lg border px-2 py-1.5 text-left transition-colors ${
+          choisi ? 'border-gr-gold bg-gr-gold/15' : 'border-white/10 bg-white/5 enabled:hover:bg-white/10'
+        } disabled:cursor-default`}
+      >
+        <span className="block truncate text-[11.5px] font-semibold text-white">{intouchable ? '🔒 ' : ''}{b?.nom || b?.id}</span>
+        <span className="block truncate text-[10px] text-white/50">{intouchable ? 'BFI' : 'BF'} · {extraireFactionId(b) || '—'}{choisi ? ' · ciblé' : ''}</span>
+      </button>
+    );
+  };
+
+  /*
+   * PANNEAU COMPACT, NON BLOQUANT — sous la rangée du haut, à gauche : la carte,
+   * cadrée sur le conflit, reste visible. Mêmes options, mêmes règles qu'avant.
+   */
   return (
     <div
-      role="presentation"
-      onClick={() => !envoi && fermer?.()}
-      className="fixed inset-0 z-[3000] grid place-items-center bg-black/70 backdrop-blur-sm p-4 overflow-y-auto"
+      role="dialog"
+      aria-labelledby="gr-modal-traiter-titre"
+      className="fixed left-3 top-[calc(4.5rem+var(--gr-bandeau,0px))] z-[2050] flex max-h-[calc(100dvh-5.5rem)] w-[min(340px,calc(100vw-1.5rem))] flex-col overflow-hidden rounded-2xl border border-white/10 bg-gr-navy/97 text-white shadow-panel backdrop-blur-xl animate-in fade-in zoom-in-95 duration-100"
     >
-      <div
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="gr-modal-traiter-titre"
-        onClick={(e) => e.stopPropagation()}
-        className="w-[min(580px,100%)] rounded-2xl border border-white/15 bg-gr-navy p-5 text-white shadow-2xl space-y-4 my-auto animate-in fade-in zoom-in-95 duration-150"
-      >
-        {/* Entête avec numéro du conflit et route */}
-        <header className="flex items-start justify-between gap-3 border-b border-white/10 pb-3">
-          <div>
-            <div className="flex items-center gap-2">
-              <span className="rounded bg-amber-500/20 px-2 py-0.5 font-mono text-[12px] font-bold text-amber-300 border border-amber-500/30">
-                {conflit.numero || conflit.id}
-              </span>
-              <h2 id="gr-modal-traiter-titre" className="text-[16px] font-bold text-white">
-                Traitement opérationnel du conflit
-              </h2>
-            </div>
-            <p className="mt-1 text-[11.5px] text-white/60">
-              Axe routier : <b className="text-white font-mono">{route}</b> · Espacement : <b className="text-amber-300 font-mono">{distanceKm.toFixed(1)} km</b> (seuil : {seuilKm} km)
-            </p>
-          </div>
-          <button
-            type="button"
-            onClick={fermer}
-            disabled={envoi}
-            aria-label="Fermer la fenêtre"
-            className="rounded-lg p-1.5 text-white/50 hover:bg-white/10 hover:text-white transition-colors"
-          >
-            <IconClose size={16} />
-          </button>
-        </header>
+      <header className="flex items-start gap-2 border-b border-white/10 px-3 py-2">
+        <div className="min-w-0 flex-1">
+          <h2 id="gr-modal-traiter-titre" className="text-[13px] font-bold">
+            Traiter le conflit <span className="font-mono text-amber-300">{conflit.numero || conflit.id}</span>
+          </h2>
+          <p className="truncate text-[10.5px] text-white/55">
+            {route} · {distanceKm.toFixed(1)} km (seuil {seuilKm} km)
+          </p>
+        </div>
+        <button
+          type="button"
+          onClick={fermer}
+          disabled={envoi}
+          aria-label="Fermer"
+          className="grid size-7 shrink-0 place-items-center rounded-lg text-white/50 transition-colors hover:bg-white/10 hover:text-white"
+        >
+          <IconClose size={14} />
+        </button>
+      </header>
 
-        {/* 1. Identification détaillée des deux barrages */}
-        <div className="space-y-1.5">
-          <label className="block text-[11.5px] font-bold text-white/80">
-            1. Barrages concernés :
-          </label>
-          <div className="grid grid-cols-2 gap-2">
-            {/* Carte Barrage A */}
-            <div
-              onClick={() => {
-                if (!bAIntouchable || estInterRegionDeuxBfi) setBarrageCibleId(bA?.id ?? '');
-              }}
-              className={`rounded-xl border p-2.5 transition-all cursor-pointer ${
-                barrageCibleId === bA?.id
-                  ? 'border-gr-gold bg-gr-gold/15 ring-1 ring-gr-gold shadow-md'
-                  : 'border-white/10 bg-white/5 hover:border-white/20'
-              } ${bAIntouchable && !estInterRegionDeuxBfi ? 'opacity-85' : ''}`}
-            >
-              <div className="flex items-center justify-between gap-1 mb-1">
-                <span className="font-bold text-[12px] truncate text-white" title={bA?.nom || bA?.id}>
-                  {bA?.nom || bA?.id}
-                </span>
-                {bAIntouchable ? (
-                  <span className="rounded bg-teal-400/20 px-1.5 py-0.5 text-[8.5px] font-bold text-teal-300 border border-teal-400/30 shrink-0">
-                    🔒 BFI Intouchable
-                  </span>
-                ) : (
-                  <span className="rounded bg-sky-500/20 px-1.5 py-0.5 text-[8.5px] font-bold text-sky-300 border border-sky-500/30 shrink-0">
-                    BF Régulier
-                  </span>
-                )}
-              </div>
-              <div className="text-[10.5px] text-white/60 space-y-0.5">
-                <p>Région : <b className="text-white">{bA?.reg || 'Non spécifiée'}</b></p>
-                <p>Faction réelle : <b className="text-amber-300 font-mono">{factionAId || 'Même faction'}</b></p>
-              </div>
-              {barrageCibleId === bA?.id && (!bAIntouchable || estInterRegionDeuxBfi) && (
-                <div className="mt-1 text-[10px] text-gr-gold font-bold flex items-center gap-1">
-                  <IconCoche size={10} /> <span>Barrage sélectionné</span>
-                </div>
-              )}
-            </div>
-
-            {/* Carte Barrage B */}
-            <div
-              onClick={() => {
-                if (!bBIntouchable || estInterRegionDeuxBfi) setBarrageCibleId(bB?.id ?? '');
-              }}
-              className={`rounded-xl border p-2.5 transition-all cursor-pointer ${
-                barrageCibleId === bB?.id
-                  ? 'border-gr-gold bg-gr-gold/15 ring-1 ring-gr-gold shadow-md'
-                  : 'border-white/10 bg-white/5 hover:border-white/20'
-              } ${bBIntouchable && !estInterRegionDeuxBfi ? 'opacity-85' : ''}`}
-            >
-              <div className="flex items-center justify-between gap-1 mb-1">
-                <span className="font-bold text-[12px] truncate text-white" title={bB?.nom || bB?.id}>
-                  {bB?.nom || bB?.id}
-                </span>
-                {bBIntouchable ? (
-                  <span className="rounded bg-teal-400/20 px-1.5 py-0.5 text-[8.5px] font-bold text-teal-300 border border-teal-400/30 shrink-0">
-                    🔒 BFI Intouchable
-                  </span>
-                ) : (
-                  <span className="rounded bg-sky-500/20 px-1.5 py-0.5 text-[8.5px] font-bold text-sky-300 border border-sky-500/30 shrink-0">
-                    BF Régulier
-                  </span>
-                )}
-              </div>
-              <div className="text-[10.5px] text-white/60 space-y-0.5">
-                <p>Région : <b className="text-white">{bB?.reg || 'Non spécifiée'}</b></p>
-                <p>Faction réelle : <b className="text-amber-300 font-mono">{factionBId || 'Même faction'}</b></p>
-              </div>
-              {barrageCibleId === bB?.id && (!bBIntouchable || estInterRegionDeuxBfi) && (
-                <div className="mt-1 text-[10px] text-gr-gold font-bold flex items-center gap-1">
-                  <IconCoche size={10} /> <span>Barrage sélectionné</span>
-                </div>
-              )}
-            </div>
+      <div className="min-h-0 flex-1 space-y-2.5 overflow-y-auto overscroll-contain p-3">
+        <div>
+          <p className="mb-1 text-[10.5px] font-semibold text-white/55">Barrage à traiter</p>
+          <div className="flex gap-1.5">
+            {poste(bA, bAIntouchable)}
+            {poste(bB, bBIntouchable)}
           </div>
+          {estCasA && <p className="mt-1 text-[10px] text-teal-300">BFI face à un BF : la faction ne peut pas être changée.</p>}
+          {estInterRegionDeuxBfi && <p className="mt-1 text-[10px] text-purple-300">Deux BFI de régions différentes ({regA} / {regB}).</p>}
         </div>
 
-        {/* Alerte contextuelle selon la nature des factions */}
-        {estCasA && (
-          <div role="status" className="rounded-xl border border-teal-500/40 bg-teal-500/10 p-3 text-[11px] text-teal-200 space-y-1">
-            <div className="flex items-center gap-1.5 font-bold text-teal-300">
-              <IconAlert size={14} className="shrink-0" />
-              <span>Cas A : Conflit entre un Barrage BFI et un Barrage BF</span>
-            </div>
-            <p className="text-teal-100/80 leading-relaxed">
-              Le barrage <b>BFI</b> est un poste permanent 24h/24 actif sur toutes les factions.
-              L'option <b>« Changer la faction » est formellement retirée</b> car changer la faction du barrage régulier ne résoudrait pas le conflit opérationnel d'espacement.
-              Vous pouvez <b>déplacer</b> ou <b>supprimer</b> le barrage régulier, ou consigner une <b>dérogation</b>.
-            </p>
-          </div>
-        )}
-
-        {estCasB && (
-          <div role="status" className="rounded-xl border border-sky-500/30 bg-sky-500/10 p-2.5 text-[11px] text-sky-200 space-y-0.5">
-            <div className="flex items-center gap-1.5 font-bold text-sky-300">
-              <span>Cas B : Conflit entre deux barrages BF réguliers</span>
-            </div>
-            <p className="text-sky-100/75 leading-relaxed">
-              Vous pouvez découpler les créneaux horaires en <b>changeant la faction</b>, réajuster la distance en le <b>déplaçant</b>, ou accorder une <b>dérogation</b>.
-            </p>
-          </div>
-        )}
-
-        {estInterRegionDeuxBfi && (
-          <div role="status" className="rounded-xl border border-purple-500/40 bg-purple-500/10 p-3 text-[11px] text-purple-200 space-y-1">
-            <div className="flex items-center gap-1.5 font-bold text-purple-300">
-              <IconAlert size={14} className="shrink-0" />
-              <span>Conflit Inter-Régions entre deux Barrages Fixes Intouchables (BFI)</span>
-            </div>
-            <p className="text-purple-100/80 leading-relaxed">
-              Ce conflit oppose deux barrages BFI de deux régions distinctes (<b>{regA}</b> vs <b>{regB}</b>).
-              En tant que Commandant de Région, vous êtes autorisé à :
-              <b> Déplacer le BFI</b>, <b>changer sa faction horaire</b> ou <b>le rétrograder en Barrage Fixe ordinaire (BF)</b>.
-            </p>
-          </div>
-        )}
-
-        {/* 2. Actions de traitement autorisées selon les règles métier */}
-        <div className="space-y-1.5">
-          <label className="block text-[11.5px] font-bold text-white/80">
-            2. Choisissez l'action de traitement :
-          </label>
-          <div className={`grid gap-2 ${estInterRegionDeuxBfi ? 'grid-cols-2 sm:grid-cols-4' : 'grid-cols-3'}`}>
-            {/* Option Changer Faction (Cas B ou Inter-Régions deux BFI) */}
-            {(estCasB || estInterRegionDeuxBfi) && (
+        <div>
+          <p className="mb-1 text-[10.5px] font-semibold text-white/55">Action</p>
+          <div className="flex flex-wrap gap-1.5" role="radiogroup" aria-label="Action de traitement">
+            {[
+    ...((estCasB || estInterRegionDeuxBfi) ? [{ m: 'faction', l: 'Faction', c: 'sky' }] : []),
+    { m: 'deplacement', l: estInterRegionDeuxBfi ? 'Déplacer BFI' : 'Déplacer', c: 'amber' },
+    ...(estInterRegionDeuxBfi ? [{ m: 'retrograder', l: 'Rétrograder', c: 'purple' }] : []),
+    ...(!estInterRegionDeuxBfi && !deuxIntouchables ? [{ m: 'suppression', l: 'Supprimer', c: 'red' }] : []),
+    { m: 'derogation', l: 'Dérogation', c: 'emerald' },
+  ].map((a) => (
               <button
+                key={a.m}
                 type="button"
-                onClick={() => setMode('faction')}
-                className={`rounded-xl border p-2 text-center text-[11.5px] font-semibold transition-all ${
-                  mode === 'faction'
-                    ? 'border-sky-400 bg-sky-500/20 text-white ring-1 ring-sky-400'
-                    : 'border-white/10 bg-white/5 text-white/70 hover:bg-white/10'
+                role="radio"
+                aria-checked={mode === a.m}
+                disabled={envoi}
+                onClick={() => setMode(a.m)}
+                className={`rounded-full border px-2.5 py-1 text-[11.5px] font-semibold transition-colors ${
+                  mode === a.m ? TEINTES[a.c] : 'border-white/12 text-white/75 hover:bg-white/10'
                 }`}
               >
-                <span className="block font-bold">Changer faction</span>
-                <span className="text-[10px] text-white/50">Décalage horaire</span>
+                {a.l}
               </button>
-            )}
-
-            {/* Option Déplacer */}
-            <button
-              type="button"
-              onClick={() => setMode('deplacement')}
-              className={`rounded-xl border p-2 text-center text-[11.5px] font-semibold transition-all ${
-                mode === 'deplacement'
-                  ? 'border-amber-400 bg-amber-500/20 text-white ring-1 ring-amber-400'
-                  : 'border-white/10 bg-white/5 text-white/70 hover:bg-white/10'
-              }`}
-            >
-              <span className="block font-bold">
-                {estInterRegionDeuxBfi ? 'Déplacer BFI' : 'Déplacer'}
-              </span>
-              <span className="text-[10px] text-white/50">Sur la carte</span>
-            </button>
-
-            {/* Option Rétrograder en BF (Spécifique aux conflits inter-régions deux BFI) */}
-            {estInterRegionDeuxBfi && (
-              <button
-                type="button"
-                onClick={() => setMode('retrograder')}
-                className={`rounded-xl border p-2 text-center text-[11.5px] font-semibold transition-all ${
-                  mode === 'retrograder'
-                    ? 'border-purple-400 bg-purple-500/20 text-white ring-1 ring-purple-400'
-                    : 'border-white/10 bg-white/5 text-white/70 hover:bg-white/10'
-                }`}
-              >
-                <span className="block font-bold text-purple-300">Rétrograder en BF</span>
-                <span className="text-[10px] text-white/50">Lever le statut BFI</span>
-              </button>
-            )}
-
-            {/* Option Supprimer (seulement pour BF régulier) */}
-            {!estInterRegionDeuxBfi && !deuxIntouchables && (
-              <button
-                type="button"
-                onClick={() => setMode('suppression')}
-                className={`rounded-xl border p-2 text-center text-[11.5px] font-semibold transition-all ${
-                  mode === 'suppression'
-                    ? 'border-red-400 bg-red-500/20 text-white ring-1 ring-red-400'
-                    : 'border-white/10 bg-white/5 text-white/70 hover:bg-white/10'
-                }`}
-              >
-                <span className="block font-bold text-red-300">Supprimer</span>
-                <span className="text-[10px] text-white/50">Retirer le poste</span>
-              </button>
-            )}
-
-            {/* Option Dérogation opérationnelle */}
-            <button
-              type="button"
-              onClick={() => setMode('derogation')}
-              className={`rounded-xl border p-2 text-center text-[11.5px] font-semibold transition-all ${
-                mode === 'derogation'
-                  ? 'border-emerald-400 bg-emerald-500/20 text-white ring-1 ring-emerald-400'
-                  : 'border-white/10 bg-white/5 text-white/70 hover:bg-white/10'
-              }`}
-            >
-              <span className="block font-bold text-emerald-300">Dérogation</span>
-              <span className="text-[10px] text-white/50">Maintien validé</span>
-            </button>
+            ))}
           </div>
+          <p className="mt-1 text-[10.5px] text-white/50">{NOTES[mode]}</p>
         </div>
 
-        {/* Détail du mode sélectionné */}
         {mode === 'faction' && (estCasB || estInterRegionDeuxBfi) && (
-          <div className="rounded-xl border border-sky-500/30 bg-sky-950/30 p-3 space-y-2 text-[12px]">
-            <p className="font-semibold text-sky-200">
-              Attribuer une nouvelle faction à {barrageCible?.nom} :
-            </p>
-            <div className="grid grid-cols-2 gap-1.5">
-              {listeFactions.map((f) => {
-                const estChoisie = nouvelleFactionId === f.id;
-                const estPartagee = f.id === factionAutreId;
-                return (
-                  <button
-                    key={f.id}
-                    type="button"
-                    onClick={() => setNouvelleFactionId(f.id)}
-                    className={`flex items-center gap-2 rounded-xl border p-2 text-left text-[11.5px] transition-all ${
-                      estChoisie
-                        ? 'border-sky-400 bg-sky-500/30 text-white font-bold'
-                        : 'border-white/10 bg-white/5 text-white/70 hover:bg-white/10'
-                    }`}
-                  >
-                    <span className="size-2.5 rounded-full shrink-0" style={{ backgroundColor: f.couleur }} />
-                    <span className="truncate flex-1">{f.nom}</span>
-                    {estPartagee && (
-                      <span className="text-[9px] text-amber-300 font-normal shrink-0">(actuelle)</span>
-                    )}
-                  </button>
-                );
-              })}
-            </div>
-            <p className="text-[10.5px] text-white/50 italic pt-1">
-              Note : la modification de faction découple les créneaux d'activité. Le conflit sera enregistré comme <b>Traité</b>, tout en conservant la visibilité sur la proximité résiduelle.
-            </p>
+          <div className="grid grid-cols-2 gap-1">
+            {listeFactions.map((f) => (
+              <button
+                key={f.id}
+                type="button"
+                disabled={envoi}
+                onClick={() => setNouvelleFactionId(f.id)}
+                aria-pressed={nouvelleFactionId === f.id}
+                title={f.nom}
+                className={`flex min-w-0 items-center gap-1.5 rounded-lg border px-2 py-1 text-left text-[11px] transition-colors ${
+                  nouvelleFactionId === f.id ? 'border-sky-400 bg-sky-500/25 font-semibold text-white' : 'border-white/10 bg-white/5 text-white/75 hover:bg-white/10'
+                }`}
+              >
+                <span className="size-2 shrink-0 rounded-full" style={{ backgroundColor: f.couleur }} />
+                <span className="truncate">{f.nom}</span>
+                {f.id === factionAutreId && <span className="shrink-0 text-[9px] text-amber-300">voisin</span>}
+              </button>
+            ))}
           </div>
         )}
 
-        {mode === 'retrograder' && estInterRegionDeuxBfi && (
-          <div className="rounded-xl border border-purple-500/30 bg-purple-950/30 p-3 space-y-2 text-[12px]">
-            <p className="font-semibold text-purple-200">
-              Rétrograder le barrage <b className="text-white">{barrageCible?.nom}</b> en Barrage Fixe ordinaire (BF) :
-            </p>
-            <p className="text-[11px] text-white/70 leading-relaxed">
-              Cette action lève la protection permanente intouchable (BFI) du barrage sélectionné. Il deviendra un barrage régulier (BF), permettant de le déplacer librement ou de lui assigner des créneaux horaires spécifiques.
-            </p>
-          </div>
-        )}
+        <textarea
+          id="gr-input-justification-traitement"
+          rows={2}
+          value={justification}
+          onChange={(e) => setJustification(e.target.value)}
+          aria-label="Justification ou consigne opérationnelle"
+          placeholder={mode === 'derogation' ? 'Motif de la dérogation (obligatoire)' : 'Justification (facultative)'}
+          className="w-full resize-none rounded-lg border border-white/15 bg-white/5 px-2.5 py-1.5 text-[11.5px] text-white placeholder-white/35 focus:border-gr-gold focus:outline-none"
+        />
 
-        {mode === 'deplacement' && (
-          <div className="rounded-xl border border-amber-500/30 bg-amber-950/30 p-3 space-y-1.5 text-[11.5px]">
-            <p className="font-bold text-amber-300">
-              Déplacement le long de l'axe routier ({route}) :
-            </p>
-            <p className="text-white/70 leading-relaxed">
-              En confirmant, vous pourrez cliquer sur la carte le long de la route pour positionner le barrage <b>« {barrageCible?.nom} »</b> au-delà du seuil de <b>{seuilKm} km</b>.
-            </p>
-          </div>
-        )}
-
-        {mode === 'suppression' && (
-          <div className="rounded-xl border border-red-500/30 bg-red-950/30 p-3 space-y-1.5 text-[11.5px]">
-            <p className="font-bold text-red-300">
-              Suppression définitive du barrage « {barrageCible?.nom} » :
-            </p>
-            <p className="text-white/70 leading-relaxed">
-              Ce barrage régulier sera retiré de la carte et du dispositif opérationnel. Le conflit sera définitivement <b>Résolu</b> et archivé dans l'historique du Superadmin.
-            </p>
-          </div>
-        )}
-
-        {mode === 'derogation' && (
-          <div className="rounded-xl border border-emerald-500/30 bg-emerald-950/30 p-3 space-y-1.5 text-[11.5px]">
-            <p className="font-bold text-emerald-300">
-              Dérogation opérationnelle et maintien de proximité :
-            </p>
-            <p className="text-white/70 leading-relaxed">
-              Le conflit sera marqué comme <b>Traité</b>. L'espacement inférieur à {seuilKm} km restera identifié comme dérogatoire avec consigne opérationnelle (ex : filtrage alterné, point stratégique).
-            </p>
-          </div>
-        )}
-
-        {/* 3. Zone de justification / consigne */}
-        <div className="space-y-1">
-          <label htmlFor="gr-input-justification-traitement" className="block text-[11.5px] font-bold text-white/80">
-            3. Justification ou consigne opérationnelle {mode === 'derogation' ? '(obligatoire)' : '(optionnelle)'} :
-          </label>
-          <textarea
-            id="gr-input-justification-traitement"
-            rows={2}
-            value={justification}
-            onChange={(e) => setJustification(e.target.value)}
-            placeholder="Ex : Arbitrage validé en coordination de commandement, surveillance alternée…"
-            className="w-full rounded-xl border border-white/15 bg-white/5 p-2.5 text-[11.5px] text-white placeholder-white/35 focus:border-gr-gold focus:outline-none resize-none"
-          />
-        </div>
-
-        {/* Erreur éventuelle */}
         {erreur && (
-          <div role="alert" className="flex items-start gap-2 text-[11.5px] text-red-300 bg-red-500/15 border border-red-500/30 rounded-xl p-2.5">
-            <IconAlert size={14} className="mt-0.5 shrink-0 text-red-400" />
+          <p role="alert" className="flex items-start gap-1.5 rounded-lg border border-red-500/30 bg-red-500/15 px-2 py-1.5 text-[11px] text-red-300">
+            <IconAlert size={12} className="mt-0.5 shrink-0" />
             <span>{erreur}</span>
-          </div>
+          </p>
         )}
-
-        {/* Pied de fenêtre : Boutons Confirmer et Annuler */}
-        <footer className="flex items-center justify-end gap-2 border-t border-white/10 pt-3">
-          <button
-            type="button"
-            disabled={envoi}
-            onClick={fermer}
-            className="rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-[12px] font-semibold text-white/70 hover:bg-white/10 hover:text-white transition-colors"
-          >
-            Annuler
-          </button>
-          <button
-            type="button"
-            disabled={envoi}
-            onClick={handleValider}
-            className="flex items-center gap-1.5 rounded-xl bg-gr-gold px-5 py-2 text-[12px] font-bold text-gr-navy hover:bg-gr-gold/90 transition-all shadow-md active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed"
-          >
-            {envoi ? (
-              <>
-                <IconSpinner size={14} className="animate-spin" />
-                <span>Enregistrement...</span>
-              </>
-            ) : (
-              <>
-                <IconCoche size={14} />
-                <span>Confirmer le traitement</span>
-              </>
-            )}
-          </button>
-        </footer>
       </div>
+
+      <footer className="flex items-center justify-end gap-1.5 border-t border-white/10 px-3 py-2">
+        <button
+          type="button"
+          disabled={envoi}
+          onClick={fermer}
+          className="rounded-lg px-3 py-1.5 text-[12px] font-semibold text-white/70 transition-colors hover:bg-white/10 hover:text-white"
+        >
+          Annuler
+        </button>
+        <button
+          type="button"
+          disabled={envoi}
+          onClick={handleValider}
+          className="flex items-center gap-1.5 rounded-lg bg-gr-gold px-3.5 py-1.5 text-[12px] font-bold text-gr-navy shadow-sm transition-all hover:bg-gr-gold/90 disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          {envoi ? <IconSpinner size={13} className="animate-spin" /> : <IconCoche size={13} />}
+          <span>{envoi ? 'Enregistrement…' : mode === 'deplacement' ? 'Choisir la position' : 'Confirmer'}</span>
+        </button>
+      </footer>
     </div>
   );
 }

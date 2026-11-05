@@ -21,7 +21,8 @@ export function FondInjoignable({ url, coupe = false, onReessayer, decalageGauch
     <div
       className="pointer-events-none absolute z-[1049] transition-[left] duration-200 ease-out"
       style={{
-        top: 'calc(0.75rem + var(--gr-bandeau, 0px) + 48px)',
+        /* Sous la rangée « Filtres / Conflits » du bord gauche. */
+        top: 'calc(7.25rem + var(--gr-bandeau, 0px))',
         left: decalageGauche,
       }}
     >

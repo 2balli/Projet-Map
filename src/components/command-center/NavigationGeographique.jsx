@@ -90,7 +90,7 @@ export default function NavigationGeographique({ couches = {}, charger, contexte
         aria-expanded={ouvert}
         aria-label="Naviguer vers une région, une compagnie ou une brigade"
         title="Naviguer sur le territoire"
-        className={`gr-bouton flex h-[38px] shrink-0 items-center gap-1 rounded-xl border px-2.5 text-[11px] font-semibold shadow-panel backdrop-blur focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gr-primary ${
+        className={`gr-bouton flex h-8 shrink-0 items-center gap-1 rounded-full border px-3 text-[11px] font-semibold shadow-panel backdrop-blur focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gr-primary ${
           ouvert ? 'border-gr-primary/50 bg-gr-primary/12 text-gr-primary' : 'border-border-default bg-gr-navy/95 text-text-secondary hover:bg-gr-hover hover:text-text-primary'
         }`}
       >

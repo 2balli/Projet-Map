@@ -160,7 +160,11 @@ export default function CoucheOptimisationRoute({ vue, onAssigner, estAdmin }) {
       `</div>` +
       `<div style="font-size:11px;color:#94A3B8;margin-bottom:3px;">${echapper(c.raison)}</div>` +
       `<div style="font-size:10.5px;color:#64748B;">Faction : ${echapper(factionsVise)} · Statut : ${echapper(STATUTS[c.statut] ?? c.statut)}</div>` +
-      (admin && assignerAction && c.statut !== 'resolu'
+      /* Déjà assigné (en attente de traitement) ou déjà traité : l'état, pas de bouton. */
+      (c.dejaAssigne || c.dejaTraite
+        ? `<div style="margin-top:8px;padding:6px 9px;border-radius:8px;background:rgba(56,189,248,.15);color:#7DD3FC;font-weight:700;font-size:11px;">✓ ${c.dejaTraite ? 'Déjà traité et approuvé — voir l’Historique' : `Assigné à ${echapper(c.dejaAssigne)} — en attente de traitement`}</div>`
+        : '') +
+      (admin && assignerAction && c.statut !== 'resolu' && !c.dejaAssigne && !c.dejaTraite
         ? `<button id="btn-assigner-conflit-popup" type="button" style="display:flex;align-items:center;justify-content:center;gap:6px;width:100%;margin-top:8px;padding:7px 10px;background:#F59E0B;color:#0B1B2D;font-weight:800;font-size:11.5px;border-radius:8px;border:none;cursor:pointer;">➜ ${c.statut === 'assigne' || c.assigneA ? 'Réassigner au CMND Région' : 'Assigner au CMND Région'}</button>`
         : '') +
       `</div>`;

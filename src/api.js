@@ -227,9 +227,9 @@ export const creerMarquage = (champs) =>
   appel('marquages', { methode: 'POST', corps: champs }).then((r) => r.item);
 
 export const modifierMarquage = (id, champs) =>
-  appel(`marquages/${id}`, { methode: 'PATCH', corps: champs }).then((r) => r.item);
+  appel(`marquages/${encodeURIComponent(id)}`, { methode: 'PATCH', corps: champs }).then((r) => r.item);
 
-export const supprimerMarquage = (id) => appel(`marquages/${id}`, { methode: 'DELETE' });
+export const supprimerMarquage = (id) => appel(`marquages/${encodeURIComponent(id)}`, { methode: 'DELETE' });
 
 /**
  * DÉPLACER un repère — la même route PATCH que `modifierMarquage`, mais la
@@ -238,7 +238,7 @@ export const supprimerMarquage = (id) => appel(`marquages/${id}`, { methode: 'DE
  * d'annoncer « repositionné ».
  */
 export const deplacerMarquage = (id, { lng, lat, route, ...reste }) =>
-  appel(`marquages/${id}`, {
+  appel(`marquages/${encodeURIComponent(id)}`, {
     methode: 'PATCH',
     corps: { lng, lat, ...(route !== undefined ? { route } : {}), ...reste },
   });
@@ -540,7 +540,7 @@ export const traceEntreBarrages = (a, b) => appel('routes/trace-entre', { method
  * `enAttente`), et l'écran doit le dire au lieu d'annoncer le changement.
  */
 export const changerFactionBarrage = (id, factionId) =>
-  appel(`marquages/${id}`, { methode: 'PATCH', corps: { factionId } });
+  appel(`marquages/${encodeURIComponent(id)}`, { methode: 'PATCH', corps: { factionId } });
 
 /**
  * LA FACTION D'UN BARRAGE, GÉRÉE PAR LE CMND CIE OU LE CMND RÉGION — écriture
@@ -591,7 +591,12 @@ export const listerCmndRegionConflit = (id = null, { barrageAId = null, barrageB
   const q = params.toString();
   return appel(`conflits/cmnd-reg${q ? `?${q}` : ''}`);
 };
-export const assignerConflit = (id, { matricule, matricules, consigne, conflitData }) =>
+/**
+ * `etatAttendu` : l'état que l'écran croit lire. « NEW » = assigner un conflit
+ * nouveau — refusé (409, « déjà assigné ») si une optimisation précédente l'a
+ * déjà fait remettre à un commandement ; l'état courant pour une réassignation.
+ */
+export const assignerConflit = (id, { matricule, matricules, consigne, conflitData, etatAttendu = null }) =>
   appel(`conflits/${encodeURIComponent(id)}/assigner`, {
     methode: 'POST',
     corps: {
@@ -599,6 +604,7 @@ export const assignerConflit = (id, { matricule, matricules, consigne, conflitDa
       matricules: Array.isArray(matricules) ? matricules : (matricule ? [matricule] : []),
       consigne,
       conflitData,
+      ...(etatAttendu ? { etatAttendu } : {}),
     },
   });
 export const desassignerConflit = (id) =>

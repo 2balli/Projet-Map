@@ -235,6 +235,96 @@ export function accrocher(g, lng, lat, rayonMaxKm = 30) {
   return meilleur && meilleur.ecartKm <= rayonMaxKm ? meilleur : null;
 }
 
+/* ================================================================== */
+/*  Chaussées séparées : les deux sens d'une route à deux voies       */
+/* ================================================================== */
+
+/** Cap de circulation d'un segment (degrés, 0 = nord, sens horaire), dans le sens permis. */
+function capSegment(g, i, k) {
+  const pts = pointsArete(g, i);
+  let a = pts[k - 1];
+  let b = pts[k];
+  if (g.SENS[i] !== 0 && g.SENS[i] !== 1) [a, b] = [b, a];
+  const dl = rad(b[0] - a[0]);
+  const y = Math.sin(dl) * Math.cos(rad(b[1]));
+  const x = Math.cos(rad(a[1])) * Math.sin(rad(b[1])) - Math.sin(rad(a[1])) * Math.cos(rad(b[1])) * Math.cos(dl);
+  return ((Math.atan2(y, x) * 180) / Math.PI + 360) % 360;
+}
+
+const ecartCap = (a, b) => {
+  const d = Math.abs(a - b) % 360;
+  return d > 180 ? 360 - d : d;
+};
+
+/** « Aller » : la chaussée qui monte vers le nord ou l'est (cap 315° → 135°). */
+const versAller = (cap) => cap >= 315 || cap < 135;
+
+/**
+ * LES DEUX CHAUSSÉES D'UNE ROUTE À DEUX VOIES, autour d'un point accroché.
+ *
+ * Une route à chaussées séparées (autoroute, voie express) est dans le graphe
+ * comme DEUX arêtes à sens unique (`SENS` ≠ 0), parallèles et de sens
+ * opposés. On cherche, à moins de `rayonKm` du point, une arête à sens unique
+ * dont le cap de circulation est opposé (écart ≥ 135°) à celui de l'arête
+ * accrochée — de même numéro de route de préférence.
+ *
+ * Rend `null` pour une route à chaussée unique (à double sens, ou sens unique
+ * sans voie opposée proche) : il n'y a alors pas de choix à proposer.
+ * Sinon `{ aller, retour }`, chacun `{ arete, lng, lat, cap, trace }` — la
+ * position exacte sur SA chaussée et un bout de son tracé ([[lng, lat]…]).
+ * « Aller » est la chaussée qui circule vers le nord ou l'est (cap de 315° à
+ * 135°), « Retour » l'autre : une convention fixe, la même partout.
+ *
+ * @param {object} g graphe (chargerGraphe)
+ * @param {{arete, lng, lat, iSeg}} acc résultat d'`accrocher`
+ */
+export function chausseesOpposees(g, acc, rayonKm = 0.08) {
+  if (!g || !acc || g.SENS[acc.arete] === 0) return null;
+  const e0 = acc.arete;
+  const cap0 = capSegment(g, e0, acc.iSeg);
+  const ref0 = g.REF[e0];
+  const cosLat = Math.cos(rad(acc.lat));
+  const ix0 = Math.floor(acc.lng / PAS_GRILLE);
+  const iy0 = Math.floor(acc.lat / PAS_GRILLE);
+  const vues = new Set([e0]);
+  let meilleur = null;
+  for (let dx = -1; dx <= 1; dx++) {
+    for (let dy = -1; dy <= 1; dy++) {
+      for (const i of g.grille.get(cleCase(ix0 + dx, iy0 + dy)) ?? []) {
+        if (vues.has(i) || g.SENS[i] === 0) continue;
+        vues.add(i);
+        const pts = pointsArete(g, i);
+        for (let k = 1; k < pts.length; k++) {
+          const [px, py] = projeter(acc.lng, acc.lat, pts[k - 1], pts[k], cosLat);
+          const ecart = distanceKm(acc.lng, acc.lat, px, py);
+          if (ecart > rayonKm) continue;
+          const cap = capSegment(g, i, k);
+          if (ecartCap(cap, cap0) < 135) continue;
+          /* Même numéro de route : préférée, à 50 m près. */
+          const score = ecart - (ref0 >= 0 && g.REF[i] === ref0 ? 0.05 : 0);
+          if (!meilleur || score < meilleur.score) meilleur = { arete: i, lng: px, lat: py, iSeg: k, cap, score };
+        }
+      }
+    }
+  }
+  if (!meilleur) return null;
+
+  const troncon = (arete, iSeg, lng, lat) => {
+    const pts = pointsArete(g, arete);
+    return [...pts.slice(Math.max(0, iSeg - 2), iSeg), [lng, lat], ...pts.slice(iSeg, Math.min(pts.length, iSeg + 2))];
+  };
+  const ici = { arete: e0, lng: acc.lng, lat: acc.lat, cap: cap0, trace: troncon(e0, acc.iSeg, acc.lng, acc.lat) };
+  const enFace = {
+    arete: meilleur.arete, lng: meilleur.lng, lat: meilleur.lat, cap: meilleur.cap,
+    trace: troncon(meilleur.arete, meilleur.iSeg, meilleur.lng, meilleur.lat),
+  };
+  let allerIci = versAller(cap0);
+  /* Les deux dans la même moitié (caps proches de 135° / 315°) : la plus
+     proche du nord-est est « Aller ». */
+  if (allerIci === versAller(meilleur.cap)) allerIci = ecartCap(cap0, 45) <= ecartCap(meilleur.cap, 45);
+  return allerIci ? { aller: ici, retour: enFace } : { aller: enFace, retour: ici };
+}
+
 /**
  * Portion d'arête entre le point accroché et l'une de ses extrémités.
  * @param vers 'A' | 'B'

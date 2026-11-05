@@ -166,6 +166,8 @@ export function analyserConflitsComplet({ graphe, cible, barrages, seuilKm, cren
         barrageCie: autre.cie ?? null,
         barrageBt: autre.bt ?? null,
         distanceKm: Math.round(distAffichee * 10) / 10,
+        /* Non arrondie : c'est elle qui se compare au seuil (19,96 km reste sous 20). */
+        distanceBruteKm: distAffichee,
         distanceRouteKm: distRoute != null ? Math.round(distRoute * 10) / 10 : null,
         distanceVolOiseauKm: Math.round(volOiseau * 10) / 10,
         estDistanceRoute: estRouteReelle,

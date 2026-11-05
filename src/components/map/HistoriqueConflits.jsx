@@ -1,9 +1,11 @@
 import { useCallback, useEffect, useState } from 'react';
 import * as API from '../../api.js';
 import { IconSpinner, IconTerritoire } from '../../icons.jsx';
+import { libelleAssignation } from '../../actionsConflit.js';
 
 /**
- * HISTORIQUE DES CONFLITS — définitivement approuvés par le Superadmin.
+ * HISTORIQUE DES CONFLITS — approuvés par le Superadmin : un conflit approuvé
+ * y arrive directement, sans étape intermédiaire. Rien n'y est effacé.
  *
  * Lecture seule pour tous : le serveur ne laisse aucune route modifier un
  * conflit clos (voir serveur/workflowConflits.mjs). Seule exception, la
@@ -22,6 +24,18 @@ const LIBELLES_TRANSITION = {
   approbation_superadmin: 'Approuvé définitivement par le Superadmin',
   refus_superadmin: 'Refusé par le Superadmin',
   reouverture_superadmin: 'Rouvert par le Superadmin (correction)',
+  /* Étapes du workflow (historique détaillé, conflits antérieurs aux transitions). */
+  detection: 'Détection',
+  assigner_region: 'Assigné au CMD Région',
+  assigner_cie: 'Transmis au CMD CIE',
+  desassigner: 'Désassigné',
+  prendre_en_charge: 'Pris en charge par le CMD Région',
+  commencer: 'Traitement commencé par le CMD CIE',
+  soumettre: 'Traitement soumis',
+  valider: 'Approuvé par le Superadmin',
+  rejeter: 'Rejeté par le Superadmin',
+  cloturer: 'Archivé',
+  rouvrir: 'Rouvert par le Superadmin',
 };
 
 const date = (iso) =>
@@ -39,6 +53,7 @@ export default function HistoriqueConflits({ session, version = 0, onVoirSurCart
   const [erreur, setErreur] = useState(null);
   const [ouverts, setOuverts] = useState({});
   const [reouverture, setReouverture] = useState(null); // { id, motif, erreur }
+  const [filtresOuverts, setFiltresOuverts] = useState(false);
   const estAdmin = session?.rang === 'admin';
 
   const charger = useCallback(() => {
@@ -71,6 +86,21 @@ export default function HistoriqueConflits({ session, version = 0, onVoirSurCart
 
   return (
     <div className="space-y-2.5">
+      <div className="flex items-center justify-between gap-2 px-1 text-[11.5px]">
+        <span className="text-white/60">
+          {items ? `${items.length} conflit(s) approuvé(s)` : '…'}
+          {nbFiltres > 0 && ` · ${nbFiltres} filtre(s)`}
+        </span>
+        <button
+          type="button"
+          aria-expanded={filtresOuverts}
+          onClick={() => setFiltresOuverts((v) => !v)}
+          className={`rounded-lg border px-2.5 py-1 text-[11.5px] font-semibold ${nbFiltres > 0 ? 'border-gr-primary/50 bg-gr-primary/12 text-gr-primary' : 'border-border-default bg-gr-card text-text-secondary hover:bg-gr-hover'}`}
+        >
+          Filtres{nbFiltres > 0 ? ' •' : ''}
+        </button>
+      </div>
+      {filtresOuverts && (
       <form
         aria-label="Filtrer l’historique"
         onSubmit={(e) => {
@@ -104,11 +134,7 @@ export default function HistoriqueConflits({ session, version = 0, onVoirSurCart
             <input value={filtres.intervenant} onChange={(e) => setFiltres({ ...filtres, intervenant: e.target.value })} className={champ} />
           </label>
         </div>
-        <div className="flex items-center justify-between gap-2 pt-0.5">
-          <span className="text-[10.5px] text-text-muted">
-            {items ? `${items.length} conflit(s) clôturé(s)` : '…'}
-            {nbFiltres > 0 && ` · ${nbFiltres} filtre(s)`}
-          </span>
+        <div className="flex items-center justify-end gap-2 pt-0.5">
           <div className="flex gap-1.5">
             {nbFiltres > 0 && (
               <button
@@ -128,6 +154,7 @@ export default function HistoriqueConflits({ session, version = 0, onVoirSurCart
           </div>
         </div>
       </form>
+      )}
 
       {erreur && (
         <p role="alert" className="rounded-lg border border-red-500/30 bg-red-500/10 p-2 text-[11px] text-red-300">
@@ -141,37 +168,54 @@ export default function HistoriqueConflits({ session, version = 0, onVoirSurCart
       )}
       {items?.length === 0 && !erreur && (
         <div className="rounded-xl border border-dashed border-white/10 p-6 text-center">
-          <p className="text-[13px] font-bold text-text-primary">Aucun conflit clôturé</p>
-          <p className="text-[11px] text-text-secondary">Les conflits approuvés définitivement par le Superadmin sont conservés ici.</p>
+          <p className="text-[13px] font-bold text-text-primary">Aucun conflit approuvé</p>
+          <p className="text-[11px] text-text-secondary">Un conflit approuvé par le Superadmin arrive ici directement, avec tout son parcours.</p>
         </div>
       )}
 
       {items?.map((c) => {
         const ouvert = Boolean(ouverts[c.id]);
-        const parcours = c.transitions ?? [];
+        /* Le parcours : transitions de la chaîne d'approbation, sinon l'historique détaillé. */
+        const parcours = c.transitions?.length ? c.transitions : (c.historique ?? []).filter((h) => h?.action && h.action !== 'reapparition');
+        const approuvePar = c.cloturePar ?? c.validation?.par ?? null;
+        const approuveLe = c.clotureLe ?? c.validation?.le ?? null;
+        const regions = [...new Set([c.barrageA?.reg, c.barrageB?.reg].filter(Boolean))];
+        const assigne = libelleAssignation(c);
         const refusAnterieurs = parcours.filter((t) => t.action?.startsWith('refus'));
         return (
           <article key={c.id} className="space-y-1.5 rounded-2xl border border-emerald-500/25 bg-gr-card/80 p-3">
             <div className="flex items-start justify-between gap-2">
               <div className="min-w-0">
-                <p className="text-[12px] font-bold text-text-primary">
-                  {c.numero || c.id} <span className="font-mono text-[10px] text-text-secondary">· {c.route || '—'}</span>
+                <p className="text-[12.5px] font-bold text-text-primary">
+                  Conflit {c.numero || c.id} <span className="font-mono text-[10px] font-normal text-text-secondary">· {c.route || '—'}</span>
                 </p>
-                <p className="truncate text-[11px] text-text-secondary">
-                  {c.barrageA?.nom || c.barrageAId} ↔ {c.barrageB?.nom || c.barrageBId}
+                <p className="truncate text-[11.5px] text-text-secondary">
+                  {c.barrageA?.nom || c.barrageAId} → {c.barrageB?.nom || c.barrageBId}
                 </p>
               </div>
-              <span className="shrink-0 rounded-full border border-emerald-500/40 bg-emerald-500/15 px-2 py-0.5 text-[9.5px] font-bold text-emerald-300">
-                ✓ Clôturé
+              <span className="shrink-0 rounded-full border border-emerald-500/40 bg-emerald-500/15 px-2 py-0.5 text-[10px] font-semibold text-emerald-300">
+                ✓ Approuvé
               </span>
             </div>
             <dl className="grid grid-cols-[auto_1fr] gap-x-2 gap-y-0.5 text-[10.5px]">
+              {regions.length > 0 && (
+                <>
+                  <dt className="text-text-muted">Région</dt>
+                  <dd className="text-text-primary">{regions.join(' / ')}</dd>
+                </>
+              )}
+              {assigne && (
+                <>
+                  <dt className="text-text-muted">Assigné à</dt>
+                  <dd className="text-text-primary">{assigne}</dd>
+                </>
+              )}
               <dt className="text-text-muted">Traitement</dt>
               <dd className="text-text-primary">{c.decision || c.traitement?.decision || '—'}</dd>
               <dt className="text-text-muted">Traité par</dt>
               <dd className="text-text-primary">{qui(c.traitePar)} · {date(c.traiteLe)}</dd>
-              <dt className="text-text-muted">Clôturé par</dt>
-              <dd className="text-text-primary">{qui(c.cloturePar)} · {date(c.clotureLe)}</dd>
+              <dt className="text-text-muted">Approuvé par</dt>
+              <dd className="text-text-primary">{qui(approuvePar)} · {date(approuveLe)}</dd>
               {c.justification && (
                 <>
                   <dt className="text-text-muted">Justification</dt>
@@ -192,7 +236,7 @@ export default function HistoriqueConflits({ session, version = 0, onVoirSurCart
                 onClick={() => setOuverts((o) => ({ ...o, [c.id]: !ouvert }))}
                 className="rounded-lg border border-border-default bg-gr-card px-2 py-1 text-[10.5px] font-semibold text-text-secondary hover:bg-gr-hover hover:text-text-primary"
               >
-                {ouvert ? 'Masquer le parcours' : `Parcours (${parcours.length} étape${parcours.length > 1 ? 's' : ''})`}
+                {ouvert ? 'Masquer les actions' : `Actions effectuées (${parcours.length})`}
               </button>
               {onVoirSurCarte && (
                 <button
@@ -220,10 +264,10 @@ export default function HistoriqueConflits({ session, version = 0, onVoirSurCart
                   <li key={i} className="text-[10.5px]">
                     <p className="font-semibold text-text-primary">{LIBELLES_TRANSITION[t.action] ?? t.action}</p>
                     <p className="text-text-secondary">{qui(t.auteur)} · {date(t.date)}</p>
-                    {t.motif && <p className="italic text-text-secondary">« {t.motif} »</p>}
+                    {(t.motif || t.commentaire) && <p className="italic text-text-secondary">« {t.motif || t.commentaire} »</p>}
                   </li>
                 ))}
-                {parcours.length === 0 && <li className="text-[10.5px] text-text-muted">Conflit antérieur au workflow (migré) : voir son historique détaillé.</li>}
+                {parcours.length === 0 && <li className="text-[10.5px] text-text-muted">Aucune action enregistrée pour ce conflit.</li>}
               </ol>
             )}
 

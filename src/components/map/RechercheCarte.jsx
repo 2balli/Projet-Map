@@ -25,9 +25,18 @@ export function RechercheCarte({
   onRouteSelect = null,
   masquee = false,
   integree = false,
+  /* Façon Google Maps : un bouton ☰ à part, et une loupe qui s'élargit en barre de recherche. */
+  fixe = false,
+  onMenu = null,
 }) {
   const [q, setQ] = useState('');
   const [ouvert, setOuvert] = useState(false);
+  /* Fermée : une loupe seule. Dépliée : le champ, curseur dedans. La saisie
+     (`q`) survit au repli : on retrouve sa recherche en rouvrant. */
+  const [deployeLocal, setDeploye] = useState(false);
+  const deploye = deployeLocal;
+  const qRef = useRef(q);
+  qRef.current = q;
   const [survol, setSurvol] = useState(0);
   const [indexGeo, setIndexGeo] = useState(null);
   const boite = useRef(null);
@@ -60,6 +69,7 @@ export function RechercheCarte({
     const auRaccourci = (e) => {
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
         e.preventDefault();
+        setDeploye(true);
         setOuvert(true);
         inputRef.current?.focus();
       }
@@ -68,11 +78,17 @@ export function RechercheCarte({
     return () => window.removeEventListener('keydown', auRaccourci);
   }, []);
 
-  // Clic extérieur : fermer le menu déroulant de suggestions
+  /* Dépliée : le curseur va dans le champ. */
+  useEffect(() => {
+    if (deployeLocal) inputRef.current?.focus();
+  }, [deployeLocal]);
+
+  // Clic extérieur : fermer les suggestions, et replier si rien n'est saisi
   useEffect(() => {
     const dehors = (e) => {
       if (boite.current && !boite.current.contains(e.target)) {
         setOuvert(false);
+        if (!qRef.current.trim()) setDeploye(false);
       }
     };
     document.addEventListener('mousedown', dehors);
@@ -189,12 +205,14 @@ export function RechercheCarte({
       onBrigade?.(res.brigade.bt);
     }
     setOuvert(false);
+    setDeploye(false);
+    inputRef.current?.blur();
   };
 
   const auClavier = (e) => {
     if (e.key === 'Escape') {
       setOuvert(false);
-      e.currentTarget.blur();
+      setDeploye(false);
       return;
     }
     if (e.key === 'ArrowDown') {
@@ -213,28 +231,115 @@ export function RechercheCarte({
     }
   };
 
-  const montrerMenu = ouvert && q.trim().length > 0;
+  const montrerMenu = deploye && ouvert && q.trim().length > 0;
 
   return (
     <div
       ref={boite}
       aria-hidden={masquee}
-      className={`relative w-[260px] sm:w-[320px] md:w-[380px] transition-all duration-200 ${
-        masquee ? 'pointer-events-none opacity-0' : 'pointer-events-auto opacity-100'
-      }`}
+      className={`relative transition-[width,opacity] duration-200 ease-out ${
+        fixe ? 'flex items-center gap-2' : deploye ? 'w-[min(300px,calc(100vw-9rem))]' : 'w-9'
+      } ${masquee ? 'pointer-events-none opacity-0' : 'pointer-events-auto opacity-100'}`}
     >
-      {/* Barre de recherche unique, style Google Maps */}
+      {fixe ? (
+        <>
+          {/* Le menu ☰ : un bouton à part, de la taille des contrôles Google Maps. */}
+          {onMenu && (
+            <button
+              type="button"
+              onClick={onMenu}
+              aria-label="Ouvrir le menu"
+              title="Menu"
+              className="grid size-12 shrink-0 place-items-center rounded-full bg-gr-surface text-text-secondary shadow-[0_1px_2px_rgba(60,64,67,0.3),0_1px_3px_1px_rgba(60,64,67,0.15)] transition-colors hover:bg-gr-hover hover:text-text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gr-primary"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          )}
+          {/* LA RECHERCHE — une loupe ; au clic, elle s'élargit en barre (largeur animée). */}
+          <div
+            className={`flex h-12 shrink-0 items-center overflow-hidden rounded-full bg-gr-surface shadow-[0_1px_2px_rgba(60,64,67,0.3),0_1px_3px_1px_rgba(60,64,67,0.15)] transition-[width] duration-200 ease-out motion-reduce:transition-none ${
+              deploye ? 'w-[min(360px,calc(100vw-8.5rem))]' : 'w-12'
+            }`}
+          >
+            <button
+              type="button"
+              onClick={() => {
+                if (!deploye) {
+                  setDeploye(true);
+                  setOuvert(true);
+                } else if (resultats[0] && q.trim()) {
+                  selectionner(resultats[0]);
+                } else {
+                  inputRef.current?.focus();
+                }
+              }}
+              aria-label={deploye ? 'Rechercher' : 'Ouvrir la recherche'}
+              aria-expanded={deploye}
+              title="Rechercher (Ctrl+K)"
+              className={`grid size-12 shrink-0 place-items-center rounded-full transition-colors hover:bg-gr-hover ${deploye ? 'text-gr-primary' : 'text-text-secondary'}`}
+            >
+              <IconLoupe size={18} />
+            </button>
+            {deploye && (
+              <input
+                ref={inputRef}
+                type="text"
+                value={q}
+                onChange={(e) => {
+                  setQ(e.target.value);
+                  setOuvert(true);
+                }}
+                onFocus={() => setOuvert(true)}
+                onKeyDown={auClavier}
+                placeholder="Rechercher une ville, commune, barrage, route..."
+                aria-label="Rechercher une ville, commune, barrage, poste ou route"
+                className="h-full min-w-0 flex-1 bg-transparent pr-1 text-[14px] text-text-primary placeholder:text-text-muted focus:outline-none focus-visible:outline-none"
+              />
+            )}
+            {/* Replier — la saisie est gardée pour la prochaine ouverture. */}
+            {deploye && (
+              <button
+                type="button"
+                onClick={() => {
+                  setOuvert(false);
+                  setDeploye(false);
+                }}
+                aria-label="Fermer la recherche"
+                className="mr-1.5 grid size-9 shrink-0 place-items-center rounded-full text-text-muted transition-colors hover:bg-gr-hover hover:text-text-primary"
+              >
+                <IconClose size={15} />
+              </button>
+            )}
+          </div>
+        </>
+      ) : (
+      <>
+      {/* Une loupe ; au clic, elle s'élargit en champ de recherche. */}
       <div
-        className={`group relative flex h-10 w-full items-center rounded-xl border transition-all duration-150 shadow-md backdrop-blur-md ${
-          ouvert
+        className={`group relative flex h-9 w-full items-center overflow-hidden rounded-full border transition-colors duration-150 shadow-md backdrop-blur-md ${
+          deploye
             ? 'border-amber-500/70 bg-gr-navy/98 ring-2 ring-amber-500/20'
             : 'border-border-default bg-gr-navy/95 hover:border-white/20 hover:bg-gr-hover'
         }`}
       >
-        <span className="grid size-10 place-items-center shrink-0 text-text-muted group-hover:text-amber-400 transition-colors">
+        <button
+          type="button"
+          onClick={() => {
+            setDeploye(true);
+            setOuvert(true);
+          }}
+          tabIndex={deploye ? -1 : 0}
+          aria-label="Rechercher une ville, commune, barrage ou route"
+          aria-expanded={deploye}
+          title="Rechercher (Ctrl+K)"
+          className="grid size-9 shrink-0 place-items-center rounded-full text-text-muted transition-colors group-hover:text-amber-400"
+        >
           <IconLoupe size={15} />
-        </span>
+        </button>
 
+        {deploye && (
         <input
           ref={inputRef}
           type="text"
@@ -247,28 +352,31 @@ export function RechercheCarte({
           onKeyDown={auClavier}
           placeholder="Rechercher une ville, commune, barrage, route..."
           aria-label="Rechercher une ville, commune, barrage, poste ou route"
-          className="h-full flex-1 bg-transparent pr-7 text-[12px] font-medium text-white placeholder:text-white/40 focus:outline-none"
+          className="h-full min-w-0 flex-1 bg-transparent pr-8 text-[12px] font-medium text-white placeholder:text-white/40 focus:outline-none"
         />
+        )}
 
-        {q && (
+        {/* Replier le champ — la saisie est gardée pour la prochaine ouverture. */}
+        {deploye && (
           <button
             type="button"
             onClick={() => {
-              setQ('');
               setOuvert(false);
-              inputRef.current?.focus();
+              setDeploye(false);
             }}
-            aria-label="Effacer la recherche"
+            aria-label="Fermer la recherche"
             className="absolute right-2 top-1/2 grid size-6 -translate-y-1/2 place-items-center rounded-md text-white/40 hover:bg-white/10 hover:text-white transition-colors cursor-pointer"
           >
             <IconClose size={12} />
           </button>
         )}
       </div>
+      </>
+      )}
 
-      {/* Menu déroulant de suggestions prédictives */}
+      {/* Menu déroulant de suggestions — plus large que le champ, pour rester lisible. */}
       {montrerMenu && (
-        <div className="absolute left-0 right-0 top-[46px] z-[2200] overflow-hidden rounded-2xl border border-white/15 bg-gr-navy/98 shadow-2xl backdrop-blur-xl max-h-[380px] overflow-y-auto animate-in fade-in-0 zoom-in-95 duration-100">
+        <div className={`absolute z-[2200] ${fixe ? `top-[54px] ${onMenu ? 'left-14' : 'left-0'} w-[min(360px,calc(100vw-8.5rem))]` : 'left-0 top-[42px] w-[min(320px,calc(100vw-1.5rem))] max-sm:fixed max-sm:inset-x-3 max-sm:top-[calc(7.25rem+var(--gr-bandeau,0px))] max-sm:max-h-[calc(100dvh-8.5rem)] max-sm:w-auto'} overflow-hidden rounded-2xl border border-white/15 bg-gr-navy/98 shadow-2xl backdrop-blur-xl max-h-[380px] overflow-y-auto animate-in fade-in-0 zoom-in-95 duration-100`}>
           {resultats.length === 0 ? (
             <div className="p-4 text-center">
               <p className="text-[12px] font-semibold text-white/70">Aucun résultat trouvé</p>

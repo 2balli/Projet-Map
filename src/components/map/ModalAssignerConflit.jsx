@@ -12,12 +12,29 @@ import { IconAlert, IconClose, IconSpinner } from '../../icons.jsx';
  *   - Détection automatique de conflit inter-régions
  *   - Pré-sélection automatique de la région ou des 2 régions concernées
  *   - Possibilité d'assigner conjointement aux deux Commandants de Région
+ *
+ * SEUL LE CMD RÉGION CONCERNÉ est proposé : celui de la région du barrage (des
+ * deux barrages pour un conflit inter-régions ; du poste ordinaire face à un
+ * intouchable). Les autres régions ne sont pas listées — et le serveur les
+ * refuse de toute façon (suiviConflits.assignerConflit).
  */
+const normRegion = (s) => String(s ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim().toLowerCase();
+
+/** Le compte est-il celui d'une région CONCERNÉE ? (BFI : le poste ordinaire seul) */
+function estCompteConcerne(c, { estGroupe, regionsGroupe, intA, intB }) {
+  if (estGroupe) return regionsGroupe.includes(normRegion(c.unite));
+  if (intA && !intB) return Boolean(c.concerneB);
+  if (intB && !intA) return Boolean(c.concerneA);
+  return Boolean(c.duConflit);
+}
+
 export default function ModalAssignerConflit({
   conflit = null,
   conflits = null,
   onClose,
   onConfirmer,
+  /** Bord gauche (px) : à droite du menu des conflits quand il est ouvert. */
+  gauche = 12,
 }) {
   const estGroupe = Array.isArray(conflits) && conflits.length > 0;
   const conflitEffectif = conflit || (estGroupe ? conflits[0] : null);
@@ -47,15 +64,19 @@ export default function ModalAssignerConflit({
   const conflitBfiVsBf = (intA && !intB) || (intB && !intA);
   const regionBfSeule = conflitBfiVsBf ? (intA ? regB : regA) : null;
 
-  const comptesAffiches = useMemo(() => {
-    if (!comptes) return [];
-    if (conflitBfiVsBf && !estGroupe) {
-      // Règle BFI vs BF : Le BFI est intouchable, seule la région du BF doit apparaître
-      const filtres = comptes.filter((c) => !c.estBfiRegion && (intA ? c.concerneB : c.concerneA));
-      return filtres.length > 0 ? filtres : comptes.filter((c) => !c.estBfiRegion);
+  /* Les régions des conflits d'une sélection groupée. */
+  const regionsGroupe = useMemo(() => {
+    if (!estGroupe) return [];
+    const r = new Set();
+    for (const c of conflits) {
+      for (const b of [c.a || c.barrageA, c.b || c.barrageB]) if (b?.reg) r.add(normRegion(b.reg));
     }
-    return comptes;
-  }, [comptes, conflitBfiVsBf, estGroupe, intA]);
+    return [...r];
+  }, [estGroupe, conflits]);
+  const comptesAffiches = useMemo(
+    () => (comptes ?? []).filter((c) => estCompteConcerne(c, { estGroupe, regionsGroupe, intA, intB })),
+    [comptes, estGroupe, regionsGroupe, intA, intB],
+  );
 
   useEffect(() => {
     let annule = false;
@@ -67,7 +88,8 @@ export default function ModalAssignerConflit({
           if (!annule) {
             const liste = res.comptes ?? [];
             setComptes(liste);
-            if (liste[0]) setSelection([liste[0].matricule]);
+            const conc = liste.filter((c) => regionsGroupe.includes(normRegion(c.unite)));
+            if (conc.length === 1) setSelection([conc[0].matricule]);
           }
         })
         .catch(() => {
@@ -75,7 +97,8 @@ export default function ModalAssignerConflit({
             if (!annule) {
               const liste = (tous ?? []).filter((c) => c.rang === 'reg');
               setComptes(liste);
-              if (liste[0]) setSelection([liste[0].matricule]);
+              const conc = liste.filter((c) => regionsGroupe.includes(normRegion(c.unite)));
+              if (conc.length === 1) setSelection([conc[0].matricule]);
             }
           });
         });
@@ -100,11 +123,7 @@ export default function ModalAssignerConflit({
             if (intB && !intA) return c.concerneA;
             return c.duConflit;
           });
-          if (conc.length > 0) {
-            setSelection(conc.map((c) => c.matricule));
-          } else if (liste[0]) {
-            setSelection([liste[0].matricule]);
-          }
+          if (conc.length > 0) setSelection(conc.map((c) => c.matricule));
         }
       })
       .catch((err) => {
@@ -161,11 +180,7 @@ export default function ModalAssignerConflit({
               if (intB && !intA) return c.concerneA;
               return c.duConflit;
             });
-            if (conc.length > 0) {
-              setSelection(conc.map((c) => c.matricule));
-            } else if (liste[0]) {
-              setSelection([liste[0].matricule]);
-            }
+            if (conc.length > 0) setSelection(conc.map((c) => c.matricule));
           })
           .catch(() => {
             if (!annule) setErreur(err?.message ?? 'Erreur lors du chargement des commandants de région.');
@@ -175,7 +190,7 @@ export default function ModalAssignerConflit({
     return () => {
       annule = true;
     };
-  }, [conflit, conflits, bA?.id, bB?.id, regA, regB, intA, intB, estGroupe]);
+  }, [conflit, conflits, bA?.id, bB?.id, regA, regB, intA, intB, estGroupe, regionsGroupe]);
 
   if (!conflitEffectif && !estGroupe) return null;
 
@@ -193,35 +208,19 @@ export default function ModalAssignerConflit({
     );
   };
 
-  const selectionnerTousConcernes = () => {
-    if (!comptes) return;
-    const conc = comptes.filter((c) => {
-      if (intA && !intB) return c.concerneB;
-      if (intB && !intA) return c.concerneA;
-      return c.duConflit;
-    }).map((c) => c.matricule);
-    if (conc.length > 0) setSelection(conc);
-  };
-
-  const selectionnerUniquement = (regionNom) => {
-    if (!comptes) return;
-    const cible = comptes.find((c) => c.unite === regionNom);
-    if (cible) setSelection([cible.matricule]);
-  };
-
   const valider = async () => {
-    if (!selection || selection.length === 0 || envoi) return;
+    const comptesChoisis = comptesAffiches.filter((c) => selection.includes(c.matricule) && !(c.estBfiRegion && !(c.concerneA && c.concerneB)));
+    if (comptesChoisis.length === 0 || envoi) return;
     setEnvoi(true);
     setErreur(null);
-
-    const comptesChoisis = (comptes || []).filter((c) => selection.includes(c.matricule));
+    const matriculesChoisis = comptesChoisis.map((c) => c.matricule);
 
     try {
       if (estGroupe) {
         await onConfirmer({
           conflitIds: conflits.map((c) => c.id || c.numero).filter(Boolean),
-          matricule: selection[0],
-          matricules: selection,
+          matricule: matriculesChoisis[0],
+          matricules: matriculesChoisis,
           consigne: consigne.trim(),
           conflitsData: conflits,
           destinataire: comptesChoisis[0] ?? null,
@@ -233,9 +232,13 @@ export default function ModalAssignerConflit({
 
       await onConfirmer({
         conflitId: conflitEffectif.id,
-        matricule: selection[0],
-        matricules: selection,
+        matricule: matriculesChoisis[0],
+        matricules: matriculesChoisis,
         consigne: consigne.trim(),
+        /* Conflit d'optimisation (sans état serveur) : « NEW » — refusé s'il a été
+           assigné entre-temps. Conflit enregistré : son état lu, pour une
+           réassignation volontaire. */
+        etatAttendu: conflitEffectif.workflow?.etat ?? 'NEW',
         conflitData: {
           id: conflitEffectif.id,
           numero: conflitEffectif.numero || conflitEffectif.id,
@@ -265,365 +268,155 @@ export default function ModalAssignerConflit({
     }
   };
 
-  const nbSelectionnes = selection.length;
+  const nbSelectionnes = comptesAffiches.filter((c) => selection.includes(c.matricule)).length;
+  /* Une région n'est « intouchable » (non assignable) que si elle ne porte QUE
+     le BFI : quand les deux barrages sont dans la même région, c'est elle qui
+     traite le BF — elle reste choisissable. */
+  const regionBloquee = (c) => Boolean(c.estBfiRegion) && !(c.concerneA && c.concerneB);
+  const nomA = bA?.nom || bA?.id || 'Barrage A';
+  const nomB = bB?.nom || bB?.id || 'Barrage B';
 
+  /*
+   * PANNEAU COMPACT, NON BLOQUANT — même place et même allure que le panneau
+   * de traitement : la carte reste visible. Mêmes règles qu'avant (région
+   * concernée seule, BFI face à BF : la région du BF).
+   */
   return (
     <div
-      role="presentation"
-      onClick={() => !envoi && onClose()}
-      className="fixed inset-0 z-[3000] grid place-items-center bg-black/65 backdrop-blur-sm p-4 overflow-y-auto"
+      role="dialog"
+      aria-labelledby="gr-modal-assigner-conflit-titre"
+      onKeyDown={(e) => e.key === 'Escape' && !envoi && onClose()}
+      style={{ left: gauche }}
+      className="fixed top-[calc(4.5rem+var(--gr-bandeau,0px))] z-[2050] flex max-h-[calc(100dvh-5.5rem)] w-[min(340px,calc(100vw-1.5rem))] flex-col overflow-hidden rounded-2xl border border-white/10 bg-gr-navy/97 text-white shadow-panel backdrop-blur-xl animate-in fade-in zoom-in-95 duration-100"
     >
-      <div
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="gr-modal-assigner-conflit-titre"
-        onClick={(e) => e.stopPropagation()}
-        className="w-[min(540px,100%)] rounded-2xl border border-white/15 bg-gr-navy p-5 text-white shadow-2xl space-y-4 my-auto animate-in fade-in zoom-in-95 duration-150"
-      >
-        <header className="flex items-start justify-between gap-3 border-b border-white/10 pb-3">
-          <div>
-            <div className="flex items-center gap-2 flex-wrap">
-              <span className="rounded bg-red-500/20 px-2 py-0.5 font-mono text-[12px] font-bold text-red-300 border border-red-500/30">
-                {estGroupe ? `${conflits.length} CONFLITS` : (conflitEffectif?.id || conflitEffectif?.numero)}
-              </span>
-              <h2 id="gr-modal-assigner-conflit-titre" className="text-[15px] font-bold">
-                {estGroupe ? 'Assigner les conflits sélectionnés au CMD_REGION' : 'Assigner le conflit au CMD_REGION'}
-              </h2>
-            </div>
-            <p className="mt-1 text-[11.5px] text-white/55">
-              Déléguer la responsabilité opérationnelle aux Commandants de Région concernés.
+      <header className="flex items-start gap-2 border-b border-white/10 px-3 py-2">
+        <div className="min-w-0 flex-1">
+          <h2 id="gr-modal-assigner-conflit-titre" className="text-[13px] font-bold">
+            {estGroupe ? `Assigner ${conflits.length} conflits` : 'Assigner le conflit'}
+            {!estGroupe && conflitEffectif?.numero && (
+              <span className="ml-1 font-mono text-amber-300">{conflitEffectif.numero}</span>
+            )}
+          </h2>
+          {estGroupe ? (
+            <p className="truncate text-[10.5px] text-white/55">Chaque conflit va au CMD Région concerné.</p>
+          ) : (
+            <p className="truncate text-[10.5px] text-white/55" title={motif}>
+              {route} · {distance.toFixed(1)} km{temps ? ` · ~${temps} min` : ''} · {faction}
             </p>
-          </div>
-          <button
-            type="button"
-            onClick={onClose}
-            disabled={envoi}
-            aria-label="Fermer"
-            className="rounded-lg p-1.5 text-white/50 hover:bg-white/10 hover:text-white transition-colors"
-          >
-            <IconClose size={16} />
-          </button>
-        </header>
+          )}
+        </div>
+        <button
+          type="button"
+          onClick={onClose}
+          disabled={envoi}
+          aria-label="Fermer"
+          className="grid size-7 shrink-0 place-items-center rounded-lg text-white/50 transition-colors hover:bg-white/10 hover:text-white"
+        >
+          <IconClose size={14} />
+        </button>
+      </header>
 
-        {/* Résumé du ou des conflits sélectionnés */}
-        {estGroupe ? (
-          <div className="rounded-xl border border-white/10 bg-white/5 p-3 text-[12px] space-y-2">
-            <div className="flex items-center justify-between text-white/90 font-bold">
-              <span>{conflits.length} conflits sélectionnés pour assignation :</span>
-              <span className="text-amber-300 font-mono text-[11px]">{conflits.length} au total</span>
-            </div>
-            <div className="flex flex-wrap gap-1 max-h-28 overflow-y-auto pt-1">
-              {conflits.map((c) => (
-                <span key={c.id || c.numero} className="font-mono text-[10px] bg-white/10 text-white/80 border border-white/20 rounded px-1.5 py-0.2">
-                  {c.numero || c.id} ({c.route || 'Route'})
+      <div className="min-h-0 flex-1 space-y-2.5 overflow-y-auto overscroll-contain p-3">
+        {!estGroupe && (
+          <div className="flex items-stretch gap-1.5 text-[11px]">
+            {[[bA, regA, intA], [bB, regB, intB]].map(([b, reg, intou], i) => (
+              <div key={i} className="min-w-0 flex-1 rounded-lg border border-white/10 bg-white/5 px-2 py-1.5">
+                <span className="block truncate font-semibold text-white" title={b?.nom || b?.id}>
+                  {intou ? '🔒 ' : ''}{i === 0 ? nomA : nomB}
                 </span>
-              ))}
-            </div>
-          </div>
-        ) : (
-        <div className="rounded-xl border border-white/10 bg-white/5 p-3 text-[12px] space-y-2.5">
-          <div className="flex items-center justify-between text-white/90">
-            <div className="max-w-[46%] truncate">
-              <span className="font-semibold text-white block truncate" title={bA?.nom}>
-                {bA?.nom || bA?.id}
-              </span>
-              <div className="flex items-center gap-1 flex-wrap mt-0.5">
-                {regA && (
-                  <span className="text-[10px] font-bold text-sky-300 block">
-                    Région : {regA}
-                  </span>
-                )}
-                {intA && (
-                  <span className="rounded bg-amber-500/25 px-1.5 py-0.2 text-[9px] font-bold text-amber-300 border border-amber-500/40">
-                    🔒 BFI (Intouchable)
-                  </span>
-                )}
+                <span className="block truncate text-[10px] text-white/50">{intou ? 'BFI' : 'BF'} · {reg || 'région ?'}</span>
               </div>
-            </div>
-            <span className="text-white/40 font-bold px-2">↔</span>
-            <div className="max-w-[46%] truncate text-right">
-              <span className="font-semibold text-white block truncate" title={bB?.nom}>
-                {bB?.nom || bB?.id}
-              </span>
-              <div className="flex items-center justify-end gap-1 flex-wrap mt-0.5">
-                {intB && (
-                  <span className="rounded bg-amber-500/25 px-1.5 py-0.2 text-[9px] font-bold text-amber-300 border border-amber-500/40">
-                    🔒 BFI (Intouchable)
-                  </span>
-                )}
-                {regB && (
-                  <span className="text-[10px] font-bold text-amber-300 block">
-                    Région : {regB}
-                  </span>
-                )}
-              </div>
-            </div>
+            ))}
           </div>
-
-          <div className="grid grid-cols-2 gap-2 text-center">
-            <div className="rounded-lg bg-black/30 p-2 border border-white/5">
-              <span className="block text-[10px] font-bold uppercase tracking-wider text-white/50">
-                Distance routière
-              </span>
-              <span className="font-mono text-[13px] font-bold text-amber-300">
-                {distance.toFixed(1)} km
-              </span>
-            </div>
-            <div className="rounded-lg bg-black/30 p-2 border border-white/5">
-              <span className="block text-[10px] font-bold uppercase tracking-wider text-white/50">
-                Temps estimé
-              </span>
-              <span className="font-mono text-[13px] font-bold text-sky-300">
-                {temps != null ? `${temps} min` : '—'}
-              </span>
-            </div>
-          </div>
-
-          <div className="space-y-1 text-[11px] text-white/70">
-            <div>
-              <span className="text-white/45">Route :</span> <b className="text-white/90">{route}</b>
-            </div>
-            <div>
-              <span className="text-white/45">Faction :</span> <span className="text-sky-300 font-semibold">{faction}</span>
-            </div>
-            <div>
-              <span className="text-white/45">Motif :</span> <span className="text-red-300">{motif}</span>
-            </div>
-          </div>
-        </div>
         )}
-
-        {/* Bannière Règle BFI vs BF : Le BFI est intouchable, assigner exclusivement au CMD Région du BF */}
-        {conflitBfiVsBf && (
-          <div className="rounded-xl border border-amber-500/40 bg-amber-500/15 p-3 space-y-2">
-            <div className="flex items-center justify-between">
-              <span className="flex items-center gap-1.5 text-[12px] font-bold text-amber-300">
-                <span>🔒</span> Règle BFI / BF — Barrage Intouchable détecté
-              </span>
-              <span className="rounded bg-amber-400/20 px-2 py-0.5 text-[10px] font-bold text-amber-200 border border-amber-400/30">
-                Assignation exclusive au BF
-              </span>
-            </div>
-            <p className="text-[11px] text-white/85 leading-relaxed">
-              Le barrage <b>{intA ? (bA?.nom || bA?.id || 'A') : (bB?.nom || bB?.id || 'B')}</b> est un <b>Barrage Fixe Intouchable (BFI)</b> non modifiable.
-              L'assignation est adressée <b>exclusivement</b> au commandement de la région <b className="text-emerald-300">{intA ? regB : regA}</b> (responsable du barrage modifiable <b>{intA ? (bB?.nom || bB?.id || 'B') : (bA?.nom || bA?.id || 'A')}</b>) pour traitement et repositionnement.
-            </p>
-            <div className="pt-1">
-              <button
-                type="button"
-                onClick={() => selectionnerUniquement(intA ? regB : regA)}
-                className="rounded-lg px-2.5 py-1.5 text-[11px] font-bold bg-amber-400/25 border border-amber-400/60 text-amber-200 hover:bg-amber-400/35 transition-all shadow-sm"
-              >
-                ✓ Assigner exclusivement à la région {intA ? regB : regA}
-              </button>
-            </div>
+        {conflitBfiVsBf && !estGroupe && (
+          <p className="text-[10.5px] text-amber-300">🔒 BFI face à un BF : assigné à la région du BF ({regionBfSeule || '—'}).</p>
+        )}
+        {estInterRegion && !conflitBfiVsBf && !estGroupe && (
+          <p className="text-[10.5px] text-sky-300">Conflit inter-régions : les deux régions peuvent être assignées.</p>
+        )}
+        {estGroupe && (
+          <div className="flex max-h-16 flex-wrap gap-1 overflow-y-auto">
+            {conflits.map((c) => (
+              <span key={c.id || c.numero} className="rounded bg-white/10 px-1.5 font-mono text-[10px] text-white/80">{c.numero || c.id}</span>
+            ))}
           </div>
         )}
 
-        {/* Bannière alerte Conflit Inter-Régions ordinaire (deux barrages réguliers) */}
-        {estInterRegion && !conflitBfiVsBf && (
-          <div className="rounded-xl border border-amber-500/35 bg-amber-500/10 p-3 space-y-2">
-            <div className="flex items-center justify-between">
-              <span className="flex items-center gap-1.5 text-[12px] font-bold text-amber-300">
-                <span>⚡</span> Conflit inter-régions détecté
-              </span>
-              <span className="rounded bg-amber-400/20 px-2 py-0.5 text-[10px] font-bold text-amber-300 border border-amber-400/30">
-                2 régions impliquées
-              </span>
-            </div>
-            <p className="text-[11px] text-white/75 leading-relaxed">
-              Le barrage <b>{bA?.nom || 'A'}</b> relève de la région <b className="text-sky-300">{regA}</b> et le barrage <b>{bB?.nom || 'B'}</b> de la région <b className="text-amber-300">{regB}</b>.
-              Vous pouvez assigner conjointement le traitement aux <b>deux commandants</b>.
-            </p>
-
-            <div className="flex items-center gap-2 pt-1 flex-wrap">
-              <button
-                type="button"
-                onClick={selectionnerTousConcernes}
-                className={`flex-1 min-w-[170px] rounded-lg px-2.5 py-1.5 text-[11px] font-bold transition-all border ${
-                  nbSelectionnes >= 2
-                    ? 'bg-amber-400/25 border-amber-400/60 text-amber-200 shadow-sm'
-                    : 'bg-white/5 border-white/15 text-white/75 hover:bg-white/10'
-                }`}
-              >
-                ✓ Assigner aux 2 régions (Recommandé)
-              </button>
-              {regA && (
-                <button
-                  type="button"
-                  onClick={() => selectionnerUniquement(regA)}
-                  className="rounded-lg px-2 py-1.5 text-[10.5px] font-semibold bg-white/5 hover:bg-white/10 border border-white/10 text-white/70 transition-colors"
-                >
-                  Uniquement {regA}
-                </button>
-              )}
-              {regB && (
-                <button
-                  type="button"
-                  onClick={() => selectionnerUniquement(regB)}
-                  className="rounded-lg px-2 py-1.5 text-[10.5px] font-semibold bg-white/5 hover:bg-white/10 border border-white/10 text-white/70 transition-colors"
-                >
-                  Uniquement {regB}
-                </button>
-              )}
-            </div>
-          </div>
-        )}
-
-        {/* Sélection des Commandants de Région */}
         <div>
-          <div className="flex items-center justify-between mb-1.5">
-            <label className="block text-[11.5px] font-bold uppercase tracking-wider text-gr-gold/90">
-              Commandant(s) de Région destinataire(s) :
-            </label>
-            <span className="text-[11px] font-mono text-white/50">
-              {nbSelectionnes} sélectionné{nbSelectionnes > 1 ? 's' : ''}
-            </span>
-          </div>
-
+          <p className="mb-1 text-[10.5px] font-semibold text-white/55">CMD Région destinataire</p>
           {!comptes && !erreur && (
-            <div className="flex items-center justify-center gap-2 py-4 text-[12px] text-white/60">
-              <IconSpinner size={14} /> Chargement des Commandants de Région…
-            </div>
+            <p className="flex items-center gap-1.5 text-[11px] text-white/55"><IconSpinner size={12} /> Chargement…</p>
           )}
-
-          {(!comptes || (comptes && comptesAffiches.length === 0)) && !erreur && (
-            <p className="rounded-xl border border-white/10 bg-white/5 p-3 text-[12px] text-white/60 text-center">
-              Aucun Commandant de Région disponible pour ce conflit.
-            </p>
+          {comptes && comptesAffiches.length === 0 && !erreur && (
+            <p className="text-[11px] text-white/55">Aucun CMD Région disponible pour ce conflit.</p>
           )}
-
-          {comptesAffiches && comptesAffiches.length > 0 && (
-            <div role="group" aria-label="Commandants de Région" className="max-h-56 space-y-1.5 overflow-y-auto pr-1">
-              {comptesAffiches.map((c) => {
-                const estSelectionne = selection.includes(c.matricule);
-                const estBfi = Boolean(c.estBfiRegion);
-                const roleBadge = c.roleConflit || (c.duConflit ? 'Région du conflit' : null);
-
-                return (
-                  <button
-                    key={c.matricule}
-                    type="button"
-                    disabled={estBfi}
-                    onClick={() => !estBfi && toggleMatricule(c.matricule)}
-                    title={estBfi ? 'Le barrage de cette région est BFI (Intouchable), l’assignation va au barrage modifiable.' : undefined}
-                    className={`flex w-full items-center justify-between rounded-xl border p-2.5 text-left text-[12px] transition-all ${
-                      estBfi
-                        ? 'opacity-40 cursor-not-allowed border-white/5 bg-white/5'
-                        : estSelectionne
-                        ? 'border-gr-gold bg-gr-gold/15 shadow-sm ring-1 ring-gr-gold/30'
-                        : 'border-white/10 bg-white/5 hover:bg-white/10'
-                    }`}
-                  >
-                    <div className="min-w-0 pr-2">
-                      <div className="flex items-center gap-2 flex-wrap">
-                        <span className="font-bold text-white">
-                          CMND Région {c.unite}
-                        </span>
-                        {estBfi && (
-                          <span className="rounded px-1.5 py-0.5 text-[9.5px] font-bold border bg-red-500/20 text-red-300 border-red-500/30">
-                            🔒 BFI Intouchable (Non assignable)
-                          </span>
-                        )}
-                        {!estBfi && roleBadge && (
-                          <span className={`rounded px-1.5 py-0.5 text-[9.5px] font-bold border ${
-                            c.concerneA
-                              ? 'bg-sky-400/20 text-sky-300 border-sky-400/30'
-                              : c.concerneB
-                              ? 'bg-amber-400/20 text-amber-300 border-amber-400/30'
-                              : 'bg-emerald-400/20 text-emerald-300 border-emerald-400/30'
-                          }`}>
-                            {roleBadge}
-                          </span>
-                        )}
-                      </div>
-                      <p className="text-[11px] text-white/55 mt-0.5 truncate">
-                        {c.nom} <span className="font-mono text-[10px] text-white/40">({c.matricule})</span>
-                      </p>
-                    </div>
-
-                    <div
-                      className={`size-5 rounded-md border grid place-items-center shrink-0 transition-colors ${
-                        estBfi
-                          ? 'border-white/10 bg-black/10'
-                          : estSelectionne
-                          ? 'border-gr-gold bg-gr-gold text-gr-navy'
-                          : 'border-white/30 bg-black/20'
-                      }`}
-                    >
-                      {estSelectionne && !estBfi && (
-                        <svg width={12} height={12} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={3.5} strokeLinecap="round" strokeLinejoin="round">
-                          <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                      )}
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
-          )}
+          <div className="space-y-1">
+            {comptesAffiches.map((c) => {
+              const bloque = regionBloquee(c);
+              const choisi = selection.includes(c.matricule) && !bloque;
+              return (
+                <button
+                  key={c.matricule}
+                  type="button"
+                  disabled={bloque || envoi}
+                  aria-pressed={choisi}
+                  onClick={() => toggleMatricule(c.matricule)}
+                  title={bloque ? 'Région du BFI seul : non assignable' : c.nom}
+                  className={`flex w-full items-center gap-2 rounded-lg border px-2.5 py-1.5 text-left transition-colors ${
+                    choisi ? 'border-gr-gold bg-gr-gold/15' : 'border-white/10 bg-white/5 enabled:hover:bg-white/10'
+                  } disabled:opacity-45`}
+                >
+                  <span className={`grid size-4 shrink-0 place-items-center rounded border text-[10px] ${choisi ? 'border-gr-gold bg-gr-gold text-gr-navy' : 'border-white/30'}`}>
+                    {choisi ? '✓' : ''}
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block truncate text-[12px] font-semibold text-white">CMD Région {c.unite}</span>
+                    <span className="block truncate text-[10px] text-white/45">{c.nom}{bloque ? ' · BFI (non assignable)' : ''}</span>
+                  </span>
+                </button>
+              );
+            })}
+          </div>
         </div>
 
-        {/* Consigne optionnelle */}
-        <div>
-          <label htmlFor="gr-consigne-assignation" className="block text-[11px] font-semibold text-white/70 mb-1">
-            Consigne opérationnelle (optionnelle) :
-          </label>
-          <textarea
-            id="gr-consigne-assignation"
-            rows={2}
-            value={consigne}
-            onChange={(e) => setConsigne(e.target.value)}
-            placeholder={
-              estInterRegion
-                ? "Ex : Coordination entre les 2 régions pour ajuster les positions sur l'axe commun."
-                : "Ex : Réévaluer l'espacement sur l'axe ou adapter les factions."
-            }
-            className="w-full resize-none rounded-xl border border-white/15 bg-white/5 px-3 py-2 text-[12px] text-white placeholder-white/30 focus:border-gr-gold focus:outline-none"
-          />
-        </div>
+        <textarea
+          rows={2}
+          value={consigne}
+          onChange={(e) => setConsigne(e.target.value)}
+          aria-label="Consigne opérationnelle (facultative)"
+          placeholder="Consigne (facultative)"
+          className="w-full resize-none rounded-lg border border-white/15 bg-white/5 px-2.5 py-1.5 text-[11.5px] text-white placeholder-white/35 focus:border-gr-gold focus:outline-none"
+        />
 
         {erreur && (
-          <p role="alert" className="flex items-start gap-1.5 text-[11.5px] text-red-300 bg-red-500/10 border border-red-500/20 rounded-lg p-2.5">
-            <IconAlert size={14} className="mt-0.5 shrink-0" />
+          <p role="alert" className="flex items-start gap-1.5 rounded-lg border border-red-500/30 bg-red-500/15 px-2 py-1.5 text-[11px] text-red-300">
+            <IconAlert size={12} className="mt-0.5 shrink-0" />
             <span>{erreur}</span>
           </p>
         )}
-
-        <footer className="flex items-center justify-between gap-2 border-t border-white/10 pt-3">
-          <span className="text-[11px] text-white/45">
-            {nbSelectionnes === 0
-              ? 'Aucune région choisie'
-              : nbSelectionnes === 1
-              ? '1 région assignée'
-              : `${nbSelectionnes} régions assignées conjointement`}
-          </span>
-
-          <div className="flex items-center gap-2">
-            <button
-              type="button"
-              disabled={envoi}
-              onClick={onClose}
-              className="rounded-lg px-3 py-2 text-[12px] font-semibold text-white/70 hover:bg-white/10 transition-colors"
-            >
-              Annuler
-            </button>
-            <button
-              type="button"
-              disabled={nbSelectionnes === 0 || envoi}
-              onClick={valider}
-              className="flex items-center gap-2 rounded-lg bg-gr-gold px-4 py-2 text-[12px] font-bold text-gr-navy hover:bg-gr-gold/90 transition-colors disabled:opacity-40 disabled:cursor-not-allowed shadow-md"
-            >
-              {envoi && <IconSpinner size={13} />}
-              <span>
-                {nbSelectionnes > 1
-                  ? `Confirmer l’assignation (${nbSelectionnes} régions)`
-                  : 'Confirmer l’assignation'}
-              </span>
-            </button>
-          </div>
-        </footer>
       </div>
+
+      <footer className="flex items-center justify-end gap-1.5 border-t border-white/10 px-3 py-2">
+        <button
+          type="button"
+          disabled={envoi}
+          onClick={onClose}
+          className="rounded-lg px-3 py-1.5 text-[12px] font-semibold text-white/70 transition-colors hover:bg-white/10 hover:text-white"
+        >
+          Annuler
+        </button>
+        <button
+          type="button"
+          disabled={nbSelectionnes === 0 || envoi}
+          onClick={valider}
+          className="flex items-center gap-1.5 rounded-lg bg-gr-gold px-3.5 py-1.5 text-[12px] font-bold text-gr-navy shadow-sm transition-all hover:bg-gr-gold/90 disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          {envoi && <IconSpinner size={13} className="animate-spin" />}
+          <span>{envoi ? 'Assignation…' : 'Assigner'}</span>
+        </button>
+      </footer>
     </div>
   );
 }
+

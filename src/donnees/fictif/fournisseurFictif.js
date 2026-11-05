@@ -894,22 +894,57 @@ function hierarchieDe(jeu, session) {
 }
 
 /** Situation nationale — les mêmes chiffres, agrégés au périmètre visible. */
+/**
+ * Même forme que `GET /api/analyse/situation` (serveur/api.mjs) : le panneau
+ * Analyse lit `barrages.pourvus`, `brigades.sansEffectif`, `effectif.libres`…
+ * Une forme différente fait planter son premier écran — et, par la garde
+ * d'erreur, l'application entière, carte comprise.
+ */
 function situationDe(jeu, session) {
+  const creneau = 6;
   const postes = vide() ? [] : visibles(session, jeu.barrages);
-  const tenus = new Set(jeu.elements.map((e) => e.barrageId));
+  const ids = new Set(postes.map((m) => m.id));
+  const duCreneau = jeu.elements.filter((e) => ids.has(e.barrageId) && (e.creneau ?? creneau) === creneau);
+  const presents = new Map();
+  for (const e of duCreneau) presents.set(e.barrageId, (presents.get(e.barrageId) ?? 0) + 1);
+
+  const incomplets = [];
+  let pourvus = 0;
+  let vides = 0;
+  for (const m of postes) {
+    const n = presents.get(m.id) ?? 0;
+    if (n === 0) vides++;
+    else if (n >= ELEMENTS_PAR_BARRAGE) pourvus++;
+    if (n < ELEMENTS_PAR_BARRAGE) {
+      incomplets.push({ id: m.id, nom: m.nom || '', bt: m.bt || '', presents: n, attendus: ELEMENTS_PAR_BARRAGE });
+    }
+  }
+  incomplets.sort((a, b) => a.presents - b.presents);
+
+  const brigades = new Set(postes.map((m) => m.bt).filter(Boolean));
+  const effectif = jeu.effectifs.filter((p) => brigades.has(p.bt));
+  const places = new Set(duCreneau.map((e) => e.matricule));
+  const avecEffectif = new Set(effectif.map((p) => p.bt));
+
   return {
     date: CONFIG_FICTIVE.dateReference,
-    creneau: 6,
-    barrages: postes.length,
-    fixes: postes.filter((m) => m.type === 'barrage_fixe').length,
-    mobiles: postes.filter((m) => m.type === 'barrage_mobile').length,
-    tenus: postes.filter((m) => tenus.has(m.id)).length,
-    effectif: visibles(session, jeu.effectifs).length,
-    parStatut: Object.fromEntries(
-      ['en_attente', 'approuve', 'a_modifier', 'annule'].map((s) => [
-        s, postes.filter((m) => m.statutBarrage === s).length,
-      ]),
-    ),
-    demo: true,
+    creneau,
+    barrages: { total: postes.length, pourvus, incomplets: incomplets.length, vides },
+    brigades: {
+      total: brigades.size,
+      avecEffectif: avecEffectif.size,
+      sansEffectif: brigades.size - avecEffectif.size,
+    },
+    effectif: {
+      total: effectif.length,
+      affectes: places.size,
+      libres: effectif.length - places.size,
+      demo: true,
+    },
+    creneaux: [0, 6, 12, 18].map((c) => {
+      const lignes = jeu.elements.filter((e) => ids.has(e.barrageId) && (e.creneau ?? creneau) === c);
+      return { creneau: c, lignes: lignes.length, postes: new Set(lignes.map((e) => e.barrageId)).size };
+    }),
+    detailIncomplets: incomplets.slice(0, 40),
   };
 }

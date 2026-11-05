@@ -1,0 +1,3652 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "ins_mvmgykin_f50956e4",
+      "barrageId": "BF-BT-231",
+      "barrage": {
+        "nom": "Poste fixe Inezgane",
+        "route": "RN10",
+        "type": "barrage_fixe",
+        "lng": -9.55651,
+        "lat": 30.37524,
+        "bt": "Inezgane",
+        "cie": "Inezgane",
+        "reg": "Agadir"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "C-01",
+        "conflitNumero": "C-01",
+        "barrageAId": "BF-BT-231",
+        "barrageANom": "Poste fixe Inezgane",
+        "voisinId": "BFI-CIE-037",
+        "voisinNom": "BFI Inezgane",
+        "distanceKm": 4.89,
+        "seuilKm": 20,
+        "factions": [],
+        "route": "RN10",
+        "motif": "Distance routière de 5.07 km inférieure au seuil de sécurité",
+        "conjoint": false,
+        "autresRegions": []
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Fès",
+        "matricule": "REG-FÈS",
+        "nom": "Chef de région Fès"
+      },
+      "parentId": null,
+      "texte": "Conflit C-01 assigné : Poste fixe Inezgane ↔ BFI Inezgane (4.89 km). Espacement à traiter par le commandement de région.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "decision": null,
+      "reponse": "Poste absent de la carte : signalement classé automatiquement.",
+      "cree": "2026-10-24T14:03:25.152Z",
+      "traiteeLe": "2026-10-24T14:03:25.208Z"
+    },
+    {
+      "id": "ins_mvmgyrtn_ef581319",
+      "barrageId": "BF-BT-278",
+      "barrage": {
+        "nom": "Poste fixe Lqliaa",
+        "route": "RR105",
+        "type": "barrage_fixe",
+        "lng": -9.46503,
+        "lat": 30.3023,
+        "bt": "Lqliaa",
+        "cie": "Inezgane",
+        "reg": "Agadir"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "C-02",
+        "conflitNumero": "C-02",
+        "barrageAId": "BF-BT-278",
+        "barrageANom": "Poste fixe Lqliaa",
+        "voisinId": "BFI-CIE-037",
+        "voisinNom": "BFI Inezgane",
+        "distanceKm": 7.68,
+        "seuilKm": 20,
+        "factions": [],
+        "route": "RR105",
+        "motif": "Distance routière de 5.19 km inférieure au seuil de sécurité",
+        "conjoint": false,
+        "autresRegions": []
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Fès",
+        "matricule": "REG-FÈS",
+        "nom": "Chef de région Fès"
+      },
+      "parentId": null,
+      "texte": "Conflit C-02 assigné : Poste fixe Lqliaa ↔ BFI Inezgane (7.68 km). Espacement à traiter par le commandement de région.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-10-24T14:03:34.620Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mvmiaw5j_adcae5b1",
+      "barrageId": "BFI-CIE-044",
+      "barrage": {
+        "nom": "BFI Laayoune",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -13.23296,
+        "lat": 27.15235,
+        "bt": "Laayoune",
+        "cie": "Laayoune",
+        "reg": "Laayoune"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BF-BT-188|BFI-CIE-044",
+        "conflitNumero": "conf_calc_BF-BT-188|BFI-CIE-044",
+        "barrageAId": "BFI-CIE-044",
+        "barrageANom": "BFI Laayoune",
+        "voisinId": "BF-BT-188",
+        "voisinNom": "Poste fixe Foum El Oued",
+        "distanceKm": 10.2,
+        "seuilKm": 20,
+        "factions": [],
+        "route": "RN1",
+        "motif": "Espacement de 10.2 km inférieur au seuil (20 km)",
+        "conjoint": false,
+        "autresRegions": []
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Laayoune",
+        "matricule": "REG-LAAYOUNE",
+        "nom": "Chef de région Laayoune"
+      },
+      "parentId": null,
+      "texte": "Conflit conf_calc_BF-BT-188|BFI-CIE-044 assigné : BFI Laayoune ↔ Poste fixe Foum El Oued (10.2 km). Espacement à traiter par le commandement de région.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-10-24T14:40:59.726Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mvmibmog_37a15285",
+      "barrageId": "BFI-CIE-071",
+      "barrage": {
+        "nom": "BFI Skhirate",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -7.05783,
+        "lat": 33.83761,
+        "bt": "Skhirate-El Fath",
+        "cie": "Skhirate",
+        "reg": "Rabat"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BF-BT-132|BFI-CIE-071",
+        "conflitNumero": "conf_calc_BF-BT-132|BFI-CIE-071",
+        "barrageAId": "BFI-CIE-071",
+        "barrageANom": "BFI Skhirate",
+        "voisinId": "BF-BT-132",
+        "voisinNom": "Poste fixe Bouznika",
+        "distanceKm": 16.4,
+        "seuilKm": 20,
+        "factions": [],
+        "route": "RN1",
+        "motif": "Espacement de 16.4 km inférieur au seuil (20 km)",
+        "conjoint": false,
+        "autresRegions": []
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Settat",
+        "matricule": "REG-SETTAT",
+        "nom": "Chef de région Settat"
+      },
+      "parentId": null,
+      "texte": "Conflit conf_calc_BF-BT-132|BFI-CIE-071 assigné : BFI Skhirate ↔ Poste fixe Bouznika (16.4 km). Espacement à traiter par le commandement de région.",
+      "statut": "annulee",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-10-24T14:41:34.097Z",
+      "traiteeLe": "2026-10-27T12:31:25.868Z"
+    },
+    {
+      "id": "ins_mvmibr8n_ff5ff6ff",
+      "barrageId": "BFI-CIE-071",
+      "barrage": {
+        "nom": "BFI Skhirate",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -7.05783,
+        "lat": 33.83761,
+        "bt": "Skhirate-El Fath",
+        "cie": "Skhirate",
+        "reg": "Rabat"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BF-BT-405|BFI-CIE-071",
+        "conflitNumero": "conf_calc_BF-BT-405|BFI-CIE-071",
+        "barrageAId": "BFI-CIE-071",
+        "barrageANom": "BFI Skhirate",
+        "voisinId": "BF-BT-405",
+        "voisinNom": "Poste fixe Skhirate Centre",
+        "distanceKm": 13.1,
+        "seuilKm": 20,
+        "factions": [],
+        "route": "RN1",
+        "motif": "Espacement de 13.1 km inférieur au seuil (20 km)",
+        "conjoint": false,
+        "autresRegions": []
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat",
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat"
+      },
+      "parentId": null,
+      "texte": "Conflit conf_calc_BF-BT-405|BFI-CIE-071 assigné : BFI Skhirate ↔ Poste fixe Skhirate Centre (13.1 km). Espacement à traiter par le commandement de région.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-10-24T14:41:40.008Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mvmicytu_1cdd653f",
+      "barrageId": "BF-BT-188",
+      "barrage": {
+        "nom": "Poste fixe Foum El Oued",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -13.16766,
+        "lat": 27.20397,
+        "bt": "Boukraa",
+        "cie": "Laayoune",
+        "reg": "Laayoune"
+      },
+      "action": "modification",
+      "criteres": null,
+      "source": "modification",
+      "changements": [
+        {
+          "champ": "pk",
+          "ancienne": 1479.9,
+          "nouvelle": 1478.2
+        },
+        {
+          "champ": "lng",
+          "ancienne": -13.16766,
+          "nouvelle": -13.15879
+        },
+        {
+          "champ": "lat",
+          "ancienne": 27.20397,
+          "nouvelle": 27.21723
+        },
+        {
+          "champ": "longitude",
+          "ancienne": -13.16766,
+          "nouvelle": -13.15879
+        },
+        {
+          "champ": "latitude",
+          "ancienne": 27.20397,
+          "nouvelle": 27.21723
+        }
+      ],
+      "modificationId": null,
+      "motif": "",
+      "aDecider": "admin",
+      "remplacerIntouchable": null,
+      "destinataire": null,
+      "parentId": null,
+      "texte": "Modification demandée sur Poste fixe Foum El Oued : pk, lng, lat, longitude, latitude.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "REG-LAAYOUNE",
+        "nom": "Chef de région Laayoune",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Laayoune",
+        "reg": "Laayoune",
+        "cie": null
+      },
+      "traiteePar": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "decision": "acceptee",
+      "reponse": "",
+      "cree": "2026-10-24T14:42:36.499Z",
+      "traiteeLe": "2026-10-24T15:03:51.622Z"
+    },
+    {
+      "id": "ins_mvnvosw0_1cf5306a",
+      "barrageId": "BF-BT-125",
+      "barrage": {
+        "nom": "Poste fixe Bouknadel",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -6.73501,
+        "lat": 34.12797,
+        "bt": "Bouknadel",
+        "cie": "Salé",
+        "reg": "Rabat"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BF-BT-125|BF-BT-401",
+        "conflitNumero": "conf_calc_BF-BT-125|BF-BT-401",
+        "barrageAId": "BF-BT-125",
+        "barrageANom": "Poste fixe Bouknadel",
+        "voisinId": "BF-BT-401",
+        "voisinNom": "Poste fixe Sidi Taibi",
+        "distanceKm": 13.8,
+        "seuilKm": 20,
+        "factions": [],
+        "route": "RN1",
+        "motif": "Espacement de 13.8 km inférieur au seuil (20 km)",
+        "conjoint": false,
+        "autresRegions": []
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Kénitra",
+        "matricule": "REG-KÉNITRA",
+        "nom": "Chef de région Kénitra"
+      },
+      "parentId": null,
+      "texte": "Conflit conf_calc_BF-BT-125|BF-BT-401 assigné : Poste fixe Bouknadel ↔ Poste fixe Sidi Taibi (13.8 km). Espacement à traiter par le commandement de région.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": {
+        "matricule": "REG-KÉNITRA",
+        "nom": "Chef de région Kénitra",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Kénitra",
+        "reg": "Kénitra",
+        "cie": null
+      },
+      "decision": "acceptee",
+      "reponse": "",
+      "cree": "2026-10-25T13:43:29.856Z",
+      "traiteeLe": "2026-10-25T13:44:29.962Z"
+    },
+    {
+      "id": "ins_mvnvsf7l_dfc253ec",
+      "barrageId": "BF-BT-231",
+      "barrage": {
+        "nom": "Poste fixe Inezgane",
+        "route": "RN10",
+        "type": "barrage_fixe",
+        "lng": -9.55651,
+        "lat": 30.37524,
+        "bt": "Inezgane",
+        "cie": "Inezgane",
+        "reg": "Agadir"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "C-01",
+        "conflitNumero": "C-01",
+        "barrageAId": "BF-BT-231",
+        "barrageANom": "Poste fixe Inezgane",
+        "voisinId": "BFI-CIE-037",
+        "voisinNom": "BFI Inezgane",
+        "distanceKm": 4.89,
+        "seuilKm": 20,
+        "factions": [],
+        "route": "RN10",
+        "motif": "Distance routière de 13.47 km inférieure au seuil de sécurité",
+        "conjoint": false,
+        "autresRegions": []
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Bouarfa",
+        "matricule": "REG-BOUARFA",
+        "nom": "Chef de région Bouarfa"
+      },
+      "parentId": null,
+      "texte": "Conflit C-01 assigné : Poste fixe Inezgane ↔ BFI Inezgane (4.89 km). Espacement à traiter par le commandement de région.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "role": "commandement",
+        "rang": "admin",
+        "unite": "superadmin",
+        "reg": null,
+        "cie": null
+      },
+      "decision": null,
+      "reponse": "Poste absent de la carte : signalement classé automatiquement.",
+      "cree": "2026-10-25T13:46:18.753Z",
+      "traiteeLe": "2026-10-25T13:46:18.776Z"
+    },
+    {
+      "id": "ins_mvnytca9_b3f299d1",
+      "barrageId": "BFI-CIE-071",
+      "barrage": {
+        "nom": "BFI Skhirate",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -7.05783,
+        "lat": 33.83761,
+        "bt": "Skhirate-El Fath",
+        "cie": "Skhirate",
+        "reg": "Rabat"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BF-BT-405|BFI-CIE-071",
+        "conflitNumero": "conf_calc_BF-BT-405|BFI-CIE-071",
+        "barrageAId": "BFI-CIE-071",
+        "barrageANom": "BFI Skhirate",
+        "voisinId": "BF-BT-405",
+        "voisinNom": "Poste fixe Skhirate Centre",
+        "distanceKm": 13.1,
+        "seuilKm": 20,
+        "factions": [],
+        "route": "RN1",
+        "motif": "Espacement de 13.1 km inférieur au seuil (20 km)",
+        "transmisPar": {
+          "matricule": "REG-RABAT",
+          "nom": "Chef de région Rabat",
+          "rang": "reg",
+          "unite": "Rabat"
+        }
+      },
+      "source": "transmission_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "cie",
+        "unite": "Skhirate",
+        "matricule": "CIE-SKHIRATE",
+        "nom": "Chef de compagnie Skhirate"
+      },
+      "parentId": null,
+      "texte": "Conflit conf_calc_BF-BT-405|BFI-CIE-071 transmis par la Région Rabat : BFI Skhirate ↔ Poste fixe Skhirate Centre (13.1 km). Traitement opérationnel délégué à la compagnie.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "rang": "reg",
+        "unite": "Rabat"
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-10-25T15:11:00.465Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mvoyzr1z_2d697a14",
+      "barrageId": "BFI-CIE-044",
+      "barrage": {
+        "nom": "BFI Laayoune",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -13.23296,
+        "lat": 27.15235,
+        "bt": "Laayoune",
+        "cie": "Laayoune",
+        "reg": "Laayoune"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BF-BT-188|BFI-CIE-044",
+        "conflitNumero": "C-R1",
+        "barrageAId": "BFI-CIE-044",
+        "barrageANom": "BFI Laayoune",
+        "voisinId": "BF-BT-188",
+        "voisinNom": "Poste fixe Foum El Oued",
+        "distanceKm": 12,
+        "seuilKm": 20,
+        "factions": [],
+        "route": "RN1",
+        "motif": "Espacement de 12.0 km inférieur au seuil (20 km)",
+        "conjoint": false,
+        "autresRegions": []
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Laayoune",
+        "matricule": "REG-LAAYOUNE",
+        "nom": "Chef de région Laayoune"
+      },
+      "parentId": null,
+      "texte": "Conflit C-R1 assigné : BFI Laayoune ↔ Poste fixe Foum El Oued (12 km). Espacement à traiter par le commandement de région.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-10-26T08:03:45.726Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mvoz0649_1d7a0a5d",
+      "barrageId": "BFI-CIE-071",
+      "barrage": {
+        "nom": "BFI Skhirate",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -7.05783,
+        "lat": 33.83761,
+        "bt": "Skhirate-El Fath",
+        "cie": "Skhirate",
+        "reg": "Rabat"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BF-BT-132|BFI-CIE-071",
+        "conflitNumero": "C-R2",
+        "barrageAId": "BFI-CIE-071",
+        "barrageANom": "BFI Skhirate",
+        "voisinId": "BF-BT-132",
+        "voisinNom": "Poste fixe Bouznika",
+        "distanceKm": 16.4,
+        "seuilKm": 20,
+        "factions": [],
+        "route": "RN1",
+        "motif": "Espacement de 16.4 km inférieur au seuil (20 km)",
+        "conjoint": false,
+        "autresRegions": []
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Settat",
+        "matricule": "REG-SETTAT",
+        "nom": "Chef de région Settat"
+      },
+      "parentId": null,
+      "texte": "Conflit C-R2 assigné : BFI Skhirate ↔ Poste fixe Bouznika (16.4 km). Espacement à traiter par le commandement de région.",
+      "statut": "annulee",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-10-26T08:04:05.241Z",
+      "traiteeLe": "2026-10-27T12:31:25.868Z"
+    },
+    {
+      "id": "ins_mvoz0bk7_f46afb9e",
+      "barrageId": "BFI-CIE-071",
+      "barrage": {
+        "nom": "BFI Skhirate",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -7.05783,
+        "lat": 33.83761,
+        "bt": "Skhirate-El Fath",
+        "cie": "Skhirate",
+        "reg": "Rabat"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BF-BT-405|BFI-CIE-071",
+        "conflitNumero": "C-R3",
+        "barrageAId": "BFI-CIE-071",
+        "barrageANom": "BFI Skhirate",
+        "voisinId": "BF-BT-405",
+        "voisinNom": "Poste fixe Skhirate Centre",
+        "distanceKm": 13.1,
+        "seuilKm": 20,
+        "factions": [],
+        "route": "RN1",
+        "motif": "Espacement de 13.1 km inférieur au seuil (20 km)",
+        "conjoint": false,
+        "autresRegions": []
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat",
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat"
+      },
+      "parentId": null,
+      "texte": "Conflit C-R3 assigné : BFI Skhirate ↔ Poste fixe Skhirate Centre (13.1 km). Espacement à traiter par le commandement de région.",
+      "statut": "annulee",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-10-26T08:04:12.297Z",
+      "traiteeLe": "2026-10-27T12:31:25.868Z"
+    },
+    {
+      "id": "ins_mvoz0hry_2fedcf7b",
+      "barrageId": "BF-BT-125",
+      "barrage": {
+        "nom": "Poste fixe Bouknadel",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -6.73501,
+        "lat": 34.12797,
+        "bt": "Bouknadel",
+        "cie": "Salé",
+        "reg": "Rabat"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BF-BT-125|BF-BT-401",
+        "conflitNumero": "C-R4",
+        "barrageAId": "BF-BT-125",
+        "barrageANom": "Poste fixe Bouknadel",
+        "voisinId": "BF-BT-401",
+        "voisinNom": "Poste fixe Sidi Taibi",
+        "distanceKm": 13.8,
+        "seuilKm": 20,
+        "factions": [],
+        "route": "RN1",
+        "motif": "Espacement de 13.8 km inférieur au seuil (20 km)",
+        "conjoint": true,
+        "autresRegions": [
+          "Rabat"
+        ]
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Kénitra",
+        "matricule": "REG-KÉNITRA",
+        "nom": "Chef de région Kénitra"
+      },
+      "parentId": null,
+      "texte": "Conflit inter-régions C-R4 assigné conjointement (Kénitra & Rabat) : Poste fixe Bouknadel ↔ Poste fixe Sidi Taibi (13.8 km). Coordination inter-régionale requise pour l’espacement des barrages.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": {
+        "matricule": "CIE-KÉNITRA",
+        "nom": "Chef de compagnie Kénitra",
+        "role": "commandement",
+        "rang": "cie",
+        "unite": "Kénitra",
+        "reg": "Kénitra",
+        "cie": null
+      },
+      "decision": null,
+      "reponse": "Poste absent de la carte : signalement classé automatiquement.",
+      "cree": "2026-10-26T08:04:20.351Z",
+      "traiteeLe": "2026-10-27T12:35:58.376Z"
+    },
+    {
+      "id": "ins_mvoz0hs9_ae291fed",
+      "barrageId": "BF-BT-125",
+      "barrage": {
+        "nom": "Poste fixe Bouknadel",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -6.73501,
+        "lat": 34.12797,
+        "bt": "Bouknadel",
+        "cie": "Salé",
+        "reg": "Rabat"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BF-BT-125|BF-BT-401",
+        "conflitNumero": "C-R4",
+        "barrageAId": "BF-BT-125",
+        "barrageANom": "Poste fixe Bouknadel",
+        "voisinId": "BF-BT-401",
+        "voisinNom": "Poste fixe Sidi Taibi",
+        "distanceKm": 13.8,
+        "seuilKm": 20,
+        "factions": [],
+        "route": "RN1",
+        "motif": "Espacement de 13.8 km inférieur au seuil (20 km)",
+        "conjoint": true,
+        "autresRegions": [
+          "Kénitra"
+        ]
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat",
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat"
+      },
+      "parentId": null,
+      "texte": "Conflit inter-régions C-R4 assigné conjointement (Kénitra & Rabat) : Poste fixe Bouknadel ↔ Poste fixe Sidi Taibi (13.8 km). Coordination inter-régionale requise pour l’espacement des barrages.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": {
+        "matricule": "CIE-KÉNITRA",
+        "nom": "Chef de compagnie Kénitra",
+        "role": "commandement",
+        "rang": "cie",
+        "unite": "Kénitra",
+        "reg": "Kénitra",
+        "cie": null
+      },
+      "decision": null,
+      "reponse": "Poste absent de la carte : signalement classé automatiquement.",
+      "cree": "2026-10-26T08:04:20.363Z",
+      "traiteeLe": "2026-10-27T12:35:58.405Z"
+    },
+    {
+      "id": "ins_mvoz1glx_8204a432",
+      "barrageId": "BF-BT-188",
+      "barrage": {
+        "nom": "Poste fixe Foum El Oued",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -13.15879,
+        "lat": 27.21723,
+        "bt": "Boukraa",
+        "cie": "Laayoune",
+        "reg": "Laayoune"
+      },
+      "action": "modification",
+      "criteres": null,
+      "source": "modification",
+      "changements": [
+        {
+          "champ": "pk",
+          "ancienne": 1478.2,
+          "nouvelle": 1470.7
+        },
+        {
+          "champ": "lng",
+          "ancienne": -13.15879,
+          "nouvelle": -13.12418
+        },
+        {
+          "champ": "lat",
+          "ancienne": 27.21723,
+          "nouvelle": 27.27724
+        },
+        {
+          "champ": "longitude",
+          "ancienne": -13.15879,
+          "nouvelle": -13.12418
+        },
+        {
+          "champ": "latitude",
+          "ancienne": 27.21723,
+          "nouvelle": 27.27724
+        }
+      ],
+      "modificationId": null,
+      "motif": "",
+      "aDecider": "admin",
+      "remplacerIntouchable": null,
+      "destinataire": null,
+      "parentId": null,
+      "texte": "Modification demandée sur Poste fixe Foum El Oued : pk, lng, lat, longitude, latitude.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "REG-LAAYOUNE",
+        "nom": "Chef de région Laayoune",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Laayoune",
+        "reg": "Laayoune",
+        "cie": null
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-10-26T08:05:05.493Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mvoz6nz8_b0f9a8ea",
+      "barrageId": "BFI-CIE-020",
+      "barrage": {
+        "nom": "BFI Bouznika",
+        "route": "A1",
+        "type": "barrage_fixe",
+        "lng": -7.29018,
+        "lat": 33.74752,
+        "bt": "El Mansouria",
+        "cie": "Bouznika",
+        "reg": "Settat"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BFI-CIE-020|BFI-CIE-061",
+        "conflitNumero": "C-R1",
+        "barrageAId": "BFI-CIE-020",
+        "barrageANom": "BFI Bouznika",
+        "voisinId": "BFI-CIE-061",
+        "voisinNom": "BFI Rabat",
+        "distanceKm": 45.7,
+        "seuilKm": 50,
+        "factions": [],
+        "route": "A1",
+        "motif": "Espacement de 45.7 km inférieur au seuil (50 km)",
+        "conjoint": true,
+        "autresRegions": [
+          "Settat"
+        ]
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat",
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat"
+      },
+      "parentId": null,
+      "texte": "Conflit inter-régions C-R1 assigné conjointement (Rabat & Settat) : BFI Bouznika ↔ BFI Rabat (45.7 km). Coordination inter-régionale requise pour l’espacement des barrages.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-10-26T08:09:08.325Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mvoz6nzn_845d7904",
+      "barrageId": "BFI-CIE-020",
+      "barrage": {
+        "nom": "BFI Bouznika",
+        "route": "A1",
+        "type": "barrage_fixe",
+        "lng": -7.29018,
+        "lat": 33.74752,
+        "bt": "El Mansouria",
+        "cie": "Bouznika",
+        "reg": "Settat"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BFI-CIE-020|BFI-CIE-061",
+        "conflitNumero": "C-R1",
+        "barrageAId": "BFI-CIE-020",
+        "barrageANom": "BFI Bouznika",
+        "voisinId": "BFI-CIE-061",
+        "voisinNom": "BFI Rabat",
+        "distanceKm": 45.7,
+        "seuilKm": 50,
+        "factions": [],
+        "route": "A1",
+        "motif": "Espacement de 45.7 km inférieur au seuil (50 km)",
+        "conjoint": true,
+        "autresRegions": [
+          "Rabat"
+        ]
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Settat",
+        "matricule": "REG-SETTAT",
+        "nom": "Chef de région Settat"
+      },
+      "parentId": null,
+      "texte": "Conflit inter-régions C-R1 assigné conjointement (Rabat & Settat) : BFI Bouznika ↔ BFI Rabat (45.7 km). Coordination inter-régionale requise pour l’espacement des barrages.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-10-26T08:09:08.340Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mvp7ipgi_6a89a587",
+      "barrageId": "BFI-CIE-046",
+      "barrage": {
+        "nom": "BFI Marrakech",
+        "route": "A3",
+        "type": "barrage_fixe",
+        "lng": -8.16378,
+        "lat": 31.7754,
+        "bt": "Tamansourte",
+        "cie": "Marrakech",
+        "reg": "Marrakech"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "C-01",
+        "conflitNumero": "C-01",
+        "barrageAId": "BFI-CIE-046",
+        "barrageANom": "BFI Marrakech",
+        "voisinId": "BF-BT-436",
+        "voisinNom": "Poste fixe Tamansourte",
+        "distanceKm": 14.87,
+        "seuilKm": 20,
+        "factions": [],
+        "route": "A3",
+        "motif": "Distance routière de 14.87 km inférieure au seuil de sécurité",
+        "conjoint": false,
+        "autresRegions": []
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Marrakech",
+        "matricule": "REG-MARRAKECH",
+        "nom": "Chef de région Marrakech"
+      },
+      "parentId": null,
+      "texte": "Conflit C-01 assigné : BFI Marrakech ↔ Poste fixe Tamansourte (14.87 km). Espacement à traiter par le commandement de région.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-10-26T12:02:27.044Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mvp7jv2j_75dd2cea",
+      "barrageId": "BF-BT-436",
+      "barrage": {
+        "nom": "Poste fixe Tamansourte",
+        "route": "RN7",
+        "type": "barrage_fixe",
+        "lng": -8.06312,
+        "lat": 31.70484,
+        "bt": "Tamansourte",
+        "cie": "Tamansourte",
+        "reg": "Marrakech"
+      },
+      "action": "modification",
+      "criteres": null,
+      "source": "modification",
+      "changements": [
+        {
+          "champ": "pk",
+          "ancienne": null,
+          "nouvelle": 144.1
+        },
+        {
+          "champ": "bt",
+          "ancienne": "Tamansourte",
+          "nouvelle": "Marrakech"
+        },
+        {
+          "champ": "cie",
+          "ancienne": "Tamansourte",
+          "nouvelle": "Marrakech"
+        },
+        {
+          "champ": "compagnieId",
+          "ancienne": "Tamansourte",
+          "nouvelle": "Marrakech"
+        },
+        {
+          "champ": "brigadeId",
+          "ancienne": "Tamansourte",
+          "nouvelle": "Marrakech"
+        },
+        {
+          "champ": "lng",
+          "ancienne": -8.06312,
+          "nouvelle": -8.02199
+        },
+        {
+          "champ": "lat",
+          "ancienne": 31.70484,
+          "nouvelle": 31.65697
+        },
+        {
+          "champ": "longitude",
+          "ancienne": -8.06312,
+          "nouvelle": -8.02199
+        },
+        {
+          "champ": "latitude",
+          "ancienne": 31.70484,
+          "nouvelle": 31.65697
+        }
+      ],
+      "modificationId": null,
+      "motif": "",
+      "aDecider": "admin",
+      "remplacerIntouchable": null,
+      "destinataire": null,
+      "parentId": null,
+      "texte": "Modification demandée sur Poste fixe Tamansourte : pk, bt, cie, compagnieId, brigadeId, lng, lat, longitude, latitude.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "REG-MARRAKECH",
+        "nom": "Chef de région Marrakech",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Marrakech",
+        "reg": "Marrakech",
+        "cie": null
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-10-26T12:03:20.971Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mvqnylzx_911c7e69",
+      "barrageId": "BFI-CIE-024",
+      "barrage": {
+        "nom": "BFI Dakhla",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -15.67267,
+        "lat": 23.89229,
+        "bt": "El Aargoub",
+        "cie": "Dakhla",
+        "reg": "Dakhla"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BFI-CIE-024|syn_bf_039_5l3s6.",
+        "conflitNumero": "C-R1",
+        "barrageAId": "BFI-CIE-024",
+        "barrageANom": "BFI Dakhla",
+        "voisinId": "syn_bf_039_5l3s6.",
+        "voisinNom": "Barrage Fixe RN1 — El Aargoub",
+        "distanceKm": 9.3,
+        "seuilKm": 20,
+        "factions": [],
+        "route": "RN1",
+        "motif": "Espacement de 9.3 km inférieur au seuil (20 km)",
+        "conjoint": false,
+        "autresRegions": []
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Dakhla",
+        "matricule": "REG-DAKHLA",
+        "nom": "Chef de région Dakhla"
+      },
+      "parentId": null,
+      "texte": "Conflit C-R1 assigné : BFI Dakhla ↔ Barrage Fixe RN1 — El Aargoub (9.3 km). Espacement à traiter par le commandement de région.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-10-27T12:30:29.093Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mvqnz64b_723a384c",
+      "barrageId": "BFI-CIE-071",
+      "barrage": {
+        "nom": "BFI Skhirate",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -7.05783,
+        "lat": 33.83761,
+        "bt": "Skhirate-El Fath",
+        "cie": "Skhirate",
+        "reg": "Rabat"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BF-BT-132|BFI-CIE-071",
+        "conflitNumero": "C-R3",
+        "barrageAId": "BFI-CIE-071",
+        "barrageANom": "BFI Skhirate",
+        "voisinId": "BF-BT-132",
+        "voisinNom": "Poste fixe Bouznika",
+        "distanceKm": 16.4,
+        "seuilKm": 20,
+        "factions": [],
+        "route": "RN1",
+        "motif": "Espacement de 16.4 km inférieur au seuil (20 km)",
+        "conjoint": false,
+        "autresRegions": []
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Settat",
+        "matricule": "REG-SETTAT",
+        "nom": "Chef de région Settat"
+      },
+      "parentId": null,
+      "texte": "Conflit C-R3 assigné : BFI Skhirate ↔ Poste fixe Bouznika (16.4 km). Espacement à traiter par le commandement de région.",
+      "statut": "annulee",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-10-27T12:30:55.163Z",
+      "traiteeLe": "2026-10-27T12:31:25.868Z"
+    },
+    {
+      "id": "ins_mvqnzg2u_e5ca89ab",
+      "barrageId": "BFI-CIE-071",
+      "barrage": {
+        "nom": "BFI Skhirate",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -7.05783,
+        "lat": 33.83761,
+        "bt": "Skhirate-El Fath",
+        "cie": "Skhirate",
+        "reg": "Rabat"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BFI-CIE-071|syn_bfp_028_218tk.",
+        "conflitNumero": "C-R5",
+        "barrageAId": "BFI-CIE-071",
+        "barrageANom": "BFI Skhirate",
+        "voisinId": "syn_bfp_028_218tk.",
+        "voisinNom": "Barrage Permanent RN1 — Bouznika",
+        "distanceKm": 9.5,
+        "seuilKm": 20,
+        "factions": [],
+        "route": "RN1",
+        "motif": "Espacement de 9.5 km inférieur au seuil (20 km)",
+        "conjoint": true,
+        "autresRegions": [
+          "Settat"
+        ]
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat",
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat"
+      },
+      "parentId": null,
+      "texte": "Conflit inter-régions C-R5 assigné conjointement (Rabat & Settat) : BFI Skhirate ↔ Barrage Permanent RN1 — Bouznika (9.5 km). Coordination inter-régionale requise pour l’espacement des barrages.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-10-27T12:31:08.070Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mvqnzg31_994e97dc",
+      "barrageId": "BFI-CIE-071",
+      "barrage": {
+        "nom": "BFI Skhirate",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -7.05783,
+        "lat": 33.83761,
+        "bt": "Skhirate-El Fath",
+        "cie": "Skhirate",
+        "reg": "Rabat"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BFI-CIE-071|syn_bfp_028_218tk.",
+        "conflitNumero": "C-R5",
+        "barrageAId": "BFI-CIE-071",
+        "barrageANom": "BFI Skhirate",
+        "voisinId": "syn_bfp_028_218tk.",
+        "voisinNom": "Barrage Permanent RN1 — Bouznika",
+        "distanceKm": 9.5,
+        "seuilKm": 20,
+        "factions": [],
+        "route": "RN1",
+        "motif": "Espacement de 9.5 km inférieur au seuil (20 km)",
+        "conjoint": true,
+        "autresRegions": [
+          "Rabat"
+        ]
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Settat",
+        "matricule": "REG-SETTAT",
+        "nom": "Chef de région Settat"
+      },
+      "parentId": null,
+      "texte": "Conflit inter-régions C-R5 assigné conjointement (Rabat & Settat) : BFI Skhirate ↔ Barrage Permanent RN1 — Bouznika (9.5 km). Coordination inter-régionale requise pour l’espacement des barrages.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-10-27T12:31:08.077Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mvqnzpg8_d9d588f3",
+      "barrageId": "BFI-CIE-079",
+      "barrage": {
+        "nom": "BFI Tarfaya",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -12.82853,
+        "lat": 27.95973,
+        "bt": "Tarfaya",
+        "cie": "Tarfaya",
+        "reg": "Laayoune"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BFI-CIE-079|syn_bf_018_1c4i0.",
+        "conflitNumero": "C-R6",
+        "barrageAId": "BFI-CIE-079",
+        "barrageANom": "BFI Tarfaya",
+        "voisinId": "syn_bf_018_1c4i0.",
+        "voisinNom": "Barrage Fixe RN1 — Tarfaya",
+        "distanceKm": 2.4,
+        "seuilKm": 20,
+        "factions": [],
+        "route": "RN1",
+        "motif": "Espacement de 2.4 km inférieur au seuil (20 km)",
+        "conjoint": false,
+        "autresRegions": []
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Laayoune",
+        "matricule": "REG-LAAYOUNE",
+        "nom": "Chef de région Laayoune"
+      },
+      "parentId": null,
+      "texte": "Conflit C-R6 assigné : BFI Tarfaya ↔ Barrage Fixe RN1 — Tarfaya (2.4 km). Espacement à traiter par le commandement de région.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-10-27T12:31:20.216Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mvqo0279_696ca170",
+      "barrageId": "BF-BT-125",
+      "barrage": {
+        "nom": "Poste fixe Bouknadel",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -6.73501,
+        "lat": 34.12797,
+        "bt": "Bouknadel",
+        "cie": "Salé",
+        "reg": "Rabat"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BF-BT-125|BF-BT-350",
+        "conflitNumero": "C-R9",
+        "barrageAId": "BF-BT-125",
+        "barrageANom": "Poste fixe Bouknadel",
+        "voisinId": "BF-BT-350",
+        "voisinNom": "Poste fixe Rabat",
+        "distanceKm": 16.2,
+        "seuilKm": 20,
+        "factions": [],
+        "route": "RN1",
+        "motif": "Espacement de 16.2 km inférieur au seuil (20 km)",
+        "conjoint": false,
+        "autresRegions": []
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat",
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat"
+      },
+      "parentId": null,
+      "texte": "Conflit C-R9 assigné : Poste fixe Bouknadel ↔ Poste fixe Rabat (16.2 km). Espacement à traiter par le commandement de région.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": {
+        "matricule": "CIE-KÉNITRA",
+        "nom": "Chef de compagnie Kénitra",
+        "role": "commandement",
+        "rang": "cie",
+        "unite": "Kénitra",
+        "reg": "Kénitra",
+        "cie": null
+      },
+      "decision": null,
+      "reponse": "Poste absent de la carte : signalement classé automatiquement.",
+      "cree": "2026-10-27T12:31:36.742Z",
+      "traiteeLe": "2026-10-27T12:35:58.423Z"
+    },
+    {
+      "id": "ins_mvqo07dh_9140d0ed",
+      "barrageId": "BF-BT-125",
+      "barrage": {
+        "nom": "Poste fixe Bouknadel",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -6.73501,
+        "lat": 34.12797,
+        "bt": "Bouknadel",
+        "cie": "Salé",
+        "reg": "Rabat"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BF-BT-125|BF-BT-248",
+        "conflitNumero": "C-R8",
+        "barrageAId": "BF-BT-125",
+        "barrageANom": "Poste fixe Bouknadel",
+        "voisinId": "BF-BT-248",
+        "voisinNom": "Poste fixe Kénitra",
+        "distanceKm": 16.2,
+        "seuilKm": 20,
+        "factions": [
+          "F1"
+        ],
+        "route": "RN1",
+        "motif": "Espacement de 16.2 km inférieur au seuil (20 km)",
+        "conjoint": true,
+        "autresRegions": [
+          "Kénitra"
+        ]
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat",
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat"
+      },
+      "parentId": null,
+      "texte": "Conflit inter-régions C-R8 assigné conjointement (Rabat & Kénitra) : Poste fixe Bouknadel ↔ Poste fixe Kénitra (16.2 km). Assignation automatique pour traitement : conflit sur RN1 (16.2 km).",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": {
+        "matricule": "CIE-KÉNITRA",
+        "nom": "Chef de compagnie Kénitra",
+        "role": "commandement",
+        "rang": "cie",
+        "unite": "Kénitra",
+        "reg": "Kénitra",
+        "cie": null
+      },
+      "decision": null,
+      "reponse": "Poste absent de la carte : signalement classé automatiquement.",
+      "cree": "2026-10-27T12:31:43.446Z",
+      "traiteeLe": "2026-10-27T12:35:58.450Z"
+    },
+    {
+      "id": "ins_mvqo07dl_e1ecb04d",
+      "barrageId": "BF-BT-125",
+      "barrage": {
+        "nom": "Poste fixe Bouknadel",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -6.73501,
+        "lat": 34.12797,
+        "bt": "Bouknadel",
+        "cie": "Salé",
+        "reg": "Rabat"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BF-BT-125|BF-BT-248",
+        "conflitNumero": "C-R8",
+        "barrageAId": "BF-BT-125",
+        "barrageANom": "Poste fixe Bouknadel",
+        "voisinId": "BF-BT-248",
+        "voisinNom": "Poste fixe Kénitra",
+        "distanceKm": 16.2,
+        "seuilKm": 20,
+        "factions": [
+          "F1"
+        ],
+        "route": "RN1",
+        "motif": "Espacement de 16.2 km inférieur au seuil (20 km)",
+        "conjoint": true,
+        "autresRegions": [
+          "Rabat"
+        ]
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Kénitra",
+        "matricule": "REG-KÉNITRA",
+        "nom": "Chef de région Kénitra"
+      },
+      "parentId": null,
+      "texte": "Conflit inter-régions C-R8 assigné conjointement (Rabat & Kénitra) : Poste fixe Bouknadel ↔ Poste fixe Kénitra (16.2 km). Assignation automatique pour traitement : conflit sur RN1 (16.2 km).",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": {
+        "matricule": "CIE-KÉNITRA",
+        "nom": "Chef de compagnie Kénitra",
+        "role": "commandement",
+        "rang": "cie",
+        "unite": "Kénitra",
+        "reg": "Kénitra",
+        "cie": null
+      },
+      "decision": null,
+      "reponse": "Poste absent de la carte : signalement classé automatiquement.",
+      "cree": "2026-10-27T12:31:43.449Z",
+      "traiteeLe": "2026-10-27T12:35:58.466Z"
+    },
+    {
+      "id": "ins_mvqo07eq_dfd0cc58",
+      "barrageId": "BF-BT-125",
+      "barrage": {
+        "nom": "Poste fixe Bouknadel",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -6.73501,
+        "lat": 34.12797,
+        "bt": "Bouknadel",
+        "cie": "Salé",
+        "reg": "Rabat"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BF-BT-125|syn_bf_009_16876.",
+        "conflitNumero": "C-R11",
+        "barrageAId": "BF-BT-125",
+        "barrageANom": "Poste fixe Bouknadel",
+        "voisinId": "syn_bf_009_16876.",
+        "voisinNom": "Barrage Fixe RN1 — Salé",
+        "distanceKm": 8.9,
+        "seuilKm": 20,
+        "factions": [
+          "F1"
+        ],
+        "route": "RN1",
+        "motif": "Espacement de 8.9 km inférieur au seuil (20 km)",
+        "conjoint": false,
+        "autresRegions": []
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat",
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat"
+      },
+      "parentId": null,
+      "texte": "Conflit C-R11 assigné : Poste fixe Bouknadel ↔ Barrage Fixe RN1 — Salé (8.9 km). Assignation automatique pour traitement : conflit sur RN1 (8.9 km).",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": {
+        "matricule": "CIE-KÉNITRA",
+        "nom": "Chef de compagnie Kénitra",
+        "role": "commandement",
+        "rang": "cie",
+        "unite": "Kénitra",
+        "reg": "Kénitra",
+        "cie": null
+      },
+      "decision": null,
+      "reponse": "Poste absent de la carte : signalement classé automatiquement.",
+      "cree": "2026-10-27T12:31:43.490Z",
+      "traiteeLe": "2026-10-27T12:35:58.473Z"
+    },
+    {
+      "id": "ins_mvqo07fz_2ff844af",
+      "barrageId": "BF-BT-125",
+      "barrage": {
+        "nom": "Poste fixe Bouknadel",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -6.73501,
+        "lat": 34.12797,
+        "bt": "Bouknadel",
+        "cie": "Salé",
+        "reg": "Rabat"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BF-BT-125|syn_bf_057_58gum.",
+        "conflitNumero": "C-R12",
+        "barrageAId": "BF-BT-125",
+        "barrageANom": "Poste fixe Bouknadel",
+        "voisinId": "syn_bf_057_58gum.",
+        "voisinNom": "Barrage Fixe RN1 — Kénitra",
+        "distanceKm": 19.4,
+        "seuilKm": 20,
+        "factions": [
+          "F1"
+        ],
+        "route": "RN1",
+        "motif": "Espacement de 19.4 km inférieur au seuil (20 km)",
+        "conjoint": true,
+        "autresRegions": [
+          "Kénitra"
+        ]
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat",
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat"
+      },
+      "parentId": null,
+      "texte": "Conflit inter-régions C-R12 assigné conjointement (Rabat & Kénitra) : Poste fixe Bouknadel ↔ Barrage Fixe RN1 — Kénitra (19.4 km). Assignation automatique pour traitement : conflit sur RN1 (19.4 km).",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": {
+        "matricule": "CIE-KÉNITRA",
+        "nom": "Chef de compagnie Kénitra",
+        "role": "commandement",
+        "rang": "cie",
+        "unite": "Kénitra",
+        "reg": "Kénitra",
+        "cie": null
+      },
+      "decision": null,
+      "reponse": "Poste absent de la carte : signalement classé automatiquement.",
+      "cree": "2026-10-27T12:31:43.535Z",
+      "traiteeLe": "2026-10-27T12:35:58.496Z"
+    },
+    {
+      "id": "ins_mvqo07g4_c9308982",
+      "barrageId": "BF-BT-125",
+      "barrage": {
+        "nom": "Poste fixe Bouknadel",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -6.73501,
+        "lat": 34.12797,
+        "bt": "Bouknadel",
+        "cie": "Salé",
+        "reg": "Rabat"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BF-BT-125|syn_bf_057_58gum.",
+        "conflitNumero": "C-R12",
+        "barrageAId": "BF-BT-125",
+        "barrageANom": "Poste fixe Bouknadel",
+        "voisinId": "syn_bf_057_58gum.",
+        "voisinNom": "Barrage Fixe RN1 — Kénitra",
+        "distanceKm": 19.4,
+        "seuilKm": 20,
+        "factions": [
+          "F1"
+        ],
+        "route": "RN1",
+        "motif": "Espacement de 19.4 km inférieur au seuil (20 km)",
+        "conjoint": true,
+        "autresRegions": [
+          "Rabat"
+        ]
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Kénitra",
+        "matricule": "REG-KÉNITRA",
+        "nom": "Chef de région Kénitra"
+      },
+      "parentId": null,
+      "texte": "Conflit inter-régions C-R12 assigné conjointement (Rabat & Kénitra) : Poste fixe Bouknadel ↔ Barrage Fixe RN1 — Kénitra (19.4 km). Assignation automatique pour traitement : conflit sur RN1 (19.4 km).",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": {
+        "matricule": "CIE-KÉNITRA",
+        "nom": "Chef de compagnie Kénitra",
+        "role": "commandement",
+        "rang": "cie",
+        "unite": "Kénitra",
+        "reg": "Kénitra",
+        "cie": null
+      },
+      "decision": null,
+      "reponse": "Poste absent de la carte : signalement classé automatiquement.",
+      "cree": "2026-10-27T12:31:43.540Z",
+      "traiteeLe": "2026-10-27T12:35:58.515Z"
+    },
+    {
+      "id": "ins_mvqo07hg_866a32a0",
+      "barrageId": "BF-BT-126",
+      "barrage": {
+        "nom": "Poste fixe Boukraa",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -13.08748,
+        "lat": 27.30145,
+        "bt": "Boukraa",
+        "cie": "Laayoune",
+        "reg": "Laayoune"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BF-BT-126|BF-BT-188",
+        "conflitNumero": "C-R13",
+        "barrageAId": "BF-BT-126",
+        "barrageANom": "Poste fixe Boukraa",
+        "voisinId": "BF-BT-188",
+        "voisinNom": "Poste fixe Foum El Oued",
+        "distanceKm": 18.3,
+        "seuilKm": 20,
+        "factions": [
+          "F2"
+        ],
+        "route": "RN1",
+        "motif": "Espacement de 18.3 km inférieur au seuil (20 km)",
+        "conjoint": false,
+        "autresRegions": []
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Laayoune",
+        "matricule": "REG-LAAYOUNE",
+        "nom": "Chef de région Laayoune"
+      },
+      "parentId": null,
+      "texte": "Conflit C-R13 assigné : Poste fixe Boukraa ↔ Poste fixe Foum El Oued (18.3 km). Assignation automatique pour traitement : conflit sur RN1 (18.3 km).",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-10-27T12:31:43.588Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mvqo07ik_e7c5d9b6",
+      "barrageId": "BF-BT-248",
+      "barrage": {
+        "nom": "Poste fixe Kénitra",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -6.62804,
+        "lat": 34.23857,
+        "bt": "Kénitra",
+        "cie": "Kénitra",
+        "reg": "Kénitra"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BF-BT-248|BF-BT-401",
+        "conflitNumero": "C-R15",
+        "barrageAId": "BF-BT-248",
+        "barrageANom": "Poste fixe Kénitra",
+        "voisinId": "BF-BT-401",
+        "voisinNom": "Poste fixe Sidi Taibi",
+        "distanceKm": 2.7,
+        "seuilKm": 20,
+        "factions": [
+          "F4"
+        ],
+        "route": "RN1",
+        "motif": "Espacement de 2.7 km inférieur au seuil (20 km)",
+        "conjoint": false,
+        "autresRegions": []
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Kénitra",
+        "matricule": "REG-KÉNITRA",
+        "nom": "Chef de région Kénitra"
+      },
+      "parentId": null,
+      "texte": "Conflit C-R15 assigné : Poste fixe Kénitra ↔ Poste fixe Sidi Taibi (2.7 km). Assignation automatique pour traitement : conflit sur RN1 (2.7 km).",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": {
+        "matricule": "CIE-KÉNITRA",
+        "nom": "Chef de compagnie Kénitra",
+        "role": "commandement",
+        "rang": "cie",
+        "unite": "Kénitra",
+        "reg": "Kénitra",
+        "cie": null
+      },
+      "decision": null,
+      "reponse": "Poste absent de la carte : signalement classé automatiquement.",
+      "cree": "2026-10-27T12:31:43.628Z",
+      "traiteeLe": "2026-10-27T12:36:28.718Z"
+    },
+    {
+      "id": "ins_mvqo07ju_0c9f7e31",
+      "barrageId": "BF-BT-248",
+      "barrage": {
+        "nom": "Poste fixe Kénitra",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -6.62804,
+        "lat": 34.23857,
+        "bt": "Kénitra",
+        "cie": "Kénitra",
+        "reg": "Kénitra"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BF-BT-248|syn_bf_057_58gum.",
+        "conflitNumero": "C-R16",
+        "barrageAId": "BF-BT-248",
+        "barrageANom": "Poste fixe Kénitra",
+        "voisinId": "syn_bf_057_58gum.",
+        "voisinNom": "Barrage Fixe RN1 — Kénitra",
+        "distanceKm": 3.2,
+        "seuilKm": 20,
+        "factions": [
+          "F4"
+        ],
+        "route": "RN1",
+        "motif": "Espacement de 3.2 km inférieur au seuil (20 km)",
+        "conjoint": false,
+        "autresRegions": []
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Kénitra",
+        "matricule": "REG-KÉNITRA",
+        "nom": "Chef de région Kénitra"
+      },
+      "parentId": null,
+      "texte": "Conflit C-R16 assigné : Poste fixe Kénitra ↔ Barrage Fixe RN1 — Kénitra (3.2 km). Assignation automatique pour traitement : conflit sur RN1 (3.2 km).",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": {
+        "matricule": "CIE-KÉNITRA",
+        "nom": "Chef de compagnie Kénitra",
+        "role": "commandement",
+        "rang": "cie",
+        "unite": "Kénitra",
+        "reg": "Kénitra",
+        "cie": null
+      },
+      "decision": null,
+      "reponse": "Poste absent de la carte : signalement classé automatiquement.",
+      "cree": "2026-10-27T12:31:43.674Z",
+      "traiteeLe": "2026-10-27T12:36:28.731Z"
+    },
+    {
+      "id": "ins_mvqo07kt_13310c75",
+      "barrageId": "BF-BT-350",
+      "barrage": {
+        "nom": "Poste fixe Rabat",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -6.83679,
+        "lat": 34.02235,
+        "bt": "Rabat",
+        "cie": "Rabat",
+        "reg": "Rabat"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BF-BT-350|BF-BT-405",
+        "conflitNumero": "C-R17",
+        "barrageAId": "BF-BT-350",
+        "barrageANom": "Poste fixe Rabat",
+        "voisinId": "BF-BT-405",
+        "voisinNom": "Poste fixe Skhirate Centre",
+        "distanceKm": 17.5,
+        "seuilKm": 20,
+        "factions": [
+          "F2"
+        ],
+        "route": "RN1",
+        "motif": "Espacement de 17.5 km inférieur au seuil (20 km)",
+        "conjoint": false,
+        "autresRegions": []
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat",
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat"
+      },
+      "parentId": null,
+      "texte": "Conflit C-R17 assigné : Poste fixe Rabat ↔ Poste fixe Skhirate Centre (17.5 km). Assignation automatique pour traitement : conflit sur RN1 (17.5 km).",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-10-27T12:31:43.709Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mvqo07lx_af4952f8",
+      "barrageId": "BF-BT-350",
+      "barrage": {
+        "nom": "Poste fixe Rabat",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -6.83679,
+        "lat": 34.02235,
+        "bt": "Rabat",
+        "cie": "Rabat",
+        "reg": "Rabat"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BF-BT-350|syn_bf_009_16876.",
+        "conflitNumero": "C-R18",
+        "barrageAId": "BF-BT-350",
+        "barrageANom": "Poste fixe Rabat",
+        "voisinId": "syn_bf_009_16876.",
+        "voisinNom": "Barrage Fixe RN1 — Salé",
+        "distanceKm": 7.3,
+        "seuilKm": 20,
+        "factions": [
+          "F2"
+        ],
+        "route": "RN1",
+        "motif": "Espacement de 7.3 km inférieur au seuil (20 km)",
+        "conjoint": false,
+        "autresRegions": []
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat",
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat"
+      },
+      "parentId": null,
+      "texte": "Conflit C-R18 assigné : Poste fixe Rabat ↔ Barrage Fixe RN1 — Salé (7.3 km). Assignation automatique pour traitement : conflit sur RN1 (7.3 km).",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-10-27T12:31:43.749Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mvqo07n2_7fd08cbb",
+      "barrageId": "BF-BT-401",
+      "barrage": {
+        "nom": "Poste fixe Sidi Taibi",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -6.65254,
+        "lat": 34.22633,
+        "bt": "Sidi Taibi",
+        "cie": "Kénitra",
+        "reg": "Kénitra"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BF-BT-401|syn_bf_057_58gum.",
+        "conflitNumero": "C-R19",
+        "barrageAId": "BF-BT-401",
+        "barrageANom": "Poste fixe Sidi Taibi",
+        "voisinId": "syn_bf_057_58gum.",
+        "voisinNom": "Barrage Fixe RN1 — Kénitra",
+        "distanceKm": 7.2,
+        "seuilKm": 20,
+        "factions": [
+          "F1"
+        ],
+        "route": "RN1",
+        "motif": "Espacement de 7.2 km inférieur au seuil (20 km)",
+        "conjoint": false,
+        "autresRegions": []
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Kénitra",
+        "matricule": "REG-KÉNITRA",
+        "nom": "Chef de région Kénitra"
+      },
+      "parentId": null,
+      "texte": "Conflit C-R19 assigné : Poste fixe Sidi Taibi ↔ Barrage Fixe RN1 — Kénitra (7.2 km). Assignation automatique pour traitement : conflit sur RN1 (7.2 km).",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-10-27T12:31:43.790Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mvqo34ny_60c2ef17",
+      "barrageId": "BF-BT-125",
+      "barrage": {
+        "nom": "Poste fixe Bouknadel",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -6.73501,
+        "lat": 34.12797,
+        "bt": "Bouknadel",
+        "cie": "Salé",
+        "reg": "Rabat"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BF-BT-125|BF-BT-401",
+        "conflitNumero": "C-R4",
+        "barrageAId": "BF-BT-125",
+        "barrageANom": "Poste fixe Bouknadel",
+        "voisinId": "BF-BT-401",
+        "voisinNom": "Poste fixe Sidi Taibi",
+        "distanceKm": 13.8,
+        "seuilKm": 20,
+        "factions": [],
+        "route": "RN1",
+        "motif": "Espacement de 13.8 km inférieur au seuil (20 km)",
+        "transmisPar": {
+          "matricule": "REG-KÉNITRA",
+          "nom": "Chef de région Kénitra",
+          "rang": "reg",
+          "unite": "Kénitra"
+        }
+      },
+      "source": "transmission_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "cie",
+        "unite": "Kénitra",
+        "matricule": "CIE-KÉNITRA",
+        "nom": "Chef de compagnie Kénitra"
+      },
+      "parentId": null,
+      "texte": "Conflit C-R4 transmis par la Région Kénitra : Poste fixe Bouknadel ↔ Poste fixe Sidi Taibi (13.8 km). Traitement opérationnel délégué à la compagnie.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "REG-KÉNITRA",
+        "nom": "Chef de région Kénitra",
+        "rang": "reg",
+        "unite": "Kénitra"
+      },
+      "traiteePar": {
+        "matricule": "CIE-KÉNITRA",
+        "nom": "Chef de compagnie Kénitra",
+        "role": "commandement",
+        "rang": "cie",
+        "unite": "Kénitra",
+        "reg": "Kénitra",
+        "cie": null
+      },
+      "decision": null,
+      "reponse": "Poste absent de la carte : signalement classé automatiquement.",
+      "cree": "2026-10-27T12:33:59.902Z",
+      "traiteeLe": "2026-10-27T12:35:58.526Z"
+    },
+    {
+      "id": "ins_mvqo3hc4_fdfe5d48",
+      "barrageId": "BF-BT-125",
+      "barrage": {
+        "nom": "Poste fixe Bouknadel",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -6.73501,
+        "lat": 34.12797,
+        "bt": "Bouknadel",
+        "cie": "Salé",
+        "reg": "Rabat"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BF-BT-125|BF-BT-248",
+        "conflitNumero": "C-R8",
+        "barrageAId": "BF-BT-125",
+        "barrageANom": "Poste fixe Bouknadel",
+        "voisinId": "BF-BT-248",
+        "voisinNom": "Poste fixe Kénitra",
+        "distanceKm": 16.2,
+        "seuilKm": 20,
+        "factions": [
+          "F1"
+        ],
+        "route": "RN1",
+        "motif": "Espacement de 16.2 km inférieur au seuil (20 km)",
+        "transmisPar": {
+          "matricule": "REG-KÉNITRA",
+          "nom": "Chef de région Kénitra",
+          "rang": "reg",
+          "unite": "Kénitra"
+        }
+      },
+      "source": "transmission_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "cie",
+        "unite": "Kénitra",
+        "matricule": "CIE-KÉNITRA",
+        "nom": "Chef de compagnie Kénitra"
+      },
+      "parentId": null,
+      "texte": "Conflit C-R8 transmis par la Région Kénitra : Poste fixe Bouknadel ↔ Poste fixe Kénitra (16.2 km). Traitement opérationnel délégué à la compagnie.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "REG-KÉNITRA",
+        "nom": "Chef de région Kénitra",
+        "rang": "reg",
+        "unite": "Kénitra"
+      },
+      "traiteePar": {
+        "matricule": "CIE-KÉNITRA",
+        "nom": "Chef de compagnie Kénitra",
+        "role": "commandement",
+        "rang": "cie",
+        "unite": "Kénitra",
+        "reg": "Kénitra",
+        "cie": null
+      },
+      "decision": null,
+      "reponse": "Poste absent de la carte : signalement classé automatiquement.",
+      "cree": "2026-10-27T12:34:16.324Z",
+      "traiteeLe": "2026-10-27T12:35:58.538Z"
+    },
+    {
+      "id": "ins_mvqo3ngd_fa622ab8",
+      "barrageId": "BF-BT-125",
+      "barrage": {
+        "nom": "Poste fixe Bouknadel",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -6.73501,
+        "lat": 34.12797,
+        "bt": "Bouknadel",
+        "cie": "Salé",
+        "reg": "Rabat"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BF-BT-125|syn_bf_057_58gum.",
+        "conflitNumero": "C-R12",
+        "barrageAId": "BF-BT-125",
+        "barrageANom": "Poste fixe Bouknadel",
+        "voisinId": "syn_bf_057_58gum.",
+        "voisinNom": "Barrage Fixe RN1 — Kénitra",
+        "distanceKm": 19.4,
+        "seuilKm": 20,
+        "factions": [
+          "F1"
+        ],
+        "route": "RN1",
+        "motif": "Espacement de 19.4 km inférieur au seuil (20 km)",
+        "transmisPar": {
+          "matricule": "REG-KÉNITRA",
+          "nom": "Chef de région Kénitra",
+          "rang": "reg",
+          "unite": "Kénitra"
+        }
+      },
+      "source": "transmission_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "cie",
+        "unite": "Kénitra",
+        "matricule": "CIE-KÉNITRA",
+        "nom": "Chef de compagnie Kénitra"
+      },
+      "parentId": null,
+      "texte": "Conflit C-R12 transmis par la Région Kénitra : Poste fixe Bouknadel ↔ Barrage Fixe RN1 — Kénitra (19.4 km). Traitement opérationnel délégué à la compagnie.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "REG-KÉNITRA",
+        "nom": "Chef de région Kénitra",
+        "rang": "reg",
+        "unite": "Kénitra"
+      },
+      "traiteePar": {
+        "matricule": "CIE-KÉNITRA",
+        "nom": "Chef de compagnie Kénitra",
+        "role": "commandement",
+        "rang": "cie",
+        "unite": "Kénitra",
+        "reg": "Kénitra",
+        "cie": null
+      },
+      "decision": null,
+      "reponse": "Poste absent de la carte : signalement classé automatiquement.",
+      "cree": "2026-10-27T12:34:24.254Z",
+      "traiteeLe": "2026-10-27T12:35:58.561Z"
+    },
+    {
+      "id": "ins_mvqo3sbc_b4991726",
+      "barrageId": "BF-BT-248",
+      "barrage": {
+        "nom": "Poste fixe Kénitra",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -6.62804,
+        "lat": 34.23857,
+        "bt": "Kénitra",
+        "cie": "Kénitra",
+        "reg": "Kénitra"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BF-BT-248|BF-BT-401",
+        "conflitNumero": "C-R15",
+        "barrageAId": "BF-BT-248",
+        "barrageANom": "Poste fixe Kénitra",
+        "voisinId": "BF-BT-401",
+        "voisinNom": "Poste fixe Sidi Taibi",
+        "distanceKm": 2.7,
+        "seuilKm": 20,
+        "factions": [
+          "F4"
+        ],
+        "route": "RN1",
+        "motif": "Espacement de 2.7 km inférieur au seuil (20 km)",
+        "transmisPar": {
+          "matricule": "REG-KÉNITRA",
+          "nom": "Chef de région Kénitra",
+          "rang": "reg",
+          "unite": "Kénitra"
+        }
+      },
+      "source": "transmission_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "cie",
+        "unite": "Kénitra",
+        "matricule": "CIE-KÉNITRA",
+        "nom": "Chef de compagnie Kénitra"
+      },
+      "parentId": null,
+      "texte": "Conflit C-R15 transmis par la Région Kénitra : Poste fixe Kénitra ↔ Poste fixe Sidi Taibi (2.7 km). Traitement opérationnel délégué à la compagnie.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "REG-KÉNITRA",
+        "nom": "Chef de région Kénitra",
+        "rang": "reg",
+        "unite": "Kénitra"
+      },
+      "traiteePar": {
+        "matricule": "CIE-KÉNITRA",
+        "nom": "Chef de compagnie Kénitra",
+        "role": "commandement",
+        "rang": "cie",
+        "unite": "Kénitra",
+        "reg": "Kénitra",
+        "cie": null
+      },
+      "decision": null,
+      "reponse": "Poste absent de la carte : signalement classé automatiquement.",
+      "cree": "2026-10-27T12:34:30.552Z",
+      "traiteeLe": "2026-10-27T12:36:28.764Z"
+    },
+    {
+      "id": "ins_mvqo3x3x_8868437b",
+      "barrageId": "BF-BT-248",
+      "barrage": {
+        "nom": "Poste fixe Kénitra",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -6.62804,
+        "lat": 34.23857,
+        "bt": "Kénitra",
+        "cie": "Kénitra",
+        "reg": "Kénitra"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BF-BT-248|syn_bf_057_58gum.",
+        "conflitNumero": "C-R16",
+        "barrageAId": "BF-BT-248",
+        "barrageANom": "Poste fixe Kénitra",
+        "voisinId": "syn_bf_057_58gum.",
+        "voisinNom": "Barrage Fixe RN1 — Kénitra",
+        "distanceKm": 3.2,
+        "seuilKm": 20,
+        "factions": [
+          "F4"
+        ],
+        "route": "RN1",
+        "motif": "Espacement de 3.2 km inférieur au seuil (20 km)",
+        "transmisPar": {
+          "matricule": "REG-KÉNITRA",
+          "nom": "Chef de région Kénitra",
+          "rang": "reg",
+          "unite": "Kénitra"
+        }
+      },
+      "source": "transmission_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "cie",
+        "unite": "Kénitra",
+        "matricule": "CIE-KÉNITRA",
+        "nom": "Chef de compagnie Kénitra"
+      },
+      "parentId": null,
+      "texte": "Conflit C-R16 transmis par la Région Kénitra : Poste fixe Kénitra ↔ Barrage Fixe RN1 — Kénitra (3.2 km). Traitement opérationnel délégué à la compagnie.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "REG-KÉNITRA",
+        "nom": "Chef de région Kénitra",
+        "rang": "reg",
+        "unite": "Kénitra"
+      },
+      "traiteePar": {
+        "matricule": "CIE-KÉNITRA",
+        "nom": "Chef de compagnie Kénitra",
+        "role": "commandement",
+        "rang": "cie",
+        "unite": "Kénitra",
+        "reg": "Kénitra",
+        "cie": null
+      },
+      "decision": null,
+      "reponse": "Poste absent de la carte : signalement classé automatiquement.",
+      "cree": "2026-10-27T12:34:36.765Z",
+      "traiteeLe": "2026-10-27T12:36:28.850Z"
+    },
+    {
+      "id": "ins_mvqo3zzq_559e33c8",
+      "barrageId": "BF-BT-401",
+      "barrage": {
+        "nom": "Poste fixe Sidi Taibi",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -6.65254,
+        "lat": 34.22633,
+        "bt": "Sidi Taibi",
+        "cie": "Kénitra",
+        "reg": "Kénitra"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BF-BT-401|syn_bf_057_58gum.",
+        "conflitNumero": "C-R19",
+        "barrageAId": "BF-BT-401",
+        "barrageANom": "Poste fixe Sidi Taibi",
+        "voisinId": "syn_bf_057_58gum.",
+        "voisinNom": "Barrage Fixe RN1 — Kénitra",
+        "distanceKm": 7.2,
+        "seuilKm": 20,
+        "factions": [
+          "F1"
+        ],
+        "route": "RN1",
+        "motif": "Espacement de 7.2 km inférieur au seuil (20 km)",
+        "transmisPar": {
+          "matricule": "REG-KÉNITRA",
+          "nom": "Chef de région Kénitra",
+          "rang": "reg",
+          "unite": "Kénitra"
+        }
+      },
+      "source": "transmission_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "cie",
+        "unite": "Kénitra",
+        "matricule": "CIE-KÉNITRA",
+        "nom": "Chef de compagnie Kénitra"
+      },
+      "parentId": null,
+      "texte": "Conflit C-R19 transmis par la Région Kénitra : Poste fixe Sidi Taibi ↔ Barrage Fixe RN1 — Kénitra (7.2 km). Traitement opérationnel délégué à la compagnie.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "REG-KÉNITRA",
+        "nom": "Chef de région Kénitra",
+        "rang": "reg",
+        "unite": "Kénitra"
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-10-27T12:34:40.502Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mvqo6b4e_6f456851",
+      "barrageId": "BF-BT-248",
+      "barrage": {
+        "nom": "Poste fixe Kénitra",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -6.62804,
+        "lat": 34.23857,
+        "bt": "Kénitra",
+        "cie": "Kénitra",
+        "reg": "Kénitra"
+      },
+      "action": "suppression",
+      "criteres": null,
+      "source": "modification",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": "admin",
+      "remplacerIntouchable": null,
+      "destinataire": null,
+      "parentId": null,
+      "texte": "Retrait demandé pour Poste fixe Kénitra.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "CIE-KÉNITRA",
+        "nom": "Chef de compagnie Kénitra",
+        "role": "commandement",
+        "rang": "cie",
+        "unite": "Kénitra",
+        "reg": "Kénitra",
+        "cie": null
+      },
+      "traiteePar": {
+        "matricule": "CIE-KÉNITRA",
+        "nom": "Chef de compagnie Kénitra",
+        "role": "commandement",
+        "rang": "cie",
+        "unite": "Kénitra",
+        "reg": "Kénitra",
+        "cie": null
+      },
+      "decision": null,
+      "reponse": "Poste absent de la carte : signalement classé automatiquement.",
+      "cree": "2026-10-27T12:36:28.239Z",
+      "traiteeLe": "2026-10-27T12:36:28.904Z"
+    },
+    {
+      "id": "ins_mvut5q1w_63ad6020",
+      "barrageId": "BFI-CIE-024",
+      "barrage": {
+        "nom": "BFI Dakhla",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -15.67267,
+        "lat": 23.89229,
+        "bt": "El Aargoub",
+        "cie": "Dakhla",
+        "reg": "Dakhla"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BFI-CIE-024|syn_bf_039_5l3s6.",
+        "conflitNumero": "C-R1",
+        "barrageAId": "BFI-CIE-024",
+        "barrageANom": "BFI Dakhla",
+        "voisinId": "syn_bf_039_5l3s6.",
+        "voisinNom": "Barrage Fixe RN1 — El Aargoub",
+        "distanceKm": 9.3,
+        "seuilKm": 20,
+        "factions": [],
+        "route": "RN1",
+        "motif": "Espacement de 9.3 km inférieur au seuil (20 km)",
+        "transmisPar": {
+          "matricule": "REG-DAKHLA",
+          "nom": "Chef de région Dakhla",
+          "rang": "reg",
+          "unite": "Dakhla"
+        }
+      },
+      "source": "transmission_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "cie",
+        "unite": "Dakhla",
+        "matricule": "CIE-DAKHLA",
+        "nom": "Chef de compagnie Dakhla"
+      },
+      "parentId": null,
+      "texte": "Conflit C-R1 transmis par la Région Dakhla : BFI Dakhla ↔ Barrage Fixe RN1 — El Aargoub (9.3 km). Traitement opérationnel délégué à la compagnie.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "REG-DAKHLA",
+        "nom": "Chef de région Dakhla",
+        "rang": "reg",
+        "unite": "Dakhla"
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-10-30T10:07:03.716Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mvv38a74_8ca5ec13",
+      "barrageId": "BFI-CIE-044",
+      "barrage": {
+        "nom": "BFI Laayoune",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -13.23296,
+        "lat": 27.15235,
+        "bt": "Laayoune",
+        "cie": "Laayoune",
+        "reg": "Laayoune"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "C-01",
+        "conflitNumero": "C-01",
+        "barrageAId": "BFI-CIE-044",
+        "barrageANom": "BFI Laayoune",
+        "voisinId": "BF-BT-267",
+        "voisinNom": "Poste fixe Laayoune",
+        "distanceKm": 5.28,
+        "seuilKm": 20,
+        "factions": [],
+        "route": "RN1",
+        "motif": "Distance routière de 5.28 km inférieure au seuil de sécurité",
+        "conjoint": false,
+        "autresRegions": []
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Laayoune",
+        "matricule": "REG-LAAYOUNE",
+        "nom": "Chef de région Laayoune"
+      },
+      "parentId": null,
+      "texte": "Conflit C-01 assigné : BFI Laayoune ↔ Poste fixe Laayoune (5.28 km). Espacement à traiter par le commandement de région.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-10-30T14:48:59.296Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mvv39gin_c9d18494",
+      "barrageId": "BF-BT-267",
+      "barrage": {
+        "nom": "Poste fixe Laayoune",
+        "route": "RN5",
+        "type": "barrage_fixe",
+        "lng": -13.19311,
+        "lat": 27.1458,
+        "bt": "Laayoune",
+        "cie": "Laayoune",
+        "reg": "Laayoune"
+      },
+      "action": "modification",
+      "criteres": null,
+      "source": "modification",
+      "changements": [
+        {
+          "champ": "pk",
+          "ancienne": null,
+          "nouvelle": 19.4
+        },
+        {
+          "champ": "isSynthetic",
+          "ancienne": null,
+          "nouvelle": false
+        },
+        {
+          "champ": "isPermanent",
+          "ancienne": null,
+          "nouvelle": false
+        },
+        {
+          "champ": "name",
+          "ancienne": null,
+          "nouvelle": "Poste fixe Laayoune"
+        },
+        {
+          "champ": "roadName",
+          "ancienne": null,
+          "nouvelle": "RN5"
+        },
+        {
+          "champ": "roadType",
+          "ancienne": null,
+          "nouvelle": ""
+        },
+        {
+          "champ": "roadReference",
+          "ancienne": null,
+          "nouvelle": ""
+        },
+        {
+          "champ": "accidentPeriod",
+          "ancienne": null,
+          "nouvelle": ""
+        },
+        {
+          "champ": "isLighted",
+          "ancienne": null,
+          "nouvelle": false
+        },
+        {
+          "champ": "trafficLevel",
+          "ancienne": null,
+          "nouvelle": "LOW"
+        },
+        {
+          "champ": "trafficDescription",
+          "ancienne": null,
+          "nouvelle": ""
+        },
+        {
+          "champ": "createdAt",
+          "ancienne": null,
+          "nouvelle": "2026-09-24T12:00:00.000Z"
+        },
+        {
+          "champ": "updatedAt",
+          "ancienne": null,
+          "nouvelle": "2026-10-30T14:49:54.140Z"
+        },
+        {
+          "champ": "bt",
+          "ancienne": "Laayoune",
+          "nouvelle": "Boukraa"
+        },
+        {
+          "champ": "brigadeId",
+          "ancienne": "Laayoune",
+          "nouvelle": "Boukraa"
+        },
+        {
+          "champ": "lng",
+          "ancienne": -13.19311,
+          "nouvelle": -13.10374
+        },
+        {
+          "champ": "lat",
+          "ancienne": 27.1458,
+          "nouvelle": 27.04026
+        },
+        {
+          "champ": "longitude",
+          "ancienne": -13.19311,
+          "nouvelle": -13.10374
+        },
+        {
+          "champ": "latitude",
+          "ancienne": 27.1458,
+          "nouvelle": 27.04026
+        },
+        {
+          "champ": "direction",
+          "ancienne": null,
+          "nouvelle": "RETOUR"
+        },
+        {
+          "champ": "sens",
+          "ancienne": null,
+          "nouvelle": "RETOUR"
+        },
+        {
+          "champ": "road_id",
+          "ancienne": null,
+          "nouvelle": "RN5"
+        },
+        {
+          "champ": "coordinates",
+          "ancienne": null,
+          "nouvelle": [
+            -13.10374,
+            27.04026
+          ]
+        }
+      ],
+      "modificationId": null,
+      "motif": "",
+      "aDecider": "admin",
+      "remplacerIntouchable": null,
+      "destinataire": null,
+      "parentId": null,
+      "texte": "Modification demandée sur Poste fixe Laayoune : pk, isSynthetic, isPermanent, name, roadName, roadType, roadReference, accidentPeriod, isLighted, trafficLevel, trafficDescription, createdAt, updatedAt, bt, brigadeId, lng, lat, longitude, latitude, direction, sens, road_id, coordinates.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "REG-LAAYOUNE",
+        "nom": "Chef de région Laayoune",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Laayoune",
+        "reg": "Laayoune",
+        "cie": null
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-10-30T14:49:54.143Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mvz1mvjo_52094c2a",
+      "barrageId": "BFI-CIE-044",
+      "barrage": {
+        "nom": "BFI Laayoune",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -13.23296,
+        "lat": 27.15235,
+        "bt": "Laayoune",
+        "cie": "Laayoune",
+        "reg": "Laayoune"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BF-BT-188|BFI-CIE-044",
+        "conflitNumero": "C-R1",
+        "barrageAId": "BFI-CIE-044",
+        "barrageANom": "BFI Laayoune",
+        "voisinId": "BF-BT-188",
+        "voisinNom": "Poste fixe Foum El Oued",
+        "distanceKm": 12,
+        "seuilKm": 20,
+        "factions": [],
+        "route": "RN1",
+        "motif": "Espacement de 12.0 km inférieur au seuil (20 km)",
+        "conjoint": false,
+        "autresRegions": []
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Laayoune",
+        "matricule": "REG-LAAYOUNE",
+        "nom": "Chef de région Laayoune"
+      },
+      "parentId": null,
+      "texte": "Conflit C-R1 assigné : BFI Laayoune ↔ Poste fixe Foum El Oued (12 km). Espacement à traiter par le commandement de région.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-11-02T09:15:25.620Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mvz1nao0_9862951b",
+      "barrageId": "BFI-CIE-071",
+      "barrage": {
+        "nom": "BFI Skhirate",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -7.05783,
+        "lat": 33.83761,
+        "bt": "Skhirate-El Fath",
+        "cie": "Skhirate",
+        "reg": "Rabat"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BF-BT-132|BFI-CIE-071",
+        "conflitNumero": "C-R3",
+        "barrageAId": "BFI-CIE-071",
+        "barrageANom": "BFI Skhirate",
+        "voisinId": "BF-BT-132",
+        "voisinNom": "Poste fixe Bouznika",
+        "distanceKm": 16.4,
+        "seuilKm": 20,
+        "factions": [],
+        "route": "RN1",
+        "motif": "Espacement de 16.4 km inférieur au seuil (20 km)",
+        "conjoint": false,
+        "autresRegions": []
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Settat",
+        "matricule": "REG-SETTAT",
+        "nom": "Chef de région Settat"
+      },
+      "parentId": null,
+      "texte": "Conflit C-R3 assigné : BFI Skhirate ↔ Poste fixe Bouznika (16.4 km). Espacement à traiter par le commandement de région.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-11-02T09:15:45.216Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mvz1nnsl_1590d205",
+      "barrageId": "BFI-CIE-079",
+      "barrage": {
+        "nom": "BFI Tarfaya",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -12.82853,
+        "lat": 27.95973,
+        "bt": "Tarfaya",
+        "cie": "Tarfaya",
+        "reg": "Laayoune"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BFI-CIE-079|syn_bf_018_1c4i0.",
+        "conflitNumero": "C-R6",
+        "barrageAId": "BFI-CIE-079",
+        "barrageANom": "BFI Tarfaya",
+        "voisinId": "syn_bf_018_1c4i0.",
+        "voisinNom": "Barrage Fixe RN1 — Tarfaya",
+        "distanceKm": 2.4,
+        "seuilKm": 20,
+        "factions": [],
+        "route": "RN1",
+        "motif": "Espacement de 2.4 km inférieur au seuil (20 km)",
+        "conjoint": false,
+        "autresRegions": []
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Laayoune",
+        "matricule": "REG-LAAYOUNE",
+        "nom": "Chef de région Laayoune"
+      },
+      "parentId": null,
+      "texte": "Conflit C-R6 assigné : BFI Tarfaya ↔ Barrage Fixe RN1 — Tarfaya (2.4 km). Espacement à traiter par le commandement de région.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-11-02T09:16:02.229Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mvz1nujf_b1d7029c",
+      "barrageId": "BF-BT-112",
+      "barrage": {
+        "nom": "Poste fixe Bni Yakhlef",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -7.34544,
+        "lat": 33.68123,
+        "bt": "Bni Yakhlef",
+        "cie": "Mohammedia",
+        "reg": "Casablanca"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BF-BT-112|BF-BT-132",
+        "conflitNumero": "C-R7",
+        "barrageAId": "BF-BT-112",
+        "barrageANom": "Poste fixe Bni Yakhlef",
+        "voisinId": "BF-BT-132",
+        "voisinNom": "Poste fixe Bouznika",
+        "distanceKm": 16.5,
+        "seuilKm": 20,
+        "factions": [],
+        "route": "RN1",
+        "motif": "Espacement de 16.5 km inférieur au seuil (20 km)",
+        "conjoint": true,
+        "autresRegions": [
+          "Settat"
+        ]
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Casablanca",
+        "matricule": "REG-CASABLANCA",
+        "nom": "Chef de région Casablanca"
+      },
+      "parentId": null,
+      "texte": "Conflit inter-régions C-R7 assigné conjointement (Casablanca & Settat) : Poste fixe Bni Yakhlef ↔ Poste fixe Bouznika (16.5 km). Coordination inter-régionale requise pour l’espacement des barrages.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-11-02T09:16:10.971Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mvz1nujh_635bc070",
+      "barrageId": "BF-BT-112",
+      "barrage": {
+        "nom": "Poste fixe Bni Yakhlef",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -7.34544,
+        "lat": 33.68123,
+        "bt": "Bni Yakhlef",
+        "cie": "Mohammedia",
+        "reg": "Casablanca"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BF-BT-112|BF-BT-132",
+        "conflitNumero": "C-R7",
+        "barrageAId": "BF-BT-112",
+        "barrageANom": "Poste fixe Bni Yakhlef",
+        "voisinId": "BF-BT-132",
+        "voisinNom": "Poste fixe Bouznika",
+        "distanceKm": 16.5,
+        "seuilKm": 20,
+        "factions": [],
+        "route": "RN1",
+        "motif": "Espacement de 16.5 km inférieur au seuil (20 km)",
+        "conjoint": true,
+        "autresRegions": [
+          "Casablanca"
+        ]
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Settat",
+        "matricule": "REG-SETTAT",
+        "nom": "Chef de région Settat"
+      },
+      "parentId": null,
+      "texte": "Conflit inter-régions C-R7 assigné conjointement (Casablanca & Settat) : Poste fixe Bni Yakhlef ↔ Poste fixe Bouznika (16.5 km). Coordination inter-régionale requise pour l’espacement des barrages.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-11-02T09:16:10.973Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mvz1o85y_8ecd58dc",
+      "barrageId": "BF-BT-126",
+      "barrage": {
+        "nom": "Poste fixe Boukraa",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -13.08748,
+        "lat": 27.30145,
+        "bt": "Boukraa",
+        "cie": "Laayoune",
+        "reg": "Laayoune"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BF-BT-126|BF-BT-188",
+        "conflitNumero": "C-R13",
+        "barrageAId": "BF-BT-126",
+        "barrageANom": "Poste fixe Boukraa",
+        "voisinId": "BF-BT-188",
+        "voisinNom": "Poste fixe Foum El Oued",
+        "distanceKm": 18.3,
+        "seuilKm": 20,
+        "factions": [
+          "F2"
+        ],
+        "route": "RN1",
+        "motif": "Espacement de 18.3 km inférieur au seuil (20 km)",
+        "conjoint": false,
+        "autresRegions": []
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Laayoune",
+        "matricule": "REG-LAAYOUNE",
+        "nom": "Chef de région Laayoune"
+      },
+      "parentId": null,
+      "texte": "Conflit C-R13 assigné : Poste fixe Boukraa ↔ Poste fixe Foum El Oued (18.3 km). Espacement à traiter par le commandement de région.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-11-02T09:16:28.630Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mvz1ogz8_f54c3ad8",
+      "barrageId": "BF-BT-132",
+      "barrage": {
+        "nom": "Poste fixe Bouznika",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -7.20861,
+        "lat": 33.76384,
+        "bt": "Bouznika",
+        "cie": "Bouznika",
+        "reg": "Settat"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BF-BT-132|syn_bfp_028_218tk.",
+        "conflitNumero": "C-R9",
+        "barrageAId": "BF-BT-132",
+        "barrageANom": "Poste fixe Bouznika",
+        "voisinId": "syn_bfp_028_218tk.",
+        "voisinNom": "Barrage Permanent RN1 — Bouznika",
+        "distanceKm": 6.9,
+        "seuilKm": 20,
+        "factions": [],
+        "route": "RN1",
+        "motif": "Espacement de 6.9 km inférieur au seuil (20 km)",
+        "conjoint": false,
+        "autresRegions": []
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Settat",
+        "matricule": "REG-SETTAT",
+        "nom": "Chef de région Settat"
+      },
+      "parentId": null,
+      "texte": "Conflit C-R9 assigné : Poste fixe Bouznika ↔ Barrage Permanent RN1 — Bouznika (6.9 km). Espacement à traiter par le commandement de région.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-11-02T09:16:40.052Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mvz1pt6b_50d3d847",
+      "barrageId": "BFI-CIE-079",
+      "barrage": {
+        "nom": "BFI Tarfaya",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -12.82853,
+        "lat": 27.95973,
+        "bt": "Tarfaya",
+        "cie": "Tarfaya",
+        "reg": "Laayoune"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BFI-CIE-079|syn_bf_018_1c4i0.",
+        "conflitNumero": "C-R6",
+        "barrageAId": "BFI-CIE-079",
+        "barrageANom": "BFI Tarfaya",
+        "voisinId": "syn_bf_018_1c4i0.",
+        "voisinNom": "Barrage Fixe RN1 — Tarfaya",
+        "distanceKm": 2.4,
+        "seuilKm": 20,
+        "factions": [],
+        "route": "RN1",
+        "motif": "Espacement de 2.4 km inférieur au seuil (20 km)",
+        "transmisPar": {
+          "matricule": "REG-LAAYOUNE",
+          "nom": "Chef de région Laayoune",
+          "rang": "reg",
+          "unite": "Laayoune"
+        }
+      },
+      "source": "transmission_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "cie",
+        "unite": "Tarfaya",
+        "matricule": "CIE-TARFAYA",
+        "nom": "Chef de compagnie Tarfaya"
+      },
+      "parentId": null,
+      "texte": "Conflit C-R6 transmis par la Région Laayoune : BFI Tarfaya ↔ Barrage Fixe RN1 — Tarfaya (2.4 km). Traitement opérationnel délégué à la compagnie.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "REG-LAAYOUNE",
+        "nom": "Chef de région Laayoune",
+        "rang": "reg",
+        "unite": "Laayoune"
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-11-02T09:17:42.515Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mvz3ht6y_0ccebedd",
+      "barrageId": "BF-BT-278",
+      "barrage": {
+        "nom": "Poste fixe Lqliaa",
+        "route": "RR105",
+        "type": "barrage_fixe",
+        "lng": -9.46503,
+        "lat": 30.3023,
+        "bt": "Lqliaa",
+        "cie": "Inezgane",
+        "reg": "Agadir"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "C-02",
+        "conflitNumero": "C-02",
+        "barrageAId": "BF-BT-278",
+        "barrageANom": "Poste fixe Lqliaa",
+        "voisinId": "BFI-CIE-037",
+        "voisinNom": "BFI Inezgane",
+        "distanceKm": 7.68,
+        "seuilKm": 20,
+        "factions": [],
+        "route": "RR105",
+        "motif": "Distance routière de 5.19 km inférieure au seuil de sécurité",
+        "conjoint": false,
+        "autresRegions": []
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Agadir",
+        "matricule": "REG-AGADIR",
+        "nom": "Chef de région Agadir"
+      },
+      "parentId": null,
+      "texte": "Conflit C-02 assigné : Poste fixe Lqliaa ↔ BFI Inezgane (7.68 km). Espacement à traiter par le commandement de région.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-11-02T10:07:28.522Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mvz3pm0b_a295d362",
+      "barrageId": "BFI-CIE-041",
+      "barrage": {
+        "nom": "BFI Khémisset",
+        "route": "A2",
+        "type": "barrage_fixe",
+        "lng": -6.22277,
+        "lat": 33.82595,
+        "bt": "Tiflet",
+        "cie": "Khémisset",
+        "reg": "Khémisset"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BFI-CIE-041|BFI-CIE-064",
+        "conflitNumero": "C-R1",
+        "barrageAId": "BFI-CIE-041",
+        "barrageANom": "BFI Khémisset",
+        "voisinId": "BFI-CIE-064",
+        "voisinNom": "BFI Salé",
+        "distanceKm": 48.4,
+        "seuilKm": 50,
+        "factions": [],
+        "route": "A2",
+        "motif": "Espacement de 48.4 km inférieur au seuil (50 km)"
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Khémisset",
+        "matricule": "REG-KHÉMISSET",
+        "nom": "Chef de région Khémisset"
+      },
+      "parentId": null,
+      "texte": "Conflit C-R1 assigné : BFI Khémisset ↔ BFI Salé (48.4 km). Espacement à traiter par le commandement de région.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-11-02T10:13:32.459Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mvz3pm0t_8bc8f010",
+      "barrageId": "BFI-CIE-041",
+      "barrage": {
+        "nom": "BFI Khémisset",
+        "route": "A2",
+        "type": "barrage_fixe",
+        "lng": -6.22277,
+        "lat": 33.82595,
+        "bt": "Tiflet",
+        "cie": "Khémisset",
+        "reg": "Khémisset"
+      },
+      "action": "assignation",
+      "criteres": {
+        "conflitId": "conf_calc_BFI-CIE-041|BFI-CIE-064",
+        "conflitNumero": "C-R1",
+        "barrageAId": "BFI-CIE-041",
+        "barrageANom": "BFI Khémisset",
+        "voisinId": "BFI-CIE-064",
+        "voisinNom": "BFI Salé",
+        "distanceKm": 48.4,
+        "seuilKm": 50,
+        "factions": [],
+        "route": "A2",
+        "motif": "Espacement de 48.4 km inférieur au seuil (50 km)"
+      },
+      "source": "assignation_conflit",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": null,
+      "remplacerIntouchable": null,
+      "destinataire": {
+        "rang": "reg",
+        "unite": "Rabat",
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat"
+      },
+      "parentId": null,
+      "texte": "Conflit C-R1 assigné : BFI Khémisset ↔ BFI Salé (48.4 km). Espacement à traiter par le commandement de région.",
+      "statut": "ouverte",
+      "auteur": {
+        "matricule": "SUPERADMIN",
+        "nom": "Administrateur superadmin",
+        "rang": "admin",
+        "unite": "superadmin"
+      },
+      "traiteePar": null,
+      "decision": null,
+      "reponse": "",
+      "cree": "2026-11-02T10:13:32.478Z",
+      "traiteeLe": null
+    },
+    {
+      "id": "ins_mvz4lm86_e393d987",
+      "barrageId": "BF-BT-405",
+      "barrage": {
+        "nom": "Poste fixe Skhirate Centre",
+        "route": "RN1",
+        "type": "barrage_fixe",
+        "lng": -6.94349,
+        "lat": 33.90084,
+        "bt": "Témara",
+        "cie": "Témara",
+        "reg": "Rabat"
+      },
+      "action": "suppression",
+      "criteres": null,
+      "source": "modification",
+      "changements": null,
+      "modificationId": null,
+      "motif": "",
+      "aDecider": "admin",
+      "remplacerIntouchable": null,
+      "destinataire": null,
+      "parentId": null,
+      "texte": "Retrait demandé pour Poste fixe Skhirate Centre.",
+      "statut": "traitee",
+      "auteur": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Rabat",
+        "reg": "Rabat",
+        "cie": null
+      },
+      "traiteePar": {
+        "matricule": "REG-RABAT",
+        "nom": "Chef de région Rabat",
+        "role": "commandement",
+        "rang": "reg",
+        "unite": "Rabat",
+        "reg": "Rabat",
+        "cie": null
+      },
+      "decision": null,
+      "reponse": "Poste absent de la carte : signalement classé automatiquement.",
+      "cree": "2026-11-02T10:38:25.735Z",
+      "traiteeLe": "2026-11-02T10:38:29.363Z"
+    }
+  ]
+}

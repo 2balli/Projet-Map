@@ -212,7 +212,7 @@ export default function ModalFiltrerParRoute({
             </span>
             <div>
               <h3 id="titre-modal-filtrer-route" className="text-[16px] font-bold tracking-tight text-white flex items-center gap-2">
-                Filtration des barrages par route
+                Optimisation des barrages par route
               </h3>
               <p className="text-[11.5px] text-white/60">
                 Isoler un axe routier sur la carte et afficher uniquement ses barrages et conflits

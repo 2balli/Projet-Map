@@ -451,17 +451,30 @@ select optgroup {
   color: var(--text-secondary) !important;
 }
 
-/* Le dock de commandes occupe le coin inférieur droit. Les contrôles Leaflet
-   informatifs se rangent à sa gauche au lieu de passer dessous. */
-.leaflet-bottom.leaflet-right {
-  right: 58px;
+/* SÉLECTION D'UNE NOUVELLE POSITION (déplacement d'un barrage) — le fond de
+   carte seul (volet des tuiles, où MapLibre dessine) et le volet de la
+   sélection : repères, tracés, zones, couches et bulles sont MASQUÉS, jamais
+   retirés. L'attribut disparu (confirmation, annulation, erreur), tout
+   revient tel quel. */
+[data-gr-selection-position] .leaflet-map-pane > .leaflet-pane:not(.leaflet-tile-pane):not(.leaflet-gr-selection-pane),
+[data-gr-selection-position] [data-gr-masque-selection] {
+  visibility: hidden;
 }
 
-@media (max-width: 1100px) {
-  .leaflet-bottom.leaflet-right {
-    right: 54px;
-  }
+/* La petite bulle d'une circonscription (double-clic) — compacte, discrète. */
+.gr-bulle-circo-cadre .leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--bg-surface) 96%, transparent);
+  color: var(--text-primary);
+  box-shadow: 0 6px 20px rgb(0 0 0 / 0.18);
 }
+.gr-bulle-circo-cadre .leaflet-popup-content { margin: 9px 12px 10px; }
+.gr-bulle-circo-cadre .leaflet-popup-tip { background: var(--bg-surface); }
+.gr-bulle-circo-cadre a.leaflet-popup-close-button { width: 20px; height: 20px; font-size: 15px; color: var(--text-muted); }
+.gr-bulle-circo { display: flex; flex-direction: column; gap: 2px; padding-right: 10px; }
+.gr-bulle-circo-tag { font-size: 9.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--primary); }
+.gr-bulle-circo-nom { font-size: 14px; font-weight: 700; line-height: 1.25; }
+.gr-bulle-circo-ligne { font-size: 11.5px; color: var(--text-secondary); }
 
 /* --- Marqueurs GPS (pins) --- */
 /* Le survol ne modifie que `filter` : aucun changement de boîte, donc aucun

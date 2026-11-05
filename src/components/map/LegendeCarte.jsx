@@ -246,7 +246,6 @@ export function LegendeCarte({
             >
               Barrage fixe intouchable (BFI)
             </Ligne>
-            <Ligne echantillon={<Repere classe="gr-nouveau" contenu="!" />}>Barrage nouvellement posé</Ligne>
             <Ligne echantillon={<span className="gr-badge gr-badge-ville text-[7px]">⇥</span>}>Entrée, sortie ou porte de ville</Ligne>
           </GroupeLegende>
 

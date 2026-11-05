@@ -14,11 +14,13 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import {
-  ETATS, SECTIONS, SECTION_DE, NOMS_ACTIONS, etatDe, sectionDe, peutVoir, verifierAction, presenterWorkflow,
+  ETATS, SECTIONS, SECTION_DE, NOMS_ACTIONS, etatDe, sectionDe, estClos, peutVoir, verifierAction, presenterWorkflow,
   compterSections, synchroniserChampsHerites, migrerConflit, annulerMigration, ErreurWorkflow, regionsAssignees,
 } from '../serveur/workflowConflits.mjs';
 
-const reels = JSON.parse(readFileSync(new URL('../donnees-demo/suivi-conflits.json', import.meta.url), 'utf8')).items;
+/* Anciens conflits réels (non migrés) : un jeu d'essai FIXE, et non les données
+   de démonstration vivantes, qu'un reset des conflits peut vider. */
+const reels = JSON.parse(readFileSync(new URL('./fixtures/suivi-conflits-anciens.json', import.meta.url), 'utf8')).items;
 
 const ADMIN = { rang: 'admin', unite: 'admin', matricule: 'ADM' };
 const REG = { rang: 'reg', unite: 'Agadir', matricule: 'REG-AGADIR' };
@@ -55,13 +57,17 @@ const code = (f) => {
   }
 };
 
-test('chaque état a UNE section, et les sections sont exactement les cinq demandées', () => {
-  assert.deepEqual(Object.values(SECTIONS), ['conflits', 'a_traiter', 'a_valider', 'suivi', 'historique']);
+test('chaque état a UNE section, et les sections sont exactement les quatre demandées (plus de « Suivi »)', () => {
+  assert.deepEqual(Object.values(SECTIONS), ['conflits', 'a_traiter', 'a_valider', 'historique']);
   for (const e of Object.values(ETATS)) assert.ok(SECTION_DE[e], `${e} sans section`);
   assert.equal(SECTION_DE.NEW, 'conflits');
   assert.equal(SECTION_DE.PENDING_VALIDATION, 'a_valider');
-  assert.equal(SECTION_DE.FOLLOW_UP, 'suivi');
+  /* Validés avant la suppression du suivi : lus comme archivés, sans réécriture. */
+  assert.equal(SECTION_DE.APPROVED, 'historique');
+  assert.equal(SECTION_DE.FOLLOW_UP, 'historique');
   assert.equal(SECTION_DE.CLOSED, 'historique');
+  for (const e of [ETATS.APPROVED, ETATS.FOLLOW_UP, ETATS.CLOSED]) assert.ok(estClos(conflit(e)), `${e} archivé`);
+  for (const e of [ETATS.NEW, ETATS.ASSIGNED_REGION, ETATS.PENDING_VALIDATION, ETATS.REJECTED]) assert.ok(!estClos(conflit(e)), `${e} actif`);
 });
 
 test('le parcours complet, option B (CMD CIE) — et rien d’autre n’est permis en chemin', () => {
@@ -89,10 +95,12 @@ test('le parcours complet, option B (CMD CIE) — et rien d’autre n’est perm
   assert.equal(code(() => verifierAction(c, REG, 'prendre_en_charge')), 409, 'rejet renvoyé à la CIE, pas à la région');
   pas(CIE, 'commencer', ETATS.IN_PROGRESS_CIE);
   pas(CIE, 'soumettre', ETATS.PENDING_VALIDATION);
-  const v = pas(ADMIN, 'valider', ETATS.FOLLOW_UP);
+  /* Approuver archive directement : aucune clôture manuelle à faire. */
+  const v = pas(ADMIN, 'valider', ETATS.CLOSED);
   assert.deepEqual(v.etapes, [ETATS.APPROVED], 'la validation passe par APPROVED (inscrit à l’historique)');
+  assert.equal(sectionDe(c), 'historique', 'le conflit approuvé est à l’historique');
   assert.equal(code(() => verifierAction(c, CIE, 'commencer')), 409);
-  pas(ADMIN, 'cloturer', ETATS.CLOSED);
+  assert.equal(code(() => verifierAction(c, ADMIN, 'cloturer')), 409, 'déjà clos : plus de clôture');
   assert.equal(code(() => verifierAction(c, ADMIN, 'rouvrir')), 422, 'réouverture sans motif refusée');
   pas(ADMIN, 'rouvrir', ETATS.ASSIGNED_REGION, { motif: 'Erreur de saisie' });
 });
@@ -117,8 +125,8 @@ test('matrice complète : pour chaque état, seules les actions de la table sont
     ASSIGNED_CIE: { admin: ['assigner_region', 'desassigner', 'soumettre'], reg: ['assigner_cie'], cie: ['commencer', 'soumettre'] },
     IN_PROGRESS_CIE: { admin: ['assigner_region', 'desassigner', 'soumettre'], reg: ['assigner_cie'], cie: ['soumettre'] },
     PENDING_VALIDATION: { admin: ['valider', 'rejeter'] },
-    APPROVED: { admin: ['cloturer'] },
-    FOLLOW_UP: { admin: ['cloturer'] },
+    APPROVED: { admin: ['cloturer', 'rouvrir'] },
+    FOLLOW_UP: { admin: ['cloturer', 'rouvrir'] },
     CLOSED: { admin: ['rouvrir'] },
   };
   for (const [etat, parRole] of Object.entries(attendu)) {
@@ -156,7 +164,7 @@ test('cloisonnement (équivalent RLS) : jamais de NEW hors Super Admin, jamais d
 test('état attendu : une action sur un état périmé est refusée (409), rien ne s’applique', () => {
   const c = conflit(ETATS.PENDING_VALIDATION);
   assert.equal(code(() => verifierAction(c, ADMIN, 'valider', { etatAttendu: ETATS.IN_PROGRESS_CIE })), 409);
-  assert.equal(verifierAction(c, ADMIN, 'valider', { etatAttendu: ETATS.PENDING_VALIDATION }).vers, ETATS.FOLLOW_UP);
+  assert.equal(verifierAction(c, ADMIN, 'valider', { etatAttendu: ETATS.PENDING_VALIDATION }).vers, ETATS.CLOSED);
 });
 
 test('anciens conflits (non migrés) : l’état est déduit, un et un seul par conflit réel', () => {

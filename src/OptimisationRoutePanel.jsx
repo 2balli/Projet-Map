@@ -156,8 +156,8 @@ const OptimisationRoutePanel = forwardRef(function OptimisationRoutePanel(
     }
     let vivant = true;
     const t = setTimeout(() => {
-      /* Filtration des barrages de la route : le radar de la carte la suit. */
-      avecRadar('Filtration des barrages de la route', () => API.perimetreCorridor({ corridor, factionId }))
+      /* Optimisation des barrages de la route : le radar de la carte la suit. */
+      avecRadar('Optimisation des barrages de la route', () => API.perimetreCorridor({ corridor, factionId }))
         .then((p) => vivant && (setPerimetre(p), setErreur(null)))
         .catch((e) => vivant && (setPerimetre(null), setErreur(e.message)));
     }, 250);

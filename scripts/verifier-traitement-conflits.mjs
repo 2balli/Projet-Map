@@ -13,9 +13,9 @@
  * 4. Persistance en base et visibilité Superadmin :
  *    - Le conflit traité reste visible pour le Superadmin avec le statut 'traite'.
  * 5. Workflow (serveur/workflowConflits.mjs) : un traitement direct du Super
- *    Admin vaut validation — le conflit passe en SUIVI (FOLLOW_UP), il n'est
- *    plus clos d'office ; un CMD Région ne traite qu'un conflit qui lui a été
- *    ASSIGNÉ.
+ *    Admin vaut validation — et comme toute validation, il archive le conflit
+ *    (CLOSED, section Historique) sans rien effacer du traitement ; un CMD
+ *    Région ne traite qu'un conflit qui lui a été ASSIGNÉ.
  *    - Relire le fichier JSON confirme la conservation de toutes les métadonnées.
  */
 import test from 'node:test';
@@ -76,11 +76,23 @@ const B_REGULIER_2 = {
   factionId: 'F1',
 };
 
+/* Une paire à part pour le déplacement : une même paire ne porte qu'un
+   conflit actif (CONF-CAS-B l'occupe déjà, en attente de validation). */
+const B_REGULIER_3 = {
+  id: 'B_REG_03',
+  nom: 'Barrage Régulier Skhirat',
+  type: 'barrage_fixe',
+  route: 'RN1',
+  reg: 'Rabat',
+  factionId: 'F1',
+};
+
 const barragesMap = new Map([
   [B_BFI.id, { ...B_BFI }],
   [B_BFI_CASA.id, { ...B_BFI_CASA }],
   [B_REGULIER_1.id, { ...B_REGULIER_1 }],
   [B_REGULIER_2.id, { ...B_REGULIER_2 }],
+  [B_REGULIER_3.id, { ...B_REGULIER_3 }],
 ]);
 
 const depotBarrages = {
@@ -148,9 +160,11 @@ test('Cas A : Conflit entre BFI et BF régulier — interdiction stricte de chan
     depotNotifications,
   });
 
-  /* Traitement direct du Super Admin : validé d'office, en suivi (pas clos). */
-  assert.equal(resDerogation.statut, 'traite');
-  assert.equal(resDerogation.conflit.etat, 'FOLLOW_UP');
+  /* Traitement direct du Super Admin : validé d'office, donc archivé. */
+  assert.equal(resDerogation.statut, 'cloture');
+  assert.equal(resDerogation.conflit.etat, 'CLOSED');
+  assert.ok(resDerogation.conflit.clotureLe, 'l’archivage est daté');
+  assert.equal(resDerogation.conflit.cloturePar?.matricule, SESSIONS.admin.matricule, 'et signé');
   assert.equal(resDerogation.persiste, true, 'La proximité physique persiste en dérogation');
   assert.equal(resDerogation.justification, 'Point d’intérêt stratégique majeur validé par le Superadmin.');
 });
@@ -218,8 +232,8 @@ test('Conservation des conflits traités dans l’espace Superadmin et persistan
   const confB = visiblesAdmin.find((c) => c.id === 'CONF-CAS-B');
 
   assert.ok(confA, 'Le conflit Cas A traité doit être présent dans la liste du Super Admin');
-  assert.equal(confA.statut, 'traite');
-  assert.equal(confA.etat, 'FOLLOW_UP');
+  assert.equal(confA.statut, 'cloture');
+  assert.equal(confA.etat, 'CLOSED');
   assert.ok(confA.traitement, 'Le conflit doit contenir l’objet traitement complet');
   assert.equal(confA.traitement.auteur.matricule, SESSIONS.admin.matricule);
 
@@ -234,7 +248,10 @@ test('Conservation des conflits traités dans l’espace Superadmin et persistan
   const confARecharge = recharges.find((c) => c.id === 'CONF-CAS-A');
   const confBRecharge = recharges.find((c) => c.id === 'CONF-CAS-B');
 
-  assert.equal(confARecharge.etat, 'FOLLOW_UP', 'La persistance doit préserver l’état (traitement direct du Superadmin : en suivi) après rechargement');
+  assert.equal(confARecharge.etat, 'CLOSED', 'La persistance doit préserver l’état (traitement direct du Superadmin : archivé) après rechargement');
+  assert.ok(confARecharge.traitement, 'Archiver ne supprime pas le traitement');
+  assert.ok(confARecharge.historique.some((h) => h.vers === 'APPROVED'), 'l’étape d’approbation reste inscrite');
+  assert.ok(depotRecharge.historique(SESSIONS.admin).some((c) => c.id === 'CONF-CAS-A'), 'le conflit est lu dans l’historique');
   assert.equal(confBRecharge.etat, 'PENDING_VALIDATION');
   assert.equal(confBRecharge.statut, 'traite', 'La persistance doit préserver le statut traite après rechargement');
   assert.equal(confBRecharge.statutPhysique, 'maintenu_decalage_horaire');
@@ -245,7 +262,7 @@ test('Résolution complète par déplacement suffisant (distance >= 20 km)', () 
     id: 'CONF-DEP-01',
     numero: 'C-03',
     barrageAId: B_REGULIER_1.id,
-    barrageBId: B_REGULIER_2.id,
+    barrageBId: B_REGULIER_3.id,
     distanceKm: 14.0,
     seuilKm: 20,
   };
@@ -255,7 +272,7 @@ test('Résolution complète par déplacement suffisant (distance >= 20 km)', () 
     session: SESSIONS.admin,
     action: 'deplacement',
     details: {
-      barrageId: B_REGULIER_2.id,
+      barrageId: B_REGULIER_3.id,
       distanceApresKm: 23.5, // >= 20 km
       seuilKm: 20,
       motif: 'Déplacement au PK 45',
@@ -265,8 +282,8 @@ test('Résolution complète par déplacement suffisant (distance >= 20 km)', () 
     depotNotifications,
   });
 
-  assert.equal(resDeplacement.statut, 'traite');
-  assert.equal(resDeplacement.conflit.etat, 'FOLLOW_UP');
+  assert.equal(resDeplacement.statut, 'cloture');
+  assert.equal(resDeplacement.conflit.etat, 'CLOSED');
   assert.equal(resDeplacement.persiste, false, 'Doit être résolu car distance >= seuil');
   assert.equal(resDeplacement.statutPhysique, 'resolu');
 });
@@ -312,8 +329,8 @@ test('Suppression d’un barrage régulier résout le conflit et protège les BF
     depotNotifications,
   });
 
-  assert.equal(resSuppr.statut, 'traite');
-  assert.equal(resSuppr.conflit.etat, 'FOLLOW_UP');
+  assert.equal(resSuppr.statut, 'cloture');
+  assert.equal(resSuppr.conflit.etat, 'CLOSED');
   assert.equal(resSuppr.persiste, false);
   assert.equal(resSuppr.statutPhysique, 'resolu');
 });
@@ -423,7 +440,12 @@ test('Conflit Inter-Régions entre deux BFI : le CMD Région peut déplacer, cha
     depotBarrages,
     depotNotifications,
   });
-  assert.equal(resValide.conflit.etat, 'FOLLOW_UP');
+  /* Approuvé : archivé à l'historique, sans clôture manuelle, données intactes. */
+  assert.equal(resValide.conflit.etat, 'CLOSED');
+  assert.ok(resValide.conflit.clotureLe);
+  assert.ok(resValide.conflit.traitement, 'le traitement reste attaché au conflit archivé');
+  assert.deepEqual(resValide.conflit.historique.slice(-2).map((h) => h.vers), ['APPROVED', 'CLOSED']);
+  assert.ok(depot.historique(SESSIONS.admin).some((c) => c.id === confInterBfi.id));
   assert.equal(resValide.barragesModifies.length, 1);
 
   const barrageMisAJour = depotBarrages.parId(B_BFI.id);
